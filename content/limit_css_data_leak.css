@@ -1,0 +1,35 @@
+/* Limit CSS data leak, POTENTIALLY BREAKS SOME SITES */
+body input:not([value=""])[type],
+body input:not([value=""])[type]:focus ~ *,
+body input:not([value=""])[type] * {
+  background-image: none !important;
+  border-image: none !important;
+  font-family: inherit !important;
+  list-style-image: none !important;
+  cursor: unset !important;
+  content: none !important;
+}
+body input:not([value=""])[type]::before,
+body input:not([value=""])[type]:focus ~ *::before,
+body input:not([value=""])[type] *::before,
+body input:not([value=""])[type]::after,
+body input:not([value=""])[type]:focus ~ *::after,
+body input:not([value=""])[type] *::after {
+  content:none !important;
+}
+
+/* Remove the comment to apply more strict version, causes even more trouble */
+/*
+body input:not([value=""])[type] ~ *{
+  background-image: none !important;
+  border-image: none !important;
+  font-family: inherit !important;
+  list-style-image: none !important;
+  cursor: unset !important;
+  content: none !important;
+}
+body input:not([value=""])[type] ~ *::before,
+body input:not([value=""])[type] ~ *::after{
+  content:none !important;
+}
+*/

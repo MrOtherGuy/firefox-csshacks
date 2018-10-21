@@ -1,0 +1,11 @@
+/* Use with navbar_tabs_oneliner.css */
+
+#toolbar-menubar:not([inactive]) ~ #TabsToolbar{
+	margin-left:calc(var(--uc-navigationbar-width) + 300px ) !important;
+	margin-top: calc(0px - var(--uc-toolbar-height)) !important;
+  padding-left: 0px !important;
+}
+#toolbar-menubar:not([inactive]){
+  margin-left: var(--uc-navigationbar-width);
+  height: var(--uc-toolbar-height);
+}

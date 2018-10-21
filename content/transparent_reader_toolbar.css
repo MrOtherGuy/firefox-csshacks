@@ -1,0 +1,8 @@
+@-moz-document url-prefix("about:reader"){
+  .reader-toolbar, .reader-toolbar .button:not(:hover) {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .reader-toolbar:not(:hover)>*:not([open]){ visibility:hidden; }
+  body{ text-align: justify; }  
+}
