@@ -1,6 +1,6 @@
-* Collection of random CSS hacks for Firefox
+# Collection of random CSS hacks for Firefox
 
-* Usage
+# Usage
 
 Use stylesheets under "chrome" in userChrome.css
 

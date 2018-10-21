@@ -1,0 +1,49 @@
+/* Requires you to edit toolbar layout. Put buttons directly to the right of the urlbar in this order: <urlbar><reload-button><back-button><forward-button>*/
+/* Actually, the order of reload and back-buttons doesn't matter */
+#urlbar{
+  margin-right:0px !important;
+  border-right:none !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+#urlbar,
+#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]{
+  border-color: var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
+}
+
+#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]{
+  margin: 3px 0 !important;
+  padding: 0 0px !important;
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 1px 0;
+  opacity: 1 !important;
+  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
+}
+#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"] .toolbarbutton-icon{
+  border: none !important;
+  border-radius: 0 !important;
+  margin: -3px 0 !important;
+  background-color:transparent;
+  height: initial !important;
+  width: initial !important;
+}
+
+#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not([disabled]):hover{
+  background-color: hsla(0,0%,70%,.35);
+}
+
+#urlbar-container:focus-within ~ .chromeclass-toolbar-additional[overflows="false"]{
+  border-color:Highlight !important;
+}
+
+#urlbar-container ~ .chromeclass-toolbar-additional[overflows="false"][disabled] .toolbarbutton-icon{ opacity: 0.4 !important }
+
+#forward-button{
+  border-right-width: 1px !important;
+  border-radius: 0 2px 2px 0 !important;
+}
+
+#back-button, #back-button > image{ border-radius: 0 !important; }
+#stop-reload-button{ padding: 0 !important; }

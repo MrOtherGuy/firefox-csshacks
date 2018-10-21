@@ -1,0 +1,2 @@
+/* Makes black favicons more visible on dark background, contrast will be lowered though */
+.tab-icon-image{ filter: invert(40%) contrast(250%) saturate(250%) !important; }
