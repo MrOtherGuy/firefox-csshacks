@@ -13,4 +13,8 @@
 /* 1px margin on touch density causes tabs to be too high */
 .tab-close-button{ margin-top: 0 }
 /* prevent urlbar overflow on narrow windows */
-#urlbar-container{ min-width:unset }
+@media screen and (max-width: 1300px){
+  #urlbar-container{ min-width:unset !important }
+}
+/* Hide dropdown placeholder */
+#urlbar-container:not(:hover) .urlbar-history-dropmarker{margin-inline-start: -28px;}
