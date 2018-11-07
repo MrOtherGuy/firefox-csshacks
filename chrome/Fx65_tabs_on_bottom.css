@@ -1,0 +1,18 @@
+/* Modify to change window drag space width */
+:root[tabsintitlebar="true"] #nav-bar{ --window-drag-space-width: 24px }
+
+.titlebar-buttonbox-container{
+  position: fixed;
+  top:0;
+  right:0;
+  height: 40px;
+}
+:root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
+.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
+#titlebar{ -moz-box-ordinal-group: 2 }
+:root[tabsintitlebar="true"] #nav-bar{
+  padding-right: calc(138px + var(--window-drag-space-width,0px));
+  padding-left: var(--window-drag-space-width,0px)
+}
+.titlebar-placeholder,
+#TabsToolbar > .toolbar-items > spacer{ display: none; }

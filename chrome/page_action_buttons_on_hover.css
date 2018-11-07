@@ -1,0 +1,11 @@
+#page-action-buttons > *[class^=urlbar-icon]{
+  margin-inline-end: -26px;
+  opacity: 0;
+  transition: margin-inline-end 200ms linear, opacity 200ms linear;
+}
+#page-action-buttons:hover > *[class^=urlbar-icon],
+#page-action-buttons > *[class^=urlbar-icon][open],
+#page-action-buttons > *[class^=urlbar-icon][open] ~ *[class^=urlbar-icon]{
+  opacity: 1;
+  margin-inline-end: 0px;
+}
