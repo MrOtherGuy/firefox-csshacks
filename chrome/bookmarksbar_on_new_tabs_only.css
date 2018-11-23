@@ -1,0 +1,11 @@
+:root[title$=" - Mozilla Firefox"] #PersonalToolbar,
+:root[title$=" - Mozilla Firefox (Private Browsing)"] #PersonalToolbar,
+:root[title$=" - Firefox Nightly"] #PersonalToolbar,
+:root[title$=" - Firefox Nightly (Private Browsing)"] #PersonalToolbar{ visibility: collapse; }
+/* about:home or something can have a "New Tab" prefix */
+:root[title="New Tab - Mozilla Firefox"] #PersonalToolbar,
+:root[title="New Tab - Mozilla Firefox (Private Browsing)"] #PersonalToolbar,
+:root[title="New Tab - Firefox Nightly"] #PersonalToolbar,
+:root[title="New Tab - Firefox Nightly (Private Browsing)"] #PersonalToolbar{ visibility: visible; }
+/* Short delay to prevent being shortly visible during tab restore */
+#PersonalToolbar{ transition: visibility 0ms linear 200ms }
