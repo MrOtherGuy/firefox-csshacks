@@ -1,0 +1,21 @@
+/* NOTE This only works if tabs are on top */
+.urlbar-input-box::before{
+  content:"";
+  display: block;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:32px;
+}
+.tabbrowser-tab,
+#TabsToolbar toolbarbutton{
+  position: relative;
+  z-index: 2
+}
+#navigator-toolbox:not(:focus-within) .tabbrowser-tab[visuallyselected]{ z-index: 0 !important; }
+
+:root:not([customizing]) #urlbar{ opacity: 0; transition: opacity 200ms ease-in-out }
+:root:not([customizing]) #urlbar:focus-within{ opacity: 1 }
+
+#toolbar-menubar{ position: relative; z-index:3 }
