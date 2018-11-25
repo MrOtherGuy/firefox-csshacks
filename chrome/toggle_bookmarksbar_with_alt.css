@@ -1,5 +1,6 @@
 /* Pretty much requires either menubar_in-toolbar or the oneliner compatible one */
 /* Otherwise the changing vertical position causes bookmarks to be unclickable */
+/* NOT COMPATIBLE with Fx65+ */
 #main-window[sizemode="normal"]:not([customizing]) #PersonalToolbar{
   transition: margin 0.15s ease-in-out 50ms, z-index 16ms linear 100ms!important;
   height: 28px;

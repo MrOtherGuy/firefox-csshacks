@@ -6,7 +6,8 @@
 #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
 /* This isn't useful when tabs start in the middle of the window */
-.titlebar-placeholder[type="pre-tabs"]{ display: none }
+.titlebar-placeholder[type="pre-tabs"],
+.titlebar-spacer[type="pre-tabs"]{ display: none }
 #nav-bar{margin-right:calc(100vw - var(--uc-navigationbar-width));
   margin-top: calc(0px - var(--uc-toolbar-height))
 }
