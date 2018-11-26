@@ -1,5 +1,5 @@
 /* Modify these to change relative widths or default hegiht */
-#navigator-toolbox{ --uc-navigationbar-width: 40vw; --uc-toolbar-height: 40px; }
+#navigator-toolbox{ --uc-navigationbar-width: 50vw; --uc-toolbar-height: 40px; --window-drag-space-width: 20px}
 /* reserved space for overflow + menu buttons */
 #navigator-toolbox{ --uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))}
 #nav-bar:not([overflowing]) > #nav-bar-customization-target{ --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px) }
@@ -9,18 +9,17 @@
 #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
 /* This isn't useful when tabs start in the middle of the window */
-.titlebar-placeholder[type="pre-tabs"],.titlebar-spacer[type="pre-tabs"]{ width: 8px }
+.titlebar-placeholder[type="pre-tabs"],.titlebar-spacer[type="pre-tabs"]{ width:8px !important}
 #nav-bar{
-  margin-right:calc(3 * 46px);
-  margin-top: calc(0px - var(--uc-toolbar-height))
+  margin-right:calc(3 * 46px + var(--window-drag-space-width));
+  margin-top: calc(0px - var(--uc-toolbar-height));
+  padding-left: var(--window-drag-space-width);
 }
-#nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - (3 * 46px)) }
-#TabsToolbar > *{ position: relative !important; z-index: 2 }
+#nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - (3 * 46px) - var(--window-drag-space-width)) }
+#TabsToolbar > :not(hbox){ position: relative !important; z-index: 2 }
 .titlebar-placeholder[type="post-tabs"],
 .titlebar-spacer[type="post-tabs"]{
-  width: var(--uc-buttons-width) !important;
-  -moz-window-dragging: no-drag;
-  pointer-events:none;
+  width: calc(var(--uc-buttons-width) + var(--window-drag-space-width)) !important;
 }
 #PanelUI-button,#nav-bar-overflow-button{
   margin: 0px !important;
@@ -31,7 +30,8 @@
 /* 1px margin on touch density causes tabs to be too high */
 .tab-close-button{ margin-top: 0 }
 /* prevent urlbar overflow on narrow windows */
-@media screen and (max-width: 1300px){
+/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
+@media screen and (max-width: 1000px){
   #urlbar-container{ min-width:unset !important }
 }
 /* Hide dropdown placeholder */
