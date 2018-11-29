@@ -3,6 +3,13 @@
 /* Override for other densities */
 :root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; }
 :root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
+
+/* prevent urlbar overflow on narrow windows */
+/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
+@media screen and (max-width: 1000px){
+  #urlbar-container{ min-width:unset !important }
+}
+
 #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
 /* This isn't useful when tabs start in the middle of the window */
@@ -15,10 +22,6 @@
 }
 /* 1px margin on touch density causes tabs to be too high */
 .tab-close-button{ margin-top: 0 }
-/* prevent urlbar overflow on narrow windows */
-/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
-@media screen and (max-width: 1000px){
-  #urlbar-container{ min-width:unset !important }
-}
+
 /* Hide dropdown placeholder */
 #urlbar-container:not(:hover) .urlbar-history-dropmarker{margin-inline-start: -28px;}

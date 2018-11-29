@@ -1,4 +1,4 @@
-/* Modify these to change relative widths or default hegiht */
+/* Modify these to change relative widths or default height */
 #navigator-toolbox{ --uc-navigationbar-width: 50vw; --uc-toolbar-height: 40px; --window-drag-space-width: 20px}
 /* reserved space for overflow + menu buttons */
 #navigator-toolbox{ --uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))}
@@ -6,6 +6,13 @@
 /* Override for other densities */
 :root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; --uc-menubutton-padding: 0px}
 :root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
+
+/* prevent urlbar overflow on narrow windows */
+/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
+@media screen and (max-width: 1000px){
+  #urlbar-container{ min-width:unset !important }
+}
+
 #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
 /* This isn't useful when tabs start in the middle of the window */
@@ -29,10 +36,6 @@
 }
 /* 1px margin on touch density causes tabs to be too high */
 .tab-close-button{ margin-top: 0 }
-/* prevent urlbar overflow on narrow windows */
-/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
-@media screen and (max-width: 1000px){
-  #urlbar-container{ min-width:unset !important }
-}
+
 /* Hide dropdown placeholder */
 #urlbar-container:not(:hover) .urlbar-history-dropmarker{margin-inline-start: -28px;}
