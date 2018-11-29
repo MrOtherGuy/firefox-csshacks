@@ -14,7 +14,7 @@
 #toolbar-menubar[inactive] > #menubar-items{ opacity: 0; pointer-events: none; }
 #toolbar-menubar[inactive]{ margin-bottom: calc(0px - var(--uc-toolbar-height)) }
 
-#TabsToolbar > .titlebar-buttonbox-container,
+#TabsToolbar[autohide="true"] > .titlebar-buttonbox-container,
 #TabsToolbar > .toolbar-items > spacer,
 .titlebar-spacer[type="post-tabs"]{
   display: none;
