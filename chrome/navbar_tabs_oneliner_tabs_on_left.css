@@ -14,7 +14,7 @@
 #toolbar-menubar[inactive] > #menubar-items{ opacity: 0; pointer-events: none; }
 #toolbar-menubar[inactive]{ margin-bottom: calc(0px - var(--uc-toolbar-height)) }
 
-#TabsToolbar[autohide="true"] > .titlebar-buttonbox-container,
+#TabsToolbar > .titlebar-buttonbox-container,
 #TabsToolbar > .toolbar-items > spacer,
 .titlebar-spacer[type="post-tabs"]{
   display: none;
@@ -22,7 +22,7 @@
 #TabsToolbar{
   margin-right: var(--uc-navigationbar-width);
 }
-#toolbar-menubar > .titlebar-buttonbox-container,
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
 #tabbrowser-tabs,
 .tabbrowser-tab[pinned]{
   height: var(--uc-toolbar-height) !important;
