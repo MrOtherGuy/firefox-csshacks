@@ -1,0 +1,38 @@
+/* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs */
+/* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
+#titlebar{ -moz-appearance: none !important; }
+/* We'll use window controls from menubar instead */
+#TabsToolbar > .titlebar-buttonbox-container { display: none }
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button{
+  -moz-appearance: none !important;
+  height: 0px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  -moz-box-align: stretch;
+  margin: 0 !important;
+}
+#tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
+#tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
+  visibility: collapse;
+}
+
+/* Button re-styling */
+#tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
+#tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
+  padding: 0 !important;
+  transform: scale(0.6);
+  background-color: transparent !important;
+}
+/* Extra top padding  in maximized window */
+:root[sizemode="maximized"] > #navigator-toolbox{ padding-top:7px !important; }
+
+/* Window controls in nav-bar */
+:root:not([customizing]) #toolbar-menubar[inactive]{
+  height: initial !important;
+  min-height: initial !important;
+  margin-bottom: -28px !important;
+}
+
+:root:not([customizing]) #toolbar-menubar[autohide][inactive] > #menubar-items{ pointer-events: none; opacity: 0 }
+#nav-bar{ padding-right: calc(3 * 46px) }
