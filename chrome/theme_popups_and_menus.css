@@ -1,6 +1,7 @@
-/*!!! IMPORT theme_color_variables.css !!!*/
 /* Makes popups, menus and context menus dark */
-@import url(theme_color_variables.css);
+/* Color editing should generally be done in theme_color_variables.css */
+
+/*!!! IMPORT theme_color_variables.css !!!*/
 
 .panel-arrowcontent,
 #alltabs-popup .arrowscrollbox-scrollbox,
@@ -68,7 +69,8 @@ panelview,
    background-color:  var(--uc-dark-bkgnd-color) !important;
 }
 
-.subviewbutton:hover{
+.subviewbutton:hover,
+#widget-overflow-list > .toolbarbutton-1:hover{
   background-color: var(--uc-active-color) !important;
 }
 

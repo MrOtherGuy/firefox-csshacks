@@ -1,5 +1,8 @@
+/* General toolbar coloring - buttons, text, findbar etc. */
+/* Color editing should generally be done in theme_color_variables.css */
+
 /*!!! IMPORT theme_color_variables.css !!!*/
-@import url(theme_color_variables.css);
+
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
 #browser-bottombox,
 .browserContainer > findbar,
@@ -40,13 +43,13 @@
 .toolbarbutton-icon, toolbarbutton stack{ border-radius: 0px !important; }
 :root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon{ border-radius: 10000px !important; }
 
-toolbar toolbarbutton:not([disabled]):hover > .toolbarbutton-icon,
-toolbar toolbarbutton:not([disabled]):hover > stack,
-toolbar toolbarbutton[open="true"] > .toolbarbutton-icon,
-toolbar toolbarbutton[open="true"] > stack,
-toolbar toolbarbutton[checked="true"] > .toolbarbutton-icon,
-toolbar toolbarbutton[checked="true"] > stack,
-toolbar .bookmark-item:hover,
+.toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon,
+.toolbarbutton-1:not([disabled]):hover > stack,
+.toolbarbutton-1[open="true"] > .toolbarbutton-icon,
+.toolbarbutton-1[open="true"] > stack,
+.toolbarbutton-1[checked="true"] > .toolbarbutton-icon,
+.toolbarbutton-1[checked="true"] > stack,
+#PlacesToolbarItems .bookmark-item:hover,
 #page-action-buttons image:hover,
 .urlbar-icon:hover,
 #TabsToolbar .scrollbutton-down:hover,
@@ -62,7 +65,8 @@ findbar toolbarbutton[checked="true"]{
 #TabsToolbar .scrollbutton-up > .toolbarbutton-icon,
 #downloads-indicator-anchor,
 #PersonalToolbar .bookmark-item > .toolbarbutton-icon,
-#titlebar .titlebar-button > .toolbarbutton-icon{
+#titlebar .titlebar-button > .toolbarbutton-icon,
+#widget-overflow-list toolbarbutton > .toolbarbutton-icon{
   background-color: transparent !important;
   box-shadow: none !important;
 }
