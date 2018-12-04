@@ -1,11 +1,6 @@
+/*!!! IMPORT theme_color_variables.css !!!*/
 /* Makes popups, menus and context menus dark */
-:root{
-  --uc-dark-bkgnd-color: rgb(12,16,32);
-  --uc-light-bkgnd-color: rgb(46,54,69);
-  --uc-active-color: rgb(26, 70, 102);
-  --uc-text-color: rgb(195, 198, 201);
-  --uc-border-color: rgb(43,130,191);
-}
+@import url(theme_color_variables.css);
 
 .panel-arrowcontent,
 #alltabs-popup .arrowscrollbox-scrollbox,

@@ -1,0 +1,79 @@
+/*!!! IMPORT theme_color_variables.css !!!*/
+@import url(theme_color_variables.css);
+#navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
+#browser-bottombox,
+.browserContainer > findbar,
+.searchbar-textbox{
+	background-color: var(--uc-light-bkgnd-color) !important;
+	color: var(--uc-text-color) !important;
+}
+
+.browserContainer > findbar{ background-image: none !important; }
+
+#TabsToolbar,
+.searchbar-textbox,
+.findbar-textbox,
+.findbar-find-previous,
+.findbar-find-next,
+#urlbar{
+	background-color: var(--uc-dark-bkgnd-color) !important;
+  color: var(--uc-text-color) !important;
+}
+
+#urlbar{ border-color: transparent !important; }
+
+#urlbar[focused]{
+	border-color: var(--uc-border-color) !important;
+}
+
+#urlbar .urlbar-icon:hover{
+  box-shadow: none !important;
+}
+
+#tabbrowser-tabs,
+.search-panel-input-value,
+.titlebar-buttonbox-container,
+.tab-close-button{
+  color: var(--uc-text-color) !important;
+}
+
+.toolbarbutton-icon, toolbarbutton stack{ border-radius: 0px !important; }
+:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon{ border-radius: 10000px !important; }
+
+toolbar toolbarbutton:not([disabled]):hover > .toolbarbutton-icon,
+toolbar toolbarbutton:not([disabled]):hover > stack,
+toolbar toolbarbutton[open="true"] > .toolbarbutton-icon,
+toolbar toolbarbutton[open="true"] > stack,
+toolbar toolbarbutton[checked="true"] > .toolbarbutton-icon,
+toolbar toolbarbutton[checked="true"] > stack,
+toolbar .bookmark-item:hover,
+#page-action-buttons image:hover,
+.urlbar-icon:hover,
+#TabsToolbar .scrollbutton-down:hover,
+#TabsToolbar .scrollbutton-up:hover,
+findbar toolbarbutton:not([disabled]):hover,
+findbar toolbarbutton[checked="true"]{
+  background-color: var(--uc-active-color) !important;
+  box-shadow: inset 0 0 0 1px var(--uc-border-color) !important;
+}
+
+/* Override some special cases */
+#TabsToolbar .scrollbutton-down > .toolbarbutton-icon,
+#TabsToolbar .scrollbutton-up > .toolbarbutton-icon,
+#downloads-indicator-anchor,
+#PersonalToolbar .bookmark-item > .toolbarbutton-icon,
+#titlebar .titlebar-button > .toolbarbutton-icon{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.toolbarbutton-1{ fill: var(--uc-text-color) !important; }
+
+.tab-line[selected]{ height: 1px !important; }
+
+.tabbrowser-tab[selected] .tab-background{
+  background-image: linear-gradient(var(--uc-active-color) 75%,var(--uc-light-bkgnd-color)) !important;
+  box-shadow:0 3px 1px -1px white inset,  
+      0 10px 4px -5px var(--uc-border-color) inset,
+               0 -2px 0 rgba(0,0,0,.06) inset !important;
+}

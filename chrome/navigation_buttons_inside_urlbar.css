@@ -21,6 +21,7 @@
   opacity: 1 !important;
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
 }
+
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"] .toolbarbutton-icon{
   border: none !important;
   border-radius: 0 !important;
@@ -30,8 +31,15 @@
   width: initial !important;
 }
 
+#back-button{ --backbutton-background: transparent }
+
+#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:hover .toolbarbutton-icon{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not([disabled]):hover{
-  background-color: hsla(0,0%,70%,.35);
+  background-image: linear-gradient(to bottom, var(--uc-active-color,hsla(0,0%,70%,.2)), var(--uc-active-color,hsla(0,0%,70%,.2)))
 }
 
 #urlbar-container:focus-within ~ .chromeclass-toolbar-additional[overflows="false"]{

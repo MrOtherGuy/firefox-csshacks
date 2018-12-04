@@ -6,9 +6,8 @@
   content: "";
   width: 100%;
   height: 100%;
-  display: none;
   pointer-events:none;
-  background: -moz-element(#statuspanel) 0 -11px no-repeat !important;
+  background: -moz-element(#statuspanel) left calc(90% - var(--toolbarbutton-outer-padding)) no-repeat !important;
 }
 
 #urlbar .urlbar-input-box::after{
@@ -16,14 +15,6 @@
 }
 
 #statuspanel{ z-index: -1; }
-/* Don't show common values to save space (useful for oneliner) - safe to delete these */
-#statuspanel-label[value^="http"]{ margin-left: -5.8ch !important; }
-#statuspanel-label[value^="https"]{ margin-left: -6.6ch !important; }
-#statuspanel-label[value^="www"]{ margin-left: -5.3ch !important; }
-#statuspanel-label[value^="http://www"]{ margin-left: -10.6ch !important; }
-#statuspanel-label[value^="https://www"]{ margin-left: -11.3ch !important; } 
-
-.searchbar-textbox{ margin: 2px 0 !important; }
 
 #statuspanel-inner > #statuspanel-label{
   height:23px;
@@ -31,6 +22,17 @@
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
   border: none !important;
   color: var(--lwt-toolbar-field-color, black) !important;
-  font-weight: bold !important;
-  margin-left: -3px
+  font-size: larger;
 }
+
+/* Don't show common values to save space (useful for oneliner) - safe to delete these */
+/* If you change the font size of the label then you'll have to modify these too */
+/* non-https links get a slight red hue */
+
+#statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; color: lightpink !important;}
+#statuspanel-inner > #statuspanel-label[value^="http"]{ margin-left: -3.7ch !important; }
+#statuspanel-inner > #statuspanel-label[value^="https"]{ margin-left: -6.1ch !important; color: var(--lwt-toolbar-field-color, black) !important}
+#statuspanel-inner > #statuspanel-label[value^="www"]{ margin-left: -4.5ch !important; }
+#statuspanel-inner > #statuspanel-label[value^="http://www"]{ margin-left: -9.7ch !important; }
+#statuspanel-inner > #statuspanel-label[value^="https://www"]{ margin-left: -10.1ch !important; } 
+#statuspanel-inner{ margin-left: -1px; }

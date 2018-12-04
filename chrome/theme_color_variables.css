@@ -1,0 +1,13 @@
+/* Color controls for theme_***.css files */
+:root{
+  --uc-dark-bkgnd-color: rgb(12,16,32);
+  --uc-light-bkgnd-color: rgb(46,54,69);
+  --uc-active-color: rgb(26, 70, 102);
+  --uc-text-color: rgb(195, 198, 201);
+  --uc-border-color: rgb(43,130,191);
+}
+/* Override some default variables - stylesheet compatibility */
+:root{
+  --lwt-toolbar-field-background-color: var(--uc-dark-bkgnd-color) !important;
+  --lwt-toolbar-field-border-color: transparent !important;)
+}
