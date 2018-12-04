@@ -1,3 +1,5 @@
+/* Page action-buttons "slide in" when cursor is on top of them and don't reserve space when not used */
+
 #page-action-buttons > *[class^=urlbar-icon]{
   margin-inline-end: -26px;
   opacity: 0;
