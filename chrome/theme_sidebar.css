@@ -1,5 +1,8 @@
+/* Colors for bookmarks and history sidebars */
+/* Color editing should generally be done in theme_color_variables.css */
+
 /*!!! IMPORT theme_color_variables.css !!!*/
-@import url(theme_color_variables.css);
+
 #sidebar-search-container #search-box{
 	-moz-appearance:none !important;
 	background-color: var(--uc-dark-bkgnd-color) !important;
