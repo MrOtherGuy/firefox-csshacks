@@ -74,6 +74,11 @@ panelview,
   background-color: var(--uc-active-color) !important;
 }
 
+#widget-overflow-list #searchbar > .searchbar-textbox{
+  background-color: var(--uc-light-bkgnd-color) !important;
+  color: var(--uc-text-color) !important;
+}
+
 panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #downloadsFooter,
 #customizationui-widget-panel label,

@@ -40,7 +40,7 @@
 }
 
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button):not([disabled]):hover{
-  background-image: linear-gradient(to bottom, var(--uc-active-color,hsla(0,0%,70%,.2)), var(--uc-active-color,hsla(0,0%,70%,.2)))
+  background-image: linear-gradient(to bottom, var(--uc-ext-active-color,hsla(0,0%,70%,.2)), var(--uc-ext-active-color,hsla(0,0%,70%,.2)))
 }
 
 #urlbar-container:focus-within ~ .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button){

@@ -3,6 +3,13 @@
 
 /*!!! IMPORT theme_color_variables.css !!!*/
 
+/* Override some default variables - stylesheet compatibility */
+:root{
+  --lwt-toolbar-field-background-color: var(--uc-dark-bkgnd-color) !important;
+  --lwt-toolbar-field-border-color: transparent !important;)
+}
+#nav-bar{--uc-ext-active-color: var(--uc-active-color);}
+
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
 #browser-bottombox,
 .browserContainer > findbar,

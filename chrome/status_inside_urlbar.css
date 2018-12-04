@@ -1,6 +1,7 @@
 /* STATUSPANEL INSIDE URLBAR */
 
 #urlbar .urlbar-input-box{ display: -moz-stack }
+/* -moz-stack causes an subtle issue where in certain scenarios a weirdly aligned "http(s)://" may show up */
 #urlbar .urlbar-input-box::after{
   z-index: 2;
   content: "";

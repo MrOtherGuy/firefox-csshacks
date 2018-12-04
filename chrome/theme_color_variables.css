@@ -6,8 +6,3 @@
   --uc-text-color: rgb(195, 198, 201);
   --uc-border-color: rgb(43,130,191);
 }
-/* Override some default variables - stylesheet compatibility */
-:root{
-  --lwt-toolbar-field-background-color: var(--uc-dark-bkgnd-color) !important;
-  --lwt-toolbar-field-border-color: transparent !important;)
-}
