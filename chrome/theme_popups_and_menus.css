@@ -5,7 +5,6 @@
 
 .panel-arrowcontent,
 #alltabs-popup .arrowscrollbox-scrollbox,
-
 menupopup:not(#BMB_bookmarksPopup),
 .textbox-contextmenu{
 	border: 3px solid #434850 !important;
@@ -18,6 +17,7 @@ menupopup:not(#BMB_bookmarksPopup),
 #BMB_bookmarksPopup{
   background-color: unset !important;
 }
+
 /* GENERAL */
 menupopup,
 menuitem,
@@ -70,11 +70,13 @@ panelview,
 }
 
 .subviewbutton:hover,
-#widget-overflow-list > .toolbarbutton-1:hover{
+#widget-overflow-mainView .toolbarbutton-1:hover,
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:hover,
+#PopupSearchAutoComplete .autocomplete-richlistitem:hover{
   background-color: var(--uc-active-color) !important;
 }
 
-#widget-overflow-list #searchbar > .searchbar-textbox{
+#widget-overflow-mainView #searchbar > .searchbar-textbox{
   background-color: var(--uc-light-bkgnd-color) !important;
   color: var(--uc-text-color) !important;
 }
@@ -83,26 +85,21 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #downloadsFooter,
 #customizationui-widget-panel label,
 .autocomplete-richlistitem .ac-title,
-#widget-overflow-list toolbarbutton,
+#widget-overflow-mainView toolbarbutton,
 #bookmarks-menu-button menu menupopup,
 #PopupSearchAutoComplete .autocomplete-tree.plain.search-panel-tree,
 #PanelUI-contents toolbarbutton,
 #sidebar-switcher-target,
-#alltabs_containersTab{
-    color: var(--uc-text-color)!important;
+#alltabs_containersTab,
+#PopupAutoCompleteRichResult .ac-title,
+#PopupAutoCompleteRichResult .search-one-offs,
+.search-panel-input-value{
+  color: var(--uc-text-color)!important;
 }
 
 #alltabs-popup,
 #alltabs_containersMenuTab{
   border: none !important;
-}
-
-/* URLBAR AND SEARCHBAR POPUPS */
-
-#PopupAutoCompleteRichResult .ac-title,
-#PopupAutoCompleteRichResult .search-one-offs,
-.search-panel-input-value{
-	color: var(--uc-text-color) !important;
 }
 
 .search-panel-one-offs,
