@@ -28,11 +28,13 @@
   border-radius: 0 !important;
   margin: -3px 0 !important;
   background-color:transparent;
-  height: initial !important;
-  width: initial !important;
+  width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+  height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 }
 
 #back-button{ --backbutton-background: transparent }
+
+#back-button > .toolbarbutton-icon{ padding: var(--toolbarbutton-inner-padding) !important; }
 
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button):hover .toolbarbutton-icon{
   background-color: transparent !important;
