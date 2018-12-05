@@ -73,14 +73,18 @@ findbar toolbarbutton[checked="true"]{
 #downloads-indicator-anchor,
 #PersonalToolbar .bookmark-item > .toolbarbutton-icon,
 #titlebar .titlebar-button > .toolbarbutton-icon,
-#widget-overflow-list toolbarbutton > .toolbarbutton-icon{
+#widget-overflow-mainView toolbarbutton > stack,
+#widget-overflow-mainView toolbarbutton > .toolbarbutton-icon{
   background-color: transparent !important;
   box-shadow: none !important;
 }
 
 .toolbarbutton-1{ fill: var(--uc-text-color) !important; }
 
-.tab-line[selected]{ height: 1px !important; }
+.tab-line{
+  height:2px !important;
+  border-bottom: solid 1px lightblue !important;
+}
 
 .tabbrowser-tab[selected] .tab-background{
   background-image: linear-gradient(var(--uc-active-color) 75%,var(--uc-light-bkgnd-color)) !important;
