@@ -1,18 +1,20 @@
 /* Effect */
-.toolbarbutton-icon { transition: transform 82ms linear !important; }
-toolbarbutton:not([disabled]):active > .toolbarbutton-icon,
-toolbarbutton:not([disabled]):active > .toolbarbutton-badge-stack > .toolbarbutton-icon{ transform: scale(0.6) }
-
-/* Restyle hover state - remove everything below if you want the scale effect to also apply to background-color */
-toolbar .toolbarbutton-1{ clip-path: inset(3px) }
-toolbar .toolbarbutton-1:not([disabled]):hover,
-toolbar .toolbarbutton-1[open],
-toolbar .toolbarbutton-1[checked]{
-  background-color: var(--toolbarbutton-hover-background);
+.toolbarbutton-icon,
+.menuitem-iconic .menu-iconic-icon{
+  transition: transform 82ms linear !important;
 }
-toolbar .toolbarbutton-1 > .toolbarbutton-icon,
-toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack{ background-color: transparent !important }
-/* Back button override */
-:root:not([uidensity="compact"]) #back-button{ clip-path: none; background-color: transparent }
-:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon{ background-color: var(--backbutton-background) !important;}
-:root:not([uidensity="compact"]) .toolbarbutton-1:not(#back-button){margin: var(--toolbarbutton-outer-padding) 0 !important;}
+
+toolbar .toolbarbutton-1 > .toolbarbutton-icon{
+  transition: padding 82ms linear !important;
+}
+
+toolbarbutton:not(.toolbarbutton-1):active > .toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-badge-stack > .toolbarbutton-icon,
+.menuitem-iconic:active .menu-iconic-icon{
+  transform: scale(0.6) !important;
+}
+
+toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon,
+#back-button:not([disabled]):active > .toolbarbutton-icon{
+  padding: calc(var(--toolbarbutton-inner-padding) + 3px) !important;
+}
