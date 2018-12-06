@@ -1,0 +1,29 @@
+/* Show sidebar only when the cursor is over it  */
+/* The border controlling sidebar width will be removed so you'll need to modify these values to change width */
+
+#sidebar-box{
+  --uc-sidebar-width: 40px;
+  --uc-sidebar-hover-width: 210px;
+  position: relative;
+  min-width: var(--uc-sidebar-width) !important;
+  width: var(--uc-sidebar-width) !important;
+}
+
+#sidebar-splitter{ display: none }
+
+#sidebar-header{ overflow: hidden; }
+
+#sidebar{
+  transition: min-width 115ms linear !important;
+  min-width: var(--uc-sidebar-width) !important;
+  will-change: min-width;
+}
+
+#sidebar-box:hover > #sidebar{ min-width: var(--uc-sidebar-hover-width) !important; }
+
+/* Add sidebar divider */
+
+#sidebar,
+#sidebar-header{
+  border-right: 1px solid rgb(80,80,80);
+}

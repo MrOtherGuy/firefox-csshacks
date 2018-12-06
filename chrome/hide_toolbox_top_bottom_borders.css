@@ -1,0 +1,10 @@
+#main-window[sizemode="normal"]{ border-top: none !important }
+#navigator-toolbox::after{ content: none !important }
+
+/* OPTIONAL - uncomment to remove still remaining space atop of tabs */
+/* This just increases the height of tabs by few pixels, not decrease the toolbar height */
+
+/* Fx pre-65 */
+/* #navigator-toolbox > #TabsToolbar{margin-top: -2px;} */
+/* Fx65+ */
+/* #TabsToolbar > .toolbar-items > spacer{ display: none; } */
