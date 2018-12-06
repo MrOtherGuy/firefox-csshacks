@@ -5,7 +5,7 @@
 @import url(chrome/theme_sidebar.css);
 @import url(chrome/theme_popups_and_menus.css);
 @import url(chrome/status_inside_urlbar.css);
-@import url(chrome/navigation_buttons_inside_urlbar.css);
+/*@import url(chrome/navigation_buttons_inside_urlbar.css);*/
 @import url(chrome/tab_close_button_always_on_hover.css);
 @import url(chrome/tab_loading_progress_throbber.css);
 @import url(chrome/button_effect_scale_onclick.css);
