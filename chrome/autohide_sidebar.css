@@ -12,7 +12,7 @@
 
 #sidebar-splitter{ display: none }
 
-#sidebar-header{ overflow: hidden; }
+#sidebar-header{ overflow: hidden; color: var(--chrome-color) !important; }
 
 #sidebar{
   transition: min-width 115ms linear !important;
@@ -21,6 +21,8 @@
 }
 
 #sidebar-box:hover > #sidebar{ min-width: var(--uc-sidebar-hover-width) !important; }
+
+.sidebar-panel{ color: var(--newtab-text-primary-color) !important;}
 
 /* Add sidebar divider and give it background */
 
