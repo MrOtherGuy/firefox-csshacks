@@ -7,6 +7,7 @@
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
+  max-width: var(--uc-sidebar-width) !important;
 }
 
 #sidebar-splitter{ display: none }
@@ -21,9 +22,10 @@
 
 #sidebar-box:hover > #sidebar{ min-width: var(--uc-sidebar-hover-width) !important; }
 
-/* Add sidebar divider */
+/* Add sidebar divider and give it background */
 
 #sidebar,
 #sidebar-header{
+  background-color: var(--toolbar-non-lwt-bgcolor) !important;
   border-right: 1px solid rgb(80,80,80);
 }
