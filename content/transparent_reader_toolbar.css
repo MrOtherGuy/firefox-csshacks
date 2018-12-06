@@ -1,3 +1,7 @@
+/* Toolbar is invisible until hovered */
+
+@namespace html url("http://www.w3.org/1999/xhtml");
+
 @-moz-document url-prefix("about:reader"){
   .reader-toolbar, .reader-toolbar .button:not(:hover) {
     background-color: transparent !important;
