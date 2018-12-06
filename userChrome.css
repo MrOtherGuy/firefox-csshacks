@@ -1,0 +1,16 @@
+/* Example file enabling theme + some features */
+
+@import url(chrome/theme_color_variables.css);
+@import url(chrome/theme_toolbars.css);
+@import url(chrome/theme_sidebar.css);
+@import url(chrome/theme_popups_and_menus.css);
+@import url(chrome/status_inside_urlbar.css);
+@import url(chrome/navigation_buttons_inside_urlbar.css);
+@import url(chrome/tab_close_button_always_on_hover.css);
+@import url(chrome/tab_loading_progress_throbber.css);
+@import url(chrome/button_effect_scale_onclick.css);
+@import url(chrome/blank_page_background.css);
+/* @import url(chrome/page_action_buttons_on_hover.css); */
+@import url(chrome/autohide_sidebar.css);
+@import url(chrome/menubar_in_toolbar.css);
+@import url(chrome/hide_toolbox_top_bottom_borders.css);

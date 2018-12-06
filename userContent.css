@@ -1,0 +1,6 @@
+/* Example file */
+
+@import url(content/css_scrollbar_width_color.css);
+/* @import url(content/limit_css_data_leak.css); */ /* Could induce site problems */
+@import url(content/newtab_background_color.css);
+@import url(content/transparent_reader_toolbar.css);
