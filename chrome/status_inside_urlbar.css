@@ -1,7 +1,8 @@
 /* STATUSPANEL INSIDE URLBAR */
 
-#urlbar .urlbar-input-box{ display: -moz-stack }
+#urlbar .urlbar-input-box{ display: -moz-stack; }
 /* -moz-stack causes an subtle issue where in certain scenarios a weirdly aligned "http(s)://" may show up */
+
 #urlbar .urlbar-input-box::after{
   z-index: 2;
   content: "";
@@ -15,22 +16,23 @@
   display: -moz-box;
 }
 
-#statuspanel{ z-index: -1; }
-
 #statuspanel-inner > #statuspanel-label{
   height:23px;
   min-width: 500px;
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
   border: none !important;
-  color: var(--lwt-toolbar-field-color, black) !important;
   font-size: larger;
+  color: inherit !important;
 }
+
+#statuspanel{ color: lightpink; z-index: -1; }
+#statuspanel[type="status"] { color: skyblue }
 
 /* Don't show common values to save space (useful for oneliner) - safe to delete these */
 /* If you change the font size of the label then you'll have to modify these too */
 /* non-https links get a slight red hue */
 
-#statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; color: lightpink !important;}
+#statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; }
 #statuspanel-inner > #statuspanel-label[value^="http"]{ margin-left: -3.7ch !important; }
 #statuspanel-inner > #statuspanel-label[value^="https"]{ margin-left: -6.1ch !important; color: var(--lwt-toolbar-field-color, black) !important}
 #statuspanel-inner > #statuspanel-label[value^="www"]{ margin-left: -4.5ch !important; }
