@@ -21,6 +21,7 @@
 .browserContainer > findbar{ background-image: none !important; }
 
 #TabsToolbar,
+#toolbar-menubar,
 .searchbar-textbox,
 .findbar-textbox,
 .findbar-find-previous,
