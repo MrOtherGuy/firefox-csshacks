@@ -3,6 +3,8 @@
 
 /*!!! IMPORT theme_color_variables.css !!!*/
 
+#sidebar-box{ --toolbar-non-lwt-bgcolor: var(--uc-light-bkgnd-color) }
+
 #sidebar-search-container #search-box{
 	-moz-appearance:none !important;
 	background-color: var(--uc-dark-bkgnd-color) !important;
