@@ -4,11 +4,12 @@
 
 .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon{
-  transition: transform 82ms linear !important;
+  transition: transform 83ms linear !important;
 }
 
-toolbar .toolbarbutton-1 > .toolbarbutton-icon{
-  transition: padding 82ms linear !important;
+toolbar .toolbarbutton-1 > .toolbarbutton-icon,
+.urlbar-icon{
+  transition: padding 83ms linear !important;
 }
 
 toolbarbutton:not(.toolbarbutton-1) > .toolbarbutton-icon,
@@ -20,6 +21,8 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   padding: calc(var(--toolbarbutton-inner-padding) + var(--uc-back-extra-padding,0px) + 2px) !important;
 }
+
+#page-action-buttons .urlbar-icon:not(:hover){ padding: calc(var(--urlbar-icon-padding) + 2px) !important; }
 
 toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,

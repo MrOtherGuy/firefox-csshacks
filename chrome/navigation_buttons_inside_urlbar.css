@@ -32,9 +32,9 @@
   height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 }
 
-#back-button{ --backbutton-background: transparent }
+#back-button{ --backbutton-background: transparent; --uc-back-extra-padding: 0px !important }
 
-#back-button > .toolbarbutton-icon{ padding: var(--toolbarbutton-inner-padding) !important; }
+#back-button > .toolbarbutton-icon{ padding: var(--toolbarbutton-inner-padding) }
 
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button):hover .toolbarbutton-icon{
   background-color: transparent !important;
