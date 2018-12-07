@@ -48,7 +48,7 @@
   color: var(--uc-text-color) !important;
 }
 
-.toolbarbutton-icon, toolbarbutton stack{ border-radius: 0px !important; }
+.toolbarbutton-icon:hover, toolbarbutton:hover > stack{ border-radius: 2px !important; }
 :root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon{ border-radius: 10000px !important; }
 
 .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon,
@@ -65,7 +65,7 @@
 findbar toolbarbutton:not([disabled]):hover,
 findbar toolbarbutton[checked="true"]{
   background-color: var(--uc-active-color) !important;
-  box-shadow: inset 0 0 0 1px var(--uc-border-color) !important;
+  box-shadow: inset 0 0 1px 1px var(--uc-border-color) !important;
 }
 
 /* Override some special cases */
@@ -79,6 +79,8 @@ findbar toolbarbutton[checked="true"]{
   background-color: transparent !important;
   box-shadow: none !important;
 }
+
+#back-button {--backbutton-background: rgb(66,74,89) }
 
 .toolbarbutton-1{ fill: var(--uc-text-color) !important; }
 
