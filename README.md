@@ -16,7 +16,7 @@ You can import the stylesheets with @-rule import like this:
 
 ## Important!
 
-Note that all `@import` rules need to be placed before any other rules in the file, including @namespace rules.
+Note that all `@import` rules need to be placed before any other rules in the file, including @namespace rules. Additionally, the order of imported files is just as important as the order of rules within one file. 
 
 # Theme
 
