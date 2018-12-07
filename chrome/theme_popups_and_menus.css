@@ -3,6 +3,8 @@
 
 /*!!! IMPORT theme_color_variables.css !!!*/
 
+:root{ --panel-disabled-color: #888 !important; }
+
 .panel-arrowcontent,
 #alltabs-popup .arrowscrollbox-scrollbox,
 menupopup:not(#BMB_bookmarksPopup),
@@ -89,7 +91,6 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #bookmarks-menu-button menu menupopup,
 #PopupSearchAutoComplete .autocomplete-tree.plain.search-panel-tree,
 #PanelUI-contents toolbarbutton,
-#sidebar-switcher-target,
 #alltabs_containersTab,
 #PopupAutoCompleteRichResult .ac-title,
 #PopupAutoCompleteRichResult .search-one-offs,

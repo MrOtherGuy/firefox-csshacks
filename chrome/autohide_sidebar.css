@@ -12,7 +12,7 @@
 
 #sidebar-splitter{ display: none }
 
-#sidebar-header{ overflow: hidden; color: var(--chrome-color) !important; }
+#sidebar-header{ overflow: hidden; color: var(--chrome-color) }
 
 #sidebar{
   transition: min-width 115ms linear !important;
