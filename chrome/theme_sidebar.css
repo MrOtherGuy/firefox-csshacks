@@ -23,6 +23,7 @@
 }
 
 .sidebar-placesTreechildren,
+#sidebar-box,
 #sidebar-header{
 	color: var(--uc-text-color) !important;
 }

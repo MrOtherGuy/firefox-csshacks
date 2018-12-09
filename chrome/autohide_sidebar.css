@@ -12,7 +12,7 @@
 
 #sidebar-splitter{ display: none }
 
-#sidebar-header{ overflow: hidden; color: var(--chrome-color) }
+#sidebar-header{ overflow: hidden; color: var(--chrome-color, inherit) !important}
 
 #sidebar{
   transition: min-width 115ms linear !important;
@@ -22,7 +22,16 @@
 
 #sidebar-box:hover > #sidebar{ min-width: var(--uc-sidebar-hover-width) !important; }
 
-.sidebar-panel{ color: var(--newtab-text-primary-color) !important;}
+.sidebar-panel{
+  background-color: transparent !important;
+  color: var(--newtab-text-primary-color) !important;
+}
+
+.sidebar-panel #search-box{
+  -moz-appearance: none !important;
+  background-color: rgba(249,249,250,0.1) !important; 
+  color: inherit !important;
+}
 
 /* Add sidebar divider and give it background */
 
