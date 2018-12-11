@@ -113,3 +113,20 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #PopupAutoCompleteRichResult .ac-emphasize-text.ac-emphasize-text-title{
 	color: var(--uc-border-color) !important;
 }
+
+#editBookmarkPanel textbox,
+#editBookmarkPanel menulist,
+#editBookmarkPanel button,
+#editBookmarkPanel richlistbox,
+#editBookmarkPanel tree{
+  -moz-appearance: none !important;
+  background-color: var(--uc-light-bkgnd-color) !important;
+  color: var(--uc-text-color) !important;
+}
+
+#editBookmarkPanel button:hover{ filter: brightness(150%) }
+#editBookmarkPanel menulist{ padding: 4px !important; }
+#editBookmarkPanel button{ padding: 3px !important; }
+
+#editBMPanel_folderTree treechildren::-moz-tree-cell(selected){ background-color: var(--uc-border-color) !important; }
+#editBMPanel_folderTree treechildren::-moz-tree-cell(hover){ background-color: var(--uc-active-color) !important; }
