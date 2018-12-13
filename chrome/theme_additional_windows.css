@@ -1,0 +1,63 @@
+/* Library window */
+@-moz-document url(chrome://browser/content/places/places.xul){
+  :root{ background-color: var(--uc-light-bkgnd-color) !important;}
+  #placesToolbar,
+  tree{
+    background: transparent !important;
+    color: var(--uc-text-color) !important;
+  }
+  textbox,
+  richlistbox,
+  treecol,
+  button{
+    -moz-appearance: none !important;
+    background-color: var(--uc-dark-bkgnd-color) !important;
+    color: var(--uc-text-color) !important;
+  }
+  treecol:not([hideheader]){ height: 24px; }
+  treecol:hover{ filter: brightness(160%) }
+  treechildren::-moz-tree-row(multicol, odd){ background-color: rgba(0,0,0,0.2) !important; }
+  treechildren::-moz-tree-row(hover),button:hover{ background-color: var(--uc-active-color) !important; }
+  treechildren::-moz-tree-row(selected){ background-color: var(--uc-border-color) !important; }
+  button{ padding: 3px }
+  #placesMenu > menu{ border: none !important; }
+  #detailsDeck{ color: var(--uc-text-color) }
+}
+/* Page-info window */
+@-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul){
+  #main-window,
+  #topBar{
+    background-color: var(--uc-dark-bkgnd-color) !important;
+    color: var(--uc-text-color) !important;
+  }
+  textbox{ color: var(--uc-text-color) !important; }
+
+  richlistbox,
+  treecol,
+  button,
+  #permList{
+    -moz-appearance: none !important;
+    background-color: var(--uc-light-bkgnd-color) !important;
+    color: var(--uc-text-color) !important;
+  }
+  
+  tree{
+    background: transparent !important;
+    color: var(--uc-text-color) !important;
+  }
+  
+  treecol:not([hideheader]){ height: 24px; }
+  treecol:hover{ filter: brightness(140%) }
+  treechildren{ background-color: var(--uc-light-bkgnd-color) !important; }
+  treechildren::-moz-tree-row(multicol, odd){ background-color: rgba(0,0,0,0.2) !important; }
+  treechildren::-moz-tree-row(hover),
+  button:hover,
+  radiogroup > radio:hover,
+  #permList > .permission:hover{
+    background-color: var(--uc-active-color) !important;
+  }
+  treechildren::-moz-tree-row(selected),
+  radiogroup > radio[selected]{
+    background-color: var(--uc-border-color) !important;
+  }  
+}
