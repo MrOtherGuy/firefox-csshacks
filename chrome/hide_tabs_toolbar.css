@@ -1,0 +1,23 @@
+/* Hide tabs toolbar Fx65+ */
+:root{--uc-toolbar-height: 32px}
+:root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
+
+#TabsToolbar{visibility: collapse}
+#nav-bar,
+#PersonalToolbar{
+  background: transparent !important;
+}
+#navigator-toolbox{ background: var(--toolbar-bgcolor) var(--toolbar-bgimage) }
+
+#nav-bar{margin: calc(0px - var(--uc-toolbar-height)) 138px 0 0 }
+
+#toolbar-menubar{
+  min-height:unset !important;
+  height:var(--uc-toolbar-height) !important;
+  position: relative;
+}
+
+#main-menubar{-moz-box-flex: 1; background: var(--toolbar-non-lwt-bgcolor)}
+
+#toolbar-menubar:not([inactive]){ z-index: 2 }
+#toolbar-menubar[inactive] > #menubar-items { opacity: 0 }
