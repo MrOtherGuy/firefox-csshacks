@@ -3,6 +3,8 @@
 
 /*!!! IMPORT theme_color_variables.css !!!*/
 
+/* Limit popups for general browser popups so that devtools is not affected */
+@-moz-document url-prefix(chrome://browser/content/){
 :root{ --panel-disabled-color: #888 !important; }
 
 .panel-arrowcontent,
@@ -130,3 +132,4 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 
 #editBMPanel_folderTree treechildren::-moz-tree-cell(selected){ background-color: var(--uc-border-color) !important; }
 #editBMPanel_folderTree treechildren::-moz-tree-cell(hover){ background-color: var(--uc-active-color) !important; }
+}
