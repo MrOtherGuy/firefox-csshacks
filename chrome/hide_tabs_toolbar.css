@@ -17,7 +17,13 @@
   position: relative;
 }
 
-#main-menubar{-moz-box-flex: 1; background: var(--toolbar-non-lwt-bgcolor)}
+#main-menubar{
+  -moz-box-flex: 1;
+  background: var(--toolbar-non-lwt-bgcolor);
+  background-clip: padding-box;
+  border-right: 30px solid transparent;
+  border-image: linear-gradient(to left, transparent, var(--toolbar-non-lwt-bgcolor) 30px) 20 / 30px
+}
 
 #toolbar-menubar:not([inactive]){ z-index: 2 }
 #toolbar-menubar[inactive] > #menubar-items { opacity: 0 }
