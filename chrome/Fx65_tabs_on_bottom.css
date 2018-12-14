@@ -7,12 +7,19 @@
   right:0;
   height: 40px;
 }
+
+:root[sizemode="maximized"] > #navigator-toolbox{ padding-top: 8px !important; }
+:root[sizemode="maximized"] .titlebar-buttonbox-container{ top: 8px }
+
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
-#titlebar{ -moz-box-ordinal-group: 2 }
+#titlebar{
+ -moz-box-ordinal-group: 2;
+  -moz-appearance: none !important;
+}
 :root[tabsintitlebar="true"] #nav-bar{
   padding-right: calc(138px + var(--window-drag-space-width,0px));
   padding-left: var(--window-drag-space-width,0px)
 }
 .titlebar-placeholder,
-#TabsToolbar > .toolbar-items > spacer{ display: none; }
+#TabsToolbar .titlebar-spacer{ display: none; }
