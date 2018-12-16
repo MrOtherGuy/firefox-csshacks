@@ -1,3 +1,7 @@
+/* Color editing should generally be done in theme_color_variables.css */
+
+/*!!! IMPORT theme_color_variables.css !!!*/
+
 /* Library window */
 @-moz-document url(chrome://browser/content/places/places.xul){
   :root{ background-color: var(--uc-light-bkgnd-color) !important;}
@@ -23,6 +27,7 @@
   #placesMenu > menu{ border: none !important; }
   #detailsDeck{ color: var(--uc-text-color) }
 }
+
 /* Page-info window */
 @-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul){
   #main-window,
@@ -40,12 +45,10 @@
     background-color: var(--uc-light-bkgnd-color) !important;
     color: var(--uc-text-color) !important;
   }
-  
   tree{
     background: transparent !important;
     color: var(--uc-text-color) !important;
   }
-  
   treecol:not([hideheader]){ height: 24px; }
   treecol:hover{ filter: brightness(140%) }
   treechildren{ background-color: var(--uc-light-bkgnd-color) !important; }
