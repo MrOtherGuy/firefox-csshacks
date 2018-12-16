@@ -1,0 +1,27 @@
+/* Makes tabs to appear on multiple lines */
+/* Tab reordering will not work */
+
+#tabbrowser-tabs,
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox{
+  min-height: unset !important;
+}
+#tabbrowser-tabs .scrollbox-innerbox{
+  display: flex;
+  flex-wrap: wrap;
+}
+#tabbrowser-tabs .arrowscrollbox-scrollbox {
+  overflow: -moz-hidden-unscrollable;
+  display: block;
+}
+.tabbrowser-tab{ max-height: 32px }
+
+.tabbrowser-tab[fadein]{
+  min-width: 100px !important;
+  flex-grow: 1;
+  /*
+  Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
+  Don't set to none or you'll see errors in console when closing tabs
+  */
+  /*max-width: 100vw !important;*/
+}
+.tabbrowser-tab > stack{ width: 100%; height: 100% }
