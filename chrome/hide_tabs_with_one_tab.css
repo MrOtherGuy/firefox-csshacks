@@ -32,8 +32,8 @@
 :root[sizemode="maximized"] > #navigator-toolbox{ padding-top:7px !important; }
 /* Fix window controls not being clickable */
 #toolbar-menubar:hover{
-  min-height: initial !important;
-  height: initial !important;
+  min-height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
+  height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
   -moz-appearance: initial !important;
 }
 #nav-bar{ padding: 0 var(--window-drag-space-width,0px) }
