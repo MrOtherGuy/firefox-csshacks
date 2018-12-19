@@ -1,0 +1,8 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@-moz-document url-prefix("about:"){
+  xul|page,
+	xul|scrollbar{
+    scrollbar-color: rgb(210,210,210) rgb(46,54,69);
+    scrollbar-width: thin;
+  }
+}
