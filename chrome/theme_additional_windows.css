@@ -4,7 +4,7 @@
 
 /* Library window */
 @-moz-document url(chrome://browser/content/places/places.xul){
-  :root{ background-color: var(--uc-light-bkgnd-color) !important;}
+  :root{ background-color: var(--uc-light-bkgnd-color,black) !important;}
   #placesToolbar,
   tree{
     background: transparent !important;
@@ -32,8 +32,8 @@
 @-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul){
   #main-window,
   #topBar{
-    background-color: var(--uc-dark-bkgnd-color) !important;
-    color: var(--uc-text-color) !important;
+    background-color: var(--uc-dark-bkgnd-color,black) !important;
+    color: var(--uc-text-color,white) !important;
   }
   textbox{ color: var(--uc-text-color) !important; }
 
