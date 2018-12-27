@@ -1,10 +1,10 @@
 findbar{
-	-moz-box-ordinal-group: 0;
-	margin-bottom: calc(0px - 2 * var(--toolbarbutton-inner-padding) -  25px);
-	position: relative;
-	border-top: none !important;
-	transition: none !important;
+  -moz-box-ordinal-group: 0;
+  margin-bottom: calc(0px - 2 * var(--toolbarbutton-inner-padding) -  25px);
+  position: relative;
+  border-top: none !important;
   border-bottom: 1px solid var(--chrome-content-separator-color);
+  transition: transform 82ms linear, opacity 82ms linear 32ms !important;
 }
 /* Uncomment for reverse order - search-field on right */
 /* findbar > .findbar-container { -moz-box-direction: reverse } */
