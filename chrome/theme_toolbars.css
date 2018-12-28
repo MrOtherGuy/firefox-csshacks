@@ -12,13 +12,13 @@
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
 #browser-bottombox,
-.browserContainer > findbar,
+findbar,
 .searchbar-textbox{
 	background-color: var(--uc-light-bkgnd-color) !important;
 	color: var(--uc-text-color) !important;
 }
 
-.browserContainer > findbar{ background-image: none !important; }
+findbar{ background-image: none !important; }
 
 #TabsToolbar,
 #toolbar-menubar,
