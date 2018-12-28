@@ -1,8 +1,8 @@
 findbar{
-	-moz-box-ordinal-group: 0;
-	margin-bottom: calc(0px - 2 * var(--toolbarbutton-inner-padding) -  25px);
-	position: relative;
-	border-top: none !important;
+  -moz-box-ordinal-group: 0;
+  margin-bottom: calc(0px - 2 * var(--toolbarbutton-inner-padding) -  25px);
+  position: relative;
+  border-top: none !important;
   transition: transform 82ms linear, opacity 82ms linear 32ms !important;
   background: none !important;
   pointer-events: none;
@@ -14,7 +14,7 @@ findbar > .findbar-container,
 findbar > .close-icon{
   border: 1px solid var(--chrome-content-separator-color);
   border-width: 0 0 1px 0px;
-  background: var(--toolbar-bgcolor) !important;
+  background: background: var(--uc-light-bkgnd-color,var(--toolbar-bgcolor)) !important;
   pointer-events: auto;
 }
 findbar > .findbar-container{
