@@ -1,10 +1,31 @@
 findbar{
-  -moz-box-ordinal-group: 0;
-  margin-bottom: calc(0px - 2 * var(--toolbarbutton-inner-padding) -  25px);
-  position: relative;
-  border-top: none !important;
-  border-bottom: 1px solid var(--chrome-content-separator-color);
+	-moz-box-ordinal-group: 0;
+	margin-bottom: calc(0px - 2 * var(--toolbarbutton-inner-padding) -  25px);
+	position: relative;
+	border-top: none !important;
   transition: transform 82ms linear, opacity 82ms linear 32ms !important;
+  background: none !important;
+  pointer-events: none;
 }
-/* Uncomment for reverse order - search-field on right */
-/* findbar > .findbar-container { -moz-box-direction: reverse } */
+
+findbar[hidden]{ transform: translateY(-30px);}
+
+findbar > .findbar-container,
+findbar > .close-icon{
+  border: 1px solid var(--chrome-content-separator-color);
+  border-width: 0 0 1px 0px;
+  background: var(--toolbar-bgcolor) !important;
+  pointer-events: auto;
+}
+findbar > .findbar-container{
+  -moz-box-direction: reverse;
+  border-left-width: 1px;
+}
+
+findbar > .findbar-container > hbox{ margin: 0 5px }
+
+findbar::before{
+  content:"";
+  display: -moz-box;
+  -moz-box-flex: 100;
+}
