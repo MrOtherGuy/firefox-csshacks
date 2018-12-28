@@ -61,12 +61,20 @@ findbar{ background-image: none !important; }
 #page-action-buttons image:hover,
 .urlbar-icon:hover,
 #TabsToolbar .scrollbutton-down:hover,
-#TabsToolbar .scrollbutton-up:hover,
-findbar toolbarbutton:not([disabled]):hover,
-findbar toolbarbutton[checked="true"]{
+#TabsToolbar .scrollbutton-up:hover{
   background-color: var(--uc-active-color) !important;
   box-shadow: inset 0 0 1px 1px var(--uc-border-color) !important;
 }
+
+findbar toolbarbutton:not([disabled]):not(.close-icon):hover,
+findbar toolbarbutton[checked="true"],
+findbar > .findbar-closebutton:hover > .toolbarbutton-icon{
+  background-color: var(--uc-active-color) !important;
+}
+
+.findbar-textbox{ border-right: none !important; }
+.findbar-find-next{ border-left: none !important; }
+.findbar-textbox:focus-within ~ toolbarbutton{ border-color: var(--toolbar-field-focus-border-color, Highlight) !important; }
 
 /* Override some special cases */
 #TabsToolbar .scrollbutton-down > .toolbarbutton-icon,
