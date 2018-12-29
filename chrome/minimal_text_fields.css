@@ -1,0 +1,23 @@
+:root{
+  --lwt-toolbar-field-background-color: transparent !important;
+  --lwt-toolbar-field-border-color: transparent !important;
+}
+
+#urlbar,
+.searchbar-textbox{
+  box-shadow: none !important;
+}
+
+#urlbar > *,
+.searchbar-textbox > *{
+  opacity: 0;
+  transition: opacity 150ms linear
+}
+
+#urlbar > .urlbar-input-box,
+.searchbar-textbox > moz-input-box{ opacity: 0.6 }
+
+#urlbar:hover > *,
+#urlbar:focus-within > *,
+.searchbar-textbox:hover > *,
+.searchbar-textbox:focus-within > *{ opacity: 1 }
