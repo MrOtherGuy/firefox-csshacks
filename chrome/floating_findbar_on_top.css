@@ -8,6 +8,11 @@ findbar{
   pointer-events: none;
 }
 
+.findbar-container > .findbar-find-fast{
+  padding: var(--toolbarbutton-inner-padding) 0;
+  margin: 0 !important;
+}
+
 findbar[hidden]{ transform: translateY(-30px);}
 
 findbar > .findbar-container,
