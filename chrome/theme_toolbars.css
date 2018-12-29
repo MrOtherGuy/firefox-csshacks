@@ -6,14 +6,14 @@
 /* Override some default variables - stylesheet compatibility */
 :root{
   --lwt-toolbar-field-background-color: var(--uc-dark-bkgnd-color) !important;
-  --lwt-toolbar-field-border-color: transparent !important;)
+  --lwt-toolbar-field-border-color: transparent !important;
+  --toolbar-bgcolor: var(--uc-light-bkgnd-color) !important;
 }
 #nav-bar{--uc-ext-active-color: var(--uc-active-color);}
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
 #browser-bottombox,
-findbar,
-.searchbar-textbox{
+findbar{
 	background-color: var(--uc-light-bkgnd-color) !important;
 	color: var(--uc-text-color) !important;
 }
@@ -22,13 +22,22 @@ findbar{ background-image: none !important; }
 
 #TabsToolbar,
 #toolbar-menubar,
-.searchbar-textbox,
-.findbar-textbox,
 .findbar-find-previous,
 .findbar-find-next,
-#urlbar{
-	background-color: var(--uc-dark-bkgnd-color) !important;
+#urlbar,
+.findbar-textbox,
+.searchbar-textbox{
   color: var(--uc-text-color) !important;
+}
+
+#TabsToolbar,
+#toolbar-menubar{
+  background-color: var(--uc-dark-bkgnd-color) !important;
+}
+
+.findbar-find-previous,
+.findbar-find-next{
+  background-color: var(--lwt-toolbar-field-background-color) !important;
 }
 
 #urlbar{ border-color: transparent !important; }
