@@ -25,6 +25,8 @@
   color: inherit !important;
 }
 
+#statuspanel-inner{ background-color: var(--toolbar-bgcolor) }
+
 #statuspanel{ color: lightpink; z-index: -1; }
 #statuspanel[type="status"] { color: skyblue }
 
