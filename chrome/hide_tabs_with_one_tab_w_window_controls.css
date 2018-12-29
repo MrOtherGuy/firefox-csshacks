@@ -9,6 +9,10 @@
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
 #tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
+#TabsToolbar > .titlebar-spacer[type="post-tabs"]{ width: 178px !important; }
+#toolbar-menubar > spacer{ pointer-events: none }
+
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button{
   -moz-appearance: none !important;
   height: 0px;
