@@ -14,7 +14,7 @@ findbar > .findbar-container,
 findbar > .close-icon{
   border: 1px solid var(--chrome-content-separator-color);
   border-width: 0 0 1px 0px;
-  background: background: var(--uc-light-bkgnd-color,var(--toolbar-bgcolor)) !important;
+  background: var(--uc-light-bkgnd-color,var(--toolbar-bgcolor)) !important;
   pointer-events: auto;
 }
 findbar > .findbar-container{
@@ -28,4 +28,13 @@ findbar::before{
   content:"";
   display: -moz-box;
   -moz-box-flex: 100;
+}
+
+/*
+Move findbar so it isn't over the scrollbar
+Delete if you want findbar to begin from right window edge
+*/
+findbar{
+  margin-right: 16px;
+  border-right: 1px solid var(--chrome-content-separator-color);
 }
