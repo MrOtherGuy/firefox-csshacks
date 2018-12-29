@@ -1,6 +1,4 @@
 /* Scrollbar colors and width - applied globally */
 @namespace url("http://www.w3.org/1999/xhtml");
-:root{
-  scrollbar-color: rgb(210,210,210) rgb(46,54,69);
-  scrollbar-width: thin;
-}
+:root{ scrollbar-color: rgb(210,210,210) rgb(46,54,69); }
+*{ scrollbar-width: thin }
