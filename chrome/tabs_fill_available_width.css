@@ -1,0 +1,2 @@
+/* Why 100vw? Tab closing requires width animation to end and "none" can't be animated */
+.tabbrowser-tab[fadein]{ max-width: 100vw !important }
