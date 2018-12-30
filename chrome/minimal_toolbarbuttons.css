@@ -1,0 +1,19 @@
+/* Create a circular placeholder for toolbarbutton and downscale to hide them */
+
+/* Create a placeholder for buttons */
+toolbar .toolbarbutton-1{ background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill) 0,var(--lwt-toolbarbutton-icon-fill) 15%,transparent 20% ) }
+/* Hide placeholder on hover */
+toolbar:hover .toolbarbutton-1{ background-image: none }
+
+toolbar .toolbarbutton-1 > *{
+  transform: scale(0);
+  transition: transform 82ms linear !important;
+}
+toolbar:hover .toolbarbutton-1 > *,
+.toolbarbutton-1[open] > *{
+  transform: scale(1)
+}
+
+/* Urlbar icons, this way they show colors is applicable */
+.urlbar-icon{ transition: transform 82ms linear !important; }
+#urlbar:not(:hover) .urlbar-icon{ transform: scale(0.3) }
