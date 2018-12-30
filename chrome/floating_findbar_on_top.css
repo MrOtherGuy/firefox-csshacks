@@ -9,7 +9,7 @@ findbar{
 }
 
 .findbar-container > .findbar-find-fast{
-  padding: var(--toolbarbutton-inner-padding) 0;
+  padding: var(--toolbarbutton-inner-padding) 1px;
   margin: 0 !important;
 }
 

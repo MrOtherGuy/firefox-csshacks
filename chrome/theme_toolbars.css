@@ -81,7 +81,7 @@ findbar > .findbar-closebutton:hover > .toolbarbutton-icon{
   background-color: var(--uc-active-color) !important;
 }
 
-.findbar-textbox{ border-right: none !important; }
+.findbar-textbox:not(.minimal){ border-right: none !important; }
 .findbar-find-next{ border-left: none !important; }
 .findbar-textbox:focus-within ~ toolbarbutton{ border-color: var(--toolbar-field-focus-border-color, Highlight) !important; }
 
