@@ -8,6 +8,33 @@
   z-index: -1;
   visibility: hidden;
 }
+
 .tab-close-button:hover{ background-color: var(--lwt-accent-color); }
+
 .tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
+
+/**** ONLY USE ONE OF THE FOLLOWING ****/
+/**** These select the behavior of a scenario where the page has no favicon ****/
+
+/*** Option 1 - no favicon - no close-button ***/
+
+/*
 .tab-icon-image:hover ~ .tab-close-button, .tab-close-button:hover{ visibility: visible; z-index: 1 }
+*/
+
+/*** Option 2 - No icon - always show close-button ***/
+
+/*
+.tab-icon-image:hover ~ .tab-close-button,
+.tab-close-button:hover,
+.tab-icon-image:not([src]) ~ .tab-close-button{ visibility: visible; z-index: 1 }
+.tab-icon-image:not([src]) ~  .tab-close-button{ margin-right:0px !important; }
+*/
+
+/*** Option 3 - No icon - show close-button when cursor is over the tab text ***/
+
+.tab-icon-image:hover ~ .tab-close-button,
+.tab-close-button:hover,
+.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button{ visibility: visible; z-index: 1 }
+.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button,
+.tab-icon-image:not([src]) ~  .tab-close-button:hover {margin-right: 0px !important; }
