@@ -1,0 +1,13 @@
+/* Show tab close button when cursor is over the tab icon */
+
+.tab-close-button{
+  -moz-box-ordinal-group: 0;
+  display: -moz-box !important;
+  position: relative;
+  margin-right: -18px !important;
+  z-index: -1;
+  visibility: hidden;
+}
+.tab-close-button:hover{ background-color: var(--lwt-accent-color); }
+.tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
+.tab-icon-image:hover ~ .tab-close-button, .tab-close-button:hover{ visibility: visible; z-index: 1 }
