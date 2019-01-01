@@ -2,7 +2,34 @@
 
 Stylesheets in this repository are tested only on Windows 10. They should work on current Nightlies but also generally on latest release Firefox unless otherwise noted.
 
+# Loading user*.css files
+
+1. Find your profile folder, if Firefox is running you can find by going to about:support and there should be a button with label "Open Folder" under application basics
+2. Create a new folder to the profile folder and name it "chrome"
+3. userChrome.css and userContent.css files should be created inside this chrome-folder.
+
+Clone this repository or individual files inside that newly created chrome-folder.
+In the end you should have a folder structure like this:
+
+```
+<profile_folder>
+|_chrome
+|   |_chrome
+|   |_content
+|   |_userChrome.css
+|   |_userContent.css
+|_extensions
+|_prefs.js
+...
+all other profile folders and files
+...
+```
+
+In short, create a parent chrome folder to the same directory where prefs.js is - the main profile folder. Firefox loads userContent.css and userChrome.css files only from that non-default chrome-folder.
+
 # Usage
+
+Stylesheets are divided in to chrome and content folders. The difference is that styles inside "content" affect web-pages whereas styles inside "chrome" affect browser UI.
 
 Use stylesheets under "chrome" in userChrome.css
 
