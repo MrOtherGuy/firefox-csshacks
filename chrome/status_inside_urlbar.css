@@ -24,8 +24,8 @@
   font-size: larger;
   color: inherit !important;
 }
-
-#statuspanel-inner{ background-color: var(--toolbar-bgcolor) }
+/* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
+#statuspanel-inner{ background-color: var(--toolbar-non-lwt-bgcolor) }
 
 #statuspanel{ color: lightpink; z-index: -1; }
 #statuspanel[type="status"] { color: skyblue }
