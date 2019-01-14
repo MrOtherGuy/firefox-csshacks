@@ -1,0 +1,17 @@
+/* This very likely only works properly on Windows10 */
+
+#contentAreaContextMenu > .popup-internal-box > .arrowscrollbox-scrollbox{
+display: grid;
+/* 30px will be basically the width of the navigation buttons */
+grid-template-columns: 30px 1fr; 
+grid-template-rows: 0px
+}
+#contentAreaContextMenu > .popup-internal-box > .arrowscrollbox-scrollbox::before{
+  content: "";
+  grid-area: auto / 2 / auto / 2;
+}
+#context-navigation{-moz-box-orient: vertical; grid-area: 1 / 1 / auto / 1 }
+#context-sep-navigation{ display: none }
+#context-navigation ~ * { grid-area: auto / 2 / auto / 2; }
+#context-navigation ~ * { margin-inline-start: -1.45em !important; }
+#context-navigation ~ *:not(.menuitem-iconic){ clip-path: polygon(1.45em 0%, 100% 0%,100% 100%,1.45em 100%) }
