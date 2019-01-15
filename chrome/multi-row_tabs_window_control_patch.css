@@ -1,0 +1,30 @@
+/* This is a supporting style for multirow_tabs_Fx66+ */
+
+/* !! Use customize mode to make menubar permanently enabled !! */
+
+/* 20px wide space on left and right to be able to drag the window */
+#TabsToolbar{ margin: 0 20px; }
+
+#titlebar{ -moz-box-direction: reverse; }
+#toolbar-menubar{
+  height: 40px;
+  margin-bottom: -40px;
+  background-color: var(--toolbar-bgcolor)
+}
+:root[uidensity="compact"]  #toolbar-menubar{ height: 32px; margin-bottom: -32px }
+#nav-bar{ padding-right: 138px; margin-left: 30px; }
+#toolbar-menubar > #menubar-items{
+  position: relative;
+  -moz-box-pack: center;
+  background-image: linear-gradient( to left,transparent,var(--toolbar-bgcolor) 35px);
+}
+
+#main-menubar:last-child{ padding-inline-end: 40px }
+
+#toolbar-menubar > #menubar-items:hover{z-index: 2;}
+#file-menu{
+  padding-inline-start: 30px;
+  background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
+  fill: currentColor;
+  -moz-context-properties: fill
+}
