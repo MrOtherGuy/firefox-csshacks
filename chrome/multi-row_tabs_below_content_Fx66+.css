@@ -1,0 +1,117 @@
+/* For Firefox 66+ only */
+/* !! Use customize mode to make menubar permanently enabled !! */
+/* !! Also, put one flexible space to the left side of the menubar !! */
+
+/* Menubar will be behind nav-bar unless cursor is over window controls or right edge of the "settings" icon */
+/* Window can only be dragged from the settings icon or a ~20px space between menu button and window controls */
+
+
+
+.tabbrowser-tab > stack{ width: 100%; height: 100%; }
+
+.tabbrowser-tab[pinned]{ position: static !important;  }
+
+#tabbrowser-tabs .scrollbutton-up,
+#tabbrowser-tabs .scrollbutton-down,
+#alltabs-button,
+#TabsToolbar #new-tab-button,
+#tabbrowser-tabs spacer{ display: none }
+
+/* Tabs below content */
+
+:root{ --multirow-toolbar-height: 40px; }
+:root[uidensity="compact"]{--multirow-toolbar-height: 32px}
+
+#navigator-toolbox{ -moz-box-ordinal-group: 2 }
+
+#nav-bar{
+  position: fixed !important;
+  margin-right: 138px;
+  margin-left: 30px;
+  /* width == 100vw - margins */
+  width: calc(100vw - 168px);
+  top: 0px;
+}
+
+#nav-bar-overflow-button {
+max-height: 32px !important;
+transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
+}
+
+#PanelUI-button{ float: right; }
+
+#content-deck{ margin-top: var(--multirow-toolbar-height) }
+
+#nav-bar-customization-target{ width: calc(100% - 100px); }
+:root[uidensity="compact"] #nav-bar-customization-target{ width: calc(100% - 82px); }
+
+#nav-bar > *,
+#PanelUI-menu-button{ height: var(--multirow-toolbar-height); }
+
+/* 20px wide space on left and right to be able to drag the window */
+
+#toolbar-menubar{
+  height: var(--multirow-toolbar-height);
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
+}
+
+#toolbar-menubar > #menubar-items{
+  -moz-box-pack: center;
+  height: 100%;
+visibility: hidden;
+  
+  /*background-image: linear-gradient( to left,transparent,var(--toolbar-bgcolor) 35px);*/
+}
+#toolbar-menubar:hover{ z-index: 2 }
+#toolbar-menubar:hover > #menubar-items{
+  visibility: visible;
+  background-image: linear-gradient( to left,transparent,var(--toolbar-non-lwt-bgcolor) 35px);
+}
+
+#toolbar-menubar > .titlebar-buttonbox-container{float: right; height: 100%; background: var(--toolbar-bgcolor)}
+#toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100% ;}
+
+#main-menubar:last-child{ padding-inline-end: 40px }
+#toolbar-menubar > toolbarspring {
+  background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
+  height: 100%;
+  float: left;
+  fill: currentColor;
+  -moz-context-properties: fill;
+  min-width: 28px !important;
+  max-width: 28px !important;
+}
+#PanelUI-button{ margin-right: 20px; }
+
+#tabbrowser-tabs{
+  min-height: unset !important;
+}
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox{
+  display: flex;
+  flex-wrap: wrap;
+}
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+  overflow: -moz-hidden-unscrollable;
+  display: block;
+}
+.tabbrowser-tab{ max-height: var(--multirow-toolbar-height); min-height: var(--multirow-toolbar-height) }
+.tabbrowser-tab[fadein]:not([pinned]){
+  min-width: 100px !important;
+  flex-grow: 1;
+  /*
+  Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
+  Don't set to none or you'll see errors in console when closing tabs
+  */
+ /* max-width: 100vw !important;*/
+}
+
+/* Always show tab close button on hover and never otherwise */
+.tabbrowser-tab .tab-close-button{
+  display:none;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{
+  display:-moz-box !important;
+}
