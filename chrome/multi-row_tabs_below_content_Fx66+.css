@@ -43,7 +43,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 
 #PanelUI-button{ float: right; }
 
-#content-deck{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
+:root:not([inDOMFullscreen]) #content-deck{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
 
 /* Restyle nav-bar and menubar */
 #nav-bar-customization-target{ width: calc(100% - 100px); }
@@ -51,8 +51,6 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 
 #nav-bar > *,
 #PanelUI-menu-button{ height: var(--multirow-toolbar-height); }
-
-/* 20px wide space on left and right to be able to drag the window */
 
 #toolbar-menubar{
   height: var(--multirow-toolbar-height);
@@ -66,8 +64,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   -moz-box-pack: center;
   height: 100%;
 visibility: hidden;
-  
-  /*background-image: linear-gradient( to left,transparent,var(--toolbar-bgcolor) 35px);*/
+
 }
 #toolbar-menubar:hover{ z-index: 2 }
 #toolbar-menubar:hover > #menubar-items{
