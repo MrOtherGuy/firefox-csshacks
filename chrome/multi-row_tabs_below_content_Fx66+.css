@@ -1,6 +1,6 @@
 /* For Firefox 66+ only */
 /* !! Use customize mode to make menubar permanently enabled !! */
-/* !! Also, put one flexible space to the left side of the menubar !! */
+/* !! Also put one flexible space to the left side of the menubar !! */
 
 /* Menubar will be behind nav-bar unless cursor is over window controls or right edge of the "settings" icon */
 /* Window can only be dragged from the settings icon or a ~20px space between menu button and window controls */
@@ -19,10 +19,13 @@
 
 /* Tabs below content */
 
-:root{ --multirow-toolbar-height: 40px; }
+:root{ --multirow-toolbar-height: 40px; --multirow-top-padding: 0px }
+:root[sizemode="maximized"]{ --multirow-top-padding: 8px }
 :root[uidensity="compact"]{--multirow-toolbar-height: 32px}
 
 #navigator-toolbox{ -moz-box-ordinal-group: 2 }
+
+#titlebar{-moz-appearance: -moz-window-titlebar !important; }
 
 #nav-bar{
   position: fixed !important;
@@ -30,7 +33,7 @@
   margin-left: 30px;
   /* width == 100vw - margins */
   width: calc(100vw - 168px);
-  top: 0px;
+  top: var(--multirow-top-padding);
 }
 
 #nav-bar-overflow-button {
@@ -40,8 +43,9 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 
 #PanelUI-button{ float: right; }
 
-#content-deck{ margin-top: var(--multirow-toolbar-height) }
+#content-deck{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
 
+/* Restyle nav-bar and menubar */
 #nav-bar-customization-target{ width: calc(100% - 100px); }
 :root[uidensity="compact"] #nav-bar-customization-target{ width: calc(100% - 82px); }
 
@@ -53,7 +57,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #toolbar-menubar{
   height: var(--multirow-toolbar-height);
   position: fixed;
-  top: 0px;
+  top: var(--multirow-top-padding);
   width: 100vw;
   background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
 }
