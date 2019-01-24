@@ -1,5 +1,6 @@
 /* For Firefox 66+ */
 /* Use multi-row_tabs_window_control_patch.css to hide window controls if you wish */
+/* This file is obsolete, you can use multi-row_tabs.css which should work on Firefox pre- and post-66  */
 
 
 #tabbrowser-tabs{
@@ -31,5 +32,5 @@
 #tabbrowser-tabs .scrollbutton-up,
 #tabbrowser-tabs .scrollbutton-down,
 #alltabs-button,
-#TabsToolbar #new-tab-button,
+:root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-tabs spacer{ display: none }
