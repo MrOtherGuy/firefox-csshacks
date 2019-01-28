@@ -5,23 +5,19 @@
 /* Menubar will be behind nav-bar unless cursor is over window controls or right edge of the "settings" icon */
 /* Window can only be dragged from the settings icon or a ~20px space between menu button and window controls */
 
+/* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
+/* Scrollbar can't be clicked but the rows can be scrolled with mouse */
 
 
-.tabbrowser-tab > stack{ width: 100%; height: 100%; }
+:root{
+  --multirow-toolbar-height: 40px;
+  --multirow-top-padding: 0px;
+  --multirow-n-rows: 3;
+}
 
-.tabbrowser-tab[pinned]{ position: static !important;  }
-
-#tabbrowser-tabs .scrollbutton-up,
-#tabbrowser-tabs .scrollbutton-down,
-#alltabs-button,
-#TabsToolbar #new-tab-button,
-#tabbrowser-tabs spacer{ display: none }
-
-/* Tabs below content */
-
-:root{ --multirow-toolbar-height: 40px; --multirow-top-padding: 0px }
 :root[sizemode="maximized"]{ --multirow-top-padding: 8px }
 :root[uidensity="compact"]{--multirow-toolbar-height: 32px}
+:root{ border-top-width: 0px !important }
 
 #navigator-toolbox{ -moz-box-ordinal-group: 2 }
 
@@ -37,7 +33,7 @@
 }
 
 #nav-bar-overflow-button {
-max-height: 32px !important;
+max-height: 31px !important;
 transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 }
 
@@ -85,6 +81,7 @@ visibility: hidden;
   min-width: 28px !important;
   max-width: 28px !important;
 }
+
 #PanelUI-button{ margin-right: 20px; }
 
 #tabbrowser-tabs{
@@ -93,12 +90,18 @@ visibility: hidden;
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox{
   display: flex;
   flex-wrap: wrap;
+  max-height: calc(var(--multirow-toolbar-height) * var(--multirow-n-rows));
+  overflow-y: auto;
+  scrollbar-color: var(--toolbar-bgcolor) var(--lwt-accent-color);
+  scrollbar-width: thin;
 }
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
   overflow: -moz-hidden-unscrollable;
   display: block;
 }
 .tabbrowser-tab{ max-height: var(--multirow-toolbar-height); min-height: var(--multirow-toolbar-height) }
+.tabbrowser-tab > stack{ width: 100%; height: 100%; }
+
 .tabbrowser-tab[fadein]:not([pinned]){
   min-width: 100px !important;
   flex-grow: 1;
@@ -106,8 +109,20 @@ visibility: hidden;
   Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
   Don't set to none or you'll see errors in console when closing tabs
   */
- /* max-width: 100vw !important;*/
+ /*! max-width: 100vw !important; */
 }
+
+#tabbrowser-tabs .tabbrowser-tab[pinned]{
+  position: static !important;
+  margin-inline-start: 0px !important;
+}
+
+#tabbrowser-tabs .scrollbutton-up,
+#tabbrowser-tabs .scrollbutton-down,
+#alltabs-button,
+#TabsToolbar #new-tab-button,
+#tabbrowser-tabs spacer,
+.tabbrowser-tab::after{ display: none } /* Also disables tab separators since they mysteriously break tab-row scrolling */
 
 /* Always show tab close button on hover and never otherwise */
 .tabbrowser-tab .tab-close-button{

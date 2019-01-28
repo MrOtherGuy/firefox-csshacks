@@ -4,6 +4,11 @@
 
 /* It's recommended to move tabs new-tab-button outside tabs toolbar */
 
+/* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
+/* Scrollbar can't be clicked but the rows can be scrolled with mouse */
+
+:root{ --multirow-n-rows: 3 }
+
 #tabbrowser-tabs{
   min-height: unset !important;
   padding-inline-start: 0px !important
@@ -14,6 +19,10 @@
   #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox{
     display: flex;
     flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
+    scrollbar-color: var(--toolbar-bgcolor) var(--lwt-accent-color);
+    scrollbar-width: thin;
   }
   #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
     overflow: -moz-hidden-unscrollable;
@@ -36,12 +45,11 @@
   }
 }
 
-.tabbrowser-tab{ max-height: 32px }
-.tabbrowser-tab[pinned]{
+.tabbrowser-tab{ height: var(--tab-min-height); }
+#tabbrowser-tabs .tabbrowser-tab[pinned]{
   position: static !important;
   margin-inline-start: 0px !important;
 }
-
 
 .tabbrowser-tab[fadein]:not([pinned]){
   min-width: 100px !important;
@@ -59,4 +67,5 @@
 #tabbrowser-tabs .scrollbutton-down,
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
-#tabbrowser-tabs spacer{ display: none }
+#tabbrowser-tabs spacer,
+.tabbrowser-tab::after{ display: none }
