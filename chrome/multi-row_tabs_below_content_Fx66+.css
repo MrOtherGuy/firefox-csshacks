@@ -59,8 +59,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #toolbar-menubar > #menubar-items{
   -moz-box-pack: center;
   height: 100%;
-visibility: hidden;
-
+  visibility: hidden;
 }
 #toolbar-menubar:hover{ z-index: 2 }
 #toolbar-menubar:hover > #menubar-items{
@@ -122,7 +121,7 @@ visibility: hidden;
 #alltabs-button,
 #TabsToolbar #new-tab-button,
 #tabbrowser-tabs spacer,
-.tabbrowser-tab::after{ display: none } /* Also disables tab separators since they mysteriously break tab-row scrolling */
+.tabbrowser-tab::after{ display: none !important } /* Also disables tab separators since they mysteriously break tab-row scrolling */
 
 /* Always show tab close button on hover and never otherwise */
 .tabbrowser-tab .tab-close-button{

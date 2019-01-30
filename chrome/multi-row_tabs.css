@@ -68,4 +68,4 @@
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-tabs spacer,
-.tabbrowser-tab::after{ display: none }
+.tabbrowser-tab::after{ display: none !important }
