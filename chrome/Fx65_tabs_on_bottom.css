@@ -24,3 +24,5 @@
 }
 .titlebar-placeholder,
 #TabsToolbar .titlebar-spacer{ display: none; }
+/* Also hide the toolbox bottom border which isn't at bottom with this setup */
+#navigator-toolbox::after{ display: none !important; }
