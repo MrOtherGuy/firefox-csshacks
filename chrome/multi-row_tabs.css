@@ -6,7 +6,8 @@
 
 /* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
 /* Scrollbar can't be clicked but the rows can be scrolled with mouse */
-
+/* This maximum visible rows won't work before Fx66 */
+/* So this setting does nothing on Fx65 and all tab rows will be shown */
 :root{ --multirow-n-rows: 3 }
 
 #tabbrowser-tabs{
