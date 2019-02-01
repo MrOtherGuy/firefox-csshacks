@@ -1,5 +1,10 @@
-#main-window[sizemode="normal"]{ border-top: none !important }
+:root[sizemode="normal"]{ border-top: none !important }
 #navigator-toolbox::after{ content: none !important }
+
+/* Removes few remaining extra lines above tabs in non-maximized windows */
+/* Also prevents small vertical shift when moving tabs in compact density - who knows why */
+:root[sizemode="normal"] #titlebar{ -moz-appearance: none !important; }
+
 
 /* OPTIONAL - uncomment to remove still remaining space atop of tabs */
 /* This just increases the height of tabs by few pixels, not decrease the toolbar height */
