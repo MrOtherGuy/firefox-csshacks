@@ -1,5 +1,15 @@
 /* STATUSPANEL INSIDE URLBAR */
 
+/**************
+IMPORTANT WARNING
+
+Using this style can lead to long tab switch times (and probably other problems). Everything may be fine when Firefox starts but situation gets gradually worse, although pretty slowly.
+
+Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
+
+**************/
+
+
 #urlbar .urlbar-input-box{ display: -moz-stack; }
 /* -moz-stack causes an subtle issue where in certain scenarios a weirdly aligned "http(s)://" may show up */
 
