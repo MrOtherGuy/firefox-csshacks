@@ -34,5 +34,8 @@
   padding-right: calc(3 * 46px + var(--window-drag-space-width));
 }
 
+/* 1px margin on touch density causes tabs to be too high */
+.tab-close-button{ margin-top: 0 !important }
+
 /* Hide dropdown placeholder */
 #urlbar-container:not(:hover) .urlbar-history-dropmarker{margin-inline-start: -28px;}
