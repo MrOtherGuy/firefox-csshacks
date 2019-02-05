@@ -1,6 +1,6 @@
 /* Makes tabs to appear on multiple lines */
 /* Tab reordering will not work and can't be made to work */
-/* On Firefox 66 you can use multi-row_tabs_window_control_patch.css to hide window controls if you wish */
+/* You can use multi-row_tabs_window_control_patch.css to move window controls to nav-bar*/
 
 /* It's recommended to move tabs new-tab-button outside tabs toolbar */
 
