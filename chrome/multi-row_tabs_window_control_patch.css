@@ -12,7 +12,7 @@
   background-color: var(--toolbar-bgcolor)
 }
 :root[uidensity="compact"]  #toolbar-menubar{ height: 32px; margin-bottom: -32px }
-#nav-bar{ padding-right: 138px; margin-left: 30px; }
+:root[tabsintitlebar] #nav-bar{ padding-right: 138px; margin-left: 30px; }
 #toolbar-menubar > #menubar-items{
   position: relative;
   -moz-box-pack: center;
