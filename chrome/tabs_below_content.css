@@ -1,0 +1,39 @@
+/* Modify this to change window drag space width */
+#nav-bar{ --window-drag-space-width: 24px }
+
+.titlebar-buttonbox-container{
+  position: fixed;
+  top:0;
+  right:0;
+  height: 40px;
+  z-index: 3;
+  visibility: visible !important;
+  display: -moz-box !important;
+}
+
+:root[sizemode="fullscreen"] > #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
+
+:root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
+.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
+
+#titlebar{ -moz-appearance: none !important; }
+/* Counteract -moz-appearance when maximized */
+:root[sizemode="maximized"] > #navigator-toolbox{ padding-top: 8px !important; }
+:root[sizemode="maximized"] .titlebar-buttonbox-container{ top: 8px }
+
+/* Space to drag the window on both sides of navbar */
+:root[tabsintitlebar="true"] #nav-bar{
+  padding-right: calc(138px + var(--window-drag-space-width,0px));
+  padding-left: var(--window-drag-space-width,0px)
+}
+
+/* Move tabs below content */
+:root:not([inDOMFullscreen]) #content-deck{ margin-bottom: var(--tab-min-height) }
+#TabsToolbar{ position: fixed; bottom: 0px; width: 100vw; }
+
+/* Hide stuff that doesn't make sense with tabs below content */
+#TabsToolbar > .titlebar-buttonbox-container,
+#window-controls, /* Fullscreen window controls */
+#TabsToolbar .titlebar-spacer{
+  display: none !important;
+}
