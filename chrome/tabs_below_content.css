@@ -16,10 +16,15 @@
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 
+/* Re-adjust window cotrols if menubar is permanently enabled  */
+:root[tabsintitlebar="true"]:not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"]{ transform: translateX(0px); }
+:root[tabsintitlebar="true"]:not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"] .titlebar-buttonbox-container{ height: 100%; }
+:root[tabsintitlebar="true"]:not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"] .titlebar-button{ padding: 2px 17px !important; }
+
 #titlebar{ -moz-appearance: none !important; }
 /* Counteract -moz-appearance when maximized */
 :root[sizemode="maximized"] > #navigator-toolbox{ padding-top: 8px !important; }
-:root[sizemode="maximized"] .titlebar-buttonbox-container{ top: 8px }
+:root[sizemode="maximized"] #toolbar-menubar:not([autohide="false"]) .titlebar-buttonbox-container{ top: 8px }
 
 /* Space to drag the window on both sides of navbar */
 :root[tabsintitlebar="true"] #nav-bar{
