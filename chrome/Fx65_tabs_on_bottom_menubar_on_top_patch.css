@@ -1,10 +1,12 @@
 /* Menubar on top patch - use with Fx65_tabs_on_bottom.css */
 /* Only really useful if menubar is ALWAYS visible */
 
+:root{ --uc-window-control-width: 0px !important }
+
 #navigator-toolbox{ margin-top: 22px }
 #toolbar-menubar{
   position: fixed;
-  top: 0px;
+  top: var(--uc-titlebar-padding,0px);
   height: 22px;
   margin-top:1px;
   width: 100%;
