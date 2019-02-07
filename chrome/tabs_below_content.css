@@ -1,5 +1,10 @@
 /* Modify this to change window drag space width */
-#nav-bar{ --window-drag-space-width: 24px }
+
+:root{
+  --uc-window-control-width: 138px;
+}
+
+#navigator-toolbox{ --window-drag-space-width: 24px }
 
 .titlebar-buttonbox-container{
   position: fixed;
@@ -11,15 +16,15 @@
   display: -moz-box !important;
 }
 
-:root[sizemode="fullscreen"] > #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
+:root[inFullscreen] > #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
 
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 
 /* Re-adjust window cotrols if menubar is permanently enabled  */
-:root[tabsintitlebar="true"]:not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"]{ transform: translateX(0px); }
-:root[tabsintitlebar="true"]:not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"] .titlebar-buttonbox-container{ height: 100%; }
-:root[tabsintitlebar="true"]:not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"] .titlebar-button{ padding: 2px 17px !important; }
+:root[tabsintitlebar="true"]:not([inFullscreen]) #toolbar-menubar[autohide="false"]{ transform: translateX(0px); }
+:root[tabsintitlebar="true"]:not([inFullscreen]) #toolbar-menubar[autohide="false"] .titlebar-buttonbox-container{ height: 100%; }
+:root[tabsintitlebar="true"]:not([inFullscreen]) #toolbar-menubar[autohide="false"] .titlebar-button{ padding: 2px 17px !important; }
 
 #titlebar{ -moz-appearance: none !important; }
 /* Counteract -moz-appearance when maximized */
@@ -27,8 +32,8 @@
 :root[sizemode="maximized"] #toolbar-menubar:not([autohide="false"]) .titlebar-buttonbox-container{ top: 8px }
 
 /* Space to drag the window on both sides of navbar */
-:root[tabsintitlebar="true"] #nav-bar{
-  padding-right: calc(138px + var(--window-drag-space-width,0px));
+:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+  padding-right: calc(var(--uc-window-control-width) + var(--window-drag-space-width,0px));
   padding-left: var(--window-drag-space-width,0px)
 }
 

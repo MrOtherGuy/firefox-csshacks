@@ -4,10 +4,12 @@ Use Fx65_tabs_on_bottom_menubar_on_top_patch if you
 have menubar permanently enabled and want it on top
  */
 
-:root{ --uc-titlebar-padding: 0px; --uc-window-control-width: 138px }
+:root{
+  --uc-titlebar-padding: 0px;
+  --uc-window-control-width: 138px
+}
 :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
 :root[tabsintitlebar="true"] #nav-bar{ --window-drag-space-width: 24px; }
-
 
 .titlebar-buttonbox-container{
   position: fixed;

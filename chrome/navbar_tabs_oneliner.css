@@ -18,8 +18,14 @@
 #nav-bar{
 	margin-right:calc(100vw - var(--uc-navigationbar-width));
   margin-top: calc(0px - var(--uc-toolbar-height));
-	padding-left: var(--window-drag-space-width);
 }
+
+/* Space to drag the window on both sides of navbar */
+:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+  padding-right: 0px !important;
+  padding-left: var(--window-drag-space-width,0px)
+}
+
 /* 1px margin on touch density causes tabs to be too high */
 .tab-close-button{ margin-top: 0 !important }
 

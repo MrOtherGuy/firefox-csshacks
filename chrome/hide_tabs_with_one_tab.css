@@ -3,7 +3,9 @@
 /* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
 
 /* Configurable window drag space  */
-:root[sizemode="normal"] #nav-bar{ --window-drag-space-width: 20px }
+#navigator-toolbox{
+  --window-drag-space-width: 20px;
+}
 
 #titlebar{ -moz-appearance: none !important; }
 #tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox{ min-height: 0 !important; }
@@ -36,4 +38,5 @@
   height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
   -moz-appearance: initial !important;
 }
-#nav-bar{ padding: 0 var(--window-drag-space-width,0px) }
+
+:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar { padding: 0px var(--window-drag-space-width,0px) }

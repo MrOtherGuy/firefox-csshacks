@@ -1,12 +1,23 @@
 /* Hide tabs toolbar Fx65+ */
-:root{--uc-toolbar-height: 32px}
+:root{
+  --uc-toolbar-height: 32px;
+  --uc-window-control-width: 138px;
+}
+#navigator-toolbox{ --window-drag-space-width: 24px; }
+
 :root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
+
 
 #TabsToolbar{visibility: collapse}
 
-#nav-bar{
+:root:not([inFullscreen]) #nav-bar{
   margin-top: calc(0px - var(--uc-toolbar-height));
-  padding-right: 138px;
+}
+
+/* Space to drag the window on both sides of navbar */
+:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+  padding-right: calc(var(--uc-window-control-width) + var(--window-drag-space-width,0px));
+  padding-left: var(--window-drag-space-width,0px)
 }
 
 #toolbar-menubar{
