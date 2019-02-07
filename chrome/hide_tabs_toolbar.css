@@ -3,13 +3,11 @@
 :root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
 
 #TabsToolbar{visibility: collapse}
-#nav-bar,
-#PersonalToolbar{
-  background: transparent !important;
-}
-#navigator-toolbox{ background: var(--toolbar-bgcolor) var(--toolbar-bgimage) }
 
-#nav-bar{margin: calc(0px - var(--uc-toolbar-height)) 138px 0 0 }
+#nav-bar{
+  margin-top: calc(0px - var(--uc-toolbar-height));
+  padding-right: 138px;
+}
 
 #toolbar-menubar{
   min-height:unset !important;
