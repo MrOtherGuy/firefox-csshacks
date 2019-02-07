@@ -54,7 +54,7 @@
 
 .tabbrowser-tab[fadein]:not([pinned]){
   min-width: 100px !important;
-  flex-grow: 1;
+  flex-grow: 1; /* Change to 0 for fixed-width tabs using the above width. 8/
   /*
   Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
   Don't set to none or you'll see errors in console when closing tabs
