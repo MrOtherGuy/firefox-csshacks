@@ -38,5 +38,5 @@
   height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
   -moz-appearance: initial !important;
 }
-
+/* Space to drag the window on both sides of navbar */
 :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar { padding: 0px var(--window-drag-space-width,0px) }
