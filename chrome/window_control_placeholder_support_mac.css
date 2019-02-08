@@ -1,0 +1,13 @@
+/* Creates placeholders for window controls */
+/* For window controls on LEFT side of the window */
+/* This is a supporting file used by other stylesheets */
+
+:root{
+  --uc-window-control-width: 72px;
+  --uc-window-drag-space-width: 24px;
+}
+
+:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+  padding-left: calc(var(--uc-window-control-width) + var(--uc-window-drag-space-width,0px));
+  padding-right: var(--window-drag-space-width);
+}

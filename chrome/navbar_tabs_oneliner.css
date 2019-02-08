@@ -1,12 +1,17 @@
+/*Make tabs and navbar appear side-by-side tabs on right */
+
 /* Modify these to change relative widths or default height */
-#navigator-toolbox{ --uc-navigationbar-width: 40vw; --uc-toolbar-height: 40px; --window-drag-space-width: 20px}
+#navigator-toolbox{
+	--uc-navigationbar-width: 40vw;
+	--uc-toolbar-height: 40px;
+}
 /* Override for other densities */
 :root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; }
 :root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1100px){
   #urlbar-container{ min-width:unset !important }
 }
 
@@ -18,16 +23,23 @@
 #nav-bar{
 	margin-right:calc(100vw - var(--uc-navigationbar-width));
   margin-top: calc(0px - var(--uc-toolbar-height));
+	padding-right: 0px !important;
 }
 
-/* Space to drag the window on both sides of navbar */
+/* Space to drag the window on left side of navbar */
 :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
-  padding-right: 0px !important;
-  padding-left: var(--window-drag-space-width,0px)
+  padding-left: var(--uc-window-drag-space-width,20px);
+}
+
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  :root:not([inFullscreen]) #nav-bar{
+    padding-left: calc(var(--uc-window-control-width,72px) + var(--uc-window-drag-space-width,20px));
+  }
+  .titlebar-buttonbox-container{ position: fixed; left: 0px; z-index: 3; }
 }
 
 /* 1px margin on touch density causes tabs to be too high */
 .tab-close-button{ margin-top: 0 !important }
 
 /* Hide dropdown placeholder */
-#urlbar-container:not(:hover) .urlbar-history-dropmarker{margin-inline-start: -28px;}
+#urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; }

@@ -1,23 +1,24 @@
 /* Hide tabs toolbar Fx65+ */
-:root{
-  --uc-toolbar-height: 32px;
-  --uc-window-control-width: 138px;
-}
-#navigator-toolbox{ --window-drag-space-width: 24px; }
+
+/* IMPORTANT */
+/*
+Get EITHER
+window_control_placeholder_support.css
+OR
+window_control_placeholder_support_mac.css
+
+Window controls will be all wrong without it
+
+*/
+
+:root{ --uc-toolbar-height: 32px; }
 
 :root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
 
-
-#TabsToolbar{visibility: collapse}
+#TabsToolbar{ visibility: collapse }
 
 :root:not([inFullscreen]) #nav-bar{
   margin-top: calc(0px - var(--uc-toolbar-height));
-}
-
-/* Space to drag the window on both sides of navbar */
-:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
-  padding-right: calc(var(--uc-window-control-width) + var(--window-drag-space-width,0px));
-  padding-left: var(--window-drag-space-width,0px)
 }
 
 #toolbar-menubar{

@@ -2,10 +2,16 @@
 /* Firefox 65+ only */
 /* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
 
-:root{ --uc-window-control-width: 138px; }
+/* IMPORTANT */
+/*
+Get EITHER
+window_control_placeholder_support.css
+OR
+window_control_placeholder_support_mac.css
 
-/* Configurable window drag space  */
-#navigator-toolbox{ --window-drag-space-width: 20px }
+Window controls will be all wrong without it
+
+*/
 
 #titlebar{ -moz-appearance: none !important; }
 /* We'll use window controls from menubar instead */
@@ -30,6 +36,7 @@
 
 /* Button re-styling */
 #tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
+
 #tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
   padding: 0 !important;
   transform: scale(0.6);
@@ -46,9 +53,3 @@
 }
 
 :root:not([customizing]) #toolbar-menubar[autohide][inactive] > #menubar-items{ pointer-events: none; opacity: 0 }
-
-/* Space to drag the window on both sides of navbar */
-:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
-  padding-right: calc(var(--uc-window-control-width) + var(--window-drag-space-width,0px));
-  padding-left: var(--window-drag-space-width,0px)
-}

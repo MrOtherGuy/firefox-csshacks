@@ -2,13 +2,12 @@
 /* Firefox 65+ only */
 /* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
 
-/* Configurable window drag space  */
-#navigator-toolbox{
-  --window-drag-space-width: 20px;
-}
+:root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
 
 #titlebar{ -moz-appearance: none !important; }
+
 #tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
 :root:not([customizing]) #TabsToolbar .titlebar-button{
   -moz-appearance: none !important;
@@ -19,12 +18,14 @@
   margin: 0 !important;
 }
 #tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
+
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
   visibility: collapse !important;
 }
 
 /* Button re-styling */
 #tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
+
 #tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
   padding: 0 !important;
   transform: scale(0.6);
@@ -32,11 +33,11 @@
 }
 /* Extra top padding  in maximized window */
 :root[sizemode="maximized"] > #navigator-toolbox{ padding-top:7px !important; }
+
 /* Fix window controls not being clickable */
 #toolbar-menubar:hover{
   min-height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
   height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
   -moz-appearance: initial !important;
 }
-/* Space to drag the window on both sides of navbar */
-:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar { padding: 0px var(--window-drag-space-width,0px) }
+#nav-bar{ padding: 0 var(--uc-window-drag-space-width,0px) }
