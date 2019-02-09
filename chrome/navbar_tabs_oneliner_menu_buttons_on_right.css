@@ -2,13 +2,8 @@
 
 /* IMPORTANT */
 /*
-Get EITHER
-window_control_placeholder_support.css
-OR
-window_control_placeholder_support_mac.css
-
+Get window_control_placeholder_support.css
 Window controls will be all wrong without it
-
 */
 
 /* Modify these to change relative widths or default height */
@@ -45,7 +40,7 @@ Window controls will be all wrong without it
   #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-width)) }
 }
 
-#TabsToolbar > :not(hbox){ position: relative !important; z-index: 2 }
+#TabsToolbar > .toolbar-items{ position: relative !important; z-index: 2 }
 .titlebar-placeholder[type="post-tabs"],
 .titlebar-spacer[type="post-tabs"]{
   width: calc(var(--uc-buttons-width) + var(--uc-window-drag-space-width)) !important;

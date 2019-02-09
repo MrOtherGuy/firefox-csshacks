@@ -1,6 +1,7 @@
 /* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs */
 /* Firefox 65+ only */
-/* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
+
+/* REMOVE ALL BUTTONS you can from the tabs toolbar or this won't work properly */
 
 :root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
 

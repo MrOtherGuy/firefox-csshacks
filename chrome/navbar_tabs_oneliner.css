@@ -1,5 +1,12 @@
 /*Make tabs and navbar appear side-by-side tabs on right */
 
+/* IMPORTANT */
+/*
+Get window_control_placeholder_support.css
+Window controls will be all wrong without it
+*/
+
+
 /* Modify these to change relative widths or default height */
 #navigator-toolbox{
 	--uc-navigationbar-width: 40vw;
