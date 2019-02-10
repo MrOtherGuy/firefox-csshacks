@@ -1,6 +1,8 @@
 /* Creates placeholders for window controls */
 /* This is a supporting file used by other stylesheets */
 
+/* This file should preferably be imported before other stylesheets */
+
 /* Defaults for window controls on RIGHT side of the window */
 :root{
   --uc-window-control-width: 138px;
