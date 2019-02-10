@@ -32,10 +32,8 @@ Window controls will be all wrong without it
 #nav-bar{ margin-top: calc(0px - var(--uc-toolbar-height)); }
 
 #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-width)) }
+
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root:not([inFullscreen]) #nav-bar{
-    padding-left: calc(var(--uc-window-control-width,72px) + var(--uc-window-drag-space-width,20px));
-  }
   .titlebar-buttonbox-container{ position: fixed; left: 0px; z-index: 3; }
   #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-width)) }
 }

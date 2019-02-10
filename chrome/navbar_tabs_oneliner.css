@@ -39,9 +39,6 @@ Window controls will be all wrong without it
 }
 
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root:not([inFullscreen]) #nav-bar{
-    padding-left: calc(var(--uc-window-control-width,72px) + var(--uc-window-drag-space-width,20px));
-  }
   .titlebar-buttonbox-container{ position: fixed; left: 0px; z-index: 3; }
 }
 
