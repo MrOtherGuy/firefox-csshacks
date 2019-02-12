@@ -33,11 +33,6 @@ Window controls will be all wrong without it
 	padding-right: 0px !important;
 }
 
-/* Space to drag the window on left side of navbar */
-:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
-  padding-left: var(--uc-window-drag-space-width,20px);
-}
-
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   .titlebar-buttonbox-container{ position: fixed; left: 0px; z-index: 3; }
 }
