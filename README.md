@@ -45,7 +45,10 @@ You can import the stylesheets with @-rule import like this:
 
 Note that all `@import` rules need to be placed before any other rules in the file, including @namespace rules. Additionally, the order of imported files is just as important as the order of rules within one file.
 
-**Most notably, you are advised to import theme_ files before any other modules.**
+Import any *_patch.css files *after* their base stylesheet.
+Import the shared window_control_support.css *before* other stylesheets.
+
+Additionally, you are advised to import theme_ files before any other modules.
 
 # Theme
 
