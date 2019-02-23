@@ -2,11 +2,10 @@
 
 /**************
 IMPORTANT WARNING
-
 Using this style can lead to long tab switch times (and probably other problems). Everything may be fine when Firefox starts but situation gets gradually worse, although pretty slowly.
-
 Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
 
+As a workaround, the -moz-element background image is removed somewhat often which seems work at first glance. But there might still be some related issues on really long sessions. Just be aware.
 **************/
 
 
@@ -23,12 +22,20 @@ Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
   background-repeat: no-repeat;
   background-image: -moz-element(#statuspanel);
 }
+/* Using -moz-element() causes some problems after Firefox has been running several hours such as long tab switch times. For this reason the background image is removed on hover and focused states which appears to clear the state. */
+
+/* Hide the status ovelay when urlbar is hovered */
+#urlbar:hover .urlbar-input-box::after,
+#urlbar[focused] .urlbar-input-box::after{
+	visibility: hidden;
+	/* Remove the image to get rid of -moz-element() related problems */
+	background-image: none !important
+}
 
 :root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 0px }
 :root[uidensity="touch"] #urlbar .urlbar-input-box::after{ background-position-y: 3px }
 
-/* Hide the status ovelay when urlbar is hovered */
-#urlbar:hover .urlbar-input-box::after{ visibility: hidden }
+
 
 #urlbar .urlbar-input-box::after{
   display: -moz-box;
