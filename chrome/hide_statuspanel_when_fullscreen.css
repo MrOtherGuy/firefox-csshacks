@@ -1,0 +1,4 @@
+/* Always hide status-panel when the page is in fullscreen mode such as fullscreen video player */
+/* No effect on Firefox fullscreen mode (activated with F11 key) - except when the page is in fullscreen */
+
+:root[inDOMFullscreen] #statuspanel{ display: none !important }
