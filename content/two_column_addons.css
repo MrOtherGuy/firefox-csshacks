@@ -1,0 +1,18 @@
+/* Show addons in two columns */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@-moz-document url("about:addons"){
+  #addon-list{
+    display: grid;
+    grid-template-areas: "a a";
+    grid-template-columns: 1fr 1fr;
+		grid-auto-rows: min-content;
+  }
+  .control-container{ display: flex; }
+  .addon-control{ margin: 3px }
+  .addon.card{ padding-bottom: 0px !important; padding-top: 0px !important }
+  .addon.card > .content-container { display: flex;  }
+  .content-inner-container{ flex-grow: 1; }
+  .content-inner-container > hbox{ display: block }
+  .icon{ min-width: 24px }
+}
