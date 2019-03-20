@@ -20,6 +20,11 @@ Window controls will be all wrong without it
   right:0;
   height: 40px;
 }
+/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+	:root{ --uc-titlebar-padding: 0px !important }
+	.titlebar-buttonbox-container{ left:0; right: unset; }
+}
 
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
 
