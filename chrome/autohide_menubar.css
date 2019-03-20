@@ -1,0 +1,23 @@
+/* Makes menubar behave like on mac */
+/* Menubar will be shown when cursor touches top of the spacers on both side of tabs. Window controls will be in menubar, so they are automatically hidden */
+/* Make sure you have menubar enabled */
+
+#TabsToolbar > .toolbar-items{ position: relative; z-index: 5; }
+#toolbar-menubar > .titlebar-buttonbox-container{ float: right }
+#TabsToolbar > .titlebar-spacer{ display: -moz-box !important; }
+
+#toolbar-menubar{
+	--uc-menubar-height: 36px;
+	position: fixed;
+	width: 100vw; 
+	height: var(--uc-menubar-height);
+	margin-top: calc(8px - var(--uc-menubar-height));
+	transition: margin-top 150ms linear !important;
+	-moz-window-dragging: no-drag;
+	z-index:4;
+}
+#toolbar-menubar:hover{
+	background-color: var(--toolbar-bgcolor) !important;
+	margin-top: 0px;
+	z-index: 6
+}
