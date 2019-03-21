@@ -8,8 +8,11 @@
 /* Scrollbar can't be clicked but the rows can be scrolled with mouse */
 /* This maximum visible rows won't work before Fx66 */
 /* So this setting does nothing on Fx65 and all tab rows will be shown */
-:root{ --multirow-n-rows: 3 }
-:root{ --multirow-tab-min-width: 150px }
+:root{
+    --multirow-n-rows: 3;
+    --multirow-tab-min-width: 100px;
+    --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
+}
 
 #tabbrowser-tabs{
   min-height: unset !important;
@@ -55,7 +58,7 @@
 
 .tabbrowser-tab[fadein]:not([pinned]){
   min-width: var(--multirow-tab-min-width) !important;
-  flex-grow: 1;
+  flex-grow: var(--multirow-tab-dynamic-width);
   /*
   Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
   Don't set to none or you'll see errors in console when closing tabs
