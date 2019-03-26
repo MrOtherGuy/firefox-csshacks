@@ -31,4 +31,8 @@ Window controls will be all wrong without it
 }
 
 #toolbar-menubar:not([inactive]){ z-index: 2 }
-#toolbar-menubar[inactive] > #menubar-items { opacity: 0; margin-left: var(--uc-window-drag-space-width,0px) }
+#toolbar-menubar[inactive] > #menubar-items {
+	opacity: 0;
+	pointer-events: none;
+	margin-left: var(--uc-window-drag-space-width,0px)
+}
