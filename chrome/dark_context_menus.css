@@ -1,0 +1,33 @@
+/* Makes context menus dark */
+/* Uses dark theme colors but does not respect dark theme variables (they wouldn't work on sidebar context menu) */
+
+:root{
+  --uc-menu-bkgnd: rgb(74,74,79);
+  --uc-menu-color: rgb(230,230,230);
+  --uc-menu-dimmed: rgba(255,255,255,0.1);
+  --uc-menu-disabled: rgb(50,50,50);
+}
+
+menupopup,
+menu,
+menuitem{ -moz-appearance: none !important; }
+
+menuitem,
+menu{ min-height: 1.8em }
+
+menupopup,
+#context-navigation{
+  color: var(--uc-menu-color) !important;
+  padding: 2px;
+  background-color: var(--uc-menu-bkgnd) !important;
+  border-color: var(--uc-menu-disabled) !important;
+}
+
+menu:hover,
+menu[_moz-menuactive],
+menu[open],
+menuitem:hover,
+menuitem[_moz-menuactive]{ background-color: var(--uc-menu-dimmed) !important; color: inherit !important; }
+
+menu[disabled="true"],
+menuitem[disabled="true"]{ color: var(--uc-menu-disabled) !important; }
