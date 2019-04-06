@@ -13,6 +13,7 @@
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
 #browser-bottombox,
+#customization-container,
 findbar{
 	background-color: var(--uc-light-bkgnd-color) !important;
 	color: var(--uc-text-color) !important;
