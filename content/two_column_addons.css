@@ -2,6 +2,7 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @-moz-document url("about:addons"){
+  #list-view{ overflow: auto }
 	/* Test for Firefox > 66 */
 	@supports (inset-block:auto){
     #addon-list{
@@ -9,6 +10,8 @@
       grid-template-areas: "a a";
       grid-template-columns: 1fr 1fr;
 		  grid-auto-rows: min-content;
+      overflow: hidden !important;
+      padding-bottom: 80px; /* increase this value if addons list content get cut */
     }
   }
 	/* Test for Firefox < 66 */
@@ -26,5 +29,6 @@
   .addon.card > .content-container { display: flex; }
   .content-inner-container{ flex-grow: 1; }
   .content-inner-container > hbox{ display: block }
+  .card-heading-image{ margin: 0 !important; }
   .icon{ min-width: 24px }
 }
