@@ -12,6 +12,7 @@
     background-color: var(--in-content-box-background) !important;
     color: var(--in-content-text-color) !important;
   }
+	.detail-row, .detail-row-complex{ text-shadow: none !important; }
 }
 @-moz-document url-prefix("https://discovery.addons.mozilla.org/"){
   html|*{ color: inherit !important; }
