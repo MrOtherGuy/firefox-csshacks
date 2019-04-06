@@ -69,7 +69,8 @@ menu[disabled="true"]:hover{
 .search-panel-current-input,
 panelview,
 .PanelUI-subView,
-.autocomplete-richlistbox{
+.autocomplete-richlistbox,
+#urlbar-results{
    background-color:  var(--uc-dark-bkgnd-color) !important;
 }
 
