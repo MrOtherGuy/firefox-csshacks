@@ -1,19 +1,37 @@
+/* Recolors addons manager, preferences page and new about:config */
+
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
-@-moz-document url("about:addons"){
+@-moz-document url-prefix("about:addons"),
+  url-prefix("about:preferences"){
   :root{
     --in-content-page-color: rgb(210,210,210) !important;
     --in-content-text-color: rgb(210,210,210) !important;
     --in-content-page-background: rgb(46,54,69) !important;
     --in-content-box-background: rgba(255,255,255,0.1) !important;
   }
-  .message-bar,.alert{
+  
+  menulist > menupopup{ background-color: var(--in-content-page-background) !important; }
+  
+  .updateSettingCrossUserWarningContainer,
+  .info-panel,
+  .extension-controlled,
+  .message-bar,
+  .alert,
+  treecol{
     background-color: var(--in-content-box-background) !important;
     color: var(--in-content-text-color) !important;
   }
-	.detail-row, .detail-row-complex{ text-shadow: none !important; }
+  .menulist-dropmarker,
+  .checkbox-icon{
+    -moz-context-properties: fill;
+    fill : CurrentColor !important;
+  }
 }
+
+/* Get addons page */
 @-moz-document url-prefix("https://discovery.addons.mozilla.org/"){
   html|*{ color: inherit !important; }
   html|html,html|body{
@@ -21,4 +39,14 @@
     color: rgb(210,210,210) !important;
   }
   html|div.addon,html|div.Notice{ background-color: rgba(255,255,255,0.1) !important; }
+}
+
+/* New about:config */
+@-moz-document url-prefix("about:config"){
+  html|html{
+    --in-content-page-color: rgb(210,210,210) !important;
+    --in-content-text-color: rgb(210,210,210) !important;
+    --in-content-page-background: rgb(46,54,69) !important;
+    --in-content-box-background: rgb(56,64,79) !important;
+  }
 }
