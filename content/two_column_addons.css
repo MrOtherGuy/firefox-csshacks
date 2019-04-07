@@ -4,7 +4,7 @@
 @-moz-document url("about:addons"){
   #list-view{ overflow: auto }
 	/* Test for Firefox > 66 */
-	@supports (inset-block:auto){
+  @supports (inset-block:auto){
     #addon-list{
       display: grid;
       grid-template-areas: "a a";
@@ -15,7 +15,7 @@
     }
   }
 	/* Test for Firefox < 66 */
-	@supports not (inset-block:auto){
+  @supports not (inset-block:auto){
     #addon-list > scrollbox > .scrollbox-innerbox{
       display: grid;
       grid-template-areas: "a a";
