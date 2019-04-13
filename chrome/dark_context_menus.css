@@ -15,7 +15,8 @@ menuitem{ -moz-appearance: none !important; }
 menuitem,
 menu{ min-height: 1.8em }
 
-menupopup,
+menupopup:not([placespopup]),
+#main-menubar > menu > menupopup,
 #context-navigation{
   color: var(--uc-menu-color) !important;
   padding: 2px;
@@ -31,3 +32,5 @@ menuitem[_moz-menuactive]{ background-color: var(--uc-menu-dimmed) !important; c
 
 menu[disabled="true"],
 menuitem[disabled="true"]{ color: var(--uc-menu-disabled) !important; }
+
+menu:not(.subviewbutton) > .menu-right{ filter: invert(1) }
