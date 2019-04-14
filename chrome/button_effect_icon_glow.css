@@ -1,0 +1,41 @@
+/* Replace the button background-colors with a glow effect */
+/* Edit the color choices how you see fit */
+
+
+/* Make backgrounds transparent */
+.urlbar-icon,
+.urlbar-icon-wrapper,
+toolbar .toolbarbutton-1,
+#tabbrowser-tabs toolbarbutton,
+toolbar toolbarbutton > .toolbarbutton-icon,
+toolbar toolbarbutton > .toolbarbutton-badge-stack,
+.titlebar-button{ background-color: transparent !important; }
+
+.close-icon{ fill-opacity: 0 !important; }
+
+/* Glow effects on hover */
+.close-icon:hover,
+.urlbar-history-dropmarker:hover,
+#page-action-buttons > .urlbar-icon:hover,
+.urlbar-icon-wrapper:hover > .urlbar-icon,
+toolbar .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon,
+#TabsToolbar toolbarbutton:not([disabled]):hover .toolbarbutton-icon,
+toolbar #downloads-button:hover #downloads-indicator-anchor{ 
+  filter: brightness(2) drop-shadow(0 0 2px cyan) drop-shadow(0 0 0 cyan)
+}
+
+/* Active states and close window button hover state */
+#titlebar .titlebar-buttonbox > .titlebar-close:hover > .toolbarbutton-icon,
+.close-icon:active,
+.urlbar-history-dropmarker:active,
+#page-action-buttons > .urlbar-icon:active,
+#page-action-buttons > .urlbar-icon[open],
+.urlbar-icon-wrapper:active > .urlbar-icon,
+.urlbar-icon-wrapper[open] > .urlbar-icon,
+toolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
+toolbar toolbarbutton:not([disabled])[open] .toolbarbutton-icon,
+#TabsToolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
+toolbar #downloads-button:active #downloads-indicator-anchor,
+toolbar #downloads-button[open] #downloads-indicator-anchor{ 
+  filter: brightness(2) drop-shadow(0 0 2px red) drop-shadow(0 0 0 yellow)
+}
