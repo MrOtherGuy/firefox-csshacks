@@ -32,7 +32,8 @@ Window controls will be all wrong without it
 
 /* Move tabs below content */
 :root:not([inDOMFullscreen]) #content-deck{ margin-bottom: var(--tab-min-height) }
-#TabsToolbar{ position: fixed; bottom: 0px; width: 100vw; }
+#TabsToolbar{ position: fixed; bottom: 0px; width: 100vw; height: var(--tab-min-height) }
+#TabsToolbar-customization-target{ width: 100vw; }
 
 /* Hide stuff that doesn't make sense with tabs below content */
 #TabsToolbar > .titlebar-buttonbox-container,
