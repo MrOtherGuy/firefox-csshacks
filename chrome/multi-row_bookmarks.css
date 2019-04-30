@@ -1,0 +1,27 @@
+/* Makes bookmarks toolbar span multiple rows */
+
+#PersonalToolbar{
+  --multirow-bmb-n-rows: 3; /* Control how many rows are shown before scrolling */
+  --multirow-bmb-row-margin: 2px; /* Control how much spacing is between rows */
+  max-height: none !important;
+}
+
+#PlacesToolbar > hbox{ 
+  display: block;
+  width: 100vw;
+}
+
+#PlacesToolbarItems{
+  display: flex;
+  flex-wrap: wrap;
+  max-height: calc(var(--multirow-bmb-n-rows) * (6px + 1em + (2 * var(--multirow-bmb-row-margin))) + 2px) !important;
+  overflow-y:auto;
+  scrollbar-color: var(--lwt-accent-color) var(--toolbar-bgcolor) ;
+  scrollbar-width: thin;
+}
+
+/* Hide the all-bookmarks button */
+#PlacesChevron{ display: none }
+
+/* Add some spacing between rows */
+#PlacesToolbarItems > .bookmark-item{ margin: var(--multirow-bmb-row-margin) 3px !important;  }
