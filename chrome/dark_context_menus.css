@@ -15,7 +15,7 @@ menuitem{ -moz-appearance: none !important; }
 menuitem,
 menu{ min-height: 1.8em }
 
-menupopup:not([placespopup]),
+menupopup:not(#BMB_bookmarksPopup),
 #main-menubar > menu > menupopup,
 #context-navigation{
   color: var(--uc-menu-color) !important;
