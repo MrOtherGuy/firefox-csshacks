@@ -37,3 +37,7 @@ toolbar:hover .toolbarbutton-1 > *,
 /* The menu button has some margin on non-compact density which creates annnoying transitions */
 /* Lets remove that as well as border since this is minimal style anyway */
 #PanelUI-button{ border-left: 0px !important; margin-left: 0px !important; }
+
+/* Add a glow-effect to menu-button when it has some "alert" */
+#nav-bar:not(:hover) > #PanelUI-button > #PanelUI-menu-button[badge-status]{ filter: brightness(2) drop-shadow(0 0 3px orange) drop-shadow(0 0 1px orange) }
+#nav-bar:not(:hover) > #PanelUI-button > #PanelUI-menu-button[badge-status^="update"]{ filter: brightness(2) drop-shadow(0 0 2px cyan) drop-shadow(0 0 0 cyan) }
