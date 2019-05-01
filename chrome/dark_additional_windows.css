@@ -1,0 +1,50 @@
+/* Dark library, page-info and bookmark-properties */
+/* Color scheme matches default dark theme */
+
+@-moz-document url(chrome://browser/content/places/places.xul),
+  url(chrome://browser/content/pageinfo/pageInfo.xul),
+  url(chrome://browser/content/places/bookmarkProperties.xul){
+  
+  #placesToolbox,
+  #placesView,
+  #placesToolbar,
+  #main-window,
+  #topBar,
+  dialog,
+  tree{
+    -moz-appearance: none !important;
+    background-color: rgb(50,50,52) !important;
+    color: rgb(249,249,250) !important;
+  }
+  #placesToolbar,
+  tree{
+    background: transparent !important;
+  }
+  textbox,
+  richlistbox,
+  treecol,
+  button,
+  menu,
+  #permList{
+    -moz-appearance: none !important;
+    color: inherit !important;
+  }
+  textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
+  
+  treecol:not([hideheader]){ height: 24px; }
+  treecol:hover{ filter: brightness(160%) }
+  treechildren::-moz-tree-row(multicol, odd), #permList{ background-color: rgba(0,0,0,0.2) !important; }
+  
+  radiogroup > radio[selected],
+  radiogroup > radio:hover,
+  #permList > .permission:hover,
+  treechildren::-moz-tree-row(hover),
+  button:hover{ background-color: rgba(255,255,255,0.1) !important; color: inherit !important;}
+  
+  treechildren::-moz-tree-row(selected){ background-color: Highlight !important; }
+  button{ padding: 3px }
+  #placesMenu > menu{ border: none !important; }
+    
+  button{ border: 1px solid rgba(255,255,255,0.1); border-radius: 3px }
+
+}
