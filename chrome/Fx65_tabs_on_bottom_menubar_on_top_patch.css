@@ -3,17 +3,17 @@
 
 :root{ --uc-window-control-width: 0px !important }
 
-#navigator-toolbox{ margin-top: 22px }
+#navigator-toolbox{ margin-top: 29px }
 #toolbar-menubar{
   position: fixed;
   top: var(--uc-titlebar-padding,0px);
-  height: 22px;
+  height: 29px;
   margin-top:1px;
   width: 100%;
   overflow: hidden;
 }
 
-#toolbar-menubar .titlebar-buttonbox-container{ height: 22px; }
+#toolbar-menubar .titlebar-buttonbox-container{ height: 29px; }
 #toolbar-menubar .titlebar-button{ padding: 2px 17px !important;  }
 
 /* This will allow you to MAYBE put some items to the menubar */
