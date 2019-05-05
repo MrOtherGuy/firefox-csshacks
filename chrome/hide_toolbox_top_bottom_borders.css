@@ -1,6 +1,6 @@
 :root[sizemode="normal"]{ border-top: none !important }
 #navigator-toolbox::after{ content: none !important }
-
+#navigator-toolbox{ border-bottom: none !important }
 /* Removes few remaining extra lines above tabs in non-maximized windows */
 /* Also prevents small vertical shift when moving tabs in compact density - who knows why */
 :root[sizemode="normal"] #titlebar{ -moz-appearance: none !important; }
