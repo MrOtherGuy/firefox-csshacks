@@ -1,0 +1,20 @@
+/* Overrides the appearance of the window controls with something that more closely matches "normal" buttons*/
+/* More importantly, this makes window controls to respect layout rules the other styles rely on */
+
+.titlebar-buttonbox{ -moz-box-align: stretch !important; }
+.titlebar-button {
+  -moz-appearance: none !important;
+  -moz-context-properties: fill, stroke, fill-opacity;
+  fill: currentColor;
+  padding: 4px 6px !important;
+  -moz-box-flex: 1;
+  overflow: -moz-hidden-unscrollable;
+}
+.titlebar-button:hover{ background-color: rgba(0,0,0,0.1) }
+.titlebar-min{ list-style-image: url(chrome://browser/skin/zoom-out.svg); }
+.titlebar-close{
+  list-style-image: url(chrome://global/skin/icons/close.svg);
+  fill-opacity: 0;
+  stroke: currentColor
+}
+
