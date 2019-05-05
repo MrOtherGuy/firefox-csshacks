@@ -46,7 +46,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   min-width: 1000px;
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
   border: none !important;
-  font-size: larger;
+  font-size: inherit;
   color: inherit !important;
   margin-right: 0px !important;
 }
@@ -56,14 +56,15 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 #statuspanel{ color: lightpink; z-index: -1; }
 #statuspanel[type="status"] { color: skyblue }
 
-/* Don't show common values to save space (useful for oneliner) - safe to delete these */
+/* Don't show common values to save space (useful for oneliner) - uncomment to enable */
 /* If you change the font size of the label then you'll have to modify these too */
 /* non-https links get a slight red hue */
-
+/*
 #statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; }
 #statuspanel-inner > #statuspanel-label[value^="http"]{ margin-left: -3.7ch !important; }
 #statuspanel-inner > #statuspanel-label[value^="https"]{ margin-left: -6.1ch !important; color: var(--lwt-toolbar-field-color, black) !important}
 #statuspanel-inner > #statuspanel-label[value^="www"]{ margin-left: -4.5ch !important; }
 #statuspanel-inner > #statuspanel-label[value^="http://www"]{ margin-left: -9.7ch !important; }
-#statuspanel-inner > #statuspanel-label[value^="https://www"]{ margin-left: -10.1ch !important; } 
+#statuspanel-inner > #statuspanel-label[value^="https://www"]{ margin-left: -10.1ch !important; }
+*/
 #statuspanel-inner{ margin-left: -1px; }
