@@ -4,7 +4,7 @@
 toolbar .toolbarbutton-1:not([open]),
 .titlebar-button,
 #tabbrowser-tabs toolbarbutton{
-  background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill) 0,var(--lwt-toolbarbutton-icon-fill) 10%,transparent 15% );
+  background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
 /* Hide placeholder on hover */
 toolbar:hover + toolbar .toolbarbutton-1,
