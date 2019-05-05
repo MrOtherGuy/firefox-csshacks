@@ -41,4 +41,9 @@
   height: calc(var(--tab-min-height) + var(--space-above-tabbar) - 1px) !important;
   -moz-appearance: initial !important;
 }
-#nav-bar{ padding: 0 var(--uc-window-drag-space-width,0px) }
+#nav-bar::before,
+#nav-bar::after{
+  content: "";
+  display: -moz-box;
+  width: var(--uc-window-drag-space-width);
+}

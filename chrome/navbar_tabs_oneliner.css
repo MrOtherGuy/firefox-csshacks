@@ -27,12 +27,15 @@ Window controls will be all wrong without it
 /* This isn't useful when tabs start in the middle of the window */
 .titlebar-placeholder[type="pre-tabs"],
 .titlebar-spacer[type="pre-tabs"]{ display: none }
-#nav-bar{
+#navigator-toolbox > #nav-bar{
 	margin-right:calc(100vw - var(--uc-navigationbar-width));
   margin-top: calc(0px - var(--uc-toolbar-height));
-	padding-right: 0px !important;
 }
 
+/* Override style set in window_control_placeholder_support.css  */
+#nav-bar::after{ display:none !important }
+
+/* Rules specific to window controls on right layout */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   .titlebar-buttonbox-container{ position: fixed; left: 0px; z-index: 3; }
 }
