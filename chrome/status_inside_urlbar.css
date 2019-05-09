@@ -35,8 +35,6 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 :root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 0px }
 :root[uidensity="touch"] #urlbar .urlbar-input-box::after{ background-position-y: 3px }
 
-
-
 #urlbar .urlbar-input-box::after{
   display: -moz-box;
 }
@@ -51,20 +49,34 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   margin-right: 0px !important;
 }
 /* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
-#statuspanel-inner{ background-color: var(--toolbar-non-lwt-bgcolor) }
+#statuspanel-inner{ background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) }
 
-#statuspanel{ color: lightpink; z-index: -1; }
-#statuspanel[type="status"] { color: skyblue }
+#statuspanel{ color: var(--lwt-toolbar-field-color, black) ; z-index: -1; }
+#statuspanel[type="status"] { color: Highlight }
 
-/* Don't show common values to save space (useful for oneliner) - uncomment to enable */
-/* If you change the font size of the label then you'll have to modify these too */
-/* non-https links get a slight red hue */
+/* You will need to adjust these probably as they depend on OS, text size etc. */
+#statuspanel-inner{ margin-left: -1px; }
+#statuspanel-inner > #statuspanel-label{ margin-left: -2px !important; margin-top: 1px !important; }
+
+
+/*  OPTIONAL FEATURES  */
+/* Uncomment to enable */
+
+
 /*
-#statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; }
-#statuspanel-inner > #statuspanel-label[value^="http"]{ margin-left: -3.7ch !important; }
-#statuspanel-inner > #statuspanel-label[value^="https"]{ margin-left: -6.1ch !important; color: var(--lwt-toolbar-field-color, black) !important}
+ Don't show common values to save space (useful for oneliner)
+ If you change the font size of the label then you'll have to modify these too 
+ non-https links get a slight red hue
+/*
+#statuspanel-inner > #statuspanel-label[value^="http:"]{ margin-left: -3.7ch !important; color: tomato }
+#statuspanel-inner > #statuspanel-label[value^="https:"]{ margin-left: -6.1ch !important; }
 #statuspanel-inner > #statuspanel-label[value^="www"]{ margin-left: -4.5ch !important; }
 #statuspanel-inner > #statuspanel-label[value^="http://www"]{ margin-left: -9.7ch !important; }
 #statuspanel-inner > #statuspanel-label[value^="https://www"]{ margin-left: -10.1ch !important; }
 */
-#statuspanel-inner{ margin-left: -1px; }
+
+/* Center the statuspanel text. This might be useful with centered urlbar text */
+/*
+#statuspanel-inner > #statuspanel-label{ text-align: center }
+.urlbar-input-box::after{ background-position-x: center !important; }
+*/
