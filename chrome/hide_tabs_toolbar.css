@@ -10,7 +10,7 @@ Window controls will be all wrong without it
 
 :root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
 
-#TabsToolbar{ visibility: collapse }
+#TabsToolbar{ visibility: collapse !important }
 
 :root:not([inFullscreen]) #nav-bar{
   margin-top: calc(0px - var(--uc-toolbar-height));
@@ -24,10 +24,10 @@ Window controls will be all wrong without it
 
 #main-menubar{
   -moz-box-flex: 1;
-  background: var(--toolbar-non-lwt-bgcolor);
+  background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor);
   background-clip: padding-box;
   border-right: 30px solid transparent;
-  border-image: linear-gradient(to left, transparent, var(--toolbar-non-lwt-bgcolor) 30px) 20 / 30px
+  border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) 30px) 20 / 30px
 }
 
 #toolbar-menubar:not([inactive]){ z-index: 2 }
