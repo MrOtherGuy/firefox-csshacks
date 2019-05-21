@@ -1,0 +1,36 @@
+/* Clicking selected tab selects focuses urlbar */
+/* Selected tab cannot be normally clicked (right-,middle- or left-clicked) EXCEPT from the tab icon */
+
+/* Clicking selected pinned tab doesn't focus urlbar by default since I expect you might not want to change pinned tab address - see below */
+
+
+/* Make selected tab unclickable so click goes to the capture box, obviously it can't be clicked at all anymore */
+/* remove the :not([pinned]) bit to make clicking pinned tab AROUND the tab-icon focus urlbar*/
+
+.tabbrowser-tab:not([pinned])[selected]{ pointer-events: none }
+
+/* Add back pointer-events to several elements so UI remains usable */
+/* The selected tab can be clicked normally from the icon */
+#tabbrowser-tabs toolbarbutton,
+.tabbrowser-tab,
+.tabbrowser-tab .tab-close-button,
+.tabbrowser-tab .tab-icon-image{
+	pointer-events: auto
+}
+
+/* Invisible capture box behind tabs*/
+:root:not([customizing]) #urlbar::before{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: calc(100vw - 138px);
+	height: var(--tab-min-height);
+	content: "";
+}
+
+/* Make tabs appear over the invisible box */
+:root:not([customizing]) #tabbrowser-tabs{
+	position: relative;
+	z-index: 1;
+	pointer-events: none
+}
