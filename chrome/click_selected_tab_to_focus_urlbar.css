@@ -15,22 +15,22 @@
 .tabbrowser-tab,
 .tabbrowser-tab .tab-close-button,
 .tabbrowser-tab .tab-icon-image{
-	pointer-events: auto
+  pointer-events: auto
 }
 
 /* Invisible capture box behind tabs*/
 :root:not([customizing]) #urlbar::before{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: calc(100vw - 138px);
-	height: var(--tab-min-height);
-	content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 138px);
+  height: var(--tab-min-height);
+  content: "";
 }
 
 /* Make tabs appear over the invisible box */
 :root:not([customizing]) #tabbrowser-tabs{
-	position: relative;
-	z-index: 1;
-	pointer-events: none
+  position: relative;
+  z-index: 1;
+  pointer-events: none
 }
