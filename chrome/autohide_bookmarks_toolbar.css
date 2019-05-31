@@ -1,0 +1,13 @@
+/* Show bookmarks toolbar only when cursor is on top of toolbar area */
+
+#PersonalToolbar{
+	margin-bottom: -22px;
+	transform: rotateX(90deg);
+	position: relative;
+	transform-origin: top;
+	transition: transform 135ms linear 48ms !important;
+}
+:root[uidensity="compact"] > #navigator-toolbox > #PersonalToolbar{ margin-bottom: -20px }
+:root[uidensity="touch"] > #navigator-toolbox > #PersonalToolbar{ margin-bottom: -26px }
+
+#navigator-toolbox:hover > #PersonalToolbar{ transform: rotateX(0) }
