@@ -3,7 +3,6 @@
 #PersonalToolbar{
 	margin-bottom: -22px;
 	transform: rotateX(90deg);
-	position: relative;
 	transform-origin: top;
 	transition: transform 135ms linear 48ms !important;
 }
