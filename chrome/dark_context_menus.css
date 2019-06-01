@@ -8,13 +8,26 @@
   --uc-menu-disabled: rgb(50,50,50);
 }
 
+panel richlistbox,
+panel tree,
+panel button,
+panel menulist,
+panel textbox,
 menupopup,
 menu,
 menuitem{ -moz-appearance: none !important; }
 
+menulist,
 menuitem,
 menu{ min-height: 1.8em }
 
+panel menulist{ border: 1px solid transparent }
+
+panel richlistbox,
+panel tree,
+panel button,
+panel menulist,
+panel textbox,
 menupopup:not(#BMB_bookmarksPopup),
 #main-menubar > menu > menupopup,
 #context-navigation{
@@ -24,11 +37,20 @@ menupopup:not(#BMB_bookmarksPopup),
   border-color: var(--uc-menu-disabled) !important;
 }
 
+panel menulist:hover, panel menulist[open]{ border-color: Highlight !important; }
+
+#editBMPanel_folderMenuList > menupopup > menuitem{ color: var(--uc-menu-color) !important; }
+
+panel treechildren::-moz-tree-row(selected),
+button:hover,
 menu:hover,
 menu[_moz-menuactive],
 menu[open],
 menuitem:hover,
-menuitem[_moz-menuactive]{ background-color: var(--uc-menu-dimmed) !important; color: inherit !important; }
+menuitem[_moz-menuactive]{
+  background-color: var(--uc-menu-dimmed) !important;
+  color: inherit !important;
+}
 
 menu[disabled="true"],
 menuitem[disabled="true"]{ color: var(--uc-menu-disabled) !important; }
