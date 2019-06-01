@@ -3,6 +3,12 @@
   --lwt-toolbar-field-border-color: transparent !important;
 }
 
+#search-box{
+  -moz-appearance: none !important;
+  background-color: var(--lwt-toolbar-field-background-color) !important;
+  color: inherit !important;
+}
+
 #urlbar,
 .searchbar-textbox{
   box-shadow: none !important;
@@ -17,7 +23,26 @@
 #urlbar > .urlbar-input-box,
 .searchbar-textbox > moz-input-box{ opacity: 0.6 }
 
-#urlbar:hover > *,
+#identity-box,
+#urlbar > *:hover,
 #urlbar:focus-within > *,
 .searchbar-textbox:hover > *,
 .searchbar-textbox:focus-within > *{ opacity: 1 }
+
+/* Information colors for identity-box in hidden state */
+
+#identity-box{ border: none !important }
+#urlbar:not(:hover) > #identity-box{ background-image: radial-gradient(closest-side circle at 16px, orange 10%,transparent 35% ); }
+#urlbar:not(:hover) > #identity-box.verifiedIdentity{ background-image: radial-gradient(closest-side circle at 16px, lime 10%,transparent 35% ); }
+#urlbar:not(:hover) > #identity-box > *{ opacity: 0 }
+
+:root[title="Firefox Nightly"] #identity-box,
+:root[title="Mozilla Firefox"] #identity-box,
+#identity-box:hover,
+#identity-box.chromeUI,
+#identity-box.verifiedDomain{
+  background-image: none !important;
+}
+
+#identity-box > #identity-icon-labels{ transition: max-width 150ms linear !important; }
+#identity-box:not(:hover) > #identity-icon-labels{ max-width: 0px !important; }
