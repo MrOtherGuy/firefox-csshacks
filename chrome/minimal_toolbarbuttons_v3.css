@@ -15,17 +15,19 @@ toolbar .toolbarbutton-1:not([open]),
 #tabbrowser-tabs toolbarbutton{
   background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
+
 /* Hide placeholder on hover */
 toolbar:hover + toolbar .toolbarbutton-1,
 vbox:hover + toolbar .toolbarbutton-1,
 toolbar:hover .toolbarbutton-1,
 #tabbrowser-tabs:hover toolbarbutton,
-.titlebar-buttonbox:hover > .titlebar-button{ background-image: none }
+.titlebar-buttonbox:hover > .titlebar-button{
+  background-image: none;
+}
 
 #urlbar-container:hover ~ .toolbarbutton-1:not([open]) > *,
 #urlbar-container:hover ~ #stop-reload-button > .toolbarbutton-1 > *,
 #nav-bar > #nav-bar-customization-target:hover ~ toolbarbutton:not([open]) > *,
-
 toolbar .toolbarbutton-1 > *,
 .titlebar-button > *,
 #tabbrowser-tabs toolbarbutton > *{
