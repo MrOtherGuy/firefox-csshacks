@@ -1,27 +1,32 @@
 /* Hide the whole toolbar area unless urlbar is focused or cursor is over the toolbar */
 /* Dimensions on non-Win10 OS probably needs to be adjusted */
 
-:root:not([inDOMFullscreen]){ margin-top: 6px }
-:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 14px }
+:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 10px }
+
 #navigator-toolbox{
   position: fixed !important;
   background-color: var(--lwt-accent-color,black);
   transition: transform 82ms 33ms linear, opacity 82ms 33ms linear !important;
   transform-origin: top;
-  margin-top: -6px;
+  line-height: 0;
 }
-:root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -6px }
+#navigator-toolbox > *{ line-height: normal }
+
+:root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -2px }
 
 #navigator-toolbox,
 #navigator-toolbox > *{
   width: 100vw;
   -moz-appearance: none !important;
-  line-height: 0;
 }
 
 :root:not([customizing]) > #navigator-toolbox:not(:focus-within):not(:hover){
   transform: rotateX(86deg);
   opacity: 0;
 }
+:root[sizemode="maximized"]:not([customizing]) > #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
 
 #PersonalToolbar[collapsed]{ margin-block-end: -7px }
+
+/* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
+ /*#titlebar{ margin-bottom: -9px }*/
