@@ -1,0 +1,26 @@
+/* Shows both icon and label for toolbarbuttons */
+
+toolbar .toolbarbutton-1[label]{ -moz-box-orient: vertical }
+
+toolbar .toolbarbutton-1[label]:not([disabled]):hover{ background-color: var(--toolbarbutton-hover-background) !important; }
+
+toolbar .toolbarbutton-1[label] > .toolbarbutton-icon,
+toolbar .toolbarbutton-1[label] > .toolbarbutton-badge-stack{
+  padding: var(--toolbarbutton-inner-padding) !important;
+  padding-bottom: 0px !important;
+  height: calc(var(--toolbarbutton-inner-padding) + 16px) !important;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+toolbar .toolbarbutton-1[label] > .toolbarbutton-text {
+  display: -moz-box !important;
+  min-height: 16px !important;
+  padding-top: 0px !important;
+  background-color: transparent !important;
+  /*max-width: 70px;*/  /* Set maximium button width here if wanted  */
+}
+:root:not([uidensity="compact"]) toolbar .toolbarbutton-1[label] > .toolbarbutton-text{ padding: 2px !important; }
+
+#back-button{ padding: 0px var(--toolbarbutton-outer-padding) !important; border-radius: 0px !important; }
