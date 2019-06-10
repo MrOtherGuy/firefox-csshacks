@@ -10,6 +10,8 @@
   max-width: var(--uc-sidebar-width) !important;
 }
 
+#main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }
+
 #sidebar-splitter{ display: none }
 
 #sidebar-header{ overflow: hidden; color: var(--chrome-color, inherit) !important}
@@ -37,6 +39,6 @@
 
 #sidebar,
 #sidebar-header{
-  background-color: var(--toolbar-non-lwt-bgcolor) !important;
+  background-color: var(--toolbar-bgcolor) !important;
   border-right: 1px solid rgb(80,80,80);
 }
