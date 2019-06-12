@@ -1,18 +1,19 @@
 /* Hide the whole toolbar area unless urlbar is focused or cursor is over the toolbar */
 /* Dimensions on non-Win10 OS probably needs to be adjusted */
 
-:root{ --uc-titlebar-scale-factor: 0px }
+:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 10px }
+:root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -2px }
+
 @media screen and (min-resolution: 1.25dppx){
-  :root{ --uc-titlebar-scale-factor: 1px }
+  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 9px }
 }
 @media screen and (min-resolution: 1.5dppx){
-  :root{ --uc-titlebar-scale-factor: 2px }
+  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px }
+  :root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -1px }
 }
 @media screen and (min-resolution: 2dppx){
-  :root{ --uc-titlebar-scale-factor: 3px }
+  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px }
 }
-
-:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: calc(10px - var(--uc-titlebar-scale-factor)) }
 
 #navigator-toolbox{
   position: fixed !important;
@@ -23,10 +24,7 @@
 }
 #navigator-toolbox > *{ line-height: normal }
 
-:root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -2px }
-@media screen and (min-resolution: 1.5dppx){
-  :root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -1px }
-}
+
 #navigator-toolbox,
 #navigator-toolbox > *{
   width: 100vw;
