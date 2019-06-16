@@ -38,6 +38,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 }
 
 #PanelUI-button{ float: right; }
+#nav-bar > toolbartabstop{ float: left }
 
 :root:not([inDOMFullscreen]) #content-deck,
 :root:not([inDOMFullscreen]) > #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
@@ -62,6 +63,9 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   height: 100%;
   visibility: hidden;
 }
+
+#toolbar-menubar[brighttext="true"]{ --toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) }
+
 #toolbar-menubar:hover{ z-index: 2 }
 #toolbar-menubar:hover > #menubar-items{
   visibility: visible;
