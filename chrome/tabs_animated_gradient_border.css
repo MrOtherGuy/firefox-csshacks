@@ -1,0 +1,54 @@
+/* Adds animated gradient border below tabs and around selected tab */
+/* Might or might not work, no promises*/
+
+/* Constant animation WILL increase CPU usage */
+
+@keyframes rotate-gradient{
+  from{filter: hue-rotate(0deg)}
+  to{filter: hue-rotate(360deg)}
+}
+
+#TabsToolbar::before{
+  content: "";
+  display: -moz-box;
+  position: absolute;
+  width: 100vw;
+  height: calc(var(--tab-min-height) + 2px);
+  background-image: linear-gradient(to right, magenta, yellow, cyan);
+  animation: rotate-gradient 5s linear infinite;
+  pointer-events: none;
+  will-change: filter;
+  z-index: -1;
+}
+
+#tabbrowser-tabs .arrowscrollbox-scrollbox::after{
+  content: "";
+  display: -moz-box;
+  -moz-box-flex: 1 !important;
+  background-color: var(--lwt-accent-color);
+  margin-bottom: 2px;
+}
+
+#TabsToolbar > .titlebar-buttonbox-container,
+.titlebar-spacer,
+.tabbrowser-tab,
+.tabs-newtab-button,
+#tabbrowser-tabs .scrollbutton-up,
+#tabbrowser-tabs .scrollbutton-down,
+#tabbrowser-tabs ~ toolbarbutton{
+  background-color: var(--lwt-accent-color) !important;
+  margin-bottom: 2px !important;
+  opacity: 1 !important;
+}
+
+.tabbrowser-tab{ padding: 2px 2px 0 2px !important; min-height: calc(var(--tab-min-height) - 2px);}
+
+.tabbrowser-tab[selected]{
+  padding: 0px !important;
+  background-color: transparent !important;
+  border: 2px solid transparent !important;
+  border-bottom-width: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.tab-content[selected]{ margin-top: -2px }
