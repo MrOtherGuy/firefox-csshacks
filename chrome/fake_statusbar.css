@@ -69,4 +69,5 @@
 #statuspanel-inner > #statuspanel-label[value^="https"]{ color: var(--lwt-toolbar-field-color, black) !important;}
 
 
-:root:not([inDOMFullscreen]) #content-deck{ margin-bottom: var(--tab-min-height) }
+:root:not([inDOMFullscreen]) #content-deck,
+:root:not([inDOMFullscreen]) > #browser{ margin-bottom: var(--tab-min-height) }

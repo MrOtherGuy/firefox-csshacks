@@ -45,4 +45,4 @@
   background-color: var(--lwt-accent-color)
 }
 
-:root:not([inDOMFullscreen]) > #content-deck{ margin-right: 30px }
+:root:not([inDOMFullscreen]) > #content-deck,:root:not([inDOMFullscreen]) > #browser{ margin-right: 30px }

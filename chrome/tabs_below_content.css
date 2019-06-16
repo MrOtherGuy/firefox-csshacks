@@ -35,7 +35,8 @@ linux_gtk_window_control_patch.css
 :root[sizemode="maximized"] #toolbar-menubar:not([autohide="false"]) .titlebar-buttonbox-container{ top: 8px }
 
 /* Move tabs below content */
-:root:not([inDOMFullscreen]) #content-deck{ margin-bottom: var(--tab-min-height) }
+:root:not([inDOMFullscreen]) #content-deck,
+:root:not([inDOMFullscreen]) > #browser{ margin-bottom: var(--tab-min-height) }
 #TabsToolbar{ position: fixed; bottom: 0px; width: 100vw; height: var(--tab-min-height) }
 #TabsToolbar-customization-target{ width: 100vw; }
 
