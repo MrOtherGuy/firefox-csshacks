@@ -1,23 +1,26 @@
 /* Adds animated gradient border below tabs and around selected tab */
-/* Might or might not work, no promises*/
+/* Might or might not work, no promises */
 
 /* Constant animation WILL increase CPU usage */
 
+/*
+Thanks to /u/skenera on reddit for suggesting animating background position and using steps() function to reduce cpu load
+*/
 @keyframes rotate-gradient{
-  from{filter: hue-rotate(0deg)}
-  to{filter: hue-rotate(360deg)}
+  from{background-position: 0 0;}
+  to{background-position: 200vw 0;}
 }
 
 #TabsToolbar::before{
   content: "";
   display: -moz-box;
   position: absolute;
-  width: 100vw;
+  width: 200vw;
   height: calc(var(--tab-min-height) + 2px);
-  background-image: linear-gradient(to right, magenta, yellow, cyan);
-  animation: rotate-gradient 5s linear infinite;
+  background-image: linear-gradient(to right, magenta, red, yellow, green, cyan, blue, magenta);
+  animation: rotate-gradient 10s steps(60) infinite;
+  /*animation-timing-function: linear;  */ /* smoother animation, but greatly increased cpu use */
   pointer-events: none;
-  will-change: filter;
   z-index: -1;
 }
 
@@ -41,7 +44,9 @@
   opacity: 1 !important;
 }
 
-.tabbrowser-tab{ padding: 2px 2px 0 2px !important; min-height: calc(var(--tab-min-height) - 2px);}
+.tabbrowser-tab{ padding: 2px 2px 0 2px !important; }
+.tabbrowser-tab:not([selected]){ min-height: calc(var(--tab-min-height) - 2px) !important; }
+
 
 .tabbrowser-tab[selected]{
   padding: 0px !important;
