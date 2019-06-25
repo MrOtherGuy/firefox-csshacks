@@ -1,0 +1,37 @@
+#editBMPanel_tagsSelector > richlistitem > image,
+radio > .radio-check,
+checkbox > .checkbox-check{
+	-moz-appearance: none !important;
+	border: 1px solid graytext;
+	border-radius: 2px;
+	height: 1.3em;
+	width: 1.3em;
+	padding: 1px;
+}
+
+#editBMPanel_tagsSelector > richlistitem > image{
+	background-color: var(--toolbar-bgcolor,rgb(50,50,52)) !important;
+	margin: 1px !important;
+	border-color: graytext !important;
+	border-radius: 2px !important;
+}
+
+#editBMPanel_tagsSelector > richlistitem:not([disabled]):hover > image,
+radio:not([disabled]):hover > .radio-check,
+checkbox:not([disabled]):hover > .checkbox-check{ border-color: highlight !important; }
+
+radio > .radio-check{ padding: 0; border-radius: 20px }
+
+#editBMPanel_tagsSelector > richlistitem[checked] > image,
+radio[selected] > .radio-check,
+checkbox[checked] > .checkbox-check{
+	list-style-image: url("chrome://global/skin/icons/check.svg");
+	-moz-context-properties: fill;
+	fill: highlight;
+}
+
+radio[selected] > .radio-check{ list-style-image: url("chrome://global/skin/in-content/radio.svg"); }
+
+#editBMPanel_tagsSelector > richlistitem[disabled] > image,
+radio[disabled] > .radio-check,
+checkbox[disabled] > .checkbox-check{ fill: graytext !important; }
