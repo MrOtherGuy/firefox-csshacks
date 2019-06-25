@@ -13,7 +13,7 @@
   dialog,
   tree{
     -moz-appearance: none !important;
-    background-color: rgb(50,50,52) !important;
+    background-color: var(--toolbar-bgcolor,rgb(50,50,52)) !important;
     color: rgb(249,249,250) !important;
   }
   #placesToolbar,
