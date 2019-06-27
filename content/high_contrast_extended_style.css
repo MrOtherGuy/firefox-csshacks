@@ -1,3 +1,6 @@
+/* Intended to use with Firefox high contrast mode - forcing pages to use selected colors */
+/* This applies few additional colors for selected page elements trying to "fix" common layout patterns without being specific to any page */
+
 body > div,
 table,
 tr:first-child,
