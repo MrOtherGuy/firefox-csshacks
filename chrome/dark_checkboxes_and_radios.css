@@ -1,19 +1,23 @@
+/* Change the appearance of natively styled widgets including radios, checkboxes, buttons and expender "dropdown" arrows */
+/* Their background will be transparent instead of white so they will appear fitting to whatever is on the background */
+/* As such, this might cause a small issue if the background happens to be same color as the border of these buttons or the checkbox-image */
+
 #editBMPanel_tagsSelector > richlistitem > image,
 radio > .radio-check,
 checkbox > .checkbox-check{
-	-moz-appearance: none !important;
-	border: 1px solid graytext;
-	border-radius: 2px;
-	height: 1.3em;
-	width: 1.3em;
-	padding: 1px;
+  -moz-appearance: none !important;
+  border: 1px solid graytext;
+  border-radius: 2px;
+  height: 1.3em;
+  width: 1.3em;
+  padding: 1px;
 }
 
 #editBMPanel_tagsSelector > richlistitem > image{
-	background-color: var(--toolbar-bgcolor,rgb(50,50,52)) !important;
-	margin: 1px !important;
-	border-color: graytext !important;
-	border-radius: 2px !important;
+  background-color: var(--toolbar-bgcolor,rgb(50,50,52)) !important;
+  margin: 1px !important;
+  border-color: graytext !important;
+  border-radius: 2px !important;
 }
 
 #editBMPanel_tagsSelector > richlistitem:not([disabled]):hover > image,
@@ -25,9 +29,9 @@ radio > .radio-check{ padding: 0; border-radius: 20px }
 #editBMPanel_tagsSelector > richlistitem[checked] > image,
 radio[selected] > .radio-check,
 checkbox[checked] > .checkbox-check{
-	list-style-image: url("chrome://global/skin/icons/check.svg");
-	-moz-context-properties: fill;
-	fill: highlight;
+  list-style-image: url("chrome://global/skin/icons/check.svg");
+  -moz-context-properties: fill;
+  fill: highlight;
 }
 
 radio[selected] > .radio-check{ list-style-image: url("chrome://global/skin/in-content/radio.svg"); }
@@ -35,3 +39,16 @@ radio[selected] > .radio-check{ list-style-image: url("chrome://global/skin/in-c
 #editBMPanel_tagsSelector > richlistitem[disabled] > image,
 radio[disabled] > .radio-check,
 checkbox[disabled] > .checkbox-check{ fill: graytext !important; }
+
+/*Buttons*/
+/* This only applies to natively-ish styled buttons, not the buttons in toolbars */
+
+button{
+  -moz-appearance: none !important;
+  color: inherit !important;
+	background-color: rgba(255,255,255,0.2) !important;
+}
+button.panel-button{ padding: 2px 2px 1px 2px !important; }
+
+#customization-done-button{ background-color: #0a84ff !important; }
+#customization-done-button:hover{ background-color: #0a64df !important; }
