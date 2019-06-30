@@ -1,5 +1,6 @@
 /* Intended to use with Firefox high contrast mode - forcing pages to use selected colors */
 /* This applies few additional colors for selected page elements trying to "fix" common layout patterns without being specific to any page */
+@-moz-document url-prefix("http"),url-prefix("about:"){
 
 body > div,
 table,
@@ -37,14 +38,30 @@ nav a{ color: #bbb }
 
 table table{ background-color: transparent }
 
-input[type="submit"],button,.button,.btn{ background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.15)); color: rgb(40,50,40) }
-input[type="submit"]:hover,button:hover,.button:hover,.btn:hover{ background-image: linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.2)); text-shadow: 0 0 2px black; color: rgb(150,250,200) }
+input[type="submit"],
+button,
+.button,
+.btn{
+  background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.15));
+  color: rgb(40,50,40)
+}
 
+input[type="submit"]:hover,
+button:hover,
+.button:hover,
+.btn:hover{
+  background-image: linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.2));
+  text-shadow: 0 0 2px black;
+  color: rgb(150,250,200)
+}
 
 input,
 nav ul > li:hover,
 div[role="menu"] > *:hover{ background-color: rgba(0,0,0,0.1); color: inherit }
 
-input[type="search"],input[type="text"],input[type="password"]{ background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)); }
+input[type="search"],
+input[type="text"],
+input[type="password"]{ background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)); }
 
 textarea{ background-color: rgb(40,40,40); color: inherit }
+}
