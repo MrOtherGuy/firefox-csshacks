@@ -55,6 +55,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   position: fixed;
   top: var(--multirow-top-padding);
   width: 100vw;
+  color: var(--lwt-text-color);
   background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
 }
 
@@ -64,12 +65,10 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   visibility: hidden;
 }
 
-#toolbar-menubar[brighttext="true"]{ --toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) }
-
 #toolbar-menubar:hover{ z-index: 2 }
 #toolbar-menubar:hover > #menubar-items{
   visibility: visible;
-  background-image: linear-gradient( to left,transparent,var(--toolbar-non-lwt-bgcolor) 35px);
+  background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
 }
 
 #toolbar-menubar > .titlebar-buttonbox-container{float: right; height: 100%; background: var(--toolbar-bgcolor)}
