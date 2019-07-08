@@ -2,6 +2,8 @@
 /* Their background will be transparent instead of white so they will appear fitting to whatever is on the background */
 /* As such, this might cause a small issue if the background happens to be same color as the border of these buttons or the checkbox-image */
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
 #editBMPanel_tagsSelector > richlistitem > image,
 radio > .radio-check,
 checkbox > .checkbox-check{
