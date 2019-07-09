@@ -45,6 +45,13 @@
   button{ padding: 3px }
   #placesMenu > menu{ border: none !important; }
     
-  button{ border: 1px solid rgba(255,255,255,0.1); border-radius: 3px }
+  button{ border: 1px solid graytext; border-radius: 3px }
 
+}
+/* modal prompts (alert() & friends) */
+
+.paymentDialogContainerFrame,
+.tabmodalprompt-mainContainer{
+  background-color: var(--toolbar-bgcolor) !important;
+  color: var(--lwt-text-color,-moz-dialogtext) !important;
 }
