@@ -2,6 +2,8 @@
 /* Their background will be transparent instead of white so they will appear fitting to whatever is on the background */
 /* As such, this might cause a small issue if the background happens to be same color as the border of these buttons or the checkbox-image */
 
+/* In short, these native widgets will be dark on dark theme and light on light theme */
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 #editBMPanel_tagsSelector > richlistitem > image,
@@ -48,8 +50,16 @@ checkbox[disabled] > .checkbox-check{ fill: graytext !important; }
 button{
   -moz-appearance: none !important;
   color: inherit !important;
-	background-color: rgba(255,255,255,0.2) !important;
+	background-color: rgba(127,127,127,0.1) !important;
+  border: 1px solid graytext;
 }
+
+button[disabled]{ opacity: 0.8 }
+
+button:not([disabled]):hover{ border-color: highlight; background-color: rgba(0,0,0,0.1) !important; }
+
+.panel-footer > button{ border-width: 1px 0 0 0; }
+
 button.panel-button{ padding: 2px 2px 1px 2px !important; }
 
 #customization-done-button{ background-color: #0a84ff !important; }
