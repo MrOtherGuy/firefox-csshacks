@@ -42,7 +42,7 @@ panel menulist:hover, panel menulist[open]{ border-color: Highlight !important; 
 #editBMPanel_folderMenuList > menupopup > menuitem{ color: var(--uc-menu-color) !important; }
 
 panel treechildren::-moz-tree-row(selected),
-button:hover,
+panel button:hover,
 menu:hover,
 menu[_moz-menuactive],
 menu[open],
