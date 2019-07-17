@@ -1,20 +1,20 @@
-/* Recolors addons manager, preferences page and new about:config */
-
-
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 @-moz-document url-prefix("about:addons"),
   url-prefix("about:preferences"),
+  url-prefix("chrome://browser/content/"),
+  url-prefix("chrome://mozapps/content/"),
+  url-prefix("chrome://pippki/content/"),
   url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
-  :root,
-  html|html{
-    --in-content-page-color: rgb(210,210,210) !important;
-    --in-content-text-color: rgb(210,210,210) !important;
-    --in-content-page-background: rgb(46,54,69) !important;
-    --in-content-box-background: rgba(255,255,255,0.1) !important;
-    --in-content-deemphasized-text: var(--in-content-text-color) !important;
-  }
+    :root,
+    html|html{
+      --in-content-page-color: rgb(210,210,210) !important;
+      --in-content-text-color: rgb(210,210,210) !important;
+      --in-content-page-background: rgb(46,54,69) !important;
+      --in-content-box-background: rgba(255,255,255,0.1) !important;
+      --in-content-deemphasized-text: var(--in-content-text-color) !important;
+    }
   
   menulist > menupopup{ background-color: var(--in-content-page-background) !important; }
   
