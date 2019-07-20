@@ -12,6 +12,7 @@ toolbar toolbarbutton > .toolbarbutton-icon,
 toolbar toolbarbutton > .toolbarbutton-badge-stack,
 .titlebar-button,
 #identity-box,
+#tracking-protection-icon-container,
 .findbar-textbox~toolbarbutton{ background-color: transparent !important; border-color: transparent !important;}
 
 .close-icon{ fill-opacity: 0 !important; }
@@ -25,8 +26,9 @@ toolbar .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon,
 #TabsToolbar toolbarbutton:not([disabled]):hover .toolbarbutton-icon,
 toolbar #downloads-button:hover #downloads-indicator-anchor,
 #identity-box:not(.no-hover):hover,
+#tracking-protection-icon:hover,
 .findbar-textbox~toolbarbutton:not([disabled]):hover{ 
-  filter: brightness(2) drop-shadow(0 0 2px cyan) drop-shadow(0 0 0 cyan)
+  filter: brightness(2) drop-shadow(0 0 2px cyan) drop-shadow(0 0 1px cyan)
 }
 
 /* Active states and close window button hover state */
@@ -43,6 +45,7 @@ toolbar toolbarbutton:not([disabled])[open] .toolbarbutton-icon,
 toolbar #downloads-button:active #downloads-indicator-anchor,
 toolbar #downloads-button[open] #downloads-indicator-anchor,
 #identity-box:not([disabled]):active,
+#tracking-protection-icon-container[open] #tracking-protection-icon,
 .findbar-textbox~toolbarbutton:not([disabled]):active{ 
-  filter: brightness(2) drop-shadow(0 0 2px red) drop-shadow(0 0 0 yellow)
+  filter: brightness(2) drop-shadow(0 0 2px red) drop-shadow(0 0 1px yellow)
 }
