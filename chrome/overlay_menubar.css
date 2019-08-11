@@ -1,0 +1,25 @@
+/* Makes menubar appear as overlay in the top left corner */
+
+#toolbar-menubar{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: initial !important;
+  z-index: 10;
+}
+
+:root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar{ top: 8px; }
+
+#toolbar-menubar > .titlebar-buttonbox-container{ float: right }
+#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
+
+#main-menubar{ height: calc(var(--tab-min-height) + 4px); background-color: var(--toolbar-bgcolor); }
+
+#menubar-items{ -moz-box-orient: horizontal; }
+#menubar-items::after{
+  content: "";
+  display: -moz-box;
+  width: 30px;
+  height: calc(var(--tab-min-height) + 4px);
+  background-image: linear-gradient(to right, var(--toolbar-bgcolor) 30%, transparent);
+}
