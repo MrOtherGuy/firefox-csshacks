@@ -1,11 +1,13 @@
 /* Creates placeholders for window controls */
 /* This is a supporting file used by other stylesheets */
 
+/* This stylesheet is pretty much unnecessary if window titlebar is enabled */
+
 /* This file should preferably be imported before other stylesheets */
 
 /* Defaults for window controls on RIGHT side of the window */
 /* Modify these values to match your preferences */
-:root{
+:root[tabsintitlebar]{
   --uc-window-control-width: 138px; /* Space reserved for window controls */
   --uc-window-drag-space-width: 24px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
 }
@@ -14,16 +16,16 @@
 #nav-bar::after{
   content: "";
   display: -moz-box;
-  width: var(--uc-window-drag-space-width);
+  width: var(--uc-window-drag-space-width,0);
 }
-toolbar#nav-bar::after{ width: calc(var(--uc-window-control-width) + var(--uc-window-drag-space-width,0px)) }
+toolbar#nav-bar::after{ width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) }
 
 /* Use this pref to check Mac OS where window controls are on left */
 /* This pref defaults to true on Mac and doesn't actually do anything on other platforms. So if your system has window controls on LEFT side you can set the pref to true */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
 	:root{ --uc-window-control-width: 72px; }
   :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar::before{
-    width: calc(var(--uc-window-control-width) + var(--uc-window-drag-space-width,0px))
+    width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px))
   }
-  :root[tabsintitlebar="true"]:not([inFullscreen]) toolbar#nav-bar::after{ width: var(--uc-window-drag-space-width); }
+  :root[tabsintitlebar="true"]:not([inFullscreen]) toolbar#nav-bar::after{ width: var(--uc-window-drag-space-width,0px); }
 }
