@@ -1,5 +1,5 @@
 /* Constrains urlbar popup to urlbar width */
-/* Firefox 70+ only */
+/* Firefox 70+ */
 
 #urlbar-container{ transform: translateY(0); position: relative; z-index: 10 }
 #nav-bar-customization-target{ overflow: visible !important }
