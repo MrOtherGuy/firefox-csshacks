@@ -1,0 +1,65 @@
+/* Makes urlbar popup to appear Like on various Google search services */
+/* Firefox 70+ only */
+/* Popup uses colors from your theme */
+
+
+/* Focused  urlbar popup radius, can be edited freely */
+#urlbar-container{ border-radius: 8px }
+
+/* Layout containing block hackery, don't touch pls */
+#urlbar-container{ transform: translateY(0); position: relative; z-index: 10 }
+#nav-bar-customization-target{ overflow: visible !important }
+
+/* constrain popup to urlbar width */
+#urlbar-results{
+  max-width: 100% !important;
+  top: 0 !important;
+  border-width: 0 !important;
+  background-color: transparent !important;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Apply popup background color to the urlbar background when focused */
+#urlbar-container:focus-within{ background-color: var(--autocomplete-popup-background) }
+
+/* Spacer to offset actual results. This is placed over urlbar text  */
+#urlbar-results::before{
+  content: "";
+  display: -moz-box;
+  height: calc(1.15em + var(--toolbarbutton-outer-padding))
+}
+
+/* Add popup background color to sub-elements, since it was removed from the popup itself */
+#urlbar-results > .search-one-offs,
+#urlbar-results > .urlbarView-body-outer{
+  background-color: var(--autocomplete-popup-background); /* Set background-color here */
+  color: var(--autocomplete-popup-color); /* Set text color here */
+  pointer-events: auto
+  }
+
+/* Add separator line under urlbar text field */
+#urlbarView-results::before{
+  content:"";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(to right,transparent,grey 35%, grey 65%, transparent)
+}
+
+/* Remove normal urlbar border */
+#urlbar[focused]{ border-color: transparent !important; }
+
+/* Propagate border-radii to sub-elements */
+#urlbar-results > .search-one-offs,
+#urlbar[focused]:not([usertyping]) + #urlbar-results > .urlbarView-body-outer{
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit
+}
+
+/* Add shadow to focused popup + urlbar */
+#urlbar-results,
+#urlbar-container:focus-within { box-shadow: 0 0 5px 3px var(--autocomplete-popup-highlight-background) }
+
+/* Remove horizontal paddings from texts */
+.urlbarView-row{ padding: 6px 0px; }

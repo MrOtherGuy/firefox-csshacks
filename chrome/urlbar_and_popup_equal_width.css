@@ -1,0 +1,7 @@
+/* Constrains urlbar popup to urlbar width */
+/* Firefox 70+ only */
+
+#urlbar-container{ transform: translateY(0); position: relative; z-index: 10 }
+#nav-bar-customization-target{ overflow: visible !important }
+#urlbar-results{ max-width: 100% !important; top: 100% !important; }
+.urlbarView-row{ padding: 6px 0px; }
