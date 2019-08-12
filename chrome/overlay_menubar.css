@@ -8,6 +8,8 @@
   z-index: 10;
 }
 
+#toolbar-menubar[autohide="true"][inactive="true"]{ height: 0px !important; }
+
 :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar{ top: 8px; }
 
 #toolbar-menubar > .titlebar-buttonbox-container{ float: right }
@@ -15,7 +17,7 @@
 
 #main-menubar{ height: calc(var(--tab-min-height) + 4px); background-color: var(--toolbar-bgcolor); }
 
-#menubar-items{ -moz-box-orient: horizontal; }
+#menubar-items{ -moz-box-orient: horizontal !important; }
 #menubar-items::after{
   content: "";
   display: -moz-box;
