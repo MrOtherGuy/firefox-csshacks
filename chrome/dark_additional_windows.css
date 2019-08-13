@@ -20,6 +20,7 @@
   tree{
     background: transparent !important;
   }
+  
   textbox,
   richlistbox,
   treecol,
@@ -29,6 +30,9 @@
     -moz-appearance: none !important;
     color: inherit !important;
   }
+  
+  .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
+  
   textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
   
   treecol:not([hideheader]){ height: 24px; }
