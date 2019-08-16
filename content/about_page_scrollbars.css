@@ -2,7 +2,7 @@
 @-moz-document url-prefix("about:"){
   page,
   scrollbar{
-    scrollbar-color: rgb(210,210,210) rgb(46,54,69);
+    scrollbar-color: rgb(210,210,210) rgb(50,50,52);
     scrollbar-width: thin;
   }
 }
