@@ -1,4 +1,4 @@
-:root{
+:root:not([customizing]){
   --lwt-toolbar-field-background-color: transparent !important;
   --lwt-toolbar-field-border-color: transparent !important;
 }
@@ -14,30 +14,34 @@
   box-shadow: none !important;
 }
 
-#urlbar > *,
+#tracking-protection-icon-container,
+#identity-box ~ *,
 .searchbar-textbox > *{
   opacity: 0;
   transition: opacity 150ms linear
 }
 
-#urlbar > .urlbar-input-box,
+#urlbar .urlbar-input-box,
 .searchbar-textbox > moz-input-box{ opacity: 0.6 }
 
-#identity-box,
-#urlbar > *:hover,
+#identity-box ~ *:hover,
+#tracking-protection-icon-container:hover, 
+#tracking-protection-icon-container ~ *:hover,
 #urlbar:focus-within > *,
+#urlbar-input-container:focus-within > *,
 .searchbar-textbox:hover > *,
 .searchbar-textbox:focus-within > *{ opacity: 1 }
 
-/* Information colors for identity-box in hidden state */
-
 #identity-box{ border: none !important }
-#urlbar:not(:hover) > #identity-box{ background-image: radial-gradient(closest-side circle at 16px, orange 10%,transparent 35% ); }
-#urlbar:not(:hover) > #identity-box.verifiedIdentity{ background-image: radial-gradient(closest-side circle at 16px, lime 10%,transparent 35% ); }
-#urlbar:not(:hover) > #identity-box > *{ opacity: 0 }
 
+#urlbar:not(:hover) #identity-box{ background-image: radial-gradient(closest-side circle at 16px, orange 10%,transparent 35% ); }
+#urlbar:not(:hover) #identity-box.verifiedIdentity{ background-image: radial-gradient(closest-side circle at 16px, lime 10%,transparent 35% ); }
+#urlbar:not(:hover) #identity-box > *{ opacity: 0 }
+/*
 :root[title="Firefox Nightly"] #identity-box,
 :root[title="Mozilla Firefox"] #identity-box,
+*/
+#urlbar[pageproxystate=invalid]:not([usertyping]) #identity-box,
 #identity-box:hover,
 #identity-box.chromeUI,
 #identity-box.verifiedDomain{
