@@ -10,6 +10,7 @@
 #tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
+:root:not([customizing]) #tabs-newtab-button,
 :root:not([customizing]) #TabsToolbar .titlebar-button{
   -moz-appearance: none !important;
   height: 0px;
@@ -25,8 +26,10 @@
 }
 
 /* Button re-styling */
+#tabs-newtab-button:hover,
 #tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
 
+#tabs-newtab-button > .toolbarbutton-icon,
 #tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
   padding: 0 !important;
   transform: scale(0.6);
