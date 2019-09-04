@@ -1,5 +1,6 @@
 /* Two column addons for html addons manager available in Firefox 68 */
-
+/* You can use compact_addons_manager.css with this to make things even more, well, compact  */
+/* Compatible with addon_manage_buttons_without_popup.css */
 
 @-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
   
