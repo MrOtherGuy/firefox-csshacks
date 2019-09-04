@@ -1,0 +1,43 @@
+/* Show addon management buttons without opening popup */
+
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
+ 
+  .addon-card-message{ margin-bottom: 0px !important; margin-top: 0px !important; }
+  .card.addon{ padding-bottom: 0px !important; }
+  
+  addon-card .addon-card-collapsed{ display: grid !important; grid-template-areas: "ic con" "op op" }
+  
+  .more-options-menu{ position: static !important; grid-area: op; margin: 0 !important; }
+  .card-contents{ grid-area: con }
+  .card-heading-icon{ grid-area: ic }
+  
+  addon-options > panel-list{
+    position: static !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0px calc(0px - var(--card-padding)) !important;
+  }
+  
+  .arrow,
+  .more-options-button,
+  panel-item[action="expand"]{ display: none }
+
+  div.list{ display: flex !important; flex-direction: row !important; } 
+
+  
+  panel-item[action="toggle-disabled"]{ --icon: url("chrome://browser/skin/quit.svg") }
+  panel-item[action="preferences"]{ --icon: url("chrome://browser/skin/settings.svg") }
+  
+/* Uncomment these if you want to hide button label - such as with compact_addons_manager */
+/*
+ button > slot{ display: none !important; }
+ link+button{
+    padding: 4px !important;
+    position: static !important;
+    width: 30px !important;
+    height: 30px !important;
+    background-position: 50% !important;
+  }
+  link+button::after{ display: none !important; }
+*/
+}

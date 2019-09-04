@@ -1,0 +1,57 @@
+/* Make the installed addons list more compact, title + only */
+/* Installed extensions list will be 3-6 columns wide, themes will be 2 columns wide. No effect on recommendations but those can be styled by adding two_column_html_addons.css */
+/* Compatible with addon_manage_buttons_without_popup.css */
+
+
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
+  
+  :root{  overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
+  
+  @media (min-width:420px){
+    #main{ max-width: unset !important; padding-right: 28px; }
+    addon-list > section{
+      padding: 1em;
+      display: grid;
+      grid-template-areas: "hd hd" "cd cd";
+      grid-auto-columns: 1fr;
+      column-gap: 1em;
+    }
+  
+    addon-card .card-contents{ width: unset !important; white-space: initial !important; }
+  
+    .card-heading-image{ max-width: calc(100% + 32px) }
+    section > h2{ grid-area: hd }
+    addon-card{
+      padding-bottom: 0px !important;
+      padding-top: 0px !important;
+      grid-area: auto;
+    }
+    addon-card .addon-description{ max-height: 3em; scrollbar-width: thin; }
+  }
+    
+  @media (min-width:640px){
+    addon-list[type="extension"] > section{ grid-template-areas: "hd hd hd" "cd cd cd"; }
+  }
+  @media (min-width:960px){
+    addon-list[type="extension"] > section{ grid-template-areas: "hd hd hd hd" "cd cd cd cd"; }
+  }
+  @media (min-width:1180px){
+    addon-list[type="extension"] > section{ grid-template-areas: "hd hd hd hd hd" "cd cd cd cd cd"; }
+  }
+  @media (min-width:1420px){
+    addon-list[type="extension"] > section{ grid-template-areas: "hd hd hd hd hd hd" "cd cd cd cd cd cd"; }
+  }
+  
+  addon-card:not([expanded]) .addon-description,
+  addon-card:not([expanded]) .addon-card-message button[action]{ display: none !important; }
+  
+  addon-list[type="extension"]{ --card-padding: 8px }
+ 
+}
+
+@-moz-document url-prefix("about:addons"){
+  #categories{ width: 60px !important; }
+  #categories > richlistitem{ margin-left: 20px !important; -moz-box-pack: center }
+  .sidebar-footer-label,
+  #category-box richlistitem > label{ display: none }
+}
