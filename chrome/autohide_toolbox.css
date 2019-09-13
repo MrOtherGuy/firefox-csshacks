@@ -22,8 +22,8 @@
   transform-origin: top;
   line-height: 0;
 }
-#navigator-toolbox > *{ line-height: normal }
 
+#navigator-toolbox > *{ line-height: normal }
 
 #navigator-toolbox,
 #navigator-toolbox > *{
@@ -31,11 +31,18 @@
   -moz-appearance: none !important;
 }
 
-:root:not([customizing]) > #navigator-toolbox:not(:focus-within):not(:hover){
+#navigator-toolbox:not(:focus-within):not(:hover){
   transform: rotateX(86deg);
   opacity: 0;
 }
-:root[sizemode="maximized"]:not([customizing]) > #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
+
+:root[sizemode="maximized"] > #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
+
+:root[customizing] > #navigator-toolbox{
+	position: relative !important;
+	transform: none !important;
+	opacity: 1 !important;
+}
 
 #PersonalToolbar[collapsed]{ margin-block-end: -7px }
 
