@@ -1,8 +1,24 @@
 /* Constrains urlbar popup to urlbar width */
 /* Firefox 70+ */
-/* This functionality is now built in to Firefox, set browser.urlbar.megabar to true instead of using this stylesheet */
 
-#urlbar-container{ transform: translateY(0); position: relative; z-index: 10 }
+#urlbar-container{
+	transform: translateY(0);
+	position: relative;
+	z-index: 10;
+	padding-block: 3px !important;
+  padding-inline: 0px !important;
+  margin-inline: 5px !important;
+}
 #nav-bar-customization-target{ overflow: visible !important }
-#urlbar-results{ max-width: 100% !important; top: 100% !important; }
-.urlbarView-row{ padding: 6px 0px; }
+#urlbar-results{ max-width: 100% !important; }
+.urlbarView{
+  top: calc(100% - 5px) !important;
+  width: 100%;
+  border-width: 0 1px 1px 1px !important;;
+  border-style: solid;
+  border-color: inherit !important;
+}
+:root[uidensity="compact"] .urlbarView { margin-top: 2px }
+:root[uidensity="touch"] .urlbarView { margin-top: 1px }
+#urlbar[open]{ border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important; }
+.urlbarView-row{ padding: 6px 0px !important; }
