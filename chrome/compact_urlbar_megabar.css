@@ -1,0 +1,9 @@
+/* Make urlbar megabar appear more compact */
+/* Set the pref browser.urlbar.megabar to true */
+#urlbar.megabar[breakout]{
+  margin-inline-start: 0px !important;
+  width: var(--urlbar-width) !important;; 
+  margin-top: 4px !important;
+}
+#urlbar.megabar .urlbarView-row{ padding: 6px 8px }
+#urlbar.megabar .urlbarView-body-inner{width: calc(var(--urlbar-width) - 2 * 8px - 2px ) !important;}
