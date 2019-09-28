@@ -1,0 +1,9 @@
+/* This very likely only works properly on Windows10 */
+/* This v2 uses transform instead of grid display which might or might not work better */
+
+#context-navigation > menuitem{ transform: rotateZ(-90deg); max-width: 40px}
+#context-navigation{ transform: rotateZ(90deg); transform-origin: 20px 20px; background-color: transparent !important }
+#context-navigation:not([hidden])~*{ margin-left: 20px;  }
+#context-sep-navigation{ display: none }
+#context-navigation{ margin-bottom: -34px; clip-path: polygon(0px 0px, 160px 0px, 160px 100%, 0px 100%)}
+#context-navigation ~ *:not(.menuitem-iconic){ clip-path: polygon(1.45em 0%, 100% 0%,100% 100%,1.45em 100%) }

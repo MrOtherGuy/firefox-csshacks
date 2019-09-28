@@ -1,4 +1,5 @@
 /* This very likely only works properly on Windows10 */
+/* If this won't work correctly can try the v2 file */
 
 #contentAreaContextMenu > .popup-internal-box > .arrowscrollbox-scrollbox{
 display: grid;
