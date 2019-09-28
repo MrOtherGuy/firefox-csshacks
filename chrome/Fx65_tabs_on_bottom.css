@@ -20,6 +20,7 @@ linux_gtk_window_control_patch.css
 
 .titlebar-buttonbox-container{
   position: fixed;
+  display: block;
   top: var(--uc-titlebar-padding,0px);
   right:0;
   height: 40px;

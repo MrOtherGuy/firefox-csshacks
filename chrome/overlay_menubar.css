@@ -2,6 +2,7 @@
 
 #toolbar-menubar{
   position: fixed;
+  display: block;
   top: 0;
   width: 100vw;
   height: initial !important;

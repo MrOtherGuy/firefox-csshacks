@@ -14,7 +14,8 @@
  */
 
 #titlebar{
-  position: fixed; 
+  position: fixed;
+  display: block;
   bottom: 0px; 
   height: var(--tab-min-height);
   width: 100vw;
@@ -23,6 +24,7 @@
 
 #TabsToolbar{
   position: fixed;
+  display: block;
   top: 0px;
   width: 100vw;
   padding-left: 30px !important;

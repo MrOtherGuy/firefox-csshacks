@@ -37,7 +37,7 @@ Window controls will be all wrong without it
 
 /* Rules specific to window controls on right layout */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  .titlebar-buttonbox-container{ position: fixed; left: 0px; z-index: 3; }
+  .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
 }
 
 /* 1px margin on touch density causes tabs to be too high */

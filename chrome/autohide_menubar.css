@@ -9,6 +9,7 @@
 #toolbar-menubar{
 	--uc-menubar-height: 36px;
 	position: fixed;
+  display: block;
 	width: 100vw; 
 	height: var(--uc-menubar-height);
 	margin-top: calc(8px - var(--uc-menubar-height));

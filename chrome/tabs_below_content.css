@@ -11,6 +11,7 @@ linux_gtk_window_control_patch.css
 
 .titlebar-buttonbox-container{
   position: fixed;
+  display: block;
   top:0;
   right:0;
   height: 40px;
@@ -37,7 +38,7 @@ linux_gtk_window_control_patch.css
 /* Move tabs below content */
 :root:not([inDOMFullscreen]) #content-deck,
 :root:not([inDOMFullscreen]) > #browser{ margin-bottom: var(--tab-min-height) }
-#TabsToolbar{ position: fixed; bottom: 0px; width: 100vw; height: var(--tab-min-height) }
+#TabsToolbar{ position: fixed; display: block; bottom: 0px; width: 100vw; height: var(--tab-min-height) }
 #TabsToolbar-customization-target{ width: 100vw; }
 
 /* Hide stuff that doesn't make sense with tabs below content */

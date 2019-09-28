@@ -25,6 +25,7 @@
 
 #nav-bar{
   position: fixed !important;
+  display: block;
   margin-right: 138px;
   margin-left: 30px;
   /* width == 100vw - margins */
@@ -53,6 +54,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #toolbar-menubar{
   height: var(--multirow-toolbar-height);
   position: fixed;
+  display: block;
   top: var(--multirow-top-padding);
   width: 100vw;
   color: var(--lwt-text-color);

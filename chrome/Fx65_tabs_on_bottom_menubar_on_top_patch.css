@@ -6,6 +6,7 @@
 #navigator-toolbox{ margin-top: 29px }
 #toolbar-menubar{
   position: fixed;
+  display: block;
   top: var(--uc-titlebar-padding,0px);
   height: 29px;
   margin-top:1px;

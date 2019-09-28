@@ -17,6 +17,7 @@
 
 #navigator-toolbox{
   position: fixed !important;
+  display: block;
   background-color: var(--lwt-accent-color,black);
   transition: transform 82ms 33ms linear, opacity 82ms 33ms linear !important;
   transform-origin: top;
