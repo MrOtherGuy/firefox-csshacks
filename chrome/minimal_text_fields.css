@@ -3,6 +3,8 @@
   --lwt-toolbar-field-border-color: transparent !important;
 }
 
+#urlbar.megabar[open]{ background-color: var(--toolbar-bgcolor) !important; }
+
 #search-box{
   -moz-appearance: none !important;
   background-color: var(--lwt-toolbar-field-background-color) !important;
