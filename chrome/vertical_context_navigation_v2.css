@@ -1,9 +1,13 @@
 /* This very likely only works properly on Windows10 */
 /* This v2 uses transform instead of grid display which might or might not work better */
 
-#context-navigation > menuitem{ transform: rotateZ(-90deg); max-width: 40px}
-#context-navigation{ transform: rotateZ(90deg); transform-origin: 20px 20px; background-color: transparent !important }
+#context-navigation > menuitem{ max-width: 40px}
+
+#context-forward{ transform: translate(-40px, 40px) }
+#context-reload,#context-stop{ transform: translate(-80px, 80px) }
+#context-bookmarkpage{ transform: translate(-120px,120px) }
+
 #context-navigation:not([hidden])~*{ margin-left: 20px;  }
 #context-sep-navigation{ display: none }
-#context-navigation{ margin-bottom: -34px; clip-path: polygon(0px 0px, 160px 0px, 160px 100%, 0px 100%)}
-#context-navigation:not([hidden]) ~ *:not(.menuitem-iconic){ clip-path: polygon(1.45em 0%, 100% 0%,100% 100%,1.45em 100%) }
+#context-navigation{ margin-bottom: -34px; }
+#context-sep-navigation:not([hidden]) ~ *:not(.menuitem-iconic){ clip-path: polygon(1.45em 0%, 100% 0%,100% 100%,1.45em 100%) }
