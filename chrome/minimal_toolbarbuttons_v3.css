@@ -1,10 +1,5 @@
 /* Create a circular placeholder for toolbarbutton and downscale to hide them */
 
-/*
-Difference to minimal_toolbarbuttons.css:
-Sort of mix'n'match of v1 & v2
-*/
-
 /* Create a placeholder for buttons */
 #urlbar-container:hover ~ .toolbarbutton-1:not([open]),
 #urlbar-container:hover ~ #stop-reload-button > .toolbarbutton-1,
@@ -12,25 +7,29 @@ Sort of mix'n'match of v1 & v2
 #nav-bar > #nav-bar-customization-target:hover ~ toolbaritem:not([open]) > .toolbarbutton-1,
 toolbar .toolbarbutton-1:not([open]),
 .titlebar-button,
-#tabbrowser-tabs toolbarbutton{
+#tabbrowser-tabs toolbarbutton,
+toolbarbutton.scrollbutton-up[orient="horizontal"],
+toolbarbutton.scrollbutton-down[orient="horizontal"]{
   background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
-
 /* Hide placeholder on hover */
+
 toolbar:hover + toolbar .toolbarbutton-1,
 vbox:hover + toolbar .toolbarbutton-1,
 toolbar:hover .toolbarbutton-1,
 #tabbrowser-tabs:hover toolbarbutton,
-.titlebar-buttonbox:hover > .titlebar-button{
-  background-image: none;
-}
+toolbarbutton.scrollbutton-up[orient="horizontal"]:hover,
+toolbarbutton.scrollbutton-down[orient="horizontal"]:hover,
+.titlebar-buttonbox:hover > .titlebar-button{ background-image: none; }
 
 #urlbar-container:hover ~ .toolbarbutton-1:not([open]) > *,
 #urlbar-container:hover ~ #stop-reload-button > .toolbarbutton-1 > *,
 #nav-bar > #nav-bar-customization-target:hover ~ toolbarbutton:not([open]) > *,
 toolbar .toolbarbutton-1 > *,
 .titlebar-button > *,
-#tabbrowser-tabs toolbarbutton > *{
+#tabbrowser-tabs toolbarbutton > *,
+toolbarbutton.scrollbutton-up[orient="horizontal"] > .toolbarbutton-icon,
+toolbarbutton.scrollbutton-down[orient="horizontal"] > .toolbarbutton-icon{
   transform: scale(0);
   transition: transform 82ms linear !important;
 }
@@ -41,7 +40,9 @@ toolbar:hover .toolbarbutton-1:not(#PanelUI-menu-button) > *,
 #titlebar:hover ~ toolbar .toolbarbutton-1 > *,
 .toolbarbutton-1[open] > *,
 .titlebar-buttonbox:hover > .titlebar-button > *,
-#tabbrowser-tabs:hover toolbarbutton > *{
+#tabbrowser-tabs:hover toolbarbutton > *,
+toolbarbutton.scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon,
+toolbarbutton.scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon{
   transform: scale(1)
 }
 
