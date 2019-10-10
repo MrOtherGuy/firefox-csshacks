@@ -8,7 +8,7 @@
   z-index: -1;
   visibility: hidden;
 }
-
+.tabbrowser-tab[pinned] .tab-close-button{ display: none !important; }
 .tab-close-button:hover{ background-color: var(--lwt-accent-color); }
 
 .tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
