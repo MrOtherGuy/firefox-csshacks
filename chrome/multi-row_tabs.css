@@ -18,6 +18,20 @@
   min-height: unset !important;
   padding-inline-start: 0px !important
 }
+/* Selectors for Firefox 71+ */
+/* These are not tabs toolbar specific but horizontal scrollbox isn't used elsewhere, except in bookmarks toolbar but there it doesn't have [part] attribute since it's not in shadow-root */
+.scrollbutton-up[orient="horizontal"][part]~spacer,
+.scrollbutton-up[orient="horizontal"][part],
+.scrollbutton-down[orient="horizontal"][part]{ display: none }
+
+scrollbox[part][orient="horizontal"]{
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
+  scrollbar-color: currentColor transparent;
+  scrollbar-width: thin;
+}
 
 /* Test for Firefox > 66 */
 @supports (inset-block:auto){
