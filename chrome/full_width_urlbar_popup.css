@@ -1,0 +1,26 @@
+/* Makes urlbar popup fit to window width, like in Firefox versions < 71 without "Megabar" */
+/* Text won't be aligned to urlbar text though, since that relied on Firefox setting some css variables which are not available anymore */
+#urlbar{
+  display: -moz-box !important;
+  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
+  border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  margin-inline-start: 0px !important;
+  width: 100% !important;
+  left: 0 !important;
+}
+#urlbar-background{ display: none !important; }
+#urlbar[focused]{ border-color: var(--lwt-toolbar-field-border-focus, highlight) }
+#urlbar-input-container{ padding: 0 !important; height: 100% !important; }
+
+.urlbarView:not([hidden]){
+  display: block !important;
+  position: fixed !important;
+  margin-top: calc(var(--urlbar-height) + 1px);
+  left: 0;
+  width: 100vw !important;
+  background-color: var(--autocomplete-popup-background) !important;
+  margin-inline: 0 !important;
+  box-shadow: 0px 1px 3px 0px black; 
+}
