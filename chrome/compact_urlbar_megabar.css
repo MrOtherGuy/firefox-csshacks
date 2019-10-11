@@ -2,8 +2,12 @@
 /* Set the pref browser.urlbar.megabar to true */
 #urlbar.megabar[breakout]{
   margin-inline-start: 0px !important;
-  width: var(--urlbar-width) !important;; 
-  margin-top: 4px !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
 }
-#urlbar.megabar .urlbarView-row{ padding: 6px 8px }
-#urlbar.megabar .urlbarView-body-inner{width: calc(var(--urlbar-width) - 2 * 8px - 2px ) !important;}
+#urlbar.megabar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
+.urlbarView.megabar{ margin-inline: 0 !important; width: auto !important; }
+.urlbarView-row{ padding-inline: 4px !important; }
+#urlbar-background{ animation: none !important; }
+#urlbar-input-container{ padding: 0 !important; height: 100% !important; }
