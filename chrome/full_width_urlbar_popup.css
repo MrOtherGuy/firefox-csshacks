@@ -2,6 +2,7 @@
 /* Text won't be aligned to urlbar text though, since that relied on Firefox setting some css variables which are not available anymore */
 #urlbar{
   display: -moz-box !important;
+  position: relative !important;
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
   border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
   top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
