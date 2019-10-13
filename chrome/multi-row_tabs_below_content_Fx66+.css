@@ -1,14 +1,3 @@
-/* For Firefox 66+ only */
-/* !! Use customize mode to make menubar permanently enabled !! */
-/* !! Also put one flexible space to the left side of the menubar !! */
-
-/* Menubar will be behind nav-bar unless cursor is over window controls or right edge of the "settings" icon */
-/* Window can only be dragged from the settings icon or a ~20px space between menu button and window controls */
-
-/* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
-/* Scrollbar can't be clicked but the rows can be scrolled with mouse */
-
-
 :root{
   --multirow-toolbar-height: 40px;
   --multirow-top-padding: 0px;
@@ -33,12 +22,15 @@
   top: var(--multirow-top-padding);
 }
 
+/* Fix incorrect vertical alignment with megabar */
+#urlbar[breakout]{ --urlbar-toolbar-height: var(--multirow-toolbar-height) !important; }
+
 #nav-bar-overflow-button {
 max-height: 31px !important;
 transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 }
 
-#PanelUI-button{ float: right; }
+#PanelUI-button{ display: block; float: right; }
 #nav-bar > toolbartabstop{ float: left }
 
 :root:not([inDOMFullscreen]) #content-deck,
@@ -73,7 +65,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
 }
 
-#toolbar-menubar > .titlebar-buttonbox-container{float: right; height: 100%; background: var(--toolbar-bgcolor)}
+#toolbar-menubar > .titlebar-buttonbox-container{ display: block; float: right; height: 100%; background: var(--toolbar-bgcolor)}
 #toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100% ;}
 
 #main-menubar:last-child{ padding-inline-end: 40px }
@@ -81,6 +73,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
   height: 100%;
   float: left;
+  display: block;
   fill: currentColor;
   -moz-context-properties: fill;
   min-width: 28px !important;
@@ -104,7 +97,26 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
   overflow: -moz-hidden-unscrollable;
   display: block;
 }
-.tabbrowser-tab{ max-height: var(--multirow-toolbar-height); min-height: var(--multirow-toolbar-height) }
+
+/* Selectors for Firefox 71+ */
+/* These are not tabs toolbar specific but horizontal scrollbox isn't used elsewhere, except in bookmarks toolbar but there it doesn't have [part] attribute since it's not in shadow-root */
+@-moz-document url(chrome://browser/content/browser.xhtml){
+  .scrollbutton-up[orient="horizontal"][part]~spacer,
+  .scrollbutton-up[orient="horizontal"][part],
+  .scrollbutton-down[orient="horizontal"][part]{ display: none }
+
+  scrollbox[part][orient="horizontal"]{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
+    scrollbar-color: currentColor transparent;
+    scrollbar-width: thin;
+  }
+  #tabbrowser-tabs{ padding-inline-start: 0px !important; }
+}
+
+.tabbrowser-tab{ max-height: var(--tab-min-height); min-height: var(--tab-min-height) }
 .tabbrowser-tab > stack{ width: 100%; height: 100%; }
 
 .tabbrowser-tab[fadein]:not([pinned]){
