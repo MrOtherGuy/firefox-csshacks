@@ -37,6 +37,8 @@
     -moz-context-properties: fill;
     fill : CurrentColor !important;
   }
+  /* make panel background blurry if the background is translucent. Requires pref layout.css.backdrop-filter.enabled  */
+  panel-list{ backdrop-filter: blur(28px) }
 }
 
 /* Get addons page */
