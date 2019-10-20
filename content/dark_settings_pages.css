@@ -18,6 +18,7 @@
       --in-content-box-background: rgba(255,255,255,0.1) !important;
       --in-content-deemphasized-text: var(--in-content-text-color) !important;
       scrollbar-color: var(--in-content-text-color) var(--in-content-page-background) !important;
+      color:var(--in-content-text-color) !important;
     }
   
   menulist > menupopup{ background-color: var(--in-content-page-background) !important; }
