@@ -4,6 +4,8 @@
 /*
 Get window_control_placeholder_support.css
 Window controls will be all wrong without it
+
+urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new urlbar popup
 */
 
 
@@ -15,6 +17,14 @@ Window controls will be all wrong without it
 /* Override for other densities */
 :root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; }
 :root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
+
+:root[uidensity=compact] #urlbar-container.megabar{
+  --urlbar-container-height: var(--uc-toolbar-height) !important;
+  padding-block: 0 !important;
+}
+:root[uidensity=compact] #urlbar.megabar{
+  --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
+}
 
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
