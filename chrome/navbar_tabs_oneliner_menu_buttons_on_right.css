@@ -19,6 +19,14 @@ Window controls will be all wrong without it
 :root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; --uc-menubutton-padding: 0px}
 :root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
+:root[uidensity=compact] #urlbar-container.megabar{
+  --urlbar-container-height: var(--uc-toolbar-height) !important;
+  padding-block: 0 !important;
+}
+:root[uidensity=compact] #urlbar.megabar{
+  --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
+}
+
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
 @media screen and (max-width: 1000px){
