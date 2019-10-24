@@ -1,0 +1,10 @@
+/* Show urlbar rersults on two lines */
+/* Firefox 71+ with megabar only */
+
+.urlbarView-row-inner{ flex-wrap: wrap !important; }
+
+.urlbarView-title[title]{ flex-grow: 1; }
+.urlbarView-row:not([type="switchtab"]) > .urlbarView-row-inner > .urlbarView-url{ margin-inline-start: 24px; min-width: 80% }
+
+.urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-title-separator,
+#urlbarView-row-0 ~ .urlbarView-row:not([type]) > .urlbarView-row-inner > .urlbarView-title-separator{ display: none }
