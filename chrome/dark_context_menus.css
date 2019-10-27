@@ -33,7 +33,7 @@ menupopup:not(#BMB_bookmarksPopup),
 #context-navigation{
   color: var(--uc-menu-color) !important;
   padding: 2px;
-  background-color: var(--uc-menu-bkgnd) !important;
+  background: var(--uc-menu-bkgnd) !important;
   border-color: var(--uc-menu-disabled) !important;
 }
 
