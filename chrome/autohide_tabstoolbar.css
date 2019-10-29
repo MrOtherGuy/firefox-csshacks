@@ -1,0 +1,10 @@
+/* Hide tabs unless cursor is on top of toolbar */
+/* This does not support multi-row tabs */
+
+:root:not([customizing]) #titlebar{
+  margin-bottom: calc(0px - var(--tab-min-height));
+  transition: margin-bottom 48ms ease-out;
+}
+#TabsToolbar:not([customizing]){ visibility: hidden; }
+#navigator-toolbox:hover > #titlebar{ margin-bottom: 0; }
+#navigator-toolbox:hover > #titlebar > #TabsToolbar{ visibility: visible; }
