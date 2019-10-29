@@ -51,3 +51,7 @@ linux_gtk_window_control_patch.css
 #navigator-toolbox::after{ display: none !important; }
 
 @media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
+
+/* These exist only for compatibility with autohide-tabstoolbar.css */
+toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
+#navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
