@@ -5,7 +5,6 @@
 /* It's recommended to move tabs new-tab-button outside tabs toolbar */
 
 /* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
-/* Scrollbar can't be clicked but the rows can be scrolled with mouse */
 /* This maximum visible rows won't work before Fx66 */
 /* So this setting does nothing on Fx65 and all tab rows will be shown */
 :root{
@@ -13,6 +12,13 @@
     --multirow-tab-min-width: 100px;
     --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
 }
+
+/* Scrollbar can't be clicked but the rows can be scrolled with mouse wheel */
+/* Uncomment the next line if you want to be able to use the scrollbar with mouse clicks */
+
+/* .tabbrowser-arrowscrollbox{ -moz-window-dragging: no-drag } */
+
+/* Uncommenting the above makes you unable to drag the window from empty space in the tab strip but normal draggable spaces will continue to work */
 
 #tabbrowser-tabs{
   min-height: unset !important;
