@@ -56,9 +56,10 @@ button{
 
 button[disabled]{ opacity: 0.8 }
 
-button:not([disabled]):hover{ border-color: highlight; background-color: rgba(0,0,0,0.1) !important; }
 
-button.searchbar-engine-one-off-item,,
+button:not([disabled]):hover{ border-color: highlight; background-color: rgba(0,0,0,0.1) !important; box-shadow: inset 0 0 2px highlight }
+button:not([disabled]):active{ box-shadow: inset 0 0 3px 0px black }
+button.searchbar-engine-one-off-item,
 .panel-footer > button{ border-width: 1px 0 0 0; }
 
 button.panel-button{ padding: 2px 2px 1px 2px !important; }
