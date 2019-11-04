@@ -1,8 +1,9 @@
-.panel-subview-body{
- scrollbar-color:  rgb(210,210,210) var(--uc-dark-bkgnd-color,var(--arrowpanel-background));
- scrollbar-width: thin 
-}
-#permList, scrollbar{
- scrollbar-color:  rgb(210,210,210) var(--uc-light-bkgnd-color,var(--arrowpanel-background));
+/* Changes various in-UI scrollabars to be slim and more subtle */
+
+.panel-subview-body,
+#permList,
+scrollbar{
+ color: inherit;
+ scrollbar-color: currentColor transparent;
  scrollbar-width: thin 
 }
