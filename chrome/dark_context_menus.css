@@ -1,4 +1,4 @@
-/* Makes context menus dark */
+/* Makes context menus dark. Also affects some portions of menu popups */
 /* Uses dark theme colors but does not respect dark theme variables (they wouldn't work on sidebar context menu) */
 
 :root{
@@ -7,12 +7,12 @@
   --uc-menu-dimmed: rgba(255,255,255,0.1);
   --uc-menu-disabled: rgb(50,50,50);
 }
-
 panel richlistbox,
 panel tree,
 panel button,
 panel menulist,
 panel textbox,
+panel input,
 menupopup,
 menu,
 menuitem{ -moz-appearance: none !important; }
@@ -28,16 +28,25 @@ panel tree,
 panel button,
 panel menulist,
 panel textbox,
+panel input,
+panel #searchbar,
 menupopup:not(#BMB_bookmarksPopup),
 #main-menubar > menu > menupopup,
 #context-navigation{
   color: var(--uc-menu-color) !important;
   padding: 2px;
-  background: var(--uc-menu-bkgnd) !important;
+  background-color: var(--uc-menu-bkgnd) !important;
   border-color: var(--uc-menu-disabled) !important;
 }
 
-panel menulist:hover, panel menulist[open]{ border-color: Highlight !important; }
+panel textbox input{ padding: 2px !important; }
+
+panel input{ border-width: 1px; border-style: solid; background-color: rgba(0,0,0,0.1) !important; }
+panel #searchbar{ background-color: rgba(0,0,0,0.1) !important; padding: 0 !important; }
+panel #searchbar input{ background-color: transparent !important; }
+
+panel menulist:hover,
+panel menulist[open]{ border-color: Highlight !important; }
 
 #editBMPanel_folderMenuList > menupopup > menuitem{ color: var(--uc-menu-color) !important; }
 
@@ -47,10 +56,7 @@ menu:hover,
 menu[_moz-menuactive],
 menu[open],
 menuitem:hover,
-menuitem[_moz-menuactive]{
-  background-color: var(--uc-menu-dimmed) !important;
-  color: inherit !important;
-}
+menuitem[_moz-menuactive]{ background-color: var(--uc-menu-dimmed) !important; color: inherit !important; }
 
 menu[disabled="true"],
 menuitem[disabled="true"]{ color: var(--uc-menu-disabled) !important; }
