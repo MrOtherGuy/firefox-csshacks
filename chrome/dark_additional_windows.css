@@ -13,14 +13,16 @@
   dialog,
   tree{
     -moz-appearance: none !important;
-    background-color: var(--toolbar-bgcolor,rgb(50,50,52)) !important;
+    background-color: rgb(50,50,52) !important;
     color: rgb(249,249,250) !important;
   }
+    
   #placesToolbar,
   tree{
     background: transparent !important;
   }
-  
+  #searchFilter,
+  input,  
   textbox,
   richlistbox,
   treecol,
@@ -33,8 +35,9 @@
   
   .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
   
-  textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
-  
+  #searchFilter,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
+  #searchFilter > input{ background-color: transparent !important; }
+    
   treecol:not([hideheader]){ height: 24px; }
   treecol:hover{ filter: brightness(160%) }
   treechildren::-moz-tree-row(multicol, odd), #permList{ background-color: rgba(0,0,0,0.2) !important; }
@@ -49,9 +52,11 @@
   button{ padding: 3px }
   #placesMenu > menu{ border: none !important; }
     
-  button{ border: 1px solid graytext; border-radius: 3px }
+  input,button{ border: 1px solid graytext; border-radius: 3px }
+  input{ padding: 2px }
 
 }
+
 /* modal prompts (alert() & friends) */
 
 .paymentDialogContainerFrame,
