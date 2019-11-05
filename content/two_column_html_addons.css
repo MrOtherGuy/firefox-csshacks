@@ -1,4 +1,4 @@
-/* Two column addons for html addons manager available in Firefox 68 */
+/* Multi-column addons for html addons manager available in Firefox 68 */
 /* You can use compact_addons_manager.css with this to make things even more, well, compact  */
 /* Compatible with addon_manage_buttons_without_popup.css */
 
@@ -29,4 +29,21 @@
     }
     addon-card .addon-description{ max-height: 3em; scrollbar-width: thin; }
   }
+  
+  @media (min-width:1220px){
+    addon-list > section,
+    recommended-addon-list{
+      grid-template-areas: "hd hd hd" "cd cd cd";
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (min-width:1720px){
+    addon-list > section,
+    recommended-addon-list{
+      grid-template-areas: "hd hd hd hd" "cd cd cd cd";
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  
 }
