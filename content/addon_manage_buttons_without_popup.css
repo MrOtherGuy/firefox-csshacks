@@ -5,7 +5,8 @@
   .addon-card-message{ margin-bottom: 0px !important; margin-top: 0px !important; }
   .card.addon{ padding-bottom: 0px !important; }
   
-  addon-card .addon-card-collapsed{ display: grid !important; grid-template-areas: "ic con" "op op" }
+  addon-card .addon-card-collapsed{ display: grid !important; grid-template-areas: "ic con" "op op"; grid-template-columns: 48px auto }
+  addon-card .card-contents{ width: initial !important; white-space: initial !important; }
   
   .more-options-menu{ position: static !important; grid-area: op; margin: 0 !important; }
   .card-contents{ grid-area: con }
@@ -20,7 +21,7 @@
   
   .arrow,
   .more-options-button,
-  panel-item[action="expand"]{ display: none }
+  panel-item[action="expand"]{ display: none !important }
 
   div.list{ display: flex !important; flex-direction: row !important; } 
 
@@ -38,6 +39,7 @@
     height: 30px !important;
     background-position: 50% !important;
   }
+  button[role="menuitem"] > label,
   link+button::after{ display: none !important; }
 */
 }
