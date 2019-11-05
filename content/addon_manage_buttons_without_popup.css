@@ -17,6 +17,7 @@
     display: block !important;
     padding: 0 !important;
     margin: 0px calc(0px - var(--card-padding)) !important;
+    backdrop-filter: none !important; /* Having a backdrop-filter leads to some unexpected layering issues */
   }
   
   .arrow,
