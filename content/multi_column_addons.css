@@ -13,7 +13,7 @@
       padding: 1em;
       display: grid;
       grid-template-areas: "hd hd" "cd cd";
-      grid-template-columns: 1fr 1fr;
+      grid-auto-columns: 1fr;
       column-gap: 1em;
      
     }
@@ -34,7 +34,6 @@
     addon-list > section,
     recommended-addon-list{
       grid-template-areas: "hd hd hd" "cd cd cd";
-      grid-template-columns: 1fr 1fr 1fr;
     }
   }
   
@@ -42,8 +41,6 @@
     addon-list > section,
     recommended-addon-list{
       grid-template-areas: "hd hd hd hd" "cd cd cd cd";
-      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
-  
 }
