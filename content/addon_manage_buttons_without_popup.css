@@ -20,21 +20,22 @@
     backdrop-filter: none !important; /* Having a backdrop-filter leads to some unexpected layering issues */
   }
   
+  button[role="menuitem"]{ padding-inline-start: 30px !important; background-position-x: 8px !important; }
+  
   .arrow,
-  .more-options-button,
+  .more-options-menu>.more-options-button,
   panel-item[action="expand"]{ display: none !important }
 
   div.list{ display: flex !important; flex-direction: row !important; } 
 
-  button[role="menuitem"]{ padding-inline-start: 30px !important; background-position-x: 8px !important; }
   
   panel-item[action="toggle-disabled"]{ --icon: url("chrome://browser/skin/quit.svg") }
   panel-item[action="preferences"]{ --icon: url("chrome://browser/skin/settings.svg") }
   
 /* Uncomment these if you want to hide button label - such as with compact_addons_manager */
 /*
- button > slot{ display: none !important; }
- link+button{
+ button[role="menuitem"] > slot{ display: none !important; }
+ link+button[role="menuitem"]{
     padding: 4px !important;
     position: static !important;
     width: 30px !important;
