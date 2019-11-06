@@ -26,6 +26,7 @@
 
   div.list{ display: flex !important; flex-direction: row !important; } 
 
+  button[role="menuitem"]{ padding-inline-start: 30px !important; background-position-x: 8px !important; }
   
   panel-item[action="toggle-disabled"]{ --icon: url("chrome://browser/skin/quit.svg") }
   panel-item[action="preferences"]{ --icon: url("chrome://browser/skin/settings.svg") }
