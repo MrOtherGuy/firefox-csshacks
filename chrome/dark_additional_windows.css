@@ -3,7 +3,8 @@
 
 @-moz-document url(chrome://browser/content/places/places.xul),
   url(chrome://browser/content/pageinfo/pageInfo.xul),
-  url(chrome://browser/content/places/bookmarkProperties.xul){
+  url(chrome://browser/content/places/bookmarkProperties.xul),
+  url-prefix("chrome://mozapps/content/downloads"){
   
   #placesToolbox,
   #placesView,
@@ -22,6 +23,7 @@
     background: transparent !important;
   }
   #searchFilter,
+  menulist,
   input,  
   textbox,
   richlistbox,
@@ -33,9 +35,13 @@
     color: inherit !important;
   }
   
+  menulist{ border: 1px solid graytext; padding-inline-end: 4px }
+  menulist dropmarker{ filter: invert(1) }
+  menulist:hover{ border-color: highlight; background-color: rgba(255,255,255,0.1) }
+    
   .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
   
-  #searchFilter,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
+  #searchFilter,input:not([readonly]),textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
   #searchFilter > input{ background-color: transparent !important; }
     
   treecol:not([hideheader]){ height: 24px; }
