@@ -16,8 +16,8 @@ Window controls will be all wrong without it
 #navigator-toolbox{--uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))}
 #nav-bar:not([overflowing]) > #nav-bar-customization-target{ --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px) }
 /* Override for other densities */
-:root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; --uc-menubutton-padding: 0px}
-:root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
+:root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; --uc-menubutton-padding: 0px}
+:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
 :root[uidensity=compact] #urlbar-container.megabar{
   --urlbar-container-height: var(--uc-toolbar-height) !important;

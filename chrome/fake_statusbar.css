@@ -72,4 +72,4 @@
 
 
 :root:not([inDOMFullscreen]) #content-deck,
-:root:not([inDOMFullscreen]) > #browser{ margin-bottom: var(--tab-min-height) }
+:root:not([inDOMFullscreen]) #browser{ margin-bottom: var(--tab-min-height) }

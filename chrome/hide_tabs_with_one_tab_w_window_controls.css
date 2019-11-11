@@ -41,7 +41,7 @@ Window controls will be all wrong without it
   background-color: transparent !important;
 }
 /* Extra top padding  in maximized window */
-:root[sizemode="maximized"] > #navigator-toolbox{ padding-top:7px !important; }
+:root[sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
 
 /* Window controls in nav-bar */
 :root:not([customizing]) #toolbar-menubar[inactive]{

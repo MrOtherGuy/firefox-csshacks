@@ -36,7 +36,7 @@
   background-color: transparent !important;
 }
 /* Extra top padding  in maximized window */
-:root[sizemode="maximized"] > #navigator-toolbox{ padding-top:7px !important; }
+:root[sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
 
 /* Fix window controls not being clickable */
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{

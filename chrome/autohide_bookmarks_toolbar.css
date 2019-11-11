@@ -6,7 +6,7 @@
 	transform-origin: top;
 	transition: transform 135ms linear 48ms !important;
 }
-:root[uidensity="compact"] > #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -20px }
-:root[uidensity="touch"] > #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -26px }
+:root[uidensity="compact"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -20px }
+:root[uidensity="touch"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -26px }
 
 #navigator-toolbox:hover > #PersonalToolbar{ transform: rotateX(0) }

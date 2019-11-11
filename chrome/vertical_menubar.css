@@ -12,7 +12,7 @@
   height: 100vh;
   width: 30px;
 }
-:root:not([customizing]) > #navigator-toolbox{ margin-top: var(--tab-min-height) }
+:root:not([customizing]) #navigator-toolbox{ margin-top: var(--tab-min-height) }
 
 #TabsToolbar:not([customizing]){
   position: fixed;
@@ -47,4 +47,4 @@
   background-color: var(--lwt-accent-color)
 }
 
-:root:not([inDOMFullscreen]) > #content-deck,:root:not([inDOMFullscreen]) > #browser{ margin-right: 30px }
+:root:not([inDOMFullscreen]) > #content-deck,:root:not([inDOMFullscreen]) #browser{ margin-right: 30px }

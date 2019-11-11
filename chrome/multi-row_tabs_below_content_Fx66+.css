@@ -44,7 +44,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #nav-bar > toolbartabstop{ float: left }
 
 :root:not([inDOMFullscreen]) #content-deck,
-:root:not([inDOMFullscreen]) > #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
+:root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
 
 /* Restyle nav-bar and menubar */
 #nav-bar-customization-target{ width: calc(100% - 100px); }

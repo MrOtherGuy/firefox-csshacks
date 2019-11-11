@@ -16,8 +16,8 @@ Window controls will be all wrong without it
     --uc-toolbar-height: 40px;
   }
   /* Override for other densities */
-  :root[uidensity="compact"] > #navigator-toolbox{ --uc-toolbar-height: 32px; }
-  :root[uidensity="touch"] > #navigator-toolbox{ --uc-toolbar-height: 40px; }
+  :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
+  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
   #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
   #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }

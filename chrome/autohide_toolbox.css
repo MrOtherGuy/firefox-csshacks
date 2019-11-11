@@ -2,14 +2,14 @@
 /* Dimensions on non-Win10 OS probably needs to be adjusted */
 
 :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 10px }
-:root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -2px }
+:root[sizemode="maximized"] #navigator-toolbox{ margin-top: -2px }
 
 @media screen and (min-resolution: 1.25dppx){
   :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 9px }
 }
 @media screen and (min-resolution: 1.5dppx){
   :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px }
-  :root[sizemode="maximized"] > #navigator-toolbox{ margin-top: -1px }
+  :root[sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
 }
 @media screen and (min-resolution: 2dppx){
   :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px }
@@ -37,9 +37,9 @@
   opacity: 0;
 }
 
-:root[sizemode="maximized"] > #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
+:root[sizemode="maximized"] #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
 
-:root[customizing] > #navigator-toolbox{
+:root[customizing] #navigator-toolbox{
 	position: relative !important;
 	transform: none !important;
 	opacity: 1 !important;
