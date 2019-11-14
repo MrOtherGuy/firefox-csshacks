@@ -8,20 +8,32 @@ Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
 As a workaround, the -moz-element background image is removed somewhat often which seems work at first glance. But there might still be some related issues on really long sessions. Just be aware.
 **************/
 
+.urlbar-input-box{
+  display: grid;
+  position: relative;
+}
 
-#urlbar .urlbar-input-box{ display: -moz-stack; }
-/* -moz-stack causes an subtle issue where in certain scenarios a weirdly aligned "http(s)://" may show up */
+.urlbar-input-box > *{
+  grid-area: 1 / 1;
+  z-index: 0;
+}
 
-#urlbar .urlbar-input-box::after{
+.urlbar-input-box::after{
   z-index: 2;
   content: "";
+  display: -moz-box;
   width: 100%;
   height: 100%;
   pointer-events:none;
-  background-position: left 2px;
+  background-position: left 3px;
   background-repeat: no-repeat;
   background-image: -moz-element(#statuspanel);
+  grid-area: 1 / 1;
 }
+
+/* So here's the thing. This essentially disables the right click context-menu on urlbar textbox in Firefox 72. This is unfortunate but necessary due to grid layout - try disabling the rule and see what happens */
+.urlbar-input-box > menupopup{ display: none !important }
+
 /* Using -moz-element() causes some problems after Firefox has been running several hours such as long tab switch times. For this reason the background image is removed on hover and focused states which appears to clear the state. */
 
 /* Hide the status ovelay when urlbar is hovered */
@@ -32,12 +44,8 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 	background-image: none !important
 }
 
-:root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 0px }
-:root[uidensity="touch"] #urlbar .urlbar-input-box::after{ background-position-y: 3px }
-
-#urlbar .urlbar-input-box::after{
-  display: -moz-box;
-}
+:root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 1px }
+:root[uidensity="touch"] #urlbar .urlbar-input-box::after{ background-position-y: 4px }
 
 #statuspanel-inner > #statuspanel-label{
   height:3em;
@@ -56,7 +64,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 
 /* You will need to adjust these probably as they depend on OS, text size etc. */
 #statuspanel-inner{ margin-left: -1px; }
-#statuspanel-inner > #statuspanel-label{ margin-left: -2px !important; margin-top: 1px !important; }
+#statuspanel-inner > #statuspanel-label{ margin-left: -2px !important; margin-top: 0px !important; }
 
 
 /*  OPTIONAL FEATURES  */
