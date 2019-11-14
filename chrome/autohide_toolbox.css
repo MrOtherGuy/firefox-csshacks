@@ -22,6 +22,7 @@
   transition: transform 82ms 33ms linear, opacity 82ms 33ms linear !important;
   transform-origin: top;
   line-height: 0;
+  z-index: 1;
 }
 
 #navigator-toolbox > *{ line-height: normal }

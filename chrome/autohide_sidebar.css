@@ -8,6 +8,7 @@
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
   max-width: var(--uc-sidebar-width) !important;
+  z-index:1;
 }
 
 #main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }

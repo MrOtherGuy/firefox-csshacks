@@ -5,6 +5,7 @@
 	transform: rotateX(90deg);
 	transform-origin: top;
 	transition: transform 135ms linear 48ms !important;
+  z-index: 1;
 }
 :root[uidensity="compact"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -20px }
 :root[uidensity="touch"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -26px }
