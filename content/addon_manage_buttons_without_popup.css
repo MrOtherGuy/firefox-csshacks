@@ -25,7 +25,8 @@
   button[role="menuitem"]{ padding-inline-start: 30px !important; background-position-x: 8px !important; }
   
   .arrow,
-  .more-options-menu>.more-options-button,
+  .more-options-menu > .more-options-button,
+  .addon-name-container > .more-options-button,
   panel-item[action="expand"]{ display: none !important }
 
   div.list{ display: inherit !important; flex-direction: row !important; } 
