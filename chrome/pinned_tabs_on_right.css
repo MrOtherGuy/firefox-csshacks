@@ -1,0 +1,18 @@
+/* Show pinned tabs on right side of normal tabs */
+/* This is stupid hack that barely works and might lead to some very unexpected behavior */
+
+.tabbrowser-arrowscrollbox > spacer,
+.scrollbutton-up[orient="horizontal"]~spacer{ display: none }
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox,
+.scrollbutton-up[orient="horizontal"]~scrollbox{ -moz-box-direction: inherit; -moz-box-pack: end }
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox::after,
+.scrollbutton-up[orient="horizontal"]~scrollbox::after{ display: -moz-box; content: ""; -moz-box-flex: 1; -moz-box-ordinal-group: 2 }
+
+#tabs-newtab-button{ -moz-box-ordinal-group: 2 }
+.tabbrowser-tab[pinned]{ -moz-box-ordinal-group: 3 }
+
+#tabbrowser-tabs[positionpinnedtabs]{ direction: rtl }
+#tabbrowser-tabs[positionpinnedtabs] > arrowscrollbox { -moz-box-direction: reverse }
+.tab-content{ direction: ltr }
