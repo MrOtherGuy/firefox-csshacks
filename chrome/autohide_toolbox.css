@@ -1,24 +1,27 @@
 /* Hide the whole toolbar area unless urlbar is focused or cursor is over the toolbar */
 /* Dimensions on non-Win10 OS probably needs to be adjusted */
 
-:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 10px }
-:root[sizemode="maximized"] #navigator-toolbox{ margin-top: -2px }
+@media (-moz-os-version: windows-win10){
 
-@media screen and (min-resolution: 1.25dppx){
-  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 9px }
-}
-@media screen and (min-resolution: 1.5dppx){
-  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px }
-  :root[sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
-}
-@media screen and (min-resolution: 2dppx){
-  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px }
+  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 10px !important; }
+  :root[sizemode="maximized"] #navigator-toolbox{ margin-top: -2px }
+
+  @media screen and (min-resolution: 1.25dppx){
+    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 9px !important; }
+  }
+  @media screen and (min-resolution: 1.5dppx){
+    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px !important; }
+    :root[sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
+  }
+  @media screen and (min-resolution: 2dppx){
+    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px !important; }
+  }
 }
 
 #navigator-toolbox{
   position: fixed !important;
   display: block;
-  background-color: var(--lwt-accent-color,black);
+  background-color: var(--lwt-accent-color,black) !important;
   transition: transform 82ms 33ms linear, opacity 82ms 33ms linear !important;
   transform-origin: top;
   line-height: 0;
