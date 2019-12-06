@@ -12,20 +12,16 @@
   --uc-window-drag-space-width: 24px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
 }
 
-#nav-bar::before,
-#nav-bar::after{
-  content: "";
-  display: -moz-box;
-  width: var(--uc-window-drag-space-width,0);
+#nav-bar{
+  border-inline: var(--uc-window-drag-space-width,0px) solid var(--toolbar-bgcolor);
+  border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px));
 }
-toolbar#nav-bar::after{ width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) }
 
 /* Use this pref to check Mac OS where window controls are on left */
 /* This pref defaults to true on Mac and doesn't actually do anything on other platforms. So if your system has window controls on LEFT side you can set the pref to true */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
 	:root{ --uc-window-control-width: 72px; }
-  :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar::before{
-    width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px))
+  :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+    border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) var(--uc-window-drag-space-width,0px)
   }
-  :root[tabsintitlebar="true"]:not([inFullscreen]) toolbar#nav-bar::after{ width: var(--uc-window-drag-space-width,0px); }
 }

@@ -42,9 +42,6 @@
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{
   transition: height 0ms steps(1) 80ms;
 }
-#nav-bar::before,
-#nav-bar::after{
-  content: "";
-  display: -moz-box;
-  width: var(--uc-window-drag-space-width);
+#nav-bar{
+  border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor);
 }
