@@ -3,7 +3,7 @@
 /* Make sure you have menubar enabled */
 
 #TabsToolbar > .toolbar-items{ position: relative; z-index: 5; }
-#toolbar-menubar > .titlebar-buttonbox-container{ float: right }
+#toolbar-menubar > .titlebar-buttonbox-container{ float: right; display: block }
 #TabsToolbar > .titlebar-spacer{ display: -moz-box !important; }
 
 #toolbar-menubar{
