@@ -17,7 +17,6 @@ linux_gtk_window_control_patch.css
   height: 40px;
   z-index: 3;
   visibility: visible !important;
-  display: -moz-box !important;
 }
 
 :root[inFullscreen] #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
