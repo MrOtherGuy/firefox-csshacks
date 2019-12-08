@@ -4,9 +4,9 @@ Stylesheets in this repository are tested only on Windows 10. They should work o
 
 # Loading user*.css files
 
-1. Find your profile folder, if Firefox is running you can find by going to about:support and there should be a button with label "Open Folder" under application basics
+1. Find your profile folder, if Firefox is running you can find by going to `about:support` and there should be a button with label "Open Folder" under application basics
 2. Create a new folder to the profile folder and name it "chrome"
-3. userChrome.css and userContent.css files should be created inside this chrome-folder.
+3. `userChrome.css` and `userContent.css` files should be created inside this chrome-folder.
 
 Clone this repository or individual files inside that newly created chrome-folder.
 In the end you should have a folder structure like this:
@@ -25,15 +25,15 @@ all other profile folders and files
 ...
 ```
 
-In short, create a parent chrome folder to the same directory where prefs.js is - the main profile folder. Firefox loads userContent.css and userChrome.css files only from that non-default chrome-folder.
+In short, create a parent chrome folder to the same directory where `prefs.js` is - the main profile folder. Firefox loads `userContent.css` and `userChrome.css` files only from that non-default chrome-folder.
 
 # Usage
 
 Stylesheets are divided in to chrome and content folders. The difference is that styles inside "content" affect web-pages whereas styles inside "chrome" affect browser UI.
 
-Use stylesheets under "chrome" in userChrome.css
+Use stylesheets under "chrome" in `userChrome.css`
 
-Use stylesheets under "content" in userContent.css
+Use stylesheets under "content" in `userContent.css`
 
 You can import the stylesheets with @-rule import like this:
 
