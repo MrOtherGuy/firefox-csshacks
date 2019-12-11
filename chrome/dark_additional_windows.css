@@ -1,9 +1,12 @@
 /* Dark library, page-info and bookmark-properties */
 /* Color scheme matches default dark theme */
 
-@-moz-document url(chrome://browser/content/places/places.xul),
-  url(chrome://browser/content/pageinfo/pageInfo.xul),
-  url(chrome://browser/content/places/bookmarkProperties.xul),
+/* If you are going to open Library in the (places.xhtml) in a tab then this file should also be imported in userContent.css */
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@-moz-document url-prefix(chrome://browser/content/places/),
+  url-prefix(chrome://browser/content/pageinfo/),
   url-prefix("chrome://mozapps/content/downloads"){
   
   #placesToolbox,
@@ -41,8 +44,8 @@
     
   .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
   
-  #searchFilter,input:not([readonly]),textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
-  #searchFilter > input{ background-color: transparent !important; }
+  #searchFilter,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
+  #searchFilter > input,input[readonly]{ background-color: transparent !important; }
     
   treecol:not([hideheader]){ height: 24px; }
   treecol:hover{ filter: brightness(160%) }
@@ -65,8 +68,8 @@
 
 /* modal prompts (alert() & friends) */
 
-.paymentDialogContainerFrame,
-.tabmodalprompt-mainContainer{
+xul|vbox.paymentDialogContainerFrame,
+xul|vbox.tabmodalprompt-mainContainer{
   background-color: var(--toolbar-bgcolor) !important;
   color: var(--lwt-text-color,-moz-dialogtext) !important;
 }
