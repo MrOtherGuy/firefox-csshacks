@@ -1,5 +1,5 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @-moz-document url-prefix("about:"){
+  window,
   page,
   scrollbar{
     scrollbar-color: rgb(210,210,210) rgb(42,42,46);
