@@ -1,0 +1,19 @@
+/* Makes the contents of the overflow menu appear in a three column grid */
+/* Hides button labels */
+
+#widget-overflow-mainView{ min-width: 80px !important; }
+
+.widget-overflow-list:not([customizing]){
+  display: grid;
+  grid-template-areas: "s s s" "a a a";
+  grid-auto-columns: auto;
+}
+
+#widget-overflow-mainView[visible] .widget-overflow-list:not([customizing]) { max-width: 110px }
+#widget-overflow-mainView ~ panelview[visible]{ max-width: unset !important; } 
+
+.widget-overflow-list:not([customizing]) > *{ padding-block: 8px !important; }
+.widget-overflow-list > #search-container{ grid-area: s }
+
+.widget-overflow-list:not([customizing]) .subviewbutton-nav::after,
+.widget-overflow-list:not([customizing]) .toolbarbutton-text{ display: none }
