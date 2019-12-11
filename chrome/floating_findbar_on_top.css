@@ -6,6 +6,7 @@ findbar{
   transition: transform 82ms linear, opacity 82ms linear 32ms !important;
   background: none !important;
   pointer-events: none;
+  z-index: 1;
 }
 
 .findbar-container > .findbar-find-fast{
