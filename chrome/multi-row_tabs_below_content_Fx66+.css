@@ -1,6 +1,8 @@
 /* Makes tabs to appear on multiple lines below the web content */
 /* Tab reordering will not work and can't be made to work */
 
+/* Make menubar or titlebar enabled for getting window controls in correct place. Menubar options will be shown as overlay when mouse is at top-left corner */
+
 /* It's recommended to move tabs new-tab-button outside tabs toolbar */
 
 /* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
@@ -18,15 +20,21 @@
 :root[uidensity="compact"]{--multirow-toolbar-height: 32px}
 :root{ border-top-width: 0px !important }
 
+#main-window > body > box,
 #navigator-toolbox{ -moz-box-ordinal-group: 2 }
 
-#titlebar{-moz-appearance: -moz-window-titlebar !important; }
+#titlebar{-moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
 
 #nav-bar{
   position: fixed !important;
   display: block;
-  margin-right: 138px;
   margin-left: 30px;
+  width: calc(100vw - 30px);
+  top: var(--multirow-top-padding);
+}
+:root[tabsintitlebar] #nav-bar{
+  margin-right: 138px;
+
   /* width == 100vw - margins */
   width: calc(100vw - 168px);
   top: var(--multirow-top-padding);
@@ -41,7 +49,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 }
 
 #PanelUI-button{ display: block; float: right; }
-#nav-bar > toolbartabstop{ float: left }
+#nav-bar > toolbartabstop{ float: left; display: block }
 
 :root:not([inDOMFullscreen]) #content-deck,
 :root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
@@ -139,7 +147,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
  /*! max-width: 100vw !important; */
 }
 
-#tabbrowser-tabs .tabbrowser-tab[pinned]{
+.tabbrowser-tab[pinned]{
   position: static !important;
   margin-inline-start: 0px !important;
 }
