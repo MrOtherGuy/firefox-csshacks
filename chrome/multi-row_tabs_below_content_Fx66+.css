@@ -1,7 +1,7 @@
 /* Makes tabs to appear on multiple lines below the web content */
 /* Tab reordering will not work and can't be made to work */
 
-/* Make menubar or titlebar enabled for getting window controls in correct place. Menubar options will be shown as overlay when mouse is at top-left corner */
+/* Make menubar enabled for getting window controls in correct place. Menubar options will be shown as overlay when mouse is at top-left corner */
 
 /* It's recommended to move tabs new-tab-button outside tabs toolbar */
 
@@ -31,6 +31,7 @@
   margin-left: 30px;
   width: calc(100vw - 30px);
   top: var(--multirow-top-padding);
+
 }
 :root[tabsintitlebar] #nav-bar{
   margin-right: 138px;
@@ -51,6 +52,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #PanelUI-button{ display: block; float: right; }
 #nav-bar > toolbartabstop{ float: left; display: block }
 
+#customization-container,
 :root:not([inDOMFullscreen]) #content-deck,
 :root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
 
@@ -58,7 +60,7 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #nav-bar-customization-target{ width: calc(100% - 100px); }
 :root[uidensity="compact"] #nav-bar-customization-target{ width: calc(100% - 82px); }
 
-#nav-bar > *,
+#nav-bar-overflow-button,
 #PanelUI-menu-button{ height: var(--multirow-toolbar-height); }
 
 #toolbar-menubar{
