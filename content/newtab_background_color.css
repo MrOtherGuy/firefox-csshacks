@@ -1,5 +1,9 @@
 @namespace url("http://www.w3.org/1999/xhtml");
 
 @-moz-document url("about:home"),url("about:blank"),url("about:newtab"),url("about:privatebrowsing"){
-	body{background-color: rgb(46,54,69) !important}
+  body{background-color: rgb(46,54,69) !important;}
+}
+@-moz-document("about:privatebrowsing"){
+  .search-handoff-button{ background-color: rgba(100,100,100,0.1) !important; }
+  .fake-textbox{ color: rgb(200,200,200) !important } 
 }
