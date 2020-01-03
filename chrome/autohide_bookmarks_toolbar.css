@@ -1,4 +1,4 @@
-/* Show bookmarks toolbar only when cursor is on top of toolbar area */
+/* Show bookmarks toolbar only when cursor is on top of toolbar area or urlbar is focused */
 
 #PersonalToolbar:not([customizing]){
 	margin-bottom: -22px;
@@ -10,4 +10,9 @@
 :root[uidensity="compact"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -20px }
 :root[uidensity="touch"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -26px }
 
-#navigator-toolbox:hover > #PersonalToolbar{ transform: rotateX(0) }
+/* SELECT BOOKMARKS TOOLBAR BEHAVIOR */
+/* Comment out to disable either one of these */
+
+#nav-bar:focus-within + #PersonalToolbar, /* Show when urlbar is focused */
+#navigator-toolbox:hover > #PersonalToolbar /* Show when cursor is over the toolbar area */
+{ transform: rotateX(0) }
