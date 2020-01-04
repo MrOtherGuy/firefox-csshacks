@@ -1,14 +1,19 @@
-/* Show bookmarks toolbar only when cursor is on top of toolbar area or urlbar is focused */
+#PersonalToolbar{
+  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
+  --uc-bm-padding: 3px; /* Vertical padding to be applied to bookmarks */
+}
+
+:root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
+:root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 6px }
 
 #PersonalToolbar:not([customizing]){
-	margin-bottom: -22px;
+	margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
 	transform: rotateX(90deg);
 	transform-origin: top;
 	transition: transform 135ms linear 48ms !important;
   z-index: 1;
 }
-:root[uidensity="compact"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -20px }
-:root[uidensity="touch"] #navigator-toolbox > #PersonalToolbar:not([customizing]){ margin-bottom: -26px }
+#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
 /* SELECT BOOKMARKS TOOLBAR BEHAVIOR */
 /* Comment out to disable either one of these */
