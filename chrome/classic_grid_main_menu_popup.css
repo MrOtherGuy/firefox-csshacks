@@ -1,0 +1,133 @@
+/* Makes the main menu popup apper in grid-like format that somewhat resembles the menu from Australis styling */
+
+/* Basic styling */
+#appMenu-mainView{ max-width: initial !important; }
+
+#appMenu-mainView > .panel-subview-body{
+  display: flex; 
+  flex-direction: row; 
+  max-width: 290px;
+  height: 580px; /* Raise this if you see scrollbar in the popup */
+  flex-wrap: wrap;
+  padding-bottom: 0px !important;
+}
+
+
+#appMenu-mainView > .panel-subview-body > toolbarbutton{
+  width: 70px;
+  height: 60px;
+  flex-grow:1;
+}
+
+#appMenu-mainView > .panel-subview-body > toolbarbutton{ -moz-box-orient: vertical }
+
+#appMenu-mainView > .panel-subview-body > toolbaritem{ flex-grow: 1 }
+
+#appMenu-mainView > .panel-subview-body > toolbarbutton.subviewbutton{ padding-inline: 4px !important; margin-inline: 8px !important; }
+
+/* Hide single-line labels */
+
+#appMenu-mainView > .panel-subview-body > #appMenu-zoom-controls > toolbarbutton > .toolbarbutton-multiline-text,
+#appMenu-mainView > .panel-subview-body  toolbarbutton > .toolbarbutton-text{ display: none !important; }
+
+/* Show multi-line labels and some specific single-line ones */
+
+#appMenu-zoom-controls > #appMenu-zoomReset-button > .toolbarbutton-text,
+#appMenu-protection-report-button.subviewbutton > label.toolbarbutton-text,
+#appMenu-mainView > .panel-subview-body > .panel-banner-item > .toolbarbutton-text, 
+#appMenu-mainView > .panel-subview-body toolbarbutton > .toolbarbutton-multiline-text{ display: -moz-box !important; }
+
+/* Set some constraints for multi-line labels */
+
+#appMenu-protection-report-button.subviewbutton > label.toolbarbutton-text,
+#appMenu-mainView > .panel-subview-body toolbarbutton > .toolbarbutton-multiline-text{
+  max-height: 30px;
+  overflow: -moz-hidden-unscrollable;
+  margin: 0px !important;
+  text-align: center !important;;
+}
+
+/* Unique styling for Edit and Zoom controls */
+
+#appMenu-zoom-controls,
+#appMenu-zoom-controls + toolbarseparator,
+#appMenu-edit-controls,
+#appMenu-edit-controls + toolbarseparator{
+  order: -1;
+  min-width: 260px;
+  height: initial !important;
+  margin: initial !important;
+  flex-grow: 1;
+  -moz-box-pack: center;
+}
+
+/* Reorder separators & "special" items */
+
+#appMenu-fxa-status + toolbarseparator,
+#appMenu-mainView > .panel-subview-body > .sync-ui-item + toolbaritem{ order: 1 }
+
+#appMenu-fxa-status{ order: 2 }
+
+/* Set minimum width for "full-row" items */
+#appMenu-mainView > .panel-subview-body > .sync-ui-item + toolbaritem,
+#appMenu-mainView > .panel-subview-body > .panel-banner-item,
+#appMenu-fxa-status,
+#appMenu-fxa-status + toolbarseparator{
+  min-width: 280px; 
+  height: initial !important;
+  margin: initial !important;
+}
+
+/* Full-row items should have contents laid out horizontally */
+#appMenu-mainView > .panel-subview-body > .panel-banner-item,
+#appMenu-fxa-status,
+#appMenu-fxa-label{ -moz-box-orient: horizontal !important; }
+
+/* "Main" items styling */
+
+#appMenu-mainView > .panel-subview-body > .panel-banner-item,
+toolbarbutton#appMenuRestoreLastSession.subviewbutton.subviewbutton-iconic,
+toolbarbutton#appMenu-customize-button.subviewbutton.subviewbutton-iconic,
+toolbarbutton#appMenu-quit-button.subviewbutton.subviewbutton-iconic,
+toolbarbutton#appMenu-help-button.subviewbutton.subviewbutton-iconic{
+  order: 3;
+  height: initial !important;
+  margin: initial !important;
+  width: initial;
+}
+
+#appMenu-customize-button{ min-width: 180px }
+
+/* Color styling for items */
+
+#appMenu-mainView > .panel-subview-body toolbarbutton:not([disabled]):hover{ box-shadow: inset 0 0 3px 0px grey; }
+
+#appMenu-customize-button:not(:hover),
+#appMenu-help-button:not(:hover){ background-color: rgba(127,137,127,0.3) !important; }
+
+#appMenu-help-button{ border-inline: 1px solid grey }
+
+#appMenu-quit-button{ background-color: rgb(220,100,100) !important; }
+#appMenu-quit-button:hover{ background-color: rgb(220,80,80) !important; }
+
+/* Hide some additional items */
+
+#appMenu-mainView > .panel-subview-body > .panel-banner-item > .toolbarbutton-multiline-text,
+#appMenu-zoom-controls > #appMenu-fullscreen-button > label,
+#appMenu-zoom-controls > label,
+#appMenu-zoom-controls > spacer,
+#appMenu-edit-controls > label,
+#appMenu-edit-controls > spacer,
+#appMenu-mainView > .panel-subview-body > toolbarbutton::after{ display: none !important; }
+
+/* This makes the protections button appear consistent with Sync "bar"  */
+#appMenu-protection-report-button{ padding-inline-end: 34px !important; }
+
+/* Missing icons */
+#appMenu-developer-button { list-style-image: url("chrome://browser/skin/developer.svg") }
+#appMenu-save-file-button { list-style-image: url("chrome://browser/skin/save.svg") }
+#appMenu-open-file-button { list-style-image: url("chrome://browser/skin/open.svg") }
+#appMenu-more-button{ list-style-image: url("chrome://devtools/skin/images/aboutdebugging-process-icon.svg") }
+#appMenu-ssb-button{ list-style-image: url("chrome://devtools/skin/images/tool-application.svg") }
+#appMenu-non-fission-window-button{ list-style-image: url("chrome://devtools/skin/images/command-frames.svg") }
+#appMenu-fission-window-button{ list-style-image: url("chrome://devtools/skin/images/pseudo-class.svg") }
