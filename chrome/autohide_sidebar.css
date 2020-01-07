@@ -11,6 +11,12 @@
   z-index:1;
 }
 
+#sidebar-box[positionend]{ direction: rtl }
+#sidebar-box[positionend] > *{ direction: ltr }
+
+#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
+#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+
 #main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }
 
 #sidebar-splitter{ display: none }
@@ -41,5 +47,11 @@
 #sidebar,
 #sidebar-header{
   background-color: var(--toolbar-bgcolor) !important;
-  border-right: 1px solid rgb(80,80,80);
+  border-inline: 1px solid rgb(80,80,80);
+  border-inline-width: 0px 1px;
+}
+
+#sidebar-box:not([positionend]) > :-moz-locale-dir(rtl),
+#sidebar-box[positionend] > *{
+  border-inline-width: 1px 0px;
 }
