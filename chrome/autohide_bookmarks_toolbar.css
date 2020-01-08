@@ -16,8 +16,10 @@
 #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
 /* SELECT BOOKMARKS TOOLBAR BEHAVIOR */
-/* Comment out to disable either one of these */
+/* Comment out or delete either one of these to disable that behavior */
 
-#nav-bar:focus-within + #PersonalToolbar, /* Show when urlbar is focused */
-#navigator-toolbox:hover > #PersonalToolbar /* Show when cursor is over the toolbar area */
-{ transform: rotateX(0) }
+/* Show when urlbar is focused */
+#nav-bar:focus-within + #PersonalToolbar{ transform: rotateX(0) }
+
+/* Show when cursor is over the toolbar area */
+#navigator-toolbox:hover > #PersonalToolbar{ transform: rotateX(0) }
