@@ -9,7 +9,7 @@
 #toolbar-menubar{
 	--uc-menubar-height: 36px;
 	position: fixed;
-  display: block;
+	display: block;
 	width: 100vw; 
 	height: var(--uc-menubar-height);
 	margin-top: calc(8px - var(--uc-menubar-height));
@@ -17,6 +17,9 @@
 	-moz-window-dragging: no-drag;
 	z-index:4;
 }
+
+#menubar-items{ display: block; float: left; }
+
 #toolbar-menubar:hover{
 	background-color: var(--toolbar-bgcolor) !important;
 	margin-top: 0px;
