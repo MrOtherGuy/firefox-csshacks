@@ -1,7 +1,16 @@
 /* Shows window title in menubar */
 /* Enable menubar for correct behavior */
 @-moz-document url(chrome://browser/content/browser.xhtml){
-  head{ display: block; position: fixed; width: 100vw; text-align: center }
+  head{
+    display: block;
+    position: fixed;
+    right: 140px; /* Space for window controls */
+    width: calc(100vw - 440px); /* Window width - window control width - menuitem (English) width */
+    text-align: center
+    }
   head > *{ display: none }
-  head > title{ display: -moz-box; padding-top: 1px }
+  head > title{ display: -moz-box; padding-top: 1px; max-width: 60vw; overflow-x: -moz-hidden-unscrollable; text-overflow: ellipsis }
+  @media (-moz-os-version:windows-win10){
+    :root[sizemode="maximized"] > head > title { padding-top: 10px }
+  }
 }
