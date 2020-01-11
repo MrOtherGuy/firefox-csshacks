@@ -1,0 +1,7 @@
+/* Shows window title in menubar */
+/* Enable menubar for correct behavior */
+@-moz-document url(chrome://browser/content/browser.xhtml){
+  head{ display: block; position: fixed; width: 100vw; text-align: center }
+  head > *{ display: none }
+  head > title{ display: -moz-box; padding-top: 1px }
+}
