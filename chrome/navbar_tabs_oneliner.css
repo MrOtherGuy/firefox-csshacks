@@ -56,3 +56,6 @@ urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new ur
 
 /* Hide dropdown placeholder */
 #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; }
+
+/* Fix customization view */
+#customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
