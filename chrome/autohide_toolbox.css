@@ -18,6 +18,8 @@
   }
 }
 
+:root[sizemode="fullscreen"]{ margin-top: 0px !important; }
+
 #navigator-toolbox{
   position: fixed !important;
   display: block;
@@ -49,7 +51,8 @@
 	opacity: 1 !important;
 }
 
-#PersonalToolbar[collapsed]{ margin-block-end: -7px }
+#navigator-toolbox[inFullscreen] > #PersonalToolbar,
+#PersonalToolbar[collapsed="true"]{ display: none }
 
 /* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
  /*#titlebar{ margin-bottom: -9px }*/
