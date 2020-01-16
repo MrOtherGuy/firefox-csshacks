@@ -1,0 +1,33 @@
+/* Hides #nav-bar and overlays it on top of tabs when urlbar is focused  */
+/* overlay_menubar.css can be used for better handling of menubar when triggered with Alt-key */
+/* This style totally breaks bookmarks toolbar but can be used with autohide_bookmarks_toolbar.css */
+
+:root:not([customizing]) #navigator-toolbox{ display: grid; grid-template-rows: var(--tab-min-height) }
+:root:not([customizing]) #navigator-toolbox > *{ grid-area: 1/1; }
+:root:not([customizing]) #titlebar{ -moz-appearance: none !important; }
+
+/* -moz-appearance: none on titlebar breaks window margins, so re-adjust that */
+@media (-moz-os-version: windows-win10){
+
+	:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px !important; }
+
+  @media screen and (min-resolution: 1.25dppx){
+    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px !important; }
+  }
+  @media screen and (min-resolution: 1.5dppx){
+    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 6px !important; }
+  }
+  @media screen and (min-resolution: 2dppx){
+    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 5px !important; }
+  }
+}
+
+#nav-bar:not([customizing]){
+	transform: rotateX(90deg);
+	transition: transform 67ms linear !important;
+	z-index: 3;
+}
+#nav-bar:focus-within{ transform: rotateX(0deg) }
+
+/* This enables compatibility with autohide_bookmarks_toolbar.css */
+#PersonalToolbar{ margin-top: var(--tab-min-height) !important; } 
