@@ -9,7 +9,7 @@
 /* -moz-appearance: none on titlebar breaks window margins, so re-adjust that */
 @media (-moz-os-version: windows-win10){
 
-	:root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px !important; }
+  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px !important; }
 
   @media screen and (min-resolution: 1.25dppx){
     :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px !important; }
@@ -23,11 +23,16 @@
 }
 
 #nav-bar:not([customizing]){
-	transform: rotateX(90deg);
-	transition: transform 67ms linear !important;
-	z-index: 3;
+  transform: rotateX(90deg);
+  transition: transform 67ms linear, opacity 0ms linear 67ms !important;
+  opacity: 0;
+  z-index: 3;
 }
-#nav-bar:focus-within{ transform: rotateX(0deg) }
+#nav-bar:focus-within{
+	transform: rotateX(0deg);
+	opacity: 1;
+	transition-delay: 0ms, 0ms !important;
+}
 
 /* This enables compatibility with autohide_bookmarks_toolbar.css */
 #PersonalToolbar{ margin-top: var(--tab-min-height) !important; } 
