@@ -1,17 +1,18 @@
 #PersonalToolbar{
   --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
-  --uc-bm-padding: 3px; /* Vertical padding to be applied to bookmarks */
+  --uc-bm-padding: 2px; /* Vertical padding to be applied to bookmarks */
 }
 
 :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
 :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 6px }
 
 #PersonalToolbar:not([customizing]){
-	margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
-	transform: rotateX(90deg);
-	transform-origin: top;
-	transition: transform 135ms linear 600ms !important;
+  margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+  transform: rotateX(90deg);
+  transform-origin: top;
+  transition: transform 135ms linear 600ms !important;
   z-index: 1;
+
 }
 #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
@@ -26,6 +27,16 @@
 
 /* Show when cursor is over the toolbar area */
 #navigator-toolbox:hover > #PersonalToolbar{
-	transition-delay: 100ms !important;
-	transform: rotateX(0);
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
 }
+
+/* Uncomment to enable compatibility for multi-row_bookmarks.css */
+/* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
+/*
+#PersonalToolbar:not([customizing]){
+  position: fixed;
+  display: block;
+  margin-bottom: 0px !important;
+}
+*/
