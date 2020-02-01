@@ -6,10 +6,17 @@
     position: fixed;
     right: 140px; /* Space for window controls */
     width: calc(100vw - 440px); /* Window width - window control width - menuitem (English) width */
-    text-align: center
+    text-align: center;
     }
   head > *{ display: none }
-  head > title{ display: -moz-box; padding-top: 1px; max-width: 60vw; overflow-x: -moz-hidden-unscrollable; text-overflow: ellipsis }
+  head > title{
+    display: -moz-box;
+    padding-top: 1px;
+    max-width: 60vw;
+    overflow-x: -moz-hidden-unscrollable;
+    text-overflow: ellipsis;
+    -moz-box-pack: center;
+  }
   @media (-moz-os-version:windows-win10){
     :root[sizemode="maximized"] > head > title { padding-top: 10px }
   }
