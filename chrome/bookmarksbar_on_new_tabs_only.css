@@ -1,3 +1,6 @@
+/* This stylesheet is deprecated since Firefox 72 */
+/* Use autohide_bookmarks_toolbar.css instead */
+
 :root[title$=" - Mozilla Firefox"] #PersonalToolbar,
 :root[title$=" - Mozilla Firefox (Private Browsing)"] #PersonalToolbar,
 :root[title$=" - Firefox Nightly"] #PersonalToolbar,
