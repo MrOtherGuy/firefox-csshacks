@@ -1,20 +1,22 @@
-/*Make tabs and navbar appear side-by-side tabs on right */
+/* Make tabs and navbar appear side-by-side tabs on right */
 
-/* IMPORTANT */
-/*
-Get window_control_placeholder_support.css
-Window controls will be all wrong without it
-*/
+/* Use page_action_buttons_on_hover.css to hide page-action-buttons to save more space for the address */
 
 /* Toolbars will be shown normally if window width goes below the value below */
 /* Modify it to suit your needs */
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1100px){
   /* Modify these to change relative widths or default height */
   #navigator-toolbox{
     --uc-navigationbar-width: 40vw;
     --uc-toolbar-height: 40px;
   }
+/* prevent urlbar overflow on narrow windows */
+/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
+  @media screen and (max-width: 1300px){
+    #urlbar-container{ min-width:unset !important }
+  }
+
   /* Override for other densities */
   :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
   :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
@@ -31,13 +33,13 @@ Window controls will be all wrong without it
     margin-top: calc(0px - var(--uc-toolbar-height));
   }
 
-  /* Override style set in window_control_placeholder_support.css  */
-  #nav-bar{ border-right-width: 0px !important }
-  #nav-bar::after{ display:none !important }
+  /* Window drag space  */
+  :root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important }
 
-  /* Rules specific to window controls on right layout */
+/* Rules specific to window controls on right layout */
   @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
     .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
+    :root[tabsintitlebar="true"] #nav-bar{ padding-left: 96px !important; padding-right: 0px !important; }
   }
 
   /* 1px margin on touch density causes tabs to be too high */

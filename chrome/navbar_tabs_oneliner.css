@@ -1,13 +1,10 @@
-/*Make tabs and navbar appear side-by-side tabs on right */
+/* Make tabs and navbar appear side-by-side tabs on right */
 
-/* IMPORTANT */
+/* Use page_action_buttons_on_hover.css to hide page-action-buttons to save more space for the address */
+
 /*
-Get window_control_placeholder_support.css
-Window controls will be all wrong without it
-
 urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new urlbar popup
 */
-
 
 /* Modify these to change relative widths or default height */
 #navigator-toolbox{
@@ -28,27 +25,29 @@ urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new ur
 
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1300px){
   #urlbar-container{ min-width:unset !important }
 }
 
 #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
+
 /* This isn't useful when tabs start in the middle of the window */
 .titlebar-placeholder[type="pre-tabs"],
 .titlebar-spacer[type="pre-tabs"]{ display: none }
+
 #navigator-toolbox > #nav-bar{
 	margin-right:calc(100vw - var(--uc-navigationbar-width));
   margin-top: calc(0px - var(--uc-toolbar-height));
 }
 
-/* Override style set in window_control_placeholder_support.css  */
-#nav-bar{ border-right-width: 0px !important }
-#nav-bar::after{ display:none !important }
+/* Window drag space  */
+:root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important }
 
 /* Rules specific to window controls on right layout */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-left: 96px !important; padding-right: 0px !important; }
 }
 
 /* 1px margin on touch density causes tabs to be too high */
