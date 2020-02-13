@@ -10,15 +10,16 @@
   margin-inline-start: 0px !important;
   width: 100% !important;
   left: 0 !important;
+  border-radius: 2px;
 }
 #urlbar-background{ display: none !important; }
 #urlbar[focused]{ border-color: var(--lwt-toolbar-field-border-focus, highlight) }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
 
-.urlbarView:not([hidden]){
+#urlbar[open] > .urlbarView{
   display: block !important;
   position: fixed !important;
-  margin-top: calc(var(--urlbar-height) + 1px);
+  margin-top: calc(var(--urlbar-height) + 1px) !important;;
   left: 0;
   width: 100vw !important;
   background-color: var(--autocomplete-popup-background) !important;
