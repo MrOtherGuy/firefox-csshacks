@@ -45,10 +45,13 @@
 
 :root[sizemode="maximized"] #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
 
+/* Don't apply transform before window has been fully created */
+:root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
+
 :root[customizing] #navigator-toolbox{
-	position: relative !important;
-	transform: none !important;
-	opacity: 1 !important;
+  position: relative !important;
+  transform: none !important;
+  opacity: 1 !important;
 }
 
 #navigator-toolbox[inFullscreen] > #PersonalToolbar,
