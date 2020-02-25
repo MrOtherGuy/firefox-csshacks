@@ -1,0 +1,15 @@
+/* Show tabs toolbar with Alt-key. Menubar must be disabled for this to work */
+
+#titlebar { -moz-appearance: none !important }
+:root[tabsintitlebar][sizemode="maximized"]{ padding-top: 8px !important; }
+#titlebar:not(:hover) > #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar { visibility: collapse }
+
+/* Behavior 1 - Alt-key toggles menubar as normal */
+#titlebar:hover > #toolbar-menubar[autohide="true"]{ height: calc(var(--tab-min-height) + var(--space-above-tabbar) - var(--tabs-navbar-shadow-size)) !important; }
+
+/* Behavior 2 - Alt-key only shows tabs toolbar */
+/* To show window controls, hit Alt again while cursor is over tabs toolbar */
+/*
+#toolbar-menubar[autohide]:not([inactive]),
+#toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container{ visibility: collapse !important }
+*/
