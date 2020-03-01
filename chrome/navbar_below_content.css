@@ -1,0 +1,33 @@
+/* Moves the main toolbar (#nav-bar) to the bottom of the window */
+
+/* REQUIRES browser.urlbar.update1 to be true, otherwise urlbar won't show any results */
+
+:root:not([inFullscreen]){
+  --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding) )
+}
+
+:root[uidensity="compact"]:not([inFullscreen]){
+  --uc-bottom-toolbar-height: calc(29px + var(--toolbarbutton-outer-padding) )
+}
+
+#browser,
+#customization-container{ margin-bottom: var(--uc-bottom-toolbar-height,0px) }
+
+#nav-bar{
+  position: fixed !important;
+  bottom: 0px;
+  display: flex;
+  width: 100%;
+  z-index: 1;
+}
+
+#nav-bar-customization-target{ flex-grow: 1; }
+
+#urlbar.megabar[breakout][breakout-extend]{
+  display: flex !important;
+  flex-direction: column-reverse;
+  bottom: -2px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
+  top: auto !important;
+}
+
+#urlbar.megabar[open] > .urlbarView{ margin-block: 0px calc(var(--urlbar-height) + 1px) !important; box-shadow: none !important; }
