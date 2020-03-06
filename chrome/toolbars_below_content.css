@@ -1,0 +1,46 @@
+/* Moves tabs toolbar, bookmarks toolbar and main toolbar to the bottom of the window, and makes tabs be the bottom-most toolbar */
+
+/* Menubar will stay on top with two options to select it's behavior - see below */
+
+/* The pref browser.urlbar.update1 must be set to true to be able to show urlbar results popup */
+
+#titlebar{ -moz-appearance: none !important; }
+
+@media (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"][tabsintitlebar] :-moz-any(#browser,#customization-container,#toolbar-menubar){ margin-top: 8px !important; }
+}
+
+#mainPopupSet,
+#browser,
+#customization-container
+,#nav-bar, #PersonalToolbar/* Remove this row if you want tabs to be the top-most row */
+{ -moz-box-ordinal-group: 0 }
+
+#toolbar-menubar{ position: fixed; display: flex; width: 100vw; top: 0px; }
+#toolbar-menubar:hover{ height: calc(var(--tab-min-height) - var(--tabs-navbar-shadow-size)) !important; }
+#toolbar-menubar > spacer{ flex-grow: 1 }
+
+#urlbar.megabar[breakout][breakout-extend]{
+  display: flex !important;
+  flex-direction: column-reverse;
+  bottom: -2px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
+  top: auto !important;
+}
+
+#urlbar.megabar[open] > .urlbarView{ margin-block: 0px calc(var(--urlbar-height) + 1px) !important; box-shadow: none !important; }
+
+/* Yeah, removes window controls. Likely not wanted on bottom row  */
+#TabsToolbar > .titlebar-buttonbox-container{ display: none }
+
+/* Menubar options */
+/* 1. Overlay menubar on top of web-content (default) */
+/* This should be used if menubar is disabled and Alt-key is used to activate it temporarily */
+
+#toolbar-menubar{ z-index: 1; background-color: var(--lwt-accent-color,black) }
+
+/* 2. Static menubar, uncomment to enable this option */
+/* Use when menubar is enabled to always show it */
+
+/*
+#browser,#customization-container{ padding-top: var(--tab-min-height) }
+*/
