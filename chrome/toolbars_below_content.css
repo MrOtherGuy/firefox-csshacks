@@ -17,7 +17,7 @@
 { -moz-box-ordinal-group: 0 }
 
 #toolbar-menubar{ position: fixed; display: flex; width: 100vw; top: 0px; }
-#toolbar-menubar:hover{ height: calc(var(--tab-min-height) - var(--tabs-navbar-shadow-size)) !important; }
+#toolbar-menubar:not([inactive]):hover{ height: calc(var(--tab-min-height) - var(--tabs-navbar-shadow-size)) !important; }
 #toolbar-menubar > spacer{ flex-grow: 1 }
 
 #urlbar.megabar[breakout][breakout-extend]{
