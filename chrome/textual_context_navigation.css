@@ -1,0 +1,7 @@
+/* Makes constext navigation buttons appears as normal textual menuitems */
+
+#context-navigation{ -moz-box-orient: vertical }
+#context-navigation > menuitem > .menu-iconic-left{ display: none }
+#context-navigation > menuitem > .menu-iconic-text{ display: -moz-box !important }
+#context-navigation > menuitem{ padding-inline-start: 30px !important; -moz-box-pack: start !important }
+#context-navigation > menuitem::before{ content: attr(aria-label) }
