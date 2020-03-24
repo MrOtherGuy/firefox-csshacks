@@ -27,7 +27,7 @@
 
 #nav-bar{
   position: fixed !important;
-  display: block;
+  display: flex;
   margin-left: 30px;
   width: calc(100vw - 30px);
   top: var(--multirow-top-padding);
@@ -44,14 +44,6 @@
 /* Fix incorrect vertical alignment with megabar */
 #urlbar[breakout]{ --urlbar-toolbar-height: var(--multirow-toolbar-height) !important; }
 
-#nav-bar-overflow-button {
-max-height: 31px !important;
-transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
-}
-
-#PanelUI-button{ display: block; float: right; }
-#nav-bar > toolbartabstop{ float: left; display: block }
-
 #customization-container,
 :root:not([inDOMFullscreen]) #content-deck,
 :root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
@@ -66,12 +58,13 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #toolbar-menubar{
   height: var(--multirow-toolbar-height);
   position: fixed;
-  display: block;
+  display: flex;
   top: var(--multirow-top-padding);
   width: 100vw;
   color: var(--lwt-text-color);
   background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
 }
+#menubar-items + spacer{ flex-grow: 1 }
 
 #toolbar-menubar > #menubar-items{
   -moz-box-pack: center;
@@ -92,7 +85,6 @@ transform: translateY(calc(-4 * var(--toolbarbutton-outer-padding) + 4px))
 #toolbar-menubar > toolbarspring {
   background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
   height: 100%;
-  float: left;
   display: block;
   fill: currentColor;
   -moz-context-properties: fill;
