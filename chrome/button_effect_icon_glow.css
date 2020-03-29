@@ -3,7 +3,6 @@
 
 
 /* Make backgrounds transparent */
-
 .urlbar-icon,
 .urlbar-icon-wrapper,
 toolbar .toolbarbutton-1,
@@ -15,7 +14,9 @@ toolbar toolbarbutton > .toolbarbutton-badge-stack,
 #tracking-protection-icon-container,
 .findbar-textbox~toolbarbutton,
 toolbarbutton.scrollbutton-up,
-toolbarbutton.scrollbutton-down{ background-color: transparent !important; border-color: transparent !important;}
+toolbarbutton.scrollbutton-down,
+toolbarbutton#scrollbutton-up,
+toolbarbutton#scrollbutton-down{ background-color: transparent !important; border-color: transparent !important;}
 
 .close-icon{ fill-opacity: 0 !important; }
 
@@ -31,7 +32,9 @@ toolbar #downloads-button:hover #downloads-indicator-anchor,
 #tracking-protection-icon:hover,
 .findbar-textbox~toolbarbutton:not([disabled]):hover,
 toolbarbutton.scrollbutton-up:not([disabled]):hover,
-toolbarbutton.scrollbutton-down:not([disabled]):hover{ 
+toolbarbutton.scrollbutton-down:not([disabled]):hover,
+toolbarbutton#scrollbutton-up:not([disabled]):hover,
+toolbarbutton#scrollbutton-down:not([disabled]):hover{ 
   filter: brightness(2) drop-shadow(0 0 2px cyan) drop-shadow(0 0 1px cyan)
 }
 
@@ -52,6 +55,8 @@ toolbar #downloads-button[open] #downloads-indicator-anchor,
 #tracking-protection-icon-container[open] #tracking-protection-icon,
 .findbar-textbox~toolbarbutton:not([disabled]):active,
 toolbarbutton.scrollbutton-up:active,
-toolbarbutton.scrollbutton-down:active{ 
+toolbarbutton.scrollbutton-down:active,
+toolbarbutton#scrollbutton-up:active,
+toolbarbutton#scrollbutton-down:active{ 
   filter: brightness(2) drop-shadow(0 0 2px red) drop-shadow(0 0 1px yellow)
 }
