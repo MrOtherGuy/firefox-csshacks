@@ -1,6 +1,7 @@
 /* Create a circular placeholder for toolbarbutton and downscale to hide them */
 
 /* Create a placeholder for buttons */
+
 #urlbar-container:hover ~ .toolbarbutton-1:not([open]),
 #urlbar-container:hover ~ #stop-reload-button > .toolbarbutton-1,
 #nav-bar > #nav-bar-customization-target:hover ~ toolbarbutton:not([open]),
@@ -9,7 +10,9 @@ toolbar .toolbarbutton-1:not([open]),
 .titlebar-button,
 #tabbrowser-tabs toolbarbutton,
 toolbarbutton.scrollbutton-up[orient="horizontal"],
-toolbarbutton.scrollbutton-down[orient="horizontal"]{
+toolbarbutton.scrollbutton-down[orient="horizontal"],
+toolbarbutton#scrollbutton-up[orient="horizontal"],
+toolbarbutton#scrollbutton-down[orient="horizontal"]{
   background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
 /* Hide placeholder on hover */
@@ -18,8 +21,6 @@ toolbar:hover + toolbar .toolbarbutton-1,
 vbox:hover + toolbar .toolbarbutton-1,
 toolbar:hover .toolbarbutton-1,
 #tabbrowser-tabs:hover toolbarbutton,
-toolbarbutton.scrollbutton-up[orient="horizontal"]:hover,
-toolbarbutton.scrollbutton-down[orient="horizontal"]:hover,
 .titlebar-buttonbox:hover > .titlebar-button{ background-image: none; }
 
 #urlbar-container:hover ~ .toolbarbutton-1:not([open]) > *,
@@ -45,6 +46,24 @@ toolbarbutton.scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon,
 toolbarbutton.scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon{
   transform: scale(1)
 }
+
+/* Extra rules for reworked tab overflow scrollbuttons */
+
+toolbarbutton#scrollbutton-up[orient="horizontal"] > .toolbarbutton-icon,
+toolbarbutton#scrollbutton-down[orient="horizontal"] > .toolbarbutton-icon{
+  transform: scale(0) !important;
+  transition: transform 82ms linear !important;
+}
+
+toolbarbutton#scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon{
+  transform: scale(1) !important;
+}
+toolbarbutton#scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon{
+  transform: scale(-1, 1) !important;
+}
+
+toolbarbutton#scrollbutton-up[orient="horizontal"]:hover,
+toolbarbutton#scrollbutton-down[orient="horizontal"]:hover{ background: none !important; }
 
 /* Urlbar icons, this way they show colors is applicable */
 .urlbar-icon{ transition: transform 82ms linear !important; }
