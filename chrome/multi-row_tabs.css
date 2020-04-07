@@ -51,7 +51,8 @@
     scrollbar-color: var(--toolbar-bgcolor) var(--lwt-accent-color);
     scrollbar-width: thin;
   }
-  #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+  #tabbrowser-tabs > .tabbrowser-arrowscrollbox,
+  #tabbrowser-arrowscrollbox{
     overflow: -moz-hidden-unscrollable;
     display: block;
   }

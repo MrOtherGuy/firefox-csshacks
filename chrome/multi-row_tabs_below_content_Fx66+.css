@@ -97,7 +97,8 @@
 #tabbrowser-tabs{
   min-height: unset !important;
 }
-#tabbrowser-tabs > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox{
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox,
+#tabbrowser-arrowscrollbox{
   display: flex;
   flex-wrap: wrap;
   max-height: calc(var(--multirow-toolbar-height) * var(--multirow-n-rows));
