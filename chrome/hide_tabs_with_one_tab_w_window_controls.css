@@ -11,7 +11,7 @@ Window controls will be all wrong without it
 #titlebar{ -moz-appearance: none !important; }
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
-#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 #TabsToolbar > .titlebar-spacer[type="post-tabs"]{ width: 178px !important; }
 #toolbar-menubar > spacer{ pointer-events: none }
