@@ -23,8 +23,7 @@
   width: 100vw !important;
   border-width: 1px 0;
   top: var(--urlbar-toolbar-height);
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,50%,.8));
-  backdrop-filter: blur(28px);
+  background-color: var(--lwt-toolbar-field-focus, inherit);
   z-index: 4;
   box-shadow: 0 1px 4px rgba(0,0,0,.05);
 }
