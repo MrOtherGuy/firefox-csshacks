@@ -147,6 +147,9 @@
   margin-inline-start: 0px !important;
 }
 
+#scrollbutton-up,
+#scrollbutton-down,
+#scrollbutton-up~spacer,
 #tabbrowser-tabs .scrollbutton-up,
 #tabbrowser-tabs .scrollbutton-down,
 #alltabs-button,

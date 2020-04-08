@@ -91,6 +91,9 @@
 
 .tabbrowser-tab > stack{ width: 100%; height: 100% }
 
+#scrollbutton-up,
+#scrollbutton-down,
+#scrollbutton-up~spacer,
 #tabbrowser-tabs .scrollbutton-up,
 #tabbrowser-tabs .scrollbutton-down,
 #alltabs-button,
