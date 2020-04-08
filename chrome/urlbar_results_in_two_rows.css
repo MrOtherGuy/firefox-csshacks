@@ -4,6 +4,6 @@
 .urlbarView-row-inner{ flex-wrap: wrap !important; }
 
 .urlbarView-title[title]{ flex-grow: 1; }
-.urlbarView-row > .urlbarView-row-inner > .urlbarView-url{ margin-inline-start: 24px; min-width: 95% }
+.urlbarView-row > .urlbarView-row-inner > .urlbarView-url{ min-width: 95% }
 
 .urlbarView-row[has-url]:not([type="switchtab"]) .urlbarView-title-separator{ display: none }
