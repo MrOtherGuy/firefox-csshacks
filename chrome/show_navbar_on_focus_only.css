@@ -22,13 +22,13 @@
   }
 }
 
-#nav-bar:not([customizing]){
+:root[sessionrestored] #nav-bar:not([customizing]){
   transform: rotateX(90deg);
   transition: transform 67ms linear, opacity 0ms linear 67ms !important;
   opacity: 0;
   z-index: 3;
 }
-#nav-bar:focus-within{
+:root[sessionrestored] #nav-bar:focus-within{
 	transform: rotateX(0deg);
 	opacity: 1;
 	transition-delay: 0ms, 0ms !important;
