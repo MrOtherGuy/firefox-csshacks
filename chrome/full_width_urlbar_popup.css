@@ -1,3 +1,5 @@
+/* DEPRECATED - USE urlbar_full_width.css instead */
+
 /* Makes urlbar popup fit to window width, like in Firefox versions < 71 without "Megabar" */
 /* Text won't be aligned to urlbar text though, since that relied on Firefox setting some css variables which are not available anymore */
 #urlbar{
