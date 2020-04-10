@@ -11,3 +11,4 @@
 .urlbarView-row{ padding: 0 4px !important; }
 #urlbar-background{ animation: none !important; }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
+#identity-box{ padding-block: var(--urlbar-icon-padding) }
