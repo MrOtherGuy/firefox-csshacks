@@ -1,0 +1,6 @@
+/* Hides the first item in the urlbar dropdown if it is a "search with" or "visit" item. Does not hide "search in private window item", probably */
+
+#urlbar[usertyping] .urlbarView-row:not([type]):first-child,
+#urlbar[usertyping] .urlbarView-row[type="search"]:first-child {
+  display: none;
+}
