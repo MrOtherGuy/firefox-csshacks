@@ -27,7 +27,11 @@ chrome/urlbar_full_width.css
 
 @media screen and (min-width: 1100px){
   
-  #nav-bar{ position: static !important; border-right-width: 0px !important }
+  .urlbarView{
+    position: fixed !important;
+    top: calc(var(--uc-titlebar-padding,0px) + var(--uc-toolbar-height))
+  }
+  #nav-bar{ border-right-width: 0px !important }
   #TabsToolbar{
     margin-top: calc(0px - var(--uc-toolbar-height,0px));
     margin-left: 0px;
