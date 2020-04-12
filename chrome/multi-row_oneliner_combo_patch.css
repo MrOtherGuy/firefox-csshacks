@@ -1,0 +1,41 @@
+/*
+This a compatibility patch to combine multi-row_tabs.css and navbar_tabs_responsive_oneliner.css
+
+Set the pref layout.css.osx-font-smoothing.enabled to true - this is enabled by default on OSX and doesn't do anything otherwise. Used to detect whether window controls are on left or on right.
+
+This patch only supports window controls on right - ie. they will be drawn to the left of the nav-bar. If you want to use this with window controls on left you must enable native titlebar.
+
+There is no good way to handle scrollable multiple rows so you should set the maximum rows in multi-row_tabs.css to something you won't ever hit. Or you could just check what happens.
+ */
+ 
+/*
+You will need 5 other stylesheets - order may or may not matter, but this patch needs to be loaded last
+
+chrome/window_control_placeholder_support.css
+chrome/navbar_tabs_responsive_oneliner.css
+chrome/Fx65_tabs_on_bottom.css
+chrome/multi-row_tabs.css
+chrome/urlbar_full_width.css
+ */
+
+/* Instructions over, begin CSS */
+
+#navigator-toolbox > #nav-bar{
+  margin-top: 0px !important;
+  padding-left: 0px !important;
+}
+
+@media screen and (min-width: 1100px){
+  
+  #nav-bar{ position: static !important; border-right-width: 0px !important }
+  #TabsToolbar{
+    margin-top: calc(0px - var(--uc-toolbar-height,0px));
+    margin-left: 0px;
+  }
+  #tabbrowser-tabs .tabbrowser-tab[first-visible-tab]{ margin-left: var(--uc-navigationbar-width) !important; }
+
+}
+
+@media screen and (max-width: 1700px){
+  #urlbar-container{ min-width:unset !important }
+}
