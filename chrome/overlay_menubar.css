@@ -1,8 +1,6 @@
-/* Makes menubar appear as overlay in the top left corner */
-
 #toolbar-menubar{
   position: fixed;
-  display: block;
+  display: flex;
   top: 0;
   width: 100vw;
   height: initial !important;
@@ -13,7 +11,7 @@
 
 :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar{ top: 8px; }
 
-#toolbar-menubar > .titlebar-buttonbox-container{ float: right; display: block }
+#toolbar-menubar > spacer{ flex-grow: 1 }
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
 
 #main-menubar{ height: calc(var(--tab-min-height) + 4px); background-color: var(--toolbar-bgcolor); }
@@ -25,4 +23,8 @@
   width: 30px;
   height: calc(var(--tab-min-height) + 4px);
   background-image: linear-gradient(to right, var(--toolbar-bgcolor) 30%, transparent);
+}
+
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  #toolbar-menubar[autohide="true"]:not([inactive]) > .titlebar-buttonbox-container{ display: none }  
 }
