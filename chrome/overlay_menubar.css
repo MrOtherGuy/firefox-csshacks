@@ -1,3 +1,5 @@
+/* Makes menubar appear as overlay in the top left corner */
+
 #toolbar-menubar{
   position: fixed;
   display: flex;
