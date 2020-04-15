@@ -1,0 +1,32 @@
+/* You should enable any non-default theme for these to apply properly. Built-in dark and light themes should work */
+:root{
+  /* Popup panels */
+  --arrowpanel-background: olive !important;
+  --arrowpanel-border-color: green !important;
+  --arrowpanel-color: cyan !important;
+  --arrowpanel-dimmed: rgba(0,0,0,0.4) !important;
+  /* window and toolbar background */
+  --lwt-accent-color: purple !important;
+  --toolbar-bgcolor: rgba(0,0,0,0.4) !important;
+  /* tabs */
+  --lwt-text-color: cyan !important;
+  /* toolbar area */
+  --lwt-toolbarbutton-icon-fill: white !important;
+  --lwt-toolbarbutton-hover-background: orange !important;
+  --lwt-toolbarbutton-active-background: red !important;
+  /* urlbar */
+  --lwt-toolbar-field-background-color: olive !important;
+  --lwt-toolbar-field-focus: grey !important;
+  --lwt-toolbar-field-border-color: green !important;
+  --toolbar-field-focus-border-color: pink !important;
+  --lwt-toolbar-field-color: red !important;
+  --lwt-toolbar-field-focus-color: white !important;
+  --urlbar-popup-url-color: cyan !important;
+  /* sidebar - note the sidebar-box rule for the header-area */
+  --lwt-sidebar-background-color: purple !important;
+  --lwt-sidebar-text-color: yellow !important;
+}
+/* Line above tabs */
+#tabbrowser-tabs{ --tab-line-color: white !important; }
+/* the header-area of sidebar needs this to work */
+#sidebar-box{ --sidebar-background-color: purple !important; }
