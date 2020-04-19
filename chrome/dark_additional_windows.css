@@ -6,6 +6,7 @@
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 @-moz-document url-prefix(chrome://browser/content/places/),
+  url(chrome://global/content/commonDialog.xhtml),
   url-prefix(chrome://browser/content/pageinfo/),
   url-prefix("chrome://mozapps/content/downloads"){
   
