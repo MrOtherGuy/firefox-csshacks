@@ -1,6 +1,8 @@
 /* Hides navigation-buttons (back/forward/stop/reload) buttons and shows them when cursor is over the right edge of urlbar  */
 /* Disabled button are completely hidden, such as back-button when there is no page to go back to */
 
+/* COMPACT MODE ONLY - The weird size of back-button causes this to not work well in normal and touch mode */
+
 /* To set this up you need to customize the order of items to be such that layout from LEFT to RIGHT is 
 urlbar
 flexible space
