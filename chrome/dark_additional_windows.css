@@ -26,6 +26,7 @@
   tree{
     background: transparent !important;
   }
+  search-textbox,
   #searchFilter,
   menulist,
   input,  
@@ -45,8 +46,8 @@
     
   .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
   
-  #searchFilter,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
-  #searchFilter > input,input[readonly]{ background-color: transparent !important; }
+  #searchFilter,search-textbox,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
+  search-textbox > input,#searchFilter > input,input[readonly]{ background-color: transparent !important; }
     
   treecol:not([hideheader]){ height: 24px; }
   treecol:hover{ filter: brightness(160%) }
@@ -62,8 +63,8 @@
   button{ padding: 3px }
   #placesMenu > menu{ border: none !important; }
     
-  input,button{ border: 1px solid graytext; border-radius: 3px }
-  input{ padding: 2px }
+  search-textbox,input,button{ border: 1px solid graytext; border-radius: 3px }
+  search-textbox,input{ padding: 2px }
 
 }
 
