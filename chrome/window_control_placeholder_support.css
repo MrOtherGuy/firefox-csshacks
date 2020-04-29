@@ -14,6 +14,7 @@
 
 #nav-bar{
   border-inline: var(--uc-window-drag-space-width,0px) solid var(--toolbar-bgcolor);
+  border-inline-style: solid !important;
   border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px));
 }
 
