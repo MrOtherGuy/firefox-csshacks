@@ -28,9 +28,10 @@
   transform-origin: top;
   line-height: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
-#navigator-toolbox > *{ line-height: normal }
+#navigator-toolbox > *{ line-height: normal; pointer-events: auto }
 
 #navigator-toolbox,
 #navigator-toolbox > *{
