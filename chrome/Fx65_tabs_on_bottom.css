@@ -14,11 +14,11 @@ linux_gtk_window_control_patch.css
 
 */
 
-:root{
-  --uc-titlebar-padding: 0px; }
+:root{ --uc-titlebar-padding: 0px; }
 :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
 
-.titlebar-buttonbox-container{
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
+#TabsToolbar > .titlebar-buttonbox-container{
   position: fixed;
   display: block;
   top: var(--uc-titlebar-padding,0px);
