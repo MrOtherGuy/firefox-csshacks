@@ -18,7 +18,11 @@
 #toolbar-menubar > .titlebar-buttonbox-container{ height: 29px; order: 100; }
 
 #toolbar-menubar > [flex]{ flex-grow: 100; }
-#toolbar-menubar > spacer[flex]{ order: 99; flex-grow: 1; }
+#toolbar-menubar > spacer[flex]{
+  order: 99;
+  flex-grow: 1;
+  min-width: var(--uc-window-drag-space-width,20px);
+}
 
 #toolbar-menubar .titlebar-button{ padding: 2px 17px !important;  }
 
