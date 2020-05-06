@@ -4,9 +4,10 @@
 :root{ --uc-window-control-width: 0px !important }
 
 #navigator-toolbox{ margin-top: 29px }
+
 #toolbar-menubar{
   position: fixed;
-  display: block;
+  display: flex;
   top: var(--uc-titlebar-padding,0px);
   height: 29px;
   margin-top:1px;
@@ -14,9 +15,11 @@
   overflow: hidden;
 }
 
-#toolbar-menubar .titlebar-buttonbox-container{ height: 29px; }
+#toolbar-menubar > .titlebar-buttonbox-container{ height: 29px; order: 100; }
+
+#toolbar-menubar > [flex]{ flex-grow: 100; }
+#toolbar-menubar > spacer[flex]{ order: 99; flex-grow: 1; }
+
 #toolbar-menubar .titlebar-button{ padding: 2px 17px !important;  }
 
-/* This will allow you to MAYBE put some items to the menubar */
-#toolbar-menubar > *{ float: left }
 #toolbar-menubar .toolbarbutton-1 { --toolbarbutton-inner-padding: 3px }
