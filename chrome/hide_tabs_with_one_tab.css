@@ -19,12 +19,6 @@
   margin: 0 !important;
 }
 
-:root:not([customizing]) #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-icon{
-  padding-block: 0px !important;
-  max-height: 28px;
-  height: 20px !important
-}
-
 #tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
 
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
