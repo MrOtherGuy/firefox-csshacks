@@ -36,8 +36,9 @@
   background-color: transparent !important;
 }
 /* Extra top padding  in maximized window */
-:root[sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
-
+@media (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
+}
 /* Fix window controls not being clickable */
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{
   transition: height 0ms steps(1) 80ms;
