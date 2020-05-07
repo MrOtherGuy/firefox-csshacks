@@ -1,0 +1,11 @@
+.menupopup-arrowscrollbox{
+  --uc-scrollbox-overflow: auto;
+  --uc-scrollbutton-display-model: none;
+}
+
+scrollbox{ overflow-y: var(--uc-scrollbox-overflow,initial) !important; }
+
+#scrollbutton-up,
+#scrollbutton-down{
+  display: var(--uc-scrollbutton-display-model,initial) !important;
+}
