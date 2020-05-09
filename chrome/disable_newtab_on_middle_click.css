@@ -1,0 +1,7 @@
+/* Prevents middle-clicking in empty area in tabs toolbar from opening new tabs */
+
+#tabbrowser-arrowscrollbox{pointer-events: none}
+.tabbrowser-tab,
+#scrollbutton-up,
+#scrollbutton-down,
+#tabs-newtab-button{pointer-events: auto}
