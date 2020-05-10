@@ -1,0 +1,147 @@
+/* Makes tabs to appear on multiple lines below the web content */
+/* Tab reordering will not work and can't be made to work */
+
+/* Make menubar enabled for getting window controls in correct place. Menubar options will be shown as overlay when mouse is at top-left corner */
+
+/* It's recommended to move tabs new-tab-button outside tabs toolbar */
+
+/* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
+/* Scrollbar can't be clicked but the rows can be scrolled with mouse */
+/* This maximum visible rows won't work before Fx66 */
+/* So this setting does nothing on Fx65 and all tab rows will be shown */
+
+:root{
+  --multirow-toolbar-height: 40px;
+  --multirow-top-padding: 0px;
+  --multirow-n-rows: 3;
+  --multirow-tab-min-width: 100px;
+  --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
+}
+
+:root[sizemode="maximized"]{ --multirow-top-padding: 8px }
+:root[uidensity="compact"]{--multirow-toolbar-height: 32px}
+:root{ border-top-width: 0px !important }
+
+#main-window > body > box,
+#navigator-toolbox{ -moz-box-ordinal-group: 2 }
+
+#titlebar{-moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
+
+#nav-bar{
+  position: fixed !important;
+  display: flex;
+  margin-left: 30px;
+  width: calc(100vw - 30px);
+  top: var(--multirow-top-padding);
+}
+
+:root[tabsintitlebar] #nav-bar{
+  margin-right: 138px;
+
+  /* width == 100vw - margins */
+  width: calc(100vw - 168px);
+  top: var(--multirow-top-padding);
+}
+
+/* Fix incorrect vertical alignment with megabar */
+#urlbar[breakout]{ --urlbar-toolbar-height: var(--multirow-toolbar-height) !important; }
+
+#customization-container,
+:root:not([inDOMFullscreen]) #content-deck,
+:root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
+
+/* Restyle nav-bar and menubar */
+#nav-bar-customization-target{ width: calc(100% - 100px); }
+:root[uidensity="compact"] #nav-bar-customization-target{ width: calc(100% - 82px); }
+
+#nav-bar-overflow-button,
+#PanelUI-menu-button{ height: var(--multirow-toolbar-height); }
+
+#toolbar-menubar{
+  height: var(--multirow-toolbar-height);
+  position: fixed;
+  display: flex;
+  top: var(--multirow-top-padding);
+  width: 100vw;
+  color: var(--lwt-text-color);
+  background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
+}
+#menubar-items + spacer{ flex-grow: 1 }
+
+#toolbar-menubar > #menubar-items{
+  -moz-box-pack: center;
+  height: 100%;
+  visibility: hidden;
+}
+
+#toolbar-menubar:hover{ z-index: 2 }
+#toolbar-menubar:hover > #menubar-items{
+  visibility: visible;
+  background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
+}
+
+#toolbar-menubar > .titlebar-buttonbox-container{ display: block; float: right; height: 100%; background: var(--toolbar-bgcolor)}
+#toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100% ;}
+
+#main-menubar:last-child{ padding-inline-end: 40px }
+#toolbar-menubar > toolbarspring {
+  background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+  -moz-context-properties: fill;
+  min-width: 28px !important;
+  max-width: 28px !important;
+}
+
+#PanelUI-button{ margin-right: 20px; }
+
+#tabbrowser-tabs{
+  min-height: unset !important;
+  padding-inline-start: 0px !important
+}
+
+@-moz-document url(chrome://browser/content/browser.xhtml){
+  #scrollbutton-up~spacer,
+  #scrollbutton-up,
+  #scrollbutton-down{ display: var(--scrollbutton-display-model,initial) }
+
+  scrollbox[part][orient="horizontal"]{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
+    scrollbar-color: currentColor transparent;
+    scrollbar-width: thin;
+  }
+}
+
+#tabbrowser-arrowscrollbox{
+  overflow: -moz-hidden-unscrollable;
+  display: block;
+  --scrollbutton-display-model: none;
+}
+
+.tabbrowser-tab{ height: var(--tab-min-height); }
+
+.tabbrowser-tab[pinned]{
+  position: static !important;
+  margin-inline-start: 0px !important;
+}
+
+.tabbrowser-tab[fadein]:not([pinned]){
+  min-width: var(--multirow-tab-min-width) !important;
+  flex-grow: var(--multirow-tab-dynamic-width);
+  /*
+  Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
+  Don't set to none or you'll see errors in console when closing tabs
+  */
+  /*max-width: 100vw !important;*/
+}
+
+.tabbrowser-tab > stack{ width: 100%; height: 100%; }
+
+#alltabs-button,
+:root:not([customizing]) #TabsToolbar #new-tab-button,
+#tabbrowser-tabs spacer,
+.tabbrowser-tab::after{ display: none !important } /* Also disables tab separators since they mysteriously break tab-row scrolling */
