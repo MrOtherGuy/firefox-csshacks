@@ -23,11 +23,11 @@
 
 #nav-bar-customization-target{ flex-grow: 1; }
 
-#urlbar.megabar[breakout][breakout-extend]{
+#urlbar[breakout][breakout-extend]{
   display: flex !important;
   flex-direction: column-reverse;
   bottom: -2px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
   top: auto !important;
 }
 
-#urlbar.megabar[open] > .urlbarView{ margin-block: 0px calc(var(--urlbar-height) + 1px) !important; box-shadow: none !important; }
+#urlbar[open] > .urlbarView{ margin-block: 0px calc(var(--urlbar-height) + 1px) !important; box-shadow: none !important; }

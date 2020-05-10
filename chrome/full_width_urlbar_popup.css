@@ -15,7 +15,7 @@
   border-radius: 2px;
 }
 
-#urlbar-container.megabar{ padding-block: 1px !important }
+#urlbar-container{ padding-block: 1px !important }
 
 #urlbar-background{ display: none !important; }
 #urlbar[focused]{ border-color: var(--lwt-toolbar-field-border-focus, highlight) }
