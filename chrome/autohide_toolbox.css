@@ -3,18 +3,18 @@
 
 @media (-moz-os-version: windows-win10){
 
-  :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 10px !important; }
-  :root[sizemode="maximized"] #navigator-toolbox{ margin-top: -2px }
+  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 10px !important; }
+  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -2px }
 
   @media screen and (min-resolution: 1.25dppx){
-    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 9px !important; }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 9px !important; }
   }
   @media screen and (min-resolution: 1.5dppx){
-    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 8px !important; }
-    :root[sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
+    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
   }
   @media screen and (min-resolution: 2dppx){
-    :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 7px !important; }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
   }
 }
 
