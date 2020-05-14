@@ -46,6 +46,9 @@
 /* Fix incorrect vertical alignment with megabar */
 #urlbar[breakout]{ --urlbar-toolbar-height: var(--multirow-toolbar-height) !important; }
 
+/* Fix customization view */
+#customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
+
 #customization-container,
 :root:not([inDOMFullscreen]) #content-deck,
 :root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
