@@ -1,6 +1,9 @@
 /* Makes tabs to appear on multiple lines below the web content */
 /* Tab reordering will not work and can't be made to work */
 
+/* !!!WARNING!!! */
+/* This style completely breaks extension popups. As a workaround, you can pin the extension buttons to overflow menu which allows them to work. */
+
 /* Make menubar enabled for getting window controls in correct place. Menubar options will be shown as overlay when mouse is at top-left corner */
 
 /* It's recommended to move tabs new-tab-button outside tabs toolbar */
