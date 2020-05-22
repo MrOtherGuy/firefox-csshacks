@@ -6,13 +6,17 @@ See the above repository for updates as well as full license text. */
 /* Make sure you have menubar enabled */
 
 #TabsToolbar > .toolbar-items{ position: relative; z-index: 5; }
-#toolbar-menubar > .titlebar-buttonbox-container{ float: right; display: block }
+#toolbar-menubar > spacer{ flex-grow: 1 }
+
+#toolbar-menubar > spacer,
+#toolbar-menubar > .titlebar-buttonbox-container{ order: 1000 }
+
 #TabsToolbar > .titlebar-spacer{ display: -moz-box !important; }
 
-#toolbar-menubar{
-  --uc-menubar-height: 36px;
+#toolbar-menubar:not([customizing]){
+  --uc-menubar-height: 34px;
   position: fixed;
-  display: block;
+  display: flex;
   width: 100vw; 
   height: var(--uc-menubar-height);
   margin-top: calc(8px - var(--uc-menubar-height));
@@ -20,8 +24,6 @@ See the above repository for updates as well as full license text. */
   -moz-window-dragging: no-drag;
   z-index:4;
 }
-
-#menubar-items{ display: block; float: left; }
 
 #toolbar-menubar:hover{
   background-color: var(--toolbar-bgcolor) !important;
