@@ -14,10 +14,10 @@ See the above repository for updates as well as full license text. */
 #alltabs-popup .arrowscrollbox-scrollbox,
 menupopup:not(#BMB_bookmarksPopup),
 .textbox-contextmenu{
-	border: 3px solid #434850 !important;
-	background: var(--uc-dark-bkgnd-color) !important;
-	border-radius: 5px !important;
-	color: var(--uc-text-color) !important;
+  border: 3px solid #434850 !important;
+  background: var(--uc-dark-bkgnd-color) !important;
+  border-radius: 5px !important;
+  color: var(--uc-text-color) !important;
 }
 
 /* bookmarks menu is different from others */
@@ -29,7 +29,7 @@ menupopup:not(#BMB_bookmarksPopup),
 menupopup,
 menuitem,
 menu{
-	-moz-appearance: none !important;
+  -moz-appearance: none !important;
 }
 
 menupopup{
@@ -39,7 +39,7 @@ menupopup{
 
 menuitem,
 menu{
-	min-height:24px !important;
+  min-height:24px !important;
   color: var(--uc-text-color) !important;
 }
 
@@ -117,7 +117,7 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 }
 
 #PopupAutoCompleteRichResult .ac-emphasize-text.ac-emphasize-text-title{
-	color: var(--uc-border-color) !important;
+  color: var(--uc-border-color) !important;
 }
 
 #editBookmarkPanel textbox,

@@ -18,8 +18,8 @@ See the above repository for updates as well as full license text. */
 #browser-bottombox,
 #customization-container,
 findbar{
-	background-color: var(--uc-light-bkgnd-color) !important;
-	color: var(--uc-text-color) !important;
+  background-color: var(--uc-light-bkgnd-color) !important;
+  color: var(--uc-text-color) !important;
 }
 
 findbar{ background-image: none !important; }
@@ -47,7 +47,7 @@ findbar{ background-image: none !important; }
 #urlbar{ border-color: transparent !important; }
 
 #urlbar[focused]{
-	border-color: var(--uc-border-color) !important;
+  border-color: var(--uc-border-color) !important;
 }
 
 #urlbar .urlbar-icon:hover{

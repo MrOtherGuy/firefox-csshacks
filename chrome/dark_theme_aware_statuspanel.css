@@ -7,7 +7,7 @@ Meaning, if theme text is light then the statuspanel uses dark background and li
 */
 
 #statuspanel-label:-moz-lwtheme-brighttext{
-	background-color: rgb(50,50,52) !important;
-	color: rgb(187,187,189) !important;
+  background-color: rgb(50,50,52) !important;
+  color: rgb(187,187,189) !important;
   border-color: grey !important;
 }

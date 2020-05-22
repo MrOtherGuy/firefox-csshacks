@@ -53,7 +53,7 @@ checkbox[disabled] > .checkbox-check{ fill: graytext !important; }
 button{
   -moz-appearance: none !important;
   color: inherit !important;
-	background-color: rgba(127,127,127,0.1) !important;
+  background-color: rgba(127,127,127,0.1) !important;
   border: 1px solid graytext;
 }
 

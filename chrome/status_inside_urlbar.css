@@ -42,9 +42,9 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 /* Hide the status ovelay when urlbar is hovered */
 #urlbar:hover .urlbar-input-box::after,
 #urlbar[focused] .urlbar-input-box::after{
-	visibility: hidden;
-	/* Remove the image to get rid of -moz-element() related problems */
-	background-image: none !important
+  visibility: hidden;
+  /* Remove the image to get rid of -moz-element() related problems */
+  background-image: none !important
 }
 
 :root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 1px }

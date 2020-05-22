@@ -9,38 +9,38 @@ See the above repository for updates as well as full license text. */
 #sidebar-box{ --toolbar-non-lwt-bgcolor: var(--uc-light-bkgnd-color) }
 
 #sidebar-search-container #search-box{
-	-moz-appearance:none !important;
-	background-color: var(--uc-dark-bkgnd-color) !important;
-	border: none !important;
-	color: var(--uc-text-color) !important;
+  -moz-appearance:none !important;
+  background-color: var(--uc-dark-bkgnd-color) !important;
+  border: none !important;
+  color: var(--uc-text-color) !important;
 }
 
 #history-panel,
 #bookmarksPanel,
 #sidebar-header{
-	background-color: var(--uc-light-bkgnd-color) !important;
-	color: var(--uc-text-color) !important;
-	border-top: none !important;
-	border-bottom:none !important;
+  background-color: var(--uc-light-bkgnd-color) !important;
+  color: var(--uc-text-color) !important;
+  border-top: none !important;
+  border-bottom:none !important;
   scrollbar-color: rgb(210,210,210) var(--uc-light-bkgnd-color) !important;
 }
 
 .sidebar-placesTreechildren,
 #sidebar-box,
 #sidebar-header{
-	color: var(--uc-text-color) !important;
+  color: var(--uc-text-color) !important;
 }
 
 .sidebar-placesTreechildren::-moz-tree-cell{
-	outline:none;
-	border-radius:0px;
-	background-image:none;
+  outline:none;
+  border-radius:0px;
+  background-image:none;
 }
 
 .sidebar-placesTreechildren::-moz-tree-cell(selected){
-	background-color: var(--uc-border-color) !important;
+  background-color: var(--uc-border-color) !important;
 }
 
 .sidebar-placesTreechildren::-moz-tree-cell(hover){
-	background-color: var(--uc-active-color) !important;
+  background-color: var(--uc-active-color) !important;
 }

@@ -59,11 +59,11 @@ Example `userChrome.css`:
 @import url(chrome/button_effect_scale_onclick.css);
 
 :root{
-	--toolbar-bgcolor: rgb(36,44,59) !important;
-	--uc-menu-bkgnd: var(--toolbar-bgcolor);
-	--arrowpanel-background: var(--toolbar-bgcolor) !important;
-	--autocomplete-popup-background: var(--toolbar-bgcolor) !important;
-	--uc-menu-disabled: rgb(90,90,90) !important;
+  --toolbar-bgcolor: rgb(36,44,59) !important;
+  --uc-menu-bkgnd: var(--toolbar-bgcolor);
+  --arrowpanel-background: var(--toolbar-bgcolor) !important;
+  --autocomplete-popup-background: var(--toolbar-bgcolor) !important;
+  --uc-menu-disabled: rgb(90,90,90) !important;
   --lwt-toolbar-field-focus: rgb(36,44,59) !important;
 }
 

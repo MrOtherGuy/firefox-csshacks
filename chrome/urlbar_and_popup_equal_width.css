@@ -6,10 +6,10 @@ See the above repository for updates as well as full license text. */
 /* Firefox 70+ */
 
 #urlbar-container{
-	transform: translateY(0);
-	position: relative;
-	z-index: 10;
-	padding-block: 3px !important;
+  transform: translateY(0);
+  position: relative;
+  z-index: 10;
+  padding-block: 3px !important;
   padding-inline: 0px !important;
   margin-inline: 5px !important;
 }

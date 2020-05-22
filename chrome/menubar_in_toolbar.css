@@ -3,9 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Makes menubar to appear in tabs toolbar pushing tabs to the side */
 #toolbar-menubar:not([inactive]) ~ #TabsToolbar{
-	margin-left:300px !important;
-	margin-top: -26px !important;
+  margin-left:300px !important;
+  margin-top: -26px !important;
 }
 :root[sizemode="maximized"] #toolbar-menubar:not([inactive]) ~ #TabsToolbar{
-	margin-top: -28px !important;
+  margin-top: -28px !important;
 }
