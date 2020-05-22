@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/fake_statusbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Creates a statusbar by using menubar */
 /* Since it's really the menubar this won't work if you also want the menubar on top of the screen */
 

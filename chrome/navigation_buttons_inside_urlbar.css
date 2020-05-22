@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/navigation_buttons_inside_urlbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Requires you to edit toolbar layout. Put buttons directly to the right of the urlbar in this order: <urlbar><reload-button><back-button><forward-button>*/
 /* Actually, the order of reload and back-buttons doesn't matter */
 

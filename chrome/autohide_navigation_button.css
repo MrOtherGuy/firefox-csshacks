@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_navigation_button.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Hides navigation-buttons (back/forward/stop/reload) buttons and shows them when cursor is over the right edge of urlbar  */
 /* Disabled button are completely hidden, such as back-button when there is no page to go back to */
 

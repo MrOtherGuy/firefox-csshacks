@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/dark_context_menus.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Makes context menus dark. Also affects some portions of menu popups */
 /* Uses dark theme colors but does not respect dark theme variables (they wouldn't work on sidebar context menu) */
 

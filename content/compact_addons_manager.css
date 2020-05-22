@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/content/compact_addons_manager.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Make the installed addons list more compact, title + only */
 /* Installed extensions list will be 3-6 columns wide, themes will be 2 columns wide. No effect on recommendations but those can be styled by adding two_column_html_addons.css */
 /* Compatible with addon_manage_buttons_without_popup.css */

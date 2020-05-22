@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/click_selected_tab_to_focus_urlbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Clicking selected tab selects focuses urlbar */
 /* Selected tab cannot be normally clicked (right-,middle- or left-clicked) EXCEPT from the tab icon */
 

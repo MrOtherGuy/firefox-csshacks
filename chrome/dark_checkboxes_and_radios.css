@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/dark_checkboxes_and_radios.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Change the appearance of natively styled widgets including radios, checkboxes, buttons and expender "dropdown" arrows */
 /* Their background will be transparent instead of white so they will appear fitting to whatever is on the background */
 /* As such, this might cause a small issue if the background happens to be same color as the border of these buttons or the checkbox-image */
