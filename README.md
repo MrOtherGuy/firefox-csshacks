@@ -98,6 +98,3 @@ Example userChrome.css resulting in rather complete dark blueish-grey UI:
 ```
 
 You can use individual modules from theme such as to only include popups_and_menus. But it would still be required that you import the theme_color_variables.css or you'll have to manually edit all the colors.
-
-
-Example userChrome.css and userContent.css can be used as is to enable theme + certain features after /chrome and /content folders are copied into your profile.
