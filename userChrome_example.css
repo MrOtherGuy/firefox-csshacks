@@ -1,16 +1,33 @@
-/* Example file enabling theme + some features */
+/* Example userChrome.css file */
 
-@import url(chrome/theme_color_variables.css);
-@import url(chrome/theme_toolbars.css);
-@import url(chrome/theme_sidebar.css);
-@import url(chrome/theme_popups_and_menus.css);
-@import url(chrome/status_inside_urlbar.css);
-/*@import url(chrome/navigation_buttons_inside_urlbar.css);*/
+/* Import your desired components first */
+
 @import url(chrome/tab_close_button_always_on_hover.css);
 @import url(chrome/tab_loading_progress_throbber.css);
 @import url(chrome/button_effect_scale_onclick.css);
 @import url(chrome/blank_page_background.css);
-/* @import url(chrome/page_action_buttons_on_hover.css); */
-@import url(chrome/autohide_sidebar.css);
-@import url(chrome/menubar_in_toolbar.css);
+@import url(chrome/autohide_menubar.css);
 @import url(chrome/hide_toolbox_top_bottom_borders.css);
+@import url(chrome/vertical_context_navigation.css);
+@import url(chrome/minimal_popup_scrollbars.css);
+@import url(chrome/button_effect_icon_glow.css);
+@import url(chrome/dark_context_menus.css);
+@import url(chrome/dark_additional_windows.css);
+@import url(chrome/dark_checkboxes_and_radios.css);
+@import url(chrome/minimal_text_fields.css);
+@import url(chrome/minimal_toolbarbuttons.css);
+@import url(chrome/urlbar_centered_text.css);
+
+/* Apply your custom modifications after imports */
+
+:root{
+	--toolbar-bgcolor: rgb(36,44,59) !important;
+	--uc-menu-bkgnd: var(--toolbar-bgcolor);
+	--arrowpanel-background: var(--toolbar-bgcolor) !important;
+	--autocomplete-popup-background: var(--toolbar-bgcolor) !important;
+	--uc-menu-disabled: rgb(90,90,90) !important;
+  --lwt-toolbar-field-focus: rgb(36,44,59) !important;
+}
+
+#sidebar-box{ --sidebar-background-color: var(--toolbar-bgcolor) !important; }
+window.sidebar-panel{ --lwt-sidebar-background-color: rgb(36,44,59) !important; }
