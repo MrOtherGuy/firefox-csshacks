@@ -5,6 +5,9 @@ See the above repository for updates as well as full license text. */
 /* Menubar will be shown when cursor touches top of the spacers on both side of tabs. Window controls will be in menubar, so they are automatically hidden */
 /* Make sure you have menubar enabled */
 
+#nav-bar-customization-target,
+#PanelUI-button,
+#nav-bar-overflow-button,
 #TabsToolbar > .toolbar-items{ position: relative; z-index: 5; }
 #toolbar-menubar > spacer{ flex-grow: 1 }
 
@@ -30,3 +33,6 @@ See the above repository for updates as well as full license text. */
   margin-top: 0px;
   z-index: 6
 }
+
+/* This exists only for compatibility reasons with some other styles */
+#navigator-toolbox{ --uc-hide-window-control-space: 0 }
