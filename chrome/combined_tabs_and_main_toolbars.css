@@ -1,3 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/combined_tabs_and_main_toolbars.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
 /* Combines tabs toolbar and nav-bar in such a way that opening new tabs will reserve
    space from nav-bar. Only pinned tabs and the selected tab will be visible, all other tabs need to be accessed via alltabs-button or shortcut keys */
 
