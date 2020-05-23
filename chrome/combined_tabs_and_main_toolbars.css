@@ -1,0 +1,53 @@
+/* Combines tabs toolbar and nav-bar in such a way that opening new tabs will reserve
+   space from nav-bar. Only pinned tabs and the selected tab will be visible, all other tabs need to be accessed via alltabs-button or shortcut keys */
+
+/* You WILL NEED either autohide_menubar.css or overlay_menubar.css with this or use custom css that does something similar */  
+
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{ display: none !important; }
+#toolbar-menubar{ left:0 }
+
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  #TabsToolbar > .titlebar-buttonbox-container{
+    position: fixed;
+    display: block;
+    left: 0px;
+    z-index: 1;
+  }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-hide-window-control-space,1) * 96px + 20px) 0px !important; }
+  
+  @media (-moz-os-version: windows-win10){
+    :root[tabsintitlebar="true"] #nav-bar{ padding-left: calc(var(--uc-hide-window-control-space,1) * 134px + 20px) !important; }
+  }
+  #toolbar-menubar[autohide="true"] + #TabsToolbar .titlebar-buttonbox{ -moz-box-direction: reverse }
+}
+
+#navigator-toolbox{ --tab-min-height: 40px }
+:root[uidensity="compact"] #navigator-toolbox{ --tab-min-height: 32px }
+
+@media (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"] > body > box{ margin-top: 8px }
+}
+
+#navigator-toolbox{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+#titlebar{ -moz-appearance: none !important; }
+:root[tabsintitlebar="true"] #nav-bar{ padding-left: 20px }
+
+#nav-bar,#PersonalToolbar{ flex-grow: 1; }
+
+/* This margin on bookmarks toolbar makes absolutely no sense, but it won't work properly without it */
+.browser-toolbar.chromeclass-directories:not([collapsed="true"]){
+  min-width: 100vw;
+  margin-bottom: var(--tab-min-height);
+}
+/* reduce urlbar minimum width before things start to go to overflow menu */
+#urlbar-container{ min-width: 300px !important; }
+
+#TabsToolbar > .titlebar-spacer[type="pre-tabs"]{ display: none !important; }
+
+/* If you are only working with just a few tabs then you may safely delete the following to allow non-pinned tabs to be shown */
+.tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
