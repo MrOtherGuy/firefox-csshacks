@@ -44,7 +44,7 @@ See the above repository for updates as well as full license text. */
 
 /* This margin on bookmarks toolbar makes absolutely no sense, but it won't work properly without it */
 .browser-toolbar.chromeclass-directories:not([collapsed="true"]){
-  min-width: 100vw;
+  min-width: 100vw !important;
   margin-bottom: var(--tab-min-height);
 }
 /* reduce urlbar minimum width before things start to go to overflow menu */
