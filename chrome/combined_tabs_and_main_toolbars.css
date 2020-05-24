@@ -51,6 +51,6 @@ See the above repository for updates as well as full license text. */
 #urlbar-container{ min-width: 300px !important; }
 
 #TabsToolbar > .titlebar-spacer[type="pre-tabs"]{ display: none !important; }
-
+#alltabs-button{ display: -moz-box !important }
 /* If you are only working with just a few tabs then you may safely delete the following to allow non-pinned tabs to be shown */
 .tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
