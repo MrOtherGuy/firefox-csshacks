@@ -1,0 +1,51 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_bookmarks_and_main_toolbars.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+#navigator-toolbox{
+  --uc-bm-height: 22px; /* Might need to adjust if the toolbar has other buttons */
+  --uc-bm-padding: 2px; /* Vertical padding to be applied to bookmarks */
+  --uc-navbar-height: -40px; /* navbar is main toolbar. Use negative value */
+}
+
+:root[uidensity=compact] #navigator-toolbox{ --uc-bm-padding: 1px; --uc-navbar-height: -32px }
+:root[uidensity="touch"] #navigator-toolbox{ --uc-bm-padding: 6px }
+
+:root[sessionrestored] #nav-bar:not([customizing]),
+#PersonalToolbar:not([customizing]){
+  transform: rotateX(90deg);
+  transform-origin: top;
+  transition: transform 135ms linear 600ms !important;
+  z-index: 2;
+}
+#navigator-toolbox > #PersonalToolbar{ transform-origin: 0px var(--uc-navbar-height); z-index: 1 }
+
+:root[sessionrestored] #navigator-toolbox:not([customizing]){ margin-bottom:  calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding) + var(--uc-navbar-height)); }
+
+#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
+
+/* SELECT TOOLBAR BEHAVIOR */
+/* Comment out or delete either one of these to disable that behavior */
+
+/* Show when urlbar is focused */
+#nav-bar:focus-within + #PersonalToolbar,
+#navigator-toolbox > #nav-bar:focus-within{
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
+}
+
+/* Show when cursor is over the toolbar area */
+#navigator-toolbox:hover > #PersonalToolbar,
+#navigator-toolbox:hover > #nav-bar{
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
+}
+
+/* Uncomment to enable compatibility for multi-row_bookmarks.css */
+/* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
+/*
+#PersonalToolbar:not([customizing]){
+  position: fixed;
+  display: block;
+  margin-bottom: 0px !important;
+}
+*/
