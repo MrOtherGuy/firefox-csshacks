@@ -1,0 +1,44 @@
+body{background-color: rgb(60,50,70); color: silver; margin: 0px }
+#ui{ display: flex; }
+
+#categories{
+  padding-block: 1em;
+  box-sizing: border-box;
+  border-inline-end: 1px solid gold;
+  background-color: rgb(60,60,70);
+  max-height: 100vh;
+  overflow-y: auto;
+  min-width: 18ch
+}
+a{ color: rgb(100,150,200); margin-inline-start: 1ch }
+a:visited{ color: rgb(150,100,200) }
+a:hover{ color: rgb(200,150,100) }
+pre:empty{ display: none }
+.category{ padding: 0.2em 1em; cursor: pointer }
+
+.currentCategory,
+.category:hover{ background-color: grey }
+
+.target{
+  margin: 0.2em;
+  background-color: rgb(60,60,70);
+  padding: 0.5em;
+  border: 1px solid rgb(40,40,40);
+  border-radius: 4px;
+  max-width: 50ch;
+  cursor: pointer
+}
+.target:hover{ background-color: rgb(80,80,90) }
+#targets{ display: flex; flex-wrap: wrap }
+
+pre{
+  white-space: pre-wrap;
+  margin: 1em;
+  border: 2px inset;
+  padding: 0.5em;
+  background-color: rgb(40,50,50)
+}
+
+.hidden{ display: none !important }
+
+.target{ display: flex; justify-content: space-between }
