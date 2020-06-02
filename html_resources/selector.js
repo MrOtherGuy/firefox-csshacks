@@ -16,6 +16,31 @@ function initDB(obj){
   return true
 }
 
+function fetchWithType(url){
+  return new Promise((resolve,reject)=>{
+    const ext = url.substring(url.lastIndexOf(".")+1);
+    let expected = (ext === "json") ? "application/json" : (ext === "css") ? "text/css" : null;
+    if(!expected){
+      reject("unsupported file extension");
+    }
+    fetch(url)
+    .then(response =>{
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes(expected)) {
+        reject(`Oops, we got ${contentType} but expected ${expected}`);
+      }
+      if(ext === "json"){
+        response.json()
+        .then(r=>resolve(r))
+      }else{
+        response.text()
+        .then(r=>resolve(r))
+        
+      }
+    },except => reject(except))
+  });
+}
+
 let previousCategory = new (function(){
   let current = null;
   this.set = function(t){
@@ -42,9 +67,9 @@ async function onCategoryClicked(categoryNode){
 
 async function onTargetClicked(targetNode){
   const codeBlock = document.querySelector("pre");
-  let file = await fetch(`chrome/${getText(targetNode)}`);
-  let t = await file.text();
-  codeBlock.textContent = t;
+  fetchWithType(`chrome/${getText(targetNode)}`)
+  .then(text => (codeBlock.textContent = text))
+  .catch(e => console.log(e))
 }
 
 function onSomeClicked(e){
@@ -124,16 +149,9 @@ function createCategories(){
 
 document.onreadystatechange = (function () {
   if (document.readyState === "complete") {
-    fetch("html_resources/tagmap.json")
-    .then(response => {
-     const contentType = response.headers.get('content-type');
-     if (!contentType || !contentType.includes('application/json')) {
-       throw new TypeError("Oops, we haven't got JSON!");
-     }
-     return response.json();
-  })
-  .then(json=>(initDB(json)))
-  .then(()=>createCategories())
-  .catch(e=>{console.log(e);document.getElementById("ui").textContent = "FAILURE, Database could not be loaded"});
+    fetchWithType("html_resources/tagmap.json")
+    .then(response=>(initDB(response)))
+    .then(()=>createCategories())
+    .catch(e=>{console.log(e);document.getElementById("ui").textContent = "FAILURE, Database could not be loaded"});
   }
 });
