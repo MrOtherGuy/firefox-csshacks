@@ -1,8 +1,7 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/compact_urlbar_megabar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Make urlbar megabar appear more compact */
-/* Set the pref browser.urlbar.megabar to true */
+/* Make urlbar appear more compact */
 #urlbar[breakout]{
   margin-inline-start: 0px !important;
   width: 100% !important;
@@ -11,7 +10,8 @@ See the above repository for updates as well as full license text. */
 }
 #urlbar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
 .urlbarView{ margin-inline: 0 !important; width: auto !important; }
-.urlbarView-row{ padding: 0 4px !important; }
+.urlbarView-row{ padding: 0 2px !important; }
+.urlbarView-row-inner{ padding-inline-start: 4px !important; }
 #urlbar-background{ animation: none !important; }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
 #identity-box{ padding-block: var(--urlbar-icon-padding) }
