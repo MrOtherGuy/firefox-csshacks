@@ -1,0 +1,23 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/fake_urlbar_dropmarker.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Icon won't have a background when hovered and the cursor will be text selection cursor, unfortunately */
+
+#page-action-buttons::before{
+  display: -moz-inline-box;
+  content: "";
+  height: 28px;
+  width: 28px;
+  padding: var(--urlbar-icon-padding);
+  fill: var(--lwt-toolbar-field-color, black);
+  fill-opacity: 0.6;
+  -moz-context-properties: fill, fill-opacity;
+  background: no-repeat center url(chrome://global/skin/icons/arrow-dropdown-16.svg);
+  cursor: normal;
+  opacity: 0;
+  transition: opacity 150ms linear
+}
+#urlbar-input-container:hover > #page-action-buttons::before{ opacity: 1 }
+.urlbar-input-box:not(:focus-within){ margin-inline-end: -24px; }
+#urlbar-input:not(:focus-within){ padding-inline-end: 24px !important; }
+.urlbar-input-box:focus-within ~ #page-action-buttons::before{ -moz-user-focus: normal }
