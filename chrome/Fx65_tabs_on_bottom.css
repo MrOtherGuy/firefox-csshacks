@@ -33,7 +33,7 @@ linux_gtk_window_control_patch.css
   @media not (-moz-os-version: windows-win10){
     :root{ --uc-titlebar-padding: 0px !important }
   }
-  .titlebar-buttonbox-container{ left:0; right: unset; }
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
