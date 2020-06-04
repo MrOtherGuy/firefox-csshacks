@@ -6,7 +6,7 @@ This a compatibility patch to combine multi-row_tabs.css and navbar_tabs_respons
 
 Set the pref layout.css.osx-font-smoothing.enabled to true - this is enabled by default on OSX and doesn't do anything otherwise. Used to detect whether window controls are on left or on right.
 
-This patch only supports window controls on right - ie. they will be drawn to the left of the nav-bar. If you want to use this with window controls on left you must enable native titlebar.
+This patch only supports window controls on left - ie. they will be drawn to the left of the nav-bar. If you want to use this with window controls on right you must enable native titlebar.
 
 There is no good way to handle scrollable multiple rows so you should set the maximum rows in multi-row_tabs.css to something you won't ever hit. Or you could just check what happens.
  */
