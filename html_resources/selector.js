@@ -98,12 +98,14 @@ function createCategories(){
   const createNode = function(name,type){
     let node = document.createElement("div");
     node.classList.add(type);
-    node.textContent = name.substring(0,name.lastIndexOf("."));
     if(type === "target"){
+      node.textContent = name.substring(0,name.lastIndexOf("."));
       let link = node.appendChild(document.createElement("a"));
       node.classList.add("hidden");
       link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${name}`;
       link.title = "See on Github";
+    }else{
+      node.textContent = name;
     }
     
     return node;
