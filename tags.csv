@@ -1,12 +1,12 @@
-Fx65_tabs_on_bottom.css,tabs,toolbars,classic
-Fx65_tabs_on_bottom_menubar_on_top_patch.css,tabs,menubar,toolbars,classic,patch
-autohide_bookmarks_and_main_toolbars.css,autohide,bookmarks,toolbars,nav-bar,toolbox
+tabs_on_bottom.css,tabs,toolbars,classic
+tabs_on_bottom_menubar_on_top_patch.css,tabs,menubar,toolbars,classic,patch
+autohide_bookmarks_and_main_toolbars.css,autohide,bookmarks,toolbars,nav-bar
 autohide_bookmarks_toolbar.css,autohide,bookmarks,toolbars
 autohide_menubar.css,autohide,menubar,toolbars
 autohide_navigation_button.css,autohide,minimal,navigation,buttons
 autohide_sidebar.css,autohide,sidebar
 autohide_tabstoolbar.css,autohide,tabs,toolbars
-autohide_toolbox.css,autohide,toolbox,toolbars,fullscreen
+autohide_toolbox.css,autohide,toolbars,fullscreen
 blank_page_background.css,dark-mode,flash,blank,background
 bookmarksbar_on_new_tabs_only.css,legacy
 button_effect_icon_glow.css,buttons,effect,minimal
@@ -23,7 +23,7 @@ dark_checkboxes_and_radios.css,widgets,dark-mode
 dark_context_menus.css,dark-mode,menus
 dark_theme_aware_statuspanel.css,staus,dark-mode
 disable_newtab_on_middle_click.css,hack,newtab,tab
-fake_statusbar_w_menubar.css,hack,status,toolbar,menubar
+fake_statusbar_w_menubar.css,hack,status,toolbars,menubar
 floating_findbar_on_top.css,findbar,overlay
 full_width_urlbar_popup.css,ulrbar,popup
 google_style_urlbar_popup.css,urlbar,popup
@@ -32,7 +32,7 @@ hide_statuspanel_when_fullscreen.css,status,fullscreen,hiding
 hide_tabs_toolbar.css,hiding,tabs,toolbars
 hide_tabs_with_one_tab.css,hiding,tabs,toolbars
 hide_tabs_with_one_tab_w_window_controls.css,hiding,tabs,toolbars
-hide_toolbox_top_bottom_borders.css,toolbox,hiding
+hide_toolbox_top_bottom_borders.css,toolbars,hiding
 hide_urlbar_first_row.css,urlbar,popup,hiding
 linux_gtk_window_control_patch.css,patch,window-control
 menubar_in_toolbar.css,toolbars,minimal
@@ -64,7 +64,7 @@ page_action_buttons_on_hover.css,urlbar,minimal,effect
 pinned_tabs_on_right.css,tabs
 scrollable_menupopups.css,scrollbar,popup,menu
 scrollable_urlbar_popup.css,scrollbar,popup,urlbar
-show_navbar_on_focus_only.css,urlbar,nav-bar,toolbar,hiding
+show_navbar_on_focus_only.css,urlbar,nav-bar,toolbars,hiding
 show_window_title_in_menubar.css,windows,menubar
 status_inside_urlbar.css,status,urlbar,hack
 tab_close_button_always_on_hover.css,tab,close
@@ -81,7 +81,7 @@ theme_toolbars.css,legacy
 toggle_bookmarksbar_with_alt.css,legacy
 toggle_tabs_toolbar_with_alt.css,hack,tabs,menubar
 toolbarbuttons_icon%2Blabel.css,buttons,icon
-toolbars_below_content.css,tabs,toolbox,toolbars
+toolbars_below_content.css,tabs,toolbars
 urlbar_and_popup_equal_width.css,legacy
 urlbar_centered_text.css,urlbar
 urlbar_full_width.css,urlbar,popup
@@ -91,5 +91,5 @@ vertical_context_navigation.css,navigation,menu,popup
 vertical_context_navigation_v2.css,navigation,menu,popup
 vertical_menubar.css,menubar,hack
 window_control_placeholder_support.css,window-control,patch
-fake_statusbar_w_bookmarksbar.css,hack,status,toolbar,bookmarks
+fake_statusbar_w_bookmarksbar.css,hack,status,toolbars,bookmarks
 fake_urlbar_dropmarker.css,urlbar,hack
