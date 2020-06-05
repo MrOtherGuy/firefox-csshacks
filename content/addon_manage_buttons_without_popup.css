@@ -36,7 +36,7 @@ See the above repository for updates as well as full license text. */
   div.list{ display: inherit !important; flex-direction: row !important; } 
   
   panel-item[action="toggle-disabled"]{ --icon: url("chrome://browser/skin/quit.svg") }
-  panel-item[action="preferences"]{ --icon: url("chrome://browser/skin/settings.svg") }
+  panel-item[action="preferences"]{ --icon: url("chrome://global/skin/icons/settings.svg") }
   
 /* Uncomment these if you want to hide button label - such as with compact_addons_manager */
 /* This is basically a requirement with compact_addons_manager.css because the button text causes the cards to overflow */
