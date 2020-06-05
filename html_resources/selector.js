@@ -133,7 +133,7 @@ function createCategories(){
         ret[++i]=item;
         ns[i]=0;
       }else{
-        ns[i] += (item === "legacy" ? 0 : 1);
+        ns[i] += (item === "legacy" ? -1 : 1);
       }
     }
     let map = ret.map((a,i)=>({name:a,value:ns[i]}))
