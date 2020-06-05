@@ -1,5 +1,3 @@
-tabs_on_bottom.css,tabs,toolbars,classic
-tabs_on_bottom_menubar_on_top_patch.css,tabs,menubar,toolbars,classic,patch
 autohide_bookmarks_and_main_toolbars.css,autohide,bookmarks,toolbars,nav-bar
 autohide_bookmarks_toolbar.css,autohide,bookmarks,toolbars
 autohide_menubar.css,autohide,menubar,toolbars
@@ -74,6 +72,8 @@ tab_loading_progress_throbber.css,tab,icon,effect
 tabs_animated_gradient_border.css,hack,effect,tabs
 tabs_below_content.css,toolbars,tabs
 tabs_fill_available_width.css,tab,tabs
+tabs_on_bottom.css,tabs,toolbars,classic
+tabs_on_bottom_menubar_on_top_patch.css,tabs,menubar,toolbars,classic,patch
 textual_context_navigation.css,navigation,popup,menu
 theme_additional_windows.css,legacy
 theme_color_variables.css,legacy,
