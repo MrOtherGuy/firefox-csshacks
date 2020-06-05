@@ -87,7 +87,7 @@
 "toolbars_below_content.css":["tabs","toolbars"],
 "urlbar_and_popup_equal_width.css":["legacy"],
 "urlbar_centered_text.css":["urlbar"],
-"urlbar_full_width.css":["urlbar","popup"],
+"urlbar_popup_full_width.css":["urlbar","popup"],
 "urlbar_results_in_two_rows.css":["urlbar","popup"],
 "urlbar_visible_on_active_tab_click.css":["hack","urlbar"],
 "vertical_context_navigation.css":["navigation","menu","popup"],
