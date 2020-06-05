@@ -104,6 +104,7 @@ function createCategories(){
       node.classList.add("hidden");
       link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${name}`;
       link.title = "See on Github";
+      link.target = "_blank";
     }else{
       node.textContent = name;
     }
