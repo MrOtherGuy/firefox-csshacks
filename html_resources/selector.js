@@ -52,7 +52,7 @@ let previousCategory = new (function(){
 })()
 
 function getText(node){
-  return node.childNodes[0].textContent
+  return `${node.childNodes[0].textContent}.css`
 }
 
 async function onCategoryClicked(categoryNode){
@@ -98,12 +98,12 @@ function createCategories(){
   const createNode = function(name,type){
     let node = document.createElement("div");
     node.classList.add(type);
-    node.textContent = name;
+    node.textContent = name.substring(0,name.lastIndexOf("."));
     if(type === "target"){
       let link = node.appendChild(document.createElement("a"));
       node.classList.add("hidden");
       link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${name}`;
-      link.textContent = "Github";
+      link.title = "See on Github";
     }
     
     return node;
