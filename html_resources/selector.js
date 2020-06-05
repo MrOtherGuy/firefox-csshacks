@@ -133,12 +133,12 @@ function createCategories(){
         ret[++i]=item;
         ns[i]=0;
       }else{
-        ns[i] += (item === "legacy") ? 0 : 1;
+        ns[i] += (item === "legacy" ? 0 : 1);
       }
     }
     let map = ret.map((a,i)=>({name:a,value:ns[i]}))
     
-    return map.sort((a,b)=>(:a.value > b.value?-1:a.value < b.value ? 1:0))
+    return map.sort((a,b)=>(a.value > b.value?-1:a.value < b.value ? 1:0))
   })();
   
   for(let cat of CAT_NAMES){
