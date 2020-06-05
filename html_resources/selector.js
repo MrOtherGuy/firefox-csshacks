@@ -138,7 +138,7 @@ function createCategories(){
     }
     let map = ret.map((a,i)=>({name:a,value:ns[i]}))
     
-    return map.sort((a,b)=>(a.value > b.value?-1:a.value < b.value ? 1:0))
+    return map.sort((a,b)=>(a.name==="legacy"?2:a.value > b.value?-1:a.value < b.value ? 1:0))
   })();
   
   for(let cat of CAT_NAMES){
