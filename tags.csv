@@ -7,9 +7,9 @@ autohide_tabstoolbar.css,autohide,tabs,toolbars
 autohide_toolbox.css,autohide,toolbars,fullscreen
 blank_page_background.css,dark-mode
 bookmarksbar_on_new_tabs_only.css,legacy
-button_effect_icon_glow.css,buttons,effect,minimal
-button_effect_scale_onclick.css,buttons,effect,minimal
-button_effect_scale_onhover.css,buttons,effect,minimal
+button_effect_icon_glow.css,buttons,effect
+button_effect_scale_onclick.css,buttons,effect
+button_effect_scale_onhover.css,buttons,effect
 classic_grid_main_menu_popup.css,classic,menu,popup
 click_selected_tab_to_focus_urlbar.css,hack,tabs,urlbar
 color_variable_template.css,colors
