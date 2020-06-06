@@ -106,7 +106,8 @@ function createCategories(){
       link.title = "See on Github";
       link.target = "_blank";
     }else{
-      node.textContent = name;
+      node.textContent = name.name;
+      node.setAttribute("data-value",name.value);
     }
     
     return node;
@@ -140,12 +141,13 @@ function createCategories(){
       }
     }
     let map = ret.map((a,i)=>({name:a,value:ns[i]}))
-    
-    return map.sort((a,b)=>(a.value > b.value?-1:a.value < b.value ? 1:0))
+    return map
+    //return map.sort((a,b)=>(a.value > b.value?-1:a.value < b.value ? 1:0))
   })();
   
   for(let cat of CAT_NAMES){
-    CAT_PARENT.appendChild(createCategory(cat.name))
+  //  CAT_PARENT.appendChild(createCategory(cat.name))
+    CAT_PARENT.appendChild(createNode(cat,"category"))
   }
   
 }
