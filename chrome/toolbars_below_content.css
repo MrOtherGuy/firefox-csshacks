@@ -34,7 +34,7 @@ See the above repository for updates as well as full license text. */
 
 /* Yeah, removes window controls. Likely not wanted on bottom row  */
 #TabsToolbar > .titlebar-buttonbox-container{ display: none }
-
+#toolbar-menubar > .titlebar-buttonbox-container{ order: 1000 }
 /* Menubar options */
 /* 1. Overlay menubar on top of web-content (default) */
 /* This should be used if menubar is disabled and Alt-key is used to activate it temporarily */
