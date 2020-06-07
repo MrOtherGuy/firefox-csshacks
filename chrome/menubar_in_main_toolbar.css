@@ -1,0 +1,26 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/menubar_in_main_toolbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Make menubar permanently enabled or this isn't going to work */
+
+#navigator-toolbox{ --uc-menubar-height: 36px }
+:root[uidensity="compact"] #navigator-toolbox{ --uc-menubar-height: 30px }
+
+#titlebar{ -moz-box-direction: reverse; -moz-appearance: none !important; }
+@media (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"][tabsintitlebar] #TabsToolbar{ margin-top: 8px !important; }
+}
+#toolbar-menubar{
+  margin-bottom: calc(0px - var(--uc-menubar-height));
+  height: var(--uc-menubar-height);
+  position: relative;
+  z-index: 2;
+}
+
+#menubar-items{ -moz-box-pack: center }
+/* Adjust to fit menubar items - 300px works for English locale */
+#nav-bar{ padding-left: 300px; }
+
+#toolbar-menubar > .titlebar-buttonbox-container{ display: none }
+:root[tabsintitlebar][sizemode="normal"] .titlebar-spacer,
+:root[tabsintitlebar] #TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box !important; }
