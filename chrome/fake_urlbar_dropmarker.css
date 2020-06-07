@@ -13,7 +13,6 @@ See the above repository for updates as well as full license text. */
   fill-opacity: 0.6;
   -moz-context-properties: fill, fill-opacity;
   background: no-repeat center url(chrome://global/skin/icons/arrow-dropdown-16.svg);
-  cursor: normal;
   opacity: 0;
   transition: opacity 150ms linear
 }
