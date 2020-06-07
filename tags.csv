@@ -35,8 +35,9 @@ hide_tabs_with_one_tab_w_window_controls.css,hiding,tabs,toolbars
 hide_toolbox_top_bottom_borders.css,toolbars,hiding
 hide_urlbar_first_row.css,urlbar,popup,hiding
 linux_gtk_window_control_patch.css,patch,window-control
-menubar_in_tabs_toolbar.css,toolbars,minimal
-menubar_in_tabs_toolbar_oneliner_compatible.css,toolbars,minimal
+menubar_in_main_toolbar.css,menubar,nav-bar,minimal,toolbars
+menubar_in_tabs_toolbar.css,toolbars,minimal,menubar
+menubar_in_tabs_toolbar_oneliner_compatible.css,toolbars,minimal,menubar
 minimal_in-UI_scrollbars.css,minimal,scrollbar
 minimal_text_fields.css,minimal,urlbar
 minimal_toolbarbuttons.css,minimal,buttons
@@ -93,4 +94,3 @@ vertical_context_navigation.css,navigation,menu,popup
 vertical_context_navigation_v2.css,navigation,menu,popup
 vertical_menubar.css,menubar,hack
 window_control_placeholder_support.css,window-control,patch
-menubar_in_main_toolbar.css,menubar,nav-bar,minimal,toolbars
