@@ -15,9 +15,10 @@ See the above repository for updates as well as full license text. */
   height: var(--uc-menubar-height);
   position: relative;
   z-index: 2;
+  pointer-events: none;
 }
 
-#menubar-items{ -moz-box-pack: center }
+#menubar-items{ -moz-box-pack: center; pointer-events: initial }
 /* Adjust to fit menubar items - 300px works for English locale */
 #nav-bar{ padding-left: 300px; }
 
