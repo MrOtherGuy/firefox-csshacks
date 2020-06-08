@@ -16,18 +16,14 @@ such as, nav-bar buttons are not shown when urlbar is hovered
 toolbar .toolbarbutton-1:not([open]),
 .titlebar-button,
 #tabbrowser-tabs toolbarbutton,
-toolbarbutton.scrollbutton-up[orient="horizontal"],
-toolbarbutton.scrollbutton-down[orient="horizontal"],
-toolbarbutton#scrollbutton-up[orient="horizontal"],
-toolbarbutton#scrollbutton-down[orient="horizontal"]{
+#scrollbutton-up:not(:hover),
+#scrollbutton-down:not(:hover){
   background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
 /* Hide placeholder on hover */
 toolbar:hover .toolbarbutton-1,
 .titlebar-buttonbox:hover > .titlebar-button,
-#tabbrowser-tabs:hover toolbarbutton,
-toolbarbutton.scrollbutton-up[orient="horizontal"]:hover,
-toolbarbutton.scrollbutton-down[orient="horizontal"]:hover{ background-image: none }
+#tabbrowser-tabs:hover toolbarbutton{ background-image: none }
 
 #urlbar-container:hover ~ .toolbarbutton-1:not([open]) > *,
 #urlbar-container:hover ~ #stop-reload-button > .toolbarbutton-1 > *,
@@ -36,41 +32,23 @@ toolbarbutton.scrollbutton-down[orient="horizontal"]:hover{ background-image: no
 #titlebar:hover ~ toolbar .toolbarbutton-1 > *,
 toolbar .toolbarbutton-1 > *,
 #tabbrowser-tabs toolbarbutton > *,
-toolbarbutton.scrollbutton-up[orient="horizontal"] > .toolbarbutton-icon,
-toolbarbutton.scrollbutton-down[orient="horizontal"] > .toolbarbutton-icon,
 .titlebar-button > *{
   transform: scale(0);
   transition: transform 82ms linear !important;
 }
+#scrollbutton-up > .toolbarbutton-icon,
+#scrollbutton-down > .toolbarbutton-icon{ transform: scale(0) !important; transition: transform 82ms linear !important; }
 
 toolbar:hover .toolbarbutton-1:not(#PanelUI-menu-button) > *,
 #nav-bar-overflow-button:hover + #PanelUI-button > .toolbarbutton-1 > stack,
 #PanelUI-menu-button:hover > stack,
 #tabbrowser-tabs:hover toolbarbutton > *,
-toolbarbutton.scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon,
-toolbarbutton.scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon,
 .toolbarbutton-1[open] > *,
 .titlebar-buttonbox:hover > .titlebar-button > *{
   transform: scale(1)
 }
-
-/* Extra rules for reworked tab overflow scrollbuttons */
-
-toolbarbutton#scrollbutton-up[orient="horizontal"] > .toolbarbutton-icon,
-toolbarbutton#scrollbutton-down[orient="horizontal"] > .toolbarbutton-icon{
-  transform: scale(0) !important;
-  transition: transform 82ms linear !important;
-}
-
-toolbarbutton#scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon{
-  transform: scale(1) !important;
-}
-toolbarbutton#scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon{
-  transform: scale(-1, 1) !important;
-}
-
-toolbarbutton#scrollbutton-up[orient="horizontal"]:hover,
-toolbarbutton#scrollbutton-down[orient="horizontal"]:hover{ background: none !important; }
+#scrollbutton-up:hover > .toolbarbutton-icon{ transform: scale(1) !important }
+#scrollbutton-down:hover > .toolbarbutton-icon{ transform: scale(-1) !important }
 
 /* Urlbar icons, this way they show colors is applicable */
 .urlbar-icon{ transition: transform 82ms linear !important; }

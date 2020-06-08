@@ -7,10 +7,8 @@ See the above repository for updates as well as full license text. */
 toolbar .toolbarbutton-1:not([open]),
 .titlebar-button,
 #tabbrowser-tabs toolbarbutton,
-toolbarbutton.scrollbutton-up[orient="horizontal"],
-toolbarbutton.scrollbutton-down[orient="horizontal"],
-toolbarbutton#scrollbutton-up[orient="horizontal"],
-toolbarbutton#scrollbutton-down[orient="horizontal"]{
+#scrollbutton-up:not(:hover),
+#scrollbutton-down:not(:hover){
   background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
 /* Hide placeholder on hover */
@@ -18,48 +16,28 @@ toolbar:hover + toolbar .toolbarbutton-1,
 vbox:hover + toolbar .toolbarbutton-1,
 toolbar:hover .toolbarbutton-1,
 #tabbrowser-tabs:hover toolbarbutton,
-toolbarbutton.scrollbutton-up[orient="horizontal"]:hover,
-toolbarbutton.scrollbutton-down[orient="horizontal"]:hover,
 .titlebar-buttonbox:hover > .titlebar-button{ background-image: none }
 
 
 toolbar .toolbarbutton-1 > *,
 .titlebar-button > *,
-#tabbrowser-tabs toolbarbutton > *,
-toolbarbutton.scrollbutton-up[orient="horizontal"] > .toolbarbutton-icon,
-toolbarbutton.scrollbutton-down[orient="horizontal"] > .toolbarbutton-icon{
+#tabbrowser-tabs toolbarbutton > *{
   transform: scale(0);
   transition: transform 82ms linear !important;
 }
+#scrollbutton-up > .toolbarbutton-icon,
+#scrollbutton-down > .toolbarbutton-icon{ transform: scale(0) !important; transition: transform 82ms linear !important; }
 
 toolbar:hover + toolbar .toolbarbutton-1 > *,
 vbox:hover + toolbar .toolbarbutton-1 > *,
 toolbar:hover .toolbarbutton-1 > *,
 .toolbarbutton-1[open] > *,
 .titlebar-buttonbox:hover > .titlebar-button > *,
-#tabbrowser-tabs:hover toolbarbutton > *,
-toolbarbutton.scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon,
-toolbarbutton.scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon{
+#tabbrowser-tabs:hover toolbarbutton > *{
   transform: scale(1)
 }
-
-/* Extra rules for reworked tab overflow scrollbuttons */
-
-toolbarbutton#scrollbutton-up[orient="horizontal"] > .toolbarbutton-icon,
-toolbarbutton#scrollbutton-down[orient="horizontal"] > .toolbarbutton-icon{
-  transform: scale(0) !important;
-  transition: transform 82ms linear !important;
-}
-
-toolbarbutton#scrollbutton-up[orient="horizontal"]:hover > .toolbarbutton-icon{
-  transform: scale(1) !important;
-}
-toolbarbutton#scrollbutton-down[orient="horizontal"]:hover > .toolbarbutton-icon{
-  transform: scale(-1, 1) !important;
-}
-
-toolbarbutton#scrollbutton-up[orient="horizontal"]:hover,
-toolbarbutton#scrollbutton-down[orient="horizontal"]:hover{ background: none !important; }
+#scrollbutton-up:hover > .toolbarbutton-icon{ transform: scale(1) !important }
+#scrollbutton-down:hover > .toolbarbutton-icon{ transform: scale(-1) !important }
 
 /* Urlbar icons, this way they show colors is applicable */
 .urlbar-icon{ transition: transform 82ms linear !important; }

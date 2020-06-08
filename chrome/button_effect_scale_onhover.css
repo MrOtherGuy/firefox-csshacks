@@ -14,12 +14,13 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon,
 .urlbar-icon{
   transition: padding 83ms linear !important;
 }
-
+toolbarbutton#scrollbutton-up > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1) > .toolbarbutton-icon,
 toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon{
   transform: scale(0.8) !important;
 }
+toolbarbutton#scrollbutton-down > .toolbarbutton-icon{ transform: scale(-0.8) !important; }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   padding: calc(var(--toolbarbutton-inner-padding) + var(--uc-back-extra-padding,0px) + 2px) !important;
@@ -27,11 +28,13 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
 
 #page-action-buttons .urlbar-icon:not(:hover){ padding: calc(var(--urlbar-icon-padding) + 2px) !important; }
 
+toolbarbutton#scrollbutton-up:not([disabled]):hover > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 .menuitem-iconic:not([disabled]):hover .menu-iconic-icon{
   transform: none !important;
 }
+toolbarbutton#scrollbutton-down:not([disabled]):hover > .toolbarbutton-icon{transform: scale(-1) !important;}
 
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
   padding: calc(var(--toolbarbutton-inner-padding) + var(--uc-back-extra-padding,0px)) !important;
