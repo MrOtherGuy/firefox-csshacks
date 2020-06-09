@@ -15,3 +15,4 @@ See the above repository for updates as well as full license text. */
 #urlbar-background{ animation: none !important; }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
 #identity-box{ padding-block: var(--urlbar-icon-padding) }
+.urlbarView > .search-one-offs:not([hidden]){ padding-block: 0px !important; }
