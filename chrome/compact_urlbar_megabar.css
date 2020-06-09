@@ -15,3 +15,6 @@ See the above repository for updates as well as full license text. */
 #urlbar-background{ animation: none !important; }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
 #identity-box{ padding-block: var(--urlbar-icon-padding) }
+
+/* Remove one-offs (this time search with) section */
+.search-one-offs {display:none !important}
