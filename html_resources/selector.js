@@ -6,13 +6,14 @@ function initDB(obj){
   DB = obj;
   Object.defineProperty(DB,"query",{value:function (q,list){
     let nlist = [];
-    for(let key of list || Object.keys(this)){
+    for(let key of list || this.keys){
       if(this[key].includes(q)){
         nlist.push(key)
       }
     }
     return nlist
   }});
+  Object.defineProperty(DB,"keys",{value:(Object.keys(DB).sort())});
   return true
 }
 
