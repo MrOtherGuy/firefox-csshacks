@@ -7,6 +7,7 @@ See the above repository for updates as well as full license text. */
 :root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
 
 #titlebar{ -moz-appearance: none !important; }
+#TabsToolbar{ min-height: 0px !important }
 
 #tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
