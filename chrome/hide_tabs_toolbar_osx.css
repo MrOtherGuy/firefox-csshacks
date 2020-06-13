@@ -1,0 +1,25 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_toolbar_osx.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Hides tabs toolbar - OSX only */
+
+/* IMPORTANT */
+/*
+Get window_control_placeholder_support.css
+Window controls will be all wrong without it
+*/
+
+:root{ --uc-toolbar-height: 32px; }
+
+:root:not([uidensity="compact"]){ --uc-toolbar-height: 38px }
+
+#TabsToolbar > *{ visibility: collapse !important }
+
+#TabsToolbar > .titlebar-buttonbox-container{
+  visibility: visible !important;
+  height:var(--uc-toolbar-height) !important;
+}
+
+:root:not([inFullscreen]) #nav-bar{
+  margin-top: calc(0px - var(--uc-toolbar-height));
+}

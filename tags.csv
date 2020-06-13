@@ -94,3 +94,4 @@ vertical_context_navigation.css,navigation,menu,popup
 vertical_context_navigation_v2.css,navigation,menu,popup
 vertical_menubar.css,menubar,hack
 window_control_placeholder_support.css,window-control,patch
+hide_tabs_toolbar_osx.css,tabs,toolbars,hiding,minimal
