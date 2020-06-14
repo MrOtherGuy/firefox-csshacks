@@ -10,8 +10,7 @@ Window controls will be all wrong without it
 */
 
 :root{ --uc-toolbar-height: 32px; }
-
-:root:not([uidensity="compact"]){ --uc-toolbar-height: 38px }
+:root:not([uidensity="compact"]){ --uc-toolbar-height: 34px }
 
 #TabsToolbar > *{ visibility: collapse !important }
 
@@ -20,6 +19,7 @@ Window controls will be all wrong without it
   height:var(--uc-toolbar-height) !important;
 }
 
-:root:not([inFullscreen]) #nav-bar{
+#nav-bar{
   margin-top: calc(0px - var(--uc-toolbar-height));
 }
+ :root[inFullscreen] #navigator-toolbox{ margin-top: 11px }
