@@ -14,7 +14,7 @@ See the above repository for updates as well as full license text. */
 :root:not([inDOMFullscreen]) > body > #browser{
   margin-bottom: calc(5px + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 }
-#PersonalToolbar >  toolbarbutton{ padding: 0 var(--toolbarbutton-outer-padding) !important; } 
+#PersonalToolbar > toolbarbutton{ padding: 0 var(--toolbarbutton-outer-padding) !important; } 
 #PersonalToolbar > toolbarbutton > .toolbarbutton-icon,
 #PersonalToolbar > toolbarbutton > .toolbarbutton-badge-stack{
   width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
@@ -30,7 +30,7 @@ See the above repository for updates as well as full license text. */
   width: 60ch;
 }
 /* Using -moz-element() causes some problems after Firefox has been running several hours such as long tab switch times. For this reason the background image is removed on hover and focused states which appears to clear the state. */
-#Per#PersonalToolbar:hover:first-child + toolbarspring{ background-image: none }
+#PersonalToolbar:hover :first-child + toolbarspring{ background-image: none }
 
 #statuspanel-inner > #statuspanel-label{
   height:3em;
