@@ -30,7 +30,7 @@ See the above repository for updates as well as full license text. */
   width: 60ch;
 }
 /* Using -moz-element() causes some problems after Firefox has been running several hours such as long tab switch times. For this reason the background image is removed on hover and focused states which appears to clear the state. */
-#PersonalToolbar:hover :first-child + toolbarspring{ background-image: none }
+#PersonalToolbar > toolbarspring:first-of-type:hover{ background-image: none }
 
 #statuspanel-inner > #statuspanel-label{
   height:3em;
