@@ -69,5 +69,5 @@ See the above repository for updates as well as full license text. */
 
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
-#tabbrowser-tabs spacer,
+#tabbrowser-arrowscrollbox > spacer,
 .tabbrowser-tab::after{ display: none !important }
