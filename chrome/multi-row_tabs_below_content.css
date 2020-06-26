@@ -23,13 +23,14 @@ See the above repository for updates as well as full license text. */
   --multirow-tab-min-width: 100px;
   --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
 }
-
-:root[sizemode="maximized"]{ --multirow-top-padding: 8px }
+@media (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"]{ --multirow-top-padding: 8px }
+}
 :root[uidensity="compact"]{--multirow-toolbar-height: 32px}
 :root{ border-top-width: 0px !important }
 
 #main-window > body > box,
-#navigator-toolbox{ -moz-box-ordinal-group: 2 }
+#navigator-toolbox{ -moz-box-ordinal-group: 2; border-bottom: 0px !important }
 
 #titlebar{-moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
 
@@ -40,13 +41,22 @@ See the above repository for updates as well as full license text. */
   width: calc(100vw - 30px);
   top: var(--multirow-top-padding);
 }
-
+:root[inFullscreen] #nav-bar,
 :root[tabsintitlebar] #nav-bar{
   margin-right: 138px;
-
   /* width == 100vw - margins */
   width: calc(100vw - 168px);
   top: var(--multirow-top-padding);
+}
+
+:root[inFullscreen] #TabsToolbar > #window-controls{
+  display: flex !important;
+  justify-content: flex-end;
+  position: fixed;
+  right: 0;
+  width: 138px;
+  height: var(--multirow-toolbar-height);
+  background:var(--toolbar-bgcolor);
 }
 
 /* Fix incorrect vertical alignment with megabar */
@@ -56,12 +66,19 @@ See the above repository for updates as well as full license text. */
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
 
 #customization-container,
-:root:not([inDOMFullscreen]) #content-deck,
-:root:not([inDOMFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
+:root:not([inFullscreen]) #content-deck,
+:root:not([inFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
+
+:root[inFullscreen] #TabsToolbar > #window-controls,
+:root[inFullscreen] #toolbar-menubar,
+:root[inFullscreen] #nav-bar{ top: calc(1px - (var(--multirow-toolbar-height) + var(--multirow-top-padding))) }
+
+:root[inFullscreen] #navigator-toolbox:hover > #titlebar > #TabsToolbar > #window-controls,
+:root[inFullscreen] #navigator-toolbox:hover > #nav-bar,
+:root[inFullscreen] #navigator-toolbox:hover > #titlebar > #toolbar-menubar{ top: 0px }
 
 /* Restyle nav-bar and menubar */
-#nav-bar-customization-target{ width: calc(100% - 100px); }
-:root[uidensity="compact"] #nav-bar-customization-target{ width: calc(100% - 82px); }
+#nav-bar-customization-target{ flex-grow: 1 }
 
 #nav-bar-overflow-button,
 #PanelUI-menu-button{ height: var(--multirow-toolbar-height); }
@@ -70,6 +87,7 @@ See the above repository for updates as well as full license text. */
   height: var(--multirow-toolbar-height);
   position: fixed;
   display: flex;
+  visibility: visible !important;
   top: var(--multirow-top-padding);
   width: 100vw;
   color: var(--lwt-text-color);
@@ -89,12 +107,13 @@ See the above repository for updates as well as full license text. */
   background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
 }
 
-#toolbar-menubar > .titlebar-buttonbox-container{ display: block; float: right; height: 100%; background: var(--toolbar-bgcolor)}
+#toolbar-menubar > .titlebar-buttonbox-container{ background: var(--toolbar-bgcolor); }
+
 #toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100% ;}
 
 #main-menubar:last-child{ padding-inline-end: 40px }
 #toolbar-menubar > toolbarspring {
-  background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
+  background: url("chrome://global/skin/icons/settings.svg") no-repeat 10px;
   height: 100%;
   display: block;
   fill: currentColor;
@@ -103,7 +122,7 @@ See the above repository for updates as well as full license text. */
   max-width: 28px !important;
 }
 
-#PanelUI-button{ margin-right: 20px; }
+:root[tabsintitlebar] #PanelUI-button{ margin-right: 20px; }
 
 #tabbrowser-tabs{
   min-height: unset !important;
@@ -119,7 +138,7 @@ See the above repository for updates as well as full license text. */
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
-    max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
+    max-height: var(--uc-scrollbox-max-height,1px);
     scrollbar-color: currentColor transparent;
     scrollbar-width: thin;
   }
@@ -129,7 +148,9 @@ See the above repository for updates as well as full license text. */
   overflow: -moz-hidden-unscrollable;
   display: block;
   --scrollbutton-display-model: none;
+  --uc-scrollbox-max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
 }
+:root[inFullscreen] #tabbrowser-arrowscrollbox:not(:hover){ --uc-scrollbox-max-height: 1px; min-height: 1px !important; }
 
 .tabbrowser-tab{ height: var(--tab-min-height); }
 
@@ -150,7 +171,14 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab > stack{ width: 100%; height: 100%; }
 
+/* This should fix potential flash that could occur when bottom border is hovered to show tabs in fullscreen mode */
+#tabbrowser-tabpanels{ background-color: var(--lwt-accent-color) !important; }
+
+/* Hide some things that are unnecessary in multi-row below content mode */
+
+#TabsToolbar > #window-controls,
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
-#tabbrowser-tabs spacer,
+#tabbrowser-arrowscrollbox > spacer,
 .tabbrowser-tab::after{ display: none !important } /* Also disables tab separators since they mysteriously break tab-row scrolling */
+
