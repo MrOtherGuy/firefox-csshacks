@@ -1,0 +1,23 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/iconized_menubar_items.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Replaces menubar items text ("File Edit etc.") with icons */
+
+#main-menubar > menu{
+  fill: currentColor;
+  height: 22px;
+  width: 32px;
+  -moz-context-properties: fill;
+  padding: 3px !important;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.menubar-text{ display: none }
+
+#file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg") }
+#edit-menu{ background-image: url("chrome://browser/skin/customize.svg") }
+#view-menu{ background-image: url("chrome://devtools/skin/images/command-frames.svg") }
+#history-menu{ background-image: url("chrome://browser/skin/history.svg") }
+#bookmarksMenu{ background-image: url("chrome://browser/skin/bookmark.svg") }
+#tools-menu{ background-image: url("chrome://browser/skin/developer.svg") }
+#helpMenu{ background-image: url("chrome://global/skin/icons/help.svg") }

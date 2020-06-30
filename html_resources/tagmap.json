@@ -95,5 +95,6 @@
 "vertical_context_navigation_v2.css":["navigation","menu","popup"],
 "vertical_menubar.css":["menubar","hack"],
 "window_control_placeholder_support.css":["window-control","patch"],
-"hide_tabs_toolbar_osx.css":["tabs","toolbars","hiding","minimal"]
+"hide_tabs_toolbar_osx.css":["tabs","toolbars","hiding","minimal"],
+"iconized_menubar_items.css":["menubar","menu","icon"]
 }
