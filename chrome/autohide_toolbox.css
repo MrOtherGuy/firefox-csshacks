@@ -4,6 +4,9 @@ See the above repository for updates as well as full license text. */
 /* Hide the whole toolbar area unless urlbar is focused or cursor is over the toolbar */
 /* Dimensions on non-Win10 OS probably needs to be adjusted */
 
+/* Compatibility options for hide_tabs_toolbar.css and tabs_on_bottom.css at the end of this file */
+
+
 @media (-moz-os-version: windows-win10){
 
   :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 10px !important; }
@@ -63,3 +66,10 @@ See the above repository for updates as well as full license text. */
 
 /* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
  /*#titlebar{ margin-bottom: -9px }*/
+
+/* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
+/*
+:root{ --uc-titlebar-padding: 0px !important; }
+#navigator-toolbox{ flex-direction: column; display: flex; }
+#titlebar{ order: 2 }
+*/
