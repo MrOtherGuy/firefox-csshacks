@@ -6,6 +6,9 @@ See the above repository for updates as well as full license text. */
 
 /* Compatibility options for hide_tabs_toolbar.css and tabs_on_bottom.css at the end of this file */
 
+:root{
+  --uc-autohide-toolbox-delay: 200ms; /* Wait 0.1s before hiding toolbars */
+}
 
 @media (-moz-os-version: windows-win10){
 
@@ -30,12 +33,15 @@ See the above repository for updates as well as full license text. */
   position: fixed !important;
   display: block;
   background-color: var(--lwt-accent-color,black) !important;
-  transition: transform 82ms 33ms linear, opacity 82ms 33ms linear !important;
+  transition: transform 82ms linear, opacity 82ms linear !important;
+  transition-delay: var(--uc-autohide-toolbox-delay) !important;
   transform-origin: top;
   line-height: 0;
   z-index: 1;
   pointer-events: none;
 }
+
+#navigator-toolbox:hover{ transition-delay: 33ms !important }
 
 #navigator-toolbox > *{ line-height: normal; pointer-events: auto }
 

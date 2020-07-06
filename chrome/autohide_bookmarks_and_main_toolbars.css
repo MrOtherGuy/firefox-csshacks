@@ -5,6 +5,7 @@ See the above repository for updates as well as full license text. */
   --uc-bm-height: 22px; /* Might need to adjust if the toolbar has other buttons */
   --uc-bm-padding: 2px; /* Vertical padding to be applied to bookmarks */
   --uc-navbar-height: -40px; /* navbar is main toolbar. Use negative value */
+  --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
 }
 
 :root[uidensity=compact] #navigator-toolbox{ --uc-bm-padding: 1px; --uc-navbar-height: -32px }
@@ -14,10 +15,14 @@ See the above repository for updates as well as full license text. */
 #PersonalToolbar:not([customizing]){
   transform: rotateX(90deg);
   transform-origin: top;
-  transition: transform 135ms linear 600ms !important;
+  transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 2;
 }
-#navigator-toolbox > #PersonalToolbar{ transform-origin: 0px var(--uc-navbar-height); z-index: 1 }
+#navigator-toolbox > #PersonalToolbar{
+  transform-origin: 0px var(--uc-navbar-height);
+  z-index: 1;
+  position: relative;
+}
 
 :root[sessionrestored] #navigator-toolbox:not([customizing]){ margin-bottom:  calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding) + var(--uc-navbar-height)); }
 
