@@ -30,10 +30,12 @@ google_style_urlbar_popup.css,legacy
 grid_overflow_menu.css,popup,menu
 hide_statuspanel_when_fullscreen.css,status,fullscreen,hiding
 hide_tabs_toolbar.css,hiding,tabs,toolbars
+hide_tabs_toolbar_osx.css,tabs,toolbars,hiding,minimal
 hide_tabs_with_one_tab.css,hiding,tabs,toolbars
 hide_tabs_with_one_tab_w_window_controls.css,hiding,tabs,toolbars
 hide_toolbox_top_bottom_borders.css,toolbars,hiding
 hide_urlbar_first_row.css,urlbar,popup,hiding
+iconized_menubar_items.css,menubar,menu,icon
 linux_gtk_window_control_patch.css,patch,window-control
 menubar_in_main_toolbar.css,menubar,nav-bar,minimal,toolbars
 menubar_in_tabs_toolbar.css,toolbars,minimal,menubar
@@ -90,9 +92,8 @@ urlbar_centered_text.css,urlbar
 urlbar_popup_full_width.css,urlbar,popup
 urlbar_results_in_two_rows.css,urlbar,popup
 urlbar_visible_on_active_tab_click.css,hack,urlbar
+vertical_bookmarks_toolbar.css,bookmarks,toolbars
 vertical_context_navigation.css,navigation,menu,popup
 vertical_context_navigation_v2.css,navigation,menu,popup
 vertical_menubar.css,menubar,hack
 window_control_placeholder_support.css,window-control,patch
-hide_tabs_toolbar_osx.css,tabs,toolbars,hiding,minimal
-iconized_menubar_items.css,menubar,menu,icon
