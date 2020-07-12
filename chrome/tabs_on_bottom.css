@@ -36,7 +36,7 @@ linux_gtk_window_control_patch.css
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
-:root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
+:root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
 
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
 
