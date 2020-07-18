@@ -108,9 +108,9 @@ async function onCategoryClicked(categoryNode,isSecondary = false){
   //let names = DB.query(categoryNode.textContent);
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
-  
+  let fileNames = currentCategory.getFileNames(categoryNode,isSecondary);
   if(!isSecondary){
-    let fileNames = currentCategory.getFileNames(categoryNode,false);
+    
     if(fileNames.length > 9){
       let matchingSecondaries = getSecondaryCategories(fileNames);
       for(let child of Array.from(secondaryCategories.children)){
@@ -124,7 +124,7 @@ async function onCategoryClicked(categoryNode,isSecondary = false){
   }
   
   for(let c of Array.from(document.querySelectorAll(".target"))){
-    previousCategory.fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
+    fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
   }
 }
 
