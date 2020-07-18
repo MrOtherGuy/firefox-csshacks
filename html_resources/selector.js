@@ -14,6 +14,9 @@ function initDB(obj){
     return nlist
   }});
   Object.defineProperty(DB,"keys",{value:(Object.keys(DB).sort())});
+  
+  Object.defineProperty(DB,"getTagsForFile",{value:(name)=>(this[name])});
+  
   return true
 }
 
@@ -56,11 +59,44 @@ function getText(node){
   return `${node.childNodes[0].textContent}.css`
 }
 
-async function onCategoryClicked(categoryNode){
+function getSecondaryCategories(list){
+  let a = [];
+  for (file of list){
+    a.concat(DB.getTagsForFile(file));
+  }
+  a.sort();
+  let ret = [];
+  let i = 0;
+  ret[0] = a[0];
+  for(let f of a){
+    if(ret[i] != f){
+      ret[++i] = f
+    }
+  }
+  return ret
+}
+
+async function onCategoryClicked(categoryNode,isSecondary = false){
   
   previousCategory.set(categoryNode);
-  
+  // Using textContent is bad but meh
   let names = DB.query(categoryNode.textContent);
+  
+  let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
+  
+  if(names.length > 9 && !isSecondary){
+    
+    let matchingSecondaries = getSecondaryCategories(names);
+    for(let child of Array.from(secondaryCategories.children)){
+      matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
+    }
+    
+    secondaryCategoriesNode.classList.remove("hidden");
+  }else{
+    secondaryCategoriesNode.classList.add("hidden");
+  }
+  
+  
   for(let c of Array.from(document.querySelectorAll(".target"))){
     names.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
   }
@@ -79,6 +115,9 @@ function onSomeClicked(e){
     case "categories":
       onCategoryClicked(e.target);
       break;
+    case "secondaryCategories":
+      onCategoryClicked(e.target,true/* isSecondary */);
+      break;
     case "targets":
       onTargetClicked(e.target);
       break;
@@ -91,7 +130,8 @@ function onSomeClicked(e){
 function createCategories(){
   
   const CAT_PARENT = document.getElementById("categories");
-  CAT_PARENT.addEventListener("click",onSomeClicked)
+  const CAT_SECOND = document.getElementById("secondaryCategories");
+  CAT_PARENT.addEventListener("click",onSomeClicked);
   
   const TAR_PARENT = document.getElementById("targets");
   TAR_PARENT.addEventListener("click",onSomeClicked);
@@ -108,7 +148,7 @@ function createCategories(){
       link.target = "_blank";
     }else{
       node.textContent = name.name;
-      node.setAttribute("data-value",name.value);
+      name.value > 0 && node.setAttribute("data-value",name.value+1);
     }
     
     return node;
@@ -148,7 +188,8 @@ function createCategories(){
   
   for(let cat of CAT_NAMES){
   //  CAT_PARENT.appendChild(createCategory(cat.name))
-    CAT_PARENT.appendChild(createNode(cat,"category"))
+    CAT_PARENT.appendChild(createNode(cat,"category"));
+    CAT_SECOND.appendChild(createNode(cat,"category"));
   }
   
 }

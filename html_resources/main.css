@@ -1,7 +1,7 @@
 body{background-color: rgb(60,50,70); color: silver; margin: 0px }
 #ui{ display: flex; }
 
-#categories{
+.categoryList{
   padding-block: 1em;
   box-sizing: border-box;
   border-inline-end: 1px solid gold;
@@ -14,11 +14,13 @@ a{ color: rgb(100,150,200); margin-inline-start: 1ch }
 a:visited{ color: rgb(150,100,200) }
 a:hover{ color: rgb(200,150,100) }
 pre:empty{ display: none }
-.category{ padding: 0.2em 1em; cursor: pointer }
+.category{ padding: 0.2em 1em; cursor: pointer; text-transform: capitalize }
 .category::after{ content: " (" attr(data-value) ")"}
 
 .currentCategory,
 .category:hover{ background-color: grey }
+
+.currentCategory::before{ content: "»" }
 
 .target{
   margin: 0.1em;
