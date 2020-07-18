@@ -15,7 +15,7 @@ function initDB(obj){
   }});
   Object.defineProperty(DB,"keys",{value:(Object.keys(DB).sort())});
   
-  Object.defineProperty(DB,"getTagsForFile",{value:(name)=>(this[name])});
+  Object.defineProperty(DB,"getTagsForFile",{value:function(name){return this[name]}});
   
   return true
 }
@@ -61,7 +61,7 @@ function getText(node){
 
 function getSecondaryCategories(list){
   let a = [];
-  for (file of list){
+  for (let file of list){
     a.concat(DB.getTagsForFile(file));
   }
   a.sort();
@@ -148,7 +148,7 @@ function createCategories(){
       link.target = "_blank";
     }else{
       node.textContent = name.name;
-      name.value > 0 && node.setAttribute("data-value",name.value+1);
+      name.value > 0 && node.setAttribute("data-value",name.value);
     }
     
     return node;
@@ -181,7 +181,7 @@ function createCategories(){
         ns[i] += (item === "legacy" ? -1 : 1);
       }
     }
-    let map = ret.map((a,i)=>({name:a,value:ns[i]}))
+    let map = ret.map((a,i)=>({name:a,value:ns[i]+1}))
     return map
     //return map.sort((a,b)=>(a.value > b.value?-1:a.value < b.value ? 1:0))
   })();
