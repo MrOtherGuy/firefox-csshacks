@@ -45,16 +45,35 @@ function fetchWithType(url){
   });
 }
 
-let previousCategory = new (function(){
-  let current = null;
-  this.fileNames = null;
+let currentCategory = new (function(){
+  const currentPrimaryNode = null;
+  const currentSecondaryNode = null;
+  // TODO make filenames store ONLY the top level fileNames
+  // 
+  
+  let currentTopLevelFileNames = null;
+  
   this.set = function(t,secondary){
-    current&&current.classList.remove("currentCategory");
-    current = t;
-    current.classList.add("currentCategory");
-    
-    this.fileNames = DB.query(t.textContent,secondary?this.fileNames:null);
+    let targetNode;
+    if(secondary){
+      targetNode = currentSecondaryNode;
+    }else{
+      targetNode = currentPrimaryNode;
+    }
+    targetNode && targetNode.classList.remove("currentCategory");
+    targetNode = t;
+    targetNode.classList.add("currentCategory");
+    !secondary && currentTopLevelFileNames = DB.query(t.textContent);
+
+    //this.fileNames = DB.query(t.textContent,secondary?this.fileNames:null);
   };
+  
+  this.getFileNames = function(node,secondary){
+    if(secondary){
+      return DB.query(node.textContent,currentTopLevelFileNames)
+    }
+    return currentTopLevelFileNames
+  }
   return this
 })()
 
@@ -82,16 +101,16 @@ function getSecondaryCategories(list){
 
 async function onCategoryClicked(categoryNode,isSecondary = false){
   
-  previousCategory.set(categoryNode,isSecondary);
+  currentCategory.set(categoryNode,isSecondary);
   // Using textContent is bad but meh
   //let names = DB.query(categoryNode.textContent);
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
   
   if(!isSecondary){
-    
-    if(previousCategory.fileNames.length > 9){
-      let matchingSecondaries = getSecondaryCategories(previousCategory.fileNames);
+    let fileNames = currentCategory.getFileNames(categoryNode,false);
+    if(fileNames.length > 9){
+      let matchingSecondaries = getSecondaryCategories(fileNames);
       for(let child of Array.from(secondaryCategories.children)){
         matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
       }
