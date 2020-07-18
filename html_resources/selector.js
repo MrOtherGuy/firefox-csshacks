@@ -88,18 +88,19 @@ async function onCategoryClicked(categoryNode,isSecondary = false){
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
   
-  if(previousCategory.fileNames.length > 9 && !isSecondary){
+  if(!isSecondary){
     
-    let matchingSecondaries = getSecondaryCategories(previousCategory.fileNames);
-    for(let child of Array.from(secondaryCategories.children)){
-      matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
+    if(previousCategory.fileNames.length > 9){
+      let matchingSecondaries = getSecondaryCategories(previousCategory.fileNames);
+      for(let child of Array.from(secondaryCategories.children)){
+        matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
+      }
+      
+      secondaryCategoriesNode.classList.remove("hidden");
+    }else{
+      secondaryCategoriesNode.classList.add("hidden");
     }
-    
-    secondaryCategoriesNode.classList.remove("hidden");
-  }else{
-    secondaryCategoriesNode.classList.add("hidden");
   }
-  
   
   for(let c of Array.from(document.querySelectorAll(".target"))){
     previousCategory.fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
