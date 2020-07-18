@@ -47,10 +47,13 @@ function fetchWithType(url){
 
 let previousCategory = new (function(){
   let current = null;
-  this.set = function(t){
+  let fileNames = null;
+  this.set = function(t,secondary){
     current&&current.classList.remove("currentCategory");
     current = t;
     current.classList.add("currentCategory");
+    
+    fileNames = DB.query(t.textContent,secondary?filNames:null);
   };
   return this
 })()
@@ -62,8 +65,9 @@ function getText(node){
 function getSecondaryCategories(list){
   let a = [];
   for (let file of list){
-    a.concat(DB.getTagsForFile(file));
+    a.push(DB.getTagsForFile(file));
   }
+  a = a.flat();
   a.sort();
   let ret = [];
   let i = 0;
@@ -78,15 +82,15 @@ function getSecondaryCategories(list){
 
 async function onCategoryClicked(categoryNode,isSecondary = false){
   
-  previousCategory.set(categoryNode);
+  previousCategory.set(categoryNode,isSecondary);
   // Using textContent is bad but meh
-  let names = DB.query(categoryNode.textContent);
+  //let names = DB.query(categoryNode.textContent);
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
   
-  if(names.length > 9 && !isSecondary){
+  if(previousCategory.fileNames.length > 9 && !isSecondary){
     
-    let matchingSecondaries = getSecondaryCategories(names);
+    let matchingSecondaries = getSecondaryCategories(previousCategory.fileNames);
     for(let child of Array.from(secondaryCategories.children)){
       matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
     }
@@ -98,7 +102,7 @@ async function onCategoryClicked(categoryNode,isSecondary = false){
   
   
   for(let c of Array.from(document.querySelectorAll(".target"))){
-    names.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
+    previousCategory.fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
   }
 }
 
@@ -132,6 +136,7 @@ function createCategories(){
   const CAT_PARENT = document.getElementById("categories");
   const CAT_SECOND = document.getElementById("secondaryCategories");
   CAT_PARENT.addEventListener("click",onSomeClicked);
+  CAT_SECOND.addEventListener("click",onSomeClicked);
   
   const TAR_PARENT = document.getElementById("targets");
   TAR_PARENT.addEventListener("click",onSomeClicked);
