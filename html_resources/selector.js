@@ -53,7 +53,7 @@ let previousCategory = new (function(){
     current = t;
     current.classList.add("currentCategory");
     
-    this.fileNames = DB.query(t.textContent,secondary?this.filNames:null);
+    this.fileNames = DB.query(t.textContent,secondary?this.fileNames:null);
   };
   return this
 })()
