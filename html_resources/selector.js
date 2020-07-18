@@ -46,23 +46,23 @@ function fetchWithType(url){
 }
 
 let currentCategory = new (function(){
-  const currentPrimaryNode = null;
-  const currentSecondaryNode = null;
+  let currentPrimaryNode = null;
+  let currentSecondaryNode = null;
   // TODO make filenames store ONLY the top level fileNames
   // 
   
   let currentTopLevelFileNames = null;
   
   this.set = function(t,secondary){
-    let targetNode;
     if(secondary){
-      targetNode = currentSecondaryNode;
+      currentSecondaryNode && currentSecondaryNode.classList.remove("currentCategory");
+      currentSecondaryNode = t;
+      currentSecondaryNode.classList.add("currentCategory");
     }else{
-      targetNode = currentPrimaryNode;
+      currentPrimaryNode && currentPrimaryNode.classList.remove("currentCategory");
+      currentPrimaryNode = t;
+      currentPrimaryNode.classList.add("currentCategory");
     }
-    targetNode && targetNode.classList.remove("currentCategory");
-    targetNode = t;
-    targetNode.classList.add("currentCategory");
     if(!secondary){
       currentTopLevelFileNames = DB.query(t.textContent);
     }
