@@ -63,7 +63,9 @@ let currentCategory = new (function(){
     targetNode && targetNode.classList.remove("currentCategory");
     targetNode = t;
     targetNode.classList.add("currentCategory");
-    !secondary && currentTopLevelFileNames = DB.query(t.textContent);
+    if(!secondary){
+      currentTopLevelFileNames = DB.query(t.textContent);
+    }
 
     //this.fileNames = DB.query(t.textContent,secondary?this.fileNames:null);
   };
