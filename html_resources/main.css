@@ -15,7 +15,7 @@ a:visited{ color: rgb(150,100,200) }
 a:hover{ color: rgb(200,150,100) }
 pre:empty{ display: none }
 .category{ padding: 0.2em 1em; cursor: pointer; text-transform: capitalize }
-.category::after{ content: " (" attr(data-value) ")"}
+#categories > .category::after{ content: " (" attr(data-value) ")"}
 
 .currentCategory,
 .category:hover{ background-color: grey }

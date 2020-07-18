@@ -47,13 +47,13 @@ function fetchWithType(url){
 
 let previousCategory = new (function(){
   let current = null;
-  let fileNames = null;
+  this.fileNames = null;
   this.set = function(t,secondary){
     current&&current.classList.remove("currentCategory");
     current = t;
     current.classList.add("currentCategory");
     
-    fileNames = DB.query(t.textContent,secondary?filNames:null);
+    this.fileNames = DB.query(t.textContent,secondary?this.filNames:null);
   };
   return this
 })()
