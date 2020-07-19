@@ -62,6 +62,9 @@ let currentCategory = new (function(){
       currentPrimaryNode && currentPrimaryNode.classList.remove("currentCategory");
       currentPrimaryNode = t;
       currentPrimaryNode.classList.add("currentCategory");
+      
+      currentSecondaryNode && currentSecondaryNode.classList.remove("currentCategory");
+      currentSecondaryNode = null;
     }
     if(!secondary){
       currentTopLevelFileNames = DB.query(t.textContent);
@@ -113,19 +116,23 @@ async function onCategoryClicked(categoryNode,isSecondary = false){
     
     if(fileNames.length > 9){
       let matchingSecondaries = getSecondaryCategories(fileNames);
-      for(let child of Array.from(secondaryCategories.children)){
+      for(let child of Array.from(secondaryCategoriesNode.children)){
         matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
       }
       
-      secondaryCategoriesNode.classList.remove("hidden");
+      //secondaryCategoriesNode.classList.remove("hidden");
+      document.getElementById("categories").classList.add("blurred");
     }else{
-      secondaryCategoriesNode.classList.add("hidden");
+      //secondaryCategoriesNode.classList.add("hidden");
+      document.getElementById("categories").classList.remove("blurred");
+      
     }
   }
   
   for(let c of Array.from(document.querySelectorAll(".target"))){
     fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
   }
+  document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
 }
 
 async function onTargetClicked(targetNode){

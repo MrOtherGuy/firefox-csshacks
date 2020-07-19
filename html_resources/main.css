@@ -10,12 +10,31 @@ body{background-color: rgb(60,50,70); color: silver; margin: 0px }
   overflow-y: auto;
   min-width: 18ch
 }
+
+.categoryList[blurred]{
+  background-color: rgb(20,20,30);
+  opacity: 0.5;
+  margin-inline-end: -13ch;
+}
+
+#secondaryCategories{
+  position: relative;
+  z-index:1;
+}
+
+.categoryList:hover{
+  position: relative;
+  z-index: 2;
+  background-color: rgb(60,60,70);
+  opacity: 1;
+}
+
 a{ color: rgb(100,150,200); margin-inline-start: 1ch }
 a:visited{ color: rgb(150,100,200) }
 a:hover{ color: rgb(200,150,100) }
 pre:empty{ display: none }
 .category{ padding: 0.2em 1em; cursor: pointer; text-transform: capitalize }
-#categories > .category::after{ content: " (" attr(data-value) ")"}
+#categories > .category[data-value]::after{ content: " (" attr(data-value) ")"}
 
 .currentCategory,
 .category:hover{ background-color: grey }
@@ -40,7 +59,13 @@ pre:empty{ display: none }
   background-size: contain;
 }
 .target:hover{ background-color: rgb(80,80,90) }
-#targets{ display: grid; grid-template-columns: 1fr 1fr 1fr }
+/*#targets{ display: grid; grid-template-columns: 1fr 1fr 1fr }*/
+#targets{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: calc(var(--grid-rows) * 2.4rem);
+}
 
 pre{
   white-space: pre-wrap;
@@ -50,6 +75,7 @@ pre{
   background-color: rgb(40,50,50)
 }
 
+.categoryList:not([blurred])+.categoryList,
 .hidden{ display: none !important }
 
 .target{ display: flex; justify-content: space-between }
