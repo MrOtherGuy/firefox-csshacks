@@ -11,7 +11,7 @@ body{background-color: rgb(60,50,70); color: silver; margin: 0px }
   min-width: 18ch
 }
 
-.categoryList[blurred]{
+.categoryList.blurred{
   background-color: rgb(20,20,30);
   opacity: 0.5;
   margin-inline-end: -13ch;
@@ -75,7 +75,7 @@ pre{
   background-color: rgb(40,50,50)
 }
 
-.categoryList:not([blurred])+.categoryList,
+.categoryList:not(.blurred)+.categoryList,
 .hidden{ display: none !important }
 
 .target{ display: flex; justify-content: space-between }
