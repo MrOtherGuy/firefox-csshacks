@@ -63,24 +63,31 @@ def searchFile(tagmap,name):
             return True
     return False
 
-def createNewFile(name):
-    text = "/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/{} made available under Mozilla Public License v. 2.0\nSee the above repository for updates as well as full license text. */\n".format(name)
+def createNewFile(name,folder):
+    filesuffix = "{}/{}".format(folder,name)
+    text = "/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/{} made available under Mozilla Public License v. 2.0\nSee the above repository for updates as well as full license text. */\n".format(filesuffix)
     
-    if os.path.isfile("chrome/{}".format(name)):
-        confirm = input("File {} already exists! proceed (will overwrite) ? [y/N] ".format(name))
+    if os.path.isfile(filesuffix):
+        confirm = input("File {} already exists! proceed (will overwrite) ? [y/N] ".format(filesuffix))
         if confirm != "y":
             print("Aborted")
             return False
     
     
-    with open("chrome/{}".format(name),"w") as css:
+    with open(filesuffix,"w") as css:
         print(text,file=css)
-        print("Created chrome/{}".format(name))
+        print("Created file: {}".format(filesuffix))
         return True
+
+def isUpdateOnly(argv):
+    return (argv[1] == "--update-only") or (argv[1] == "-update-only") or (argv[1] == "-u")
+    
 
 if __name__ == "__main__":
 
-    if len(sys.argv) < (2 + (0 if (sys.argv[1] == "--update-only") else 1)):
+    update_only = isUpdateOnly(sys.argv)
+
+    if len(sys.argv) < (2 + (0 if update_only else 1)):
         print("usage: add_file.py <filename> <list_of_tags>")
         exit()
 
@@ -89,20 +96,29 @@ if __name__ == "__main__":
         args.append(sys.argv[i])
     
     name = sys.argv[1]
-    update_only = name == "--update-only"
     
-    file = open("tags.csv")
+    if not(update_only) and not(name.endswith(".css")):
+        name += ".css"
+    # For the moment files in content/ are not tagged, but the script can still create the css files
+    folder = "content" if ("-content" in sys.argv) else "chrome"
+    
+    if(folder == "content") and not(update_only):
+        createNewFile(name,folder)
+        print("Done")
+        exit(0)
+    
+    tagfile = open("tags.csv")
 
-    tagmap = file.read().lstrip().splitlines()
-    file.close()
+    tagmap = tagfile.read().lstrip().splitlines()
+    tagfile.close()
     if not(update_only) and searchFile(tagmap,name):
         print(name + "exist already")
     else:
         if not(update_only):
-            exists = createNewFile(name)
-            file = open("tags.csv","a")
-            file.write(name+","+",".join(args)+"\n")
-            file.close()
+            exists = createNewFile(name,folder)
+            tagfile = open("tags.csv","a")
+            tagfile.write(name+","+",".join(args)+"\n")
+            tagfile.close()
         else:
             print("Only update json")
         createJSON(tagmap,name,args,update_only)
