@@ -59,3 +59,8 @@ See the above repository for updates as well as full license text. */
 #sidebar-box[positionend] > *{
   border-inline-width: 1px 0px;
 }
+
+/* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
+
+#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel{ inset-inline: auto 0px !important; }
+#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label{ margin-inline: 0px !important; border-left-style: solid !important; }
