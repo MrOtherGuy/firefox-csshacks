@@ -1,0 +1,51 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_popup_menubar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes menubar-items (File, Edit etc.) appear vertically as popup
+ * When menubar is enabled, only the first item will be visible and it will use an icon instead of text.
+ * When menubar is disabled and you hit Alt to show it, then the menubar items will appear in the corner as overlay.
+ * Does NOT support toolbar buttons/items in menubar when in disabled mode.
+ */
+
+#toolbar-menubar{
+  --uc-menubaritem-height: 28px;
+  --uc-menubaritem-width: 40px;
+}
+
+menubar > menu{visibility: collapse; transition: visibility 0ms linear 0.1s}
+menubar:hover > menu,    
+#toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{visibility: visible}
+
+#menubar-items{
+  display: block;
+  position: fixed;
+  z-index: 10;
+  background-color: var(--lwt-accent-color);
+  inset-inline-start: 0;
+}
+menubar{ -moz-box-orient: vertical; }
+menubar > menu { padding: 3px }
+
+menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0 0 var(--uc-menubaritem-width) }
+#toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: -moz-hidden-unscrollable }
+
+
+#toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: -32px }
+
+#toolbar-menubar > .titlebar-buttonbox-container + :-moz-any(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
+
+#file-menu{
+  fill: currentColor;
+  visibility: visible;
+  height: var(--uc-menubaritem-height);
+  width: var(--uc-menubaritem-width);
+  -moz-context-properties: fill;
+  padding: 3px !important;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+menubar:not(:hover) > #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg"); }
+
+#file-menu > .menubar-text{ visibility: collapse }
+menubar:hover > #file-menu > .menubar-text{ visibility: visible }
+
