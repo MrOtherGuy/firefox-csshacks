@@ -25,6 +25,7 @@ See the above repository for updates as well as full license text. */
   @media screen and (min-resolution: 2dppx){
     :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
   }
+  #navigator-toolbox:not(:-moz-lwtheme){ background-color: rgb(32, 35, 64) !important; }
 }
 
 :root[sizemode="fullscreen"]{ margin-top: 0px !important; }
