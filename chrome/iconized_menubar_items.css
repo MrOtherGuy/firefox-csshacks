@@ -5,8 +5,8 @@ See the above repository for updates as well as full license text. */
 
 #main-menubar > menu{
   fill: currentColor;
-  height: 22px;
-  width: 32px;
+  height: var(--uc-menubaritem-height,22px);
+  width: var(--uc-menubaritem-width,32px);
   -moz-context-properties: fill;
   padding: 3px !important;
   background-repeat: no-repeat;
