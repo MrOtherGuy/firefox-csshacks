@@ -6,6 +6,12 @@ In the case that a particular style relies on another style, the fact will be no
 
 Stylesheets in this repository are tested only on Windows 10 and to a lesser amount on Linux. Most of them should also work on OSX and Windows7, but there may be wrong behavior especially when native widgets such as window titlebar or window control buttons are being styled.
 
+# Style categories
+
+The files themselves are only separated to *chrome* and *content* sub-folders. Files have a one or more *tag* applied to them as listed in `tags.csv` file.
+
+You can browse the tag-categorized files by [using this simple ui](https://mrotherguy.github.io/firefox-csshacks/)
+
 # Loading user*.css files
 
 0. Go to about:config and set the pref `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` to make Firefox load userChrome.css and userContent.css
