@@ -12,15 +12,14 @@ See the above repository for updates as well as full license text. */
 
 @media (-moz-os-version: windows-win10){
 
-  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 10px !important; }
-  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -2px }
+  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 9px !important; }
+  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
 
   @media screen and (min-resolution: 1.25dppx){
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 9px !important; }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
   }
   @media screen and (min-resolution: 1.5dppx){
     :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
-    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
   }
   @media screen and (min-resolution: 2dppx){
     :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
@@ -57,7 +56,7 @@ See the above repository for updates as well as full license text. */
   opacity: 0;
 }
 
-:root[sizemode="maximized"] #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89.5deg) }
+:root[sizemode="maximized"] #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89deg) }
 
 /* Don't apply transform before window has been fully created */
 :root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
