@@ -66,6 +66,7 @@
 "overlay_scrollbars.as.css":["scrollbar"],
 "page_action_buttons_on_hover.css":["urlbar","minimal","effect"],
 "pinned_tabs_on_right.css":["tabs"],
+"rounded_menupopups.css":["menu","popup","urlbar"],
 "scrollable_menupopups.css":["scrollbar","popup","menu"],
 "scrollable_urlbar_popup.css":["scrollbar","popup","urlbar"],
 "show_navbar_on_focus_only.css":["urlbar","nav-bar","toolbars","hiding"],
