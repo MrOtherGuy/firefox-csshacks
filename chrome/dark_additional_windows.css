@@ -10,6 +10,7 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document url-prefix(chrome://browser/content/places/),
   url(chrome://global/content/commonDialog.xhtml),
+  url("chrome://mozapps/content/handling/dialog.xhtml"),
   url-prefix(chrome://browser/content/pageinfo/),
   url-prefix("chrome://mozapps/content/downloads"){
   
