@@ -30,8 +30,7 @@ See the above repository for updates as well as full license text. */
 
 /* Hide single-line labels */
 
-#appMenu-mainView > .panel-subview-body > #appMenu-zoom-controls > toolbarbutton > .toolbarbutton-multiline-text,
-#appMenu-mainView > .panel-subview-body  toolbarbutton > .toolbarbutton-text{ display: none !important; }
+#appMenu-mainView > .panel-subview-body > #appMenu-zoom-controls > toolbarbutton > .toolbarbutton-multiline-text{ display: none !important; }
 
 /* Show multi-line labels and some specific single-line ones */
 
