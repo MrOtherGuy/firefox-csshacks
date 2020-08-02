@@ -16,7 +16,7 @@ See the above repository for updates as well as full license text. */
   }
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
-  @media screen and (max-width: 1300px){
+  @media screen and (max-width: 1400px){
     #urlbar-container{ min-width:unset !important }
   }
 
