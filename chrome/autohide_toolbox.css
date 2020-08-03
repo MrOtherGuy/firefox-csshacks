@@ -41,7 +41,7 @@ See the above repository for updates as well as full license text. */
   pointer-events: none;
 }
 
-#navigator-toolbox:hover{ transition-delay: 33ms !important }
+#navigator-toolbox:-moz-any(:hover,:focus-within){ transition-delay: 33ms !important }
 
 #navigator-toolbox > *{ line-height: normal; pointer-events: auto }
 
