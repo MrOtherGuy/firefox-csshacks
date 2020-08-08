@@ -100,5 +100,6 @@
 "vertical_menubar.css":["menubar","hack"],
 "window_control_placeholder_support.css":["window-control","patch"],
 "vertical_popup_menubar.css":["menubar","menu","toolbars","popup"],
-"classic_firefox_menu_button.css":["classic","menu"]
+"classic_firefox_menu_button.css":["classic","menu"],
+"bookmarks_toolbar_on_newtabs_only.css":["bookmarks","toolbars","autohide","hiding"]
 }

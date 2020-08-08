@@ -1,0 +1,28 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/bookmarks_toolbar_on_newtabs_only.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* "Real" show-bookmarks toolbar on new-tabs only - requires extension: https://addons.mozilla.org/addon/ntp_titler/ */
+
+/* This is NOT compatible with autohide_bookmarks_toolbar.css because the collapsing methods are different */
+
+#PersonalToolbar{
+  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
+  --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
+}
+
+:root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
+:root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
+
+#PersonalToolbar:not([customizing]){
+  margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+  visibility: hidden;
+  transition: margin-bottom 135ms ease !important;
+}
+
+/* The prefixes are set by the above linked extension */
+:root[titlepreface="NewTab - "] #PersonalToolbar,
+:root[titlepreface="Home - "] #PersonalToolbar,
+:root[titlepreface="PrivateBrowsing - "] #PersonalToolbar{
+  visibility: visible;
+  margin-bottom: 0px;
+}
