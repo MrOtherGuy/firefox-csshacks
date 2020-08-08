@@ -33,7 +33,7 @@ See the above repository for updates as well as full license text. */
   padding-left: 30px !important;
 }
 
-#TabsToolbar > .toolbar-items{ max-width: calc(100vw - 120px) }
+#TabsToolbar > .toolbar-items{ width: calc(100vw - 120px) }
 #TabsToolbar > .titlebar-buttonbox-container{
   display: block !important;
   float: right !important;
