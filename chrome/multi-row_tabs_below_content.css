@@ -144,12 +144,15 @@ See the above repository for updates as well as full license text. */
     scrollbar-width: thin;
   }
 
+  .scrollbox-clip[orient="horizontal"],
   #tabbrowser-arrowscrollbox{
     overflow: -moz-hidden-unscrollable;
     display: block;
     --scrollbutton-display-model: none;
     --uc-scrollbox-max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
   }
+  
+  :root[inFullscreen] .scrollbox-clip[orient="horizontal"]:not(:hover),
   :root[inFullscreen] #tabbrowser-arrowscrollbox:not(:hover){ --uc-scrollbox-max-height: 1px; min-height: 1px !important; }
 
   .tabbrowser-tab{ height: var(--tab-min-height); }
