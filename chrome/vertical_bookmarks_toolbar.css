@@ -1,37 +1,41 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_bookmarks_toolbar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-Makes bookmarks toolbar appear vertically at the left side of the window
+/* Makes bookmarks toolbar appear vertically at the left side of the window */
 
-:root:not([inDOMFullscreen]){
-  --uc-vertical-toolbar-width: 60px;
-}
+@-moz-document url(chrome://browser/content/browser.xhtml){
 
-#PersonalToolbar{
- position: fixed;
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  width: var(--uc-vertical-toolbar-width,0);
-  
-  /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
-  max-height: 100vh !important; 
-  padding-bottom: 120px !important;
+  :root:not([inDOMFullscreen]){
+    --uc-vertical-toolbar-width: 60px;
+  }
 
-}
+  #PersonalToolbar{
+   position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: var(--uc-vertical-toolbar-width,0);
+    
+    /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
+    max-height: 100vh !important; 
+    padding-bottom: 120px !important;
 
-#personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
+  }
 
-#PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox{ -moz-box-orient: vertical !important; }
-#PersonalToolbar #PlacesToolbarItems{
-  display: flex;
-  flex-direction: column;
-}
+  #personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
 
-#PersonalToolbar #PlacesToolbarItems > .bookmark-item{ padding-block: 4px !important; }
+  #PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox{ -moz-box-orient: vertical !important; }
+  #PersonalToolbar #PlacesToolbarItems{
+    display: flex;
+    flex-direction: column;
+  }
 
-body > #browser,
-body > #browser-bottombox,
-#customization-container{
-  margin-left: var(--uc-vertical-toolbar-width,0);
+  #PersonalToolbar #PlacesToolbarItems > .bookmark-item{ padding-block: 4px !important; }
+
+  body > #browser,
+  body > #browser-bottombox,
+  #customization-container{
+    margin-left: var(--uc-vertical-toolbar-width,0);
+  }
+
 }
