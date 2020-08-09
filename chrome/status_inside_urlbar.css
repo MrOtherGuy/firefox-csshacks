@@ -53,14 +53,14 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 #statuspanel-inner > #statuspanel-label{
   height:3em;
   min-width: 1000px;
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
+  background-color: var(--lwt-toolbar-field-focus) !important;
   border: none !important;
   font-size: 1.15em;
   color: inherit !important;
   margin-right: 0px !important;
 }
 /* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
-#statuspanel-inner{ background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) }
+#statuspanel-inner{ background-color: var(--toolbar-bgcolor) }
 
 #statuspanel{ color: var(--lwt-toolbar-field-color, black) ; z-index: -1; max-width: 100% !important; }
 #statuspanel[type="status"] { color: Highlight }
