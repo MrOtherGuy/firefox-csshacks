@@ -55,7 +55,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   min-width: 1000px;
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
   border: none !important;
-  font-size: inherit;
+  font-size: 1.15em;
   color: inherit !important;
   margin-right: 0px !important;
 }
