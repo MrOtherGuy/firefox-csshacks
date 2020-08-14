@@ -46,6 +46,7 @@ linux_gtk_window_control_patch.css
   bottom: 0;
   width: 100vw;
   height: var(--tab-min-height);
+  --tabs-navbar-shadow-size: 0px;
 }
 #TabsToolbar:hover{ z-index: 1 }
 

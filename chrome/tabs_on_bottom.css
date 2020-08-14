@@ -46,8 +46,9 @@ linux_gtk_window_control_patch.css
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 
 #titlebar{
- -moz-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
   -moz-appearance: none !important;
+  --tabs-navbar-shadow-size: 0px;
 }
 
 .titlebar-placeholder,

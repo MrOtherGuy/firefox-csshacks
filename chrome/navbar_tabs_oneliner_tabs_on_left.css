@@ -42,6 +42,7 @@ Window controls will be all wrong without it
 }
 #TabsToolbar{
   margin-right: var(--uc-navigationbar-width);
+  --tabs-navbar-shadow-size: 0px;
 }
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
 #tabbrowser-tabs,

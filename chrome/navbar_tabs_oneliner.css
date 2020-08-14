@@ -32,7 +32,10 @@ urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new ur
   #urlbar-container{ min-width:unset !important }
 }
 
-#TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
+#TabsToolbar{
+  margin-left: var(--uc-navigationbar-width);
+  --tabs-navbar-shadow-size: 0px;
+}
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
 
 /* This isn't useful when tabs start in the middle of the window */

@@ -24,7 +24,10 @@ See the above repository for updates as well as full license text. */
   :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
   :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
-  #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
+  #TabsToolbar{
+    margin-left: var(--uc-navigationbar-width);
+    --tabs-navbar-shadow-size: 0px;
+  }
   #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
   
   /* This isn't useful when tabs start in the middle of the window */
