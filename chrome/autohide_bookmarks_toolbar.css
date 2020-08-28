@@ -25,12 +25,14 @@ See the above repository for updates as well as full license text. */
 /* Comment out or delete either one of these to disable that behavior */
 
 /* Show when urlbar is focused */
+/* Add #nav-bar:focus-within + #PersonalToolbar{ transform: rotateX(90deg); } to userChrome.css to disable the 'focus' behavior */
 #nav-bar:focus-within + #PersonalToolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }
 
 /* Show when cursor is over the toolbar area */
+/* Add #navigator-toolbox:hover > #PersonalToolbar{ transform: rotateX(90deg); } to userChrome.css to disable the 'hover' behavior */
 #navigator-toolbox:hover > #PersonalToolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
