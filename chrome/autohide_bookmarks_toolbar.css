@@ -5,6 +5,10 @@ See the above repository for updates as well as full license text. */
   --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
   --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
   --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
+  
+  /* 0deg = "show" ; 90deg = "hide"  */
+  --uc-autohide-toolbar-focus-rotation: 0deg;
+  --uc-autohide-toolbar-hover-rotation: 0deg;
 }
 
 :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
@@ -25,21 +29,18 @@ See the above repository for updates as well as full license text. */
 /* Comment out or delete either one of these to disable that behavior */
 
 /* Show when urlbar is focused */
-/* Add #nav-bar:focus-within + #PersonalToolbar{ transform: rotateX(90deg); } to userChrome.css to disable the 'focus' behavior */
 #nav-bar:focus-within + #PersonalToolbar{
   transition-delay: 100ms !important;
-  transform: rotateX(0);
+  transform: rotateX(var(--uc-autohide-toolbar-focus-rotation,0));
 }
 
 /* Show when cursor is over the toolbar area */
-/* Add #navigator-toolbox:hover > #PersonalToolbar{ transform: rotateX(90deg); } to userChrome.css to disable the 'hover' behavior */
 #navigator-toolbox:hover > #PersonalToolbar{
   transition-delay: 100ms !important;
-  transform: rotateX(0);
+  transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
 }
 
-#navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {
-  transition-delay: 100ms !important;
+#navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
   transform: rotateX(0);
 }
 
