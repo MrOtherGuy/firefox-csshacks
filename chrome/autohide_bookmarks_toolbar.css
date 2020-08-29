@@ -6,9 +6,9 @@ See the above repository for updates as well as full license text. */
   --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
   --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
   
-  /* 0deg = "show" ; 90deg = "hide"  */
-  --uc-autohide-toolbar-focus-rotation: 0deg;
-  --uc-autohide-toolbar-hover-rotation: 0deg;
+  /* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
+  --uc-autohide-toolbar-focus-rotation: 0deg; /* urlbar is focused */
+  --uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
 }
 
 :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
@@ -25,16 +25,11 @@ See the above repository for updates as well as full license text. */
 
 #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
-/* SELECT BOOKMARKS TOOLBAR BEHAVIOR */
-/* Comment out or delete either one of these to disable that behavior */
-
-/* Show when urlbar is focused */
 #nav-bar:focus-within + #PersonalToolbar{
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-focus-rotation,0));
 }
 
-/* Show when cursor is over the toolbar area */
 #navigator-toolbox:hover > #PersonalToolbar{
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
