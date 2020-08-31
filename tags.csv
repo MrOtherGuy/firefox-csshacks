@@ -7,9 +7,11 @@ autohide_tabstoolbar.css,autohide,tabs,toolbars
 autohide_toolbox.css,autohide,toolbars,fullscreen
 blank_page_background.css,dark-mode
 bookmarksbar_on_new_tabs_only.css,legacy
+bookmarks_toolbar_on_newtabs_only.css,bookmarks,toolbars,autohide,hiding
 button_effect_icon_glow.css,buttons,effect
 button_effect_scale_onclick.css,buttons,effect
 button_effect_scale_onhover.css,buttons,effect
+classic_firefox_menu_button.css,classic,menu
 classic_grid_main_menu_popup.css,classic,menu,popup
 click_selected_tab_to_focus_urlbar.css,hack,tabs,urlbar
 color_variable_template.css,colors
@@ -36,6 +38,7 @@ hide_tabs_with_one_tab_w_window_controls.css,hiding,tabs,toolbars
 hide_toolbox_top_bottom_borders.css,toolbars,hiding
 hide_urlbar_first_row.css,urlbar,popup,hiding
 iconized_menubar_items.css,menubar,menu,icon
+less_static_throbber.css,icon,tab,effect
 linux_gtk_window_control_patch.css,patch,window-control
 menubar_in_main_toolbar.css,menubar,nav-bar,minimal,toolbars
 menubar_in_tabs_toolbar.css,toolbars,minimal,menubar
@@ -71,6 +74,7 @@ scrollable_urlbar_popup.css,scrollbar,popup,urlbar
 show_navbar_on_focus_only.css,urlbar,nav-bar,toolbars,hiding
 show_window_title_in_menubar.css,windows,menubar
 status_inside_urlbar.css,status,urlbar,hack
+status_inside_urlbar_v2.css,status,urlbar,status,effect,hack
 tab_close_button_always_on_hover.css,tab,close
 tab_loading_progress_throbber.css,tab,icon,effect
 tabs_animated_gradient_border.css,hack,effect,tabs
@@ -90,6 +94,7 @@ toolbarbuttons_icon+label.css,buttons,icon
 toolbars_below_content.css,tabs,toolbars
 urlbar_and_popup_equal_width.css,legacy
 urlbar_centered_text.css,urlbar
+urlbar_connection_type_colors.css,urlbar,colors,status
 urlbar_popup_full_width.css,urlbar,popup
 urlbar_results_in_two_rows.css,urlbar,popup
 urlbar_visible_on_active_tab_click.css,hack,urlbar
@@ -97,9 +102,5 @@ vertical_bookmarks_toolbar.css,bookmarks,toolbars
 vertical_context_navigation.css,navigation,menu,popup
 vertical_context_navigation_v2.css,navigation,menu,popup
 vertical_menubar.css,menubar,hack
-window_control_placeholder_support.css,window-control,patch
 vertical_popup_menubar.css,menubar,menu,toolbars,popup
-classic_firefox_menu_button.css,classic,menu
-bookmarks_toolbar_on_newtabs_only.css,bookmarks,toolbars,autohide,hiding
-status_inside_urlbar_v2.css,status,urlbar,status,effect,hack
-urlbar_connection_type_colors.css,urlbar,colors,status
+window_control_placeholder_support.css,window-control,patch
