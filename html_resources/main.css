@@ -79,3 +79,10 @@ pre{
 .hidden{ display: none !important }
 
 .target{ display: flex; justify-content: space-between }
+
+.comment{ color: rgb(50,180,20) }
+.selector{ color: violet }  
+.atrule{ color: blueviolet }
+.atvalue{ color: lightblue }
+.property{ color: orange }
+.value{ color: skyblue }

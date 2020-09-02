@@ -138,7 +138,8 @@ async function onCategoryClicked(categoryNode,isSecondary = false){
 async function onTargetClicked(targetNode){
   const codeBlock = document.querySelector("pre");
   fetchWithType(`chrome/${getText(targetNode)}`)
-  .then(text => (codeBlock.textContent = text))
+  //.then(text => (codeBlock.textContent = text))
+  .then(text => Highlighter.parse(codeBlock,text))
   .catch(e => console.log(e))
 }
 
@@ -227,6 +228,131 @@ function createCategories(){
   }
   
 }
+
+const Highlighter = new(function(){
+
+  let state = 0;
+  let pointer = 0;
+  let token = "";
+
+  function createToken(type){
+    let n = document.createElement("span");
+    n.textContent = token;
+    n.className = (`token ${type}`);
+    token = "";
+    return n
+  }
+
+  this.parse = function(node,text){
+    for(let e of Array.from(node.childNodes)){
+      node.removeChild(e)
+    }
+    let c;
+    while(pointer < text.length){
+      c = text[pointer];
+      token+=c;
+      switch(state){
+      
+        case 0:
+          switch(c){
+            case "/":
+              if(text[pointer+1] === "*"){
+                state = 2;
+              }
+              break;
+            case "{":
+              state = 3;
+              node.appendChild(createToken("selector"));
+              break;
+            case "@":
+              state = 5;
+              break
+            default:
+              false
+          }
+          
+          break;
+      
+        case 2:
+          switch(c){
+            case "*":
+              if(text[pointer+1] === "/"){
+                token += "/";
+                pointer++;
+                state = 0;
+                node.appendChild(createToken("comment"));
+              }
+              break;
+            default:
+              false
+          }
+          break;
+
+        case 3:
+          switch(c){
+            case ":":
+              node.appendChild(createToken("property"));
+              state = 4;
+              break;
+            case "}":
+              node.appendChild(createToken("text"));
+              state = 0;
+              break;
+            default:
+              false
+          }
+          break;
+        case 4:
+          switch(c){
+            case ";":
+              node.appendChild(createToken("value"));
+              state = 3;
+              break;
+            case "}":
+              node.appendChild(createToken("value"));
+              state = 0;
+              break;
+            default:
+              false
+          }
+          break;
+        case 5:
+          switch(c){
+            case " ":
+              node.appendChild(createToken("atrule"));
+              state = 6;
+            default:
+             false
+          }
+          break;
+        case 6:
+          switch(c){
+            case ";":
+            case "{":
+              node.appendChild(createToken("atvalue"));
+              state = 0;
+              break;
+            default:
+             false
+          }
+          break
+        default:
+          false
+      }
+      
+      
+
+      pointer++
+    }
+    node.appendChild(createToken("text"));
+    token = "";
+    state = 0;
+    pointer = 0;
+    
+    return
+  }
+  return this
+})();
 
 document.onreadystatechange = (function () {
   if (document.readyState === "complete") {
