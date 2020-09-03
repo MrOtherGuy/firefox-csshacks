@@ -82,7 +82,8 @@ pre{
 
 .comment{ color: rgb(50,180,20) }
 .selector{ color: violet }  
-.atrule{ color: blueviolet }
-.atvalue{ color: lightblue }
+.atrule{ color: royalblue }
+.atvalue{ color: greenyellow }
 .property{ color: orange }
 .value{ color: skyblue }
+.curly{ color: orangered } 
