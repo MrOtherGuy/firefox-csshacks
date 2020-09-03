@@ -231,13 +231,19 @@ function createCategories(){
 
 const Highlighter = new(function(){
 
-  let state = 0;
+  const state = new (function(){
+    let current = 0;
+    let previous = 0;
+    this.now = ()=>current;
+    this.previous = ()=>previous;
+    this.set = function(a){ previous = current; current = a; return} 
+  })();
   let pointer = 0;
   let token = "";
 
-  function createToken(type){
+  function createToken(type,c){
     let n = document.createElement("span");
-    n.textContent = token;
+    n.textContent = c || token;
     n.className = (`token ${type}`);
     token = "";
     return n
@@ -248,27 +254,37 @@ const Highlighter = new(function(){
       node.removeChild(e)
     }
     let c;
+    let curly = false;
     while(pointer < text.length){
       c = text[pointer];
-      token+=c;
-      switch(state){
+      const currentState = state.now();
+      curly = currentState != 2 && (c === "{" || c === "}");
+      if(!curly){
+        token+=c;
+      }
+      switch(currentState){
       
         case 0:
           switch(c){
             case "/":
               if(text[pointer+1] === "*"){
-                state = 2;
+                state.set(2);
+                if(token.length > 1){
+                  token = token.slice(0,-1);
+                  node.appendChild(createToken("selector"));
+                  token += "/"
+                }
               }
               break;
             case "{":
-              state = 3;
+              state.set(3);
               node.appendChild(createToken("selector"));
               break;
+            case "}":
+              node.appendChild(createToken("text"));
+              break;
             case "@":
-              state = 5;
-              break
-            default:
-              false
+              state.set(5);
           }
           
           break;
@@ -279,50 +295,44 @@ const Highlighter = new(function(){
               if(text[pointer+1] === "/"){
                 token += "/";
                 pointer++;
-                state = 0;
+                state.set(state.previous());
                 node.appendChild(createToken("comment"));
               }
-              break;
-            default:
-              false
           }
           break;
 
         case 3:
           switch(c){
+            case "/":
+              if(text[pointer+1] === "*"){
+                state.set(2);
+              }
+              break;
             case ":":
               node.appendChild(createToken("property"));
-              state = 4;
+              state.set(4);
               break;
             case "}":
               node.appendChild(createToken("text"));
-              state = 0;
-              break;
-            default:
-              false
+              state.set(0);
           }
           break;
         case 4:
           switch(c){
             case ";":
               node.appendChild(createToken("value"));
-              state = 3;
+              state.set(3);
               break;
             case "}":
               node.appendChild(createToken("value"));
-              state = 0;
-              break;
-            default:
-              false
+              state.set(0);
           }
           break;
         case 5:
           switch(c){
             case " ":
               node.appendChild(createToken("atrule"));
-              state = 6;
-            default:
-             false
+              state.set(6);
           }
           break;
         case 6:
@@ -330,23 +340,21 @@ const Highlighter = new(function(){
             case ";":
             case "{":
               node.appendChild(createToken("atvalue"));
-              state = 0;
-              break;
-            default:
-             false
+              state.set(0);
           }
           break
         default:
           false
       }
       
+      curly && node.appendChild(createToken("curly",c));
       
 
       pointer++
     }
     node.appendChild(createToken("text"));
     token = "";
-    state = 0;
+    state.set(0);
     pointer = 0;
     
     return
