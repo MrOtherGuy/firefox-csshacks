@@ -78,6 +78,8 @@ As a workaround, the -moz-element background image is removed somewhat often whi
  Don't show common values to save space (useful for oneliner)
  If you change the font size of the label then you'll have to modify these too 
  non-https links get a slight red hue
+*/
+
 /*
 #statuspanel-inner > #statuspanel-label[value^="http:"]{ margin-left: -3.7ch !important; color: tomato }
 #statuspanel-inner > #statuspanel-label[value^="https:"]{ margin-left: -6.1ch !important; }
