@@ -104,7 +104,17 @@ function getSecondaryCategories(list){
   return ret
 }
 
+function clearCodeBlock(){
+  const pre = document.getElementById("previewBox");
+  for(let el of Array.from(pre.childNodes)){
+    pre.remove(el)
+  }
+  return
+}
+
 async function onCategoryClicked(categoryNode,isSecondary = false){
+  
+  clearCodeBlock();
   
   currentCategory.set(categoryNode,isSecondary);
   // Using textContent is bad but meh
