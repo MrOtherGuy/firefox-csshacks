@@ -107,12 +107,12 @@ function getSecondaryCategories(list){
 function clearCodeBlock(){
   const pre = document.getElementById("previewBox");
   for(let el of Array.from(pre.childNodes)){
-    pre.remove(el)
+    pre.removeChild(el)
   }
   return
 }
 
-async function onCategoryClicked(categoryNode,isSecondary = false){
+function onCategoryClicked(categoryNode,isSecondary = false){
   
   clearCodeBlock();
   
@@ -175,11 +175,11 @@ function createCategories(){
   
   const CAT_PARENT = document.getElementById("categories");
   const CAT_SECOND = document.getElementById("secondaryCategories");
-  CAT_PARENT.addEventListener("click",onSomeClicked);
-  CAT_SECOND.addEventListener("click",onSomeClicked);
+  CAT_PARENT.addEventListener("click",onSomeClicked,{passive:true});
+  CAT_SECOND.addEventListener("click",onSomeClicked,{passive:true});
   
   const TAR_PARENT = document.getElementById("targets");
-  TAR_PARENT.addEventListener("click",onSomeClicked);
+  TAR_PARENT.addEventListener("click",onSomeClicked,{passive:true});
   
   const createNode = function(name,type){
     let node = document.createElement("div");
