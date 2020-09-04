@@ -1,5 +1,6 @@
 body{background-color: rgb(60,50,70); color: silver; margin: 0px }
 #ui{ display: flex; }
+#site{ height: 100vh; overflow-y: auto; flex: 1 }
 
 .categoryList{
   padding-block: 1em;
@@ -34,7 +35,7 @@ a:visited{ color: rgb(150,100,200) }
 a:hover{ color: rgb(200,150,100) }
 pre:empty{ display: none }
 .category{ padding: 0.2em 1em; cursor: pointer; text-transform: capitalize }
-#categories > .category[data-value]::after{ content: " (" attr(data-value) ")"}
+#categories > .category[data-value]::after{ content: " (" attr(data-value) ")"; float: right}
 
 .currentCategory,
 .category:hover{ background-color: grey }
@@ -48,7 +49,7 @@ pre:empty{ display: none }
   border: 1px solid rgb(40,40,40);
   border-radius: 4px;
   max-width: 50ch;
-  cursor: default
+  cursor: pointer
 }
 .target > a{
   content: "";
@@ -59,6 +60,7 @@ pre:empty{ display: none }
   background-size: contain;
 }
 .target:hover{ background-color: rgb(80,80,90) }
+.target > a:hover{ filter: drop-shadow(0 0 3px fuchsia) }
 /*#targets{ display: grid; grid-template-columns: 1fr 1fr 1fr }*/
 #targets{
   display: flex;
