@@ -50,7 +50,7 @@
 "minimal_toolbarbuttons_v2.css":["minimal","buttons"],
 "minimal_toolbarbuttons_v3.css":["minimal","buttons"],
 "more_visible_tab_icon.css":["tab","icon"],
-"multi-row_bookmarks.css":["multi-row","bookmarks"],
+"multi-row_bookmarks.css":["multi-row","bookmarks","toolbars"],
 "multi-row_oneliner_combo_patch.css":["multi-row","patch","one-line","minimal"],
 "multi-row_tabs.css":["tabs","multi-row","toolbars"],
 "multi-row_tabs_Fx66+.css":["legacy"],
@@ -77,6 +77,7 @@
 "status_inside_urlbar.css":["status","urlbar","hack"],
 "status_inside_urlbar_v2.css":["status","urlbar","status","effect","hack"],
 "tab_close_button_always_on_hover.css":["tab","close"],
+"tab_line_loading_indicator.css":["tab","icon","effect"],
 "tab_loading_progress_throbber.css":["tab","icon","effect"],
 "tabs_animated_gradient_border.css":["hack","effect","tabs"],
 "tabs_below_content.css":["toolbars","tabs"],
@@ -104,6 +105,5 @@
 "vertical_context_navigation_v2.css":["navigation","menu","popup"],
 "vertical_menubar.css":["menubar","hack"],
 "vertical_popup_menubar.css":["menubar","menu","toolbars","popup"],
-"window_control_placeholder_support.css":["window-control","patch"],
-"tab_line_loading_indicator.css":["tab","icon","effect"]
+"window_control_placeholder_support.css":["window-control","patch"]
 }
