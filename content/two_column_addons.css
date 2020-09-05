@@ -3,7 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Show addons in two columns */
 
-/* This doesn't work for new html addons page available in Firefox 68 - use two_column_html_addons.css instead */
+/* DEPRECATED - use multi_column_addons.css instead */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @-moz-document url("about:addons"){
