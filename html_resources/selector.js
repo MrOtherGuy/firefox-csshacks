@@ -248,21 +248,62 @@ const Highlighter = new(function(){
     this.previous = ()=>previous;
     this.set = function(a){ previous = current; current = a; return} 
   })();
+  
   let pointer = 0;
   let token = "";
+  
+  const selectorToClassMap = new Map([
+  [":","pseudo"],
+  ["#","id"],
+  [".","class"],
+  ["[","attribute"]]);
 
-  function createToken(type,c){
-    let n = document.createElement("span");
-    n.textContent = c || token;
-    n.className = (`token ${type}`);
-    token = "";
-    return n
-  }
-
-  this.parse = function(node,text){
-    for(let e of Array.from(node.childNodes)){
-      node.removeChild(e)
+  this.parse = function(targetNode,text){
+    
+    clearCodeBlock();
+    let node = document.createElement("div");
+       
+    function createElementFromToken(type,c){
+      if(token.length === 0 && !c){
+        return
+      }
+      let n = document.createElement("span");
+      
+      
+      if(type==="selector"){
+        
+        let parts = token.split(/([\.#:\[]\w[\w-_"'=\]]*|\s\w[\w-_"'=\]]*)/);
+        
+        for(let part of parts){
+          if(part.length === 0){
+            continue
+          }
+          let c = part[0];
+          switch (c){
+            case ":":
+            case "#":
+            case "[":
+            case ".":
+              let p = n.appendChild(document.createElement("span"));
+							p.className = selectorToClassMap.get(c);
+              p.textContent = part;
+              break;
+            default:
+              n.append(part);
+          }
+        }
+        
+        
+      }else{
+        n.textContent = c || token;
+      }
+      
+      n.className = (`token ${type}`);
+      token = "";
+      node.appendChild(n);
+      return
     }
+    
     let c;
     let curly = false;
     while(pointer < text.length){
@@ -281,17 +322,17 @@ const Highlighter = new(function(){
                 state.set(2);
                 if(token.length > 1){
                   token = token.slice(0,-1);
-                  node.appendChild(createToken("selector"));
+                  createElementFromToken("selector");
                   token += "/"
                 }
               }
               break;
             case "{":
               state.set(3);
-              node.appendChild(createToken("selector"));
+              createElementFromToken("selector");
               break;
             case "}":
-              node.appendChild(createToken("text"));
+              createElementFromToken("text");
               break;
             case "@":
               state.set(5);
@@ -306,7 +347,7 @@ const Highlighter = new(function(){
                 token += "/";
                 pointer++;
                 state.set(state.previous());
-                node.appendChild(createToken("comment"));
+                createElementFromToken("comment");
               }
           }
           break;
@@ -319,29 +360,29 @@ const Highlighter = new(function(){
               }
               break;
             case ":":
-              node.appendChild(createToken("property"));
+              createElementFromToken("property");
               state.set(4);
               break;
             case "}":
-              node.appendChild(createToken("text"));
+              createElementFromToken("text");
               state.set(0);
           }
           break;
         case 4:
           switch(c){
             case ";":
-              node.appendChild(createToken("value"));
+              createElementFromToken("value");
               state.set(3);
               break;
             case "}":
-              node.appendChild(createToken("value"));
+              createElementFromToken("value");
               state.set(0);
           }
           break;
         case 5:
           switch(c){
             case " ":
-              node.appendChild(createToken("atrule"));
+              createElementFromToken("atrule");
               state.set(6);
           }
           break;
@@ -349,7 +390,7 @@ const Highlighter = new(function(){
           switch(c){
             case ";":
             case "{":
-              node.appendChild(createToken("atvalue"));
+              createElementFromToken("atvalue");
               state.set(0);
           }
           break
@@ -357,15 +398,17 @@ const Highlighter = new(function(){
           false
       }
       
-      curly && node.appendChild(createToken("curly",c));
+      curly && createElementFromToken("curly",c);
       
 
       pointer++
     }
-    node.appendChild(createToken("text"));
+    createElementFromToken("text");
     token = "";
     state.set(0);
     pointer = 0;
+    
+    targetNode.appendChild(node);
     
     return
   }
