@@ -13,6 +13,7 @@ See the above repository for updates as well as full license text. */
   #navigator-toolbox{
     --uc-navigationbar-width: 40vw;
     --uc-toolbar-height: 40px;
+    --uc-urlbar-min-width: none; /* Can set minimum width for focused urlbar here eg. 550px */
   }
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
@@ -52,6 +53,8 @@ See the above repository for updates as well as full license text. */
 
   /* Hide dropdown placeholder */
   #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; }
+  
+  #urlbar:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
 }
 /* Fix customization view */
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }

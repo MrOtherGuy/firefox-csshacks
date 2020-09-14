@@ -14,6 +14,7 @@ See the above repository for updates as well as full license text. */
   box-shadow: inset 0 0 0 1px var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
   border-radius: var(--toolbarbutton-border-radius);
+  --uc-urlbar-min-width: none; /* navbar_tabs_oneliner.css compatibility */
 }
 
 #urlbar[focused]{ box-shadow: inset 0 0 0 1px var(--lwt-toolbar-field-border-focus, highlight); }
