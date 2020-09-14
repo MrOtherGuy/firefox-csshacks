@@ -31,7 +31,6 @@ See the above repository for updates as well as full license text. */
   #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
   
   /* This isn't useful when tabs start in the middle of the window */
-  .titlebar-placeholder[type="pre-tabs"],
   .titlebar-spacer[type="pre-tabs"]{ display: none }
   
   #navigator-toolbox > #nav-bar{

@@ -18,11 +18,11 @@ urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new ur
 :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
 :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
-:root[uidensity=compact] #urlbar-container{
+:root[uidensity="compact"] #urlbar-container{
   --urlbar-container-height: var(--uc-toolbar-height) !important;
   padding-block: 0 !important;
 }
-:root[uidensity=compact] #urlbar{
+:root[uidensity="compact"] #urlbar{
   --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
 }
 
@@ -39,7 +39,7 @@ urlbar_full_width.css is VERY MUCH recommended for Firefox 71+ because of new ur
 #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
 
 /* This isn't useful when tabs start in the middle of the window */
-.titlebar-placeholder[type="pre-tabs"],
+
 .titlebar-spacer[type="pre-tabs"]{ display: none }
 
 #navigator-toolbox > #nav-bar{
