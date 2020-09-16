@@ -1,0 +1,44 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/round_ui_items.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Make bunch of things in the main UI round */
+
+:root{ --toolbarbutton-border-radius: 24px !important }
+#urlbar-input-container > box:hover,
+#urlbar-input-container > box[open],
+#main-menubar >  menu,
+.titlebar-button:hover,
+#scrollbutton-up,
+#scrollbutton-down,
+.tab-close-button,
+.close-icon > image,
+#page-action-buttons > :hover,
+.panel-arrowcontent,
+.urlbarView-row-inner,
+.search-one-offs button,
+.subviewbutton-back,
+.toolbaritem-combined-buttons > toolbarbutton,
+#PopupSearchAutoComplete,
+menupopup{ border-radius: 18px }
+
+button,
+.tab-background{ border-radius: 30px !important; }
+
+.panel-arrowcontent{ margin-inline-end: 0 !important; }
+.panel-arrow{ margin-inline: 17px !important; }
+
+menupopup{ -moz-appearance: none !important; overflow: -moz-hidden-unscrollable !important; }
+
+.tabbrowser-tab[selected]::after,
+.tabbrowser-tab[beforeselected-visible]::after{ border-color: transparent !important; }
+
+#nav-bar{ box-shadow: none !important; margin-top: 3px }
+.tab-line{ display: none }
+
+.tab-background[selected]{ border-top-width: 2px !important; border-top-color: var(--tab-line-color) !important; }
+.tabbrowser-tab[selected]{ z-index: auto !important; }
+
+.urlbar-icon,
+toolbar toolbarbutton:not(#back-button):not(.bookmark-item):not(.titlebar-button) > .toolbarbutton-icon{  border-radius: 0px !important; clip-path: circle() }
+
+menugroup:hover > menuitem{ clip-path: circle() }
