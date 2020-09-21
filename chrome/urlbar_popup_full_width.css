@@ -3,6 +3,11 @@ See the above repository for updates as well as full license text. */
 
 /* Make urlbar popup appear full size like it did before urlbar re-design */
 
+.urlbarView-row-inner{
+   /* This sets how far the dropdown-items are from window edge */
+  padding-inline-start: 6px !important;
+  }
+
 #urlbar-container,
 #urlbar{
   position: static !important;
