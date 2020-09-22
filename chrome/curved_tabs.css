@@ -1,0 +1,62 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/curved_tabs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes tabs more curvy. Also disables tab separators since there's no easy way to make the look good */
+
+#tabbrowser-tabs{
+  --uc-tab-curve-size: 10px; /* 10px looks about like chromium - 18px looks close to Australis tabs */
+}
+
+.tabbrowser-tab:hover{ --uc-tab-fill: rgba(0,0,0,.1) }
+#TabsToolbar[brighttext] .tabbrowser-tab:hover{ --uc-tab-fill: rgba(255,255,255,.1) }
+.titlebar-spacer[type="pre-tabs"],
+.tabbrowser-tab::after{ border: none !important; }
+
+.tabbrowser-tab:hover > stack::before,
+.tabbrowser-tab:hover > stack::after,
+.tabbrowser-tab[selected] > stack::before,
+.tabbrowser-tab[selected] > stack::after{
+  width: var(--uc-tab-curve-size);
+  height: 100%;
+  display: block;
+  position: absolute;
+  content: "";
+  fill: var(--uc-tab-fill);
+  -moz-context-properties: fill;
+  left: calc(0px - var(--uc-tab-curve-size));
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlPSJ3aGl0ZSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwYXRoIGQ9Ik0wIDE2IEExNiAxNiAwIDAgMCAxNiAwIEwgMTYgMTYgWiIgZmlsbD0iY29udGV4dC1maWxsIiBzdHJva2U9Im5vbmUiPjwvcGF0aD4NCjwvc3ZnPg");
+  background-size: var(--uc-tab-curve-size);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  transform: scaleY(var(--uc-tab-vertical-transform))
+}
+
+.tabbrowser-tab[selected] > stack::before,
+.tabbrowser-tab[selected] > stack::after{ fill: var(--toolbar-bgcolor) !important; }
+
+.tabbrowser-tab:hover > stack::after,
+.tabbrowser-tab[selected] > stack::after{
+  left: auto;
+  right: calc(0px - var(--uc-tab-curve-size));
+  transform: scaleX(-1);
+}
+
+.tabbrowser-tab:hover > stack > .tab-background,
+.tab-background[selected]{
+  border-radius: var(--uc-tab-curve-size) var(--uc-tab-curve-size) 0 0;
+  overflow: -moz-hidden-unscrollable
+}
+
+#tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab:first-child,
+#tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]+.tabbrowser-tab:not([pinned]){ 
+  margin-inline-start: var(--uc-tab-curve-size) !important;
+}
+
+/* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
+/*
+.tab-background{ -moz-box-direction: reverse }
+.tabbrowser-tab:hover > stack > .tab-background,
+.tab-background[selected]{ border-radius: 0 0 var(--uc-tab-curve-size) var(--uc-tab-curve-size) }
+.tabbrowser-tab > stack::before{ transform: scaleY(-1) !important; }
+.tabbrowser-tab > stack::after{ transform: scaleY(-1) scaleX(-1) !important; }
+*/
