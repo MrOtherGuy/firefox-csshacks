@@ -51,8 +51,12 @@ See the above repository for updates as well as full license text. */
   -moz-appearance: none !important;
 }
 
+/* These two exist for oneliner compatibility */
+#nav-bar{ width: var(--uc-navigationbar-width,100vw) }
+#TabsToolbar{ width: calc(100vw - var(--uc-navigationbar-width,0px)) }
+
 #navigator-toolbox:not(:focus-within):not(:hover){
-  transform: rotateX(86deg); /* This may need to be lower in osx - like 75 or so */
+  transform: rotateX(82deg); /* This may need to be lower in osx - like 75 or so */
   opacity: 0;
 }
 
