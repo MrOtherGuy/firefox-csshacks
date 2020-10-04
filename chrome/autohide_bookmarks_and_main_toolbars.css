@@ -28,6 +28,13 @@ See the above repository for updates as well as full license text. */
 
 #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
+/* Make sure the bookmarks toolbar is never collapsed even if it is disabled */
+#PersonalToolbar[collapsed="true"]{
+  min-height: initial !important;
+  max-height: initial !important;
+  visibility: hidden !important
+}
+
 /* SELECT TOOLBAR BEHAVIOR */
 /* Comment out or delete either one of these to disable that behavior */
 
