@@ -14,4 +14,5 @@ See the above repository for updates as well as full license text. */
 .urlbarView-row-inner{ padding-inline-start: 4px !important; }
 #urlbar-background{ animation: none !important; }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
+#identity-icon{ margin-block: var(--urlbar-icon-padding) }
 .urlbarView > .search-one-offs:not([hidden]){ padding-block: 0px !important; }
