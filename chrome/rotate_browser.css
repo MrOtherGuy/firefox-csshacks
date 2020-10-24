@@ -1,0 +1,7 @@
+#main-window {
+  animation: rotate 1s infinite;
+}
+@keyframes rotate {
+  from {transform: none}
+  to {transform: rotate(359deg)}
+}
