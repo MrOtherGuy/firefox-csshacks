@@ -10,15 +10,16 @@ See the above repository for updates as well as full license text. */
     right: 140px; /* Space for window controls */
     width: calc(100vw - 440px); /* Window width - window control width - menuitem (English) width */
     text-align: center;
-    }
+    z-index: 1;
+    pointer-events: none;
+  }
   head > *{ display: none }
   head > title{
-    display: -moz-box;
+    display: -moz-inline-box;
     padding-top: 1px;
-    max-width: 60vw;
+    max-width: 50vw;
     overflow-x: -moz-hidden-unscrollable;
     text-overflow: ellipsis;
-    -moz-box-pack: center;
   }
   @media (-moz-os-version:windows-win10){
     :root[sizemode="maximized"] > head > title { padding-top: 10px }
