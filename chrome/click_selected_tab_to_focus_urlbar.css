@@ -22,7 +22,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Invisible capture box behind tabs*/
-:root:not([customizing]) #urlbar::before{
+:root:not([customizing]) #urlbar-input-container::before{
   position: fixed;
   display: block;
   top: 0;
@@ -32,9 +32,11 @@ See the above repository for updates as well as full license text. */
   content: "";
 }
 
+#urlbar-input-container:focus-within::before{ display: none !important; }
+
 /* Make tabs appear over the invisible box */
 :root:not([customizing]) #tabbrowser-tabs{
   position: relative;
   z-index: 1;
   pointer-events: none
-}
+} 
