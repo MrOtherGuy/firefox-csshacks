@@ -31,6 +31,7 @@ body{background-color: rgb(60,50,70); color: silver; margin: 0px }
 }
 
 a{ color: rgb(100,150,200); margin-inline-start: 1ch }
+pre a{ margin: 0 }
 a:visited{ color: rgb(150,100,200) }
 a:hover{ color: rgb(200,150,100) }
 pre:empty{ display: none }

@@ -294,7 +294,28 @@ const Highlighter = new(function(){
         }
         
         
-      }else{
+      } else if(type === "comment"){
+        let linksToFile = token.match(/[\w-\.]+\.css/g);
+        if(linksToFile && linksToFile.length){
+          let linkIdx = 0;
+          let fromIdx = 0;
+          while(linkIdx < linksToFile.length){
+            let part = linksToFile[linkIdx++];
+            let idx = token.indexOf(part);
+            n.append(token.substring(fromIdx,idx));
+            let link = document.createElement("a");
+            link.textContent = part;
+            link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${part}`;
+            link.target = "_blank";
+            n.appendChild(link);
+            fromIdx = idx + part.length;
+          }
+          n.append(token.substring(fromIdx));
+        }else{
+          n.textContent = c || token
+        }
+      }
+      else{
         n.textContent = c || token;
       }
       
