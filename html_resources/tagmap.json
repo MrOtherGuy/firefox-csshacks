@@ -109,5 +109,6 @@
 "round_ui_items.css":["buttons","icon","menu","tabs","toolbars","bookmarks"],
 "curved_tabs.css":["tabs","tab"],
 "theme_aware_modal_prompts.css":["effect","dark-mode","colors","popup"],
-"centered_top_statuspanel.css":["status"]
+"centered_top_statuspanel.css":["status"],
+"custom_menupopup_check_icons.css":["icon","menu","minimal","popup"]
 }
