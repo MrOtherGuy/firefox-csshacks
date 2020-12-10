@@ -10,7 +10,7 @@ See the above repository for updates as well as full license text. */
   }
 
   :root[uidensity="compact"]:not([inFullscreen]){
-    --uc-bottom-toolbar-height: calc(29px + var(--toolbarbutton-outer-padding) )
+    --uc-bottom-toolbar-height: calc(32px + var(--toolbarbutton-outer-padding) )
   }
 
   #browser,
@@ -33,6 +33,6 @@ See the above repository for updates as well as full license text. */
     top: auto !important;
   }
 
-  #urlbar[open] > .urlbarView{ margin-block: 0px calc(var(--urlbar-height) + 1px) !important; box-shadow: none !important; }
+  .urlbarView-body-inner{ border-top-style: none !important; }
 
 }

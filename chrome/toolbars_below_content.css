@@ -30,7 +30,7 @@ See the above repository for updates as well as full license text. */
     top: auto !important;
   }
 
-  #urlbar[open] > .urlbarView{ margin-block: 0px calc(var(--urlbar-height) + 1px) !important; box-shadow: none !important; }
+  .urlbarView-body-inner{ border-top-style: none !important; }
 
   /* Yeah, removes window controls. Likely not wanted on bottom row  */
   #TabsToolbar > .titlebar-buttonbox-container{ display: none }
