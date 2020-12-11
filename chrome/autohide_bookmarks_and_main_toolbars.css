@@ -41,7 +41,7 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox > *{ pointer-events: auto }
 
 /* SELECT TOOLBAR BEHAVIOR */
-/* Comment out or delete either one of these to disable that behavior */
+/* Comment out or delete one of these to disable that behavior */
 
 /* Show when urlbar is focused */
 #nav-bar:focus-within + #PersonalToolbar,
@@ -51,11 +51,18 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Show when cursor is over the toolbar area */
-#navigator-toolbox:hover > #PersonalToolbar,
-#navigator-toolbox:hover > #nav-bar{
+#navigator-toolbox:hover > .browser-toolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }
+
+/* Show when cursor is over popups/context-menus - cannot control which ones */
+/*
+#mainPopupSet:hover ~ box > toolbox > .browser-toolbar{
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
+}
+*/
 
 /* Uncomment to enable compatibility for multi-row_bookmarks.css */
 /* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */

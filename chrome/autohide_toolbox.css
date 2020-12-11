@@ -8,6 +8,11 @@ See the above repository for updates as well as full license text. */
 
 :root{
   --uc-autohide-toolbox-delay: 200ms; /* Wait 0.1s before hiding toolbars */
+  --uc-toolbox-rotation: 82deg;  /* This may need to be lower on mac - like 75 or so */
+}
+
+:root[sizemode="maximized"]{
+  --uc-toolbox-rotation: 89deg;
 }
 
 @media (-moz-os-version: windows-win10){
@@ -36,12 +41,21 @@ See the above repository for updates as well as full license text. */
   transition: transform 82ms linear, opacity 82ms linear !important;
   transition-delay: var(--uc-autohide-toolbox-delay) !important;
   transform-origin: top;
+  transform: rotateX(var(--uc-toolbox-rotation));
+  opacity: 0;
   line-height: 0;
   z-index: 1;
   pointer-events: none;
 }
 
-#navigator-toolbox:-moz-any(:hover,:focus-within){ transition-delay: 33ms !important }
+/* #mainPopupSet:hover ~ box > toolbox, */
+/* Uncomment the above line to make toolbar visible if some popup is hovered */
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within{
+  transition-delay: 33ms !important;
+  transform: rotateX(0);
+  opacity: 1;
+}
 
 #navigator-toolbox > *{ line-height: normal; pointer-events: auto }
 
@@ -54,13 +68,6 @@ See the above repository for updates as well as full license text. */
 /* These two exist for oneliner compatibility */
 #nav-bar{ width: var(--uc-navigationbar-width,100vw) }
 #TabsToolbar{ width: calc(100vw - var(--uc-navigationbar-width,0px)) }
-
-#navigator-toolbox:not(:focus-within):not(:hover){
-  transform: rotateX(82deg); /* This may need to be lower in osx - like 75 or so */
-  opacity: 0;
-}
-
-:root[sizemode="maximized"] #navigator-toolbox:not(:focus-within):not(:hover){ transform: rotateX(89deg) }
 
 /* Don't apply transform before window has been fully created */
 :root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
