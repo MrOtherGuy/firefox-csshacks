@@ -28,7 +28,11 @@ See the above repository for updates as well as full license text. */
 
 :root[sessionrestored]:not([customizing]) #navigator-toolbox{ margin-bottom:  calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding) + var(--uc-navbar-height)); }
 
-#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
+#PlacesToolbarItems > .bookmark-item,
+#OtherBookmarks,
+#PersonalToolbar > #import-button{
+  padding-block: var(--uc-bm-padding) !important;
+}
 
 /* Make sure the bookmarks toolbar is never collapsed even if it is disabled */
 #PersonalToolbar[collapsed="true"]{

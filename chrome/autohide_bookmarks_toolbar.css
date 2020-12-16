@@ -23,7 +23,11 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
 }
 
-#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
+#PlacesToolbarItems > .bookmark-item,
+#OtherBookmarks,
+#PersonalToolbar > #import-button{
+  padding-block: var(--uc-bm-padding) !important;
+}
 
 #nav-bar:focus-within + #PersonalToolbar{
   transition-delay: 100ms !important;
