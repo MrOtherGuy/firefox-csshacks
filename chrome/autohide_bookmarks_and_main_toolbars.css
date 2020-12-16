@@ -8,23 +8,25 @@ See the above repository for updates as well as full license text. */
   --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
 }
 
-:root[uidensity=compact] #navigator-toolbox{ --uc-bm-padding: 1px; --uc-navbar-height: -32px }
+:root[uidensity="compact"] #navigator-toolbox{ --uc-bm-padding: 1px; --uc-navbar-height: -32px }
 :root[uidensity="touch"] #navigator-toolbox{ --uc-bm-padding: 6px }
 
-:root[sessionrestored] #nav-bar:not([customizing]),
-#PersonalToolbar:not([customizing]){
+:root[sessionrestored] #nav-bar,
+:root[sessionrestored] #PersonalToolbar{
   transform: rotateX(90deg);
   transform-origin: top;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 2;
 }
+#nav-bar[customizing],#PersonalToolbar[customizing]{ transform: none !important }
+
 #navigator-toolbox > #PersonalToolbar{
   transform-origin: 0px var(--uc-navbar-height);
   z-index: 1;
   position: relative;
 }
 
-:root[sessionrestored] #navigator-toolbox:not([customizing]){ margin-bottom:  calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding) + var(--uc-navbar-height)); }
+:root[sessionrestored]:not([customizing]) #navigator-toolbox{ margin-bottom:  calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding) + var(--uc-navbar-height)); }
 
 #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
