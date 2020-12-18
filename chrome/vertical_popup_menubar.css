@@ -32,7 +32,7 @@ menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0 0
 
 #toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: -32px }
 
-#toolbar-menubar > .titlebar-buttonbox-container + :-moz-any(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
+#toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
 
 #file-menu{
   fill: currentColor;

@@ -19,7 +19,7 @@ See the above repository for updates as well as full license text. */
   clip-path: polygon(50% 50%,50% 0%,50% 0%,50% 0%, 50% 0%,50% 0%, 50% 0%);
   transition: clip-path 0.2s ease-out, opacity 0.3s linear 0.1s;
 }
-.tabbrowser-tab:-moz-any([busy],[bursting]) .tab-content{ padding-left: calc( 9px - (var(--tab-loader-size) - 16px)) !important; }
+.tabbrowser-tab:is([busy],[bursting]) .tab-content{ padding-left: calc( 9px - (var(--tab-loader-size) - 16px)) !important; }
 .tabbrowser-tab[pinned] .tab-content::before{ margin-right: 0px }
 @keyframes loadprogress{
   from{ clip-path: polygon(50% 50%,50% 0%,100% 0%,100% 50%, 100% 50%,100% 50%, 100% 50%); }

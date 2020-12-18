@@ -24,7 +24,7 @@ See the above repository for updates as well as full license text. */
 .tab-label-container{ width: unset !important; }
 .tab-label-container[pinned]{ margin-inline-start: 8px }
 
-.tab-icon-sound:-moz-any([soundplaying],[muted],[activemedia-blocked],[pictureinpicture]),
+.tab-icon-sound:is([soundplaying],[muted],[activemedia-blocked],[pictureinpicture]),
 .tab-close-button{ display: -moz-box !important; }
 .tab-icon-overlay{ display: none !important; }
 
