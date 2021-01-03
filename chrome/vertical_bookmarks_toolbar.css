@@ -10,16 +10,16 @@ See the above repository for updates as well as full license text. */
   }
 
   #PersonalToolbar{
-   position: fixed;
+    position: fixed;
     display: flex;
     flex-direction: column;
     left: 0;
     width: var(--uc-vertical-toolbar-width,0);
     
     /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
+    height: 100vh;
     max-height: 100vh !important; 
     padding-bottom: 120px !important;
-
   }
 
   #personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
@@ -29,8 +29,9 @@ See the above repository for updates as well as full license text. */
     display: flex;
     flex-direction: column;
   }
-
+  #PersonalToolbar .toolbarbutton-1{ padding-block: 10px !important }
   #PersonalToolbar #PlacesToolbarItems > .bookmark-item{ padding-block: 4px !important; }
+  
 
   body > #browser,
   body > #browser-bottombox,
