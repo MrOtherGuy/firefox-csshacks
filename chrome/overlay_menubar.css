@@ -19,15 +19,19 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar > spacer{ flex-grow: 1 }
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
 
-#main-menubar{ height: calc(var(--tab-min-height) + 4px); background-color: var(--toolbar-bgcolor); }
+#main-menubar{
+  height: calc(var(--tab-min-height) + 3px);
+  background-color: var(--arrowpanel-background);
+  color: var(--arrowpanel-color);
+}
 
 #menubar-items{ -moz-box-orient: horizontal !important; }
 #menubar-items::after{
   content: "";
   display: -moz-box;
   width: 30px;
-  height: calc(var(--tab-min-height) + 4px);
-  background-image: linear-gradient(to right, var(--toolbar-bgcolor) 30%, transparent);
+  height: calc(var(--tab-min-height) + 3px);
+  background-image: linear-gradient(to right, var(--arrowpanel-background) 30%, transparent);
 }
 
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
