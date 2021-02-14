@@ -112,5 +112,6 @@
 "centered_top_statuspanel.css":["status"],
 "custom_menupopup_check_icons.css":["icon","menu","minimal","popup"],
 "show_toolbars_in_popup_windows.css":["toolbars","popup"],
-"centered_tab_content.css":["tab","icon"]
+"centered_tab_content.css":["tab","icon"],
+"window_control_fallback_for_custom_windows_theme.css":["window-controls","buttons","colors","patch"]
 }
