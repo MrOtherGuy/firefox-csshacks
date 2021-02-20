@@ -20,14 +20,13 @@ Window controls will be all wrong without it
 #toolbar-menubar > spacer{ pointer-events: none }
 
 :root:not([customizing]) #tabs-newtab-button,
-:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
-:root:not([customizing]) #TabsToolbar .private-browsing-indicator {
+:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button{
   -moz-appearance: none !important;
-  height: 0px !important;
+  height: 0px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   -moz-box-align: stretch;
-  margin-bottom: 0 !important;
+  margin: 0 !important;
 }
 #tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
