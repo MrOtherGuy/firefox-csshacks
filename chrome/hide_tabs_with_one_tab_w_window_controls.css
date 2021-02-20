@@ -1,7 +1,7 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_with_one_tab_w_window_controls.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs */
+/* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs. Optionally use privatemode_indicator_as_menu_button.css to replace main menu icon with private browsing indicator while tabs are hidden. */
 /* Firefox 65+ only */
 /* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
 
