@@ -23,6 +23,12 @@ See the above repository for updates as well as full license text. */
   margin: 0 !important;
 }
 
+.accessibility-indicator,
+.private-browsing-indicator{ 
+  height: unset !important;
+}
+.accessibility-indicator > hbox{ padding-block: 0 !important }
+
 #tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
 
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
