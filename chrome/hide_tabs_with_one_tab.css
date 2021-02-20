@@ -14,9 +14,10 @@ See the above repository for updates as well as full license text. */
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
 :root:not([customizing]) #tabs-newtab-button,
 :root:not([customizing]) #TabsToolbar-customization-target > .toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar .private-browsing-indicator,
 :root:not([customizing]) #TabsToolbar .titlebar-button{
   -moz-appearance: none !important;
-  height: 0px;
+  height: 0px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   -moz-box-align: stretch;
