@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
 /* Compatible with addon_manage_buttons_without_popup.css */
 
 
-@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
   
   :root{  overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
   

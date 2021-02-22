@@ -4,7 +4,7 @@ See the above repository for updates as well as full license text. */
 /* Show addon management buttons without opening popup */
 
 
-@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
  
   .addon-card-message{ margin-bottom: 0px !important; margin-top: 0px !important; }
   .card.addon{ padding-bottom: 0px !important; }
