@@ -114,3 +114,4 @@ show_toolbars_in_popup_windows.css,toolbars,popup
 centered_tab_content.css,tab,icon
 window_control_fallback_for_custom_windows_theme.css,window-controls,buttons,colors,patch
 privatemode_indicator_as_menu_button.css,icon,buttons
+compact_proton.css,menu,popups,tabs
