@@ -1,3 +1,20 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/compact_proton.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
+/* Small changes to make proton roughly as compact as the old compact mode */
+
+:root{
+  --toolbarbutton-inner-padding: 6px !important;
+  --proton-tab-block-margin: 2px !important;
+  --tabs-shadow-size: 0px !important;
+	--arrowpanel-menuitem-padding: 5px !important;
+}
+
+menupopup > menuitem,
+menupopup > menu{ padding-block: 0.3em !important; }
+
+#urlbar-container{ padding-block: 3px !important; }
+/* This is kinda weird, but it makes the horizontal line between tabs and nav-bar render "inside" nav-bar thus tabs are more visibily separated even if there is less space there */
+#nav-bar{ 
+  box-shadow: inset 0 var(--tabs-shadow-size) 0 var(--tabs-border-color) !important;
+}
