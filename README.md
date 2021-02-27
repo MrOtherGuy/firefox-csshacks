@@ -6,38 +6,44 @@ In the case that a particular style relies on another style, the fact will be no
 
 Stylesheets in this repository are tested only on Windows 10 and to a lesser amount on Linux. Most of them should also work on OSX and Windows7, but there may be wrong behavior especially when native widgets such as window titlebar or window control buttons are being styled.
 
-# Style categories
-
-The files themselves are only separated to *chrome* and *content* sub-folders. Files have a one or more *tag* applied to them as listed in `tags.csv` file.
-
-You can browse the tag-categorized files by [using this simple ui](https://mrotherguy.github.io/firefox-csshacks/)
-
-# Loading user*.css files
+# Setup
 
 0. Go to about:config and set the pref `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` to make Firefox load userChrome.css and userContent.css
+0. Find your profile folder and
+    * If Firefox is running you can find by going to `about:support` and there should be a button with label "Open Folder" under application basics
+    * On command-line, you can also find your firefox executable and run `firefox -ProfileManager`
+0. Clone this repository in the profile folder
+    * `git clone https://github.com/MrOtherGuy/firefox-csshacks.git` on command-line (first `cd` into the profile directory of course!)
+0. Rename the newly clones repo to `chrome`
+    * `mv firefox-csshacks chrome`
+0. `userChrome.css` and `userContent.css` files should be created inside this chrome-folder.
+    * You can copy-paste and modify lines from `userChrome_example.css` and `userContent_example.css` to get started
+0. If Firefox is running, restart Firefox so that the changes take effect
 
-1. Find your profile folder, if Firefox is running you can find by going to `about:support` and there should be a button with label "Open Folder" under application basics
-2. Create a new folder to the profile folder and name it "chrome"
-3. `userChrome.css` and `userContent.css` files should be created inside this chrome-folder.
-
-Clone this repository or individual files inside that newly created chrome-folder.
+As an alternative to cloning this repository you can set up the `chrome` folder manually.
 In the end you should have a folder structure like this:
 
 ```
 <profile_folder>
-|_chrome
-|   |_chrome
-|   |_content
-|   |_userChrome.css
-|   |_userContent.css
-|_extensions
-|_prefs.js
+|_ chrome
+|   |_ chrome
+|   |_ content
+|   |_ userChrome.css
+|   |_ userContent.css
+|_ extensions
+|_ prefs.js
 ...
 all other profile folders and files
 ...
 ```
 
 In short, create a parent chrome folder to the same directory where `prefs.js` is - the main profile folder. Firefox loads `userContent.css` and `userChrome.css` files only from that `chrome`-folder.
+
+# Style categories
+
+The files themselves are only separated to *chrome* and *content* sub-folders. Files have a one or more *tag* applied to them as listed in `tags.csv` file.
+
+You can browse the tag-categorized files by [using this simple ui](https://mrotherguy.github.io/firefox-csshacks/)
 
 # Usage
 
