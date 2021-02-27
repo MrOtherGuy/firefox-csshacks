@@ -1,0 +1,76 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/buttonlike_toolbarbuttons.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style makes buttons look like real buttons with border and background. Color of border and background use the same colors as unselected urlbar to make them fit together. Changes are not applied to buttons in tabs toolbar or menubar. */
+
+:root{
+  --uc-toolbarbutton-vertical-padding: calc(var(--toolbarbutton-inner-padding) + 1px);
+  --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 10px);
+  --toolbarbutton-border-radius: 3px !important;
+}
+:root[uidensity]{
+  --uc-toolbarbutton-vertical-padding: calc(var(--toolbarbutton-inner-padding) - 1px);
+  --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 6px);
+}
+
+#navigator-toolbox > toolbar{ --lwt-toolbarbutton-icon-fill: var(--lwt-toolbar-field-color, black) }
+:root:not([uidensity="compact"]) #nav-bar { padding-inline-start: 5px }
+
+/* size of buttons */
+#PanelUI-button > toolbarbutton > stack,
+.findbar-button,
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-1 > .toolbarbutton-icon,
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-icon,
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > stack{
+  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
+  width: calc(2* var(--uc-toolbarbutton-horizontal-padding) + 16px) !important;
+  height: calc(2* var(--uc-toolbarbutton-vertical-padding) + 16px) !important;
+  fill-opacity: 0.8;
+  margin-inline: 2px;
+}
+.findbar-button{ width: auto !important; }
+
+/* borders */
+#PanelUI-button > toolbarbutton > stack,
+.findbar-button,
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-1 > .toolbarbutton-icon,
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-icon{
+  border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.55));
+}
+
+/* stacks use box-shadow as a border to prevent size from changing */
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > stack{ box-shadow: inset 0 0 0 1px var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.55)) }
+
+/* modify paddings within buttons */
+#back-button > .toolbarbutton-icon,
+#navigator-toolbox > toolbar .toolbarbutton-1 > stack,
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-icon,
+#PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-1 > .toolbarbutton-icon{
+  padding: var(--uc-toolbarbutton-vertical-padding) var(--uc-toolbarbutton-horizontal-padding) !important;
+}
+
+/* Custom rules for back-button because it has different styling with non-compact density */
+
+#back-button{ border-radius: 0 !important }
+
+#back-button{ padding: initial !important; border: none !important; }
+
+#back-button > .toolbarbutton-icon{
+  border-radius: var(--toolbarbutton-border-radius) !important;
+  border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25)) !important;
+}
+
+/* Buttons in bookmarks toolbar also require some extra styling rules */
+#PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-1 > .toolbarbutton-icon,
+#PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-icon,
+#PersonalToolbar .chromeclass-toolbar-additional > stack,
+#back-button > .toolbarbutton-icon{
+  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
+}
+#PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon,
+#PersonalToolbar .chromeclass-toolbar-additional:not([disabled]):hover > .toolbarbutton-icon,
+#PersonalToolbar .chromeclass-toolbar-additional:not([disabled]):hover > stack,
+#back-button:not([disabled]):hover > .toolbarbutton-icon{ background-color: var(--toolbarbutton-hover-background) !important; }
+
+#PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-1,
+#PersonalToolbar .chromeclass-toolbar-additional{ padding: initial !important; background: transparent !important; }
