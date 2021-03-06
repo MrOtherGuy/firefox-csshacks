@@ -6,6 +6,7 @@ See the above repository for updates as well as full license text. */
 
 
 /* Make backgrounds transparent */
+.close-icon,
 .urlbar-icon,
 .urlbar-icon-wrapper,
 toolbar .toolbarbutton-1,
@@ -14,14 +15,16 @@ toolbar toolbarbutton > .toolbarbutton-icon,
 toolbar toolbarbutton > .toolbarbutton-badge-stack,
 .titlebar-button,
 #identity-box,
+#identity-icon-box,
 #tracking-protection-icon-container,
 .findbar-textbox~toolbarbutton,
 toolbarbutton.scrollbutton-up,
 toolbarbutton.scrollbutton-down,
 toolbarbutton#scrollbutton-up,
-toolbarbutton#scrollbutton-down{ background-color: transparent !important; border-color: transparent !important;}
-
-.close-icon{ fill-opacity: 0 !important; }
+toolbarbutton#scrollbutton-down{
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
 
 /* Glow effects on hover */
 .close-icon:hover,
