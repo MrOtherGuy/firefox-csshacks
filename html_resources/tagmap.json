@@ -116,5 +116,6 @@
 "vertical_popup_menubar.css":["menubar","menu","toolbars","popup"],
 "window_control_fallback_for_custom_windows_theme.css":["window-controls","buttons","colors","patch"],
 "window_control_placeholder_support.css":["window-control","patch"],
-"buttonlike_toolbarbuttons.css":["buttons"]
+"buttonlike_toolbarbuttons.css":["buttons"],
+"passive_tab_audio_label.css":["tab","proton"]
 }

@@ -1,0 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/passive_tab_audio_label.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* For proton theme. Makes the audio "playing"/"muted" label not toggle muted state. The audio icon will still do so of course, but clicking the label will be just like clicking the tab itself. */
+.tab-icon-sound{ pointer-events: none }
+.tab-icon-sound > image{ pointer-events: auto }
