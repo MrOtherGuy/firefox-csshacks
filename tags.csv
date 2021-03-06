@@ -19,7 +19,7 @@ click_selected_tab_to_focus_urlbar.css,hack,tabs,urlbar
 color_variable_template.css,colors
 combined_favicon_and_tab_close_button.css,tab,icon,close
 combined_tabs_and_main_toolbars.css,minimal,tabs,toolbars
-compact_proton.css,menu,popups,tabs
+compact_proton.css,menu,popups,tabs,proton
 compact_urlbar_megabar.css,urlbar,minimal
 curved_tabs.css,tabs,tab
 custom_menupopup_check_icons.css,icon,menu,minimal,popup
