@@ -14,7 +14,7 @@ Stylesheets in this repository are tested only on Windows 10 and to a lesser amo
     * On command-line, you can also find your firefox executable and run `firefox -ProfileManager`
 0. Clone this repository in the profile folder
     * `git clone https://github.com/MrOtherGuy/firefox-csshacks.git` on command-line (first `cd` into the profile directory of course!)
-0. Rename the newly clones repo to `chrome`
+0. Rename the newly cloned repo to `chrome`
     * `mv firefox-csshacks chrome`
 0. `userChrome.css` and `userContent.css` files should be created inside this chrome-folder.
     * You can copy-paste and modify lines from `userChrome_example.css` and `userContent_example.css` to get started
