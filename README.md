@@ -8,26 +8,48 @@ Stylesheets in this repository are tested only on Windows 10 and to a lesser amo
 
 # Setup
 
-0. Go to about:config and set the pref `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` to make Firefox load userChrome.css and userContent.css
-0. Find your profile folder and
-    * If Firefox is running you can find by going to `about:support` and there should be a button with label "Open Folder" under application basics
-    * On command-line, you can also find your firefox executable and run `firefox -ProfileManager`
-0. Clone this repository in the profile folder
-    * `git clone https://github.com/MrOtherGuy/firefox-csshacks.git` on command-line (first `cd` into the profile directory of course!)
-0. Rename the newly cloned repo to `chrome`
-    * `mv firefox-csshacks chrome`
-0. `userChrome.css` and `userContent.css` files should be created inside this chrome-folder.
-    * You can copy-paste and modify lines from `userChrome_example.css` and `userContent_example.css` to get started
+As an overview, you will make Firefox load two special stylesheets - `userChrome.css` and `userContent.css`. Doing so requires setting a specific preference (see below) and then creating those files inside your Firefox user profile.
+
+The setup is quite straightforward with the exception of how to find the profile folder so pay attention to that.
+
+## Set the pref to load stylesheets
+
+Go to `about:config` and set the pref `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
+
+After you set this pref, Firefox will try to load `userChrome.css` and `userContent.css` - but those files don't exist yet so now let's create them.
+
+## Setting up files 
+
+### Find the profile folder
+
+First, find your profile folder. While Firefox is running, go to `about:support` and find a `Profile folder` row near the top - there should also be a button labeled "Open folder" next to it. Clicking that button should open the folder in your file manager.
+
+NOTE: On some Firefox versions clicking that button may open the **profiles** folder which houses *all* your profiles. In that case, navigate into the specific folder you wish to modify. `about:support` should still show the correct folder name so refer to that if you need to figure out the what folder you need to open.
+
+The real profile folder should have files like `prefs.js` and `places.sqlite` If you see those two files in the folder, then great! You found the profile folder! Now lets actually create those stylesheet files.
+
+### Creating the stylesheet files
+
+Note: only userChrome.css is mentioned in this section for brevity, but everything regarding that will also apply to userContent.css
+
+Firefox loads `userChrome.css` from `<profileFolder>/chrome/userChrome.css`. That chrome-folder or the stylesheet files do not exist by default.
+
+### Set up files manually
+
+<details>
+<summary>Manually copying individual styles directly into userChrome.css is a simple way to do things for better and for worse.</summary>
+
+0. Create a new folder into the profile folder and name it `chrome`
+0. Create `userChrome.css` inside that newly created chrome-folder
+0. Copy-paste contents of individual .css files from this repository into your userChrome.css file (and save it of course!)
 0. If Firefox is running, restart Firefox so that the changes take effect
 
-As an alternative to cloning this repository you can set up the `chrome` folder manually.
-In the end you should have a folder structure like this:
+**Pay attention to the filename** of `userChrome.css` - the file extension must be `.css` and if your file manager is hiding file extensions then you might accidentally create a file named `userChrome.css.txt` and Firefox will not load that.
 
+In the end you should have a folder structure like this:
 ```
 <profile_folder>
 |_ chrome
-|   |_ chrome
-|   |_ content
 |   |_ userChrome.css
 |   |_ userContent.css
 |_ extensions
@@ -37,17 +59,42 @@ all other profile folders and files
 ...
 ```
 
-In short, create a parent chrome folder to the same directory where `prefs.js` is - the main profile folder. Firefox loads `userContent.css` and `userChrome.css` files only from that `chrome`-folder.
+</details>
+
+### Set up files using git
+
+<details>
+<summary>Preferred way to do things, since it makes updates easier and makes organizing multiple styles easier.</summary>
+
+Assumes that you have a git client installed, and that you do not already have a chrome folder in your profile. 
+
+0. Open a command prompt / console / terminal and `cd` into the profile folder
+0. Clone this repository into the profile folder
+    * `git clone https://github.com/MrOtherGuy/firefox-csshacks.git` on command-line
+    * This should create a new folder "firefox-csshacks" into your profile folder
+0. Rename the newly created "firefox-csshacks" folder to `chrome` so Firefox knows to look into that folder
+    * `mv firefox-csshacks chrome` (Linux, Windows PowerShell)
+    * `rename firefox-csshacks chrome` (Windows cmd.exe)
+    * Or just rename using your file manager
+0. (Optional) Make a copy of `userChrome_example.css` and rename the copy to `userChrome.css`
+0. `@import` individual style files into your userChrome.css
+    * Notice tha any `@import`s must be placed before anything else in whatever file you are using them
+    * Check userChrome_example.css for how it uses `@import`
+0. If Firefox is running, restart Firefox so that the changes take effect
+
+Afterwards, you can just use `git pull` in the "chrome" folder and it will replace your copies with up-to-date versions. `git pull` won't replace your userChrome.css file so you can safely put your own custom rules into userChrome.css directly and those won't be overwritten when you update.
+
+</details>
 
 # Style categories
 
 The files themselves are only separated to *chrome* and *content* sub-folders. Files have a one or more *tag* applied to them as listed in `tags.csv` file.
 
-You can browse the tag-categorized files by [using this simple ui](https://mrotherguy.github.io/firefox-csshacks/)
+You can browse the tag-categorized files by [using this UI](https://mrotherguy.github.io/firefox-csshacks/)
 
 # Usage
 
-Stylesheets are divided in to chrome and content folders. The difference is that styles inside "content" affect web-pages whereas styles inside "chrome" affect browser UI.
+Stylesheets are divided in to chrome and content folders. Firefox loads `userChrome.css` into the browser UI and it loads `userContent.css` into the content documents like web pages and built-in or extension pages.
 
 Use stylesheets under "chrome" in `userChrome.css`
 
@@ -86,6 +133,8 @@ Example `userChrome.css`:
 Note that all `@import` rules need to be placed before any other rules in the file, including @namespace rules. Additionally, the order of imported files is just as important as the order of rules within one file.
 
 I would strongly advice using @import to include styles instead of copying contents directly to userChrome.css even with just a few file "components". The technical reason for this is that some files rely on @namespace rules and those only apply on file level such that a @namespace applies to every selector in that file (and in that file only). On top of that, @imports make managing multiple files much easier.
+
+## Further miscallaneous notes
 
 Import any *_patch.css files *after* their base stylesheet.
 Import the shared window_control_support.css *before* other stylesheets.
