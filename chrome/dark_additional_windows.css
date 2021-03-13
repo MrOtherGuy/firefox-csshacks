@@ -53,8 +53,7 @@ See the above repository for updates as well as full license text. */
   menulist:hover{ border-color: highlight; background-color: rgba(255,255,255,0.1) }
     
   .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
-  
-  #searchFilter,search-textbox,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
+  #topBar,#searchFilter,search-textbox,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
   search-textbox > input,#searchFilter > input,input[readonly]{ background-color: transparent !important; }
     
   treecol:not([hideheader]){ height: 24px; }
