@@ -6,5 +6,5 @@ See the above repository for updates as well as full license text. */
 #urlbar[usertyping] .urlbarView-row:not([type]):first-child,
 #urlbar[usertyping] .urlbarView-row[type="search"]:first-child,
 .urlbarView-row[type="tabtosearch"] {
-  display: none;
+  display: none !important;
 }
