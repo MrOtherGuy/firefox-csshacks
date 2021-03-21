@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
 
 :root{ --uc-window-control-width: 0px !important }
 
-#navigator-toolbox{ margin-top: 29px }
+#navigator-toolbox{ padding-top: 29px !important }
 
 #toolbar-menubar{
   position: fixed;
