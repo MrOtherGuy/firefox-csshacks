@@ -9,6 +9,8 @@ See the above repository for updates as well as full license text. */
 urlbar_popup_full_width.css is VERY MUCH recommended for Firefox 71+ because of new urlbar popup
 */
 
+:root[proton][uidensity="compact"]{ --proton-tab-block-margin: 2px !important; }
+
 /* Modify these to change relative widths or default height */
 #navigator-toolbox{
   --uc-navigationbar-width: 40vw;
@@ -16,8 +18,8 @@ urlbar_popup_full_width.css is VERY MUCH recommended for Firefox 71+ because of 
   --uc-urlbar-min-width: none; /* Can set minimum width for focused urlbar here eg. 550px */
 }
 /* Override for other densities */
-:root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
-:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
+:root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 34px; }
+:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
 
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
@@ -29,7 +31,9 @@ urlbar_popup_full_width.css is VERY MUCH recommended for Firefox 71+ because of 
   margin-left: var(--uc-navigationbar-width);
   --tabs-navbar-shadow-size: 0px;
 }
-#tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
+#tabbrowser-tabs{
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--proton-tab-block-margin,0px)) !important;
+}
 
 /* This isn't useful when tabs start in the middle of the window */
 

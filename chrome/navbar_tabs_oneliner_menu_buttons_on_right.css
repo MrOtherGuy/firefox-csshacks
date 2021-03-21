@@ -9,8 +9,9 @@ Get window_control_placeholder_support.css
 Window controls will be all wrong without it
 */
 
-/* Modify these to change relative widths or default height */
+:root[proton][uidensity="compact"]{ --proton-tab-block-margin: 2px !important; }
 
+/* Modify these to change relative widths or default height */
 #navigator-toolbox{
   --uc-navigationbar-width: 50vw;
   --uc-toolbar-height: 40px;
@@ -19,8 +20,11 @@ Window controls will be all wrong without it
 #navigator-toolbox{--uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))}
 #nav-bar:not([overflowing]) > #nav-bar-customization-target{ --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px) }
 /* Override for other densities */
-:root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; --uc-menubutton-padding: 0px}
-:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
+:root[uidensity="compact"] #navigator-toolbox{
+  --uc-toolbar-height: 34px;
+  --uc-menubutton-padding: 0px;
+}
+:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
 
 :root[uidensity="compact"] #urlbar-container{
   --urlbar-container-height: var(--uc-toolbar-height) !important;
@@ -40,7 +44,19 @@ Window controls will be all wrong without it
   margin-left: var(--uc-navigationbar-width);
   --tabs-navbar-shadow-size: 0px;
 }
-#tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
+
+#tabbrowser-tabs{
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--proton-tab-block-margin,0px)) !important;
+}
+/* Need to set background color for selected tab so it can be distinguished from background */
+#TabsToolbar .tab-background[selected]{
+  background: var(--lwt-selected-tab-background-color,rgba(0,0,0,0.2)) !important;
+}
+
+#TabsToolbar[brighttext] .tab-background[selected]{
+  background: var(--lwt-selected-tab-background-color,rgba(255,255,255,0.2)) !important;
+}
+
 /* This isn't useful when tabs start in the middle of the window */
 .titlebar-placeholder[type="pre-tabs"],.titlebar-spacer[type="pre-tabs"]{ width:8px !important}
 #nav-bar{ margin-top: calc(0px - var(--uc-toolbar-height)); }
@@ -52,7 +68,10 @@ Window controls will be all wrong without it
   #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-width)) }
 }
 
-#TabsToolbar > .toolbar-items{ position: relative !important; z-index: 2 }
+#TabsToolbar > .toolbar-items{
+  position: relative !important;
+  z-index: 2
+}
 .titlebar-placeholder[type="post-tabs"],
 .titlebar-spacer[type="post-tabs"]{
   width: calc(var(--uc-buttons-width) + var(--uc-window-drag-space-width)) !important;

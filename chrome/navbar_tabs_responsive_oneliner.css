@@ -6,9 +6,14 @@ See the above repository for updates as well as full license text. */
 /* Use page_action_buttons_on_hover.css to hide page-action-buttons to save more space for the address */
 
 /* Toolbars will be shown normally if window width goes below the value below */
-/* Modify it to suit your needs */
 
+
+
+/* Modify it to suit your needs */
 @media screen and (min-width: 1100px){
+  
+  :root[proton][uidensity="compact"]{ --proton-tab-block-margin: 2px !important; }
+  
   /* Modify these to change relative widths or default height */
   #navigator-toolbox{
     --uc-navigationbar-width: 40vw;
@@ -22,14 +27,16 @@ See the above repository for updates as well as full license text. */
   }
 
   /* Override for other densities */
-  :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
-  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
+  :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 34px; }
+  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
 
   #TabsToolbar{
     margin-left: var(--uc-navigationbar-width);
     --tabs-navbar-shadow-size: 0px;
   }
-  #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
+  #tabbrowser-tabs{
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--proton-tab-block-margin,0px)) !important;
+}
   
   /* This isn't useful when tabs start in the middle of the window */
   .titlebar-spacer[type="pre-tabs"]{ display: none }

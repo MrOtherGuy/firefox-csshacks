@@ -9,14 +9,16 @@ Get window_control_placeholder_support.css
 Window controls will be all wrong without it
 */
 
+:root[proton][uidensity="compact"]{ --proton-tab-block-margin: 2px !important; }
+
 /* Modify these to change relative widths or default height */
 #navigator-toolbox{
   --uc-navigationbar-width: 40vw;
   --uc-toolbar-height: 40px;
 }
 /* Override for other densities */
-:root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px;}
-:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
+:root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 34px;}
+:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
 
 :root[uidensity=compact] #urlbar-container{
   --urlbar-container-height: var(--uc-toolbar-height) !important;
@@ -44,11 +46,18 @@ Window controls will be all wrong without it
   margin-right: var(--uc-navigationbar-width);
   --tabs-navbar-shadow-size: 0px;
 }
-#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
+
+#tabbrowser-tabs{
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--proton-tab-block-margin,0px)) !important;
+}
+
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{
+  min-height: var(--uc-toolbar-height) !important
+}
 #tabbrowser-tabs,
 .tabbrowser-tab[pinned]{
-  height: var(--uc-toolbar-height) !important;
-  min-height: var(--uc-toolbar-height) !important;
+  height: var(--tab-min-height) !important;
+  min-height: var(--tab-min-height) !important;
 }
 #nav-bar{
   margin-left: calc(100vw - var(--uc-navigationbar-width));
