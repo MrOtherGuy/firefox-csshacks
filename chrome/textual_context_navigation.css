@@ -5,5 +5,9 @@ See the above repository for updates as well as full license text. */
 
 #context-navigation{ -moz-box-orient: vertical }
 #context-navigation > menuitem > .menu-iconic-left{ display: none }
-#context-navigation > menuitem{ padding-inline-start: 30px !important; -moz-box-pack: start !important }
+#context-navigation > menuitem{
+  padding-block: 0.5em;
+  padding-inline-start: 1em;
+  -moz-box-pack: start !important
+}
 #context-navigation > menuitem::before{ content: attr(aria-label) }
