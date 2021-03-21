@@ -37,7 +37,7 @@ linux_gtk_window_control_patch.css
   :root[sizemode="maximized"] #toolbar-menubar:not([autohide="false"]) .titlebar-buttonbox-container{ top: 8px }
 }
 /* Move tabs below content */
-:root:not([inDOMFullscreen]) #browser-bottombox{ margin-bottom: var(--tab-min-height) }
+:root:not([inDOMFullscreen]) #browser-bottombox{ margin-bottom: calc(var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px)) }
 :root[inFullscreen]:not([inDOMFullscreen]) #browser-bottombox{ margin-bottom: 1px; }
 
 #TabsToolbar{
@@ -45,12 +45,12 @@ linux_gtk_window_control_patch.css
   display: block;
   bottom: 0;
   width: 100vw;
-  height: var(--tab-min-height);
+  height: calc(var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px));
   --tabs-navbar-shadow-size: 0px;
 }
 #TabsToolbar:hover{ z-index: 1 }
 
-:root[inFullscreen] #TabsToolbar{ background-color: var(--lwt-accent-color); }
+#TabsToolbar{ background-color: var(--lwt-accent-color); }
 #TabsToolbar-customization-target{ width: 100vw; }
 :root[tabsintitlebar] #TabsToolbar{ bottom: -1px }
 .tab-background{ border-top-style: none !important; }
