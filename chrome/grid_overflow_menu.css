@@ -6,17 +6,17 @@ See the above repository for updates as well as full license text. */
 
 #widget-overflow-mainView{ min-width: 80px !important; }
 
-.widget-overflow-list:not([customizing]){
+#widget-overflow-fixed-list{
   display: grid;
   grid-template-areas: "s s s" "a a a";
   grid-auto-columns: auto;
 }
 
-#widget-overflow-mainView[visible] .widget-overflow-list:not([customizing]) { max-width: 110px }
+#widget-overflow-mainView[visible] #widget-overflow-fixed-list { max-width: 110px }
 #widget-overflow-mainView ~ panelview[visible]{ max-width: unset !important; } 
 
-.widget-overflow-list:not([customizing]) > *{ padding-block: 8px !important; }
-.widget-overflow-list > #search-container{ grid-area: s }
+#widget-overflow-fixed-list > *{ padding-block: 8px !important; }
+#widget-overflow-fixed-list > #search-container{ grid-area: s }
 
-.widget-overflow-list:not([customizing]) .subviewbutton-nav::after,
-.widget-overflow-list:not([customizing]) .toolbarbutton-text{ display: none }
+#widget-overflow-mainView #widget-overflow-fixed-list .subviewbutton-nav::after,
+#widget-overflow-mainView #widget-overflow-fixed-list .toolbarbutton-text{ display: none }
