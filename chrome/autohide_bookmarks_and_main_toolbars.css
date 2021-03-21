@@ -46,6 +46,8 @@ See the above repository for updates as well as full license text. */
 #PersonalToolbar{ border-bottom: 1px solid var(--chrome-content-separator-color) }
 #navigator-toolbox > *{ pointer-events: auto }
 
+#sidebar-box{ position: relative }
+
 /* SELECT TOOLBAR BEHAVIOR */
 /* Comment out or delete one of these to disable that behavior */
 
