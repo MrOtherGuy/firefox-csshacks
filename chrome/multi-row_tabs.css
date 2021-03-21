@@ -36,7 +36,7 @@ See the above repository for updates as well as full license text. */
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
-    max-height: calc(var(--tab-min-height) * var(--multirow-n-rows));
+    max-height: calc((var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px)) * var(--multirow-n-rows));
     scrollbar-color: currentColor transparent;
     scrollbar-width: thin;
   }
@@ -49,7 +49,7 @@ See the above repository for updates as well as full license text. */
   --scrollbutton-display-model: none;
 }
 
-.tabbrowser-tab{ height: var(--tab-min-height); }
+.tabbrowser-tab{ height: calc((var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px))) !important; }
 
 #tabbrowser-tabs .tabbrowser-tab[pinned]{
   position: static !important;
