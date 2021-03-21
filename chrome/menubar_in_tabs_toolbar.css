@@ -1,14 +1,15 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/menubar_in_tabs_toolbar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Makes menubar to appear in tabs toolbar pushing tabs to the side */
-#toolbar-menubar:not([inactive]) ~ #TabsToolbar{
-  margin-left:300px !important;
-  margin-top: -26px !important;
-}
-:root[sizemode="maximized"] #toolbar-menubar:not([inactive]) ~ #TabsToolbar{
-  margin-top: -28px !important;
+:root:not([customizing]) #titlebar{ -moz-box-orient: horizontal }
+#toolbar-menubar > .titlebar-buttonbox-container,
+#toolbar-menubar > spacer{ display: none; }
+
+#toolbar-menubar{ -moz-box-align: center }
+:root:not([customizing]) #toolbar-menubar[autohide][inactive]{ max-width: 0 }
+
+#TabsToolbar > .titlebar-buttonbox-container{
+  display: -moz-box !important;
+  visibility: visible !important;
 }
 
-#toolbar-menubar >  .titlebar-buttonbox-container{ display: none }
-#TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box !important; visibility: visible !important; }
