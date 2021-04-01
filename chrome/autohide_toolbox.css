@@ -17,11 +17,11 @@ See the above repository for updates as well as full license text. */
 
 @media (-moz-os-version: windows-win10){
 
-  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 9px !important; }
-  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
+  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
 
   @media screen and (min-resolution: 1.25dppx){
     :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
+    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px; }
   }
   @media screen and (min-resolution: 1.5dppx){
     :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
@@ -47,6 +47,7 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   pointer-events: none;
 }
+
 
 /* #mainPopupSet:hover ~ box > toolbox, */
 /* Uncomment the above line to make toolbar visible if some popup is hovered */
