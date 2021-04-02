@@ -3,11 +3,13 @@ See the above repository for updates as well as full license text. */
 
 /* Makes constext navigation buttons appears as normal textual menuitems */
 
-#context-navigation{ -moz-box-orient: vertical }
+#context-navigation{ -moz-box-orient: vertical; flex-direction: column !important; }
 #context-navigation > menuitem > .menu-iconic-left{ display: none }
 #context-navigation > menuitem{
-  padding-block: 0.5em;
+  padding-block: 0.3em;
   padding-inline-start: 1em;
-  -moz-box-pack: start !important
+  -moz-box-pack: start !important;
+  width: auto !important;
 }
+#context-navigation > menuitem[_moz-menuactive="true"]:not([disabled]){ background-color: var(--menuitem-hover-background-color) !important; }
 #context-navigation > menuitem::before{ content: attr(aria-label) }

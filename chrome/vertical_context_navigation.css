@@ -1,6 +1,7 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_context_navigation.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
+/* This very likely only works properly on Windows10 */
 /* If this won't work correctly can try the v2 file */
 
 #contentAreaContextMenu{ --uc-popup-display: grid; --uc-pseudo-elem: "" }
@@ -22,10 +23,9 @@ scrollbox[orient="vertical"]::before{
 
 #contentAreaContextMenu menu{ --uc-popup-display: } /* intentionally blank */
 
-#context-navigation{ -moz-box-orient: vertical; grid-area: 1 / 1 / auto / 1 }
-#context-navigation > menuitem{ min-height: 38px }
+#context-navigation{ -moz-box-orient: vertical; flex-direction: column !important; grid-area: 1 / 1 / auto / 1; min-width: unset !important; }
+#context-navigation > menuitem{ min-height: 38px; width: unset !important; }
 #context-navigation > menuitem > .menu-iconic-left{ margin: 0 !important; padding: 0 !important; }
 #context-sep-navigation{ display: none }
 #context-navigation ~ * { grid-area: auto / 2 / auto / 2; }
 #context-navigation[hidden] ~ *{ margin-inline-start: -38px; }
-
