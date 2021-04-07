@@ -26,3 +26,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
   height: 16px !important;
   padding: 1px !important;
 }
+
+#tabbrowser-tabs{ --uc-tabs-scrollbutton-margin: 2px }
+#scrollbutton-up,
+#scrollbutton-down{ margin: var(--uc-tabs-scrollbutton-margin,0px) !important; }
