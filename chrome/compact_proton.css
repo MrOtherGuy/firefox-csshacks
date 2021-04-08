@@ -13,7 +13,7 @@ See the above repository for updates as well as full license text. */
 menupopup > menuitem,
 menupopup > menu{ padding-block: 0.3em !important; }
 
-#urlbar-container{ padding-block: 0px !important; }
+#urlbar-container{ padding-block: 2px !important; }
 #urlbar-background{ margin-block: 1px }
 /* This is kinda weird, but it makes the horizontal line between tabs and nav-bar render "inside" nav-bar thus tabs are more visibily separated even if there is less space there */
 #nav-bar{ 
@@ -27,6 +27,6 @@ menupopup > menu{ padding-block: 0.3em !important; }
   padding: 1px !important;
 }
 
-#tabbrowser-tabs{ --uc-tabs-scrollbutton-margin: 2px }
+#tabbrowser-tabs{ --uc-tabs-scrollbutton-border: 2px }
 #scrollbutton-up,
-#scrollbutton-down{ margin: var(--uc-tabs-scrollbutton-margin,0px) !important; }
+#scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
