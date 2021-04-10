@@ -5,7 +5,7 @@ See the above repository for updates as well as full license text. */
 /* overlay_menubar.css can be used for better handling of menubar when triggered with Alt-key */
 /* This style totally breaks bookmarks toolbar but can be used with autohide_bookmarks_toolbar.css */
 
-:root:not([customizing]) #navigator-toolbox{ display: grid; grid-template-rows: var(--tab-min-height) }
+:root:not([customizing]) #navigator-toolbox{ display: grid; grid-template-rows: auto }
 :root:not([customizing]) #navigator-toolbox > *{ grid-area: 1/1; }
 :root:not([customizing]) #titlebar{ -moz-appearance: none !important; }
 
@@ -24,7 +24,7 @@ See the above repository for updates as well as full license text. */
     :root[sizemode="maximized"]:not([inDOMFullscreen]){ margin-top: 5px !important; }
   }
 }
-
+#urlbar-container{ margin-top: 1px }
 :root[sessionrestored] #nav-bar:not([customizing]){
   transform: rotateX(90deg);
   transition: transform 67ms linear, opacity 0ms linear 67ms !important;
