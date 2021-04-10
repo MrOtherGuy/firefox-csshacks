@@ -3,14 +3,14 @@ See the above repository for updates as well as full license text. */
 
 /* Effect */
 
-:root:not([uidensity="compact"]) #back-button{ --uc-back-extra-padding: 2px }
+:root:not([uidensity="compact"],[proton]) #back-button{ --uc-back-extra-padding: 2px }
 
 .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon{
   transition: transform 83ms linear !important;
 }
 
-toolbar .toolbarbutton-1 > .toolbarbutton-icon
+toolbar .toolbarbutton-1 > .toolbarbutton-icon,
 .urlbar-icon{
   transition: padding 83ms linear !important;
 }
