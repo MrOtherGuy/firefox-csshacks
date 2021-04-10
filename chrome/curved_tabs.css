@@ -72,7 +72,7 @@ See the above repository for updates as well as full license text. */
 /*
 .tab-background{ -moz-box-direction: reverse }
 .tabbrowser-tab:hover > stack > .tab-background,
-.tab-background[selected]{ border-radius: 0 0 var(--uc-tab-curve-size) var(--uc-tab-curve-size) }
+.tab-background[selected]{ border-radius: 0 0 var(--uc-tab-curve-size) var(--uc-tab-curve-size) !important }
 .tabbrowser-tab > stack::before{ transform: scaleY(-1) !important; }
 .tabbrowser-tab > stack::after{ transform: scaleY(-1) scaleX(-1) !important; }
 */
