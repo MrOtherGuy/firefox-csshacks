@@ -118,5 +118,6 @@
 "window_control_placeholder_support.css":["window-control","patch"],
 "buttonlike_toolbarbuttons.css":["buttons"],
 "passive_tab_audio_label.css":["tab","proton"],
-"hide_tabs_scrollbuttons.css":["tabs","hiding","buttons","minimal"]
+"hide_tabs_scrollbuttons.css":["tabs","hiding","buttons","minimal"],
+"tab_effect_scale_onclick.css":["tab","effect"]
 }
