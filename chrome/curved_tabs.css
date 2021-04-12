@@ -9,6 +9,7 @@ See the above repository for updates as well as full license text. */
   --proton-tab-block-margin:0px;
   --tab-min-height: 34px;
 }
+
 #TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
 
 .tabbrowser-tab:hover{ --uc-tab-fill: rgba(0,0,0,.1) }
@@ -68,6 +69,19 @@ See the above repository for updates as well as full license text. */
 /* Annoying fix to prevent hovering of last tab to trigger tab overflow, better solution wanted */
 .tabbrowser-tab[last-visible-tab]{ margin-inline-end: var(--uc-tab-curve-size) !important; }
 
+/* OPTIONAL - COLORS - show tabs border, selected tab line and make selected tab match the main toolbar color. Also disables tab shadow */
+/*
+#navigator-toolbox{ --tabs-border-color: color-mix(in srgb, currentcolor, transparent 80%) !important; }
+#tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
+.tab-background{ box-shadow: none !important; }
+
+.tab-background[selected]::before{
+  content: "";
+  display: -moz-box;
+  height: 2px;
+  background: highlight !important;
+}
+*/
 /* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
 /*
 .tab-background{ -moz-box-direction: reverse }
