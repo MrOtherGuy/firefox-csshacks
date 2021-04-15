@@ -2,6 +2,7 @@
 See the above repository for updates as well as full license text. */
 
 /* Make devtools use dark theme if your OS is in dark mode. Set devtools to Light-theme for this style to work */
+/* For Responsive Design Mode you need to use ../chrome/auto_devtools_theme_for_rdm.css in userChrome.css */
 
 @-moz-document url("about:devtools-toolbox"), url-prefix("chrome://devtools/content/"){
   @media(prefers-color-scheme: dark){
