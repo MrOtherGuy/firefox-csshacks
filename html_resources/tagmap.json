@@ -119,5 +119,6 @@
 "buttonlike_toolbarbuttons.css":["buttons"],
 "passive_tab_audio_label.css":["tab","proton"],
 "hide_tabs_scrollbuttons.css":["tabs","hiding","buttons","minimal"],
-"tab_effect_scale_onclick.css":["tab","effect"]
+"tab_effect_scale_onclick.css":["tab","effect"],
+"auto_devtools_theme_for_rdm.css":["devtools","colors"]
 }

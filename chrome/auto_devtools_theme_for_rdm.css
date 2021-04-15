@@ -1,0 +1,72 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/auto_devtools_theme_for_rdm.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes Responsive Design Mode use a theme based on prefers-color-scheme - Set your devtools theme to Light for this to work */
+/* This style accompanies ../content/auto_devtools_theme.css which does the same for other parts of devtools. */
+
+
+@-moz-document url("chrome://devtools/content/responsive/toolbar.xhtml"){
+  @media (prefers-color-scheme:dark){
+    :root{  
+      --theme-body-background: #232327 !important;
+
+      /* Toolbar */
+      --theme-tab-toolbar-background: var(--grey-90) !important;
+      --theme-toolbar-background: #18181a !important;
+      --theme-toolbar-color: var(--grey-40) !important;
+      --theme-toolbar-selected-color: white !important;
+      --theme-toolbar-highlighted-color: var(--green-50) !important;
+      --theme-toolbar-background-hover: #232327 !important;
+      --theme-toolbar-background-alt: var(--grey-85) !important;
+      --theme-toolbar-hover: #232327 !important;
+      --theme-toolbar-hover-active: #252526 !important;
+      --theme-toolbar-separator: var(--grey-10-a20) !important;
+
+      /* Toolbar buttons */
+      --toolbarbutton-background: var(--grey-70) !important;
+      --toolbarbutton-hover-background: var(--grey-70) !important;
+      --toolbarbutton-focus-background: var(--grey-60) !important;
+      --toolbarbutton-focus-color: var(--grey-30) !important;
+      --toolbarbutton-checked-background: #204e8a !important;
+      --toolbarbutton-checked-focus-background: var(--blue-60) !important;
+      --toolbarbutton-checked-color: #ffffff !important;
+
+      /* Buttons */
+      --theme-button-background: rgba(249, 249, 250, 0.1) !important;
+      --theme-button-active-background: rgba(249, 249, 250, 0.15) !important;
+    
+      /* Selection */
+      --theme-selection-background: #204e8a !important;
+      --theme-selection-background-hover: #353b48 !important;
+      --theme-selection-focus-background: var(--grey-60) !important;
+      --theme-selection-color: #ffffff !important;
+
+
+      /* Border color that splits the toolbars/panels/headers. */
+      --theme-splitter-color: var(--grey-70) !important;
+
+      /* Icon colors */
+      --theme-icon-color: rgba(249, 249, 250, 0.7) !important;
+      --theme-icon-dimmed-color: rgba(147, 147, 149, 0.9) !important;
+
+      /* Text color */
+      --theme-body-color: var(--grey-40) !important;
+
+      /* Common popup styles(used by HTMLTooltip and autocomplete) */
+      --theme-popup-background: var(--grey-60) !important;
+      --theme-popup-color: rgb(249, 249, 250) !important;
+      --theme-popup-border-color: #27272b !important;
+      --theme-popup-dimmed: rgba(249, 249, 250, 0.1) !important;
+
+      --theme-toolbarbutton-active-background: var(--grey-10-a30) !important;
+      --theme-toolbarbutton-active-color: var(--grey-30) !important;
+    }
+  }
+}
+
+@media (prefers-color-scheme:dark){
+  #appcontent[devtoolstheme]{
+    --rdm-browser-container-background: #18181a !important;
+    --rdm-browser-box-shadow: 0 4px 4px 0 rgba(105, 105, 105, 0.26) !important;
+  }
+}
