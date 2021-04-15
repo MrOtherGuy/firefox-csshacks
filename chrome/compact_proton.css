@@ -7,7 +7,9 @@ See the above repository for updates as well as full license text. */
   --toolbarbutton-inner-padding: 6px !important;
   --proton-tab-block-margin: 2px !important;
   --tabs-shadow-size: 0px !important;
-  --arrowpanel-menuitem-padding: 5px !important;
+  --arrowpanel-menuitem-padding: 4px !important;
+  --panel-font-size: inherit !important;
+  --arrowpanel-padding: 0.8em !important;
 }
 
 menupopup > menuitem,
