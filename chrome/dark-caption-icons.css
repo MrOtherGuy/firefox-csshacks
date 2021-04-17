@@ -1,0 +1,39 @@
+.titlebar-buttonbox {
+    position: relative;
+    margin-right: 0px;
+	margin-top: -10px !important;
+}
+.titlebar-button {
+	transition: all 0.3s ease !important;
+	padding: 8px 10px !important;
+    background: rgba(var(--dark-color), 1) !important;
+}
+.titlebar-button.titlebar-close {
+	padding-right: 26px !important;
+}
+.titlebar-button > .toolbarbutton-icon {
+	transition: all 0.3s ease !important;
+	list-style-image: none;
+	border-radius: 10px;
+}
+
+.titlebar-button.titlebar-min > .toolbarbutton-icon {
+	background: rgba(var(--caption-min-color), 1) !important;
+}
+.titlebar-button.titlebar-max > .toolbarbutton-icon,
+.titlebar-button.titlebar-restore > .toolbarbutton-icon {
+	background: rgba(var(--caption-max-color), 1) !important;
+}
+.titlebar-button.titlebar-close > .toolbarbutton-icon {
+    background: rgba(var(--caption-close-color), 1) !important;
+}
+
+.titlebar-button:hover > .toolbarbutton-icon {
+	background: rgba(var(--third-accent-color), 1) !important;
+}
+.titlebar-button.titlebar-min:hover > .toolbarbutton-icon,
+.titlebar-button.titlebar-max:hover > .toolbarbutton-icon,
+.titlebar-button.titlebar-restore:hover > .toolbarbutton-icon,
+.titlebar-button.titlebar-close:hover > .toolbarbutton-icon {
+	
+}
