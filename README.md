@@ -72,6 +72,7 @@ Assumes that you have a git client installed, and that you do not already have a
 0. Clone this repository into the profile folder
     * `git clone https://github.com/MrOtherGuy/firefox-csshacks.git chrome` on command-line
     * This should create a new folder "chrome" into your profile folder with the contents of this repository
+    * (**NOTE**: if you already have "chrome" folder, then rename it before cloning. After clone is complete, just copy the *contents* of the old folder into the new chrome folder)
 0. (Optional) Make a copy of `userChrome_example.css` and rename the copy to `userChrome.css`
 0. `@import` individual style files into your userChrome.css
     * Notice tha any `@import`s must be placed before anything else in whatever file you are using them
