@@ -1,0 +1,13 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/inline_tab_audio_icons.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Shows tab audio icons next to the tab icon, and by default removes the tab secondary line */
+
+.tab-icon-stack:is([muted],[soundplaying],[activemedia-blocked]){
+  grid-template-areas: "a s";
+}
+.tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
+.tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }
+
+/* secondary audio label can be removed if you use this style, but feel free to remove the next line if you want to show it. */
+.tab-secondary-label{ display: none }
