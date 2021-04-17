@@ -1,3 +1,9 @@
+:root {
+	--dark-color: 36, 36, 36;
+	--caption-min-color: 82, 82, 82;
+	--caption-max-color: 100, 100, 100;
+	--caption-close-color: 126, 126, 126;
+}
 .titlebar-buttonbox {
     position: relative;
     margin-right: 0px;
