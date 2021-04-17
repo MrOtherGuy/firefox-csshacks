@@ -11,3 +11,9 @@ See the above repository for updates as well as full license text. */
 
 /* secondary audio label can be removed if you use this style, but feel free to remove the next line if you want to show it. */
 .tab-secondary-label{ display: none }
+
+/* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
+.tab-secondary-label{ display: none }
+
+/* show the secondary label when video is in PiP */
+.tab-secondary-label[pictureinpicture]{ display: -moz-box }
