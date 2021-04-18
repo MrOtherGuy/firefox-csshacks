@@ -1,9 +1,9 @@
 :root {
-	--dark-color: 36, 36, 36;
-	--caption-min-color: 36, 209, 49;
-	--caption-max-color: 252, 185, 15;
-	--caption-close-color: 250, 55, 55;
-	--third-accent-color: 190, 190, 190;
+	--dark-color: rgb(36, 36, 36, 1);
+	--caption-min-color: rgba(36, 209, 49, 1);
+	--caption-max-color: rgba(252, 185, 15, 1);
+	--caption-close-color: rgba(250, 55, 55, 1);
+	--third-accent-color: rgba(190, 190, 190, 1);
 }
 
 
@@ -15,7 +15,7 @@
 .titlebar-button {
 	transition: all 0.3s ease !important;
 	padding: 8px 10px !important;
-    background: rgba(var(--dark-color), 1) !important;
+    background: var(--dark-color) !important;
 }
 .titlebar-button.titlebar-close {
 	padding-right: 26px !important;
@@ -27,17 +27,17 @@
 }
 
 .titlebar-button.titlebar-min > .toolbarbutton-icon {
-	background: rgba(var(--caption-min-color), 1) !important;
+	background: var(--caption-min-color) !important;
 }
 .titlebar-button.titlebar-max > .toolbarbutton-icon,
 .titlebar-button.titlebar-restore > .toolbarbutton-icon {
-	background: rgba(var(--caption-max-color), 1) !important;
+	background: var(--caption-max-color) !important;
 }
 .titlebar-button.titlebar-close > .toolbarbutton-icon {
-    background: rgba(var(--caption-close-color), 1) !important;
+    background: var(--caption-close-color) !important;
 }
 
 .titlebar-button:hover > .toolbarbutton-icon {
-	background: rgba(var(--third-accent-color), 1) !important;
+	background: var(--third-accent-color) !important;
 }
 
