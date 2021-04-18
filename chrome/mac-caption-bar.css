@@ -3,6 +3,7 @@
 	--caption-min-color: 36, 209, 49;
 	--caption-max-color: 252, 185, 15;
 	--caption-close-color: 250, 55, 55;
+	--third-accent-color: 190, 190, 190;
 }
 
 
@@ -38,11 +39,5 @@
 
 .titlebar-button:hover > .toolbarbutton-icon {
 	background: rgba(var(--third-accent-color), 1) !important;
-}
-.titlebar-button.titlebar-min:hover > .toolbarbutton-icon,
-.titlebar-button.titlebar-max:hover > .toolbarbutton-icon,
-.titlebar-button.titlebar-restore:hover > .toolbarbutton-icon,
-.titlebar-button.titlebar-close:hover > .toolbarbutton-icon {
-	
 }
 
