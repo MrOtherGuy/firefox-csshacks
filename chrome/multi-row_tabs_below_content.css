@@ -142,6 +142,7 @@ See the above repository for updates as well as full license text. */
     max-height: var(--uc-scrollbox-max-height,1px);
     scrollbar-color: currentColor transparent;
     scrollbar-width: thin;
+    scroll-snap-type: y mandatory;
   }
 
   .scrollbox-clip[orient="horizontal"],
@@ -155,7 +156,10 @@ See the above repository for updates as well as full license text. */
   :root[inFullscreen] .scrollbox-clip[orient="horizontal"]:not(:hover),
   :root[inFullscreen] #tabbrowser-arrowscrollbox:not(:hover){ --uc-scrollbox-max-height: 1px; min-height: 1px !important; }
 
-  .tabbrowser-tab{ height: calc((var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px))) !important; }
+  .tabbrowser-tab{
+    height: calc((var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px))) !important;
+    scroll-snap-align: start;
+  }
 
   .tabbrowser-tab[pinned]{
     position: static !important;
