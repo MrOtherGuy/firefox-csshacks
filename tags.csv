@@ -121,3 +121,4 @@ hide_tabs_scrollbuttons.css,tabs,hiding,buttons,minimal
 tab_effect_scale_onclick.css,tab,effect
 auto_devtools_theme_for_rdm.css,devtools,colors
 inline_tab_audio_icons.css,tab,icon,proton
+round_caption_buttons.css,buttons,icon,window-controls
