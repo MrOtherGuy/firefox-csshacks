@@ -9,6 +9,7 @@ See the above repository for updates as well as full license text. */
   top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
 }
 #urlbar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
+.urlbar-icon{ height: calc(var(--urlbar-min-height) - 2px) !important; }
 .urlbarView{ margin-inline: 0 !important; width: auto !important; }
 .urlbarView-row{ padding: 0 2px !important; }
 .urlbarView-row-inner{ padding-inline-start: 4px !important; }
