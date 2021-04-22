@@ -11,6 +11,10 @@ See the above repository for updates as well as full license text. */
   --uc-tab-line-color: rgb(10, 132, 255);
 }
 
+.tabbrowser-tab{
+  padding-inline: 0px !important; /* By default, proton tabs have 2px + 2px = 4px space between them */
+}
+
 #TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
 
 .tabbrowser-tab:hover{ --uc-tab-fill: rgba(0,0,0,.1) }
