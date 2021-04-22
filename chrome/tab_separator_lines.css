@@ -4,8 +4,9 @@ See the above repository for updates as well as full license text. */
 /* Bring back tab separator lines that were removed in Proton */
 
 .tabbrowser-tab{
-  border-inline-start: 1px solid !important;
+  border-inline-end: 1px solid transparent !important;
   border-image: 0 1 linear-gradient(transparent 20%,var(--toolbarseparator-color) 20%,var(--toolbarseparator-color) 80%,transparent 80%);
 }
-.tabbrowser-tab[first-visible-tab],
-.tabbrowser-tab[first-visible-unpinned-tab]{ border: none !important; }
+.tabbrowser-tab[selected],
+.tabbrowser-tab[last-visible-tab],
+.tabbrowser-tab[beforeselected-visible]{ border-image: none !important; }
