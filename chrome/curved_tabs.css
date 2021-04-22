@@ -8,6 +8,7 @@ See the above repository for updates as well as full license text. */
   --uc-tabs-scrollbutton-border: 0px;
   --proton-tab-block-margin:0px;
   --tab-min-height: 34px;
+  --uc-tab-line-color: rgb(10, 132, 255);
 }
 
 #TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
@@ -79,9 +80,11 @@ See the above repository for updates as well as full license text. */
   content: "";
   display: -moz-box;
   height: 2px;
-  background: highlight !important;
+  background: var(--uc-tab-line-color) !important;
 }
 */
+
+
 /* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
 /*
 .tab-background{ -moz-box-direction: reverse }
