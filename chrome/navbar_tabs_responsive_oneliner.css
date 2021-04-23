@@ -10,15 +10,15 @@ See the above repository for updates as well as full license text. */
 
 
 /* Modify it to suit your needs */
-@media screen and (min-width: 1100px){
-  
+@media screen and (min-width: 1400px){
+
   :root[proton][uidensity="compact"]{ --proton-tab-block-margin: 2px !important; }
-  
+
   /* Modify these to change relative widths or default height */
   #navigator-toolbox{
-    --uc-navigationbar-width: 40vw;
+    --uc-navigationbar-width: 25vw;
     --uc-toolbar-height: 40px;
-    --uc-urlbar-min-width: none; /* Can set minimum width for focused urlbar here eg. 550px */
+    --uc-urlbar-min-width: 50vw; /* Can set minimum width for focused urlbar here eg. 550px */
   }
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
@@ -60,8 +60,26 @@ See the above repository for updates as well as full license text. */
 
   /* Hide dropdown placeholder */
   #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; }
-  
-  #urlbar:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
+  #urlbar-container:not(:focus) {
+    min-width: calc(var(--uc-navigationbar-width) *0.65) !important;
+  }
+  /* using urlbar-container will push PanelUI-button and menu arrow outward */
+  /* when window is maximized, pageproxystate is valid and url text will overflow over toolbar-icons */
+  #urlbar:focus-within[pageproxystate="invalid"] { min-width: var(--uc-urlbar-min-width,none) !important; }
+  /* overlay when urlbar is focused */
+  #nav-bar-customization-target, #PanelUI-button, #nav-bar-overflow-button, #TabsToolbar > .toolbar-items {
+    z-index: unset !important;
+  }
+
+  /* hide overflow indicator' separators*/
+  spacer[part="overflow-start-indicator"],
+  spacer[part="overflow-end-indicator"] {
+    border-image: linear-gradient(
+      black,
+      black calc(100% - 1px - var(--tabs-navbar-shadow-size)),
+      transparent calc(100% - 1px - var(--tabs-navbar-shadow-size))
+    ) !important;
+  }
 }
 /* Fix customization view */
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
