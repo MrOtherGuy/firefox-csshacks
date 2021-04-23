@@ -16,6 +16,9 @@ Window controls will be all wrong without it
   --uc-navigationbar-width: 50vw;
   --uc-toolbar-height: 40px;
 }
+@media (-moz-proton){
+  #scrollbutton-up,#scrollbutton-down{ border-block-width: 2px !important; }
+}
 /* reserved space for overflow + menu buttons */
 #navigator-toolbox{--uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))}
 #nav-bar:not([overflowing]) > #nav-bar-customization-target{ --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px) }
