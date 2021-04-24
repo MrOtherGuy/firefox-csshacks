@@ -11,15 +11,14 @@ have menubar permanently enabled and want it on top
 /*
 Get window_control_placeholder_support.css
 Window controls will be all wrong without it.
-
 Additionally on Linux, you may need to get:
 linux_gtk_window_control_patch.css
-
 */
 
 :root{ --uc-titlebar-padding: 0px; }
-:root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
-
+@media (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
+}
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
 #TabsToolbar > .titlebar-buttonbox-container{
   position: fixed;
@@ -30,9 +29,7 @@ linux_gtk_window_control_patch.css
 }
 /* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  @media not (-moz-os-version: windows-win10){
-    :root{ --uc-titlebar-padding: 0px !important }
-  }
+  :root{ --uc-titlebar-padding: 0px !important }
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
@@ -41,7 +38,6 @@ linux_gtk_window_control_patch.css
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
 
 #navigator-toolbox{ padding-top: var(--uc-titlebar-padding,0px) !important; }
-
 
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 

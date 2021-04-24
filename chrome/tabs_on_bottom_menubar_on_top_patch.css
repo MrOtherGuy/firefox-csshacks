@@ -6,14 +6,13 @@ See the above repository for updates as well as full license text. */
 
 :root{ --uc-window-control-width: 0px !important }
 
-#navigator-toolbox{ padding-top: 29px !important }
+#navigator-toolbox{ padding-top: calc(29px + var(--uc-titlebar-padding,0px)) !important }
 
 #toolbar-menubar{
   position: fixed;
   display: flex;
   top: var(--uc-titlebar-padding,0px);
   height: 29px;
-  margin-top:1px;
   width: 100%;
   overflow: hidden;
 }
