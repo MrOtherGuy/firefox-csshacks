@@ -56,8 +56,6 @@ See the above repository for updates as well as full license text. */
   transform: scaleX(-1);
 }
 
-.tab-background{ -moz-box-direction: reverse }
-
 .tabbrowser-tab:hover > stack > .tab-background,
 .tab-background[selected]{
   border-radius: var(--uc-tab-curve-size) var(--uc-tab-curve-size) 0 0 !important;
@@ -72,6 +70,11 @@ See the above repository for updates as well as full license text. */
 #scrollbutton-up,
 #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
 .tab-background[selected]{ border: 1px solid var(--tabs-border-color) !important; border-bottom: none !important }
+
+.tab-context-line{
+  -moz-box-ordinal-group: 2;
+  margin-block: 0 !important;
+}
 
 /* Annoying fix to prevent hovering of last tab to trigger tab overflow, better solution wanted */
 .tabbrowser-tab[last-visible-tab]{ margin-inline-end: var(--uc-tab-curve-size) !important; }
