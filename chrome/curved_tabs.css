@@ -83,7 +83,7 @@ See the above repository for updates as well as full license text. */
 /*
 #navigator-toolbox{ --tabs-border-color: color-mix(in srgb, currentcolor, transparent 80%) !important; }
 #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
-.tab-background{ box-shadow: none !important; }
+.tabbrowser-tab .tab-background{ border-top: none !important; box-shadow: none !important; }
 
 .tab-background[selected]::before{
   content: "";
