@@ -11,7 +11,7 @@ See the above repository for updates as well as full license text. */
   --panel-font-size: inherit !important;
   --arrowpanel-padding: 0.8em !important;
 }
-
+.subview-subheader{ height: 24px }
 menupopup > menuitem,
 menupopup > menu{ padding-block: 0.3em !important; }
 
