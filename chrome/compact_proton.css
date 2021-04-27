@@ -10,6 +10,7 @@ See the above repository for updates as well as full license text. */
   --arrowpanel-menuitem-padding: 4px !important;
   --panel-font-size: inherit !important;
   --arrowpanel-padding: 0.8em !important;
+  --inline-tab-padding: 8px !important; /* 8px is default value since it looks good - lower values compactify tabs horizontally */
 }
 .subview-subheader{ height: 24px }
 menupopup > menuitem,
