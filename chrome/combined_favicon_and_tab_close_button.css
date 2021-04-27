@@ -7,12 +7,14 @@ See the above repository for updates as well as full license text. */
   -moz-box-ordinal-group: 0;
   display: -moz-box !important;
   position: relative;
-  margin-right: -18px !important;
+  width: calc(16px + var(--inline-tab-padding)) !important;
+  margin-inline: 0 calc(-16px - var(--inline-tab-padding) / 2) !important;
+  padding-inline: 0px !important;
   z-index: -1;
   visibility: hidden;
 }
 .tabbrowser-tab[pinned] .tab-close-button{ display: none !important; }
-.tab-close-button:hover{ background-color: var(--lwt-accent-color); }
+.tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color) !important; }
 
 .tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
 
@@ -22,22 +24,22 @@ See the above repository for updates as well as full license text. */
 /*** Option 1 - no favicon - no close-button ***/
 
 /*
-.tab-icon-image:hover ~ .tab-close-button, .tab-close-button:hover{ visibility: visible; z-index: 1 }
+.tab-icon-stack:hover ~ .tab-close-button, .tab-close-button:hover{ visibility: visible; z-index: 1 }
 */
 
 /*** Option 2 - No icon - always show close-button ***/
 
 /*
-.tab-icon-image:hover ~ .tab-close-button,
+.tab-icon-stack:hover ~ .tab-close-button,
 .tab-close-button:hover,
-.tab-icon-image:not([src]) ~ .tab-close-button{ visibility: visible; z-index: 1 }
-.tab-icon-image:not([src]) ~  .tab-close-button{ margin-right:0px !important; }
+.tabbrowser-tab:not([image]) .tab-close-button{ visibility: visible; z-index: 1 }
+.tabbrowser-tab:not([image]) .tab-close-button{ margin-right:0px !important; }
 */
 
 /*** Option 3 - No icon - show close-button when cursor is over the tab text ***/
 
-.tab-icon-image:hover ~ .tab-close-button,
+.tab-icon-stack:hover ~ .tab-close-button,
 .tab-close-button:hover,
-.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button{ visibility: visible; z-index: 1 }
-.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button,
-.tab-icon-image:not([src]) ~  .tab-close-button:hover {margin-right: 0px !important; }
+.tabbrowser-tab:not([image]) .tab-label-container:hover ~ .tab-close-button{ visibility: visible; z-index: 1;  }
+.tabbrowser-tab:not([image]) .tab-label-container:hover ~ .tab-close-button,
+.tabbrowser-tab:not([image]) .tab-close-button:hover { margin-inline-end: 0 !important; }
