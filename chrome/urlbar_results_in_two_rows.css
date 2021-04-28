@@ -6,7 +6,15 @@ See the above repository for updates as well as full license text. */
 
 .urlbarView-row-inner{ flex-wrap: wrap !important; }
 
-.urlbarView-title[title]{ flex-grow: 1; }
-.urlbarView-row > .urlbarView-row-inner > .urlbarView-url{ min-width: 95% }
-
+.urlbarView-no-wrap {
+  max-width: 100% !important;
+  flex-basis: 100%;
+}
 .urlbarView-row[has-url]:not([type="switchtab"]) .urlbarView-title-separator{ display: none }
+
+.urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(ltr) {
+  padding-left: calc(var(--urlbarView-item-inline-padding) + var(--identity-box-margin-inline) + 16px);
+}
+.urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(rtl) {
+  padding-right: calc(var(--urlbarView-item-inline-padding) + var(--identity-box-margin-inline) + 16px);
+}
