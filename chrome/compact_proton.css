@@ -34,7 +34,9 @@ menupopup > menu{ padding-block: 0.3em !important; }
 #scrollbutton-up,
 #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
 
-/* OPTIONAL - show audio label in compact mode */
+/* OPTIONAL - show audio label in compact mode and make the audio icon behavior match non-compact mode */
 /*
 .tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; }
+#TabsToolbar:not(:hover) .tab-icon-image{ opacity: 1 !important; }
+#TabsToolbar:not(:hover) .tab-icon-overlay{ opacity: 0 !important; }
 */
