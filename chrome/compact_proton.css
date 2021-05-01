@@ -38,5 +38,5 @@ menupopup > menu{ padding-block: 0.3em !important; }
 /*
 .tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; }
 #TabsToolbar:not(:hover) .tab-icon-image{ opacity: 1 !important; }
-#TabsToolbar:not(:hover) .tab-icon-overlay{ opacity: 0 !important; }
+#TabsToolbar:not(:hover) .tab-icon-overlay:not([pinned]){ opacity: 0 !important; }
 */
