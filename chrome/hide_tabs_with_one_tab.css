@@ -29,7 +29,7 @@ See the above repository for updates as well as full license text. */
 }
 .accessibility-indicator > hbox{ padding-block: 0 !important }
 
-#tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
+#tabbrowser-tabs .tabbrowser-tab{ height: calc(var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px)) }
 
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
   visibility: collapse !important;

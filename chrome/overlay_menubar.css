@@ -20,7 +20,7 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
 
 #main-menubar{
-  height: calc(var(--tab-min-height) + 3px);
+  height: calc(var(--tab-min-height) +  2 * var(--proton-tab-block-margin,0px));
   background-color: var(--arrowpanel-background);
   color: var(--arrowpanel-color);
 }
@@ -30,7 +30,7 @@ See the above repository for updates as well as full license text. */
   content: "";
   display: -moz-box;
   width: 30px;
-  height: calc(var(--tab-min-height) + 3px);
+  height: calc(var(--tab-min-height) +  2 * var(--proton-tab-block-margin,0px));
   background-image: linear-gradient(to right, var(--arrowpanel-background) 30%, transparent);
 }
 

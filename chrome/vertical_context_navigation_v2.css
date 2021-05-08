@@ -10,7 +10,8 @@ See the above repository for updates as well as full license text. */
 #context-reload,#context-stop{ transform: translate(-80px, 80px) }
 #context-bookmarkpage{ transform: translate(-120px,120px) }
 
-#context-navigation:not([hidden])~*{ margin-left: 20px;  }
+#context-navigation:not([hidden])~*{ margin-left: 32px;  }
 #context-sep-navigation{ display: none }
 #context-navigation{ margin-bottom: -34px; }
-#context-sep-navigation:not([hidden]) ~ *:not(.menuitem-iconic){ clip-path: polygon(1.45em 0%, 100% 0%,100% 100%,1.45em 100%) }
+#context-sep-navigation:not([hidden]) ~ *:not(.menuitem-iconic){ clip-path: polygon(0.8em 0%, 100% 0%,100% 100%,0.8em 100%); }
+#context-sep-navigation:not([hidden]) ~ menuseparator{ margin-left: 30px  !important; }

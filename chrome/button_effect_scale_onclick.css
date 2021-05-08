@@ -3,8 +3,6 @@ See the above repository for updates as well as full license text. */
 
 /* Effect */
 
-:root:not([uidensity="compact"],[proton]) #back-button{ --uc-back-extra-padding: 2px }
-
 .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon{
   transition: transform 83ms linear !important;
@@ -25,7 +23,7 @@ toolbarbutton#scrollbutton-down:active > .toolbarbutton-icon{ transform: scale(-
 
 
 toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
-  padding: calc(var(--toolbarbutton-inner-padding) + var(--uc-back-extra-padding,0px) + 3px) !important;
+  padding: calc(var(--toolbarbutton-inner-padding) + 3px) !important;
 }
 
 #page-action-buttons .urlbar-icon:active{ padding: calc(var(--urlbar-icon-padding) + 3px) !important; }

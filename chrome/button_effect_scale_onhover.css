@@ -3,8 +3,6 @@ See the above repository for updates as well as full license text. */
 
 /* Effect */
 
-:root:not([uidensity="compact"]) #back-button{ --uc-back-extra-padding: 2px }
-
 .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon{
   transition: transform 83ms linear !important;
@@ -23,7 +21,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 toolbarbutton#scrollbutton-down > .toolbarbutton-icon{ transform: scale(-0.8) !important; }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
-  padding: calc(var(--toolbarbutton-inner-padding) + var(--uc-back-extra-padding,0px) + 2px) !important;
+  padding: calc(var(--toolbarbutton-inner-padding) + 2px) !important;
 }
 
 #page-action-buttons .urlbar-icon:not(:hover){ padding: calc(var(--urlbar-icon-padding) + 2px) !important; }
@@ -37,5 +35,5 @@ toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .t
 toolbarbutton#scrollbutton-down:not([disabled]):hover > .toolbarbutton-icon{transform: scale(-1) !important;}
 
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
-  padding: calc(var(--toolbarbutton-inner-padding) + var(--uc-back-extra-padding,0px)) !important;
+  padding: var(--toolbarbutton-inner-padding) !important;
 }

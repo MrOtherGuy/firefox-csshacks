@@ -11,6 +11,16 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"] #navigator-toolbox{ --uc-bm-padding: 1px; --uc-navbar-height: -32px }
 :root[uidensity="touch"] #navigator-toolbox{ --uc-bm-padding: 6px }
 
+@media (-moz-proton){
+  #navigator-toolbox{
+     --uc-bm-height: 26px; /* Might need to adjust if the toolbar has other buttons */
+  }
+  :root[uidensity="compact"] #navigator-toolbox{
+    --uc-navbar-height: -34px;
+    --uc-bm-height: 23px;
+  }
+}
+
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
   transform: rotateX(90deg);
