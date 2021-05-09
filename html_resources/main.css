@@ -9,7 +9,7 @@ body{background-color: rgb(60,50,70); color: silver; margin: 0px }
   background-color: rgb(60,60,70);
   max-height: 100vh;
   overflow-y: auto;
-  min-width: 18ch
+  min-width: 22ch
 }
 
 .categoryList.blurred{
@@ -28,9 +28,10 @@ body{background-color: rgb(60,50,70); color: silver; margin: 0px }
   z-index: 2;
   background-color: rgb(60,60,70);
   opacity: 1;
+  box-shadow: 0 0 26px 0 black;
 }
 
-a{ color: rgb(100,150,200); margin-inline-start: 1ch }
+a{ color: rgb(100,150,200); margin-inline-end: 0.4ch }
 pre a{ margin: 0 }
 a:visited{ color: rgb(150,100,200) }
 a:hover{ color: rgb(200,150,100) }
@@ -41,7 +42,7 @@ pre:empty{ display: none }
 .currentCategory,
 .category:hover{ background-color: grey }
 
-.currentCategory::before{ content: "»" }
+.currentCategory::before{ content: "» " }
 
 .target{
   margin: 0.1em;
@@ -49,13 +50,16 @@ pre:empty{ display: none }
   padding: 0.3em;
   border: 1px solid rgb(40,40,40);
   border-radius: 4px;
-  max-width: 50ch;
-  cursor: pointer
+  max-width: 30%;
+  cursor: pointer;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .target > a{
-  content: "";
+  display:inline-block;
   width: 1.2em;
-  height: 1.3em;
+  height: 80%;
   background-image: url("ext.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -74,22 +78,26 @@ pre{
   white-space: pre-wrap;
   margin: 1em;
   border: 2px inset;
-  padding: 0.5em;
-  background-color: rgb(40,50,50)
+  padding: 0 0 0 2em;
+  background-color: rgb(30,30,40);
+}
+
+pre > div{
+  background-color: rgb(40,37,43);;
+  padding: 1em 0.5em;
+  border-inline-start: 1px solid rgb(90,90,90)
 }
 
 .categoryList:not(.blurred)+.categoryList,
 .hidden{ display: none !important }
 
-.target{ display: flex; justify-content: space-between }
-
 .comment{ color: rgb(50,180,20) }
-.selector{ color: violet }
+.selector{ color: palegoldenrod }
 .pseudo{ color: silver }
 .id{ color: lightcoral }
 .class{ color: lightgreen }
 .attribute{ color: cyan }  
-.atrule{ color: royalblue }
+.atrule{ color: mediumslateblue }
 .atvalue{ color: lightblue }
 .property{ color: orange }
 .value{ color: skyblue }

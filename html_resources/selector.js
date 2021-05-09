@@ -70,7 +70,6 @@ let currentCategory = new (function(){
       currentTopLevelFileNames = DB.query(t.textContent);
     }
 
-    //this.fileNames = DB.query(t.textContent,secondary?this.fileNames:null);
   };
   
   this.getFileNames = function(node,secondary){
@@ -83,7 +82,7 @@ let currentCategory = new (function(){
 })()
 
 function getText(node){
-  return `${node.childNodes[0].textContent}.css`
+  return `${node.textContent}.css`
 }
 
 function getSecondaryCategories(list){
@@ -115,10 +114,7 @@ function clearCodeBlock(){
 function onCategoryClicked(categoryNode,isSecondary = false){
   
   clearCodeBlock();
-  
   currentCategory.set(categoryNode,isSecondary);
-  // Using textContent is bad but meh
-  //let names = DB.query(categoryNode.textContent);
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
   let fileNames = currentCategory.getFileNames(categoryNode,isSecondary);
@@ -129,11 +125,8 @@ function onCategoryClicked(categoryNode,isSecondary = false){
       for(let child of Array.from(secondaryCategoriesNode.children)){
         matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
       }
-      
-      //secondaryCategoriesNode.classList.remove("hidden");
       document.getElementById("categories").classList.add("blurred");
     }else{
-      //secondaryCategoriesNode.classList.add("hidden");
       document.getElementById("categories").classList.remove("blurred");
       
     }
@@ -145,9 +138,13 @@ function onCategoryClicked(categoryNode,isSecondary = false){
   document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
 }
 
-async function onTargetClicked(targetNode){
+async function onTargetClicked(target){
   const codeBlock = document.querySelector("pre");
-  fetchWithType(`chrome/${getText(targetNode)}`)
+  const text = typeof target === "string"
+              ? target
+              : getText(target);
+  
+  fetchWithType(`chrome/${text}`)
   //.then(text => (codeBlock.textContent = text))
   .then(text => Highlighter.parse(codeBlock,text))
   .catch(e => console.log(e))
@@ -185,12 +182,15 @@ function createCategories(){
     let node = document.createElement("div");
     node.classList.add(type);
     if(type === "target"){
-      node.textContent = name.substring(0,name.lastIndexOf("."));
+      
       let link = node.appendChild(document.createElement("a"));
       node.classList.add("hidden");
       link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${name}`;
       link.title = "See on Github";
       link.target = "_blank";
+      const content = name.substring(0,name.lastIndexOf("."));
+      node.append(content);
+      node.setAttribute("title",content);
     }else{
       node.textContent = name.name;
       name.value > 0 && node.setAttribute("data-value",name.value);
@@ -436,11 +436,49 @@ const Highlighter = new(function(){
   return this
 })();
 
+function handleSearchQuery(){
+  let params = (new URL(document.location)).searchParams;
+  let param = params.get("tag");
+  if(param){
+    let cats = document.querySelectorAll("#categories > .category");
+    for(let cat of cats){
+      if(cat.textContent === param){
+        onCategoryClicked(cat);
+        return
+      }
+    }
+    return
+  }
+  param = params.get("file");
+  if(param){
+    if(DB.keys.includes(param)){
+      onTargetClicked(param)
+    }
+  }
+}
+
 document.onreadystatechange = (function () {
+  
   if (document.readyState === "complete") {
+    function linkClicked(ev){
+      if(ev.target instanceof HTMLAnchorElement){
+        let ref = ev.target.href;
+        if(!ref){
+          return
+        }
+        let fileName = ref.slice(ref.lastIndexOf("/"));
+        if(fileName.endsWith(".css")){
+          onTargetClicked(fileName);
+          ev.preventDefault();
+        }
+      }
+    }
+    document.getElementById("previewBox").addEventListener("click",linkClicked);
+    
     fetchWithType("html_resources/tagmap.json")
-    .then(response=>(initDB(response)))
-    .then(()=>createCategories())
+    .then(initDB)
+    .then(createCategories)
+    .then(handleSearchQuery)
     .catch(e=>{console.log(e);document.getElementById("ui").textContent = "FAILURE, Database could not be loaded"});
   }
 });
