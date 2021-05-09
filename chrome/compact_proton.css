@@ -18,16 +18,17 @@ menupopup > menu{ padding-block: 0.3em !important; }
 
 #urlbar-container{ padding-block: 2px !important; }
 #urlbar-background{ margin-block: 1px }
+
 /* This is kinda weird, but it makes the horizontal line between tabs and nav-bar render "inside" nav-bar thus tabs are more visibily separated even if there is less space there */
 #nav-bar{ 
   box-shadow: inset 0 var(--tabs-shadow-size) 0 var(--tabs-border-color) !important;
 }
 
 .tab-close-button{
-  margin-inline-start: 2px !important;
-  width: 16px !important;
-  height: 16px !important;
-  padding: 1px !important;
+  margin-inline-start: 0px !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 5px !important;
 }
 
 #tabbrowser-tabs{ --uc-tabs-scrollbutton-border: 2px }
