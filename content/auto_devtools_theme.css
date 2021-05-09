@@ -183,6 +183,7 @@ See the above repository for updates as well as full license text. */
       --error-color: var(--red-20) !important;
       --console-output-color: white !important;
       
-      scrollbar-color: var(--grey-50) var(--theme-splitter-color) !important
+      scrollbar-color: var(--grey-50) var(--theme-splitter-color) !important;
+    }
   }
 }
