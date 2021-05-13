@@ -22,5 +22,6 @@ See the above repository for updates as well as full license text. */
 #appMenu-settings-button{ list-style-image: url("chrome://global/skin/icons/settings.svg") }
 #appMenu-more-button2{ list-style-image: url("chrome://browser/skin/developer.svg") }
 #appMenu-help-button2{ list-style-image: url(chrome://global/skin/icons/info.svg) }
+#appMenu-quit-button2{ list-style-image: url(chrome://browser/skin/quit.svg) }
 
 #appMenu-zoom-controls2{ border-top: 1px solid var(--panel-separator-color) !important; }
