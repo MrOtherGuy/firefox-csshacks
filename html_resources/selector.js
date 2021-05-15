@@ -472,6 +472,13 @@ function showUI(){
   document.getElementById("ui").classList.remove("hidden");
 }
 
+function waitForDelay(t){
+  t = Number(t) || 10;
+  return new Promise(res =>{
+    setTimeout(res,t)
+  })
+}
+
 document.onreadystatechange = (function () {
   
   if (document.readyState === "complete") {
@@ -494,6 +501,7 @@ document.onreadystatechange = (function () {
     .then(initDB)
     .then(createCategories)
     .then(handleSearchQuery)
+    .then(()=>waitForDelay(300))
     .then(showUI)
     .catch(e => console.log(e))
   }

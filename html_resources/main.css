@@ -101,4 +101,18 @@ pre > div{
 .atvalue{ color: lightblue }
 .property{ color: orange }
 .value{ color: skyblue }
-.curly{ color: orangered } 
+.curly{ color: orangered }
+
+@keyframes showDelayed{ from{ visibility: hidden } to{ visibility: visibile }}
+
+@keyframes loadingBar{ from{ background-size: 0% } to{ background-size: 100% } }
+#placeholder{
+  margin: 2em;
+  border: 2px solid darkslateblue;
+  border-radius: 3px;
+  background-image: linear-gradient(90deg,slateblue,purple);
+  background-repeat: no-repeat;
+  background-position: left;
+  animation: loadingBar 1500ms linear
+}
+.placeholder-text{ animation: showDelayed 2s steps(1) }
