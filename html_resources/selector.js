@@ -436,7 +436,7 @@ const Highlighter = new(function(){
   return this
 })();
 
-function handleSearchQuery(){
+async function handleSearchQuery(){
   let params = (new URL(document.location)).searchParams;
   let param = params.get("tag");
   if(param){
@@ -451,10 +451,25 @@ function handleSearchQuery(){
   }
   param = params.get("file");
   if(param){
-    if(DB.keys.includes(param)){
-      onTargetClicked(param)
+    let files = param.split(",").filter(a => DB.keys.includes(a));
+    
+    if(files.length === 0 ){
+      return
     }
+
+    const codeBlock = document.querySelector("pre"); 
+    let composedText = "";
+    for(let file of files){
+      composedText += await fetchWithType(`chrome/${file}`);
+      composedText += "\n";
+    }
+    Highlighter.parse(codeBlock,composedText)
   }
+}
+
+function showUI(){
+  document.getElementById("placeholder").remove();
+  document.getElementById("ui").classList.remove("hidden");
 }
 
 document.onreadystatechange = (function () {
@@ -479,6 +494,7 @@ document.onreadystatechange = (function () {
     .then(initDB)
     .then(createCategories)
     .then(handleSearchQuery)
-    .catch(e=>{console.log(e);document.getElementById("ui").textContent = "FAILURE, Database could not be loaded"});
+    .then(showUI)
+    .catch(e => console.log(e))
   }
 });
