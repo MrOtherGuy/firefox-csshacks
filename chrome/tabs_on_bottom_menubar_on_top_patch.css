@@ -4,10 +4,10 @@ See the above repository for updates as well as full license text. */
 /* Menubar on top patch - use with tabs_on_bottom.css */
 /* Only really useful if menubar is ALWAYS visible */
 
-:root{ --uc-window-control-width: 0px !important }
+:root:not([sizemode="fullscreen"]){ --uc-window-control-width: 0px !important }
 
 #navigator-toolbox{ padding-top: calc(29px + var(--uc-titlebar-padding,0px)) !important }
-
+:root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
 #toolbar-menubar{
   position: fixed;
   display: flex;

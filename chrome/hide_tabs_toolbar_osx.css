@@ -13,7 +13,7 @@ Window controls will be all wrong without it
 :root:not([uidensity="compact"]){ --uc-toolbar-height: 34px }
 
 #TabsToolbar > *{ visibility: collapse !important }
-
+:root[sizemode="fullscreen"] #TabsToolbar > #window-controls{ visibility: visible !important; z-index: 2 }
 #TabsToolbar > .titlebar-buttonbox-container{
   visibility: visible !important;
   height:var(--uc-toolbar-height) !important;

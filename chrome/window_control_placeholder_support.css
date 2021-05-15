@@ -14,7 +14,15 @@ See the above repository for updates as well as full license text. */
   --uc-window-control-width: 138px; /* Space reserved for window controls */
   --uc-window-drag-space-width: 24px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
 }
-
+:root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none !important }
+:root[sizemode="fullscreen"] #window-controls{
+  position: fixed;
+  display: flex;
+  top: 0;
+  right:0;
+  height: 40px;
+}
+:root[uidensity="compact"][sizemode="fullscreen"] #window-controls{ height: 32px }
 #nav-bar{
   border-inline: var(--uc-window-drag-space-width,0px) solid var(--toolbar-bgcolor);
   border-inline-style: solid !important;
