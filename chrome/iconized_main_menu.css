@@ -14,7 +14,7 @@ See the above repository for updates as well as full license text. */
 #appMenu-bookmarks-button{ list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
 #appMenu-history-button{ list-style-image: url("chrome://browser/skin/history.svg") }
 #appMenu-downloads-button{ list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
-#appMenu-passwords-button{ list-style-image: url("chrome://global/skin/icons/security.svg") }
+#appMenu-passwords-button{ list-style-image: url("chrome://browser/skin/login.svg") }
 #appMenu-extensions-themes-button{ list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
 #appMenu-print-button2{ list-style-image: url("chrome://global/skin/icons/print.svg") }
 #appMenu-save-file-button2{ list-style-image: url("chrome://browser/skin/save.svg") }
