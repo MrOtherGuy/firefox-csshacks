@@ -1,0 +1,79 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/non_floating_sharp_tabs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style makes tabs and related items non-rounded and connects tabs to toolbars like in previous Firefox versions. */
+
+/* It's not strictly a requirement, but this style expects  compact_proton.css to be loaded before it. */
+
+:root{
+  --proton-tab-block-margin: 0px !important;
+  --tabs-shadow-size: 1px !important;
+  
+  /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
+  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; 
+  
+  /* Uncomment next line to force specific color for tab top line */
+  /* --tab-line-color: blue !important; */ 
+}
+
+/* This sets a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
+#navigator-toolbox{
+  --tabs-border-color: color-mix(in srgb, currentcolor 30%, transparent) !important;
+}
+
+/* This overrides value in compact_proton.css */
+#nav-bar{ 
+  box-shadow: 0 -1px 0 0 var(--tabs-border-color) !important;
+}
+
+#TabsToolbar{ --toolbarbutton-inner-padding: 7px !important; }
+
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
+
+/* tabs newtab button needs some special styling... */
+#tabs-newtab-button{ padding-inline: 0 !important; }
+#tabbrowser-arrowscrollbox > #tabs-newtab-button > .toolbarbutton-icon{
+  border-radius: 0 !important; 
+  width: initial !important; 
+  height: initial !important;
+  padding: 9px !important;
+}
+:root[uidensity="compact"] #tabbrowser-arrowscrollbox > #tabs-newtab-button > .toolbarbutton-icon{
+  padding: 7px !important;
+}
+
+#scrollbutton-up,
+#scrollbutton-down{ border-radius: 0 !important; border-width: 0 !important; padding-inline: 3px !important; }
+
+/* tab shaping */
+.tabbrowser-tab{ padding-inline: 0 !important; }
+
+#tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]{ min-height: calc(var(--tab-min-height) + 2px) !important; }
+
+.tab-content[pinned]{ padding-inline: 11px !important; }
+
+.tab-background{
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.tab-background[selected]{
+  border-inline: 1px solid var(--tabs-border-color) !important;
+}
+
+/* Line to mark selected tab */
+.tab-background[selected]::before,
+.tabbrowser-tab:hover > stack > .tab-background::before{
+  display: -moz-box;
+  height: 2px;
+  content: "";
+}
+.tab-stack:hover > .tab-background::before{
+  background-color: inherit;
+}
+.tab-stack > .tab-background[selected]::before{
+  background-color: highlight;
+  background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));
+}
+/* moves context-line to the bottom */
+.tab-context-line{ -moz-box-ordinal-group: 2; margin-inline: 10px !important; }
