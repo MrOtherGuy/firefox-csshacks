@@ -45,6 +45,7 @@ hide_tabs_with_one_tab.css,hiding,tabs,toolbars
 hide_tabs_with_one_tab_w_window_controls.css,hiding,tabs,toolbars
 hide_toolbox_top_bottom_borders.css,toolbars,hiding
 hide_urlbar_first_row.css,urlbar,popup,hiding
+iconized_main_menu.css,icon,popup,menu,proton
 iconized_menubar_items.css,menubar,menu,icon
 inline_tab_audio_icons.css,tab,icon,proton
 less_static_throbber.css,icon,tab,effect
@@ -93,6 +94,7 @@ tab_close_button_always_on_hover.css,tab,close
 tab_effect_scale_onclick.css,tab,effect
 tab_line_loading_indicator.css,tab,icon,effect
 tab_loading_progress_throbber.css,tab,icon,effect
+tab_separator_lines.css,tab,proton
 tabs_animated_gradient_border.css,hack,effect,tabs
 tabs_below_content.css,toolbars,tabs
 tabs_fill_available_width.css,tab,tabs
@@ -122,5 +124,3 @@ vertical_menubar.css,menubar,hack
 vertical_popup_menubar.css,menubar,menu,toolbars,popup
 window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colors,patch
 window_control_placeholder_support.css,window-control,patch
-tab_separator_lines.css,tab,proton
-iconized_main_menu.css,icon,popup,menu,proton
