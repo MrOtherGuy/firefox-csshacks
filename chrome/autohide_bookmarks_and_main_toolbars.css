@@ -23,11 +23,25 @@ See the above repository for updates as well as full license text. */
 
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
+  background-image: var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+  background-position: var(--lwt-background-alignment);
+  background-position-y: calc(0px - var(--tab-min-height) - 2*var(--proton-tab-block-margin,0px));
+  background-repeat: var(--lwt-background-tiling);
   transform: rotateX(90deg);
   transform-origin: top;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 2;
 }
+
+:root[sessionrestored] #PersonalToolbar{
+  background-position-y: calc(0px - var(--tab-min-height) - 2*var(--proton-tab-block-margin,0px) + var( --uc-navbar-height));
+}
+
+:root[lwtheme-image] #nav-bar,
+:root[lwtheme-image] #PersonalToolbar{
+  background-image: var(--lwt-header-image), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+}
+
 #nav-bar[customizing],#PersonalToolbar[customizing]{ transform: none !important }
 
 #navigator-toolbox > #PersonalToolbar{
