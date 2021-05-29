@@ -72,6 +72,9 @@ See the above repository for updates as well as full license text. */
 
 #sidebar-box{ position: relative }
 
+/* Selected tab needs higher z-index now to "hide" the broder below it */
+.tabbrowser-tab[selected]{ z-index: 3 !important; }
+
 /* SELECT TOOLBAR BEHAVIOR */
 /* Comment out or delete one of these to disable that behavior */
 
