@@ -24,16 +24,17 @@ See the above repository for updates as well as full license text. */
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage))  !important;
-  background-position: var(--lwt-background-alignment);
+  background-position: top,var(--lwt-background-alignment);
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--proton-tab-block-margin,0px));
   background-repeat: repeat,var(--lwt-background-tiling);
   transform: rotateX(90deg);
   transform-origin: top;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
-  z-index: 1;
+  z-index: 2;
 }
 
 :root[sessionrestored] #PersonalToolbar{
+  z-index: 1;
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--proton-tab-block-margin,0px) + var( --uc-navbar-height));
 }
 
