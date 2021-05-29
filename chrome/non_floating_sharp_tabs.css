@@ -26,7 +26,10 @@ See the above repository for updates as well as full license text. */
   box-shadow: 0 -1px 0 0 var(--tabs-border-color) !important;
 }
 
-#TabsToolbar{ --toolbarbutton-inner-padding: 7px !important; }
+#TabsToolbar{
+  --toolbarbutton-inner-padding: 7px !important;
+  --toolbar-bgcolor: transparent;
+}
 
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
