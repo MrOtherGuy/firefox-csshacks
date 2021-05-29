@@ -35,10 +35,10 @@ function fetchWithType(url){
       }
       if(ext === "json"){
         response.json()
-        .then(r=>resolve(r))
+        .then(resolve)
       }else{
         response.text()
-        .then(r=>resolve(r))
+        .then(resolve)
         
       }
     },except => reject(except))
@@ -457,13 +457,15 @@ async function handleSearchQuery(){
       return
     }
 
-    const codeBlock = document.querySelector("pre"); 
-    let composedText = "";
-    for(let file of files){
-      composedText += await fetchWithType(`chrome/${file}`);
-      composedText += "\n";
-    }
-    Highlighter.parse(codeBlock,composedText)
+    const codeBlock = document.querySelector("pre");   
+    const promises = files.map(file=>fetchWithType(`chrome/${file}`).catch(e=>""));
+    
+    Promise.all(promises)
+    .then(responses => {
+      
+      Highlighter.parse(codeBlock,responses.join("\n\n/*************************************/\n\n"))
+    });
+    
   }
 }
 

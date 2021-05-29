@@ -91,17 +91,17 @@ pre > div{
 .categoryList:not(.blurred)+.categoryList,
 .hidden{ display: none !important }
 
-.comment{ color: rgb(50,180,20) }
-.selector{ color: palegoldenrod }
+.comment{ color: rgb(50,180,90) }
+.selector{ color: silver }
 .pseudo{ color: silver }
-.id{ color: lightcoral }
-.class{ color: lightgreen }
-.attribute{ color: cyan }  
-.atrule{ color: mediumslateblue }
+.id{ color: rgb(240, 148, 138) }
+.class{ color: skyblue }
+.attribute{ color: rgb(210,120,190) }  
+.atrule{ color: lime }
 .atvalue{ color: lightblue }
-.property{ color: orange }
+.property{ color: palegoldenrod }
 .value{ color: skyblue }
-.curly{ color: orangered }
+.curly{ color: magenta }
 
 @keyframes showDelayed{ from{ visibility: hidden } to{ visibility: visibile }}
 
