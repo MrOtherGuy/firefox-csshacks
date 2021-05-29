@@ -17,7 +17,6 @@ See the above repository for updates as well as full license text. */
 menupopup > menuitem,
 menupopup > menu{ padding-block: 0.3em !important; }
 
-#urlbar-container{ padding-block: 2px !important; }
 #urlbar-background{ margin-block: 1px }
 
 /* This is kinda weird, but it makes the horizontal line between tabs and nav-bar render "inside" nav-bar thus tabs are more visibily separated even if there is less space there */
