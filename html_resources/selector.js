@@ -111,6 +111,13 @@ function clearCodeBlock(){
   return
 }
 
+function showMatchingTargets(fileNames){
+  for(let c of Array.from(document.querySelectorAll(".target"))){
+    fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
+  }
+  document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
+}
+
 function onCategoryClicked(categoryNode,isSecondary = false){
   
   clearCodeBlock();
@@ -131,11 +138,8 @@ function onCategoryClicked(categoryNode,isSecondary = false){
       
     }
   }
-  
-  for(let c of Array.from(document.querySelectorAll(".target"))){
-    fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
-  }
-  document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
+  showMatchingTargets(fileNames);
+  return
 }
 
 async function onTargetClicked(target){
@@ -462,7 +466,7 @@ async function handleSearchQuery(){
     
     Promise.all(promises)
     .then(responses => {
-      
+      showMatchingTargets(files);
       Highlighter.parse(codeBlock,responses.join("\n\n/*************************************/\n\n"))
     });
     
