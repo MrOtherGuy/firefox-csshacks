@@ -37,7 +37,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
 
 /* OPTIONAL - show audio label in compact mode and make the audio icon behavior match non-compact mode */
 /*
-.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; }
+.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; margin-bottom: 1px }
 #TabsToolbar:not(:hover) .tab-icon-image{ opacity: 1 !important; }
 #TabsToolbar:not(:hover) .tab-icon-overlay:not([pinned]){ opacity: 0 !important; }
 */
