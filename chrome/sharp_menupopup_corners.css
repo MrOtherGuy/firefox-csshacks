@@ -1,0 +1,6 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/sharp_menupopup_corners.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+menupopup,
+.menupopup-arrowscrollbox{ border-radius: 0 !important; }
+:root{ --arrowpanel-border-radius:0px !important }
