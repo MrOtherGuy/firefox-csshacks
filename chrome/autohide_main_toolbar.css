@@ -22,7 +22,7 @@ See the above repository for updates as well as full license text. */
   position: relative;
   z-index: 2;
 }
-#titlebar{ position: relative; z-index: 3 }
+#TabsToolbar{ position: relative; z-index: 3 }
 #navigator-toolbox:focus-within > .browser-toolbar,
 #titlebar:hover ~ .browser-toolbar,
 #nav-bar:hover,
@@ -34,4 +34,4 @@ See the above repository for updates as well as full license text. */
 }
 
 #PersonalToolbar{ transition: transform 400ms ease 1.8s !important; position: relative; z-index: 1 }
-:root[sessionrestored] > body > #browser{ margin-top: var(--uc-navbar-transform); }
+:root[sessionrestored]:not([inFullscreen]) > body > #browser{ margin-top: var(--uc-navbar-transform); }
