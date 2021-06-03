@@ -36,6 +36,14 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar > .titlebar-buttonbox-container{ display: none }
   #toolbar-menubar > .titlebar-buttonbox-container{ order: 1000 }
 
+  /* Fullscreen mode support */
+  #navigator-toolbox[inFullscreen]{ margin-top: 0 !important }
+  #navigator-toolbox[inFullscreen][style*="margin-top"]{ visibility: collapse }
+  #fullscr-toggler{ bottom: 0; top: unset !important; }
+  
+  /* These two rules exist for compatibility with autohide_toolbox.css */
+  #navigator-toolbox{ bottom: -1px; transform-origin: bottom }
+
   /**************
   Menubar options
   ***************/
