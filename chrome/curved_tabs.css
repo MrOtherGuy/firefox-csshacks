@@ -7,6 +7,7 @@ See the above repository for updates as well as full license text. */
   --uc-tab-curve-size:17px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
   --uc-tabs-scrollbutton-border: 0px;
   --proton-tab-block-margin:0px;
+  --tab-block-margin:0px;
   --tab-min-height: 34px;
   --uc-tab-line-color: rgb(10, 132, 255);
 }

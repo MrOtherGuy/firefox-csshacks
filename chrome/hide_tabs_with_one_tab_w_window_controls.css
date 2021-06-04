@@ -11,6 +11,9 @@ Get window_control_placeholder_support.css
 Window controls will be all wrong without it
 */
 
+/* Dummy variable to support both versions 89-90 */
+:root{ --tab-block-margin: var(--proton-tab-block-margin) }
+
 #titlebar{ -moz-appearance: none !important; }
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
@@ -66,5 +69,5 @@ Window controls will be all wrong without it
 :root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none !important; }
 :root[sizemode="fullscreen"] #TabsToolbar > #window-controls{
   z-index: 2;
-  top: calc(var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px));
+  top: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px));
 }

@@ -9,7 +9,10 @@ Get window_control_placeholder_support.css
 Window controls will be all wrong without it
 */
 
-:root[proton][uidensity="compact"]{ --proton-tab-block-margin: 2px !important; }
+:root[uidensity="compact"]{
+  --tab-block-margin: 2px !important;
+  --proton-tab-block-margin: 2px !important;
+  }
 
 /* Modify these to change relative widths or default height */
 #navigator-toolbox{
@@ -52,7 +55,7 @@ Window controls will be all wrong without it
 }
 
 #tabbrowser-tabs{
-  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--proton-tab-block-margin,0px)) !important;
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--tab-block-margin,0px)) !important;
 }
 
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{

@@ -6,6 +6,7 @@ See the above repository for updates as well as full license text. */
 :root{
   --toolbarbutton-inner-padding: 6px !important;
   --proton-tab-block-margin: 2px !important;
+  --tab-block-margin: 2px !important;
   --tabs-shadow-size: 0px !important;
   --arrowpanel-menuitem-padding: 5px !important;
   --panel-font-size: inherit !important;
