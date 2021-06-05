@@ -6,18 +6,27 @@ See the above repository for updates as well as full license text. */
 
 :root:not([sizemode="fullscreen"]){ --uc-window-control-width: 0px !important }
 
-#navigator-toolbox{ padding-top: calc(29px + var(--uc-titlebar-padding,0px)) !important }
+:root{
+   /* height if native titlebar is enabled, assumes empty menubar */
+  --uc-menubar-height: 20px;
+}
+:root[tabsintitlebar]{
+  /* height when native titlebar is disabled, more roomy so can fit buttons etc. */
+  --uc-menubar-height: 29px; 
+}
+
+#navigator-toolbox{ padding-top: calc(var(--uc-menubar-height) + var(--uc-titlebar-padding,0px)) !important }
 :root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
 #toolbar-menubar{
   position: fixed;
   display: flex;
   top: var(--uc-titlebar-padding,0px);
-  height: 29px;
+  height: var(--uc-menubar-height);
   width: 100%;
   overflow: hidden;
 }
 
-#toolbar-menubar > .titlebar-buttonbox-container{ height: 29px; order: 100; }
+#toolbar-menubar > .titlebar-buttonbox-container{ height: 100%; order: 100; }
 
 #toolbar-menubar > [flex]{ flex-grow: 100; }
 #toolbar-menubar > spacer[flex]{
