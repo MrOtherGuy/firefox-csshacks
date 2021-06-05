@@ -3,10 +3,10 @@ See the above repository for updates as well as full license text. */
 
 /* Shows tab audio icons next to the tab icon, and by default removes the tab secondary line */
 
-.tab-icon-stack:is([muted],[soundplaying],[activemedia-blocked]){
+.tabbrowser-tab:not([pinned]) .tab-icon-stack:is([muted],[soundplaying],[activemedia-blocked]){
   grid-template-areas: "a s";
 }
-.tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
+.tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
 .tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }
 
 /* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
