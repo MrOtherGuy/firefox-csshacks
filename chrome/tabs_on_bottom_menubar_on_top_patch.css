@@ -6,18 +6,18 @@ See the above repository for updates as well as full license text. */
 
 :root:not([sizemode="fullscreen"]){ --uc-window-control-width: 0px !important }
 
-#navigator-toolbox{ padding-top: calc(29px + var(--uc-titlebar-padding,0px)) !important }
+#navigator-toolbox{ padding-top: calc(20px + var(--uc-titlebar-padding,0px)) !important }
 :root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
 #toolbar-menubar{
   position: fixed;
   display: flex;
   top: var(--uc-titlebar-padding,0px);
-  height: 29px;
+  height: 20px;
   width: 100%;
   overflow: hidden;
 }
 
-#toolbar-menubar > .titlebar-buttonbox-container{ height: 29px; order: 100; }
+#toolbar-menubar > .titlebar-buttonbox-container{ height: 20px; order: 100; }
 
 #toolbar-menubar > [flex]{ flex-grow: 100; }
 #toolbar-menubar > spacer[flex]{
@@ -29,3 +29,5 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar .titlebar-button{ padding: 2px 17px !important;  }
 
 #toolbar-menubar .toolbarbutton-1 { --toolbarbutton-inner-padding: 3px }
+
+#main-menubar {	background-color: transparent !important; } 
