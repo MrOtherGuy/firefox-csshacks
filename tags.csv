@@ -127,3 +127,4 @@ window_control_placeholder_support.css,window-control,patch
 non_floating_sharp_tabs.css,tab,proton,buttons
 autohide_main_toolbar.css,toolbars,autohide,nav-bar
 sharp_menupopup_corners.css,popup,menu,proton
+overlay_tab_audio_icons.css,icon,tab
