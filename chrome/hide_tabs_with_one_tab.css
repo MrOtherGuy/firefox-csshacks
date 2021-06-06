@@ -49,7 +49,7 @@ See the above repository for updates as well as full license text. */
   background-color: transparent !important;
 }
 /* Extra top padding  in maximized window */
-@media (-moz-os-version: windows-win10){
+@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
   :root[sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
 }
 /* Fix window controls not being clickable */

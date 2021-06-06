@@ -28,7 +28,7 @@ See the above repository for updates as well as full license text. */
     --multirow-tab-min-width: 100px;
     --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
   }
-  @media (-moz-os-version: windows-win10){
+  @media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
     :root[sizemode="maximized"]{ --multirow-top-padding: 8px }
   }
   :root[uidensity="compact"]{--multirow-toolbar-height: 32px}

@@ -21,7 +21,7 @@ See the above repository for updates as well as full license text. */
     overflow-x: -moz-hidden-unscrollable;
     text-overflow: ellipsis;
   }
-  @media (-moz-os-version:windows-win10){
+  @media (-moz-os-version: windows-win7),(-moz-os-version:windows-win10){
     :root[sizemode="maximized"] > head > title { padding-top: 10px }
   }
 }

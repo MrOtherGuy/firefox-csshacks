@@ -15,7 +15,7 @@ See the above repository for updates as well as full license text. */
   --uc-toolbox-rotation: 89deg;
 }
 
-@media (-moz-os-version: windows-win10){
+@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
 
   :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
 

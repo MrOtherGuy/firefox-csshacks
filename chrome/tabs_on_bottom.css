@@ -16,7 +16,7 @@ linux_gtk_window_control_patch.css
 */
 
 :root{ --uc-titlebar-padding: 0px; }
-@media (-moz-os-version: windows-win10){
+@media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
   :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
 }
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,

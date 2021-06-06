@@ -7,7 +7,7 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"] #navigator-toolbox{ --uc-menubar-height: 30px }
 
 #titlebar{ -moz-box-direction: reverse; -moz-appearance: none !important; }
-@media (-moz-os-version: windows-win10){
+@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
   :root[sizemode="maximized"][tabsintitlebar] #TabsToolbar{ margin-top: 8px !important; }
 }
 #toolbar-menubar{
