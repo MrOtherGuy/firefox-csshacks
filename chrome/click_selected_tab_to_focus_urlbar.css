@@ -10,6 +10,8 @@ See the above repository for updates as well as full license text. */
 /* Make selected tab unclickable so click goes to the capture box, obviously it can't be clicked at all anymore */
 /* remove the :not([pinned]) bit to make clicking pinned tab AROUND the tab-icon focus urlbar*/
 
+:root{ --tab-block-margin: var(--proton-tab-block-margin) }
+
 .tabbrowser-tab:not([pinned])[selected]{ pointer-events: none }
 
 /* Add back pointer-events to several elements so UI remains usable */
@@ -28,7 +30,7 @@ See the above repository for updates as well as full license text. */
   top: 0;
   left: 0;
   width: calc(100vw - 138px);
-  height: var(--tab-min-height);
+  height: calc(var(--tab-min-height) + 2*var(--tab-block-margin));
   content: "";
 }
 
