@@ -44,8 +44,8 @@ See the above repository for updates as well as full license text. */
 :root:not([customizing]) #titlebar{ margin-bottom: -40px }
 
 /* Oh and! also hide other buttons from the nav-bar because why not */
-#nav-bar-customization-target > toolbarbutton{ visibility: collapse }
-#alltabs-button{ margin-right: 40px !important; }
+#nav-bar-customization-target > :not(#urlbar-container){ visibility: collapse }
+#TabsToolbar > .toolbar-items{ margin-right: 40px !important; }
 
 #nav-bar{ 
   padding-right: 138px;
