@@ -29,7 +29,7 @@ See the above repository for updates as well as full license text. */
   border-radius: 6px;
 }
 
-.tabbrowser-tab[selected][fadein]{ max-width: none !important; min-width: 200px !important }
+.tabbrowser-tab[selected][fadein]{ max-width: 100vw !important; min-width: 200px !important }
 
 #navigator-toolbox:focus-within .tabbrowser-tab[selected] .tab-content{
   opacity: 0;
