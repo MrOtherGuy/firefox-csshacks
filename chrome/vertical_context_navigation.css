@@ -4,18 +4,17 @@ See the above repository for updates as well as full license text. */
 /* This very likely only works properly on Windows10 */
 /* If this won't work correctly can try the v2 file */
 
-#contentAreaContextMenu{ --uc-popup-display: grid; --uc-pseudo-elem: "" }
+#contentAreaContextMenu{
+  --uc-popup-display: grid;
+  --uc-pseudo-elem: "";
+  min-height: 162px;
+}
 scrollbox[orient="vertical"]{
   display: var(--uc-popup-display,inherit);
   grid-template-columns: 38px 1fr; 
-  grid-template-rows: 0
+  grid-template-rows: 0;
 }
 
-#contentAreaContextMenu::after{
-  display: -moz-box;
-  content: "";
-  -moz-box-ordinal-group: 0;
-}
 scrollbox[orient="vertical"]::before{
   content: var(--uc-pseudo-elem,none);
   grid-area: auto / 2 / auto / 2;
@@ -23,7 +22,13 @@ scrollbox[orient="vertical"]::before{
 
 #contentAreaContextMenu menu{ --uc-popup-display: } /* intentionally blank */
 
-#context-navigation{ -moz-box-orient: vertical; flex-direction: column !important; grid-area: 1 / 1 / auto / 1; min-width: unset !important; }
+#context-navigation{
+  -moz-box-orient: vertical;
+  flex-direction: column !important;
+  grid-area: 1 / 1 / auto / 1;
+  min-width: unset !important;
+  
+}
 #context-navigation > menuitem{ min-height: 38px; width: unset !important; }
 #context-navigation > menuitem > .menu-iconic-left{ margin: 0 !important; padding: 0 !important; }
 #context-sep-navigation{ display: none }

@@ -4,6 +4,7 @@ See the above repository for updates as well as full license text. */
 /* This very likely only works properly on Windows10 */
 /* This v2 uses transform instead of grid display which might or might not work better */
 
+#contentAreaContextMenu{ min-height: 162px }
 #context-navigation > menuitem{ max-width: 40px}
 
 #context-forward{ transform: translate(-40px, 40px) }
