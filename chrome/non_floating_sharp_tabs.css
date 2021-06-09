@@ -29,6 +29,8 @@ See the above repository for updates as well as full license text. */
 
 #TabsToolbar{
   --toolbarbutton-inner-padding: 7px !important;
+}
+#navigator-toolbox:not([movingtab]) > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }
 
