@@ -13,6 +13,7 @@ See the above repository for updates as well as full license text. */
 #PanelUI-button,
 #nav-bar-overflow-button{ z-index: 2; position: relative }
 
+:root[sizemode="normal"] #urlbar-container{ margin-inline: 40px !important; }
 
 #urlbar-input-container > :not(.urlbar-input-box){ visibility: hidden }
 
@@ -27,6 +28,9 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   padding: 6px;
   border-radius: 6px;
+  box-shadow: 0 0 26px currentColor;
+  left: 50vw;
+  margin-left: -50% !important;
 }
 
 .tabbrowser-tab[selected][fadein]{ max-width: 100vw !important; min-width: 200px !important }
