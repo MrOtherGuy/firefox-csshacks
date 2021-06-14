@@ -28,7 +28,7 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   padding: 6px;
   border-radius: 6px;
-  box-shadow: 0 0 26px currentColor;
+  box-shadow: 0 0 26px #444;
   left: 50vw;
   margin-left: -50% !important;
 }
