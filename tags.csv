@@ -130,3 +130,4 @@ sharp_menupopup_corners.css,popup,menu,proton
 overlay_tab_audio_icons.css,icon,tab
 custom_default_tab_favicons.css,tab,icon
 selected_tab_as_urlbar.css,hack
+icon_only_tabs.css,tab,icon
