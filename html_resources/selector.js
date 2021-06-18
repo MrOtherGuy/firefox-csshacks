@@ -266,7 +266,16 @@ const Highlighter = new(function(){
     
     clearCodeBlock();
     let node = document.createElement("div");
-       
+    
+    function createNewRuleset(){
+      let ruleset = document.createElement("span");
+      ruleset.className = "ruleset";
+      node.appendChild(ruleset);
+      return ruleset
+    }
+    
+    let rulesetUnderConstruction = createNewRuleset();
+
     function createElementFromToken(type,c){
       if(token.length === 0 && !c){
         return
@@ -275,6 +284,8 @@ const Highlighter = new(function(){
       
       switch(type){
         case "selector":
+        // This isn't exactly correct, but it works because parser treats \r\n sequences that follow a closed comment as "selector"
+          rulesetUnderConstruction = createNewRuleset();
           let parts = token.split(/([\.#:\[]\w[\w-_"'=\]]*|\s\w[\w-_"'=\]]*)/);
         
           for(let part of parts){
@@ -341,7 +352,7 @@ const Highlighter = new(function(){
       
       n.className = (`token ${type}`);
       token = "";
-      node.appendChild(n);
+      rulesetUnderConstruction.appendChild(n);
       return
     }
     
