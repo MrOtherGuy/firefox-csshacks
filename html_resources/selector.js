@@ -112,15 +112,26 @@ function clearCodeBlock(){
 }
 
 function showMatchingTargets(fileNames){
+  let bonus = 0;
   for(let c of Array.from(document.querySelectorAll(".target"))){
-    fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
+    if(fileNames.includes(getText(c))){
+      c.classList.remove("hidden")
+    }else{
+      if(c.classList.contains("selected")){
+        bonus++
+      }else{
+        c.classList.add("hidden");
+      }
+      
+    }
+    //fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
   }
   document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
 }
 
 function onCategoryClicked(categoryNode,isSecondary = false){
   
-  clearCodeBlock();
+  //clearCodeBlock();
   currentCategory.set(categoryNode,isSecondary);
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
@@ -142,7 +153,7 @@ function onCategoryClicked(categoryNode,isSecondary = false){
   return
 }
 
-async function onTargetClicked(target){
+async function onTargetClicked(target,append = false){
   const codeBlock = document.querySelector("pre");
   const text = typeof target === "string"
               ? target
@@ -150,7 +161,7 @@ async function onTargetClicked(target){
   
   fetchWithType(`chrome/${text}`)
   //.then(text => (codeBlock.textContent = text))
-  .then(text => Highlighter.parse(codeBlock,text))
+  .then(text => Highlighter.parse(codeBlock,text,append))
   .catch(e => console.log(e))
 }
 
@@ -164,13 +175,43 @@ function onSomeClicked(e){
       onCategoryClicked(e.target,true/* isSecondary */);
       break;
     case "targets":
-      onTargetClicked(e.target);
+      if(!e.target.classList.contains("selected")){
+        if(e.ctrlKey && selectedTarget.getIt()){
+          selectedTarget.add(e.target);
+          onTargetClicked(e.target,true);
+        }else{
+          selectedTarget.set(e.target);
+          onTargetClicked(e.target);
+        }
+      }
       break;
     default:
       break;
   }
 }
 
+const selectedTarget = new(function(){
+  const selected = new Set();
+  this.set = (el) => {
+    this.clear();
+    el.classList.add("selected");
+    selected.add(el);
+  }
+  this.getIt = () =>{ return selected.values().next().value };
+  this.add = (el) => {
+    selected.add(el);
+    el.classList.add("selected");
+  };
+  this.deselect = (el) => {
+    el.classList.remove("selected");
+    return selected.delete(el)
+  };
+  this.clear = () => {
+    selected.forEach(el=>el.classList.remove("selected"));
+    selected.clear();
+    return true
+  }
+})();
 
 function createCategories(){
   
@@ -262,10 +303,10 @@ const Highlighter = new(function(){
   [".","class"],
   ["[","attribute"]]);
 
-  this.parse = function(targetNode,text){
+  this.parse = function(targetNode,text,appendMode){
     
-    clearCodeBlock();
-    let node = document.createElement("div");
+    !appendMode && clearCodeBlock();
+    let node = appendMode ? targetNode.firstChild : document.createElement("div");
     
     function createNewRuleset(){
       let ruleset = document.createElement("span");
