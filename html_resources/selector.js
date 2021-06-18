@@ -273,54 +273,70 @@ const Highlighter = new(function(){
       }
       let n = document.createElement("span");
       
-      
-      if(type==="selector"){
+      switch(type){
+        case "selector":
+          let parts = token.split(/([\.#:\[]\w[\w-_"'=\]]*|\s\w[\w-_"'=\]]*)/);
         
-        let parts = token.split(/([\.#:\[]\w[\w-_"'=\]]*|\s\w[\w-_"'=\]]*)/);
-        
-        for(let part of parts){
-          if(part.length === 0){
-            continue
+          for(let part of parts){
+            if(part.length === 0){
+              continue
+            }
+            let c = part[0];
+            switch (c){
+              case ":":
+              case "#":
+              case "[":
+              case ".":
+                let p = n.appendChild(document.createElement("span"));
+                p.className = selectorToClassMap.get(c);
+                p.textContent = part;
+                break;
+              default:
+                n.append(part);
+            }
           }
-          let c = part[0];
-          switch (c){
-            case ":":
-            case "#":
-            case "[":
-            case ".":
-              let p = n.appendChild(document.createElement("span"));
-							p.className = selectorToClassMap.get(c);
-              p.textContent = part;
-              break;
-            default:
-              n.append(part);
+          break
+        case "comment":
+          let linksToFile = token.match(/[\w-\.]+\.css/g);
+          if(linksToFile && linksToFile.length){
+            let linkIdx = 0;
+            let fromIdx = 0;
+            while(linkIdx < linksToFile.length){
+              let part = linksToFile[linkIdx++];
+              let idx = token.indexOf(part);
+              n.append(token.substring(fromIdx,idx));
+              let link = document.createElement("a");
+              link.textContent = part;
+              link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${part}`;
+              link.target = "_blank";
+              n.appendChild(link);
+              fromIdx = idx + part.length;
+            }
+            n.append(token.substring(fromIdx));
+          }else{
+            n.textContent = c || token;
           }
-        }
-        
-        
-      } else if(type === "comment"){
-        let linksToFile = token.match(/[\w-\.]+\.css/g);
-        if(linksToFile && linksToFile.length){
-          let linkIdx = 0;
-          let fromIdx = 0;
-          while(linkIdx < linksToFile.length){
-            let part = linksToFile[linkIdx++];
-            let idx = token.indexOf(part);
-            n.append(token.substring(fromIdx,idx));
-            let link = document.createElement("a");
-            link.textContent = part;
-            link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${part}`;
-            link.target = "_blank";
-            n.appendChild(link);
-            fromIdx = idx + part.length;
+          break;
+        case "value":
+          let startImportant = token.indexOf("!");
+          if(startImportant === -1){
+            n.textContent = c || token;
+          }else{
+            n.textContent = token.substr(0,startImportant);
+            let importantTag = document.createElement("span");
+            importantTag.className = "important-tag";
+            importantTag.textContent = "!important";
+            n.appendChild(importantTag);
+            if(token.length > (9 + startImportant)){
+              n.append(";")
+            }
           }
-          n.append(token.substring(fromIdx));
-        }else{
-          n.textContent = c || token
-        }
-      }
-      else{
-        n.textContent = c || token;
+          break;
+        case "function":
+          n.textContent = c || token.slice(0,-1);
+          break
+        default:
+          n.textContent = c || token;
       }
       
       n.className = (`token ${type}`);
@@ -330,9 +346,11 @@ const Highlighter = new(function(){
     }
     
     let c;
+    let functionValueLevel = 0;
     let curly = false;
     while(pointer < text.length){
       c = text[pointer];
+      
       const currentState = state.now();
       curly = currentState != 2 && (c === "{" || c === "}");
       if(!curly){
@@ -402,6 +420,11 @@ const Highlighter = new(function(){
             case "}":
               createElementFromToken("value");
               state.set(0);
+              break;
+            case "(":
+              createElementFromToken("value");
+              functionValueLevel++;
+              state.set(7);
           }
           break;
         case 5:
@@ -419,13 +442,26 @@ const Highlighter = new(function(){
               state.set(0);
           }
           break
+        case 7:
+          switch(c){
+            case ")":
+              functionValueLevel--;
+              if(functionValueLevel === 0){
+                createElementFromToken("function");
+                token = ")";
+                state.set(4);
+              }
+              break;
+            case "}":
+              functionValueLevel = 0;
+              state.set(0)
+          }
         default:
           false
       }
       
       curly && createElementFromToken("curly",c);
       
-
       pointer++
     }
     createElementFromToken("text");

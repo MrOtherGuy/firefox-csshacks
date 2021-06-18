@@ -96,12 +96,14 @@ pre > div{
 .pseudo{ color: silver }
 .id{ color: rgb(240, 148, 138) }
 .class{ color: skyblue }
-.attribute{ color: rgb(210,120,190) }  
+.attribute{ color: rgb(120,230,170) }  
 .atrule{ color: lime }
 .atvalue{ color: lightblue }
 .property{ color: palegoldenrod }
 .value{ color: skyblue }
 .curly{ color: magenta }
+.function{ color: silver }
+.important-tag{ color: orange }
 
 @keyframes showDelayed{ from{ visibility: hidden } to{ visibility: visibile }}
 
