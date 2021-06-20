@@ -22,6 +22,10 @@ See the above repository for updates as well as full license text. */
     display: flex !important;
     padding: 0 !important;
     margin: 0px calc(0px - var(--card-padding)) !important;
+    border-width: 1px 0 0 0  !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: rgba(127,127,127,0.1) !important;
     backdrop-filter: none !important; /* Having a backdrop-filter leads to some unexpected layering issues */
   }
   
