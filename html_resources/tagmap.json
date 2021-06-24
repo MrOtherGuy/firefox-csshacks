@@ -131,5 +131,6 @@
 "overlay_tab_audio_icons.css":["icon","tab"],
 "custom_default_tab_favicons.css":["tab","icon"],
 "selected_tab_as_urlbar.css":["hack"],
-"icon_only_tabs.css":["tab","icon"]
+"icon_only_tabs.css":["tab","icon"],
+"proton_dark_light_notifications.css":["popup","proton"]
 }
