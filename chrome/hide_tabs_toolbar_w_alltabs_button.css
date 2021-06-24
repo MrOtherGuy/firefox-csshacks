@@ -1,0 +1,20 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_toolbar_w_with_alltabs_button.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This is less flexible than hide_tabs_toolbar.css, but this method aims to preserve the alltabs button and show it and window controls next to the main menu button */
+
+/* Load window_control_placeholder_support.css before this stylesheet */
+
+#tabbrowser-tabs{ visibility: collapse }
+#TabsToolbar-customization-target{ -moz-box-pack: end; }
+#alltabs-button{ position: relative; z-index: 1 }
+#TabsToolbar > .titlebar-spacer{ display: none }
+#TabsToolbar{ margin-bottom: calc(-18px - 2 * (var(--toolbarbutton-inner-padding)))}
+
+:root{ --uc-titlebar-padding: 0px; --uc-window-control-width: 40px }
+:root[tabsintitlebar]{ --uc-window-control-width: 160px }
+:root[inFullscreen]{ --uc-window-control-width: 0px }
+@media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+  :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
+}
+#titlebar{ -moz-appearance: none !important; margin-top: var(--uc-titlebar-padding) }
