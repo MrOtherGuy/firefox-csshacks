@@ -134,3 +134,4 @@ vertical_popup_menubar.css,menubar,menu,toolbars,popup
 window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colors,patch
 window_control_placeholder_support.css,window-control,patch
 loading_indicator_bouncing_line.css,status,navigation,effect
+loading_indicator_rotating_image.css,navigation,effect,status

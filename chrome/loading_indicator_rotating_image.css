@@ -1,0 +1,30 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/loading_indicator_rotating_image.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Shows a rotating image over web content during navigation */
+
+@keyframes statusimage-anim{
+  from{ transform: rotateZ(0deg) }
+  to{ transform: rotateZ(360deg) }
+}
+#statuspanel[type="status"]::after{
+  position: absolute;
+  display: block;
+  height: 200px;
+  width: 200px;
+  top: -60vh;
+  left:50vw;
+  margin-left: -100px;
+  content: "";
+  pointer-events: none;
+  border-radius: 100px;
+  box-shadow: 0 0 40px grey;
+  background-color: rgba(127,127,127,0.4);
+  background-image: url("chrome://global/skin/icons/settings.svg");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -moz-context-properties: fill;
+  fill: rgb(20,20,50);
+  animation: statusimage-anim 2s infinite linear;
+}
