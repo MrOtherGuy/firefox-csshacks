@@ -1,0 +1,36 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/menupopup_forced_color_schemes.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This only works on Windows10 when the proton-style context menus are used.
+ * Purpose of this style is to force either dark or light version of menus
+ * regardless of the Firefox theme you have.
+ * This does NOTHING unless you go to about:config and create a new boolean pref
+ * "userchrome.menupopups.force-light" (or "-dark" for dark version) and set it true.
+ *
+ * If both are set true then dark version is used.
+ * If both are set false then normal Firefox behavior is used (so your theme selects it)
+ * Changes to the prefs WON'T APPLY before Firefox is restarted.
+*/
+
+@supports -moz-bool-pref("userchrome.menupopups.force-light"){
+  menupopup{
+    --menuitem-hover-background-color: #e0e0e6 !important;
+    --menu-background-color: #f9f9fb !important;
+    --menu-color: #15141a !important;
+    --menuitem-disabled-hover-background-color: rgba(224, 224, 230, 0.4) !important;
+    --menu-disabled-color: rgba(21, 20, 26, 0.4) !important;
+    --menu-border-color: #cfcfd8!important;
+    --menu-icon-opacity: 0.7 !important;
+  }
+}
+@supports -moz-bool-pref("userchrome.menupopups.force-dark"){
+  menupopup{
+    --menuitem-hover-background-color: #52525e !important;
+    --menu-background-color: #2b2a33 !important;
+    --menu-color: #fbfbfe !important;
+    --menuitem-disabled-hover-background-color: rgba(82, 82, 94, 0.4) !important;
+    --menu-disabled-color: rgba(251, 251, 254, 0.4) !important;
+    --menu-border-color: #5b5b66 !important;
+    --menu-icon-opacity: 1 !important;
+  }
+}
