@@ -33,7 +33,7 @@ See the above repository for updates as well as full license text. */
   from{ transform: rotateZ(0deg) }
   to{ transform: rotateZ(360deg) }
 }
-.tabbrowser-tab:not([bursting]) .tab-icon-stack:not([busy])::before{ visibility: collapse; }
+.tabbrowser-tab:not([bursting]) .tab-icon-stack:not([busy])::before{ visibility: collapse; width: 0 }
 .tab-icon-stack:not([busy])::before{ opacity: 0 }
 .tabbrowser-tab:not([progress]) .tab-icon-stack[busy]::before{
   clip-path: polygon(50% 50%,50% 0%,100% 0%,100% 50%, 100% 50%,100% 50%, 100% 50%);
