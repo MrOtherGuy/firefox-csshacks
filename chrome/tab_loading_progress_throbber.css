@@ -4,13 +4,14 @@ See the above repository for updates as well as full license text. */
 /* Create a circular throbber inside tabs replacing the default one  */
 /* Doesn't really measure loading progress but sort of looks like it */
 
-#tabbrowser-tabs{ --tab-loader-size: 18px; }
-.tabbrowser-tab .tab-throbber,
+#tabbrowser-tabs{ --tab-loader-size: 16px; }
+.tab-throbber,
 .tabbrowser-tab[bursting] .tab-icon-image{
   display: none !important;
 }
-.tabbrowser-tab .tab-content::before{
+.tab-icon-stack::before{
   display: -moz-box;
+  grid-area: 1/1;
   content: "";
   width:var(--tab-loader-size);
   height:var(--tab-loader-size);
@@ -19,8 +20,8 @@ See the above repository for updates as well as full license text. */
   clip-path: polygon(50% 50%,50% 0%,50% 0%,50% 0%, 50% 0%,50% 0%, 50% 0%);
   transition: clip-path 0.2s ease-out, opacity 0.3s linear 0.1s;
 }
-.tabbrowser-tab:is([busy],[bursting]) .tab-content{ padding-left: calc( 9px - (var(--tab-loader-size) - 16px)) !important; }
-.tabbrowser-tab[pinned] .tab-content::before{ margin-right: 0px }
+
+.tab-icon-stack[pinned]::before{ margin-right: 0px }
 @keyframes loadprogress{
   from{ clip-path: polygon(50% 50%,50% 0%,100% 0%,100% 50%, 100% 50%,100% 50%, 100% 50%); }
   25%{ clip-path: polygon(50% 50%,50% 0%,100% 0%,100% 100%, 100% 100%,100% 100%, 100% 100%); }
@@ -32,16 +33,16 @@ See the above repository for updates as well as full license text. */
   from{ transform: rotateZ(0deg) }
   to{ transform: rotateZ(360deg) }
 }
-.tabbrowser-tab:not([busy]):not([bursting]) .tab-content::before{ visibility: collapse; }
-.tabbrowser-tab:not([busy]) .tab-content::before{ opacity: 0 }
-.tabbrowser-tab[busy]:not([progress]) .tab-content::before{
+.tabbrowser-tab:not([bursting]) .tab-icon-stack:not([busy])::before{ visibility: collapse; }
+.tab-icon-stack:not([busy])::before{ opacity: 0 }
+.tabbrowser-tab:not([progress]) .tab-icon-stack[busy]::before{
   clip-path: polygon(50% 50%,50% 0%,100% 0%,100% 50%, 100% 50%,100% 50%, 100% 50%);
 }
-.tabbrowser-tab[busy][progress] .tab-content::before{
+.tabbrowser-tab[progress] .tab-icon-stack[busy]::before{
   animation: loadprogress 2s linear, rotation 0.7s linear 2s infinite !important;
   animation-fill-mode: forwards !important;
 }
-.tabbrowser-tab[bursting] .tab-content::before{
+.tabbrowser-tab[bursting] .tab-icon-stack::before{
   clip-path: polygon(50% 50%,50% 0%,100% 0%,100% 100%, 0% 100%,0% 0%, 50% 0%) !important;
 }
-#tabbrowser-tabs[schedulepressure] .tab-content::before{ display:none !important; }
+#tabbrowser-tabs[schedulepressure] .tab-icon-stack::before{ display:none !important; }
