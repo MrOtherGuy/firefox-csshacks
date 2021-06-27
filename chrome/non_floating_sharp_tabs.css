@@ -82,13 +82,12 @@ See the above repository for updates as well as full license text. */
   background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));
 }
 /* Photon-like tab on hover animation for the top line */
-@keyframes tab-line-anim{ from{ margin-inline: 20px } to { margin-inline: 0 } }
+@keyframes tab-onhover-line-anim{ from{ margin-inline: 20px } to { margin-inline: 0 } }
 
-.tab-stack:hover > .tab-background::before{ animation: tab-line-anim 160ms }
+.tab-stack:hover > .tab-background::before{ animation: tab-onhover-line-anim 160ms }
 
 /* Disable animation for selected and pinned tabs */
-.tabbrowser-tab[pinned] > .tab-stack > .tab-background::before,
-.tab-background[selected]::before{ animation: none !important }
+.tabbrowser-tab:is([pinned],[selected]) > .tab-stack > .tab-background::before{ animation: none }
 
 /* moves context-line to the bottom */
 .tab-context-line{ -moz-box-ordinal-group: 2; margin-inline: 10px !important; }
