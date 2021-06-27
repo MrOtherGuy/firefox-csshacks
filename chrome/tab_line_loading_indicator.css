@@ -3,25 +3,24 @@ See the above repository for updates as well as full license text. */
 
 /* Hide the normal loading indicator (just show tab-icon instead) and make the top tab-line bounce left-to-right */
 
-@keyframes tabline-anim{from{background-position-x: left}to{background-position-x: right}}
-.tabbrowser-tab[busy] > stack >  .tab-background::before,
+@keyframes tab-loading-line-anim{from{background-position-x: left}to{background-position-x: right}}
+.tabbrowser-tab[busy] > .tab-stack >  .tab-background::before,
 .tab-background[selected]::before{
   content: "";
   display: -moz-box;
   height: 2px;
-  opacity: 0;
-  background-image: linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2));
+  background-color:transparent;
   background-repeat: no-repeat;
   background-size: 100%;
   transition: background-size 80ms linear;
 }
 
-.tabbrowser-tab[busy] > stack > .tab-background::before{
+.tabbrowser-tab[busy] > .tab-stack > .tab-background::before{
   background-size: 10%;
-  background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));
+  background-image: linear-gradient(currentColor,currentColor);
   opacity: 0.7;
-  animation: tabline-anim 400ms alternate infinite ease-in-out;
+  animation: tab-loading-line-anim 400ms alternate infinite ease-in-out;
 }
 
-.tabbrowser-tab .tab-throbber{ display: none }
-.tabbrowser-tab .tab-icon-image{ display: -moz-box !important; }
+.tab-throbber{ display: none }
+.tab-icon-image[src]{ display: -moz-box }
