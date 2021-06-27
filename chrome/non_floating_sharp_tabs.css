@@ -5,6 +5,8 @@ See the above repository for updates as well as full license text. */
 
 /* It's not strictly a requirement, but this style expects  compact_proton.css to be loaded before it. */
 
+/* NOTE: go to about:config and enable layout.css.color-mix.enabled, this doesn't work properly without it. */
+
 :root{
   --proton-tab-block-margin: 0px !important;
   --tab-block-margin: 0px !important;
