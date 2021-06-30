@@ -15,7 +15,7 @@ See the above repository for updates as well as full license text. */
 
 :root[sizemode="normal"] #urlbar-container{ margin-inline: 40px !important; }
 
-#urlbar-input-container > :not(.urlbar-input-box){ visibility: hidden }
+#urlbar-input-container > :not(.urlbar-input-box){ opacity: 0 }
 
 #urlbar-background{
   background: transparent !important;
