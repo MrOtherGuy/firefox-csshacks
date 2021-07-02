@@ -55,7 +55,7 @@ See the above repository for updates as well as full license text. */
 }
 
 .tabbrowser-tab{
-  height: calc((var(--tab-min-height) + 2 * var(--proton-tab-block-margin,0px))) !important;
+  height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px))) !important;
   scroll-snap-align: start;
 }
 
