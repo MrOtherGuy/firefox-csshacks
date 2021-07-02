@@ -10,8 +10,10 @@ See the above repository for updates as well as full license text. */
   transform: translateY(var(--uc-navbar-transform))
 }
 
-:root[customizing],
-:root[chromehidden*="toolbar"] :where(#nav-bar,#PersonalToolbar,#tab-notification-deck){
+:root:is([customizing],[chromehidden*="toolbar"]) :where(#nav-bar,#PersonalToolbar,#tab-notification-deck){
+  transform: none !important;
+  opacity: 1 !important;
+}{
   transform: none !important;
   opacity: 1 !important;
 }
