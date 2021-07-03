@@ -54,10 +54,7 @@ See the above repository for updates as well as full license text. */
   --scrollbutton-display-model: none;
 }
 
-.tabbrowser-tab{
-  height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px))) !important;
-  scroll-snap-align: start;
-}
+.tabbrowser-tab{ scroll-snap-align: start; }
 
 #tabbrowser-tabs .tabbrowser-tab[pinned]{
   position: static !important;
