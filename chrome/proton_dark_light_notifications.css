@@ -4,6 +4,9 @@ See the above repository for updates as well as full license text. */
 /* Makes web notifications use dark/light theme based on your selected theme, and makes them fit a bit better to rounded proton style. */
 
 @-moz-document url("chrome://global/content/alerts/alert.xhtml") {
+  /* line below removes background from the notification "window" on linux */
+  #alertNotification{ background: transparent !important }
+  
   #alertBox{ border-radius: 6px !important; }
   #alertSettings {
     fill: currentColor !important;
@@ -16,17 +19,17 @@ See the above repository for updates as well as full license text. */
   .close-icon{ background: transparent !important }
   
   .close-icon:hover > .toolbarbutton-icon,
-  #alertSettings:is(:hover,[open]) > .button-box{
+  #alertSettings:is(:hover,[open]) > .button-box > .box-inherit{
     background-color: rgba(0,0,0,.09) !important;
   }
-  #alertSettings > .button-box,
+  #alertSettings > .button-box > .box-inherit,
   .close-icon > .toolbarbutton-icon{
     padding: 2px !important;
     margin: 2px 2px -2px 0 !important;
     border-radius: 4px !important;
   }
   #alertSettings > .button-box > .box-inherit > .button-icon { padding: 1px }
-  #alertSettings > .button-box{ margin: -4px 4px 3px 0 !important; }
+  #alertSettings > .button-box > .box-inherit{ margin: -4px 4px 3px 0 !important; }
   
   @media (-moz-toolbar-prefers-color-scheme:dark){
     #alertBox {
@@ -35,7 +38,9 @@ See the above repository for updates as well as full license text. */
       color: rgba(215,215,215,.9) !important;
     }
     .close-icon:hover > .toolbarbutton-icon,
-    #alertSettings:is(:hover,[open]) > .button-box { background-color: rgba(215,215,215,.1) !important; }
+    #alertSettings:is(:hover,[open]) > .button-box > .box-inherit {
+      background-color: rgba(215,215,215,.1) !important;
+    }
     #alertSourceLabel {
       color: rgb(5,209,241) !important;
     }
