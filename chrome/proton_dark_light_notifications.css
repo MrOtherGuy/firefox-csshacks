@@ -48,7 +48,7 @@ See the above repository for updates as well as full license text. */
 
   @media (-moz-toolbar-prefers-color-scheme:dark) {
     :root {
-      --menu-border-color: rgba(107,107,107,.3) !important;
+      --menu-border-color: #5b5b66 !important;
     }
 
     #alertBox {
