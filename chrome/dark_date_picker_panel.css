@@ -1,0 +1,19 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/dark_date_picker_panel.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the HTML <input type="date"> picker panel dark IF you use dark colored theme. It does not affect the input element on the page, only the popup */
+
+@media (-moz-toolbar-prefers-color-scheme: dark){
+  #DateTimePickerPanel{ --panel-background: #2b2a33 !important; }
+}
+@-moz-document url("chrome://global/content/datepicker.xhtml"){
+  @media (-moz-toolbar-prefers-color-scheme: dark){
+    :root{
+      --border: 0.1rem solid #a4a4a4 !important;
+      --weekend-font-color: #ff4030 !important
+    }
+    body,.month-year-view{ background: #2b2a33 !important; color: #f4f4f4 !important; }
+    button.month-year::after,
+    button{ fill: #f4f4f4 !important; }
+  }
+}

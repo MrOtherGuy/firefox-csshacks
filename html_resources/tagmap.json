@@ -137,5 +137,6 @@
 "loading_indicator_bouncing_line.css":["status","navigation","effect"],
 "loading_indicator_rotating_image.css":["navigation","effect","status"],
 "menupopup_forced_color_schemes.css":["popup","colors","menu"],
-"centered_tab_label.css":["tab"]
+"centered_tab_label.css":["tab"],
+"dark_date_picker_panel.css":["popup","dark-mode"]
 }
