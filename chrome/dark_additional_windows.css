@@ -17,7 +17,7 @@ See the above repository for updates as well as full license text. */
   url-prefix(chrome://browser/content/sanitize.xhtml),
   url-prefix("chrome://mozapps/content/downloads"){
   :root{
-    background-color: #42414d !important;
+    background-color: #2b2a33 !important;
     --in-content-box-background: #23222b !important;
   }
   #placesToolbox,
