@@ -3,15 +3,17 @@ See the above repository for updates as well as full license text. */
 
 /* Page action-buttons "slide in" when cursor is on top of them and don't reserve space when not used */
 
-#page-action-buttons > *[class^=urlbar-icon]{
-  margin-inline-end: -26px;
+#page-action-buttons{ padding-inline-start: 8px }
+
+.urlbar-page-action{
+  margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding) );
   opacity: 0;
   transition: margin-inline-end 100ms linear, opacity 200ms linear;
 }
-:root[uidensity="compact"] #page-action-buttons > *[class^=urlbar-icon]{ margin-inline-end: -22px; }
-#page-action-buttons:hover > *[class^=urlbar-icon],
-#page-action-buttons > *[class^=urlbar-icon][open],
-#page-action-buttons > *[class^=urlbar-icon][open] ~ *[class^=urlbar-icon]{
+
+#page-action-buttons:hover > .urlbar-page-action,
+.urlbar-page-action[open],
+.urlbar-page-action[open] ~ .urlbar-page-action{
   opacity: 1;
   margin-inline-end: 0px !important;
 }
