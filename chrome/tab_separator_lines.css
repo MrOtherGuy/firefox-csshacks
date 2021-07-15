@@ -5,8 +5,14 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab{
   border-inline-end: 1px solid transparent !important;
-  border-image: 0 1 linear-gradient(transparent 20%,var(--toolbarseparator-color) 20%,var(--toolbarseparator-color) 80%,transparent 80%);
+  border-image: 0 1 linear-gradient(
+    transparent 20%,
+    color-mix(in srgb, currentColor 20%, transparent) 20%,
+    color-mix(in srgb, currentColor 20%, transparent) 80%,
+    transparent 80%
+  );
 }
+
 .tabbrowser-tab:hover,
 .tabbrowser-tab[beforehovered],
 .tabbrowser-tab[selected],

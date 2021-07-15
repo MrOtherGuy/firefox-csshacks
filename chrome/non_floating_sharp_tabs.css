@@ -3,11 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* This style makes tabs and related items non-rounded and connects tabs to toolbars like in previous Firefox versions. */
 
-/* It's not strictly a requirement, but this style expects  compact_proton.css to be loaded before it. */
+/* It's not strictly a requirement, but this style expects compact_proton.css to be loaded before it. */
 
-/* NOTE: go to about:config and enable layout.css.color-mix.enabled, this doesn't work properly without it. */
-
-:root{
+:root[id]{
   --proton-tab-block-margin: 0px !important;
   --tab-block-margin: 0px !important;
   --tabs-shadow-size: 1px !important;
@@ -19,14 +17,13 @@ See the above repository for updates as well as full license text. */
   /* --tab-line-color: blue !important; */ 
 }
 
-/* This sets a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
-#navigator-toolbox{
-  --tabs-border-color: color-mix(in srgb, currentcolor 30%, transparent) !important;
+/* These next two rules set a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
+#nav-bar{
+  /* This overrides value in compact_proton.css */
+  box-shadow: 0 -1px 0 0 color-mix(in srgb, currentcolor 30%, transparent) !important;
 }
-
-/* This overrides value in compact_proton.css */
-#nav-bar{ 
-  box-shadow: 0 -1px 0 0 var(--tabs-border-color) !important;
+.tab-background[selected]{
+  border-inline: 1px solid color-mix(in srgb, currentcolor 30%, transparent) !important;
 }
 
 #TabsToolbar{
@@ -64,9 +61,6 @@ See the above repository for updates as well as full license text. */
 .tab-background{
   border-radius: 0 !important;
   box-shadow: none !important;
-}
-.tab-background[selected]{
-  border-inline: 1px solid var(--tabs-border-color) !important;
 }
 
 /* Line to mark selected tab */

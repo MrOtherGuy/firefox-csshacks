@@ -18,9 +18,7 @@ See the above repository for updates as well as full license text. */
 
 #TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
 
-.tabbrowser-tab:hover{ --uc-tab-fill: rgba(0,0,0,.1) }
 .tabbrowser-tab[selected]{ --uc-tab-curve-padding: 1px } 
-#TabsToolbar[brighttext] .tabbrowser-tab:hover{ --uc-tab-fill: rgba(255,255,255,.1) }
 .titlebar-spacer[type="pre-tabs"],
 .tabbrowser-tab::after{ border: none !important; }
 
@@ -33,7 +31,7 @@ See the above repository for updates as well as full license text. */
   display: block;
   position: absolute;
   content: "";
-  fill: var(--uc-tab-fill);
+  fill: color-mix(in srgb, currentColor 11%, transparent);
   -moz-context-properties: fill,stroke;
   left: calc(var(--uc-tab-curve-padding,0px) - var(--uc-tab-curve-size));
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlLXdpZHRoPSIxLjIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDE3IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMCAxNyBMMCAxNiBBMTYgMTYgMCAwIDAgMTYgMCBMIDE4IDAgTCAxOCAxNyBaIiBmaWxsPSJjb250ZXh0LWZpbGwiPjwvcGF0aD4NCiAgPHBhdGggZD0iTTAgMTYgQTE2IDE2IDAgMCAwIDE2IDAiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIGZpbGw9InRyYW5zcGFyZW50Ij48L3BhdGg+DQo8L3N2Zz4");
@@ -81,9 +79,11 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab[last-visible-tab]{ margin-inline-end: var(--uc-tab-curve-size) !important; }
 
 /* OPTIONAL - COLORS - show tabs border, selected tab line and make selected tab match the main toolbar color. Also disables tab shadow */
+/* Using these color options requires you to set layout.css.color-mix.enabled to true in about:config  */
 /*
 #navigator-toolbox{ --tabs-border-color: color-mix(in srgb, currentcolor, transparent 80%) !important; }
 #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
+.tab-background[selected]{ --toolbar-bgcolor: transparent }
 .tabbrowser-tab .tab-background{ border-top: none !important; box-shadow: none !important; }
 
 .tab-background[selected]::before{
