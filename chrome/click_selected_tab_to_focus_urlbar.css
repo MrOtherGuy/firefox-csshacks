@@ -19,8 +19,8 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar toolbarbutton,
 #TabsToolbar toolbaritem,
 .tabbrowser-tab,
-.tabbrowser-tab .tab-close-button,
-.tabbrowser-tab .tab-icon-overlay{
+.tab-close-button,
+.tab-icon-stack{
   pointer-events: auto
 }
 
