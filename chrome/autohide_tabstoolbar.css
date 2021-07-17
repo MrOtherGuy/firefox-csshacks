@@ -3,15 +3,30 @@ See the above repository for updates as well as full license text. */
 
 /* Hide tabs unless cursor is on top of toolbar */
 
-@keyframes slidein{
-  from{ margin-top: calc(0px - var(--tab-min-height)) }
-  to{ margin-top: 0 }
+/* Dummy variable to support both versions 89-90 */
+:root{ --tab-block-margin: var(--proton-tab-block-margin) }
+
+:root:not([customizing]) #navigator-toolbox{
+  position: relative;
+  z-index: 1;
 }
-@keyframes slideout{
-  from{ margin-top: var(--tab-min-height) }
-  to{ margin-top: 0 }
+
+:root:not([customizing]) #navigator-toolbox:hover,
+:root:not([customizing]) #titlebar{
+  margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
 }
-#navigator-toolbox:not(:hover) > #titlebar{ -moz-appearance: none !important }
-#navigator-toolbox:not(:hover)  #TabsToolbar:not([customizing]) { visibility: collapse }
-#navigator-toolbox:hover > #nav-bar:not([customizing]){ animation: slidein ease-out 48ms 1 }
-#navigator-toolbox:not(:hover) > #nav-bar:not([customizing]){ animation: slideout ease-out 48ms 1 }
+#TabsToolbar:not([customizing]){ visibility: hidden; transition: visibility 0ms linear 200ms }
+
+#navigator-toolbox,
+#titlebar{ transition: margin-bottom 48ms ease-out 200ms }
+
+#navigator-toolbox:hover{ transition-delay: 0s }
+#navigator-toolbox:hover > #titlebar{
+  margin-bottom: 0px;
+  transition-delay: 0s;
+}
+
+#navigator-toolbox:hover #TabsToolbar{
+  visibility: visible;
+  transition-delay: 18ms
+}
