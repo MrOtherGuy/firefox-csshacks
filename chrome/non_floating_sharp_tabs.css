@@ -12,10 +12,10 @@ See the above repository for updates as well as full license text. */
   
   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
   --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; 
-  
-  /* Uncomment next line to force specific color for tab top line */
-  /* --tab-line-color: blue !important; */ 
 }
+
+/* Uncomment next line to force specific color for tab top line */
+/* #tabbrowser-tabs{ --tab-line-color: blue !important; } */
 
 /* These next two rules set a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
 #nav-bar{
