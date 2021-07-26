@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
   fill: var(--lwt-toolbar-field-color, black);
   fill-opacity: 0.6;
   -moz-context-properties: fill, fill-opacity;
-  background: no-repeat center url(chrome://global/skin/icons/arrow-dropdown-16.svg);
+  background: no-repeat center url(chrome://global/skin/icons/arrow-down-12.svg);
   opacity: 0;
   transition: opacity 150ms linear
 }
