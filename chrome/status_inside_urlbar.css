@@ -3,11 +3,13 @@ See the above repository for updates as well as full license text. */
 
 /* STATUSPANEL INSIDE URLBAR */
 
+/* This style replaces the urlbar url with statuspanel text when needed.
+  The _v2 variant replaces the whole contents of the urlbar, including all icons. */
+
 /**************
 IMPORTANT WARNING
 Using this style can lead to long tab switch times (and probably other problems). Everything may be fine when Firefox starts but situation gets gradually worse, although pretty slowly.
 Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
-
 As a workaround, the -moz-element background image is removed somewhat often which seems work at first glance. But there might still be some related issues on really long sessions. Just be aware.
 **************/
 
@@ -47,13 +49,13 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   background-image: none !important
 }
 
-:root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 1px }
+:root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 0px }
 :root[uidensity="touch"] #urlbar .urlbar-input-box::after{ background-position-y: 4px }
 
 #statuspanel-inner > #statuspanel-label{
   height:3em;
   min-width: 1000px;
-  background-color: var(--lwt-toolbar-field-focus) !important;
+  background-color: var(--lwt-toolbar-field-background-color, #fffc) !important;
   border: none !important;
   font-size: 1.15em;
   color: inherit !important;
@@ -67,7 +69,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 
 /* You will need to adjust these probably as they depend on OS, text size etc. */
 #statuspanel-inner{ margin-left: -1px; }
-#statuspanel-inner > #statuspanel-label{ margin-left: -2px !important; margin-top: 0px !important; }
+#statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; margin-top: 0px !important; }
 
 
 /*  OPTIONAL FEATURES  */

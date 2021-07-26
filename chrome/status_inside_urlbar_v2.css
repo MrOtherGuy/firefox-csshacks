@@ -3,6 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* STATUSPANEL INSIDE URLBAR */
 
+/* This _v2 variant "replaces" the whole contents of the urlbar, including all icons,
+   with statuspanel text when needed. The "normal" variant replaces only the url part. */
+
 /**************
 IMPORTANT WARNING
 Using this style can lead to long tab switch times (and probably other problems). Everything may be fine when Firefox starts but situation gets gradually worse, although pretty slowly.
@@ -18,7 +21,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   pointer-events:none;
   background-repeat: no-repeat;
   background-image: -moz-element(#statuspanel);
-  background-position: left 2px;
+  background-position: left 3px;
   inset: 1px;
 }
 
@@ -38,7 +41,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 #statuspanel-inner > #statuspanel-label{
   height:3em;
   min-width: 1000px;
-  background-color: var(--lwt-toolbar-field-focus) !important;
+  background-color: var(--lwt-toolbar-field-background-color, #fffc) !important;
   border: none !important;
   font-size: 1.15em;
   color: inherit !important;
