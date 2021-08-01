@@ -14,7 +14,3 @@ See the above repository for updates as well as full license text. */
   visibility: var(--uc-scroll-visibility,visible);
 }
 .scrollbox-clip{ margin-inline: var(--uc-scrollbox-margin,0); }
-#tabbrowser-tabs[overflow][positionpinnedtabs] .tabbrowser-tab[pinned]{
-  border-left: 28px solid transparent !important;
-  clip-path: padding-box
-}
