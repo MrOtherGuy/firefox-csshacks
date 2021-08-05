@@ -35,6 +35,9 @@ See the above repository for updates as well as full license text. */
   tree{
     background: transparent !important;
   }
+  
+  #imagecontainerbox{ background: url("chrome://global/skin/media/imagedoc-darknoise.png") !important }
+  
   search-textbox,
   #searchFilter,
   menulist,
@@ -42,6 +45,7 @@ See the above repository for updates as well as full license text. */
   textbox,
   richlistbox,
   treecol,
+  treecolpicker,
   button,
   menu,
   #permList{
@@ -55,7 +59,7 @@ See the above repository for updates as well as full license text. */
     
   .menubar-left{ fill: currentColor; -moz-context-properties: fill; }
   #topBar,#searchFilter,search-textbox,input,textbox,richlistbox{ background-color: rgba(0,0,0,0.2) !important; }
-  search-textbox > input,#searchFilter > input,input[readonly]{ background-color: transparent !important; }
+  input[mozactionhint="search"],input[readonly],td > input{ background-color: transparent !important; }
     
   treecol:not([hideheader]){ height: 24px; }
   treecol:hover{ filter: brightness(160%) }
