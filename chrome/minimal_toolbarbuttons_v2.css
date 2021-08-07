@@ -18,7 +18,7 @@ toolbar .toolbarbutton-1:not([open]),
 #tabbrowser-tabs toolbarbutton,
 #scrollbutton-up:not(:hover),
 #scrollbutton-down:not(:hover){
-  background-image: radial-gradient(circle at center, var(--lwt-toolbarbutton-icon-fill,currentColor) 0,var(--lwt-toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
+  background-image: radial-gradient(circle at center, var(--toolbarbutton-icon-fill,currentColor) 0,var(--toolbarbutton-icon-fill,currentColor) 10%,transparent 15% );
 }
 /* Hide placeholder on hover */
 toolbar:hover .toolbarbutton-1,

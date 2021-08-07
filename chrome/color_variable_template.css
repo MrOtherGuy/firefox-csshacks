@@ -14,7 +14,7 @@ See the above repository for updates as well as full license text. */
   /* tabs */
   --lwt-text-color: cyan !important;
   /* toolbar area */
-  --lwt-toolbarbutton-icon-fill: white !important;
+  --toolbarbutton-icon-fill: white !important;
   --lwt-toolbarbutton-hover-background: orange !important;
   --lwt-toolbarbutton-active-background: red !important;
   /* urlbar */
