@@ -13,7 +13,6 @@ See the above repository for updates as well as full license text. */
   --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 6px);
 }
 
-#navigator-toolbox > toolbar{ --lwt-toolbarbutton-icon-fill: var(--lwt-toolbar-field-color, black) }
 :root:not([uidensity="compact"]) #nav-bar { padding-inline-start: 5px }
 
 /* size of buttons */
