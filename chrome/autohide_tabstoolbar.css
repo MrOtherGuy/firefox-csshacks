@@ -11,6 +11,11 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
 }
 
+#navigator-toolbox:not(:hover) > #titlebar{
+  -moz-window-dragging: no-drag !important;
+  pointer-events: none
+}
+
 :root:not([customizing]) #navigator-toolbox:hover,
 :root:not([customizing]) #titlebar{
   margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
