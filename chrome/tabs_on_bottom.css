@@ -58,3 +58,4 @@ linux_gtk_window_control_patch.css
 toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 #navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
 #TabsToolbar > .titlebar-buttonbox-container{ visibility: visible }
+#navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog }
