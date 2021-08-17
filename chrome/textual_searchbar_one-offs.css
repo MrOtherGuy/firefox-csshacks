@@ -1,0 +1,31 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/textual_searchbar_one-offs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the one-off search buttons in the searchbar popup show vertically with a label */
+
+#PopupSearchAutoComplete .search-panel-one-offs{
+  display: -moz-box !important;
+  -moz-box-orient: vertical;
+}
+
+#PopupSearchAutoComplete .search-panel-one-offs-container{
+  flex-direction: column !important; 
+}
+
+#PopupSearchAutoComplete .searchbar-engine-one-off-item{
+  display: -moz-box !important;
+  margin-inline: 8px !important;
+  -moz-box-orient: horizontal;
+  -moz-box-align: center;
+  align-self: unset !important; 
+}
+
+#PopupSearchAutoComplete .searchbar-engine-one-off-item > .button-box{ max-width: 30px; }
+
+#PopupSearchAutoComplete .search-panel-one-offs{ max-width: unset !important; }
+
+#PopupSearchAutoComplete .searchbar-engine-one-off-item::after{
+  content: attr(tooltiptext);
+  display: -moz-inline-box;
+  -moz-box-flex: 1;
+}
