@@ -1,0 +1,54 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* This stylesheet makes main toolbar buttons nicely zoom on hover. */
+
+/* Use higher resolution extension icons for a crisp look */
+toolbar[brighttext] .webextension-browser-action {
+  list-style-image: var(--webextension-toolbar-image-2x-light, inherit) !important;
+}
+toolbar:not([brighttext]) .webextension-browser-action {
+  list-style-image: var(--webextension-toolbar-image-2x-dark, inherit) !important;
+}
+
+/* Draw toolbar buttons on top
+ * and animate changes */
+#nav-bar .toolbarbutton-1,
+#nav-bar .toolbarbutton-1 > * {
+        z-index: 4 !important;
+        transition: all 0.1s ease !important;
+}
+
+/* Make zoomed buttons overflow nicely */
+#nav-bar:not([urlbar-exceeds-toolbar-bounds]) {
+  overflow: unset !important;
+}
+
+/* Zoom button size on hover and while active */
+#nav-bar .toolbarbutton-1:hover:not([disabled="true"]) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:hover:not([disabled="true"]) > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1:hover:not([disabled="true"]) > .toolbarbutton-badge-stack,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-badge-stack {
+    scale: 2;
+}
+
+/* These icons further enlarged by reducing inner padding */
+#nav-bar .toolbarbutton-1:hover:not([disabled="true"]) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-icon {
+  filter: drop-shadow(0 0 2px white) drop-shadow(0 0 1px white);
+  padding: calc(var(--toolbarbutton-inner-padding)/2) !important;
+}
+
+/* Reduce the glow effect on these with dark themes (FIXME) */
+toolbar[brighttext]#nav-bar .toolbarbutton-1:hover:not([disabled="true"]) > .toolbarbutton-icon,
+toolbar[brighttext]#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-icon {
+  filter: drop-shadow(0 0 1px white);
+}
+
+/* These icons enlarged by scaling */
+#nav-bar .toolbarbutton-1:hover:not([disabled="true"]) > .toolbarbutton-badge-stack > *,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-badge-stack > * {
+  filter: drop-shadow(0 0 2px white) drop-shadow(0 0 1px white);
+  scale: 1.4;
+}
