@@ -1,0 +1,88 @@
+/* Replace Firefox logo by animated Free Software banner on homepage */
+@-moz-document url(about:newtab), url(about:home) {
+
+  /* Do not let the body scroll because of the zoomed element */
+  .outer-wrapper.only-search {
+    overflow: hidden;
+  }
+
+  /* Lower search completion pop-up under animation */
+  .search-inner-wrapper, #searchSuggestionTable {
+    z-index: 1 !important;
+  }
+
+  /* Needs a position and a non-auto z-index! */
+  .search-wrapper .logo-and-wordmark {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Put a love letter icon in front of the logo element
+     (depends on emoji font being present) */
+  .search-wrapper .logo-and-wordmark .logo::before {
+    content: "💌";
+    font-size: 5em !important;
+  }
+
+  /* Remove Firefox logo from element background, put letter icon in front and set up fading animation */
+  .search-wrapper .logo-and-wordmark .logo  {
+    animation: fade-in 2.0s ease-out;
+    animation-fill-mode: forwards;
+    background: none !important;
+    text-align: center;
+    z-index: 200;
+    cursor: copy;
+  }
+
+  /* Fade out the letter icon on hovering */
+  .search-wrapper .logo-and-wordmark .logo:hover  {
+    animation: fade-out 0.1s ease-in;
+    opacity: 0%;
+  }
+
+  /* animation-delay only when fading back in */
+  @keyframes fade-in {
+        0%  { opacity:  0%; }
+       50%  { opacity:  0%; }
+      100%  { opacity:  100%; }
+  }
+
+  @keyframes fade-out {
+      100%  { opacity:  0%; }
+        0%  { opacity:  100%; }
+  }
+
+  /* Set up the Free Software banner with animation */
+  .search-wrapper .logo-and-wordmark .wordmark {
+    background-image: url("../images/free-software-loves-you-and-your-freedom.svg") !important;
+    position: absolute;
+    top: -100%;
+    z-index: 100;
+    width: 110% !important;
+    height: 60vh !important;
+    background-size: contain !important;
+    animation: blend-out 0.9s ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
+    pointer-events: none;
+    margin-left: 0px;
+  }
+
+  /* trigger animation when hovering letter icon */
+  .search-wrapper .logo-and-wordmark .logo:hover ~ .wordmark  {
+    animation: blend-in 0.9s ease-out;
+  }
+
+  @keyframes blend-in {
+    0%   { opacity:   0%; filter: hue-rotate(140deg); scale: 1.5; }
+    50%  { opacity: 100%; }
+    90%  {                filter: hue-rotate(0deg); }
+    100% { opacity: 100%; filter: hue-rotate(0deg);   scale: 1; }
+  }
+
+  @keyframes blend-out {
+    100% { opacity:   0%; filter: hue-rotate(260deg); scale: 1.5; }
+    20%  { opacity:  90%; filter: hue-rotate(140deg); }
+    0%   { opacity: 100%; filter: hue-rotate(0deg);   scale: 1; }
+  }
+}
