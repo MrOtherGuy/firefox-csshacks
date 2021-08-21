@@ -2,20 +2,20 @@
 See the above repository for updates as well as full license text. */
 
 /* Effect */
-
+.urlbar-icon,
 .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon{
   transition: transform 83ms linear !important;
 }
 
-toolbar .toolbarbutton-1 > .toolbarbutton-icon,
-.urlbar-icon{
+toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   transition: padding 83ms linear !important;
 }
 toolbarbutton#scrollbutton-up > .toolbarbutton-icon,
-toolbarbutton:not(.toolbarbutton-1) > .toolbarbutton-icon,
+toolobar .toolbarbutton-1 > .toolbarbutton-icon,
 toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
-.menuitem-iconic .menu-iconic-icon{
+.menuitem-iconic .menu-iconic-icon,
+.urlbar-icon{
   transform: scale(0.8) !important;
 }
 toolbarbutton#scrollbutton-down > .toolbarbutton-icon{ transform: scale(-0.8) !important; }
@@ -24,12 +24,11 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   padding: calc(var(--toolbarbutton-inner-padding) + 2px) !important;
 }
 
-#page-action-buttons .urlbar-icon:not(:hover){ padding: calc(var(--urlbar-icon-padding) + 2px) !important; }
-
 toolbarbutton#scrollbutton-up:not([disabled]):hover > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,
-.menuitem-iconic:not([disabled]):hover .menu-iconic-icon{
+.menuitem-iconic:not([disabled]):hover .menu-iconic-icon,
+.urlbar-page-action:hover > .urlbar-icon{
   transform: none !important;
 }
 toolbarbutton#scrollbutton-down:not([disabled]):hover > .toolbarbutton-icon{transform: scale(-1) !important;}
