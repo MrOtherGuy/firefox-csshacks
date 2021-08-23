@@ -9,6 +9,11 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
 .tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }
 
+.tab-icon-overlay:not([pinned]){
+  padding: 0px !important;
+  margin-inline: -3px 1px !important;
+}
+
 /* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
 .tab-secondary-label{ display: none }
 
