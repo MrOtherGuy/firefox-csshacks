@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
   height: 28px;
   width: 28px;
   padding: var(--urlbar-icon-padding);
-  fill: var(--lwt-toolbar-field-color, black);
+  fill: var(--toolbar-field-color, black);
   fill-opacity: 0.6;
   -moz-context-properties: fill, fill-opacity;
   background: no-repeat center url(chrome://global/skin/icons/arrow-down-12.svg);

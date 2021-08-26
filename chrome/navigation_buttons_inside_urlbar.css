@@ -23,7 +23,7 @@ See the above repository for updates as well as full license text. */
   border-style: solid;
   border-width: 1px 0;
   opacity: 1 !important;
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
 }
 
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button) .toolbarbutton-icon{

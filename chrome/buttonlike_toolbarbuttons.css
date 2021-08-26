@@ -3,6 +3,14 @@ See the above repository for updates as well as full license text. */
 
 /* This style makes buttons look like real buttons with border and background. Color of border and background use the same colors as unselected urlbar to make them fit together. Changes are not applied to buttons in tabs toolbar or menubar. */
 
+/* Temporary dummy variables, can probably be removed when Fx92 releases */
+:root{
+  --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
+}
+:root:-moz-lwtheme{
+  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
+}
+
 :root{
   --uc-toolbarbutton-vertical-padding: calc(var(--toolbarbutton-inner-padding) + 1px);
   --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 10px);
@@ -21,7 +29,7 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-1 > .toolbarbutton-icon,
 #navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-icon,
 #navigator-toolbox > toolbar .chromeclass-toolbar-additional > stack{
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
   width: calc(2* var(--uc-toolbarbutton-horizontal-padding) + 16px) !important;
   height: calc(2* var(--uc-toolbarbutton-vertical-padding) + 16px) !important;
   fill-opacity: 0.8;
@@ -64,7 +72,7 @@ See the above repository for updates as well as full license text. */
 #PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-icon,
 #PersonalToolbar .chromeclass-toolbar-additional > stack,
 #back-button > .toolbarbutton-icon{
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
 }
 #PersonalToolbar .chromeclass-toolbar-additional > .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon,
 #PersonalToolbar .chromeclass-toolbar-additional:not([disabled]):hover > .toolbarbutton-icon,

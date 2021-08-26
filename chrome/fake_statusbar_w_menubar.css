@@ -86,7 +86,7 @@ See the above repository for updates as well as full license text. */
   #statuspanel[type="status"] { color: skyblue }
 
   #statuspanel-inner{ margin-left: -3px; margin-top: 1px}
-  #statuspanel-inner > #statuspanel-label[value^="https"]{ color: var(--lwt-toolbar-field-color, black) !important;}
+  #statuspanel-inner > #statuspanel-label[value^="https"]{ color: var(--toolbar-field-color, black) !important;}
 
   #customization-container,
   #content-deck,

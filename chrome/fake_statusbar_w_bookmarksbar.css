@@ -69,7 +69,7 @@ See the above repository for updates as well as full license text. */
 
 #statuspanel{ color: lightpink; z-index: -1; visibility: visible !important; opacity: 1 !important; }
 #statuspanel[inactive] > #statuspanel-inner > #statuspanel-label{ visibility: hidden }
-#statuspanel[inactive] > #statuspanel-inner::before{ content: "Done"; color: var(--lwt-toolbar-field-color, black) !important }
+#statuspanel[inactive] > #statuspanel-inner::before{ content: "Done"; color: var(--toolbar-field-color, black) !important }
 #statuspanel[type="status"] { color: skyblue }
 
-#statuspanel-inner > #statuspanel-label[value^="https"]{ color: var(--lwt-toolbar-field-color, black) !important; }
+#statuspanel-inner > #statuspanel-label[value^="https"]{ color: var(--toolbar-field-color, black) !important; }

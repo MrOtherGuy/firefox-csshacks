@@ -3,10 +3,19 @@ See the above repository for updates as well as full license text. */
 
 /* Make urlbar popup appear full size like it did before urlbar re-design */
 
+/* Temporary dummy variables, can probably be removed when Fx92 releases */
+:root{
+  --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
+  --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus,Field);
+}
+:root:-moz-lwtheme{
+  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
+}
+
 .urlbarView-row-inner{
    /* This sets how far the dropdown-items are from window edge */
   padding-inline-start: 6px !important;
-  }
+}
 
 #urlbar-container,
 #urlbar{
@@ -17,12 +26,12 @@ See the above repository for updates as well as full license text. */
   height: auto !important;
   width: auto !important;
   box-shadow: inset 0 0 0 1px var(--toolbar-field-border-color, hsla(240,5%,5%,.25));
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
   border-radius: var(--toolbarbutton-border-radius);
   --uc-urlbar-min-width: none; /* navbar_tabs_oneliner.css compatibility */
 }
 
-#urlbar[focused]{ box-shadow: inset 0 0 0 1px var(--lwt-toolbar-field-border-focus, highlight); }
+#urlbar[focused]{ box-shadow: inset 0 0 0 1px var(--toolbar-field-focus-border-color, highlight); }
 
 .urlbarView{
   position: absolute !important;
@@ -31,7 +40,7 @@ See the above repository for updates as well as full license text. */
   width: 100vw !important;
   border-width: 1px 0;
   top: var(--urlbar-toolbar-height);
-  background-color: var(--lwt-toolbar-field-focus, inherit);
+  background-color: var(--toolbar-field-focus-background-color, inherit);
   z-index: 4;
   box-shadow: 0 1px 4px rgba(0,0,0,.05);
 }
