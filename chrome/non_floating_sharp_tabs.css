@@ -29,9 +29,12 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar{
   --toolbarbutton-inner-padding: 7px !important;
 }
-#navigator-toolbox:not([movingtab]) > #titlebar > #TabsToolbar{
+/* Few exceptions for default light theme */
+#navigator-toolbox:not([movingtab]):-moz-lwtheme > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }
+#TabsToolbar:not(:-moz-lwtheme){ --tab-line-color: transparent; }
+.tab-background[selected]:not(:-moz-lwtheme){ background: var(--toolbar-bgcolor) !important; }
 
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
