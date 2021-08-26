@@ -20,7 +20,7 @@ See the above repository for updates as well as full license text. */
   /* urlbar */
   --lwt-toolbar-field-background-color: olive !important;
   --lwt-toolbar-field-focus: grey !important;
-  --lwt-toolbar-field-border-color: green !important;
+  --toolbar-field-border-color: green !important;
   --toolbar-field-focus-border-color: pink !important;
   --lwt-toolbar-field-color: red !important;
   --lwt-toolbar-field-focus-color: white !important;

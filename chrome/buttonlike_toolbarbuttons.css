@@ -34,11 +34,11 @@ See the above repository for updates as well as full license text. */
 .findbar-button,
 #navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-1 > .toolbarbutton-icon,
 #navigator-toolbox > toolbar .chromeclass-toolbar-additional > .toolbarbutton-icon{
-  border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.55));
+  border: 1px solid var(--toolbar-field-border-color, hsla(240,5%,5%,.55));
 }
 
 /* stacks use box-shadow as a border to prevent size from changing */
-#navigator-toolbox > toolbar .chromeclass-toolbar-additional > stack{ box-shadow: inset 0 0 0 1px var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.55)) }
+#navigator-toolbox > toolbar .chromeclass-toolbar-additional > stack{ box-shadow: inset 0 0 0 1px var(--toolbar-field-border-color, hsla(240,5%,5%,.55)) }
 
 /* modify paddings within buttons */
 #back-button > .toolbarbutton-icon,
@@ -56,7 +56,7 @@ See the above repository for updates as well as full license text. */
 
 #back-button > .toolbarbutton-icon{
   border-radius: var(--toolbarbutton-border-radius) !important;
-  border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25)) !important;
+  border: 1px solid var(--toolbar-field-border-color, hsla(240,5%,5%,.25)) !important;
 }
 
 /* Buttons in bookmarks toolbar also require some extra styling rules */

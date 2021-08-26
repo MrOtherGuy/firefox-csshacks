@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
 /* Override some default variables - stylesheet compatibility */
 :root{
   --lwt-toolbar-field-background-color: var(--uc-dark-bkgnd-color) !important;
-  --lwt-toolbar-field-border-color: transparent !important;
+  --toolbar-field-border-color: transparent !important;
   --toolbar-bgcolor: var(--uc-light-bkgnd-color) !important;
 }
 #nav-bar{--uc-ext-active-color: var(--uc-active-color);}

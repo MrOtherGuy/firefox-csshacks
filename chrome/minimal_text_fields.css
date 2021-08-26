@@ -3,7 +3,7 @@ See the above repository for updates as well as full license text. */
 
 :root:not([customizing]){
   --lwt-toolbar-field-background-color: transparent !important;
-  --lwt-toolbar-field-border-color: transparent !important;
+  --toolbar-field-border-color: transparent !important;
 }
 
 #urlbar[open]{ background-color: var(--toolbar-bgcolor) !important; }

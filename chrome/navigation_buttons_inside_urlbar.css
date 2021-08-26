@@ -13,7 +13,7 @@ See the above repository for updates as well as full license text. */
 
 #urlbar,
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button){
-  border-color: var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
+  border-color: var(--toolbar-field-border-color, hsla(240,5%,5%,.25));
 }
 
 #nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:not(#downloads-button){

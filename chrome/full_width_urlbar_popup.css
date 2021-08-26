@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
   display: -moz-box !important;
   position: relative !important;
   background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
-  border: 1px solid var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
+  border: 1px solid var(--toolbar-field-border-color, hsla(240,5%,5%,.25));
   top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
   bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
   margin-inline-start: 0px !important;
