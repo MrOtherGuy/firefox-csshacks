@@ -19,12 +19,13 @@ See the above repository for updates as well as full license text. */
   #nav-bar{
     position: fixed !important;
     bottom: 0px;
-    display: flex;
+    /* For some reason -webkit-box behaves internally like -moz-box, but can be used with fixed position. display: flex would work too but it breaks extension menus. */
+    display: -webkit-box;
     width: 100%;
     z-index: 1;
   }
 
-  #nav-bar-customization-target{ flex-grow: 1; }
+  #nav-bar-customization-target{ -webkit-box-flex: 1; }
 
   #urlbar[breakout][breakout-extend]{
     display: flex !important;
