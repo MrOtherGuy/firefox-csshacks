@@ -139,3 +139,4 @@ menupopup_forced_color_schemes.css,popup,colors,menu
 centered_tab_label.css,tab
 dark_date_picker_panel.css,popup,dark-mode
 textual_searchbar_one-offs.css,popup,menu
+menulike_bookmarks_folder_popups.css,menu,bookmarks,colors
