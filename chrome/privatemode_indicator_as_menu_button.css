@@ -5,5 +5,5 @@ See the above repository for updates as well as full license text. */
 
 .private-browsing-indicator{ display: none }
 :root[privatebrowsingmode="temporary"] #PanelUI-menu-button{
-  list-style-image: url("chrome://browser/skin/private-browsing.svg") !important;
+  list-style-image: url("chrome://browser/skin/indicator-private-browsing.svg") !important;
 }
