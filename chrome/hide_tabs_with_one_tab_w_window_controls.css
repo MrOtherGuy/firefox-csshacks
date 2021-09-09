@@ -3,7 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs. Optionally use privatemode_indicator_as_menu_button.css to replace main menu icon with private browsing indicator while tabs are hidden. */
 /* Firefox 65+ only */
-/* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar */
+/* !!USER!! -  REMOVE ALL BUTTONS you can from the tabs toolbar and menubar */
 
 /* IMPORTANT */
 /*
@@ -12,25 +12,29 @@ Window controls will be all wrong without it
 */
 
 /* Dummy variable to support both versions 89-90 */
-:root{ --tab-block-margin: var(--proton-tab-block-margin) }
+:root{ --tab-block-margin: var(--proton-tab-block-margin,0px) }
 
 #titlebar{ -moz-appearance: none !important; }
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
-#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
-#TabsToolbar > .titlebar-spacer[type="post-tabs"]{ width: 178px !important; }
+#tabbrowser-tabs,
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox,
+#tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
+#TabsToolbar > .titlebar-spacer[type="post-tabs"]{ width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) !important; }
 #toolbar-menubar > spacer{ pointer-events: none }
 
 :root:not([customizing]) #tabs-newtab-button,
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button{
   -moz-appearance: none !important;
   height: 0px;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
+  padding-block: 0px !important;
   -moz-box-align: stretch;
   margin: 0 !important;
 }
+
+#tabs-newtab-button{ transform: scale(0.8); border-radius: var(--tab-border-radius); }
 
 .accessibility-indicator,
 .private-browsing-indicator{ 
@@ -38,7 +42,7 @@ Window controls will be all wrong without it
 }
 .accessibility-indicator > hbox{ padding-block: 0 !important }
 
-#tabbrowser-tabs .tabbrowser-tab{ height: var(--tab-min-height) }
+#tabbrowser-tabs .tabbrowser-tab{ height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin)) }
 #tabbrowser-tabs .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
   visibility: collapse;
 }
