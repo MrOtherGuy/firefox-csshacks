@@ -10,7 +10,7 @@ See the above repository for updates as well as full license text. */
   #titlebar{ -moz-appearance: none !important; }
 
   @media (-moz-os-version: windows-win10){
-    :root[sizemode="maximized"][tabsintitlebar] :is(#browser,#customization-container,#toolbar-menubar){ margin-top: 8px !important; }
+    :root[sizemode="maximized"][tabsintitlebar] :where(#browser,#customization-container,#toolbar-menubar){ margin-top: 8px }
   }
 
   #mainPopupSet,
