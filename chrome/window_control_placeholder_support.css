@@ -15,8 +15,9 @@ See the above repository for updates as well as full license text. */
   --uc-window-drag-space-width: 24px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
 }
 :root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none !important }
+:root[sizemode="fullscreen"] #navigator-toolbox { position: relative; }
 :root[sizemode="fullscreen"] #window-controls{
-  position: fixed;
+  position: absolute;
   display: flex;
   top: 0;
   right:0;
