@@ -77,7 +77,7 @@ Window controls will be all wrong without it
 /* Rules specific to window controls on right layout */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   :root:not([inFullscreen]) #TabsToolbar-customization-target > .titlebar-spacer[type="pre-tabs"]{
-    width: var(--uc-window-drag-space-width) !important;
+    width: var(--uc-window-drag-space-post) !important;
     display: -moz-box !important; 
   }
   #TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box; }

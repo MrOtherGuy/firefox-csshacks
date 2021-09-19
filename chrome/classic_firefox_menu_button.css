@@ -13,7 +13,7 @@ See the above repository for updates as well as full license text. */
   --uc-fx-button-sec-color: #ffdfbf85;
 }
 
-#PanelUI-button{ -moz-box-ordinal-group: 0; margin-inline: 2px var(--uc-window-drag-space-width,24px) !important; }
+#PanelUI-button{ -moz-box-ordinal-group: 0; margin-inline: 2px var(--uc-window-drag-space-pre,24px) !important; }
 :root[tabsintitlebar] #nav-bar{ border-left-width: 0px; padding-left: 0px !important; }
 #PanelUI-menu-button{ -moz-box-align: start !important; }
 #PanelUI-menu-button > stack{

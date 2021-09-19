@@ -39,5 +39,5 @@ Window controls will be all wrong without it
 #toolbar-menubar[inactive] > #menubar-items {
   opacity: 0;
   pointer-events: none;
-  margin-left: var(--uc-window-drag-space-width,0px)
+  margin-left: var(--uc-window-drag-space-pre,0px)
 }

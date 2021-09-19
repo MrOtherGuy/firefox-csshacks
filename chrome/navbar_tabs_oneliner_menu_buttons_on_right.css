@@ -67,11 +67,11 @@ Window controls will be all wrong without it
 .titlebar-placeholder[type="pre-tabs"],.titlebar-spacer[type="pre-tabs"]{ width:8px !important}
 #nav-bar{ margin-top: calc(0px - var(--uc-toolbar-height)); }
 
-#nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-width)) }
+#nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-post)) }
 
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   .titlebar-buttonbox-container{ position: fixed; display: blocK; left: 0px; z-index: 3; }
-  #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-width)) }
+  #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre)) }
 }
 
 #TabsToolbar > .toolbar-items{
@@ -80,7 +80,7 @@ Window controls will be all wrong without it
 }
 .titlebar-placeholder[type="post-tabs"],
 .titlebar-spacer[type="post-tabs"]{
-  width: calc(var(--uc-buttons-width) + var(--uc-window-drag-space-width)) !important;
+  width: calc(var(--uc-buttons-width) + var(--uc-window-drag-space-post)) !important;
 }
 #PanelUI-button,#nav-bar-overflow-button{
   margin: 0px !important;

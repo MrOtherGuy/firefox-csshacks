@@ -22,7 +22,7 @@ Window controls will be all wrong without it
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
-#TabsToolbar > .titlebar-spacer[type="post-tabs"]{ width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) !important; }
+#TabsToolbar > .titlebar-spacer[type="post-tabs"]{ width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) !important; }
 #toolbar-menubar > spacer{ pointer-events: none }
 
 :root:not([customizing]) #tabs-newtab-button,

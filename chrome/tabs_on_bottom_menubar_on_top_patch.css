@@ -15,6 +15,9 @@ See the above repository for updates as well as full license text. */
   --uc-menubar-height: 29px; 
 }
 
+/* Since menubar is statically at top, remove fake drag-space that might be set by window_control_placeholder_support.css */
+#nav-bar{ border-inline-width: 0 }
+
 #navigator-toolbox{ padding-top: calc(var(--uc-menubar-height) + var(--uc-titlebar-padding,0px)) !important }
 :root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
 #toolbar-menubar{
@@ -32,7 +35,7 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar > spacer[flex]{
   order: 99;
   flex-grow: 1;
-  min-width: var(--uc-window-drag-space-width,20px);
+  min-width: var(--uc-window-drag-space-post,20px);
 }
 
 #toolbar-menubar .titlebar-button{ padding: 2px 17px !important;  }
