@@ -39,11 +39,13 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Button re-styling */
-#tabs-newtab-button:hover,
-#tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
+#tabs-newtab-button{ transform: scale(0.8); }
+#tabs-newtab-button:hover{
+  background-color: var(--toolbarbutton-hover-background);
+  border-radius: var(--tab-border-radius);
+}
 
-#tabs-newtab-button > .toolbarbutton-icon,
-#tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
+#tabs-newtab-button > .toolbarbutton-icon{
   padding: 0 !important;
   transform: scale(0.6);
   background-color: transparent !important;
@@ -57,5 +59,5 @@ See the above repository for updates as well as full license text. */
   transition: height 0ms steps(1) 80ms;
 }
 :where(#nav-bar){
-  border-inline: var(--uc-window-drag-space-width) solid var(--toolbar-bgcolor);
+  border-inline: var(--uc-window-drag-space-width,0) solid var(--toolbar-bgcolor);
 }
