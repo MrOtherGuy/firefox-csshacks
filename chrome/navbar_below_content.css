@@ -24,8 +24,10 @@ See the above repository for updates as well as full license text. */
     width: 100%;
     z-index: 1;
   }
-
   #nav-bar-customization-target{ -webkit-box-flex: 1; }
+
+  /* Fix panels sizing */
+  .panel-viewstack{ max-height: unset !important; }
 
   #urlbar[breakout][breakout-extend]{
     display: flex !important;

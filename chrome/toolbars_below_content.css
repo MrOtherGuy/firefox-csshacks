@@ -39,6 +39,9 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar > .titlebar-buttonbox-container{ display: none }
   #toolbar-menubar > .titlebar-buttonbox-container{ order: 1000 }
 
+  /* Fix panels sizing */
+  .panel-viewstack{ max-height: unset !important; }
+
   /* Fullscreen mode support */
   #navigator-toolbox[inFullscreen]{ margin-top: 0 !important }
   #navigator-toolbox[inFullscreen][style*="margin-top"]{ visibility: collapse }
