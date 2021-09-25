@@ -23,6 +23,8 @@ See the above repository for updates as well as full license text. */
   { -moz-box-ordinal-group: 0 }
 
   #toolbar-menubar{ position: fixed; display: flex; width: 100vw; top: 0px; }
+  /* Remove bottom border that won't do anything useful when at bottom of the window */
+  #navigator-toolbox{ border-bottom: none !important; }
 
   #toolbar-menubar > spacer{ flex-grow: 1 }
 
@@ -47,9 +49,9 @@ See the above repository for updates as well as full license text. */
   #navigator-toolbox[inFullscreen][style*="margin-top"]{ visibility: collapse }
   #fullscr-toggler{ bottom: 0; top: unset !important; }
   
-  /* These two rules exist for compatibility with autohide_toolbox.css */
-  #navigator-toolbox{ bottom: -1px; transform-origin: bottom }
-
+  /* These three rules exist for compatibility with autohide_toolbox.css */
+  #navigator-toolbox{ bottom: 0px; transform-origin: bottom }
+  #main-window > body > box{ margin-top: 0 !important; }
   #toolbar-menubar{ z-index: 1; background-color: var(--lwt-accent-color,black); }
   
   /**************
