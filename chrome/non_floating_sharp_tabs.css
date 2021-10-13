@@ -66,7 +66,10 @@ See the above repository for updates as well as full license text. */
   box-shadow: none !important;
 }
 
-.tab-background:not([selected])[multiselected]{ background: color-mix(in srgb, currentColor 11%, transparent) !important; }
+.tab-background:not([selected])[multiselected]{
+  background: color-mix(in srgb, currentColor 11%, transparent) !important;
+  margin-inline-start: -1px; 
+}
 
 /* Line to mark selected tab */
 .tab-background[selected]::before,
