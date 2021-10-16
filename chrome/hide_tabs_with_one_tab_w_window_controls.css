@@ -70,8 +70,5 @@ Window controls will be all wrong without it
 
 :root:not([customizing]) #toolbar-menubar[autohide][inactive] > #menubar-items{ pointer-events: none; opacity: 0 }
 
-:root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none !important; }
-:root[sizemode="fullscreen"] #TabsToolbar > #window-controls{
-  z-index: 2;
-  top: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px));
-}
+:root[sizemode="fullscreen"] #TabsToolbar > #window-controls{ z-index: 2; }
+.titlebar-buttonbox{ color: inherit }

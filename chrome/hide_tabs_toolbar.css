@@ -15,7 +15,11 @@ Window controls will be all wrong without it
 :root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
 
 #TabsToolbar{ visibility: collapse !important }
-:root[sizemode="fullscreen"] #TabsToolbar > #window-controls{ visibility: visible !important; z-index: 2 }
+
+:root[sizemode="fullscreen"] #TabsToolbar > :is(#window-controls,.titlebar-buttonbox-container){
+  visibility: visible !important;
+  z-index: 2;
+}
 
 :root:not([inFullscreen]) #nav-bar{
   margin-top: calc(0px - var(--uc-toolbar-height));

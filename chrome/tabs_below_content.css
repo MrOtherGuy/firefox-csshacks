@@ -64,3 +64,4 @@ linux_gtk_window_control_patch.css
 #TabsToolbar .titlebar-spacer{
   display: none !important;
 }
+#navigator-toolbox[inFullscreen]:hover #toolbar-menubar > .titlebar-buttonbox-container{ display: flex !important; }
