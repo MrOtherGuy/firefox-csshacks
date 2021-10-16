@@ -35,8 +35,10 @@ See the above repository for updates as well as full license text. */
 
 /* macOS settings are further below */
 .titlebar-buttonbox, #window-controls{ color: var(--toolbar-color) }
-:root[sizemode="fullscreen"] .titlebar-buttonbox-container:not(:last-child){ display: none !important }
+:root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none }
 :root[sizemode="fullscreen"] #navigator-toolbox { position: relative; }
+
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
 :root[sizemode="fullscreen"] #window-controls{
   position: absolute;
   display: flex;
@@ -44,7 +46,10 @@ See the above repository for updates as well as full license text. */
   right:0;
   height: 40px;
 }
+
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
 :root[uidensity="compact"][sizemode="fullscreen"] #window-controls{ height: 32px }
+
 #nav-bar{
   border-inline: var(--uc-window-drag-space-pre,0px) solid var(--toolbar-bgcolor);
   border-inline-style: solid !important;
@@ -58,4 +63,6 @@ See the above repository for updates as well as full license text. */
   :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
     border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
   }
+  :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
+  :root[sizemode="fullscreen"] #window-controls{ right: unset }
 }
