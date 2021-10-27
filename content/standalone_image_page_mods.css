@@ -1,0 +1,24 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/content/standalone_image_page_mods.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Match *most* images urls, good enough for 99% of uses probably */
+@-moz-document regexp("(.*\.(apng|png|jpg|jpeg|gif|webp|avif|ico|bmp|APNG|PNG|JPG|JPEG|GIF|WEBP|AVIF|ICO|BMP)([\?#].*)*$)|(^data:image/.*)"){
+
+  @media not print {
+    /* set solid color background */
+    html{ background-color: #232325 !important; }
+
+    /* remove default background */
+    body{ background-image: none !important; }
+    
+    /* Position of the image, auto = default */
+    img:only-child{
+      margin: auto !important /* auto = center, 0 = top-left */
+    }
+    
+    /* Checkerboard pattern for transparent images, slight blue hue */
+    img.transparent:only-child{
+      background: conic-gradient(#eef 0.25turn, #bbc 0.25turn 0.5turn, #eef 0.5turn 0.75turn, #bbc 0.75turn) top left / 24px 24px repeat !important;
+    }
+  }
+}
