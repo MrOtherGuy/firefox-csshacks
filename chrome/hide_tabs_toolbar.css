@@ -4,15 +4,18 @@ See the above repository for updates as well as full license text. */
 /* Hides tabs toolbar */
 /* For OSX use hide_tabs_toolbar_osx.css instead */
 
+/* Note, if you have either native titlebar or menubar enabled, then you don't really need this style.
+ * In those cases you can just use: #TabsToolbar{ visibility: collapse !important }
+ */
+
 /* IMPORTANT */
 /*
 Get window_control_placeholder_support.css
 Window controls will be all wrong without it
 */
 
-:root{ --uc-toolbar-height: 32px; }
-
-:root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
+:root[tabsintitlebar]{ --uc-toolbar-height: 40px; }
+:root[tabsintitlebar][uidensity="compact"]{ --uc-toolbar-height: 32px }
 
 #TabsToolbar{ visibility: collapse !important }
 
@@ -22,17 +25,22 @@ Window controls will be all wrong without it
 }
 
 :root:not([inFullscreen]) #nav-bar{
-  margin-top: calc(0px - var(--uc-toolbar-height));
+  margin-top: calc(0px - var(--uc-toolbar-height,0px));
 }
 
-#toolbar-menubar{
-  min-height:unset !important;
-  height:var(--uc-toolbar-height) !important;
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"]{
+  min-height: unset !important;
+  height: var(--uc-toolbar-height,0px) !important;
   position: relative;
 }
 
-#main-menubar{
+#toolbar-menubar[autohide="false"]{
+  margin-bottom: var(--uc-toolbar-height,0px)
+}
+
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"] #main-menubar{
   -moz-box-flex: 1;
+  -moz-box-align: stretch;
   background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor);
   background-clip: padding-box;
   border-right: 30px solid transparent;
@@ -40,7 +48,7 @@ Window controls will be all wrong without it
 }
 
 #toolbar-menubar:not([inactive]){ z-index: 2 }
-#toolbar-menubar[inactive] > #menubar-items {
+#toolbar-menubar[autohide="true"][inactive] > #menubar-items {
   opacity: 0;
   pointer-events: none;
   margin-left: var(--uc-window-drag-space-pre,0px)
