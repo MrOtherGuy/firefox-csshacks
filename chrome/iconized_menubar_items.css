@@ -20,5 +20,5 @@ See the above repository for updates as well as full license text. */
 #view-menu{ background-image: url("chrome://devtools/skin/images/command-frames.svg") }
 #history-menu{ background-image: url("chrome://browser/skin/history.svg") }
 #bookmarksMenu{ background-image: url("chrome://browser/skin/bookmark.svg") }
-#tools-menu{ background-image: url("chrome://browser/skin/developer.svg") }
+#tools-menu{ background-image: url("chrome://global/skin/icons/developer.svg") }
 #helpMenu{ background-image: url("chrome://global/skin/icons/help.svg") }
