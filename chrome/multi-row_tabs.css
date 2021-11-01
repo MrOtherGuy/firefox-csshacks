@@ -73,6 +73,9 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab > stack{ width: 100%; height: 100% }
 
+/* remove bottom margin so it doesn't throw off row height computation */
+#tabs-newtab-button{ margin-bottom: 0 !important; }
+
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-arrowscrollbox > spacer,

@@ -183,6 +183,9 @@ See the above repository for updates as well as full license text. */
   /* This should fix potential flash that could occur when bottom border is hovered to show tabs in fullscreen mode */
   #tabbrowser-tabpanels{ background-color: var(--lwt-accent-color) !important; }
 
+  /* remove bottom margin so it doesn't throw off row height computation */
+  #tabs-newtab-button{ margin-bottom: 0 !important; }
+
   /* Hide some things that are unnecessary in multi-row below content mode */
 
   #TabsToolbar > #window-controls,
