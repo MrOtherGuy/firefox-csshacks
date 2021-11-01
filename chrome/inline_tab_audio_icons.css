@@ -7,7 +7,9 @@ See the above repository for updates as well as full license text. */
   grid-template-areas: "a s";
 }
 .tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
-.tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }
+.tab-icon-overlay,
+.tab-icon-image,
+.tab-throbber{ opacity: 1 !important; }
 
 .tab-icon-overlay:not([pinned]){
   padding: 0px !important;
