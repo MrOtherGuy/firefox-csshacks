@@ -1,0 +1,22 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/selected_tab_gradient_border.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Adds a gradient outline to selected tab. This is going to need modifications if you use tabs that don't follow Proton styling. */
+
+.tab-background[selected]{
+  outline: none !important;
+  border: 2px solid transparent !important;
+  box-shadow: none !important;
+  background-clip: padding-box;
+}
+.tab-background[selected] > .tab-context-line{ margin: -5px 0 0 !important; }
+.tabbrowser-tab[selected] > .tab-stack::before{
+  content: "";
+  display: -moz-box;
+  min-height: inherit;
+  border-radius: var(--tab-border-radius);
+  grid-area: 1/1;
+  margin-block: var(--tab-block-margin);
+  /* Edit gradient colors here */
+  background: repeat linear-gradient(90deg,#f0f,#ff0,#0ff)!important;
+}
