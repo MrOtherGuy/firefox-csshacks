@@ -18,9 +18,13 @@ See the above repository for updates as well as full license text. */
 
   #mainPopupSet,
   #browser,
-  #customization-container
-  ,#nav-bar, #PersonalToolbar/* Remove this row if you want tabs to be the top-most row */
-  { -moz-box-ordinal-group: 0 }
+  #customization-container,
+  #tab-notification-deck{
+    -moz-box-ordinal-group: 0
+  }
+
+  /* Remove the next row if you want tabs to be the top-most row */
+  #titlebar{ -moz-box-ordinal-group: 2 } 
 
   #toolbar-menubar{ position: fixed; display: flex; width: 100vw; top: 0px; }
   /* Remove bottom border that won't do anything useful when at bottom of the window */

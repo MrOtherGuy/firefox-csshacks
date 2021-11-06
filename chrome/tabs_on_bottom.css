@@ -46,8 +46,8 @@ linux_gtk_window_control_patch.css
   -moz-appearance: none !important;
   --tabs-navbar-shadow-size: 0px;
 }
+#tab-notification-deck{ -moz-box-ordinal-group: 2 }
 
-.titlebar-placeholder,
 #TabsToolbar .titlebar-spacer{ display: none; }
 /* Also hide the toolbox bottom border which isn't at bottom with this setup */
 #navigator-toolbox::after{ display: none !important; }
@@ -60,7 +60,7 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 #TabsToolbar > .titlebar-buttonbox-container{ visibility: visible }
 #navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog }
 
-/* Uncomment the following if you want bookamarks toolbar to be below tabs */
+/* Uncomment the following if you want bookmarks toolbar to be below tabs */
 /*
 #PersonalToolbar{ -moz-box-ordinal-group: 2 }
 */
