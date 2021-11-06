@@ -35,9 +35,23 @@ findbar > .findbar-container{
   border-bottom-left-radius: 4px;
 }
 
-.findbar-closebutton{ margin: 0 !important; border-radius: 0 !important; padding: 5px !important; }
+.findbar-find-status{
+  display: -moz-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -moz-box-flex: 1;
+}
+
+.findbar-closebutton{
+  margin: 0 !important;
+  border-radius: 0 !important;
+  padding: 5px !important;
+}
 .findbar-closebutton > image{ padding: 3px }
-.findbar-closebutton:hover > image{ background: var(--toolbarbutton-hover-background) !important; border-radius: 4px }
+.findbar-closebutton:hover > image{
+  background: var(--toolbarbutton-hover-background) !important;
+  border-radius: 4px
+}
 findbar > .findbar-container > hbox{ margin: 0 5px }
 
 findbar::before{
