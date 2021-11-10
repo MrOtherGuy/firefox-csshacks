@@ -62,6 +62,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Make sure the bookmarks toolbar is never collapsed even if it is disabled */
+:root[sizemode="fullscreen"] #PersonalToolbar,
 #PersonalToolbar[collapsed="true"]{
   min-height: initial !important;
   max-height: initial !important;
