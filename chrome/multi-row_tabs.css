@@ -17,10 +17,9 @@ See the above repository for updates as well as full license text. */
 
 /* Scrollbar can't be clicked but the rows can be scrolled with mouse wheel */
 /* Uncomment the next line if you want to be able to use the scrollbar with mouse clicks */
-
 /* #tabbrowser-arrowscrollbox{ -moz-window-dragging: no-drag } */
-
 /* Uncommenting the above makes you unable to drag the window from empty space in the tab strip but normal draggable spaces will continue to work */
+/* Per 94.0 (64-bit) CTRL+PgUp/Down Tab focus changing does not induce row scrolling, which would be super helpful to solve somehow */
 
 #tabbrowser-tabs{
   min-height: unset !important;
