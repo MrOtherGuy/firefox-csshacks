@@ -1,28 +1,18 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_bookmarks_and_main_toolbars.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Dummy variable to support both versions 89-90 */
-:root{ --tab-block-margin: var(--proton-tab-block-margin) }
-
 #navigator-toolbox{
-  --uc-bm-height: 22px; /* Might need to adjust if the toolbar has other buttons */
-  --uc-bm-padding: 2px; /* Vertical padding to be applied to bookmarks */
+  --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
+  --uc-bm-height: calc(20px + 2 * var(--uc-bm-padding)); /* Might need to adjust if the toolbar has other buttons */
   --uc-navbar-height: -40px; /* navbar is main toolbar. Use negative value */
   --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
 }
 
-:root[uidensity="compact"] #navigator-toolbox{ --uc-bm-padding: 1px; --uc-navbar-height: -32px }
-:root[uidensity="touch"] #navigator-toolbox{ --uc-bm-padding: 6px }
-
-@media (-moz-proton){
-  #navigator-toolbox{
-     --uc-bm-height: 26px; /* Might need to adjust if the toolbar has other buttons */
-  }
-  :root[uidensity="compact"] #navigator-toolbox{
-    --uc-navbar-height: -34px;
-    --uc-bm-height: 23px;
-  }
+:root[uidensity="compact"] #navigator-toolbox{
+  --uc-bm-padding: 1px;
+  --uc-navbar-height: -34px;
 }
+:root[uidensity="touch"] #navigator-toolbox{ --uc-bm-padding: 6px }
 
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
@@ -53,10 +43,16 @@ See the above repository for updates as well as full license text. */
   position: relative;
 }
 
-:root[sessionrestored]:not([customizing]) #navigator-toolbox{ margin-bottom:  calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding) + var(--uc-navbar-height)); }
+:root[sessionrestored]:not([customizing]) #navigator-toolbox{
+  margin-bottom:  calc(0px - var(--uc-bm-height) + var(--uc-navbar-height));
+}
+#PlacesToolbarItems > .bookmark-item {
+  min-height: calc(var(--uc-bm-height) - 4px); /* Bookmarks have 2px block margin */
+  padding-block: 0px !important;
+}
 
-#PlacesToolbarItems > .bookmark-item,
 #OtherBookmarks,
+#PlacesChevron,
 #PersonalToolbar > #import-button{
   padding-block: var(--uc-bm-padding) !important;
 }
@@ -94,7 +90,10 @@ See the above repository for updates as well as full license text. */
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }
-
+/* This makes the tab notification box show immediately below tabs, otherwise it would break the layout */
+:where(#titlebar,#tab-notification-deck){
+  -moz-box-ordinal-group: 0;
+}
 /* Show when cursor is over popups/context-menus - cannot control which ones */
 /*
 #mainPopupSet:hover ~ box > toolbox > .browser-toolbar{
@@ -103,11 +102,15 @@ See the above repository for updates as well as full license text. */
 }
 */
 
-/* Uncomment to enable compatibility for multi-row_bookmarks.css */
-/* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
+/* Uncomment the next part to enable compatibility for multi-row_bookmarks.css
+ * This would break buttons placed in the toolbar,
+ * but that is likely not happening if you are using multi-row setup
+ */
+ 
 /*
+#navigator-toolbox{ margin-bottom: var(--uc-navbar-height) !important; }
 #PersonalToolbar:not([customizing]){
-  position: fixed;
+  position: fixed !important;
   display: block;
   margin-bottom: 0px !important;
 }
