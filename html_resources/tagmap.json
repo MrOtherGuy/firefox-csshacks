@@ -141,5 +141,6 @@
 "dark_date_picker_panel.css":["popup","dark-mode"],
 "textual_searchbar_one-offs.css":["popup","menu"],
 "menulike_bookmarks_folder_popups.css":["menu","bookmarks","colors"],
-"selected_tab_gradient_border.css":["tab","colors","effect"]
+"selected_tab_gradient_border.css":["tab","colors","effect"],
+"urlbar_container_color_border.css":["colors","urlbar"]
 }

@@ -1,0 +1,38 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/urlbar_container_color_border.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Draws a border around urlbar using the color of the current container. */
+
+#urlbar:not([open]) > #urlbar-input-container{
+  border-width: 0 !important;
+  padding: 2px !important;
+}
+#urlbar:not([open]) #userContext-icons::before{
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid var(--identity-icon-color);
+  border-radius: var(--toolbarbutton-border-radius);
+  outline-offset: -1px;
+  pointer-events: none;
+}
+#urlbar[focused] #userContext-icons::before{
+  outline-width: 2px;
+  outline-offset: -2px
+}
+
+/* OPTIONAL FEATURES */
+
+/* Hide container label in urlbar */
+/* #userContext-label{ display: none } */
+
+/* Hide container icon in urlbar */
+/* #userContext-indicator{ display: none } */
+
+/* Hide the container line above tabs */
+/* .tab-context-line{ display: none } */
