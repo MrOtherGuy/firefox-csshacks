@@ -7,7 +7,8 @@ See the above repository for updates as well as full license text. */
   border-width: 0 !important;
   padding: 2px !important;
 }
-#urlbar:not([open]) #userContext-icons::before{
+
+#userContext-icons::before{
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -21,10 +22,15 @@ See the above repository for updates as well as full license text. */
   outline-offset: -1px;
   pointer-events: none;
 }
+
 #urlbar[focused] #userContext-icons::before{
   outline-width: 2px;
   outline-offset: -2px
 }
+
+/* These might potentially cause some issues, but are needed to make the border extend the border to the full popup when urlabar popup is open */
+#urlbar[open] > #urlbar-input-container{ position: static !important; }
+#urlbar[open] > #urlbar-background{ z-index: -1 !important; }
 
 /* OPTIONAL FEATURES */
 
