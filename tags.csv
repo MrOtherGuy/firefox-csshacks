@@ -15,6 +15,7 @@ button_effect_scale_onclick.css,buttons,effect
 button_effect_scale_onhover.css,buttons,effect
 buttonlike_toolbarbuttons.css,buttons
 centered_tab_content.css,tab,icon
+centered_tab_label.css,tab
 centered_top_statuspanel.css,status
 classic_firefox_menu_button.css,classic,menu
 classic_grid_main_menu_popup.css,classic,menu,popup
@@ -30,6 +31,7 @@ custom_menupopup_check_icons.css,icon,menu,minimal,popup
 dark_additional_windows.css,windows,dark-mode
 dark_checkboxes_and_radios.css,dark-mode
 dark_context_menus.css,dark-mode,menu,popup
+dark_date_picker_panel.css,popup,dark-mode
 dark_theme_aware_statuspanel.css,status,dark-mode
 disable_newtab_on_middle_click.css,hack,tabs
 fake_statusbar_w_bookmarksbar.css,hack,status,toolbars,bookmarks
@@ -54,9 +56,13 @@ iconized_menubar_items.css,menubar,menu,icon
 inline_tab_audio_icons.css,tab,icon,proton
 less_static_throbber.css,icon,tab,effect
 linux_gtk_window_control_patch.css,patch,window-control
+loading_indicator_bouncing_line.css,status,navigation,effect
+loading_indicator_rotating_image.css,navigation,effect,status
 menubar_in_main_toolbar.css,menubar,nav-bar,minimal,toolbars
 menubar_in_tabs_toolbar.css,toolbars,minimal,menubar
 menubar_in_tabs_toolbar_oneliner_compatible.css,toolbars,minimal,menubar
+menulike_bookmarks_folder_popups.css,menu,bookmarks,colors
+menupopup_forced_color_schemes.css,popup,colors,menu
 minimal_in-UI_scrollbars.css,minimal,scrollbar
 minimal_text_fields.css,minimal,urlbar
 minimal_toolbarbuttons.css,minimal,buttons
@@ -64,6 +70,7 @@ minimal_toolbarbuttons_v2.css,minimal,buttons
 minimal_toolbarbuttons_v3.css,minimal,buttons
 more_visible_tab_icon.css,tab,icon
 multi-row_bookmarks.css,multi-row,bookmarks,toolbars
+multi-row_main_toolbar.css,urlbar,toolbars,multi-row,hack
 multi-row_oneliner_combo_patch.css,multi-row,patch,one-line,minimal
 multi-row_tabs.css,tabs,multi-row,toolbars
 multi-row_tabs_Fx66+.css,legacy
@@ -93,6 +100,7 @@ rounded_menupopups.css,menu,popup,urlbar
 scrollable_menupopups.css,scrollbar,popup,menu
 scrollable_urlbar_popup.css,scrollbar,popup,urlbar
 selected_tab_as_urlbar.css,hack
+selected_tab_gradient_border.css,tab,colors,effect
 sharp_menupopup_corners.css,popup,menu,proton
 show_navbar_on_focus_only.css,urlbar,nav-bar,toolbars,hiding
 show_toolbars_in_popup_windows.css,toolbars,popup
@@ -110,6 +118,7 @@ tabs_fill_available_width.css,tab,tabs
 tabs_on_bottom.css,tabs,toolbars,classic
 tabs_on_bottom_menubar_on_top_patch.css,tabs,menubar,toolbars,classic,patch
 textual_context_navigation.css,navigation,popup,menu
+textual_searchbar_one-offs.css,popup,menu
 theme_additional_windows.css,legacy
 theme_aware_modal_prompts.css,effect,dark-mode,colors,popup
 theme_color_variables.css,legacy,
@@ -123,6 +132,7 @@ toolbars_below_content.css,tabs,toolbars
 urlbar_and_popup_equal_width.css,legacy
 urlbar_centered_text.css,urlbar
 urlbar_connection_type_colors.css,urlbar,colors,status
+urlbar_container_color_border.css,colors,urlbar
 urlbar_popup_full_width.css,urlbar,popup
 urlbar_results_in_two_rows.css,urlbar,popup
 urlbar_visible_on_active_tab_click.css,hack,urlbar
@@ -133,12 +143,3 @@ vertical_menubar.css,menubar,hack
 vertical_popup_menubar.css,menubar,menu,toolbars,popup
 window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colors,patch
 window_control_placeholder_support.css,window-control,patch
-loading_indicator_bouncing_line.css,status,navigation,effect
-loading_indicator_rotating_image.css,navigation,effect,status
-menupopup_forced_color_schemes.css,popup,colors,menu
-centered_tab_label.css,tab
-dark_date_picker_panel.css,popup,dark-mode
-textual_searchbar_one-offs.css,popup,menu
-menulike_bookmarks_folder_popups.css,menu,bookmarks,colors
-selected_tab_gradient_border.css,tab,colors,effect
-urlbar_container_color_border.css,colors,urlbar
