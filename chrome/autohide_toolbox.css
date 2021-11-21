@@ -15,6 +15,9 @@ See the above repository for updates as well as full license text. */
   --uc-toolbox-rotation: 89deg;
 }
 
+/* Dummy variable to support versions 94-96, can be removed when 96 lands */
+:root{ --lwt-frame: var(--lwt-accent-color) }
+
 @media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
 
   :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
@@ -38,7 +41,7 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox{
   position: fixed !important;
   display: block;
-  background-color: var(--lwt-accent-color,black) !important;
+  background-color: var(--lwt-frame,black) !important;
   transition: transform 82ms linear, opacity 82ms linear !important;
   transition-delay: var(--uc-autohide-toolbox-delay) !important;
   transform-origin: top;

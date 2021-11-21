@@ -22,6 +22,9 @@ See the above repository for updates as well as full license text. */
     visibility: visible;
   }*/
   
+  /* Dummy variable to support versions 94-96, can be removed when 96 lands */
+  :root{ --lwt-frame: var(--lwt-accent-color) }
+  
   :root{ --uc-fake-titlebar-padding: 0px }
   @media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
     :root[sizemode="maximized"][tabsintitlebar]{ --uc-fake-titlebar-padding: 8px }
@@ -36,7 +39,7 @@ See the above repository for updates as well as full license text. */
     position: fixed;
     display: flex;
     width: 100vw;
-    background-color: var(--lwt-accent-color);
+    background-color: var(--lwt-frame);
   }
 
   #TabsToolbar{
@@ -72,7 +75,7 @@ See the above repository for updates as well as full license text. */
   #statuspanel-inner > #statuspanel-label{
     height:3em;
     min-width: 1000px;
-    background-color: var(--lwt-accent-color, hsla(0,0%,100%,.8)) !important;
+    background-color: var(--lwt-frame, hsla(0,0%,100%,.8)) !important;
     border: none !important;
     font-size: inherit;
     color: inherit !important;

@@ -10,8 +10,8 @@ Additionally on Linux, you may need to get:
 linux_gtk_window_control_patch.css
 */
 
-/* Dummy variable to support both versions 89-90 */
-:root{ --tab-block-margin: var(--proton-tab-block-margin) }
+/* Dummy variable to support versions 94-96, can be removed when 96 lands */
+:root{ --lwt-frame: var(--lwt-accent-color) }
 
 .titlebar-buttonbox-container{
   position: fixed;
@@ -53,7 +53,7 @@ linux_gtk_window_control_patch.css
 }
 #TabsToolbar:hover{ z-index: 1 }
 
-#TabsToolbar{ background-color: var(--lwt-accent-color); }
+#TabsToolbar{ background-color: var(--lwt-frame); }
 #TabsToolbar-customization-target{ width: 100vw; }
 
 .tab-background{ border-top-style: none !important; }

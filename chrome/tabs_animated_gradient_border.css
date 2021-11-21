@@ -6,6 +6,9 @@ See the above repository for updates as well as full license text. */
 
 /* Constant animation WILL increase CPU usage */
 
+/* Dummy variable to support versions 94-96, can be removed when 96 lands */
+:root{ --lwt-frame: var(--lwt-accent-color) }
+
 /*
 Thanks to /u/skenera on reddit for suggesting animating background position and using steps() function to reduce cpu load
 */
@@ -31,7 +34,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
   content: "";
   display: -moz-box;
   -moz-box-flex: 1 !important;
-  background-color: var(--lwt-accent-color);
+  background-color: var(--lwt-frame);
   margin-bottom: 2px;
 }
 
@@ -42,7 +45,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
 #tabbrowser-tabs .scrollbutton-up,
 #tabbrowser-tabs .scrollbutton-down,
 #tabbrowser-tabs ~ toolbarbutton{
-  background-color: var(--lwt-accent-color) !important;
+  background-color: var(--lwt-frame) !important;
   margin-bottom: 2px !important;
   opacity: 1 !important;
 }

@@ -8,6 +8,9 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
 
+  /* Dummy variable to support versions 94-96, can be removed when 96 lands */
+  :root{ --lwt-frame: var(--lwt-accent-color) }
+
   :root:not([customizing]) #titlebar{
     position: fixed;
     display: block;
@@ -48,7 +51,7 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar:not([customizing]) #main-menubar{
     -moz-box-orient: vertical;
     margin-left: -60px;
-    background-color: var(--lwt-accent-color)
+    background-color: var(--lwt-frame)
   }
 
   :root:not([inDOMFullscreen]) > #content-deck,:root:not([inDOMFullscreen]) #browser{ margin-right: 30px }

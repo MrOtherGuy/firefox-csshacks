@@ -3,6 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Makes bookmarks toolbar span multiple rows */
 
+/* Dummy variable to support versions 94-96, can be removed when 96 lands */
+:root{ --lwt-frame: var(--lwt-accent-color) }
+
 #PersonalToolbar{
   --multirow-bmb-n-rows: 3; /* Control how many rows are shown before scrolling */
   --multirow-bmb-row-margin: 2px; /* Control how much spacing is between rows */
@@ -20,7 +23,7 @@ See the above repository for updates as well as full license text. */
   /* --uc-bm-padding is defined in autohide_bookmarks_toolbar.css */
   max-height: calc(var(--multirow-bmb-n-rows) * (4px + 1em + (2 * (var(--multirow-bmb-row-margin) + var(--uc-bm-padding,var(--bookmark-block-padding)))))) !important;
   overflow-y:auto;
-  scrollbar-color: var(--lwt-accent-color) var(--toolbar-bgcolor) ;
+  scrollbar-color: var(--lwt-frame) var(--toolbar-bgcolor) ;
   scrollbar-width: thin;
 }
 

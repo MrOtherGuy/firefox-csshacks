@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
   --arrowpanel-color: cyan !important;
   --arrowpanel-dimmed: rgba(0,0,0,0.4) !important;
   /* window and toolbar background */
-  --lwt-accent-color: purple !important;
+  --lwt-frame: purple !important;
   --toolbar-bgcolor: rgba(0,0,0,0.4) !important;
   /* tabs */
   --lwt-text-color: cyan !important;
