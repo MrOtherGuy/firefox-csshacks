@@ -11,49 +11,58 @@ See the above repository for updates as well as full license text. */
   /* Dummy variable to support versions 94-96, can be removed when 96 lands */
   :root{ --lwt-frame: var(--lwt-accent-color) }
 
+  :root{
+    --uc-vertical-menubar-width: 36px;
+  }
+  
   :root:not([customizing]) #titlebar{
     position: fixed;
-    display: block;
+    display: flex;
+    z-index: 1;
     -moz-appearance: none !important;
     right: 0px; 
     height: 100vh;
-    width: 30px;
+    width: var(--uc-vertical-menubar-width);
   }
-  :root:not([customizing]) #navigator-toolbox{ margin-top: var(--tab-min-height) }
+  :root:not([customizing]) #navigator-toolbox{ padding-top: calc(2* var(--tab-block-margin) + var(--tab-min-height)) }
 
   #TabsToolbar:not([customizing]){
     position: fixed;
-    display: block;
+    display: flex;
     top: 0px;
     left: 0px;
     width: 100vw;
-    padding-left: 30px !important;
   }
-
+  .titlebar-spacer{ flex-grow: 1; }
+  :root[sizemode="normal"] :where(.titlebar-spacer){ display: -moz-box !important; }
+  
   #TabsToolbar > .toolbar-items{ max-width: calc(100vw - 138px) }
   #TabsToolbar > .titlebar-buttonbox-container{
-    display: block !important;
-    float: right !important;
+    display: -moz-box !important;
   }
 
   #toolbar-menubar:not([customizing]){
-    margin-top: 40px;
-    width: 30px;
+    margin-top: 40px; /* This needs to be bigger if bookmarks toolbar is shown */
+    width: var(--uc-vertical-menubar-width);
     -moz-box-orient: vertical;
-    -moz-box-flex: 1;
+    flex-grow: 1;
+    background-color: var(--lwt-frame);
   }
 
-  #toolbar-menubar > .titlebar-buttonbox-container,#toolbar-menubar > spacer{ display: none !important; }
+  #toolbar-menubar > .titlebar-buttonbox-container,
+  #toolbar-menubar > spacer{ display: none !important; }
 
   #toolbar-menubar > #menubar-items{ visibility: collapse }
-  #toolbar-menubar > .toolbarbutton-1:first-child:hover + #menubar-items,#toolbar-menubar > #menubar-items:hover{ visibility: visible }
+  
+  #toolbar-menubar > .toolbarbutton-1:first-child:hover + #menubar-items,
+  #toolbar-menubar > #menubar-items:hover{ visibility: visible }
 
   #toolbar-menubar:not([customizing]) #main-menubar{
     -moz-box-orient: vertical;
-    margin-left: -60px;
-    background-color: var(--lwt-frame)
+    margin-left: -40px;
+    background-color: var(--lwt-frame);
   }
 
-  :root:not([inDOMFullscreen]) > #content-deck,:root:not([inDOMFullscreen]) #browser{ margin-right: 30px }
+  :root:not([inDOMFullscreen]) #browser{ margin-right: var(--uc-vertical-menubar-width) }
 
 }
