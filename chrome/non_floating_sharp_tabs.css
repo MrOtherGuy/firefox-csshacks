@@ -6,7 +6,6 @@ See the above repository for updates as well as full license text. */
  * It's not strictly a requirement, but this style expects compact_proton.css to be loaded before it. */
 
 :root[id]{
-  --proton-tab-block-margin: 0px !important;
   --tab-block-margin: 0px !important;
   --tabs-shadow-size: 1px !important;
   

@@ -3,9 +3,6 @@ See the above repository for updates as well as full license text. */
 
 /* Makes menubar appear as overlay in the top left corner */
 
-/* Dummy variable to support both versions 89-90 */
-:root{ --tab-block-margin: var(--proton-tab-block-margin) }
-
 #toolbar-menubar{
   position: fixed;
   display: flex;

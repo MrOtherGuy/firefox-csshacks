@@ -11,10 +11,9 @@ See the above repository for updates as well as full license text. */
 
 /* Modify it to suit your needs */
 @media screen and (min-width: 1100px){
-  :root{ --tab-block-margin: var(--proton-tab-block-margin) }
+
   :root[uidensity="compact"]{
     --tab-block-margin: 2px !important;
-    --proton-tab-block-margin: 2px !important;
     }
   
   /* Modify these to change relative widths or default height */

@@ -29,9 +29,6 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
   
-  /* Dummy variable to support both versions 89-90 */
-  :root{ --tab-block-margin: var(--proton-tab-block-margin) }
-  
   #scrollbutton-up~spacer,
   #scrollbutton-up,
   #scrollbutton-down{ display: var(--scrollbutton-display-model,initial) }
