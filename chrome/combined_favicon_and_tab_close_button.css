@@ -7,7 +7,8 @@ See the above repository for updates as well as full license text. */
   -moz-box-ordinal-group: 0;
   display: -moz-box !important;
   position: relative;
-  margin-inline: -1px -19px !important;
+  margin-inline: -4px -20px !important;
+  padding-inline-start: 7px !important;
   z-index: -1;
   visibility: hidden;
   width: unset !important;
@@ -16,13 +17,6 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab:hover .tab-close-button{
   background-color: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
   background-image: linear-gradient(var(--toolbarbutton-hover-background),var(--toolbarbutton-hover-background))
-}
-
-@media (-moz-proton){
-  .tab-close-button{
-    margin-inline: -4px -20px !important;
-    padding-inline-start: 7px !important;
-  }
 }
 
 /**** ONLY USE ONE OF THE FOLLOWING ****/

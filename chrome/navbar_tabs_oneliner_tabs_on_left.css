@@ -19,9 +19,10 @@ Window controls will be all wrong without it
   --uc-toolbar-height: 40px;
   --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
 }
-@media (-moz-proton){
-  #scrollbutton-up,#scrollbutton-down{ border-block-width: 2px !important; }
-}
+
+#scrollbutton-up,
+#scrollbutton-down{ border-block-width: 2px !important; }
+
 /* Override for other densities */
 :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 34px;}
 :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }

@@ -22,9 +22,10 @@ See the above repository for updates as well as full license text. */
     --uc-toolbar-height: 40px;
     --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
   }
-  @media (-moz-proton){
-    #scrollbutton-up,#scrollbutton-down{ border-block-width: 2px !important; }
-  }
+
+  #scrollbutton-up,
+  #scrollbutton-down{ border-block-width: 2px !important; }
+  
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
   @media screen and (max-width: 1500px){
