@@ -3,7 +3,7 @@
 let DB = null;
 
 function initDB(obj){
-  DB = obj;
+  DB = obj.content;
   Object.defineProperty(DB,"query",{value:function (q,list){
     let nlist = [];
     for(let key of list || this.keys){
@@ -35,10 +35,10 @@ function fetchWithType(url){
       }
       if(ext === "json"){
         response.json()
-        .then(resolve)
+        .then((obj) => resolve({file:url,content:obj}));
       }else{
         response.text()
-        .then(resolve)
+        .then((text) => resolve({file:url,content:text}))
         
       }
     },except => reject(except))
@@ -111,11 +111,12 @@ function clearCodeBlock(){
   return
 }
 
-function showMatchingTargets(fileNames){
+function showMatchingTargets(fileNames,setSelected = false){
   let bonus = 0;
   for(let c of Array.from(document.querySelectorAll(".target"))){
     if(fileNames.includes(getText(c))){
-      c.classList.remove("hidden")
+      c.classList.remove("hidden");
+      setSelected && selectedTarget.add(c)
     }else{
       if(c.classList.contains("selected")){
         bonus++
@@ -124,14 +125,12 @@ function showMatchingTargets(fileNames){
       }
       
     }
-    //fileNames.includes(getText(c)) ? c.classList.remove("hidden") : c.classList.add("hidden");
   }
   document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
 }
 
 function onCategoryClicked(categoryNode,isSecondary = false){
   
-  //clearCodeBlock();
   currentCategory.set(categoryNode,isSecondary);
   
   let secondaryCategoriesNode = document.querySelector("#secondaryCategories");
@@ -154,15 +153,38 @@ function onCategoryClicked(categoryNode,isSecondary = false){
 }
 
 async function onTargetClicked(target,append = false){
-  const codeBlock = document.querySelector("pre");
   const text = typeof target === "string"
               ? target
               : getText(target);
   
   fetchWithType(`chrome/${text}`)
-  //.then(text => (codeBlock.textContent = text))
-  .then(text => Highlighter.parse(codeBlock,text,append))
+  .then(obj => Highlighter.parse(obj,append))
   .catch(e => console.log(e))
+}
+
+function onFilenameClicked(box,ctrlKey){
+  if(typeof box === "string"){
+    box = document.querySelector(`.target[title="${box}"]`);
+  }
+  if(!box){ return }
+  if(!box.classList.contains("selected")){
+    if(ctrlKey && selectedTarget.getIt()){
+      selectedTarget.add(box);
+    }else{
+      selectedTarget.set(box);
+    }
+    onTargetClicked(box,ctrlKey);
+    selectedTarget.setUrlSearchParams()
+  }else{
+    if(ctrlKey){
+      selectedTarget.deselect(box);
+      let preview = document.querySelector(`[data-filename="chrome/${box.getAttribute("title")}.css"]`);
+      if(preview){
+        preview.remove();
+      }
+      selectedTarget.setUrlSearchParams()
+    }
+  }
 }
 
 function onSomeClicked(e){
@@ -175,32 +197,29 @@ function onSomeClicked(e){
       onCategoryClicked(e.target,true/* isSecondary */);
       break;
     case "targets":
-      if(!e.target.classList.contains("selected")){
-        if(e.ctrlKey && selectedTarget.getIt()){
-          selectedTarget.add(e.target);
-          onTargetClicked(e.target,true);
-        }else{
-          selectedTarget.set(e.target);
-          onTargetClicked(e.target);
-        }
-      }
+      onFilenameClicked(e.target,e.ctrlKey);
+      
       break;
     default:
+    
       break;
   }
 }
 
 const selectedTarget = new(function(){
   const selected = new Set();
+  const state_object = {};
   this.set = (el) => {
     this.clear();
     el.classList.add("selected");
+    el.classList.remove("hidden");
     selected.add(el);
   }
   this.getIt = () =>{ return selected.values().next().value };
   this.add = (el) => {
     selected.add(el);
     el.classList.add("selected");
+    el.classList.remove("hidden");
   };
   this.deselect = (el) => {
     el.classList.remove("selected");
@@ -210,6 +229,13 @@ const selectedTarget = new(function(){
     selected.forEach(el=>el.classList.remove("selected"));
     selected.clear();
     return true
+  }
+  this.setUrlSearchParams = () => {
+    let t = [];
+    for(let value of selected.values()){
+      t.push(value.getAttribute("title")+".css")
+    }
+    history.replaceState(state_object,"",`?file=${t.join(",")}`);
   }
 })();
 
@@ -277,7 +303,6 @@ function createCategories(){
   })();
   
   for(let cat of CAT_NAMES){
-  //  CAT_PARENT.appendChild(createCategory(cat.name))
     CAT_PARENT.appendChild(createNode(cat,"category"));
     CAT_SECOND.appendChild(createNode(cat,"category"));
   }
@@ -294,6 +319,8 @@ const Highlighter = new(function(){
     this.set = function(a){ previous = current; current = a; return} 
   })();
   
+  
+  
   let pointer = 0;
   let token = "";
   
@@ -303,10 +330,14 @@ const Highlighter = new(function(){
   [".","class"],
   ["[","attribute"]]);
 
-  this.parse = function(targetNode,text,appendMode){
+  this.parse = function(info,appendMode){
+    
+    const targetNode = document.getElementById("previewBox");
     
     !appendMode && clearCodeBlock();
-    let node = appendMode ? targetNode.firstChild : document.createElement("div");
+    
+    let node = document.createElement("div");
+    node.setAttribute("data-filename",info.file);
     
     function createNewRuleset(){
       let ruleset = document.createElement("span");
@@ -400,8 +431,9 @@ const Highlighter = new(function(){
     let c;
     let functionValueLevel = 0;
     let curly = false;
-    while(pointer < text.length){
-      c = text[pointer];
+    
+    while(pointer < info.content.length){
+      c = info.content[pointer];
       
       const currentState = state.now();
       curly = currentState != 2 && (c === "{" || c === "}");
@@ -413,7 +445,7 @@ const Highlighter = new(function(){
         case 0:
           switch(c){
             case "/":
-              if(text[pointer+1] === "*"){
+              if(info.content[pointer+1] === "*"){
                 state.set(2);
                 if(token.length > 1){
                   token = token.slice(0,-1);
@@ -438,7 +470,7 @@ const Highlighter = new(function(){
         case 2:
           switch(c){
             case "*":
-              if(text[pointer+1] === "/"){
+              if(info.content[pointer+1] === "/"){
                 token += "/";
                 pointer++;
                 state.set(state.previous());
@@ -450,7 +482,7 @@ const Highlighter = new(function(){
         case 3:
           switch(c){
             case "/":
-              if(text[pointer+1] === "*"){
+              if(info.content[pointer+1] === "*"){
                 state.set(2);
               }
               break;
@@ -521,8 +553,11 @@ const Highlighter = new(function(){
     state.set(0);
     pointer = 0;
     
-    targetNode.appendChild(node);
-    
+    if(info.file.endsWith("support.css")){
+      targetNode.prepend(node);
+    }else{
+      targetNode.appendChild(node);
+    }
     return
   }
   return this
@@ -548,14 +583,13 @@ async function handleSearchQuery(){
     if(files.length === 0 ){
       return
     }
-
-    const codeBlock = document.querySelector("pre");   
+ 
     const promises = files.map(file=>fetchWithType(`chrome/${file}`).catch(e=>""));
     
     Promise.all(promises)
     .then(responses => {
-      showMatchingTargets(files);
-      Highlighter.parse(codeBlock,responses.join("\n\n/*************************************/\n\n"))
+      showMatchingTargets(files,true);
+      responses.forEach(Highlighter.parse)
     });
     
   }
@@ -584,7 +618,7 @@ document.onreadystatechange = (function () {
         }
         let fileName = ref.slice(ref.lastIndexOf("/"));
         if(fileName.endsWith(".css")){
-          onTargetClicked(fileName);
+          onFilenameClicked(fileName.slice(1,-4),ev.ctrlKey);
           ev.preventDefault();
         }
       }
