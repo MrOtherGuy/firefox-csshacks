@@ -1,0 +1,15 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/page_action_buttons_on_urlbar_hover.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+.urlbar-page-action{
+  margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding) );
+  opacity: 0;
+  transition: margin-inline-end 100ms linear, opacity 200ms linear;
+}
+
+#urlbar:hover .urlbar-page-action,
+.urlbar-page-action[open],
+.urlbar-page-action[open] ~ .urlbar-page-action{
+  opacity: 1;
+  margin-inline-end: 0px !important;
+}
