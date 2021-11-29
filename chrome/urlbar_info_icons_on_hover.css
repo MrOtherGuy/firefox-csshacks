@@ -8,7 +8,7 @@ See the above repository for updates as well as full license text. */
 #identity-box,
 #identity-box.extensionPage #identity-icon-label{
   max-width: 0px;
-  transition: max-width 300ms linear !important;
+  transition: max-width 100ms linear !important;
   overflow: hidden;
 }
 
