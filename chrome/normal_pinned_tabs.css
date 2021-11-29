@@ -25,7 +25,10 @@ See the above repository for updates as well as full license text. */
 .tab-label-container[pinned]{ margin-inline-start: 8px }
 
 .tab-icon-sound:is([soundplaying],[muted],[activemedia-blocked],[pictureinpicture]),
-.tab-close-button{ display: -moz-box !important; }
+
 .tab-icon-overlay{ display: none !important; }
 
 #tabbrowser-tabs[closebuttons="activetab"] > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-content > .tab-close-button:not([selected="true"]){ display: none !important; }
+
+/* Comment out or remove this if you want pinned tabs to never have close-button */
+.tab-close-button{ display: -moz-box !important; }
