@@ -145,3 +145,4 @@ window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colo
 window_control_placeholder_support.css,window-control,patch
 urlbar_info_icons_on_hover.css,autohide,icon,urlbar,minimal
 page_action_buttons_on_urlbar_hover.css,urlbar,icon,minimal,autohide
+integrated_searchbar_popup.css,popup,colors

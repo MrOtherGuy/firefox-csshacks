@@ -1,0 +1,40 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/integrated_searchbar_popup.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This makes the searchbar popup look integrated into the searchbar,
+ * kinda like urlbar popup looks.
+ * Go to about:config and enable color-mix with layout.css.color-mix.enabled
+ * to make the popup border show properly, or make the border use other color.
+ */
+
+#PopupSearchAutoComplete{
+  --uc-panel-radius: 0 0 10px 10px;
+  --uc-slot-radius: 0 0 6px 6px;
+  --uc-panel-border: 0px;
+  --arrowpanel-border-color: transparent !important;
+  border-radius: var(--uc-panel-radius) !important;
+  margin-top: -3px;
+  outline: 2px solid var(--toolbar-field-focus-border-color) !important;
+  outline-offset: -8px;
+  -moz-window-shadow: none !important;
+  margin-inline: -6px;
+  padding-inline: 6px;
+  margin-bottom: -6px;
+  padding-bottom: 6px;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.13));
+  background: transparent !important;
+}
+
+slot[part="content"]{
+  border-radius: var(--uc-slot-radius,var(--panel-border-radius)) !important;
+}
+
+#PopupSearchAutoComplete::before{
+  height: 8px;
+  background: var(--toolbar-field-focus-background-color);
+  border-inline: 2px solid var(--toolbar-field-focus-border-color);
+  display: -moz-box;
+  content: "";
+  position: relative;
+  z-index: 2;
+}
