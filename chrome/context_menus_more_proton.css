@@ -1,0 +1,55 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/context_menus_more_proton.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Adds more proton-like styling to context menus. Rounded rows, and more consistent padding. This is only going to work on Win10+ */
+
+:root{
+  --arrowpanel-menuitem-margin: 0 8px;
+  --arrowpanel-menuitem-padding-block: 8px;
+  --arrowpanel-menuitem-padding-inline: 8px;
+  --arrowpanel-menuitem-border-radius: 4px;
+  --panel-separator-margin-vertical: 4px;
+  --button-hover-bgcolor: rgb(82, 82, 94);
+}
+/* Set custom context menu colors below */
+/*
+menupopup:not(.in-menulist){
+  --panel-background: #eb2a33 !important;
+  --panel-color: #4aa !important;
+}
+*/
+
+menupopup{
+  --panel-item-hover-bgcolor: var(--button-hover-bgcolor)
+}
+menupopup > menuitem,
+menupopup > menu{
+  appearance: none !important;
+  margin: var(--arrowpanel-menuitem-margin) !important;
+  min-height: 24px !important;
+  padding: var(--arrowpanel-menuitem-padding-block) var(--arrowpanel-menuitem-padding-inline) !important;
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  background-color: transparent !important;
+}
+#context-navigation{
+  padding-inline: var(--arrowpanel-menuitem-padding-inline) !important;
+}
+
+menupopup:not(.in-menulist){
+  --panel-padding: var(--arrowpanel-menuitem-padding-block) 0 !important;
+}
+menuseparator:not(.in-menulist){
+  margin-block: var(--panel-separator-margin-vertical) !important;
+}
+
+#context-navigation > menuitem[_moz-menuactive] .menu-iconic-icon{
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+menupopup > menuitem[_moz-menuactive],
+menupopup > menu[_moz-menuactive]{
+  background-color: var(--panel-item-hover-bgcolor) !important;
+}
+menupopup > menuitem[disabled][_moz-menuactive],
+menupopup > menu[disabled][_moz-menuactive]{
+  background-color: var(--menuitem-disabled-hover-background-color) !important;
+}
