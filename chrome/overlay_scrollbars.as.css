@@ -7,13 +7,13 @@ See the above repository for updates as well as full license text. */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 scrollbar {
-  -moz-appearance: none!important;
-  position: relative!important;
+  -moz-appearance: none !important;
+  position: relative !important;
   background-color: transparent;
   z-index: 9;
 }
 scrollbar thumb{
-  -moz-appearance: none!important;
+  -moz-appearance: none !important;
   background-color: transparent;
   pointer-events: auto;
   opacity: 0.5;
@@ -21,13 +21,13 @@ scrollbar thumb{
 }
 
 scrollbar[orient = "vertical"] thumb{
-  border-image-source: linear-gradient(to right, transparent 12px, black 14px);
+  border-image-source: linear-gradient(to right, transparent 13px, currentcolor 13px);
   border-image-width: 0 0 0 16px;
   border-image-slice: 0% 0% 0% 100%;
   border-image-repeat: stretch;
 }
 scrollbar[orient = "horizontal"] thumb{
-  border-image-source: linear-gradient(to bottom, transparent 12px, black 14px);
+  border-image-source: linear-gradient(to bottom, transparent 13px, currentcolor 13px);
   border-image-width: 16px 0 0 0;
   border-image-slice: 100% 0% 0% 0%;
   border-image-repeat: stretch;
@@ -38,11 +38,11 @@ scrollbar scrollbarbutton{
   display: none;
 }
 scrollbar[orient = "vertical"] {
-  min-width: 16px!important;
+  min-width: 16px !important;
   -moz-margin-start: -16px;/*margin to fill the whole render window with content and overlay the scrollbars*/
 }
 scrollbar[orient = "horizontal"] {
-  height: 16px!important;
+  height: 16px !important;
   margin-top: -16px;
 }
 scrollbar[orient = "vertical"] thumb{
