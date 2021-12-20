@@ -4,6 +4,9 @@ See the above repository for updates as well as full license text. */
 .tab-content > :not(.tab-icon-stack){
   display: none
 }
+.tab-icon-image:not([src]){
+  display: -moz-box !important;
+}
 .tab-icon-stack > *{ margin-inline: 0 !important; }
 .tabbrowser-tab{ -moz-box-flex: 0 !important; }
 
