@@ -147,3 +147,4 @@ urlbar_info_icons_on_hover.css,autohide,icon,urlbar,minimal
 page_action_buttons_on_urlbar_hover.css,urlbar,icon,minimal,autohide
 integrated_searchbar_popup.css,popup,colors
 context_menus_more_proton.css,proton,menu
+multi-row_tabs_separate_pinned_row_patch.css,tabs,multi-row,patch
