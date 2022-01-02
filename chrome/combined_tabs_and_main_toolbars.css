@@ -28,7 +28,7 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"] #navigator-toolbox{ --tab-min-height: 32px }
 
 @media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[sizemode="maximized"] > body > box{ margin-top: 8px }
+  :root[tabsintitlebar][sizemode="maximized"] > body > box{ margin-top: 8px }
 }
 
 #navigator-toolbox{

@@ -26,7 +26,7 @@ See the above repository for updates as well as full license text. */
     --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
   }
   @media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-    :root[sizemode="maximized"]{ --multirow-top-padding: 8px }
+    :root[tabsintitlebar][sizemode="maximized"]{ --multirow-top-padding: 8px }
   }
   :root[uidensity="compact"]{--multirow-toolbar-height: 34px}
   :root{ border-top-width: 0px !important }
@@ -53,7 +53,6 @@ See the above repository for updates as well as full license text. */
     margin-right: 138px;
     /* width == 100vw - margins */
     width: calc(100vw - 168px);
-    top: var(--multirow-top-padding);
   }
 
   :root[inFullscreen] #TabsToolbar > #window-controls{
