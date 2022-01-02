@@ -19,13 +19,12 @@ See the above repository for updates as well as full license text. */
 #PanelUI-menu-button > stack{
   background-color: var(--uc-fx-button-color);
   background-image: linear-gradient(var(--uc-fx-button-sec-color), transparent) !important;
-  padding-inline: 5px !important;
-  list-style-image: url(chrome://global/skin/icons/arrow-dropdown-12.svg) !important;
+  list-style-image: url(chrome://global/skin/icons/arrow-down-12.svg) !important;
   border-radius: 0 0 4px 4px !important;
   border: 2px groove var(--uc-fx-button-color);
   border-top: none;
   display: -moz-box;
-  padding-block: 4px !important;
+  padding: 4px 10px !important;
 }
 
 #PanelUI-menu-button:hover > stack,
@@ -38,4 +37,41 @@ See the above repository for updates as well as full license text. */
   display: -moz-box;
   content: "Firefox"; /* Change text here */
   font-weight: 700;
+  margin-inline-end: 4px;
 }
+
+#PanelUI-button{
+  position: fixed;
+  display: flex;
+  top: 0;
+}
+
+#toolbar-menubar,
+#toolbar-menubar[autohide="true"] + #TabsToolbar{
+  padding-left: 94px !important;
+}
+
+@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+  :root[tabsintitlebar][sizemode="maximized"] #PanelUI-button{ top:7px !important; }
+}
+
+/* OPTIONAL - move the menu button to top-left corner of the window.
+ * Don't use this if you also use tabs_on_bottom.css
+ */
+
+/*
+#PanelUI-button{
+  position: fixed;
+  display: flex;
+  top: 0;
+}
+
+#toolbar-menubar,
+#toolbar-menubar[autohide="true"] + #TabsToolbar{
+  padding-left: 94px !important;
+}
+
+@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+  :root[tabsintitlebar][sizemode="maximized"] #PanelUI-button{ top:7px !important; }
+}
+*/
