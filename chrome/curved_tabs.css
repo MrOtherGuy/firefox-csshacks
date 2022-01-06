@@ -1,14 +1,17 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/curved_tabs.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Makes tabs more curvy. Also disables tab separators since there's no easy way to make the look good */
-
+/* Makes tabs more curvy
+ * Set svg.context-properties.content.enabled to true in about:config, 
+ * otherwise the bottom corners will be black
+ */
 #tabbrowser-tabs{
   --uc-tab-curve-size:17px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
   --uc-tabs-scrollbutton-border: 0px;
   --tab-block-margin:0px;
   --tab-min-height: 34px;
-  --uc-tab-line-color: rgb(10, 132, 255);
+  --uc-tab-line-color: rgb(10, 132, 255); /* This is only used when the first optional section is enabled, see below */
+  --uc-curve-stroke-opacity: 0.8; /* used to decrease curve border contrast a bit. */
 }
 
 .tabbrowser-tab{
@@ -31,20 +34,26 @@ See the above repository for updates as well as full license text. */
   position: absolute;
   content: "";
   fill: color-mix(in srgb, currentColor 11%, transparent);
-  -moz-context-properties: fill,stroke;
+  -moz-context-properties: fill,stroke,stroke-opacity;
   left: calc(var(--uc-tab-curve-padding,0px) - var(--uc-tab-curve-size));
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlLXdpZHRoPSIxLjIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDE3IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMCAxNyBMMCAxNiBBMTYgMTYgMCAwIDAgMTYgMCBMIDE4IDAgTCAxOCAxNyBaIiBmaWxsPSJjb250ZXh0LWZpbGwiPjwvcGF0aD4NCiAgPHBhdGggZD0iTTAgMTYgQTE2IDE2IDAgMCAwIDE2IDAiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIGZpbGw9InRyYW5zcGFyZW50Ij48L3BhdGg+DQo8L3N2Zz4");
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlLXdpZHRoPSIxLjIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDE3IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMCAxNyBMMCAxNiBBMTYgMTYgMCAwIDAgMTYgMCBMIDE4IDAgTCAxOCAxNyBaIiBmaWxsPSJjb250ZXh0LWZpbGwiPjwvcGF0aD4NCiAgPHBhdGggZD0iTTAgMTYgQTE2IDE2IDAgMCAwIDE2IDAiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIHN0cm9rZS1vcGFjaXR5PSJjb250ZXh0LXN0cm9rZS1vcGFjaXR5IiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9wYXRoPg0KPC9zdmc+");
   background-size: var(--uc-tab-curve-size);
   background-repeat: no-repeat;
   background-position-y: bottom;
   transform: scaleY(var(--uc-tab-vertical-transform));
+  stroke-opacity: var(--uc-curve-stroke-opacity);
   z-index:1;
 }
 
 .tabbrowser-tab[selected] > stack::before,
 .tabbrowser-tab[selected] > stack::after{
-  fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
+  fill: var(--tab-selected-bgcolor,var(--toolbar-bgcolor)) !important;
   stroke: var(--tabs-border-color,transparent);
+}
+
+.tabbrowser-tab[selected] > stack:-moz-lwtheme::before,
+.tabbrowser-tab[selected] > stack:-moz-lwtheme::after{
+  fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
 }
 
 .tabbrowser-tab:hover > stack::after,
@@ -84,7 +93,6 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
 .tab-background[selected]{ --toolbar-bgcolor: transparent }
 .tabbrowser-tab .tab-background{ border-top: none !important; box-shadow: none !important; }
-
 .tab-background[selected]::before{
   content: "";
   display: -moz-box;
