@@ -63,6 +63,7 @@ See the above repository for updates as well as full license text. */
 .tab-background{
   border-radius: 0 !important;
   box-shadow: none !important;
+  border-top: 0 !important;
 }
 
 .tab-background:not([selected])[multiselected]{
