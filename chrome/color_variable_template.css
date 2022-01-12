@@ -39,6 +39,6 @@ See the above repository for updates as well as full license text. */
   --lwt-sidebar-text-color: yellow !important;
 }
 /* Line above tabs */
-#tabbrowser-tabs{ --tab-line-color: white !important; }
+#tabbrowser-tabs{ --lwt-tab-line-color: white !important; }
 /* the header-area of sidebar needs this to work */
 #sidebar-box{ --sidebar-background-color: purple !important; }

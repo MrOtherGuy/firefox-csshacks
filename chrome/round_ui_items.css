@@ -35,7 +35,10 @@ menupopup{ -moz-appearance: none !important; overflow: -moz-hidden-unscrollable 
 #nav-bar{ box-shadow: none !important; margin-top: 3px }
 .tab-line{ display: none }
 
-.tab-background[selected]{ border-top-width: 2px !important; border-top-color: var(--tab-line-color) !important; }
+.tab-background[selected]{
+  border-top-width: 2px !important;
+  border-top-color: var(--lwt-tab-line-color) !important;
+}
 .tabbrowser-tab[selected]{ z-index: auto !important; }
 
 .urlbar-icon,

@@ -14,7 +14,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Uncomment next line to force specific color for tab top line */
-/* #tabbrowser-tabs{ --tab-line-color: blue !important; } */
+/* #tabbrowser-tabs{ --lwt-tab-line-color: blue !important; } */
 
 /* These next two rules set a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
 #nav-bar{
@@ -23,6 +23,7 @@ See the above repository for updates as well as full license text. */
 }
 .tab-background[selected]{
   border-inline: 1px solid color-mix(in srgb, currentcolor 30%, transparent) !important;
+  border-bottom-color: transparent !important;
 }
 
 #TabsToolbar{
@@ -32,7 +33,7 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox:not([movingtab]):-moz-lwtheme > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }
-#TabsToolbar:not(:-moz-lwtheme){ --tab-line-color: transparent; }
+
 .tab-background[selected]:not(:-moz-lwtheme){ background: var(--toolbar-bgcolor) !important; }
 
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
@@ -83,7 +84,7 @@ See the above repository for updates as well as full license text. */
 }
 .tab-stack > .tab-background[selected]::before{
   background-color: highlight;
-  background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));
+  background-image: linear-gradient(var(--lwt-tab-line-color),var(--lwt-tab-line-color));
 }
 /* Photon-like tab on hover animation for the top line */
 @keyframes tab-onhover-line-anim{ from{ margin-inline: 20px } to { margin-inline: 0 } }
