@@ -16,6 +16,9 @@ See the above repository for updates as well as full license text. */
   /* tabs with any other theme */
   --lwt-text-color: cyan !important;
   --lwt-selected-tab-background-color: cornflowerblue !important;
+  /* line between nav-bar and tabs toolbar,
+     also fallback color for border around selected tab */
+  --lwt-tabs-border-color: cyan !important;
   /* toolbar area */
   --toolbarbutton-icon-fill: white !important;
   --lwt-toolbarbutton-hover-background: orange !important;

@@ -48,7 +48,7 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab[selected] > stack::before,
 .tabbrowser-tab[selected] > stack::after{
   fill: var(--tab-selected-bgcolor,var(--toolbar-bgcolor)) !important;
-  stroke: var(--tabs-border-color,transparent);
+  stroke: var(--lwt-tabs-border-color,transparent);
 }
 
 .tabbrowser-tab[selected] > stack:-moz-lwtheme::before,
@@ -76,7 +76,7 @@ See the above repository for updates as well as full license text. */
 
 #scrollbutton-up,
 #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
-.tab-background[selected]{ border: 1px solid var(--tabs-border-color) !important; border-bottom: none !important }
+.tab-background[selected]{ border: 1px solid var(--lwt-tabs-border-color) !important; border-bottom: none !important }
 
 .tab-context-line{
   -moz-box-ordinal-group: 2;
@@ -89,7 +89,7 @@ See the above repository for updates as well as full license text. */
 /* OPTIONAL - COLORS - show tabs border, selected tab line and make selected tab match the main toolbar color. Also disables tab shadow */
 /* Using these color options requires you to set layout.css.color-mix.enabled to true in about:config  */
 /*
-#navigator-toolbox{ --tabs-border-color: color-mix(in srgb, currentcolor, transparent 80%) !important; }
+#navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, transparent 80%) !important; }
 #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
 .tab-background[selected]{ --toolbar-bgcolor: transparent }
 .tabbrowser-tab .tab-background{ border-top: none !important; box-shadow: none !important; }
@@ -99,6 +99,7 @@ See the above repository for updates as well as full license text. */
   height: 2px;
   background: var(--uc-tab-line-color) !important;
 }
+#nav-bar{ box-shadow: 0 -1px 0 var(--lwt-tabs-border-color) }
 */
 
 
