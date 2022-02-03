@@ -1,0 +1,22 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/window_control_force_linux_system_style.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style makes Firefox use your linux system style for window control buttons. Normally those are only used with default system (auto) theme. */
+
+.titlebar-button{
+  list-style-image: none !important;
+  appearance: auto !important;
+}
+
+.titlebar-min {
+  -moz-default-appearance: -moz-window-button-minimize !important;
+}
+.titlebar-max {
+  -moz-default-appearance: -moz-window-button-maximize !important;
+}
+.titlebar-restore {
+  -moz-default-appearance: -moz-window-button-restore !important;
+}
+.titlebar-close {
+  -moz-default-appearance: -moz-window-button-close !important;
+}
