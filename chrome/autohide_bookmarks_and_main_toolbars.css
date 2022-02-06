@@ -64,8 +64,10 @@ See the above repository for updates as well as full license text. */
   max-height: initial !important;
   visibility: hidden !important
 }
-
-:root[sizemode="fullscreen"] #PersonalToolbar .bookmark-item{ visibility: hidden !important; }
+#PersonalToolbar[collapsed="true"] #PlacesToolbarItems > *,
+:root[sizemode="fullscreen"] #PersonalToolbar #PlacesToolbarItems > *{
+  visibility: hidden !important;
+}
 
 /* The invisible toolbox will overlap sidebar so we'll work around that here */
 #navigator-toolbox{ pointer-events: none; border-bottom: none !important; }
