@@ -40,21 +40,6 @@ See the above repository for updates as well as full license text. */
   margin-inline-end: 4px;
 }
 
-#PanelUI-button{
-  position: fixed;
-  display: flex;
-  top: 0;
-}
-
-#toolbar-menubar,
-#toolbar-menubar[autohide="true"] + #TabsToolbar{
-  padding-left: 94px !important;
-}
-
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] #PanelUI-button{ top:7px !important; }
-}
-
 /* OPTIONAL - move the menu button to top-left corner of the window.
  * Don't use this if you also use tabs_on_bottom.css
  */
@@ -71,7 +56,11 @@ See the above repository for updates as well as full license text. */
   padding-left: 94px !important;
 }
 
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] #PanelUI-button{ top:7px !important; }
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
+  :root[tabsintitlebar][sizemode="maximized"] #PanelUI-button{
+    top:7px !important;
+  }
 }
 */

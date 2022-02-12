@@ -10,8 +10,10 @@ See the above repository for updates as well as full license text. */
 :root:not([customizing]) #titlebar{ -moz-appearance: none !important; }
 
 /* -moz-appearance: none on titlebar breaks window margins, so re-adjust that */
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
+          
   :root[sizemode="maximized"]{ margin-top: 8px !important; }
 
   @media screen and (min-resolution: 1.25dppx){

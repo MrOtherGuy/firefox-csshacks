@@ -48,8 +48,12 @@ See the above repository for updates as well as full license text. */
   background-color: transparent !important;
 }
 /* Extra top padding  in maximized window */
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
+  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{
+    padding-top:7px !important;
+  }
 }
 /* Fix window controls not being clickable */
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{

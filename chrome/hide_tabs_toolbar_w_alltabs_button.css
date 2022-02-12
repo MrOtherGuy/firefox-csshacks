@@ -14,7 +14,13 @@ See the above repository for updates as well as full license text. */
 :root{ --uc-titlebar-padding: 0px; --uc-window-control-width: 40px }
 :root[tabsintitlebar]{ --uc-window-control-width: 160px }
 :root[inFullscreen]{ --uc-window-control-width: 0px }
-@media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
+
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
+  :root[sizemode="maximized"][tabsintitlebar]{
+    --uc-titlebar-padding: 8px;
+  }
 }
+
 #titlebar{ -moz-appearance: none !important; margin-top: var(--uc-titlebar-padding) }

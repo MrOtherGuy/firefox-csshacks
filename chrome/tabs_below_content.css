@@ -33,7 +33,9 @@ linux_gtk_window_control_patch.css
 :root[tabsintitlebar="true"]:not([inFullscreen]) #toolbar-menubar[autohide="false"] .titlebar-buttonbox-container{ height: 100%; }
 :root[tabsintitlebar="true"]:not([inFullscreen]) #toolbar-menubar[autohide="false"] .titlebar-button{ padding: 2px 17px !important; }
 
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
   #titlebar{ -moz-appearance: none !important; }
   /* Counteract -moz-appearance when maximized */
   :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ padding-top: 8px !important; }

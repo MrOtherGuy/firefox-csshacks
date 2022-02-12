@@ -12,7 +12,9 @@ See the above repository for updates as well as full license text. */
   
   #titlebar{ -moz-appearance: none !important; }
 
-  @media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+  @media  (-moz-platform: windows),
+          (-moz-os-version: windows-win7),
+          (-moz-os-version: windows-win10){
     /* Next two variables are used by autohide_menubar.css */
     #toolbar-menubar{ --uc-menubar-extra-margin: 0px }
     :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar{

@@ -21,7 +21,10 @@ See the above repository for updates as well as full license text. */
   --uc-window-drag-space-pre: 0px; /* Remove pre space */
 }
 
-@media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8) {
+@media  (-moz-platform: windows-win7),
+        (-moz-platform: windows-win8),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win8){{
   :root[tabsintitlebar] {
     --uc-window-control-width: 105px;
   }

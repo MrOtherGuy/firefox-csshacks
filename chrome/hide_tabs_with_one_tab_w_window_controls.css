@@ -55,8 +55,12 @@ Window controls will be all wrong without it
   background-color: transparent !important;
 }
 /* Extra top padding  in maximized window */
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ padding-top:7px !important; }
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
+  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{
+    padding-top:7px !important;
+  }
 }
 /* Window controls in nav-bar */
 :root:not([customizing]) #toolbar-menubar[inactive]{

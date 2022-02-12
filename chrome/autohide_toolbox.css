@@ -18,7 +18,9 @@ See the above repository for updates as well as full license text. */
 /* Dummy variable to support versions 94-96, can be removed when 96 lands */
 :root{ --lwt-frame: var(--lwt-accent-color) }
 
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+@media  (-moz-platform: windows),
+        (-moz-os-version: windows-win7),
+        (-moz-os-version: windows-win10){
 
   :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
 

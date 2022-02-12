@@ -26,7 +26,9 @@ See the above repository for updates as well as full license text. */
   :root{ --lwt-frame: var(--lwt-accent-color) }
   
   :root{ --uc-fake-titlebar-padding: 0px }
-  @media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+  @media  (-moz-platform: windows),
+          (-moz-os-version: windows-win7),
+          (-moz-os-version: windows-win10){
     :root[sizemode="maximized"][tabsintitlebar]{ --uc-fake-titlebar-padding: 8px }
   }
   #navigator-toolbox{
