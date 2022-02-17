@@ -7,6 +7,8 @@ See the above repository for updates as well as full license text. */
   -moz-window-dragging: drag;
   cursor: default;
 }
+#urlbar-input-container > box,
+#page-action-buttons,
 #urlbar-container:focus-within,
 #urlbar-container:focus-within :is(.urlbar-input-box,#urlbar-input,#urlbar-scheme,#urlbar-container){
   -moz-window-dragging: no-drag;
