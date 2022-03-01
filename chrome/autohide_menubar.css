@@ -5,7 +5,7 @@ See the above repository for updates as well as full license text. */
 /* Menubar will be shown when cursor touches top of the spacers on both side of tabs. Window controls will be in menubar, so they are automatically hidden */
 /* Make sure you have menubar enabled */
 
-:root{ --uc-menubar-spacer: 6px }
+:root{ --uc-menubar-spacer: 11px }
 :root[sizemode="maximized"]{ --uc-menubar-spacer: 1px }
 
 #nav-bar-customization-target,
@@ -37,6 +37,8 @@ See the above repository for updates as well as full license text. */
   margin-top: var(--uc-menubar-extra-margin,0px) !important;
   z-index: 6
 }
+
+#main-menubar > menu{ padding-bottom: 4px }
 
 /* This exists only for compatibility reasons with some other styles */
 #navigator-toolbox{ --uc-hide-window-control-space: 0 }
