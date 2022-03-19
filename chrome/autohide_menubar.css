@@ -19,6 +19,8 @@ See the above repository for updates as well as full license text. */
 
 #TabsToolbar > .titlebar-spacer{ display: -moz-box !important; }
 
+:where(#toolbar-menubar){ -moz-window-dragging: no-drag; }
+
 #toolbar-menubar:not([customizing]){
   --uc-menubar-height: 34px;
   position: fixed;
@@ -28,7 +30,6 @@ See the above repository for updates as well as full license text. */
   /* --uc-menubar-extra-margin is defined in toolbars_below_content.css */
   margin-top: calc(var(--uc-menubar-spacer) - var(--uc-menubar-height) + var(--uc-menubar-extra-margin,0px));
   transition: margin-top 150ms linear !important;
-  -moz-window-dragging: no-drag;
   z-index:4;
 }
 

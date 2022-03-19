@@ -34,7 +34,13 @@ See the above repository for updates as well as full license text. */
   /* Remove the next row if you want tabs to be the top-most row */
   #titlebar{ -moz-box-ordinal-group: 2 } 
 
-  #toolbar-menubar{ position: fixed; display: flex; width: 100vw; top: 0px; }
+  #toolbar-menubar{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    top: 0px;
+    -moz-window-dragging: drag;
+  }
   /* Remove bottom border that won't do anything useful when at bottom of the window */
   #navigator-toolbox{ border-bottom: none !important; }
 
