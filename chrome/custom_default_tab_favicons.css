@@ -5,19 +5,10 @@ See the above repository for updates as well as full license text. */
 
  /* Default tab favicon, the globe kind of thing */
 .tab-icon-image:not([src]){
-  background-image: url("icon.png"); /* filename for icon to load */
+  content: url("icon.png"); /* filename for icon to load */
 }
 
 /* The Firefox brand icon seen on newtab page etc. */
 .tab-icon-image[src="chrome://branding/content/icon32.png"]{
-  background-image: url("icon.png"); /* filename for icon to load */
-}
-
-/* This just set size & properties for the icon replacement */
-.tab-icon-image:not([src]),
-.tab-icon-image[src="chrome://branding/content/icon32.png"]{ 
-   background-repeat: no-repeat;
-   background-size: cover; 
-   height: 0; 
-   padding-top: 16px
+  content: url("icon.png"); /* filename for icon to load */
 }
