@@ -1,0 +1,24 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/content/compact_about_config.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes about:config list more compact */
+
+@-moz-document url("about:config"){
+  .button-delete,
+  .button-edit,
+  .button-reset,
+  .button-save,
+  .button-toggle{
+    margin-block: 1px !important;
+    padding-block: 11px 0 !important;
+    padding-inline: 0 !important;
+    min-height: 22px !important;
+    width: 22px !important;
+    outline-offset: 0 !important;
+  }
+  .cell-edit{ width: 28px !important; }
+  form > input,
+  tr:not(.add) > th,
+  tr:not(.add) > .cell-value{ padding-block: 0 !important; }
+  tr:not(:hover) .semi-transparent:not(.primary,.button-add){ background-color: transparent !important; }
+}
