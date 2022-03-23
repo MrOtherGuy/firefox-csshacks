@@ -5,15 +5,27 @@ See the above repository for updates as well as full license text. */
 
 /* Load window_control_placeholder_support.css before this stylesheet */
 
-#tabbrowser-tabs{ visibility: collapse }
+#tabbrowser-tabs{ visibility: hidden }
 #TabsToolbar-customization-target{ -moz-box-pack: end; }
-#alltabs-button{ position: relative; z-index: 1 }
-#TabsToolbar > .titlebar-spacer{ display: none }
-#TabsToolbar{ margin-bottom: calc(-18px - 2 * (var(--toolbarbutton-inner-padding)))}
+#alltabs-button{
+  position: relative;
+  z-index: 1;
+  padding-bottom: 5px !important;
+}
+#TabsToolbar:not([inFullscreen]) > .titlebar-buttonbox-container{
+  padding-bottom: 5px;
+}
 
-:root{ --uc-titlebar-padding: 0px; --uc-window-control-width: 40px }
-:root[tabsintitlebar]{ --uc-window-control-width: 160px }
-:root[inFullscreen]{ --uc-window-control-width: 0px }
+@supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  :root[id]{ --uc-window-control-width: 40px }
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]){ --uc-window-control-width: 160px }
+  :root[sizemode="fullscreen"] #alltabs-button{ margin-right: var(--uc-window-control-width) !important; }
+}
+
+#TabsToolbar > .titlebar-spacer{ display: none }
+#TabsToolbar{ margin-bottom: calc(0px - var(--tab-min-height) - 2 * var(--tab-block-margin))}
+
+:root{ --uc-titlebar-padding: 0px; }
 
 @media  (-moz-platform: windows),
         (-moz-os-version: windows-win7),
