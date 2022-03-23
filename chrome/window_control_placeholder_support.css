@@ -10,14 +10,14 @@ See the above repository for updates as well as full license text. */
 
 /* Defaults for window controls on RIGHT side of the window */
 /* Modify these values to match your preferences */
-:root[tabsintitlebar]{
+:root:is([tabsintitlebar], [sizemode="fullscreen"]) {
   --uc-window-control-width: 138px; /* Space reserved for window controls (Win10) */
   /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
   --uc-window-drag-space-pre: 30px; /* left side*/
   --uc-window-drag-space-post: 30px; /* right side*/
 }
 
-:root[tabsintitlebar][sizemode="maximized"] {
+:root:is([tabsintitlebar][sizemode="maximized"], [sizemode="fullscreen"]) {
   --uc-window-drag-space-pre: 0px; /* Remove pre space */
 }
 
@@ -25,7 +25,7 @@ See the above repository for updates as well as full license text. */
         (-moz-platform: windows-win8),
         (-moz-os-version: windows-win7),
         (-moz-os-version: windows-win8){
-  :root[tabsintitlebar] {
+  :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
     --uc-window-control-width: 105px;
   }
 }
@@ -62,7 +62,9 @@ See the above repository for updates as well as full license text. */
 /* Use this pref to check Mac OS where window controls are on left */
 /* This pref defaults to true on Mac and doesn't actually do anything on other platforms. So if your system has window controls on LEFT side you can set the pref to true */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root{ --uc-window-control-width: 72px; }
+  :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
+    --uc-window-control-width: 72px;
+  }
   :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
     border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
   }
