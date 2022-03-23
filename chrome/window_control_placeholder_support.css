@@ -31,7 +31,7 @@ See the above repository for updates as well as full license text. */
 }
 
 @media (-moz-gtk-csd-available) {
-  :root[tabsintitlebar] {
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
     --uc-window-control-width: 84px;
   }
 }
