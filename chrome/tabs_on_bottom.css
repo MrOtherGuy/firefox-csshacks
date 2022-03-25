@@ -58,6 +58,14 @@ linux_gtk_window_control_patch.css
 
 @media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
 
+/* At Activated Menubar */
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-buttonbox-container {
+  display: block !important;
+}
+:root:not([chromehidden~="menubar"]) #toolbar-menubar:not([autohide="true"]) .titlebar-buttonbox-container {
+  visibility: hidden;
+}
+
 /* These exist only for compatibility with autohide-tabstoolbar.css */
 toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 #navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
