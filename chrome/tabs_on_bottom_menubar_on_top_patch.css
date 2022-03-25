@@ -38,6 +38,4 @@ See the above repository for updates as well as full license text. */
   min-width: var(--uc-window-drag-space-post,20px);
 }
 
-#toolbar-menubar .titlebar-button{ padding: 2px 17px !important;  }
-
 #toolbar-menubar .toolbarbutton-1 { --toolbarbutton-inner-padding: 3px }
