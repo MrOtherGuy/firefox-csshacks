@@ -12,13 +12,16 @@ See the above repository for updates as well as full license text. */
 }
 :root[tabsintitlebar]{
   /* height when native titlebar is disabled, more roomy so can fit buttons etc. */
-  --uc-menubar-height: 29px; 
+  --uc-menubar-height: 29px;
 }
 
 /* Since menubar is statically at top, remove fake drag-space that might be set by window_control_placeholder_support.css */
 :root:not([sizemode="fullscreen"]) #nav-bar{ border-inline-width: 0 }
 
-#navigator-toolbox{ padding-top: calc(var(--uc-menubar-height) + var(--uc-titlebar-padding,0px)) !important }
+#navigator-toolbox{
+  -moz-window-dragging: drag;
+  padding-top: calc(var(--uc-menubar-height) + var(--uc-titlebar-padding, 0px)) !important;
+}
 :root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
 #toolbar-menubar{
   position: fixed;
@@ -40,9 +43,6 @@ See the above repository for updates as well as full license text. */
 
 #toolbar-menubar .toolbarbutton-1 { --toolbarbutton-inner-padding: 3px }
 
-:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #TabsToolbar > .titlebar-buttonbox-container{
-  visibility: collapse !important;
-}
-#toolbar-menubar.browser-toolbar > .titlebar-buttonbox-container{
-  visibility: visible
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #TabsToolbar > .titlebar-buttonbox-container {
+  height: var(--uc-menubar-height);
 }
