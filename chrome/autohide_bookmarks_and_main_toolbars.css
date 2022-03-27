@@ -95,7 +95,8 @@ See the above repository for updates as well as full license text. */
   transform: rotateX(0);
 }
 /* This makes the tab notification box show immediately below tabs, otherwise it would break the layout */
-:where(#titlebar,#tab-notification-deck){
+#navigator-toolbox > div{ display: contents }
+:where(#titlebar,#tab-notification-deck,.global-notificationbox){
   -moz-box-ordinal-group: 0;
 }
 /* Show when cursor is over popups/context-menus - cannot control which ones */

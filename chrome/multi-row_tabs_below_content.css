@@ -36,8 +36,14 @@ See the above repository for updates as well as full license text. */
   :root{ border-top-width: 0px !important }
 
   #main-window > body > box,
-  #navigator-toolbox{ -moz-box-ordinal-group: 2; border-bottom: 0px !important }
+  #navigator-toolbox{
+    -moz-box-ordinal-group: 2;
+    border-bottom: 0px !important;
+  }
   
+  /* Re-order window and tab notification boxes */
+  #navigator-toolbox > div{ display: contents }
+  .global-notificationbox,
   #tab-notification-deck{ -moz-box-ordinal-group: 0 }
 
   #titlebar{-moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */

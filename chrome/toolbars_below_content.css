@@ -24,6 +24,8 @@ See the above repository for updates as well as full license text. */
     :root[sizemode="maximized"][tabsintitlebar] :where(#browser,#customization-container,#toolbar-menubar){ margin-top: 8px }
   }
 
+  #navigator-toolbox > div{ display: contents }
+  .global-notificationbox,
   #mainPopupSet,
   #browser,
   #customization-container,

@@ -50,6 +50,9 @@ linux_gtk_window_control_patch.css
   -moz-appearance: none !important;
   --tabs-navbar-shadow-size: 0px;
 }
+/* Re-order window and tab notification boxes */
+#navigator-toolbox > div{ display: contents }
+.global-notificationbox,
 #tab-notification-deck{ -moz-box-ordinal-group: 2 }
 
 #TabsToolbar .titlebar-spacer{ display: none; }
