@@ -125,7 +125,7 @@
 "textual_context_navigation.css":["navigation","popup","menu"],
 "textual_searchbar_one-offs.css":["popup","menu"],
 "theme_additional_windows.css":["legacy"],
-"theme_aware_modal_prompts.css":["effect","dark-mode","colors","popup"],
+"theme_aware_modal_prompts.css":["effect","dark-mode","colors","popup","legacy"],
 "theme_color_variables.css":["legacy"],
 "theme_popups_and_menus.css":["legacy"],
 "theme_sidebar.css":["legacy"],
