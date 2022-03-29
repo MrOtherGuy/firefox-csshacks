@@ -3,43 +3,25 @@ See the above repository for updates as well as full license text. */
 
 /* Show tab close button when cursor is over the tab icon */
 
+/* inline_tab_audio_icons.css is recommended because otherwise you cannot mute the tab using the mute button */
+
+.tab-content{
+  pointer-events: none
+}
+.tab-icon-image:not([busy]){ display: block !important; }
+:where(.tab-content:hover) .tab-icon-image,
+:where(.tab-content:hover) > .tab-icon-stack{
+  visibility: hidden;
+}
 .tab-close-button{
   -moz-box-ordinal-group: 0;
   display: -moz-box !important;
   position: relative;
   margin-inline: -4px -20px !important;
   padding-inline-start: 7px !important;
-  z-index: -1;
-  visibility: hidden;
+  opacity: 0;
   width: unset !important;
+  pointer-events: auto;
 }
+.tab-close-button:hover{ opacity: 1 }
 .tabbrowser-tab[pinned] .tab-close-button{ display: none !important; }
-.tabbrowser-tab:hover .tab-close-button{
-  background-color: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
-  background-image: linear-gradient(var(--toolbarbutton-hover-background),var(--toolbarbutton-hover-background))
-}
-
-/**** ONLY USE ONE OF THE FOLLOWING ****/
-/**** These select the behavior of a scenario where the page has no favicon ****/
-
-/*** Option 1 - no favicon - no close-button ***/
-
-/*
-.tab-icon-stack:hover ~ .tab-close-button, .tab-close-button:hover{ visibility: visible; z-index: 1 }
-*/
-
-/*** Option 2 - No icon - always show close-button ***/
-
-/*
-.tab-icon-stack:hover ~ .tab-close-button,
-.tab-close-button:hover,
-.tabbrowser-tab:not([image]) .tab-close-button{ visibility: visible; z-index: 1 }
-.tabbrowser-tab:not([image]) .tab-close-button{ margin-inline-end: 0 !important; }
-*/
-
-/*** Option 3 - No icon - show close-button when cursor is over the tab ***/
-
-.tab-icon-stack:hover ~ .tab-close-button,
-.tab-close-button:hover,
-.tabbrowser-tab:not([image]):hover .tab-close-button{ visibility: visible; z-index: 1;  }
-.tabbrowser-tab:not([image]):hover .tab-close-button{ margin-inline-end: 0 !important; }
