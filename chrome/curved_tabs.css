@@ -43,6 +43,7 @@ See the above repository for updates as well as full license text. */
   transform: scaleY(var(--uc-tab-vertical-transform));
   stroke-opacity: var(--uc-curve-stroke-opacity);
   z-index:1;
+  pointer-events: none;
 }
 
 .tabbrowser-tab[selected] > stack::before,
@@ -86,6 +87,12 @@ See the above repository for updates as well as full license text. */
 /* Annoying fix to prevent hovering of last tab to trigger tab overflow, better solution wanted */
 .tabbrowser-tab[last-visible-tab]{ margin-inline-end: var(--uc-tab-curve-size) !important; }
 
+/* Move tabs a bit away from the window edge, otherwise the left-most pinned tab might be partially outside of window */
+#tabbrowser-tabs[positionpinnedtabs]{ margin-left: var(--uc-tab-curve-size) }
+/* To counter the above, make tabs toolbar spacer a bit narrower so there won't be too much space reserved when window dragging spacers are shown */
+.titlebar-spacer[type="pre-tabs"]{ width: 24px !important; }
+
+
 /* OPTIONAL - COLORS - show tabs border, selected tab line and make selected tab match the main toolbar color. Also disables tab shadow */
 /* Using these color options requires you to set layout.css.color-mix.enabled to true in about:config  */
 /*
@@ -102,6 +109,13 @@ See the above repository for updates as well as full license text. */
 #nav-bar{ box-shadow: 0 -1px 0 var(--lwt-tabs-border-color) }
 */
 
+/* OPTIONAL - Make some of the buttons in tabs toolbar rounded, which might look nicer especially with large curve size */
+/*
+#tabs-newtab-button > .toolbarbutton-icon,
+#TabsToolbar #new-tab-button > .toolbarbutton-icon,
+#alltabs-button > .toolbarbutton-badge-stack,
+.tab-close-button{ border-radius: 30px !important; }
+*/
 
 /* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
 /*
