@@ -36,6 +36,7 @@
 "dark_date_picker_panel.css":["popup","dark-mode"],
 "dark_theme_aware_statuspanel.css":["status","dark-mode"],
 "disable_newtab_on_middle_click.css":["hack","tabs"],
+"drag_window_from_urlbar.css":["urlbar","windows"],
 "fake_statusbar_w_bookmarksbar.css":["hack","status","toolbars","bookmarks"],
 "fake_urlbar_dropmarker.css":["urlbar","hack"],
 "fake_statusbar_w_menubar.css":["hack","status","toolbars","menubar"],
@@ -136,7 +137,8 @@
 "toolbars_below_content.css":["tabs","toolbars"],
 "urlbar_and_popup_equal_width.css":["legacy"],
 "urlbar_centered_text.css":["urlbar"],
-"urlbar_connection_type_colors.css":["urlbar","colors","status"],
+"urlbar_connection_type_background_colors.css":["urlbar","colors","status"],
+"urlbar_connection_type_text_colors.css":["urlbar","colors","status"],
 "urlbar_container_color_border.css":["colors","urlbar"],
 "urlbar_info_icons_on_hover.css":["autohide","icon","urlbar","minimal"],
 "urlbar_popup_full_width.css":["urlbar","popup"],
@@ -149,6 +151,5 @@
 "vertical_popup_menubar.css":["menubar","menu","toolbars","popup"],
 "window_control_fallback_for_custom_windows_theme.css":["window-control","buttons","colors","patch"],
 "window_control_force_linux_system_style.css":["window-control","buttons","icon"],
-"window_control_placeholder_support.css":["window-control","patch"],
-"drag_window_from_urlbar.css":["urlbar","windows"]
+"window_control_placeholder_support.css":["window-control","patch"]
 }
