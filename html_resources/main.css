@@ -55,14 +55,16 @@ pre:empty{ display: none }
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
 }
 .target > a{
   display:inline-block;
   width: 1.2em;
-  height: 80%;
+  height: 1.2em;
   background-image: url("ext.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  flex-shrink: 0;
 }
 .target:hover{ background-color: rgb(80,80,90) }
 .target.selected{ background-color: rgb(80,80,120) }
@@ -91,20 +93,6 @@ pre > div{
 
 .categoryList:not(.blurred)+.categoryList,
 .hidden{ display: none !important }
-
-.comment{ color: rgb(50,180,90) }
-.selector{ color: lavenderblush }
-.pseudo{ color: rgb(200,180,250) }
-.id{ color: rgb(240, 148, 138) }
-.class{ color: skyblue }
-.attribute{ color: rgb(120,230,170) }  
-.atrule{ color: lime }
-.atvalue{ color: lightblue }
-.property{ color: palegoldenrod }
-.value{ color: skyblue }
-.curly{ color: magenta }
-.function{ color: silver }
-.important-tag{ color: orange }
 
 @keyframes showDelayed{ from{ visibility: hidden } to{ visibility: visibile }}
 
