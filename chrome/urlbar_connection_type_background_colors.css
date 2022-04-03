@@ -1,0 +1,33 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/urlbar_connection_type_background_colors.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Adds a colored overlay to urlbar based on the type of the connection */
+
+#identity-box::before{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: var(--urlbar-height);
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+:root[customizing] #identity-box::before,
+#urlbar[focused] #identity-box::before{ display: none }
+
+/* https */
+#identity-box.verifiedDomain::before{ background-color: rgba(50,255,50,0.2) }
+
+/* http: and potentially some other insecure connections like ftp: */
+#identity-box.certErrorPage::before,
+#identity-box.notSecure::before{ background-color: rgba(255,50,50,0.3) }
+
+/* Mixed content including neterror */
+#identity-box.unknownIdentity::before{ background-color: rgba(255,255,50,0.2) }
+
+/* Extension pages */
+#identity-box.extensionPage::before{ background-color: rgba(150,50,250,0.2) }
+
+/* Internal about: and chrome:// urls (includes reader-view) */
+#identity-box.chromeUI::before{ background-color: rgba(50,150,250,0.2) }
