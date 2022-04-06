@@ -24,14 +24,20 @@ Window controls will be all wrong without it
 #scrollbutton-down{ border-block-width: 2px !important; }
 
 /* reserved space for overflow + menu buttons */
-#navigator-toolbox{--uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))}
-#nav-bar:not([overflowing]) > #nav-bar-customization-target{ --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px) }
+#navigator-toolbox{
+  --uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
+}
+#nav-bar:not([overflowing]) > #nav-bar-customization-target{ 
+  --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px)
+}
 /* Override for other densities */
 :root[uidensity="compact"] #navigator-toolbox{
   --uc-toolbar-height: 34px;
   --uc-menubutton-padding: 0px;
 }
-:root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
+:root[uidensity="touch"] #navigator-toolbox{
+  --uc-toolbar-height: 44px;
+}
 
 :root[uidensity="compact"] #urlbar-container{
   --urlbar-container-height: var(--uc-toolbar-height) !important;
@@ -75,14 +81,24 @@ Window controls will be all wrong without it
   #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre)) }
 }
 
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container,
 #TabsToolbar > .toolbar-items{
   position: relative !important;
   z-index: 2
 }
+
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
+  display: -moz-box !important;
+}
+
 .titlebar-placeholder[type="post-tabs"],
 .titlebar-spacer[type="post-tabs"]{
   width: calc(var(--uc-buttons-width) + var(--uc-window-drag-space-post)) !important;
 }
+:root[privatebrowsingmode="temporary"] .titlebar-spacer[type="post-tabs"]{
+  width: var(--uc-buttons-width) !important
+}
+
 #PanelUI-button,#nav-bar-overflow-button{
   margin: 0px !important;
   border: 0px !important;
