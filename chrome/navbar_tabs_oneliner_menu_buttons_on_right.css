@@ -71,7 +71,7 @@ Window controls will be all wrong without it
 }
 
 /* This isn't useful when tabs start in the middle of the window */
-.titlebar-placeholder[type="pre-tabs"],.titlebar-spacer[type="pre-tabs"]{ width:8px !important}
+.titlebar-spacer[type="pre-tabs"]{ width:8px !important}
 #nav-bar{ margin-top: calc(0px - var(--uc-toolbar-height)); }
 
 #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-post)) }
@@ -91,7 +91,6 @@ Window controls will be all wrong without it
   display: -moz-box !important;
 }
 
-.titlebar-placeholder[type="post-tabs"],
 .titlebar-spacer[type="post-tabs"]{
   width: calc(var(--uc-buttons-width) + var(--uc-window-drag-space-post)) !important;
 }
