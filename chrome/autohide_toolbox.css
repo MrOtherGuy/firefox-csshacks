@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
 }
 
 :root[sizemode="maximized"]{
-  --uc-toolbox-rotation: 89deg;
+  --uc-toolbox-rotation: 88.5deg;
 }
 
 /* Dummy variable to support versions 94-96, can be removed when 96 lands */
@@ -28,10 +28,9 @@ See the above repository for updates as well as full license text. */
     :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
   }
   @media screen and (min-resolution: 1.5dppx){
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 6px !important; }
   }
   @media screen and (min-resolution: 2dppx){
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 6px !important; }
     :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px; }
   }
   #navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog !important; }
