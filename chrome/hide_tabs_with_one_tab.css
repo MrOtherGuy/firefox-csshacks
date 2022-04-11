@@ -52,7 +52,7 @@ See the above repository for updates as well as full license text. */
         (-moz-os-version: windows-win7),
         (-moz-os-version: windows-win10){
   :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{
-    padding-top:7px !important;
+    padding-top: var(--uc-titlebar-padding,7px);
   }
 }
 /* Fix window controls not being clickable */
