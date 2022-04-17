@@ -16,7 +16,6 @@ Window controls will be all wrong without it
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
 
 #tabbrowser-tabs,
-#tabbrowser-tabs > .tabbrowser-arrowscrollbox,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 #TabsToolbar > .titlebar-spacer[type="post-tabs"]{

@@ -10,7 +10,6 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar{ min-height: 0px !important }
 
 #tabbrowser-tabs,
-#tabbrowser-tabs > .tabbrowser-arrowscrollbox,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
