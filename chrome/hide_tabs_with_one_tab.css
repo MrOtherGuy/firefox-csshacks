@@ -9,7 +9,9 @@ See the above repository for updates as well as full license text. */
 #titlebar{ -moz-appearance: none !important; }
 #TabsToolbar{ min-height: 0px !important }
 
-#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+#tabbrowser-tabs,
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox,
+#tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 :root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
 :root:not([customizing]) #tabs-newtab-button,
@@ -35,6 +37,9 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
   visibility: collapse !important;
+  /* These seem unnecessary, but they achieve compatibility with hide_tabs_with_one_tab.css */
+  min-height: 0 !important;
+  height: 0;
 }
 
 /* Button re-styling */
