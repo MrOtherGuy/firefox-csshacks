@@ -4,132 +4,208 @@ See the above repository for updates as well as full license text. */
 /* Makes the main menu popup apper in grid-like format that somewhat resembles the menu from Australis styling */
 
 /* Basic styling */
-#appMenu-mainView{ max-width: initial !important; }
+#appMenu-protonMainView{ max-width: initial !important; }
 
-#appMenu-mainView > .panel-subview-body{
+#appMenu-protonMainView > .panel-subview-body{
   display: flex; 
   flex-direction: row; 
   max-width: 290px;
-  height: 580px; /* Raise this if you see scrollbar in the popup */
+  height: 466px !important;
+  /* Raise this if you see scrollbar in the popup. Popup height depends on font-size */
+  max-height: none !important;
   flex-wrap: wrap;
   padding-bottom: 0px !important;
+  align-content: end;
 }
 
-
-#appMenu-mainView > .panel-subview-body > toolbarbutton{
+#appMenu-protonMainView > .panel-subview-body > toolbarseparator{
+  min-width: 250px;
+  flex-grow:1;
+  margin-inline: 0 !important;
+}
+#appMenu-protonMainView > .panel-subview-body > toolbaritem{ flex-grow: 1 }
+:where(#appMenu-protonMainView) > .panel-subview-body > toolbarbutton{
   width: 70px;
-  height: 60px;
+  height: 76px;
   flex-grow:1;
 }
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton > .toolbarbutton-icon{ -moz-box-flex: 1 }
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton{ -moz-box-orient: vertical }
 
-#appMenu-mainView > .panel-subview-body > toolbarbutton{ -moz-box-orient: vertical }
-
-#appMenu-mainView > .panel-subview-body > toolbaritem{ flex-grow: 1 }
-
-#appMenu-mainView > .panel-subview-body > toolbarbutton.subviewbutton{ padding-inline: 4px !important; margin-inline: 8px !important; }
-
-/* Hide single-line labels */
-
-#appMenu-mainView > .panel-subview-body > #appMenu-zoom-controls > toolbarbutton > .toolbarbutton-multiline-text{ display: none !important; }
-
-/* Show multi-line labels and some specific single-line ones */
-
-#appMenu-zoom-controls > #appMenu-zoomReset-button > .toolbarbutton-text,
-#appMenu-protection-report-button.subviewbutton > label.toolbarbutton-text,
-#appMenu-mainView > .panel-subview-body > .panel-banner-item > .toolbarbutton-text, 
-#appMenu-mainView > .panel-subview-body toolbarbutton > .toolbarbutton-multiline-text{ display: -moz-box !important; }
-
-/* Set some constraints for multi-line labels */
-
-#appMenu-protection-report-button.subviewbutton > label.toolbarbutton-text,
-#appMenu-mainView > .panel-subview-body toolbarbutton > .toolbarbutton-multiline-text{
-  max-height: 30px;
-  overflow: -moz-hidden-unscrollable;
-  margin: 0px !important;
-  text-align: center !important;;
+:where(#appMenu-protonMainView) > .panel-subview-body > toolbarbutton.subviewbutton{
+  padding-inline: 4px !important;
+  margin-inline: 8px !important;
+  fill: currentColor;
 }
 
 /* Unique styling for Edit and Zoom controls */
 
-#appMenu-zoom-controls,
-#appMenu-zoom-controls + toolbarseparator,
-#appMenu-edit-controls,
-#appMenu-edit-controls + toolbarseparator{
+#appMenu-zoom-controls2,
+#appMenu-zoom-controls2 + toolbarseparator{
   order: -1;
-  min-width: 260px;
   height: initial !important;
   margin: initial !important;
   flex-grow: 1;
-  -moz-box-pack: center;
 }
-
+#appMenu-zoom-controls2 + toolbarseparator{ margin-block: 0 4px !important; }
+#appMenu-zoom-controls2{ padding-block: 2px !important; }
+#appMenu-zoom-controls2 > :not(:last-child){
+  -moz-box-flex: 1 !important;
+  -moz-box-pack: center !important;
+  border-radius: 0 !important;
+}
+#appMenu-zoomReset-button2{
+  border-inline: 1px solid var(--panel-separator-color) !important;
+}
 /* Reorder separators & "special" items */
 
-#appMenu-fxa-status + toolbarseparator,
-#appMenu-mainView > .panel-subview-body > .sync-ui-item + toolbaritem{ order: 1 }
+#appMenu-fxa-separator{
+  margin-block: 0 -1px !important;
+}
+#appMenu-proton-addon-banners,
+#appMenu-fxa-separator,
+#appMenu-fxa-status2{ order: 2; }
 
-#appMenu-fxa-status{ order: 2 }
+#appMenu-extensions-themes-button + toolbarseparator{
+  order: 3;
+  margin-block: 0 -1px !important;
+}
 
 /* Set minimum width for "full-row" items */
-#appMenu-mainView > .panel-subview-body > .sync-ui-item + toolbaritem,
-#appMenu-mainView > .panel-subview-body > .panel-banner-item,
-#appMenu-fxa-status,
-#appMenu-fxa-status + toolbarseparator{
+#appMenu-fxa-status2,
+#appMenu-fxa-separator{
   min-width: 280px; 
-  height: initial !important;
-  margin: initial !important;
 }
 
 /* Full-row items should have contents laid out horizontally */
-#appMenu-mainView > .panel-subview-body > .panel-banner-item,
-#appMenu-fxa-status,
-#appMenu-fxa-label{ -moz-box-orient: horizontal !important; }
+#appMenu-proton-update-banner,
+#appMenu-fxa-status2,
+#appMenu-fxa-label2{ -moz-box-orient: horizontal !important; }
+
+#appMenu-proton-addon-banners > .addon-banner-item{
+  margin: 0px !important;
+}
 
 /* "Main" items styling */
-
-#appMenu-mainView > .panel-subview-body > .panel-banner-item,
-toolbarbutton#appMenuRestoreLastSession.subviewbutton.subviewbutton-iconic,
-toolbarbutton#appMenu-customize-button.subviewbutton.subviewbutton-iconic,
-toolbarbutton#appMenu-quit-button.subviewbutton.subviewbutton-iconic,
-toolbarbutton#appMenu-help-button.subviewbutton.subviewbutton-iconic{
+#appMenu-proton-update-banner,
+#appMenu-fxa-status2,
+#appMenu-more-button2.subviewbutton,
+#appMenu-quit-button2.subviewbutton,
+#appMenu-help-button2.subviewbutton{
   order: 3;
-  height: initial !important;
   margin: initial !important;
+  height: unset !important;
+  padding-inline: 0 !important;
   width: initial;
 }
 
-#appMenu-customize-button{ min-width: 180px }
+#appMenu-proton-update-banner,
+#appMenu-quit-button2.subviewbutton{ order: 4 }
 
+
+#appMenu-more-button2{ min-width: 170px }
+#appMenu-more-button2 > .toolbarbutton-icon{ -moz-box-flex: 0 !important; }
 /* Color styling for items */
 
-#appMenu-mainView > .panel-subview-body toolbarbutton:not([disabled]):hover{ box-shadow: inset 0 0 3px 0px grey; }
+#appMenu-protonMainView > .panel-subview-body toolbarbutton:not([disabled]):hover{
+  box-shadow: inset 0 0 3px 0px var(--button-bgcolor);
+}
 
-#appMenu-customize-button:not(:hover),
-#appMenu-help-button:not(:hover){ background-color: rgba(127,137,127,0.3) !important; }
-
-#appMenu-help-button{ border-inline: 1px solid grey }
-
-#appMenu-quit-button{ background-color: rgb(220,100,100) !important; }
-#appMenu-quit-button:hover{ background-color: rgb(220,80,80) !important; }
+#appMenu-proton-update-banner{ border-inline-end: 1px solid var(--panel-separator-color) !important; }
+#appMenu-help-button2{ border-inline: 1px solid var(--panel-separator-color) }
 
 /* Hide some additional items */
+#appMenu-fxa-text,
+#appMenu-help-button2 + toolbarseparator,
+#appMenu-new-private-window-button2 + toolbarseparator,
+#appMenu-zoom-controls2 > #appMenu-fullscreen-button > label,
+#appMenu-zoom-controls2 > label,
+#appMenu-zoom-controls2 > spacer,
+#appMenu-edit-controls2 > label,
+#appMenu-edit-controls2 > spacer,
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton::after{ display: none !important; }
 
-#appMenu-mainView > .panel-subview-body > .panel-banner-item > .toolbarbutton-multiline-text,
-#appMenu-zoom-controls > #appMenu-fullscreen-button > label,
-#appMenu-zoom-controls > label,
-#appMenu-zoom-controls > spacer,
-#appMenu-edit-controls > label,
-#appMenu-edit-controls > spacer,
-#appMenu-mainView > .panel-subview-body > toolbarbutton::after{ display: none !important; }
+/* Sync styling */
 
-/* This makes the protections button appear consistent with Sync "bar"  */
-#appMenu-protection-report-button{ padding-inline-end: 34px !important; }
+#appMenu-fxa-label2{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1em !important;
+}
+#appMenu-fxa-status2{
+  display: grid !important;
+  padding-block: 0 !important;
+}
+#appMenu-fxa-status2 > *{ grid-area: 1/1 }
+#appMenu-fxa-status2 > toolbarbutton::before,
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton > image{
+  fill: currentColor;
+  -moz-context-properties: fill;
+}
 
+#appMenu-fxa-status2 > toolbarbutton::before{
+  display: -moz-box;
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-inline: 8px;
+  background-image: var(--avatar-image-url)
+}
+
+#appMenu-more-button2 > .toolbarbutton-icon{ margin-inline: 8px !important; }
+#appMenu-proton-update-banner > .toolbarbutton-text,
+#appMenu-help-button2 > .toolbarbutton-text,
+#appMenu-quit-button2 > .toolbarbutton-text{
+  display: none !important;
+}
+#appMenu-proton-update-banner,
+#appMenu-fxa-label2,
+#appMenu-more-button2,
+#appMenu-help-button2,
+#appMenu-quit-button2{
+  background-color: var(--button-bgcolor) !important;
+  border-radius: 0 !important;
+  -moz-box-orient: horizontal !important;
+  -moz-box-pack: center !important;
+  padding-block: 12px !important;
+  opacity: 0.8;
+}
+#appMenu-proton-update-banner:hover,
+#appMenu-fxa-label2:hover,
+#appMenu-more-button2:hover,
+#appMenu-help-button2:hover{
+  opacity: 1;
+}
+#appMenu-proton-update-banner{ background-color: rgb(120,180,120) !important; }
+#appMenu-quit-button2:hover{ background-color: rgb(220,100,100) !important; }
+
+/* Reserve fixed space for addon banners */
+#appMenu-proton-addon-banners{
+  min-width: 200px;
+  height: 36px !important;
+  overflow: auto;
+}
+#appMenu-proton-addon-banners > .addon-banner-item{
+  padding-block: 2px !important;
+  border-radius: 0 !important;
+}
+#appMenu-proton-addon-banners > .addon-banner-item::after{
+  margin-top: 6px !important;
+}
 /* Missing icons */
-#appMenu-developer-button { list-style-image: url("chrome://browser/skin/developer.svg") }
-#appMenu-save-file-button { list-style-image: url("chrome://browser/skin/save.svg") }
-#appMenu-open-file-button { list-style-image: url("chrome://browser/skin/open.svg") }
-#appMenu-more-button{ list-style-image: url("chrome://devtools/skin/images/aboutdebugging-process-icon.svg") }
-#appMenu-ssb-button{ list-style-image: url("chrome://devtools/skin/images/tool-application.svg") }
-#appMenu-non-fission-window-button{ list-style-image: url("chrome://devtools/skin/images/command-frames.svg") }
-#appMenu-fission-window-button{ list-style-image: url("chrome://devtools/skin/images/pseudo-class.svg") }
+#appMenu-proton-update-banner{ list-style-image: url("chrome://global/skin/icons/reload.svg"); }
+#appMenu-new-tab-button2{ list-style-image: url("chrome://browser/skin/new-tab.svg") }
+#appMenu-new-window-button2{ list-style-image: url("chrome://browser/skin/window.svg") }
+#appMenu-new-private-window-button2{ list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
+#appMenu-bookmarks-button{ list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
+#appMenu-history-button{ list-style-image: url("chrome://browser/skin/history.svg") }
+#appMenu-downloads-button{ list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
+#appMenu-passwords-button{ list-style-image: url("chrome://browser/skin/login.svg") }
+#appMenu-extensions-themes-button{ list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
+#appMenu-print-button2{ list-style-image: url("chrome://global/skin/icons/print.svg") }
+#appMenu-save-file-button2{ list-style-image: url("chrome://browser/skin/save.svg") }
+#appMenu-find-button2{ list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
+#appMenu-settings-button{ list-style-image: url("chrome://global/skin/icons/settings.svg") }
+#appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
+#appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
+#appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
