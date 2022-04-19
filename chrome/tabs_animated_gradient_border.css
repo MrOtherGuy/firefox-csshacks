@@ -9,6 +9,11 @@ See the above repository for updates as well as full license text. */
 /* Dummy variable to support versions 94-96, can be removed when 96 lands */
 :root{ --lwt-frame: var(--lwt-accent-color) }
 
+@media (-moz-platform: windows){
+/* Increase tab minimum height by 2px on Windows as a workaround for titlebar being unable to collapse below 31px height */
+  :root[uidensity="compact"]{ --tab-min-height: 31px !important; }
+}
+
 /*
 Thanks to /u/skenera on reddit for suggesting animating background position and using steps() function to reduce cpu load
 */
@@ -16,50 +21,76 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
   from{background-position: 0 0;}
   to{background-position: 200vw 0;}
 }
-
+#TabsToolbar{ background: none !important; }
 #TabsToolbar::before{
   content: "";
   display: block;
   position: absolute;
   width: 200vw;
-  height: calc(var(--tab-min-height) + 2px);
+  height: calc(var(--tab-min-height) + var(--tab-block-margin) + 2px);
   background-image: linear-gradient(to right, magenta, red, yellow, green, cyan, blue, magenta);
   animation: rotate-gradient 10s steps(60) infinite;
   /*animation-timing-function: linear;  */ /* smoother animation, but greatly increased cpu use */
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
-#tabbrowser-tabs .arrowscrollbox-scrollbox::after{
+#tabbrowser-arrowscrollbox{
+  margin-inline: 0 !important;
+  --tab-shadow-max-size: 0px;
+}
+.scrollbox-clip[orient="horizontal"] > scrollbox::after{
   content: "";
   display: -moz-box;
   -moz-box-flex: 1 !important;
+  position: relative;
   background-color: var(--lwt-frame);
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 #TabsToolbar > .titlebar-buttonbox-container,
 .titlebar-spacer,
-.tabbrowser-tab,
-.tabs-newtab-button,
-#tabbrowser-tabs .scrollbutton-up,
-#tabbrowser-tabs .scrollbutton-down,
+.tab-background,
+.closing-tabs-spacer,
+#tabs-newtab-button,
+#scrollbutton-up,
+#scrollbutton-down,
 #tabbrowser-tabs ~ toolbarbutton{
   background-color: var(--lwt-frame) !important;
-  margin-bottom: 2px !important;
+  margin-bottom: 1px !important;
   opacity: 1 !important;
+  position: relative;
+}
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected]),
+.tab-background[multiselected]:not([selected]){
+  background-image: linear-gradient(color-mix(in srgb, currentColor 11%, transparent),color-mix(in srgb, currentColor 11%, transparent)) !important;
+  background-color: var(--lwt-frame) !important;
 }
 
-.tabbrowser-tab{ padding: 2px 2px 0 2px !important; }
-.tabbrowser-tab:not([selected]){ min-height: calc(var(--tab-min-height) - 2px) !important; }
+.tabbrowser-tab:not([selected]){ min-height: calc(var(--tab-min-height) - 1px) !important;  }
+.tabbrowser-tab[first-visible-unpinned-tab]{ margin-inline-start: 0 !important; }
 
-
-.tabbrowser-tab[selected]{
+vbox.tab-background[selected]{
   padding: 0px !important;
-  background-color: transparent !important;
-  border: 2px solid transparent !important;
+  border: 1px solid transparent !important;
   border-bottom-width: 0px !important;
   margin-bottom: 0px !important;
+  background-clip: padding-box;
+  outline: none !important;
 }
+/* This is to override min-height set in non_floating_sharp_tabs.css */
+:root[uidensity="compact"] #tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]{
+  min-height: calc(var(--tab-min-height) -1px) !important;
+}
+/* remove selected tab line which isn't very useful with this style */
+.tab-background[selected]::before{
+  display: none !important;
+}
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container{
+  height: var(--tab-min-height) !important;
+}
+.tab-label{ line-height: 20px !important; }
+:root[uidensity="compact"] .tab-label{ line-height: 20px !important; }
+:root[uidensity="normal"] .tab-content[selected]{ margin-top: -1px }
 
-.tab-content[selected]{ margin-top: -2px }
+#nav-bar{ box-shadow: none !important; }
