@@ -9,16 +9,15 @@ See the above repository for updates as well as full license text. */
   --arrowpanel-color: cyan !important;
   --arrowpanel-dimmed: rgba(0,0,0,0.4) !important;
   /* window and toolbar background */
-  --lwt-frame: purple !important;
+  --lwt-frame: red !important; /* pre fx94 */
+  --lwt-accent-color: red !important;
+  --lwt-accent-color-inactive: green !important;
   --toolbar-bgcolor: rgba(0,0,0,0.4) !important;  
   /* tabs with system theme - text is not controlled by variable */
   --tab-selected-bgcolor: powderblue !important;
   /* tabs with any other theme */
   --lwt-text-color: cyan !important;
   --lwt-selected-tab-background-color: cornflowerblue !important;
-  /* line between nav-bar and tabs toolbar,
-     also fallback color for border around selected tab */
-  --lwt-tabs-border-color: cyan !important;
   /* toolbar area */
   --toolbarbutton-icon-fill: white !important;
   --lwt-toolbarbutton-hover-background: orange !important;
@@ -41,6 +40,9 @@ See the above repository for updates as well as full license text. */
   --lwt-sidebar-background-color: purple !important;
   --lwt-sidebar-text-color: yellow !important;
 }
+/* line between nav-bar and tabs toolbar,
+    also fallback color for border around selected tab */
+#navigator-toolbox{ --lwt-tabs-border-color: cyan !important; }
 /* Line above tabs */
 #tabbrowser-tabs{ --lwt-tab-line-color: white !important; }
 /* the header-area of sidebar needs this to work */
