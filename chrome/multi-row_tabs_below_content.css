@@ -1,17 +1,20 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/multi-row_tabs_below_content.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Makes tabs to appear on multiple lines below the web content */
-/* Tab reordering will not work and can't be made to work */
-
-/* Make menubar enabled for getting window controls in correct place. Menubar options will be shown as overlay when mouse is at top-left corner */
-
-/* It's recommended to move tabs new-tab-button outside tabs toolbar */
-
-/* Change the --multirow-n-rows to change maximum number of rows before the rows will start to scroll  */
-/* Scrollbar can't be clicked but the rows can be scrolled with mouse */
-/* This maximum visible rows won't work before Fx66 */
-/* So this setting does nothing on Fx65 and all tab rows will be shown */
+/* Makes tabs to appear on multiple lines below the web content
+ * Tab reordering will not work and can't be made to work
+ * 
+ * Make menubar enabled for getting window controls in correct place.
+ * Menubar options will be shown as overlay when mouse is at top-left corner
+ * To enable static menubar, create a new boolean pref
+ * userchrome.multirowtabs.static-menubar.enabled
+ *
+ * It's recommended to move tabs new-tab-button outside tabs toolbar
+ * 
+ * Change the --multirow-n-rows to change maximum number of rows
+ * before the rows will start to scroll.
+ * Scrollbar can't be clicked but the rows can be scrolled with mouse.
+ */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
   
@@ -24,6 +27,8 @@ See the above repository for updates as well as full license text. */
     --multirow-n-rows: 3;
     --multirow-tab-min-width: 100px;
     --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
+    --uc-window-drag-space-width: 30px;
+    --uc-window-control-width: 138px;
   }
   @media  (-moz-platform: windows),
         (-moz-os-version: windows-win7),
@@ -32,11 +37,10 @@ See the above repository for updates as well as full license text. */
       --multirow-top-padding: 8px;
     }
   }
-  :root[uidensity="compact"]{--multirow-toolbar-height: 34px}
+  :root[uidensity="compact"]{ --multirow-toolbar-height: 34px }
   :root{ border-top-width: 0px !important }
 
-  #main-window > body > box,
-  #navigator-toolbox{
+  #navigator-toolbox-background{
     -moz-box-ordinal-group: 2;
     border-bottom: 0px !important;
   }
@@ -46,23 +50,22 @@ See the above repository for updates as well as full license text. */
   .global-notificationbox,
   #tab-notification-deck{ -moz-box-ordinal-group: 0 }
 
-  #titlebar{-moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
+  #titlebar{ -moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
 
   #nav-bar{
     position: fixed !important;
     /* For some reason -webkit-box behaves internally like -moz-box, but can be used with fixed position. display: flex would work too but it breaks extension menus. */
     display: -webkit-box;
     -webkit-box-flex: 1;
-    margin-left: 30px;
-    width: calc(100vw - 30px);
+    margin-left: var(--uc-window-drag-space-width);
+    width: calc(100vw - var(--uc-window-drag-space-width));
     top: var(--multirow-top-padding);
   }
   #nav-bar-customization-target{ -webkit-box-flex: 1 }
   :root[inFullscreen] #nav-bar,
   :root[tabsintitlebar] #nav-bar{
-    margin-right: 138px;
-    /* width == 100vw - margins */
-    width: calc(100vw - 168px);
+    margin-right: var(--uc-window-control-width);
+    width: calc(100vw - var(--uc-window-control-width) - var(--uc-window-drag-space-width));
   }
 
   :root[inFullscreen] #TabsToolbar > #window-controls{
@@ -83,7 +86,9 @@ See the above repository for updates as well as full license text. */
 
   #customization-container,
   :root:not([inFullscreen]) #content-deck,
-  :root:not([inFullscreen]) #browser{ margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding))}
+  :root:not([inFullscreen]) #browser{
+    margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height,0px))
+  }
 
   :root[inFullscreen] #TabsToolbar > #window-controls,
   :root[inFullscreen] #toolbar-menubar,
@@ -116,15 +121,18 @@ See the above repository for updates as well as full license text. */
     height: 100%;
     visibility: hidden;
   }
-
+  #main-menubar{ height: var(--multirow-toolbar-height) }
   #toolbar-menubar:hover{ z-index: 2 }
   #toolbar-menubar:hover > #menubar-items{
     visibility: visible;
     background-image: linear-gradient( to left,transparent,var(--lwt-frame) 35px);
   }
 
-  #toolbar-menubar > .titlebar-buttonbox-container{ background: var(--toolbar-bgcolor); }
-
+  #toolbar-menubar > .titlebar-buttonbox-container{
+    background: var(--toolbar-bgcolor);
+    order:1000;
+  }
+  #menubar-items + spacer{ order: 1000 }
   #toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100% ;}
 
   #main-menubar:last-child{ padding-inline-end: 40px }
@@ -138,7 +146,7 @@ See the above repository for updates as well as full license text. */
     max-width: 28px !important;
   }
 
-  :root[tabsintitlebar] #PanelUI-button{ margin-right: 20px; }
+  :root[tabsintitlebar] #PanelUI-button{ margin-right: var(--uc-window-drag-space-width); }
 
   #tabbrowser-tabs{
     min-height: unset !important;
@@ -205,5 +213,19 @@ See the above repository for updates as well as full license text. */
   :root:not([customizing]) #TabsToolbar #new-tab-button,
   #tabbrowser-arrowscrollbox > spacer,
   .tabbrowser-tab::after{ display: none !important } /* Also disables tab separators since they mysteriously break tab-row scrolling */
-
+  
+  @supports -moz-bool-pref("userchrome.multirowtabs.static-menubar.enabled"){
+    :root{
+      --multirow-menubar-height: 28px;
+      --uc-window-drag-space-width: 0px;
+      --uc-window-control-width: 0px;
+    }
+    #main-menubar,
+    #toolbar-menubar{ height: var(--multirow-menubar-height); background-image: none; }
+    #toolbar-menubar > #menubar-items{ visibility: visible; background-image: none !important; }
+    .titlebar-buttonbox-container{ background: none !important }
+    :root:not([inFullscreen]) #nav-bar{
+      top: calc(var(--multirow-menubar-height) + var(--multirow-top-padding));
+    }
+  }
 }
