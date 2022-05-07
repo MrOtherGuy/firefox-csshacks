@@ -50,7 +50,7 @@ See the above repository for updates as well as full license text. */
 
 #sidebar,
 #sidebar-header{
-  background-color: var(--toolbar-bgcolor) !important;
+  background-color: inherit !important;
   border-inline: 1px solid rgb(80,80,80);
   border-inline-width: 0px 1px;
 }
