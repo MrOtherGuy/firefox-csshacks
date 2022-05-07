@@ -21,16 +21,15 @@ class CodeBlock extends HTMLElement{
   }
   
   determineAndLoadContent(){
-    const src = this.src;
-    if(!src){
-      return
-    }
-    CodeBlock.getSource(src)
+    CodeBlock.getSource(this.src)
     .then(
       (data) => this.consumeData(data,CodeBlock.InsertMode.Replace),
-      (e) => this.consumeData({content:this.textContent},CodeBlock.InsertMode.Replace)
+      (e) => {
+        if(this.textContent.length){
+          this.consumeData({content:this.textContent},CodeBlock.InsertMode.Replace);
+        }
+      }
     );
-    
   }
   
   get name(){
