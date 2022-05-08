@@ -6,28 +6,31 @@ See the above repository for updates as well as full license text. */
  * otherwise the bottom corners will be black
  */
 #tabbrowser-tabs{
-  --uc-tab-curve-size:17px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
+  --uc-tab-curve-size: 17px; /* 10px looks about like chromium - 17px looks close to Australis tabs */
   --uc-tabs-scrollbutton-border: 0px;
   --tab-block-margin:0px;
   --tab-min-height: 34px;
   --uc-tab-line-color: rgb(10, 132, 255); /* This is only used when the first optional section is enabled, see below */
-  --uc-curve-stroke-opacity: 0.8; /* used to decrease curve border contrast a bit. */
+  --uc-curve-stroke-opacity: 1; /* can be used to decrease curve border contrast */
 }
 
 .tabbrowser-tab{
   padding-inline: 0px !important; /* By default, proton tabs have 2px + 2px = 4px space between them */
 }
-
+.tab-background{
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 #TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
 
-.tabbrowser-tab[selected]{ --uc-tab-curve-padding: 1px } 
 .titlebar-spacer[type="pre-tabs"],
 .tabbrowser-tab::after{ border: none !important; }
 
-.tabbrowser-tab:hover > stack::before,
-.tabbrowser-tab:hover > stack::after,
-.tabbrowser-tab[selected] > stack::before,
-.tabbrowser-tab[selected] > stack::after{
+.tabbrowser-tab:hover > .tab-stack::before,
+.tabbrowser-tab:hover > .tab-stack::after,
+.tabbrowser-tab[selected] > .tab-stack::before,
+.tabbrowser-tab[selected] > .tab-stack::after{
   width: var(--uc-tab-curve-size);
   height: 100%;
   display: block;
@@ -35,39 +38,46 @@ See the above repository for updates as well as full license text. */
   content: "";
   fill: color-mix(in srgb, currentColor 11%, transparent);
   -moz-context-properties: fill,stroke,stroke-opacity;
-  left: calc(var(--uc-tab-curve-padding,0px) - var(--uc-tab-curve-size));
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlLXdpZHRoPSIxLjIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDE3IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMCAxNyBMMCAxNiBBMTYgMTYgMCAwIDAgMTYgMCBMIDE4IDAgTCAxOCAxNyBaIiBmaWxsPSJjb250ZXh0LWZpbGwiPjwvcGF0aD4NCiAgPHBhdGggZD0iTTAgMTYgQTE2IDE2IDAgMCAwIDE2IDAiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIHN0cm9rZS1vcGFjaXR5PSJjb250ZXh0LXN0cm9rZS1vcGFjaXR5IiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9wYXRoPg0KPC9zdmc+");
-  background-size: var(--uc-tab-curve-size);
-  background-repeat: no-repeat;
-  background-position-y: bottom;
+  left: calc(0px - var(--uc-tab-curve-size));
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlLXdpZHRoPSIxLjEiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDE3IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMCAxNyBMMCAxNiBBMTYgMTYgMCAwIDAgMTYgMCBMIDE4IDAgTCAxOCAxNyBaIiBmaWxsPSJjb250ZXh0LWZpbGwiPjwvcGF0aD4NCiAgPHBhdGggZD0iTTAgMTYgQTE2IDE2IDAgMCAwIDE2IDAiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIHN0cm9rZS1vcGFjaXR5PSJjb250ZXh0LXN0cm9rZS1vcGFjaXR5IiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9wYXRoPg0KPC9zdmc+"),var(--lwt-header-image, none);
+  background-size: var(--uc-tab-curve-size),0;
+  background-repeat: no-repeat,no-repeat;
+  background-position-y: bottom, bottom -1px;
+  background-position-x: -1px,auto;
   transform: scaleY(var(--uc-tab-vertical-transform));
   stroke-opacity: var(--uc-curve-stroke-opacity);
   z-index:1;
   pointer-events: none;
+  background-origin: border-box;
+}
+:root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::before,
+:root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::after{
+  background-attachment: scroll,fixed;
+  background-size: var(--uc-tab-curve-size),auto;
+  background-position-y: bottom,calc(var(--tab-min-height) - 1px);
 }
 
-.tabbrowser-tab[selected] > stack::before,
-.tabbrowser-tab[selected] > stack::after{
+.tabbrowser-tab[selected] > .tab-stack::before,
+.tabbrowser-tab[selected] > .tab-stack::after{
   fill: var(--tab-selected-bgcolor,var(--toolbar-bgcolor)) !important;
   stroke: var(--lwt-tabs-border-color,transparent);
 }
 
-.tabbrowser-tab[selected] > stack:-moz-lwtheme::before,
-.tabbrowser-tab[selected] > stack:-moz-lwtheme::after{
+.tabbrowser-tab[selected] > .tab-stack:-moz-lwtheme::before,
+.tabbrowser-tab[selected] > .tab-stack:-moz-lwtheme::after{
   fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
 }
 
-.tabbrowser-tab:hover > stack::after,
-.tabbrowser-tab[selected] > stack::after{
+.tabbrowser-tab:hover > .tab-stack::after,
+.tabbrowser-tab[selected] > .tab-stack::after{
   left: auto;
-  right: calc(var(--uc-tab-curve-padding,0px) - var(--uc-tab-curve-size));
+  right: calc(0px - var(--uc-tab-curve-size));
   transform: scaleX(-1);
 }
 
 .tabbrowser-tab:hover > stack > .tab-background,
 .tab-background[selected]{
   border-radius: var(--uc-tab-curve-size) var(--uc-tab-curve-size) 0 0 !important;
-  overflow: -moz-hidden-unscrollable
 }
 
 #tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab:first-child,
@@ -95,11 +105,28 @@ See the above repository for updates as well as full license text. */
 
 /* OPTIONAL - COLORS - show tabs border, selected tab line and make selected tab match the main toolbar color. Also disables tab shadow */
 /* Using these color options requires you to set layout.css.color-mix.enabled to true in about:config  */
+
 /*
-#navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, transparent 80%) !important; }
+#navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, white 50%) !important; }
+:root[lwtheme-brighttext] #navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, black 50%) !important; }
 #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
-.tab-background[selected]{ --toolbar-bgcolor: transparent }
-.tabbrowser-tab .tab-background{ border-top: none !important; box-shadow: none !important; }
+.tab-background[selected]{
+  border-top: none !important;
+  --toolbar-bgcolor: transparent;
+}
+.tab-background:not(:-moz-lwtheme){
+  background-color: var(--lwt-selected-tab-background-color) !important;
+}
+.tabbrowser-tab[selected] > .tab-stack::before,
+.tabbrowser-tab[selected] > .tab-stack::after{
+  fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
+}
+.tabbrowser-tab[selected] > .tab-stack::before{
+  left: calc(1px - var(--uc-tab-curve-size));
+}
+.tabbrowser-tab[selected] > .tab-stack::after{
+  right: calc(1px - var(--uc-tab-curve-size));
+}
 .tab-background[selected]::before{
   content: "";
   display: -moz-box;
@@ -120,8 +147,8 @@ See the above repository for updates as well as full license text. */
 /* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
 /*
 .tab-background{ -moz-box-direction: reverse }
-.tabbrowser-tab:hover > stack > .tab-background,
+.tabbrowser-tab:hover > .tab-stack > .tab-background,
 .tab-background[selected]{ border-radius: 0 0 var(--uc-tab-curve-size) var(--uc-tab-curve-size) !important }
-.tabbrowser-tab > stack::before{ transform: scaleY(-1) !important; }
-.tabbrowser-tab > stack::after{ transform: scaleY(-1) scaleX(-1) !important; }
+.tabbrowser-tab > .tab-stack::before{ transform: scaleY(-1) !important; }
+.tabbrowser-tab > .tab-stack::after{ transform: scaleY(-1) scaleX(-1) !important; }
 */
