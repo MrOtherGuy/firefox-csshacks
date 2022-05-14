@@ -43,7 +43,7 @@ Window controls will be all wrong without it
 
 #toolbar-menubar{ height: initial !important; }
 #toolbar-menubar[inactive] > :not(.titlebar-buttonbox-container){ opacity: 0; pointer-events: none; }
-#toolbar-menubar[inactive]{ margin-bottom: calc(0px - var(--uc-toolbar-height)) }
+#toolbar-menubar[inactive]{ margin-bottom: calc(15px - var(--uc-toolbar-height)) }
 
 #TabsToolbar > .titlebar-buttonbox-container,
 .titlebar-spacer[type="post-tabs"]{
