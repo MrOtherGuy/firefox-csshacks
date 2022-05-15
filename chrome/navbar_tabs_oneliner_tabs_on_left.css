@@ -27,11 +27,11 @@ Window controls will be all wrong without it
 :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 34px;}
 :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
 
-:root[uidensity=compact] #urlbar-container{
+:root[uidensity="compact"] #urlbar-container{
   --urlbar-container-height: var(--uc-toolbar-height) !important;
   padding-block: 0 !important;
 }
-:root[uidensity=compact] #urlbar{
+:root[uidensity="compact"] #urlbar{
   --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
 }
 
@@ -41,9 +41,16 @@ Window controls will be all wrong without it
   #urlbar-container{ min-width:unset !important }
 }
 
-#toolbar-menubar{ height: initial !important; }
-#toolbar-menubar[inactive] > :not(.titlebar-buttonbox-container){ opacity: 0; pointer-events: none; }
-#toolbar-menubar[inactive]{ margin-bottom: calc(0px - var(--uc-toolbar-height)) }
+:root[tabsintitlebar] #toolbar-menubar{
+  height: initial !important;
+}
+:root[tabsintitlebar] #toolbar-menubar[inactive] > :not(.titlebar-buttonbox-container){
+  opacity: 0;
+  pointer-events: none;
+}
+:root[tabsintitlebar] #toolbar-menubar[inactive]{
+  margin-bottom: calc(0px - var(--uc-toolbar-height));
+}
 
 #TabsToolbar > .titlebar-buttonbox-container,
 .titlebar-spacer[type="post-tabs"]{
