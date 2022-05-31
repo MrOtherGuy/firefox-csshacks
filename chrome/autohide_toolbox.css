@@ -22,17 +22,6 @@ See the above repository for updates as well as full license text. */
         (-moz-os-version: windows-win7),
         (-moz-os-version: windows-win10){
 
-  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
-
-  @media screen and (min-resolution: 1.25dppx){
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
-  }
-  @media screen and (min-resolution: 1.5dppx){
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 6px !important; }
-  }
-  @media screen and (min-resolution: 2dppx){
-    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px; }
-  }
   #navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog !important; }
 }
 
@@ -92,7 +81,6 @@ See the above repository for updates as well as full license text. */
 
 /* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
 /*
-:root{ --uc-titlebar-padding: 0px !important; }
 #navigator-toolbox{ flex-direction: column; display: flex; }
 #titlebar{ order: 2 }
 */

@@ -32,7 +32,7 @@ chrome/urlbar_full_width.css
   
   .urlbarView{
     position: fixed !important;
-    top: calc(var(--uc-titlebar-padding,0px) + var(--uc-toolbar-height))
+    top: calc(var(--uc-toolbar-height))
   }
   #nav-bar{ border-right-width: 0px !important }
   #TabsToolbar{

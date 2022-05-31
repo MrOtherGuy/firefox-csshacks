@@ -30,13 +30,7 @@ See the above repository for updates as well as full license text. */
     --uc-window-drag-space-width: 30px;
     --uc-window-control-width: 138px;
   }
-  @media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-    :root[tabsintitlebar][sizemode="maximized"]{
-      --multirow-top-padding: 8px;
-    }
-  }
+
   :root[uidensity="compact"]{ --multirow-toolbar-height: 34px }
   :root{ border-top-width: 0px !important }
 

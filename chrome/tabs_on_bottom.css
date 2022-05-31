@@ -15,33 +15,22 @@ Additionally on Linux, you may need to get:
 linux_gtk_window_control_patch.css
 */
 
-:root{ --uc-titlebar-padding: 0px; }
-@media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-  :root[sizemode="maximized"][tabsintitlebar]{
-    --uc-titlebar-padding: 8px;
-  }
-}
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
 #TabsToolbar > .titlebar-buttonbox-container{
   position: fixed;
   display: block;
-  top: var(--uc-titlebar-padding,0px);
+  top: 0px;
   right:0;
   height: 40px;
 }
 /* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root{ --uc-titlebar-padding: 0px !important }
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
 :root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
 
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
-
-#navigator-toolbox{ padding-top: var(--uc-titlebar-padding,0px) !important; }
 
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 

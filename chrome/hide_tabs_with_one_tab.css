@@ -53,14 +53,6 @@ See the above repository for updates as well as full license text. */
   transform: scale(0.6);
   background-color: transparent !important;
 }
-/* Extra top padding  in maximized window */
-@media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{
-    padding-top: var(--uc-titlebar-padding,7px);
-  }
-}
 /* Fix window controls not being clickable */
 :root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{
   transition: height 0ms steps(1) 80ms;

@@ -37,9 +37,6 @@ linux_gtk_window_control_patch.css
         (-moz-os-version: windows-win7),
         (-moz-os-version: windows-win10){
   #titlebar{ -moz-appearance: none !important; }
-  /* Counteract -moz-appearance when maximized */
-  :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ padding-top: 8px !important; }
-  :root[sizemode="maximized"] #toolbar-menubar:not([autohide="false"]) .titlebar-buttonbox-container{ top: 8px }
 }
 /* Move tabs below content */
 :root:not([inDOMFullscreen]) #browser-bottombox{ margin-bottom: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px)) }

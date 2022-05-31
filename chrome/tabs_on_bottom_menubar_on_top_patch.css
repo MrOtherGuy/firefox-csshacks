@@ -20,18 +20,18 @@ See the above repository for updates as well as full license text. */
 
 #navigator-toolbox{
   -moz-window-dragging: drag;
-  padding-top: calc(var(--uc-menubar-height) + var(--uc-titlebar-padding, 0px)) !important;
+  padding-top: var(--uc-menubar-height) !important;
 }
 /* Remove window dragging from notification boxes */
 #tab-notification-deck,
 .global-notificationbox{
   -moz-window-dragging: no-drag;
 }
-:root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
+
 #toolbar-menubar{
   position: fixed;
   display: flex;
-  top: var(--uc-titlebar-padding,0px);
+  top: 0px;
   height: var(--uc-menubar-height);
   width: 100%;
   overflow: hidden;

@@ -27,14 +27,6 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox{ --tab-min-height: 40px }
 :root[uidensity="compact"] #navigator-toolbox{ --tab-min-height: 32px }
 
-@media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] > body > box{
-    margin-top: 8px;
-  }
-}
-
 #navigator-toolbox{
   display: flex;
   flex-direction: row-reverse;

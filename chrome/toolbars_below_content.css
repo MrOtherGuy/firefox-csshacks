@@ -12,18 +12,6 @@ See the above repository for updates as well as full license text. */
   
   #titlebar{ -moz-appearance: none !important; }
 
-  @media  (-moz-platform: windows),
-          (-moz-os-version: windows-win7),
-          (-moz-os-version: windows-win10){
-    /* Next two variables are used by autohide_menubar.css */
-    #toolbar-menubar{ --uc-menubar-extra-margin: 0px }
-    :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar{
-      --uc-menubar-extra-margin: 8px
-    }
-    
-    :root[sizemode="maximized"][tabsintitlebar] :where(#browser,#customization-container,#toolbar-menubar){ margin-top: 8px }
-  }
-
   #navigator-toolbox > div{ display: contents }
   .global-notificationbox,
   #mainPopupSet,

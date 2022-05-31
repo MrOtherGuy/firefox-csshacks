@@ -9,25 +9,6 @@ See the above repository for updates as well as full license text. */
 :root:not([customizing]) #navigator-toolbox > *{ grid-area: 1/1; }
 :root:not([customizing]) #titlebar{ -moz-appearance: none !important; }
 
-/* -moz-appearance: none on titlebar breaks window margins, so re-adjust that */
-@media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-          
-  :root[sizemode="maximized"]{ margin-top: 8px !important; }
-
-  @media screen and (min-resolution: 1.25dppx){
-    :root[sizemode="maximized"]{ margin-top: 7px !important; }
-  }
-  @media screen and (min-resolution: 1.5dppx){
-    :root[sizemode="maximized"]{ margin-top: 6px !important; }
-  }
-  @media screen and (min-resolution: 2dppx){
-    :root[sizemode="maximized"]{ margin-top: 5px !important; }
-  }
-  :root:not([tabsintitlebar]),
-  :root[inDOMFullscreen]{ margin-top: 0 !important; }
-}
 #urlbar-container{ margin-top: 1px }
 :root[sessionrestored] #nav-bar:not([customizing]){
   transform: rotateX(90deg);

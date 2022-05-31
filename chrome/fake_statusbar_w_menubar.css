@@ -25,14 +25,8 @@ See the above repository for updates as well as full license text. */
   /* Dummy variable to support versions 94-96, can be removed when 96 lands */
   :root{ --lwt-frame: var(--lwt-accent-color) }
   
-  :root{ --uc-fake-titlebar-padding: 0px }
-  @media  (-moz-platform: windows),
-          (-moz-os-version: windows-win7),
-          (-moz-os-version: windows-win10){
-    :root[sizemode="maximized"][tabsintitlebar]{ --uc-fake-titlebar-padding: 8px }
-  }
   #navigator-toolbox{
-    margin-top: calc(var(--tab-min-height) +  2 * var(--tab-block-margin,0px) + var(--uc-fake-titlebar-padding))
+    margin-top: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px))
   }
 
   #titlebar,

@@ -14,12 +14,6 @@ See the above repository for updates as well as full license text. */
 
 #toolbar-menubar[autohide="true"][inactive="true"]{ height: 0px !important; }
 
-@media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-  :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar{ top: 8px; }
-}
-
 #toolbar-menubar > spacer{ flex-grow: 1 }
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
 
