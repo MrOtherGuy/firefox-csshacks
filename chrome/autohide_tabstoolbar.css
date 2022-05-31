@@ -32,3 +32,9 @@ See the above repository for updates as well as full license text. */
   visibility: visible;
   transition-delay: 18ms
 }
+/* These rules make sure that height of tabs toolbar doesn't exceed tab-min-height */
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container{
+  max-height: var(--tab-min-height);
+}
+.tab-label{ line-height: 20px !important; }
+:root[uidensity="compact"] .tab-label{ line-height: 18px !important; }
