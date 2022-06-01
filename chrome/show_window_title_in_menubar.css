@@ -18,7 +18,7 @@ See the above repository for updates as well as full license text. */
     display: -moz-inline-box;
     padding-top: 1px;
     max-width: 50vw;
-    overflow-x: -moz-hidden-unscrollable;
+    overflow-x: hidden;
     text-overflow: ellipsis;
   }
 }
