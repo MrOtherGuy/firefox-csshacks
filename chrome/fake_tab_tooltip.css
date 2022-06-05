@@ -1,0 +1,23 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/fake_tab_tooltip.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This creates a fake tooltip-like box under hovered tab showing it's full title.
+ * In about:config you can set `browser.chrome.toolbar_tips` to false to disable
+ * normal tooltips - that however disables normal tooltips also from everything
+ * else in the toolbar area.
+ */
+
+.tabbrowser-tab:hover::after{
+  display: block;
+  content: attr(label);
+  background: var(--arrowpanel-background);
+  border: 1px solid var(--arrowpanel-border-color);
+  color: var(--arrowpanel-color);
+  padding: 0.3em;
+  position: fixed;
+  transform: translateY(calc(var(--tab-min-height) + 2 * var(--tab-block-margin)));
+  z-index: 2;
+  color-scheme: dark;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.3)
+}
