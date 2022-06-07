@@ -2,7 +2,8 @@
 See the above repository for updates as well as full license text. */
 
 /* Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs. Optionally use privatemode_indicator_as_menu_button.css to replace main menu icon with private browsing indicator while tabs are hidden. */
-/* Firefox 65+ only */
+
+/* This style causes CSD window controls to disappear on linux, but you can kind of work around that by using window_control_fallback_for_custom_windows_theme.css */
 
 :root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
 
@@ -12,7 +13,6 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabs,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
-:root:not([customizing]) #tabbrowser-tabs .tabs-newtab-button,
 :root:not([customizing]) #tabs-newtab-button,
 :root:not([customizing]) #TabsToolbar-customization-target > .toolbarbutton-1,
 :root:not([customizing]) #TabsToolbar .titlebar-button{
@@ -50,7 +50,7 @@ See the above repository for updates as well as full license text. */
 
 #tabs-newtab-button > .toolbarbutton-icon{
   padding: 0 !important;
-  transform: scale(0.6);
+  transform: scale(0.5);
   background-color: transparent !important;
 }
 /* Fix window controls not being clickable */
@@ -59,4 +59,14 @@ See the above repository for updates as well as full license text. */
 }
 :where(#nav-bar){
   border-inline: var(--uc-window-drag-space-width,0) solid var(--toolbar-bgcolor);
+}
+@media (-moz-platform: linux){
+  #TabsToolbar .titlebar-buttonbox{
+    -moz-box-align: stretch !important;
+  }
+  #TabsToolbar > .titlebar-buttonbox-container > .titlebar-buttonbox > .titlebar-button{
+    transform: scale(0.8);
+    margin-inline: -3px !important;
+  }
+  #TabsToolbar .titlebar-button > .toolbarbutton-icon{ padding: 0 13px !important }
 }
