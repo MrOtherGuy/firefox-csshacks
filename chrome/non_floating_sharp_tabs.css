@@ -36,18 +36,18 @@ See the above repository for updates as well as full license text. */
 
 .tab-background[selected]:not(:-moz-lwtheme){ background: var(--toolbar-bgcolor) !important; }
 
-#TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,
-#TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
+#TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-badge-stack,
+#TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
 
 /* tabs newtab button needs some special styling... */
 #tabs-newtab-button{ padding-inline: 0 !important; }
-#tabbrowser-arrowscrollbox > #tabs-newtab-button > .toolbarbutton-icon{
+#tabs-newtab-button > .toolbarbutton-icon{
   border-radius: 0 !important; 
   width: initial !important; 
   height: initial !important;
   padding: 9px !important;
 }
-:root[uidensity="compact"] #tabbrowser-arrowscrollbox > #tabs-newtab-button > .toolbarbutton-icon{
+:root[uidensity="compact"] #tabs-newtab-button > .toolbarbutton-icon{
   padding: 7px !important;
 }
 
