@@ -40,15 +40,19 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
 
 /* tabs newtab button needs some special styling... */
-#tabs-newtab-button{ padding-inline: 0 !important; }
+#tabs-newtab-button{
+  padding-inline: 0 !important;
+  -moz-box-align: stretch !important;
+}
+/* We draw the icon as background-image to get correct scaling regardless of toolbar height */
 #tabs-newtab-button > .toolbarbutton-icon{
   border-radius: 0 !important; 
-  width: initial !important; 
+  width: var(--tab-min-height) !important; 
   height: initial !important;
-  padding: 9px !important;
-}
-:root[uidensity="compact"] #tabs-newtab-button > .toolbarbutton-icon{
-  padding: 7px !important;
+  list-style-image: none;
+  background-image: url(chrome://global/skin/icons/plus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #scrollbutton-up,
