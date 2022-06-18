@@ -5,6 +5,7 @@ See the above repository for updates as well as full license text. */
 
 .titlebar-button{
   background-color: transparent !important;
+  -moz-context-properties: stroke !important;
   stroke: currentColor !important;
 }
 .titlebar-button:hover{ background-color: hsla(0,0%,100%,.32) !important }
