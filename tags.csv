@@ -152,3 +152,4 @@ window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colo
 window_control_force_linux_system_style.css,window-control,buttons,icon
 window_control_placeholder_support.css,window-control,patch
 fake_tab_tooltip.css,tab,hack,popup
+tab_loading_progress_bar.css,tab,effect
