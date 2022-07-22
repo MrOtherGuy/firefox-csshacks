@@ -1,0 +1,24 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/reload_button_in_urlbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes stop-reload-button appear as if it's inside urlbar. 
+ * First, move reload button next to urlbar on right side using
+ * customize-mode
+ */
+
+#urlbar-container + #stop-reload-button{
+  margin-left: calc( 1px - var(--urlbar-margin-inline) - 2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) - 16px );
+  position: relative;
+  z-index: 3;
+  color:  var(--urlbar-box-hover-text-color) !important;
+  --toolbarbutton-hover-background: var(--urlbar-box-hover-bgcolor);
+}
+
+#urlbar-container + #stop-reload-button > .toolbarbutton-1 > .toolbarbutton-icon{
+  padding-block: var(--urlbar-icon-padding) !important;
+  height: unset !important;
+}
+
+#urlbar{
+  padding-right: calc(2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) + 12px);
+}
