@@ -26,10 +26,10 @@ menuitem:is([type="checkbox"],[type="radio"]) > .menu-iconic-left{
 menuitem[type="radio"] > .menu-iconic-left{
   border-radius: 100%;
 }
-menuitem[type="radio"][checked] > .menu-iconic-left{
+menuitem[type="radio"][checked="true"] > .menu-iconic-left{
   background-image: radial-gradient( AccentColor 40%, transparent 50%);
   list-style-image: none !important;
 }
-menuitem[type="checkbox"][checked] > .menu-iconic-left{
+menuitem[type="checkbox"][checked="true"] > .menu-iconic-left{
   background-image: url("chrome://global/skin/icons/check.svg");
 }
