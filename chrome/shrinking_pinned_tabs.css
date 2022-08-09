@@ -1,0 +1,18 @@
+/*Make pinned tab width dynamically shrink similar to unpinned tab width.*/
+
+.tabbrowser-tab[pinned] {
+  flex-grow: 10;
+  -moz-box-flex: 10;
+  max-width: 32px;
+  #tabbrowser-arrowscrollbox:not([overflowing]);
+}
+
+.tab-content[pinned] {
+  padding: 0px !important;
+  -moz-box-pack: center;
+  #tabbrowser-arrowscrollbox:not([overflowing]);
+}
+
+.tab-label-container[pinned] {
+  display: none;
+}
