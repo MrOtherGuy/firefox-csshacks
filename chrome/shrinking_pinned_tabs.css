@@ -1,9 +1,16 @@
-/*Make pinned tab width shrink dynamically, similar to unpinned tab width.*/
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/shrinking_pinned_tabs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes pinned tab width shrink dynamically, similar to unpinned tab width. */
 
 #tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[pinned] {
   flex-grow: 10;
   -moz-box-flex: 10;
-  max-width: 32px;
+  max-width: 40px;
+}
+
+:root[uidensity="compact"] #tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[pinned] {
+  max-width: 32px 
 }
 
 #tabbrowser-arrowscrollbox:not([overflowing]) .tab-content[pinned] {
