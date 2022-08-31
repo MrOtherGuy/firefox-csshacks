@@ -14,6 +14,8 @@ See the above repository for updates as well as full license text. */
 
 @supports -moz-bool-pref("userchrome.menupopups.force-light"){
   menupopup{
+    color-scheme: light !important;
+    /* variables for pre-fx105 */
     --menuitem-hover-background-color: #e0e0e6 !important;
     --menu-background-color: #f9f9fb !important;
     --menu-color: #15141a !important;
@@ -25,6 +27,8 @@ See the above repository for updates as well as full license text. */
 }
 @supports -moz-bool-pref("userchrome.menupopups.force-dark"){
   menupopup{
+    color-scheme: dark !important;
+    /* variables for pre-fx105 */
     --menuitem-hover-background-color: #52525e !important;
     --menu-background-color: #2b2a33 !important;
     --menu-color: #fbfbfe !important;

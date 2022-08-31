@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
 menupopup[placespopup="true"]{
   padding: 0 !important;
   margin: 0 !important;
-  --arrowpanel-background: var(--menu-background-color) !important;
+  --arrowpanel-background: var(--menu-background-color,Menu) !important;
   border-radius: var(--panel-border-radius) !important;
 }
 .menupopup-arrowscrollbox{
