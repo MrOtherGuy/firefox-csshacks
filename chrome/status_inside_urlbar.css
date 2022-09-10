@@ -13,16 +13,6 @@ Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
 As a workaround, the -moz-element background image is removed somewhat often which seems work at first glance. But there might still be some related issues on really long sessions. Just be aware.
 **************/
 
-/* Temporary dummy variables, can probably be removed when Fx92 releases */
-:root{
-  --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
-  --toolbar-field-color: var(--toolbar-field-non-lwt-color);
-}
-:root:-moz-lwtheme{
-  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
-  --toolbar-field-color: var(--lwt-toolbar-field-color);
-}
-
 .urlbar-input-box{
   display: grid;
   position: relative;
@@ -62,29 +52,40 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 :root[uidensity="compact"] #urlbar .urlbar-input-box::after{ background-position-y: 0px }
 :root[uidensity="touch"] #urlbar .urlbar-input-box::after{ background-position-y: 4px }
 
-#statuspanel-inner > #statuspanel-label{
+#statuspanel-label{
   height:3em;
   min-width: 1000px;
-  background-color: var(--toolbar-field-background-color, #fffc) !important;
+  background-color: var(--toolbar-field-background-color, #f0f0f4) !important;
   border: none !important;
   font-size: 1.15em;
   color: inherit !important;
   margin-right: 0px !important;
 }
 /* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
-#statuspanel-inner{ background-color: var(--toolbar-bgcolor) }
+#statuspanel{ background-color: var(--toolbar-bgcolor) }
 
-#statuspanel{ color: var(--toolbar-field-color, black) ; z-index: -1; max-width: 100% !important; }
+#statuspanel{
+  color: var(--toolbar-field-color, black);
+  z-index: -1;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+}
 #statuspanel[type="status"] { color: Highlight }
 
 /* You will need to adjust these probably as they depend on OS, text size etc. */
-#statuspanel-inner{ margin-left: -1px; }
-#statuspanel-inner > #statuspanel-label{ margin-left: -3px !important; margin-top: 0px !important; }
-
+#statuspanel-inner{
+  margin-left: -1px;
+}
+#statuspanel > #statuspanel-label{
+   padding-left: 3px !important;
+}
+#statuspanel-label{
+  margin-left: -3px !important;
+  margin-top: 0px !important;
+}
 
 /*  OPTIONAL FEATURES  */
 /* Uncomment to enable */
-
 
 /*
  Don't show common values to save space (useful for oneliner)
@@ -93,15 +94,15 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 */
 
 /*
-#statuspanel-inner > #statuspanel-label[value^="http:"]{ margin-left: -3.7ch !important; color: tomato }
-#statuspanel-inner > #statuspanel-label[value^="https:"]{ margin-left: -6.1ch !important; }
-#statuspanel-inner > #statuspanel-label[value^="www"]{ margin-left: -4.5ch !important; }
-#statuspanel-inner > #statuspanel-label[value^="http://www"]{ margin-left: -9.7ch !important; }
-#statuspanel-inner > #statuspanel-label[value^="https://www"]{ margin-left: -10.1ch !important; }
+#statuspanel-label[value^="http:"]{ margin-left: -3.7ch !important; }
+#statuspanel-label[value^="https:"]{ margin-left: -6.5ch !important; }
+#statuspanel-label[value^="www"]{ margin-left: -4.9ch !important; }
+#statuspanel-label[value^="http://www"]{ margin-left: -9.7ch !important; }
+#statuspanel-label[value^="https://www"]{ margin-left: -10.9ch !important; }
 */
 
 /* Center the statuspanel text. This might be useful with centered urlbar text */
 /*
-#statuspanel-inner > #statuspanel-label{ text-align: center }
+#statuspanel-label{ text-align: center }
 .urlbar-input-box::after{ background-position-x: center !important; }
 */

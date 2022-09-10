@@ -13,16 +13,6 @@ Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
 As a workaround, the -moz-element background image is removed somewhat often which seems work at first glance. But there might still be some related issues on really long sessions. Just be aware.
 **************/
 
-/* Temporary dummy variables, can probably be removed when Fx92 releases */
-:root{
-  --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
-  --toolbar-field-color: var(--toolbar-field-non-lwt-color);
-}
-:root:-moz-lwtheme{
-  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
-  --toolbar-field-color: var(--lwt-toolbar-field-color);
-}
-
 #urlbar::before{
   z-index: 2;
   content: "";
@@ -48,10 +38,10 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 :root[uidensity="compact"] #urlbar::before{ background-position-y: 0px }
 :root[uidensity="touch"] #urlbar::before{ background-position-y: 3px }
 
-#statuspanel-inner > #statuspanel-label{
+#statuspanel-label{
   height:3em;
   min-width: 1000px;
-  background-color: var(--toolbar-field-background-color, #fffc) !important;
+  background-color: var(--toolbar-field-background-color) !important;
   border: none !important;
   font-size: 1.15em;
   color: inherit !important;
@@ -60,9 +50,14 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 }
 
 /* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
-#statuspanel-inner{ background-color: var(--toolbar-bgcolor) }
+#statuspanel{ background-color: var(--toolbar-bgcolor) }
 
-#statuspanel{ color: var(--toolbar-field-color, black) ; z-index: -1; max-width: 100% !important; }
+#statuspanel{
+  color: var(--toolbar-field-color, black);
+  z-index: -1;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+}
 #statuspanel[type="status"] { color: Highlight }
 
 /*  OPTIONAL FEATURES  */
@@ -70,6 +65,6 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 
 /* Center the statuspanel text. This might be useful with centered urlbar text */
 /*
-#statuspanel-inner > #statuspanel-label{ text-align: center }
+#statuspanel-label{ text-align: center }
 #urlbar::before{ background-position-x: center !important; }
 */
