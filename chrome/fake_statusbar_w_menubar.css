@@ -58,7 +58,7 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar > .toolbarbutton-1:first-child:not(:hover) + #menubar-items:not(:hover){ visibility: collapse }
 
   #toolbar-menubar > .titlebar-buttonbox-container + toolbarspring{
-    background-position: left 2px;
+    background-position: left 5px;
     background-repeat: no-repeat;
     background-image: -moz-element(#statuspanel);
     max-width: none !important;
@@ -68,7 +68,7 @@ See the above repository for updates as well as full license text. */
   #titlebar:hover > #toolbar-menubar > .titlebar-buttonbox-container + toolbarspring{ background-image: none }
   #toolbar-menubar > .titlebar-buttonbox-container + toolbarspring{ background-image: -moz-element(#statuspanel) !important; }
 
-  #statuspanel-inner > #statuspanel-label{
+  #statuspanel-label{
     height:3em;
     min-width: 1000px;
     background-color: var(--lwt-frame, hsla(0,0%,100%,.8)) !important;
@@ -81,11 +81,16 @@ See the above repository for updates as well as full license text. */
   #statuspanel-inner{ background-color: var(--toolbar-accent-color) }
   /*#statuspanel-inner{ background-color: var(--toolbar-non-lwt-bgcolor) }*/
 
-  #statuspanel{ color: lightpink; z-index: -1; inset-inline: 0 auto !important; }
+  #statuspanel{
+    color: lightpink;
+    z-index: -1;
+    inset-inline: 0 auto !important;
+    padding-top: 0 !important;
+  }
   #statuspanel[type="status"] { color: skyblue }
 
   #statuspanel-inner{ margin-left: -3px; margin-top: 1px}
-  #statuspanel-inner > #statuspanel-label[value^="https"]{ color: var(--toolbar-field-color, black) !important;}
+  #statuspanel-label[value^="https"]{ color: var(--toolbar-field-color, black) !important;}
 
   #customization-container,
   #content-deck,
