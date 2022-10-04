@@ -90,6 +90,7 @@
 "navbar_tabs_oneliner_tabs_on_left.css":["one-line","minimal","tabs","nav-bar","toolbars"],
 "navbar_tabs_responsive_oneliner.css":["one-line","minimal","tabs","nav-bar","toolbars"],
 "navigation_buttons_inside_urlbar.css":["navigation","buttons","urlbar"],
+"newtab_button_always_on_hover.css":["tabs","hiding"],
 "non_floating_sharp_tabs.css":["tab","proton","buttons"],
 "numbered_tabs.css":["tabs"],
 "overlay_menubar.css":["menubar"],
