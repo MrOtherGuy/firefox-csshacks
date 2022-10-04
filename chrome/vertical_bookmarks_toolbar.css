@@ -29,7 +29,7 @@ See the above repository for updates as well as full license text. */
     display: flex;
     flex-direction: column;
   }
-  #PlacesToolbarItems > toolbarseparator{
+  #PersonalToolbar #PlacesToolbarItems > toolbarseparator{
     height: 7px;
     background-color: currentColor;
     background-clip: padding-box;
