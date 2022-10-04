@@ -29,6 +29,12 @@ See the above repository for updates as well as full license text. */
     display: flex;
     flex-direction: column;
   }
+  #PlacesToolbarItems > toolbarseparator{
+    height: 7px;
+    background-color: currentColor;
+    background-clip: padding-box;
+    border-block: 3px solid transparent !important;
+  }
   #PersonalToolbar .toolbarbutton-1{ padding-block: 10px !important }
   #PersonalToolbar #PlacesToolbarItems > .bookmark-item{ padding-block: 4px !important; }
   
