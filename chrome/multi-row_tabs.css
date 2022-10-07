@@ -28,7 +28,6 @@ See the above repository for updates as well as full license text. */
 }
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
-  
   #scrollbutton-up~spacer,
   #scrollbutton-up,
   #scrollbutton-down{ display: var(--scrollbutton-display-model,initial) }
@@ -72,6 +71,10 @@ See the above repository for updates as well as full license text. */
 
 /* remove bottom margin so it doesn't throw off row height computation */
 #tabs-newtab-button{ margin-bottom: 0 !important; }
+
+#tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"] > #tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery > #tabs-newtab-button {
+  display: -moz-box !important;
+}
 
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
