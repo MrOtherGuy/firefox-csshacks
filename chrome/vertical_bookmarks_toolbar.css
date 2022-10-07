@@ -39,9 +39,9 @@ See the above repository for updates as well as full license text. */
   #PersonalToolbar #PlacesToolbarItems > .bookmark-item{ padding-block: 4px !important; }
   
 
-  body > #browser,
-  body > #browser-bottombox,
-  #customization-container{
+:root:not([chromehidden~="toolbar"]) body > #browser,
+:root:not([chromehidden~="toolbar"]) body > #browser-bottombox,
+:root:not([chromehidden~="toolbar"]) #customization-container{
     margin-left: var(--uc-vertical-toolbar-width,0);
   }
 
