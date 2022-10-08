@@ -25,15 +25,26 @@ See the above repository for updates as well as full license text. */
 
 #sidebar-splitter{ display: none }
 
-#sidebar-header{ overflow: hidden; color: var(--chrome-color, inherit) !important}
+#sidebar-header{
+  overflow: hidden;
+  color: var(--chrome-color, inherit) !important;
+}
 
+#sidebar-switcher-target{
+  -moz-box-pack: start !important;
+}
+
+#sidebar-header,
 #sidebar{
   transition: min-width 115ms linear var(--uc-autohide-sidebar-delay) !important;
   min-width: var(--uc-sidebar-width) !important;
   will-change: min-width;
 }
-
-#sidebar-box:hover > #sidebar{ min-width: var(--uc-sidebar-hover-width) !important; transition-delay: 0ms !important }
+#sidebar-box:hover > #sidebar-header,
+#sidebar-box:hover > #sidebar{
+  min-width: var(--uc-sidebar-hover-width) !important;
+  transition-delay: 0ms !important;
+}
 
 .sidebar-panel{
   background-color: transparent !important;
@@ -62,5 +73,10 @@ See the above repository for updates as well as full license text. */
 
 /* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
 
-#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel{ inset-inline: auto 0px !important; }
-#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label{ margin-inline: 0px !important; border-left-style: solid !important; }
+#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel{
+  inset-inline: auto 0px !important;
+}
+#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label{
+  margin-inline: 0px !important;
+  border-left-style: solid !important; 
+}
