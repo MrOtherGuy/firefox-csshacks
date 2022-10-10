@@ -73,11 +73,11 @@ Window controls will be all wrong without it
 .titlebar-spacer[type="pre-tabs"]{ width:8px !important}
 #nav-bar{ margin-top: calc(0px - var(--uc-toolbar-height)); }
 
-#nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-post)) }
+#nav-bar-customization-target{ padding-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-post)) }
 
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   .titlebar-buttonbox-container{ position: fixed; display: blocK; left: 0px; z-index: 3; }
-  #nav-bar-customization-target{ margin-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre)) }
+  #nav-bar-customization-target{ padding-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre)) }
 }
 
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container,
