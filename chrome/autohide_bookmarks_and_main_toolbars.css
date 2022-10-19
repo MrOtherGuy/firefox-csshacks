@@ -115,8 +115,18 @@ See the above repository for updates as well as full license text. */
 /*
 #navigator-toolbox{ margin-bottom: var(--uc-navbar-height) !important; }
 #PersonalToolbar:not([customizing]){
-  position: fixed !important;
-  display: block;
-  margin-bottom: 0px !important;
+  min-height: 0 !important;
+  margin-bottom: 0;
+  height: 0;
+  overflow-y: visible !important;
+  z-index: 2;
+  padding-inline: 0 !important;
+}
+#personal-bookmarks{
+  background: inherit;
+  height: min-content;
+}
+#PlacesToolbarDropIndicatorHolder{
+  pointer-events: none !important;
 }
 */

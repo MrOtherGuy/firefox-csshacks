@@ -54,8 +54,18 @@ See the above repository for updates as well as full license text. */
 /* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
 /*
 #PersonalToolbar:not([customizing]){
-  position: fixed;
-  display: block;
-  margin-bottom: 0px !important;
+  min-height: 0 !important;
+  margin-bottom: 0;
+  height: 0;
+  overflow-y: visible !important;
+  z-index: 2;
+  padding-inline: 0 !important;
+}
+#personal-bookmarks{
+  background: inherit;
+  height: min-content;
+}
+#PlacesToolbarDropIndicatorHolder{
+  pointer-events: none !important;
 }
 */
