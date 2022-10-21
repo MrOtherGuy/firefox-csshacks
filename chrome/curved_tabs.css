@@ -16,6 +16,7 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab{
   padding-inline: 0px !important; /* By default, proton tabs have 2px + 2px = 4px space between them */
+  overflow: visible !important;
 }
 .tab-background{
   overflow: hidden !important;
@@ -38,17 +39,20 @@ See the above repository for updates as well as full license text. */
   content: "";
   fill: color-mix(in srgb, currentColor 11%, transparent);
   -moz-context-properties: fill,stroke,stroke-opacity;
-  left: calc(0px - var(--uc-tab-curve-size));
+  left: calc(1px - var(--uc-tab-curve-size));
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgc3Ryb2tlLXdpZHRoPSIxLjEiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDE3IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMCAxNyBMMCAxNiBBMTYgMTYgMCAwIDAgMTYgMCBMIDE4IDAgTCAxOCAxNyBaIiBmaWxsPSJjb250ZXh0LWZpbGwiPjwvcGF0aD4NCiAgPHBhdGggZD0iTTAgMTYgQTE2IDE2IDAgMCAwIDE2IDAiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIHN0cm9rZS1vcGFjaXR5PSJjb250ZXh0LXN0cm9rZS1vcGFjaXR5IiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9wYXRoPg0KPC9zdmc+"),var(--lwt-header-image, none);
   background-size: var(--uc-tab-curve-size),0;
   background-repeat: no-repeat,no-repeat;
   background-position-y: bottom, bottom -1px;
-  background-position-x: -1px,auto;
+  background-position-x: 0,0;
   transform: scaleY(var(--uc-tab-vertical-transform));
   stroke-opacity: var(--uc-curve-stroke-opacity);
   z-index:1;
   pointer-events: none;
   background-origin: border-box;
+}
+.tabbrowser-tab:hover > .tab-stack::before{
+  left: calc(0px - var(--uc-tab-curve-size));
 }
 :root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::before,
 :root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::after{
@@ -68,10 +72,14 @@ See the above repository for updates as well as full license text. */
   fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
 }
 
-.tabbrowser-tab:hover > .tab-stack::after,
-.tabbrowser-tab[selected] > .tab-stack::after{
+.tabbrowser-tab:hover > .tab-stack::after{
   left: auto;
   right: calc(0px - var(--uc-tab-curve-size));
+  transform: scaleX(-1);
+}
+.tabbrowser-tab[selected] > .tab-stack::after{
+  left: auto;
+  right: calc(1px - var(--uc-tab-curve-size));
   transform: scaleX(-1);
 }
 
