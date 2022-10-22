@@ -8,26 +8,37 @@ See the above repository for updates as well as full license text. */
   :root:not([inDOMFullscreen]){
     --uc-vertical-toolbar-width: 60px;
   }
-
+  #navigator-toolbox{ position: relative }
   #PersonalToolbar{
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
+    top: 100%;
     left: 0;
     width: var(--uc-vertical-toolbar-width,0);
-    
+    min-width: unset !important;
     /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
     height: 100vh;
     max-height: 100vh !important; 
     padding-bottom: 120px !important;
   }
+  #PersonalToolbar #PlacesChevron{
+    display: none;
+  }
+  #PersonalToolbar > #personal-bookmarks{
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: 100vh;
+  }
 
-  #personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
-
-  #PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox{ -moz-box-orient: vertical !important; }
+  #PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox{
+    -moz-box-orient: vertical !important;
+  }
   #PersonalToolbar #PlacesToolbarItems{
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none;
   }
   #PersonalToolbar #PlacesToolbarItems > toolbarseparator{
     height: 7px;
@@ -36,13 +47,19 @@ See the above repository for updates as well as full license text. */
     border-block: 3px solid transparent !important;
   }
   #PersonalToolbar .toolbarbutton-1{ padding-block: 10px !important }
-  #PersonalToolbar #PlacesToolbarItems > .bookmark-item{ padding-block: 4px !important; }
+  #PersonalToolbar #PlacesToolbarItems > .bookmark-item{
+    padding-block: 4px !important;
+    margin-inline: 0 !important;
+  }
   
-
-:root:not([chromehidden~="toolbar"]) body > #browser,
-:root:not([chromehidden~="toolbar"]) body > #browser-bottombox,
-:root:not([chromehidden~="toolbar"]) #customization-container{
+  #browser,
+  #browser-bottombox,
+  #customization-container{
     margin-left: var(--uc-vertical-toolbar-width,0);
   }
-
+  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser,
+  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser-bottombox,
+  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
+    margin-left: 0;
+  }
 }
