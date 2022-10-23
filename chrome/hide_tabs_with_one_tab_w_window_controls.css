@@ -16,7 +16,7 @@ Window controls will be all wrong without it
 */
 
 :root{
-  --uc-menubar-height: 28px; /* adjust as necessary */
+  --uc-menubar-vertical-overlap: 28px; /* adjust as necessary */
 }
 #titlebar{ -moz-appearance: none !important; }
 /* We'll use window controls from menubar instead */
@@ -75,10 +75,10 @@ Window controls will be all wrong without it
 }
 
 /* Window controls in nav-bar */
-:root:not([customizing]) #toolbar-menubar[inactive]{
+:root[tabsintitlebar]:not([customizing]) #toolbar-menubar[inactive]{
   height: initial !important;
   min-height: initial !important;
-  margin-bottom: calc(0px - var(--uc-menubar-height,28px)) !important;
+  margin-bottom: calc(0px - var(--uc-menubar-vertical-overlap,0px)) !important;
 }
 
 :root:not([customizing]) #toolbar-menubar[autohide][inactive] > #menubar-items{ pointer-events: none; opacity: 0 }
