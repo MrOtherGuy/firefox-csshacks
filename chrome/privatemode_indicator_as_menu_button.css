@@ -3,6 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Removes the private-browsing-mode indicator from tabs toolbar and changes the menu-button icon to the private-browsing indicator in private windows */
 
+#private-browsing-indicator-with-label,
 .private-browsing-indicator{ display: none }
 :root[privatebrowsingmode="temporary"] #PanelUI-menu-button{
   list-style-image: url("chrome://global/skin/icons/indicator-private-browsing.svg") !important;
