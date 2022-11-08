@@ -31,4 +31,7 @@ See the above repository for updates as well as full license text. */
 #PlacesChevron{ display: none }
 
 /* Add some spacing between rows */
-#PlacesToolbarItems > .bookmark-item{ margin: var(--multirow-bmb-row-margin) 3px !important;  }
+#PlacesToolbarItems > .bookmark-item{
+  margin: var(--multirow-bmb-row-margin) 3px !important;
+  visibility: visible !important; /* Just in case they would be hidden for some reason */
+}
