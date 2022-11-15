@@ -33,6 +33,7 @@ findbar > .findbar-container{
   -moz-box-direction: reverse;
   border-left-width: 1px;
   border-bottom-left-radius: 4px;
+  height: initial !important;
 }
 
 .findbar-find-status{
@@ -46,6 +47,7 @@ findbar > .findbar-container{
   margin: 0 !important;
   border-radius: 0 !important;
   padding: 5px !important;
+  width: initial !important;
 }
 .findbar-closebutton > image{ padding: 3px }
 .findbar-closebutton:hover > image{
