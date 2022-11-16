@@ -28,6 +28,14 @@ See the above repository for updates as well as full license text. */
 #sidebar-header{
   overflow: hidden;
   color: var(--chrome-color, inherit) !important;
+  padding-inline: 0 !important;
+}
+
+#sidebar-header::before,
+#sidebar-header::after{
+  content: "";
+  display: -moz-box;
+  padding-left: 8px;
 }
 
 #sidebar-switcher-target{
