@@ -1,0 +1,32 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_urlbar_one-off_items.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes one-off search buttons in the urlbar popup show vertically to the right of results */
+
+#urlbar[open="true"] > .urlbarView{
+  display: flex !important;
+}
+.urlbarView-body-outer{
+  width: calc(100% - 2 * (5px + var(--urlbar-container-padding)) - 30px); !important;
+}
+#urlbar .search-one-offs{
+  width: 40px !important;
+  flex-direction: column;
+  align-items: stretch !important;
+}
+.search-panel-one-offs,
+.search-panel-one-offs-container{
+  flex-direction: column !important;
+  min-width: unset !important;
+  align-items: stretch !important;
+  justify-content: start !important;
+}
+#urlbar .searchbar-engine-one-off-item{
+  min-width: unset !important;
+  margin-inline: 0 !important;
+  align-self: unset !important;
+}
+.search-panel-one-offs .searchbar-engine-one-off-item{
+  min-height: 40px !important;
+}
+.search-panel-one-offs-header{ display: none !important }
