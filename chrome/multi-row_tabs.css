@@ -23,6 +23,7 @@ See the above repository for updates as well as full license text. */
 /* Uncommenting the above makes you unable to drag the window from empty space in the tab strip but normal draggable spaces will continue to work */
 
 #tabbrowser-tabs{
+  height: 1px !important;
   min-height: unset !important;
   padding-inline-start: 0px !important
 }
