@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
   max-height: none !important;
 }
 
-#PlacesToolbar > hbox{ 
+#PlacesToolbar > hbox:not(#PlacesToolbarDropIndicatorHolder){ 
   display: block;
   width: 100vw;
 }
