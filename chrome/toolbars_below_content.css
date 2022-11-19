@@ -7,9 +7,6 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
   
-  /* Dummy variable to support versions 94-96, can be removed when 96 lands */
-  :root{ --lwt-frame: var(--lwt-accent-color) }
-  
   #titlebar{ -moz-appearance: none !important; }
 
   #navigator-toolbox > div{ display: contents }
@@ -60,7 +57,7 @@ See the above repository for updates as well as full license text. */
   /* These three rules exist for compatibility with autohide_toolbox.css */
   #navigator-toolbox{ bottom: 0px; transform-origin: bottom }
   #main-window > body > box{ margin-top: 0 !important; }
-  #toolbar-menubar{ z-index: 1; background-color: var(--lwt-frame,black); }
+  #toolbar-menubar{ z-index: 1; background-color: var(--lwt-accent-color,black); }
   
   /**************
   Menubar options - By default, menubar is overlayed on top of web-content

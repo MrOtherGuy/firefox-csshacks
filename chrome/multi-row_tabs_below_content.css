@@ -18,9 +18,6 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
   
-  /* Dummy variable to support versions 94-96, can be removed when 96 lands */
-  :root{ --lwt-frame: var(--lwt-accent-color) }
-  
   :root{
     --multirow-toolbar-height: 40px;
     --multirow-top-padding: 0px;
@@ -119,7 +116,7 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar:hover{ z-index: 2 }
   #toolbar-menubar:hover > #menubar-items{
     visibility: visible;
-    background-image: linear-gradient( to left,transparent,var(--lwt-frame) 35px);
+    background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
   }
 
   #toolbar-menubar > .titlebar-buttonbox-container{
@@ -195,7 +192,7 @@ See the above repository for updates as well as full license text. */
   .tabbrowser-tab > stack{ width: 100%; height: 100%; }
 
   /* This should fix potential flash that could occur when bottom border is hovered to show tabs in fullscreen mode */
-  #tabbrowser-tabpanels{ background-color: var(--lwt-frame) !important; }
+  #tabbrowser-tabpanels{ background-color: var(--lwt-accent-color) !important; }
 
   /* remove bottom margin so it doesn't throw off row height computation */
   #tabs-newtab-button{ margin-bottom: 0 !important; }

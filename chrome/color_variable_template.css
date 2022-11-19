@@ -9,7 +9,6 @@ See the above repository for updates as well as full license text. */
   --arrowpanel-color: cyan !important;
   --arrowpanel-dimmed: rgba(0,0,0,0.4) !important;
   /* window and toolbar background */
-  --lwt-frame: red !important; /* pre fx94 */
   --lwt-accent-color: red !important;
   --lwt-accent-color-inactive: green !important;
   --toolbar-bgcolor: rgba(0,0,0,0.4) !important;  

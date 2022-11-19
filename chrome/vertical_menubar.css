@@ -8,9 +8,6 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
 
-  /* Dummy variable to support versions 94-96, can be removed when 96 lands */
-  :root{ --lwt-frame: var(--lwt-accent-color) }
-
   :root{
     --uc-vertical-menubar-width: 36px;
   }
@@ -46,7 +43,7 @@ See the above repository for updates as well as full license text. */
     width: var(--uc-vertical-menubar-width);
     -moz-box-orient: vertical;
     flex-grow: 1;
-    background-color: var(--lwt-frame);
+    background-color: var(--lwt-accent-color);
   }
 
   #toolbar-menubar > .titlebar-buttonbox-container,
@@ -60,7 +57,7 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar:not([customizing]) #main-menubar{
     -moz-box-orient: vertical;
     margin-left: -40px;
-    background-color: var(--lwt-frame);
+    background-color: var(--lwt-accent-color);
   }
 
   :root:not([inDOMFullscreen]) #browser{ margin-right: var(--uc-vertical-menubar-width) }

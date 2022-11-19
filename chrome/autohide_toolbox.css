@@ -15,9 +15,6 @@ See the above repository for updates as well as full license text. */
   --uc-toolbox-rotation: 88.5deg;
 }
 
-/* Dummy variable to support versions 94-96, can be removed when 96 lands */
-:root{ --lwt-frame: var(--lwt-accent-color) }
-
 @media  (-moz-platform: windows),
         (-moz-os-version: windows-win7),
         (-moz-os-version: windows-win10){
@@ -31,7 +28,7 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox{
   position: fixed !important;
   display: block;
-  background-color: var(--lwt-frame,black) !important;
+  background-color: var(--lwt-accent-color,black) !important;
   transition: transform 82ms linear, opacity 82ms linear !important;
   transition-delay: var(--uc-autohide-toolbox-delay) !important;
   transform-origin: top;

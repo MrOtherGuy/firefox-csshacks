@@ -7,9 +7,6 @@ See the above repository for updates as well as full license text. */
  * Does NOT support toolbar buttons/items in menubar when in disabled mode.
  */
 
-/* Dummy variable to support versions 94-96, can be removed when 96 lands */
-:root{ --lwt-frame: var(--lwt-accent-color) }
-
 #toolbar-menubar{
   --uc-menubaritem-height: 28px;
   --uc-menubaritem-width: 40px;
@@ -23,7 +20,7 @@ menubar:hover > menu,
   display: block;
   position: fixed;
   z-index: 10;
-  background-color: var(--lwt-frame);
+  background-color: var(--lwt-accent-color);
   inset-inline-start: 0;
 }
 menubar{ -moz-box-orient: vertical; }

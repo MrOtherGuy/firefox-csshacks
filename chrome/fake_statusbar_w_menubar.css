@@ -22,9 +22,6 @@ See the above repository for updates as well as full license text. */
     visibility: visible;
   }*/
   
-  /* Dummy variable to support versions 94-96, can be removed when 96 lands */
-  :root{ --lwt-frame: var(--lwt-accent-color) }
-  
   #navigator-toolbox{
     margin-top: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px))
   }
@@ -35,7 +32,7 @@ See the above repository for updates as well as full license text. */
     position: fixed;
     display: flex;
     width: 100vw;
-    background-color: var(--lwt-frame);
+    background-color: var(--lwt-accent-color);
   }
 
   #TabsToolbar{
@@ -71,7 +68,7 @@ See the above repository for updates as well as full license text. */
   #statuspanel-label{
     height:3em;
     min-width: 1000px;
-    background-color: var(--lwt-frame, hsla(0,0%,100%,.8)) !important;
+    background-color: var(--lwt-accent-color, hsla(0,0%,100%,.8)) !important;
     border: none !important;
     font-size: inherit;
     color: inherit !important;

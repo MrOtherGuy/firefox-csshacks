@@ -9,9 +9,6 @@ See the above repository for updates as well as full license text. */
 
 /* Constant animation WILL increase CPU usage */
 
-/* Dummy variable to support versions 94-96, can be removed when 96 lands */
-:root{ --lwt-frame: var(--lwt-accent-color) }
-
 @media (-moz-platform: windows){
 /* Increase tab minimum height by 2px on Windows as a workaround for titlebar being unable to collapse below 31px height */
   :root[uidensity="compact"]{ --tab-min-height: 31px !important; }
@@ -47,7 +44,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
   display: -moz-box;
   -moz-box-flex: 1 !important;
   position: relative;
-  background-color: var(--lwt-frame);
+  background-color: var(--lwt-accent-color);
   margin-bottom: 1px;
 }
 
@@ -59,7 +56,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
 #scrollbutton-up,
 #scrollbutton-down,
 #tabbrowser-tabs ~ toolbarbutton{
-  background-color: var(--lwt-frame) !important;
+  background-color: var(--lwt-accent-color) !important;
   margin-bottom: 1px !important;
   opacity: 1 !important;
   position: relative;
@@ -67,7 +64,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
 .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected]),
 .tab-background[multiselected]:not([selected]){
   background-image: linear-gradient(color-mix(in srgb, currentColor 11%, transparent),color-mix(in srgb, currentColor 11%, transparent)) !important;
-  background-color: var(--lwt-frame) !important;
+  background-color: var(--lwt-accent-color) !important;
 }
 
 .tabbrowser-tab:not([selected]){ min-height: calc(var(--tab-min-height) - 1px) !important;  }
