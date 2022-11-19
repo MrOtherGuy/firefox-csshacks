@@ -33,20 +33,14 @@ Window controls will be all wrong without it
 }
 #toolbar-menubar > spacer{ pointer-events: none }
 
-:root:not([customizing]) #tabs-newtab-button{
-  -moz-appearance: none !important;
-  height: 0px;
-  padding-block: 0px !important;
-  -moz-box-align: stretch;
-  margin: 0 !important;
+#tabs-newtab-button{
+  display: none;
 }
 /* Need to hide private-browsing indicators, but you can still use privatemode_indicator_as_menu_button.css */
 #private-browsing-indicator,
 #private-browsing-indicator-with-label{
   display: none;
 }
-
-#tabs-newtab-button{ transform: scale(0.8); border-radius: var(--tab-border-radius); }
 
 .accessibility-indicator,
 .private-browsing-indicator{ 
@@ -61,17 +55,6 @@ Window controls will be all wrong without it
   visibility: collapse;
   min-height: 0 !important;
   height: 0;
-}
-
-/* Button re-styling */
-#tabs-newtab-button:hover,
-#tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
-
-#tabs-newtab-button > .toolbarbutton-icon,
-#tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
-  padding: 0 !important;
-  transform: scale(0.6);
-  background-color: transparent !important;
 }
 
 /* Window controls in nav-bar */
