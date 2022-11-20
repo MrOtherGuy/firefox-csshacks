@@ -27,7 +27,17 @@ See the above repository for updates as well as full license text. */
     --uc-window-drag-space-width: 30px;
     --uc-window-control-width: 138px;
   }
-
+  :root[inFullscreen]{
+    --uc-window-drag-space-width: 0px;
+  }
+  @media (-moz-gtk-csd-available){
+    :root{
+      --uc-window-control-width:  94px;
+    }
+  }
+  #main-window[tabsintitlebar]{
+    background-color: var(--toolbar-bgcolor,accentcolor) !important;;
+  }
   :root[uidensity="compact"]{ --multirow-toolbar-height: 34px }
   :root{ border-top-width: 0px !important }
 
@@ -35,7 +45,9 @@ See the above repository for updates as well as full license text. */
     -moz-box-ordinal-group: 2;
     border-bottom: 0px !important;
   }
-  
+  #navigator-toolbox{
+    border-bottom: none !important;
+  }
   /* Re-order window and tab notification boxes */
   #navigator-toolbox > div{ display: contents }
   .global-notificationbox,
@@ -59,36 +71,40 @@ See the above repository for updates as well as full license text. */
     width: calc(100vw - var(--uc-window-control-width) - var(--uc-window-drag-space-width));
   }
 
-  :root[inFullscreen] #TabsToolbar > #window-controls{
-    display: flex !important;
-    justify-content: flex-end;
-    position: fixed;
-    right: 0;
-    width: 138px;
-    height: var(--multirow-toolbar-height);
-    background:var(--toolbar-bgcolor);
-  }
-
+  #TabsToolbar > .titlebar-buttonbox-container{
+    display: none !important;
+  }  
   /* Fix incorrect vertical alignment with megabar */
   #urlbar[breakout]{ --urlbar-toolbar-height: var(--multirow-toolbar-height) !important; }
 
   /* Fix customization view */
   #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
-
+  
+  /* Fullscreen mode support */
   #customization-container,
   :root:not([inFullscreen]) #content-deck,
   :root:not([inFullscreen]) #browser{
-    margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height,0px))
+    margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height,0px));
   }
-
-  :root[inFullscreen] #TabsToolbar > #window-controls,
   :root[inFullscreen] #toolbar-menubar,
-  :root[inFullscreen] #nav-bar{ top: calc(1px - (var(--multirow-toolbar-height) + var(--multirow-top-padding))) }
-
-  :root[inFullscreen] #navigator-toolbox:hover > #titlebar > #TabsToolbar > #window-controls,
+  :root[inFullscreen] #nav-bar{
+    top: calc(1px - (var(--multirow-toolbar-height) + var(--multirow-top-padding)));
+  }
   :root[inFullscreen] #navigator-toolbox:hover > #nav-bar,
-  :root[inFullscreen] #navigator-toolbox:hover > #titlebar > #toolbar-menubar{ top: 0px }
-
+  :root[inFullscreen] #navigator-toolbox:hover > #titlebar > #toolbar-menubar{
+    top: 0px;
+  }
+  #navigator-toolbox[inFullscreen]{
+    margin-top: 0 !important;
+  }
+  #navigator-toolbox[inFullscreen][style*="margin-top"]:not(:hover){
+    max-height: 0px;
+  }
+  #fullscr-toggler{ bottom: 0; top: unset !important; }
+  :root[inFullscreen] #navigator-toolbox:hover #toolbar-menubar{
+    pointer-events: none !important;
+  }
+  
   /* Restyle nav-bar and menubar */
   #nav-bar-customization-target{ flex-grow: 1 }
 
@@ -101,6 +117,7 @@ See the above repository for updates as well as full license text. */
     display: flex;
     visibility: visible !important;
     top: var(--multirow-top-padding);
+    padding-top: 0 !important;
     width: 100vw;
     color: var(--lwt-text-color);
     background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
@@ -118,13 +135,16 @@ See the above repository for updates as well as full license text. */
     visibility: visible;
     background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
   }
-
+  #toolbar-menubar:not(:hover,[customizing]) *{-moz-window-dragging: drag !important;}
   #toolbar-menubar > .titlebar-buttonbox-container{
     background: var(--toolbar-bgcolor);
     order:1000;
   }
   #menubar-items + spacer{ order: 1000 }
-  #toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100% ;}
+  #toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{
+    height: 100%;
+    pointer-events: auto !important;
+  }
 
   #main-menubar:last-child{ padding-inline-end: 40px }
   #toolbar-menubar > toolbarspring {
@@ -196,10 +216,9 @@ See the above repository for updates as well as full license text. */
 
   /* remove bottom margin so it doesn't throw off row height computation */
   #tabs-newtab-button{ margin-bottom: 0 !important; }
-
+  
   /* Hide some things that are unnecessary in multi-row below content mode */
 
-  #TabsToolbar > #window-controls,
   #alltabs-button,
   :root:not([customizing]) #TabsToolbar #new-tab-button,
   #tabbrowser-arrowscrollbox > spacer,
