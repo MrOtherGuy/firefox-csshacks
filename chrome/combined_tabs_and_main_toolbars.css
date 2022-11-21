@@ -6,6 +6,10 @@ See the above repository for updates as well as full license text. */
 
 /* You WILL NEED either autohide_menubar.css or overlay_menubar.css with this or use custom css that does something similar */  
 
+#navigator-toolbox{
+  --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
+}
+
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{ display: none !important; }
 #toolbar-menubar{ left:0 }
 
@@ -33,21 +37,38 @@ See the above repository for updates as well as full license text. */
   flex-wrap: wrap;
 }
 
-#titlebar{ -moz-appearance: none !important; }
+#titlebar{
+  -moz-appearance: none !important;
+  flex-grow: 1;
+}
+ 
+.scrollbox-clip[orient="horizontal"]{
+  contain: none !important;
+}
 :root[tabsintitlebar="true"] #nav-bar{ padding-left: 20px }
 
-#nav-bar,#PersonalToolbar{ flex-grow: 1; }
+#nav-bar,
+#PersonalToolbar{ flex-grow: 1000; }
 
-/* This margin on bookmarks toolbar makes absolutely no sense, but it won't work properly without it */
+/* Fx <108 only, this margin on bookmarks toolbar makes absolutely no sense, but it won't work properly without it.  */
+/*
 .browser-toolbar.chromeclass-directories:not([collapsed="true"]){
   min-width: 100vw !important;
-  margin-bottom: var(--tab-min-height);
+  margin-bottom: calc(2 * var(--tab-block-margin) + var(--tab-min-height));
 }
-/* reduce urlbar minimum width before things start to go to overflow menu */
-#urlbar-container{ min-width: 300px !important; }
+*/
+/* reduce urlbar minimum width. If urlbar would become narrower then main-toolbar wraps to second line */
+#urlbar-container{ min-width: 250px !important; }
 
 #TabsToolbar > .titlebar-spacer[type="pre-tabs"]{ display: none !important; }
-#alltabs-button{ display: -moz-box !important }
+
 .tabbrowser-tab{ margin-inline-start: 0 !important }
-/* If you are only working with just a few tabs then you may safely delete the following to allow non-pinned tabs to be shown */
-.tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
+
+/* Make opened urlbar overlay the toolbar */
+#urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
+
+/* Set this pref if you want unpinned tabs to become hidden unless selected */
+@supports -moz-bool-pref("userchrome.hide-unpinned-tabs.enabled"){
+  #alltabs-button{ display: -moz-box !important }
+  .tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
+}
