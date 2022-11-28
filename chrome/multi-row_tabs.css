@@ -46,7 +46,7 @@ See the above repository for updates as well as full license text. */
 .scrollbox-clip[orient="horizontal"],
 #tabbrowser-arrowscrollbox{
   overflow: -moz-hidden-unscrollable;
-  display: block;
+  display: inline;
   --scrollbutton-display-model: none;
 }
 
