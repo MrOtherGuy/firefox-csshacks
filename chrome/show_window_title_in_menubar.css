@@ -7,18 +7,19 @@ See the above repository for updates as well as full license text. */
   :root:not([sizemode="fullscreen"]) > head{
     display: block;
     position: fixed;
+    top: 2px;
     right: 140px; /* Space for window controls */
     width: calc(100vw - 440px); /* Window width - window control width - menuitem (English) width */
     text-align: center;
     z-index: 1;
     pointer-events: none;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
   }
   head > *{ display: none }
   head > title{
-    display: -moz-inline-box;
-    padding-top: 1px;
+    display: contents;
     max-width: 50vw;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
