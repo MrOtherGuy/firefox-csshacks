@@ -35,6 +35,25 @@ See the above repository for updates as well as full license text. */
     --uc-window-control-width: 84px;
   }
 }
+@media (-moz-gtk-csd-reversed-placement){
+  :root:is([tabsintitlebar][sizemode="fullscreen"]) {
+  --uc-window-drag-space-post: 0px; /* right side 0px in fullscreen*/
+}
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+    --uc-window-control-width: 0px !important;
+    --uc-window-control-width-left: 84px !important;
+  }
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
+:root[sizemode="fullscreen"] #window-controls{
+    left: 0px;
+    }
+/* left space from "back" button for window controls */
+:root:not([chromehidden~="toolbar"]) #back-button{
+    display: block !important;
+    padding-inline-start: 0px !important;
+    margin-left: var(--uc-window-control-width-left, 0px) !important;
+  }
+}
 
 /* macOS settings are further below */
 .titlebar-buttonbox, #window-controls{ color: var(--toolbar-color) }
