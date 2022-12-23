@@ -8,7 +8,9 @@ See the above repository for updates as well as full license text. */
 /*
 urlbar_popup_full_width.css is VERY MUCH recommended for Firefox 71+ because of new urlbar popup
 */
-
+:root[tabsintitlebar][sizemode="normal"]{
+  --uc-window-drag-space-width: 24px;
+}
 :root[uidensity="compact"]{
   --tab-block-margin: 2px !important;
 }
@@ -51,12 +53,24 @@ urlbar_popup_full_width.css is VERY MUCH recommended for Firefox 71+ because of 
 }
 
 /* Window drag space  */
-:root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important }
+:root[tabsintitlebar="true"] #nav-bar{ padding-left: var(--uc-window-drag-space-width) !important }
 
-/* Rules specific to window controls on right layout */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
-  :root[tabsintitlebar="true"] #nav-bar{ padding-left: 96px !important; padding-right: 0px !important; }
+/* Rules for window controls on left layout */
+
+@media (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  .titlebar-buttonbox-container{
+    position: fixed;
+    display: flex;
+    left: 0px;
+    z-index: 3;
+    height: var(--uc-toolbar-height);
+    align-items: center
+  }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-window-drag-space-width,0px) + 84px) 0px !important; }
+}
+@media (-moz-platform: macos){
+  :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-window-drag-space-width,0px) + 72px) 0px !important; }
 }
 
 /* 1px margin on touch density causes tabs to be too high */

@@ -23,8 +23,11 @@ linux_gtk_window_control_patch.css
   right:0;
   height: 40px;
 }
-/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+@media (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+@supports -moz-bool-pref("userchrome.window-controls-on-left.enabled"){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 

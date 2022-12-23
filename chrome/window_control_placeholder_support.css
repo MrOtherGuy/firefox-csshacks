@@ -35,8 +35,12 @@ See the above repository for updates as well as full license text. */
     --uc-window-control-width: 84px;
   }
 }
+@media (-moz-platform: macos){
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+    --uc-window-control-width: 72px;
+  }
+}
 
-/* macOS settings are further below */
 .titlebar-buttonbox, #window-controls{ color: var(--toolbar-color) }
 :root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none }
 :root[sizemode="fullscreen"] #navigator-toolbox { position: relative; }
@@ -59,15 +63,24 @@ See the above repository for updates as well as full license text. */
   border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px));
 }
 
-/* Use this pref to check Mac OS where window controls are on left */
-/* This pref defaults to true on Mac and doesn't actually do anything on other platforms. So if your system has window controls on LEFT side you can set the pref to true */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
-    --uc-window-control-width: 72px;
-  }
-  :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+/* Rules for window controls on left layout */
+@media (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  :root[tabsintitlebar="true"] #nav-bar{
     border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
   }
   :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
   :root[sizemode="fullscreen"] #window-controls{ right: unset }
 }
+
+/* This pref can be used to force window controls on left even if that is not normal behavior on your OS */
+@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
+  :root[tabsintitlebar="true"] #nav-bar{
+    border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
+  }
+  :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
+  :root[sizemode="fullscreen"] #window-controls{ right: unset; }
+  .titlebar-buttonbox-container{ -moz-box-ordinal-group: 0 !important; }
+  .titlebar-buttonbox{ -moz-box-direction: reverse }
+}
+

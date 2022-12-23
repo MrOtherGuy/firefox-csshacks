@@ -32,6 +32,6 @@ See the above repository for updates as well as full license text. */
   background-image: linear-gradient(to right, var(--arrowpanel-background) 30%, transparent);
 }
 
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+@media (-moz-gtk-csd-reversed-placement){
   #toolbar-menubar[autohide="true"]:not([inactive]) > .titlebar-buttonbox-container{ display: none }  
 }
