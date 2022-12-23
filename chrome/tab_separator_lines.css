@@ -10,7 +10,7 @@ See the above repository for updates as well as full license text. */
     color-mix(in srgb, currentColor 20%, transparent) 20%,
     color-mix(in srgb, currentColor 20%, transparent) 80%,
     transparent 80%
-  );
+  ) !important;
 }
 
 .tabbrowser-tab:hover,
