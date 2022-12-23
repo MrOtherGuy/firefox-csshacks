@@ -27,7 +27,7 @@ linux_gtk_window_control_patch.css
        (-moz-platform: macos){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
-@supports -moz-bool-pref("userchrome.window-controls-on-left.enabled"){
+@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
