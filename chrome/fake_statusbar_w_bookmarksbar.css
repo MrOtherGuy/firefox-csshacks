@@ -77,3 +77,9 @@ See the above repository for updates as well as full license text. */
 #statuspanel[type="status"] { color: skyblue }
 
 #statuspanel-label[value^="https"]{ color: var(--toolbar-field-color, black) !important; }
+
+/* These should make sure that there is some opaque color covering the real statuspanel - necessary when RFP letterboxing is enabled */
+.browserContainer,
+.browserSidebarContainer{
+  background-color: inherit;
+}

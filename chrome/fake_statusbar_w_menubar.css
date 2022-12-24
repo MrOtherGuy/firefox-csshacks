@@ -3,7 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Creates a statusbar by using menubar */
 /* Since it's really the menubar this won't work if you also want the menubar on top of the screen */
-/* Ho */
+
 /* The setup requires few things:
 1. Put the preferences button to the LEFT of the menubar items
 2. Put a single toolbarspring next to the menubar items on RIGHT side
@@ -97,4 +97,11 @@ See the above repository for updates as well as full license text. */
   :root[inFullscreen] :is(#customization-container,#content-deck,#browser){
     margin-bottom: 0px;
   }
+  
+  /* These should make sure that there is some opaque color covering the real statuspanel - necessary when RFP letterboxing is enabled */
+  .browserContainer,
+  .browserSidebarContainer{
+    background-color: inherit;
+  }
+  
 }
