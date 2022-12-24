@@ -81,8 +81,16 @@ Window controls will be all wrong without it
 #nav-bar{ border-left-width: 0px !important }
 #nav-bar::before{ display:none !important }
 
-/* Rules specific to window controls on right layout */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+/* Rules specific to window controls on left layout */
+@media (-moz-platform: macos),
+       (-moz-gtk-csd-reversed-placement){
+  :root:not([inFullscreen]) #TabsToolbar-customization-target > .titlebar-spacer[type="pre-tabs"]{
+    width: var(--uc-window-drag-space-post) !important;
+    display: -moz-box !important; 
+  }
+  #TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box; }
+}
+@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
   :root:not([inFullscreen]) #TabsToolbar-customization-target > .titlebar-spacer[type="pre-tabs"]{
     width: var(--uc-window-drag-space-post) !important;
     display: -moz-box !important; 
