@@ -3,7 +3,10 @@ See the above repository for updates as well as full license text. */
 
 /* Shows both icon and label for toolbarbuttons */
 
-toolbar .toolbarbutton-1[label]{ -moz-box-orient: vertical }
+toolbar .toolbarbutton-1[label]{
+  -moz-box-orient: vertical;
+  -moz-box-align: center !important;
+}
 
 toolbar .toolbarbutton-1[label]:not([disabled]):hover{ background-color: var(--toolbarbutton-hover-background) !important; }
 
@@ -22,8 +25,7 @@ toolbar .toolbarbutton-1[label] > .toolbarbutton-text {
   min-height: 16px !important;
   padding-top: 0px !important;
   background-color: transparent !important;
-  /*max-width: 70px;*/  /* Set maximium button width here if wanted  */
+  overflow: hidden;
+  width: 12ch;
 }
 :root:not([uidensity="compact"]) toolbar .toolbarbutton-1[label] > .toolbarbutton-text{ padding: 2px !important; }
-
-#back-button{ padding: 0px var(--toolbarbutton-outer-padding) !important; border-radius: 0px !important; }
