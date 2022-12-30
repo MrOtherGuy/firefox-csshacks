@@ -3,7 +3,6 @@ See the above repository for updates as well as full license text. */
 
 @-moz-document media-document(image){
   @media not print {
-    
     :root{
       background-color: #232325 !important; /* set solid color background */
       background-image: none !important; /* remove default background */

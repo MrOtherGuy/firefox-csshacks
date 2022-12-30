@@ -55,11 +55,13 @@ See the above repository for updates as well as full license text. */
   
   #browser,
   #browser-bottombox,
+  #main-window > body::after, /* This selector is for compatibility with tabs_below_content.css */
   #customization-container{
     margin-left: var(--uc-vertical-toolbar-width,0);
   }
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser,
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser-bottombox,
+  #main-window:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body::after,
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
     margin-left: 0;
   }
