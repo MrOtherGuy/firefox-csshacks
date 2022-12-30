@@ -10,31 +10,32 @@ See the above repository for updates as well as full license text. */
 
 /* Toolbar buttons/items will be aligned to the right edge of the loading bar. If you wish to align them to the right edge, then add another flex-space after the first one */
 
-:root:not([inFullscreen]) > body{ --uc-browser-base-padding: calc(2 * var(--toolbarbutton-inner-padding) + 16px) }
+:root:not([inFullscreen]) > body{
+  --uc-browser-base-padding: calc(2 * var(--toolbarbutton-inner-padding) + 16px);
+  --uc-statusbar-text-vertical-position: 5px;
+}
+
+:root[uidensity="compact"]:not([inFullscreen]) > body{
+  --uc-statusbar-text-vertical-position: 3px;
+}
+
+:root:not([inFullscreen]) > body::after{
+  content: "";
+  display: -moz-box;
+  margin-bottom: calc(1px + var(--uc-browser-base-padding)) !important;
+}
 
 #PersonalToolbar{
   position: fixed;
   display: flex;
   bottom: 0;
   width: 100vw;
-}
-
-:root:not([inFullscreen]) #browser-bottombox{
-  margin-bottom: calc(5px + var(--uc-browser-base-padding)) !important;
-}
-
-#PersonalToolbar > toolbarbutton{ padding: 0 var(--toolbarbutton-outer-padding) !important; } 
-
-#PersonalToolbar > toolbarbutton > .toolbarbutton-icon,
-#PersonalToolbar > toolbarbutton > .toolbarbutton-badge-stack{
-  width: var(--uc-browser-base-padding,0px) !important;
-  height: var(--uc-browser-base-padding,0px) !important;
-  padding: var(--toolbarbutton-inner-padding) !important;
+  border-top: 1px solid var(--chrome-content-separator-color);
 }
 
 #personal-toolbar-empty + toolbarspring,
 #PersonalToolbar > :first-child + toolbarspring{
-  background-position: left 8px;
+  background-position: left var(--uc-statusbar-text-vertical-position);
   background-repeat: no-repeat;
   background-image: -moz-element(#statuspanel);
   max-width: 50vw !important; /* Modify this to let the status bar grow larger than 50% of window width */
@@ -43,6 +44,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #personal-toolbar-empty{ visibility: hidden; }
+#PersonalToolbar .toolbarbutton-1{ -moz-box-align: center !important; }
 
 #PersonalToolbar > toolbarspring{
   flex-grow: 1;
@@ -64,16 +66,29 @@ See the above repository for updates as well as full license text. */
   border: none !important;
   font-size: inherit;
   color: inherit !important;
-  margin-right: 0px !important;
+  margin-inline: 0px !important;
+  padding-inline: 0 !important;
 }
 /* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
 #statuspanel-inner{ background-color: var(--toolbar-accent-color) }
 /*#statuspanel-inner{ background-color: var(--toolbar-non-lwt-bgcolor) }*/
 
-#statuspanel{ color: lightpink; z-index: -1; visibility: visible !important; opacity: 1 !important; }
+#statuspanel{
+  color: lightpink; /* color used to indicate insecure http:// links */
+  z-index: -1;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 #statuspanel[inactive] #statuspanel-label{ visibility: hidden }
+
 .browserStack > #statuspanel[inactive]::before,
-#statuspanel[inactive] > #statuspanel-inner::before{ content: "Done"; color: var(--toolbar-field-color, black) !important }
+#statuspanel[inactive] > #statuspanel-inner::before{
+  content: "Done";
+  display: -moz-box;
+  margin-top: 2px;
+  color: var(--toolbar-field-color, black) !important;
+}
+
 #statuspanel[type="status"] { color: skyblue }
 
 #statuspanel-label[value^="https"]{ color: var(--toolbar-field-color, black) !important; }
