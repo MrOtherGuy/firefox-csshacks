@@ -1,23 +1,34 @@
 'use strict';
 
-let DB = null;
-
-function initDB(obj){
-  DB = obj.content;
-  Object.defineProperty(DB,"query",{value:function (q,list){
+const DB = new (function(){
+  this.content = null;
+  this.query = (q,list) => {
     let nlist = [];
     for(let key of list || this.keys){
-      if(this[key].includes(q)){
+      if(this.content[key].includes(q)){
         nlist.push(key)
       }
     }
     return nlist
+  };
+  this.init = (obj) => {
+    this.content = obj
+  }
+  this._keys = null;
+  Object.defineProperty(this,"keys",{ get:() => {
+    if(this.content && !this._keys){
+      this._keys = Object.keys(this.content).sort();
+    }
+    return this._keys
   }});
-  Object.defineProperty(DB,"keys",{value:(Object.keys(DB).sort())});
-  
-  Object.defineProperty(DB,"getTagsForFile",{value:function(name){return this[name]}});
-  
-  return true
+  this.getTagsForFile = (name) => {
+    return this.content[name];
+  }    
+})();
+
+function initDB(obj){
+  window.DB = DB;
+  DB.init(obj.content);
 }
 
 function fetchWithType(url){
@@ -106,7 +117,7 @@ function getSecondaryCategories(list){
 function showMatchingTargets(fileNames,setSelected = false){
   let bonus = 0;
   for(let c of Array.from(document.querySelectorAll(".target"))){
-    if(fileNames.includes(getText(c))){
+    if(fileNames.includes(c.dataset.filename)){
       c.classList.remove("hidden");
       setSelected && selectedTarget.add(c)
     }else{
@@ -129,7 +140,7 @@ function onCategoryClicked(categoryNode,isSecondary = false){
   let fileNames = currentCategory.getFileNames(categoryNode,isSecondary);
   if(!isSecondary){
     
-    if(fileNames.length > 9){
+    if(fileNames.length > 9 && categoryNode.textContent != "legacy"){
       let matchingSecondaries = getSecondaryCategories(fileNames);
       for(let child of Array.from(secondaryCategoriesNode.children)){
         matchingSecondaries.includes(child.textContent) ? child.classList.remove("hidden") : child.classList.add("hidden")
@@ -148,7 +159,7 @@ function onCategoryClicked(categoryNode,isSecondary = false){
 async function onTargetClicked(target,append = false){
   const text = typeof target === "string"
               ? target
-              : getText(target);
+              : target.dataset.filename;
   
   fetchWithType(`chrome/${text}`)
   .then(obj => {
@@ -185,7 +196,7 @@ function onFilenameClicked(box,ctrlKey){
     if(ctrlKey){
       selectedTarget.deselect(box);
       let previewbox = document.getElementById("previewBox");
-      let preview = previewbox.getNamedSection(`chrome/${box.getAttribute("title")}.css`);
+      let preview = previewbox.getNamedSection(`chrome/${box.dataset.filename}`);
       if(preview){
         preview.remove();
       }
@@ -256,18 +267,19 @@ function createCategories(){
   const TAR_PARENT = document.getElementById("targets");
   TAR_PARENT.addEventListener("click",onSomeClicked,{passive:true});
   
-  const createNode = function(name,type){
+  const createNode = function(name,type,isDeprecated){
     let node = document.createElement("div");
     node.classList.add(type);
     if(type === "target"){
       
       let link = node.appendChild(document.createElement("a"));
       node.classList.add("hidden");
-      link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${name}`;
+      link.href = `https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/${isDeprecated?"deprecated/":""}${name}`;
       link.title = "See on Github";
       link.target = "_blank";
       const content = name.substring(0,name.lastIndexOf("."));
-      node.append(content);
+      node.appendChild(document.createElement("span")).textContent = content;
+      node.dataset.filename = `${content}.css`;
       node.setAttribute("title",content);
     }else{
       node.textContent = name.name;
@@ -276,17 +288,13 @@ function createCategories(){
     
     return node;
   }
-  
-  const createCategory = name => createNode(name,"category");
-  
-  const createTarget = name => createNode(name,"target");
 
   const CAT_NAMES = (function(){
     let list = [];
     
-    for(let key of Object.keys(DB)){
-      TAR_PARENT.appendChild(createNode(key,"target"));
-      let things = DB[key];
+    for(let key of DB.keys){
+      let things = DB.content[key];
+      TAR_PARENT.appendChild(createNode(key,"target",things.includes("legacy")));
       for(let t of things){
         list.push(t)
       }

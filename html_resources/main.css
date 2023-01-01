@@ -53,8 +53,6 @@ pre:empty{ display: none }
   max-width: 30%;
   cursor: pointer;
   white-space:nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   display: flex;
 }
 .target > a{
@@ -65,6 +63,10 @@ pre:empty{ display: none }
   background-repeat: no-repeat;
   background-size: contain;
   flex-shrink: 0;
+}
+.target > span{
+  overflow: hidden;
+  pointer-events: none;
 }
 .target:hover{ background-color: rgb(80,80,90) }
 .target.selected{ background-color: rgb(80,80,120) }
