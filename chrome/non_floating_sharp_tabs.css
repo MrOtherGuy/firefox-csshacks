@@ -56,12 +56,24 @@ See the above repository for updates as well as full license text. */
 }
 
 #scrollbutton-up,
-#scrollbutton-down{ border-radius: 0 !important; border-width: 0 !important; padding-inline: 3px !important; }
+#scrollbutton-down{
+  border-radius: 0 !important;
+  border-width: 0 !important;
+  padding-inline: 3px !important;
+  margin-bottom: var(--uc-compat-scrollbutton-margin,0px) !important; /* set in hide_tabs_scrollbuttons.css */
+}
+
+/* This is for hide_tabs_scrollbuttons.css compatibility since we modify scrollbutton width */
+#tabbrowser-tabs[overflow]{
+  --uc-scrollbox-base-margin: -22px !important;
+}
 
 /* tab shaping */
 .tabbrowser-tab{ padding-inline: 0 !important; }
 
-:root[uidensity="compact"] #tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]{ min-height: calc(var(--tab-min-height) + 2px) !important; }
+:root[uidensity="compact"] #tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]{
+  min-height: calc(var(--tab-min-height) + 2px) !important;
+}
 
 .tab-content[pinned]{ padding-inline: 11px !important; }
 

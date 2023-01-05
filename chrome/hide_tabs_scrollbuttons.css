@@ -3,14 +3,61 @@ See the above repository for updates as well as full license text. */
 
 /* This should hide tabs scrollbuttons in a manner that preserves the ability to move tab strip when reordering tabs */
 
-#tabbrowser-tabs:not([movingtab]){ --uc-scroll-visibility: hidden }
-#tabbrowser-tabs[overflow]{ --uc-scrollbox-margin: -28px }
-
-#scrollbutton-up{ position: relative;z-index: 1 }
-
-#scrollbutton-up,
-#scrollbutton-down,
-#scrollbutton-up ~ spacer{
-  visibility: var(--uc-scroll-visibility,visible);
+#tabbrowser-arrowscrollbox{
+  --uc-compat-scrollbutton-margin: 1px; /* compatibility for non_floating_sharp_tabs.css */
+  --uc-scrollbutton-up-background: linear-gradient(-90deg,transparent,var(--lwt-accent-color) 35%);
+  --uc-scrollbutton-down-background: linear-gradient(90deg,transparent,var(--lwt-accent-color) 35%);
 }
-.scrollbox-clip{ margin-inline: var(--uc-scrollbox-margin,0); }
+
+#tabbrowser-tabs:not([movingtab]){
+  --uc-scroll-visibility: hidden;
+}
+#tabbrowser-tabs[overflow]{
+  --uc-scrollbox-base-margin: -31px;
+  --uc-scrollbox-margin: calc(var(--uc-scrollbox-base-margin) + var(--tab-shadow-max-size));
+}
+:root[uidensity="compact"] #tabbrowser-tabs[overflow]{
+  --uc-scrollbox-base-margin: -25px;
+}
+#tabbrowser-arrowscrollbox:not([scrolledtostart="true"]){
+  --uc-scrollbox-overflow-start-margin: -1px;
+}
+#scrollbutton-up ~ spacer{
+  visibility: visible !important;
+}
+spacer[part="overflow-start-indicator"]{
+  -moz-box-ordinal-group: 0;
+  margin-inline-start: var(--uc-scrollbox-overflow-start-margin,-0.5px) !important;
+}
+spacer[part="overflow-end-indicator"]{
+  -moz-box-ordinal-group: 2;
+}
+
+#scrollbutton-down[disabled="true"] > .toolbarbutton-icon,
+#scrollbutton-up[disabled="true"] > .toolbarbutton-icon{
+  opacity: 0.4;
+} 
+#scrollbutton-up,
+#scrollbutton-down{
+  position: relative;
+  z-index: 1;
+  visibility: var(--uc-scroll-visibility,visible);
+  background-clip: border-box !important;
+  background-origin: initial !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+}
+#scrollbutton-up{
+  margin-inline-start: calc(0px - var(--tab-shadow-max-size,0px)) !important;
+  background-image: var(--uc-scrollbutton-up-background);
+}
+#scrollbutton-down{
+  margin-inline-end: calc(0px - var(--tab-shadow-max-size,0px)) !important;
+  background-image: var(--uc-scrollbutton-down-background);
+}
+.scrollbox-clip{ margin-inline: var(--uc-scrollbox-margin,0px); }
+
+/* Need to reset some things for other scrollboxes */
+.menupopup-arrowscrollbox{
+  --tab-shadow-max-size: 0;
+}
