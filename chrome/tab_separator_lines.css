@@ -4,7 +4,7 @@ See the above repository for updates as well as full license text. */
 /* Bring back tab separator lines that were removed in Proton */
 
 .tabbrowser-tab{
-  border-inline-end: 1px solid transparent !important;
+  border-inline-start: 1px solid transparent !important;
   border-image: 0 1 linear-gradient(
     transparent 20%,
     color-mix(in srgb, currentColor 20%, transparent) 20%,
@@ -14,8 +14,10 @@ See the above repository for updates as well as full license text. */
 }
 
 .tabbrowser-tab:hover,
-#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[beforehovered],
+#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:hover + .tabbrowser-tab:not([first-visible-unpinned-tab]),
+.tabbrowser-tab:first-child,
 .tabbrowser-tab[selected],
 .tabbrowser-tab[multiselected],
-#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[before-multiselected],
-#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[beforeselected-visible] { border-image: none !important; }
+#tabbrowser-arrowscrollbox[overflowing] > .tabbrowser-tab[first-visible-unpinned-tab],
+#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[multiselected] + .tabbrowser-tab,
+#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[selected] + .tabbrowser-tab { border-image: none !important; }
