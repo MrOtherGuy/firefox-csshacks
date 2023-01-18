@@ -23,6 +23,6 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Fixes flicker glitch. */
-#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox::part(scrollbox) {
+scrollbox[part][orient="horizontal"] {
     padding-inline: unset !important;
 }
