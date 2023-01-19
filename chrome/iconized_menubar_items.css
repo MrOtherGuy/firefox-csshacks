@@ -13,7 +13,7 @@ See the above repository for updates as well as full license text. */
   background-position: center;
   border-radius: var(--toolbarbutton-border-radius)
 }
-.menubar-text{ display: none }
+#main-menubar > menu > .menubar-text{ display: none }
 
 #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg") }
 #edit-menu{ background-image: url("chrome://browser/skin/customize.svg") }
