@@ -21,6 +21,7 @@ See the above repository for updates as well as full license text. */
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 .urlbarView{
   background: var(--toolbar-field-focus-background-color);
