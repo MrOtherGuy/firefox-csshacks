@@ -1,7 +1,12 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/floating_findbar_on_top.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Note that privacy.resistFingerprinting.letterboxing prevents this from working properly */
+/* This style makes findbar appear as floating box at the top-right of the content area.
+ * If you want the findbar on left side instead then create a new pref
+ * userchrome.floating-findbar-on-left.enabled and set it to true and restart Firefox
+ * 
+ * Note that privacy.resistFingerprinting.letterboxing prevents this from working properly
+ */
 
 findbar{
   -moz-box-ordinal-group: 0;
@@ -55,18 +60,30 @@ findbar > .findbar-container{
   border-radius: 4px
 }
 findbar > .findbar-container > hbox{ margin: 0 5px }
-
+ 
 findbar::before{
   content:"";
   display: -moz-box;
   -moz-box-flex: 100;
 }
 
-/*
-Move findbar so it isn't over the scrollbar
-Delete if you want findbar to begin from right window edge
-*/
-findbar{
-  margin-right: 16px;
-  border-right: 1px solid var(--chrome-content-separator-color);
+@supports -moz-bool-pref("userchrome.floating-findbar-on-left.enabled"){
+  findbar{
+    -moz-box-direction: reverse;
+  }
+  findbar > .findbar-container{
+    -moz-box-direction: normal;
+    margin-inline-start: 0 !important;
+    border-inline-width: 0px 1px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 4px;
+  }
+  /*
+  Move findbar so it isn't over the scrollbar
+  Delete if you want findbar to begin from right window edge
+  */
+  findbar{
+    margin-right: 16px;
+    border-right: 1px solid var(--chrome-content-separator-color);
+  }
 }
