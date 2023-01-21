@@ -1,9 +1,9 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/floating_findbar_on_top.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* This style makes findbar appear as floating box at the top-right of the content area.
- * If you want the findbar on left side instead then create a new pref
- * userchrome.floating-findbar-on-left.enabled and set it to true and restart Firefox
+/* This style makes findbar appear as floating box at the top-left of the content area.
+ * If you want the findbar on right side instead then create a new pref
+ * userchrome.floating-findbar-on-right.enabled and set it to true and restart Firefox
  * 
  * Note that privacy.resistFingerprinting.letterboxing prevents this from working properly
  */
@@ -34,11 +34,12 @@ findbar > .close-icon{
   background: var(--uc-light-bkgnd-color,var(--toolbar-bgcolor)) !important;
   pointer-events: auto;
 }
+
 findbar > .findbar-container{
-  -moz-box-direction: reverse;
-  border-left-width: 1px;
-  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right-width: 1px;
   height: initial !important;
+  margin-inline: 0px !important;
 }
 
 .findbar-find-status{
@@ -47,12 +48,13 @@ findbar > .findbar-container{
   text-overflow: ellipsis;
   -moz-box-flex: 1;
 }
-
+ 
 .findbar-closebutton{
   margin: 0 !important;
   border-radius: 0 !important;
   padding: 5px !important;
   width: initial !important;
+  -moz-box-ordinal-group: 0;
 }
 .findbar-closebutton > image{ padding: 3px }
 .findbar-closebutton:hover > image{
@@ -61,22 +63,21 @@ findbar > .findbar-container{
 }
 findbar > .findbar-container > hbox{ margin: 0 5px }
  
-findbar::before{
+findbar::after{
   content:"";
   display: -moz-box;
   -moz-box-flex: 100;
-}
+} 
 
-@supports -moz-bool-pref("userchrome.floating-findbar-on-left.enabled"){
+@supports -moz-bool-pref("userchrome.floating-findbar-on-right.enabled"){
   findbar{
     -moz-box-direction: reverse;
   }
   findbar > .findbar-container{
-    -moz-box-direction: normal;
-    margin-inline-start: 0 !important;
-    border-inline-width: 0px 1px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 4px;
+    -moz-box-direction: reverse;
+    border-inline-width: 1px 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 4px;
   }
   /*
   Move findbar so it isn't over the scrollbar
