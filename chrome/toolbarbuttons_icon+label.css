@@ -28,4 +28,7 @@ toolbar .toolbarbutton-1[label] > .toolbarbutton-text {
   overflow: hidden;
   width: 12ch;
 }
+toolbar .toolbarbutton-1[label] > .toolbarbutton-text::before{
+  margin-inline: auto;
+}
 :root:not([uidensity="compact"]) toolbar .toolbarbutton-1[label] > .toolbarbutton-text{ padding: 2px !important; }
