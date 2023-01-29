@@ -9,6 +9,8 @@ Set the pref layout.css.osx-font-smoothing.enabled to true - this is enabled by 
 This patch only supports window controls on left - ie. they will be drawn to the left of the nav-bar. If you want to use this with window controls on right you must enable native titlebar.
 
 There is no good way to handle scrollable multiple rows so you should set the maximum rows in multi-row_tabs.css to something you won't ever hit. Or you could just check what happens.
+
+This will NOT work correctly if you have hidden tabs such as with tab groups extensions
  */
  
 /*
@@ -39,7 +41,10 @@ chrome/urlbar_full_width.css
     margin-top: calc(0px - var(--uc-toolbar-height,0px));
     margin-left: 0px;
   }
-  #tabbrowser-tabs .tabbrowser-tab[first-visible-tab]{ margin-left: var(--uc-navigationbar-width) !important; }
+  #tabbrowser-tabs .tabbrowser-tab:first-child,
+  #tabbrowser-tabs .tabbrowser-tab[first-visible-tab]{
+    margin-left: var(--uc-navigationbar-width) !important;
+  }
 
 }
 

@@ -7,6 +7,8 @@ See the above repository for updates as well as full license text. */
  * icon with private browsing indicator while tabs are hidden.
  * REMOVE ALL BUTTONS from tabs toolbar and menubar including newtab-button
  * and firefox-view-button - this style does not work otherwise.
+ *
+ * This will NOT work correctly if you have hidden tabs such as with tab groups extensions
 **/
 
 /* IMPORTANT */
@@ -51,6 +53,8 @@ Window controls will be all wrong without it
 .tabbrowser-tab{
   height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin));
 }
+
+.tabbrowser-tab:only-of-type,
 .tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
   visibility: collapse;
   min-height: 0 !important;
