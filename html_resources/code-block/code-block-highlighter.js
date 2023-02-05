@@ -284,7 +284,7 @@ class CSSHighlighter extends BaseHighlighter{
           let idxOffset = 0;
           switch(character){
             case ";":
-              indexOffset = 1;
+              idxOffset = 1;
             case "{":
               state.token = chars.slice(tokenStart,pointer + idxOffset).join("");
               CSSHighlighter.createElementFromToken(state,CSSHighlighter.State.AtValue,targetNode);
