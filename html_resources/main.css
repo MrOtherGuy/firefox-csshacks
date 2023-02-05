@@ -163,12 +163,14 @@ pre > div{
     opacity: 1;
     margin-inline-end: -13ch;
   }
+  
   .banner{
-    z-index: 1;
+    display: none;
   }
   #site{
     background-color: rgb(60,50,70);
     position: relative;
+    border-top: none;
   }
   #targets{
     position: relative;
