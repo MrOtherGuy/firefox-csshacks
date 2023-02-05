@@ -26,6 +26,7 @@ caption:empty{
 }
 .outerBox{
   position: relative;
+  overflow: hidden;
 }
 table{
   border: 1px solid;
@@ -60,7 +61,7 @@ tbody{
   color: silver;
   border: 1px solid rgba(230,230,230,0.3);
   position: absolute;
-  margin-top: var(--copy-button-top);
+  margin-top: var(--copy-button-top,0.3em);
   right: .3em;
   cursor: pointer
 }
@@ -105,6 +106,11 @@ a:visited{
   color: orchid
 }
 tbody > div{ display: contents }
+
+.value,
+.function{
+  word-break: break-word;
+}
 /* These should really be moved into separate highlighter css */
 .comment{ color: rgb(50,180,90) }
 .selector{ color: lavenderblush }

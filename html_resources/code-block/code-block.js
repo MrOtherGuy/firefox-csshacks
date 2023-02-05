@@ -48,9 +48,11 @@ class CodeBlock extends HTMLElement{
       let parts = this.dataset.matchlinks.split(" -> ");
       // this is kinda sketchy
       if(parts.length === 2){
+        const from = parts[0];
+        const to = parts[1];
         try{
-          this.highlighter.linkMatcher = new RegExp(parts[0],"g");
-          this.highlighter.linkGenerator = (a) => (parts[1].replace("%s",a));
+          this.highlighter.linkMatcher = new RegExp(from,"g");
+          this.highlighter.linkGenerator = (a) => (to.replace("%s",a));
         }catch(e){
           console.warn(e);
           this.highlighter.linkMatcher = null;
