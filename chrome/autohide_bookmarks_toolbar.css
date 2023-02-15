@@ -26,7 +26,7 @@ See the above repository for updates as well as full license text. */
   --uc-bg-y: calc(-2 * (var(--tab-block-margin) + var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - var(--tab-min-height) - 16px - var(--bookmark-block-padding));
   background-position: top left,top left,var(--lwt-background-alignment,top left);
   background-position-y:top,top,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
-  background-image: var(--toolbar-bgimage), linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,var(--lwt-additional-images)) !important;
+  background-image: var(--toolbar-bgimage,linear-gradient(transparent,transparent)), linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,var(--lwt-additional-images)) !important;
 }
 
 #PlacesToolbarItems > .bookmark-item,
