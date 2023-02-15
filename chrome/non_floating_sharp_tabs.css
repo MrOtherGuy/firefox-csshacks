@@ -68,6 +68,12 @@ See the above repository for updates as well as full license text. */
   --uc-scrollbox-base-margin: -22px !important;
 }
 
+/* Selected tab needs to be relative so it gets drawn over nav-bar top "border" */
+.tabbrowser-tab:not([pinned])[selected]{
+  position: relative;
+  z-index: 1;
+}
+
 /* tab shaping */
 .tabbrowser-tab{ padding-inline: 0 !important; }
 
