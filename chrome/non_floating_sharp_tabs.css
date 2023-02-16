@@ -69,7 +69,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Selected tab needs to be relative so it gets drawn over nav-bar top "border" */
-.tabbrowser-tab:not([pinned])[selected]{
+.tabbrowser-tab[selected]{
   position: relative;
   z-index: 1;
 }
