@@ -158,5 +158,6 @@
 "window_control_force_linux_system_style.css":["window-control","buttons","icon"],
 "window_control_placeholder_support.css":["window-control","patch"],
 "vertical_urlbar_one-off_items.css":["urlbar"],
-"overlay_sidebar_header.css":["sidebar","hack"]
+"overlay_sidebar_header.css":["sidebar","hack"],
+"compact_extensions_panel.css":["popup","menu","minimal"]
 }
