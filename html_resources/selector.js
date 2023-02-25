@@ -115,6 +115,12 @@ function getSecondaryCategories(list){
 }
 
 function showMatchingTargets(fileNames,setSelected = false){
+  {
+    let ui = document.getElementById("ui");
+    if(ui.classList.contains("no-content")){
+      ui.classList.remove("no-content")
+    }
+  }
   let bonus = 0;
   for(let c of Array.from(document.querySelectorAll(".target"))){
     if(fileNames.includes(c.dataset.filename)){

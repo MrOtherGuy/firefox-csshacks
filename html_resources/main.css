@@ -165,16 +165,29 @@ pre > div{
     display: none;
   }
   .categoryList{
+    opacity: 0.6;
+  }
+  #ui.no-content > #categories{
     opacity: 1;
+  }
+  #site{
+    background-color: rgb(60,50,70);
+    min-height: 100vh;
+    border-inline-start: 1px solid gold;
+    box-shadow: 0 0 26px 0 black;
+  }
+  #ui > #site{
+    margin-left: 7ch;
+    position: relative;
+    z-index: 2;
+  }
+  #ui.no-content > #site{
+    z-index: -1;
   }
   .banner{
     display: none;
   }
-  #site{
-    background-color: rgb(60,50,70);
-  }
-  #ui > #site{ margin-left: 22ch }
-  #targets{
-    position: relative;
+  #ui.no-content > #site > .banner{
+    display: block;
   }
 }
