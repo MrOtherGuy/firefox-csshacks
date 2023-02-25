@@ -1,11 +1,15 @@
-body{background-color: rgb(60,50,70); color: silver; margin: 0px }
-#ui{ display: flex; }
+:root{
+  background-color: rgb(60,50,70);
+  color: silver;
+}
+body{
+  margin: 0px
+}
+
 #site{
-  height: 100vh;
-  box-sizing: border-box;
-  overflow-y: auto;
-  flex: 1;
-  border-top: 2.2em solid transparent;
+  margin-left: 22ch;
+  display: flex;
+  flex-direction: column;
 }
 
 .categoryList{
@@ -13,25 +17,27 @@ body{background-color: rgb(60,50,70); color: silver; margin: 0px }
   box-sizing: border-box;
   border-inline-end: 1px solid gold;
   background-color: rgb(60,60,70);
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: auto;
-  min-width: 22ch
+  min-width: 22ch;
+  position: fixed;
+  z-index: 1;
 }
 
 .categoryList.blurred{
   background-color: rgb(20,20,30);
   opacity: 0.5;
-  margin-inline-end: -13ch;
 }
-
+.categoryList.blurred ~ #site{
+  margin-left: 31ch
+}
 #secondaryCategories{
-  position: relative;
-  z-index:1;
+  z-index:2;
+  left: 8ch;
 }
 
 .categoryList:hover{
-  position: relative;
-  z-index: 2;
+  z-index: 3;
   background-color: rgb(60,60,70);
   opacity: 1;
   box-shadow: 0 0 26px 0 black;
@@ -56,20 +62,21 @@ pre:empty{ display: none }
   padding: 0.3em;
   border: 1px solid rgb(40,40,40);
   border-radius: 4px;
-  max-width: 30%;
+  max-width: calc(100% / var(--grid-columns,1) - 20px);
   cursor: pointer;
   white-space:nowrap;
   display: flex;
 }
 .target > a{
-  display:inline-block;
-  width: 1.2em;
-  height: 1.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
   background-image: url("ext.svg");
   background-repeat: no-repeat;
   background-size: contain;
   flex-shrink: 0;
 }
+
 .target > span{
   overflow: hidden;
   pointer-events: none;
@@ -83,7 +90,7 @@ pre:empty{ display: none }
   flex-direction: column;
   flex-wrap: wrap;
   max-height: calc(var(--grid-rows) * 2.4rem);
-  align-content: space-between;
+  align-content: start;
   margin-bottom: 0.2em;
 }
 
@@ -93,11 +100,9 @@ pre:empty{ display: none }
   border-bottom: 1px solid black;
   border-left: 1px solid black;
   background: rgb(40,37,43);
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  display: inline-block;
+  width: max-content;
+  align-self: flex-end;
+  order: -1;
 }
 
 kbd{
@@ -161,17 +166,14 @@ pre > div{
   }
   .categoryList{
     opacity: 1;
-    margin-inline-end: -13ch;
   }
-  
   .banner{
     display: none;
   }
   #site{
     background-color: rgb(60,50,70);
-    position: relative;
-    border-top: none;
   }
+  #ui > #site{ margin-left: 22ch }
   #targets{
     position: relative;
   }

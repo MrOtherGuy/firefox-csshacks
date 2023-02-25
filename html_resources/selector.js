@@ -129,7 +129,12 @@ function showMatchingTargets(fileNames,setSelected = false){
       
     }
   }
-  document.getElementById("targets").setAttribute("style",`--grid-rows:${Math.ceil(fileNames.length/3)}`)
+  const container = document.getElementById("targets");
+  const width = container.getBoundingClientRect().width;
+  const horizontal_items = Math.max(1,Math.min(Math.floor(width / 180),4));
+  const real_items = fileNames.length + bonus;
+  const full_rows = Math.ceil(real_items/horizontal_items);
+  document.getElementById("targets").setAttribute("style",`--grid-rows:${full_rows};--grid-columns:${Math.ceil(real_items/full_rows)}`);
 }
 
 function onCategoryClicked(categoryNode,isSecondary = false){
@@ -253,7 +258,7 @@ const selectedTarget = new(function(){
     for(let value of selected.values()){
       t.push(value.getAttribute("title")+".css")
     }
-    history.replaceState(state_object,"",`?file=${t.join(",")}`);
+    history.replaceState(state_object,"",`?file=${t.map(encodeURIComponent).join(",")}`);
   }
 })();
 
