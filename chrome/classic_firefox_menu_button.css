@@ -21,7 +21,8 @@ See the above repository for updates as well as full license text. */
   background-image: linear-gradient(var(--uc-fx-button-sec-color), transparent) !important;
   list-style-image: url(chrome://global/skin/icons/arrow-down-12.svg) !important;
   border-radius: 0 0 4px 4px !important;
-  border: 2px groove var(--uc-fx-button-color);
+  border: 1px groove black;
+  outline: 1px solid #cdd8e4;
   border-top: none;
   display: -moz-box;
   padding: 4px 10px !important;
@@ -36,6 +37,8 @@ See the above repository for updates as well as full license text. */
 #PanelUI-menu-button > stack::before{
   display: -moz-box;
   content: "Firefox"; /* Change text here */
+  color: white;
+  text-shadow: 0 0 2px black;
   font-weight: 700;
   margin-inline-end: 4px;
 }
