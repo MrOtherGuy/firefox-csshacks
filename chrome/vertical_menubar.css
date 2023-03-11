@@ -30,18 +30,19 @@ See the above repository for updates as well as full license text. */
     left: 0px;
     width: 100vw;
   }
-  .titlebar-spacer{ flex-grow: 1; }
-  :root[sizemode="normal"] :where(.titlebar-spacer){ display: -moz-box !important; }
+
+  :root[sizemode="normal"] :where(.titlebar-spacer){ display: flex !important; }
   
-  #TabsToolbar > .toolbar-items{ max-width: calc(100vw - 138px) }
+  #TabsToolbar > .toolbar-items{ max-width: calc(100vw - 138px); flex-grow: 1 }
   #TabsToolbar > .titlebar-buttonbox-container{
-    display: -moz-box !important;
+    display: flex !important;
   }
 
   #toolbar-menubar:not([customizing]){
     margin-top: 40px; /* This needs to be bigger if bookmarks toolbar is shown */
     width: var(--uc-vertical-menubar-width);
     -moz-box-orient: vertical;
+    flex-direction: column;
     flex-grow: 1;
     background-color: var(--lwt-accent-color);
   }
@@ -56,6 +57,7 @@ See the above repository for updates as well as full license text. */
 
   #toolbar-menubar:not([customizing]) #main-menubar{
     -moz-box-orient: vertical;
+    flex-direction: column;
     margin-left: -40px;
     background-color: var(--lwt-accent-color);
   }

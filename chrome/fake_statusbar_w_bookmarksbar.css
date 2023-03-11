@@ -21,7 +21,7 @@ See the above repository for updates as well as full license text. */
 
 :root:not([inFullscreen]) > body::after{
   content: "";
-  display: -moz-box;
+  display: flex;
   margin-bottom: calc(1px + var(--uc-browser-base-padding)) !important;
 }
 
@@ -44,7 +44,10 @@ See the above repository for updates as well as full license text. */
 }
 
 #personal-toolbar-empty{ visibility: hidden; }
-#PersonalToolbar .toolbarbutton-1{ -moz-box-align: center !important; }
+#PersonalToolbar .toolbarbutton-1{
+  -moz-box-align: center !important; /* Fx <112 compatibility */
+  align-items: center !important;
+}
 
 #PersonalToolbar > toolbarspring{
   flex-grow: 1;
@@ -84,7 +87,7 @@ See the above repository for updates as well as full license text. */
 .browserStack > #statuspanel[inactive]::before,
 #statuspanel[inactive] > #statuspanel-inner::before{
   content: "Done";
-  display: -moz-box;
+  display: flex;
   margin-top: 2px;
   color: var(--toolbar-field-color, black) !important;
 }

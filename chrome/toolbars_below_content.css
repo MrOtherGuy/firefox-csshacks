@@ -15,11 +15,15 @@ See the above repository for updates as well as full license text. */
   #browser,
   #customization-container,
   #tab-notification-deck{
-    -moz-box-ordinal-group: 0
+    -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
+    order: -1;
   }
 
   /* Remove the next row if you want tabs to be the top-most row */
-  #titlebar{ -moz-box-ordinal-group: 2 } 
+  #titlebar{
+    -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
+    order: 2;
+  } 
 
   #toolbar-menubar{
     position: fixed;
@@ -70,12 +74,12 @@ See the above repository for updates as well as full license text. */
   #browser,#customization-container{ padding-top: var(--uc-menubar-spacer,28px) }
   */
   
-  /* OR, if uncomment the following if you want menubar to appear below content, above tabs toolbar */
+  /* OR, uncomment the following if you want menubar to appear below content, above tabs toolbar */
   
   /*
-  #toolbar-menubar{ position: static; display: -moz-box; margin-top: 0px !important; background-color: transparent }
+  #toolbar-menubar{ position: static; display: flex; margin-top: 0px !important; background-color: transparent }
   */
 
-  /* set to "reverse" (without quotes) if you want tabs above menubar with the above option */
-  #titlebar{ -moz-box-direction: normal; }
+  /* set to "column-reverse" (without quotes) if you want tabs above menubar with the above option */
+  #titlebar{ flex-direction: column }
 }

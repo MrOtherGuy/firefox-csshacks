@@ -3,8 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Always show tab close button on hover and never otherwise */
 #tabbrowser-tabs #tabs-newtab-button{
-  display:none;
+  display: none;
 }
 #tabbrowser-tabs:hover #tabs-newtab-button{
-  display:-moz-box !important;
+  display: flex !important;
+  align-items: center; /* Fx < 112 compatibility */
 }

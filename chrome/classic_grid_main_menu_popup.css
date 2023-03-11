@@ -29,8 +29,13 @@ See the above repository for updates as well as full license text. */
   height: 76px;
   flex-grow:1;
 }
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton > .toolbarbutton-icon{ -moz-box-flex: 1 }
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton{ -moz-box-orient: vertical }
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton > .toolbarbutton-icon{
+  -moz-box-flex: 1;
+}
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton{
+  flex-direction: column;
+  -moz-box-orient: vertical; /* Fx <112 compatibility */
+}
 
 :where(#appMenu-protonMainView) > .panel-subview-body > toolbarbutton.subviewbutton{
   padding-inline: 4px !important;
@@ -38,20 +43,28 @@ See the above repository for updates as well as full license text. */
   fill: currentColor;
 }
 
+#appMenu-protonMainView > .panel-subview-body > .subviewbutton > .toolbarbutton-text{
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 70px;
+}
+
 /* Unique styling for Edit and Zoom controls */
 
-#appMenu-zoom-controls2,
-#appMenu-zoom-controls2 + toolbarseparator{
+#appMenu-zoom-controls,
+#appMenu-zoom-controls + toolbarseparator{
   order: -1;
   height: initial !important;
   margin: initial !important;
   flex-grow: 1;
 }
-#appMenu-zoom-controls2 + toolbarseparator{ margin-block: 0 4px !important; }
-#appMenu-zoom-controls2{ padding-block: 2px !important; }
-#appMenu-zoom-controls2 > :not(:last-child){
-  -moz-box-flex: 1 !important;
-  -moz-box-pack: center !important;
+#appMenu-zoom-controls + toolbarseparator{ margin-block: 0 4px !important; }
+#appMenu-zoom-controls{ padding-block: 2px !important; }
+#appMenu-zoom-controls > :not(:last-child){
+  -moz-box-flex: 1 !important; /* Fx <112 compatibility */
+  -moz-box-pack: center !important; /* Fx <112 compatibility */
+  flex-grow: 1 !important;
+  justify-content: center !important;
   border-radius: 0 !important;
 }
 #appMenu-zoomReset-button2{
@@ -102,9 +115,9 @@ See the above repository for updates as well as full license text. */
 #appMenu-proton-update-banner,
 #appMenu-quit-button2.subviewbutton{ order: 4 }
 
-
-#appMenu-more-button2{ min-width: 170px }
-#appMenu-more-button2 > .toolbarbutton-icon{ -moz-box-flex: 0 !important; }
+#appMenu-more-button2 > .toolbarbutton-icon{
+  -moz-box-flex: 0 !important;
+}
 /* Color styling for items */
 
 #appMenu-protonMainView > .panel-subview-body toolbarbutton:not([disabled]):hover{
@@ -118,9 +131,9 @@ See the above repository for updates as well as full license text. */
 #appMenu-fxa-text,
 #appMenu-help-button2 + toolbarseparator,
 #appMenu-new-private-window-button2 + toolbarseparator,
-#appMenu-zoom-controls2 > #appMenu-fullscreen-button > label,
-#appMenu-zoom-controls2 > label,
-#appMenu-zoom-controls2 > spacer,
+#appMenu-zoom-controls > #appMenu-fullscreen-button > label,
+#appMenu-zoom-controls > label,
+#appMenu-zoom-controls > spacer,
 #appMenu-edit-controls2 > label,
 #appMenu-edit-controls2 > spacer,
 #appMenu-protonMainView > .panel-subview-body > toolbarbutton::after{ display: none !important; }
@@ -135,6 +148,7 @@ See the above repository for updates as well as full license text. */
 #appMenu-fxa-status2{
   display: grid !important;
   padding-block: 0 !important;
+  justify-content: stretch !important;
 }
 #appMenu-fxa-status2 > *{ grid-area: 1/1 }
 #appMenu-fxa-status2 > toolbarbutton::before,
@@ -144,7 +158,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #appMenu-fxa-status2 > toolbarbutton::before{
-  display: -moz-box;
+  display: flex;
   content: "";
   width: 16px;
   height: 16px;
@@ -165,11 +179,19 @@ See the above repository for updates as well as full license text. */
 #appMenu-quit-button2{
   background-color: var(--button-bgcolor) !important;
   border-radius: 0 !important;
-  -moz-box-orient: horizontal !important;
-  -moz-box-pack: center !important;
+  -moz-box-orient: horizontal !important; /* Fx <112 compatibility */
+  -moz-box-pack: center !important; /* Fx <112 compatibility */
+  flex-direction: row !important;
+  justify-content: center !important;
   padding-block: 12px !important;
   opacity: 0.8;
 }
+
+#appMenu-more-button2{
+  min-width: 170px;
+  justify-content: start !important;
+}
+
 #appMenu-proton-update-banner:hover,
 #appMenu-fxa-label2:hover,
 #appMenu-more-button2:hover,

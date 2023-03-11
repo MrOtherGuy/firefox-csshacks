@@ -86,16 +86,20 @@ Window controls will be all wrong without it
        (-moz-gtk-csd-reversed-placement){
   :root:not([inFullscreen]) #TabsToolbar-customization-target > .titlebar-spacer[type="pre-tabs"]{
     width: var(--uc-window-drag-space-post) !important;
-    display: -moz-box !important; 
+    display: flex !important; 
   }
-  #TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box; }
+  #TabsToolbar > .titlebar-buttonbox-container{
+    display: flex;
+  }
 }
 @supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
   :root:not([inFullscreen]) #TabsToolbar-customization-target > .titlebar-spacer[type="pre-tabs"]{
     width: var(--uc-window-drag-space-post) !important;
-    display: -moz-box !important; 
+    display: flex !important; 
   }
-  #TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box; }
+  #TabsToolbar > .titlebar-buttonbox-container{
+    display: flex;
+  }
 }
 
 /* 1px margin on touch density causes tabs to be too high */

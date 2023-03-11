@@ -6,7 +6,11 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox{ --uc-menubar-height: 34px; }
 :root[uidensity="compact"] #navigator-toolbox{ --uc-menubar-height: 30px }
 
-#titlebar{ -moz-box-direction: reverse; -moz-appearance: none !important; }
+#titlebar{
+  -moz-box-direction: reverse; /* Fx <112 compatibility */
+  flex-direction: column-reverse;
+  -moz-appearance: none !important;
+}
 
 #toolbar-menubar{
   margin-bottom: calc(0px - var(--uc-menubar-height));
@@ -17,13 +21,15 @@ See the above repository for updates as well as full license text. */
 }
 
 #menubar-items{
-  -moz-box-pack: center;
+  -moz-box-pack: center; /* Fx <112 compatibility */
+  justify-content: center;
   pointer-events: initial;
   margin-top: 3px;
+  color: var(--toolbar-color);
 }
 /* Adjust to fit menubar items - 300px works for English locale */
 #nav-bar{ padding-left: 300px; }
 
 #toolbar-menubar > .titlebar-buttonbox-container{ display: none }
 :root[tabsintitlebar][sizemode="normal"] .titlebar-spacer,
-:root[tabsintitlebar] #TabsToolbar > .titlebar-buttonbox-container{ display: -moz-box !important; }
+:root[tabsintitlebar] #TabsToolbar > .titlebar-buttonbox-container{ display: flex !important; }

@@ -20,7 +20,7 @@ See the above repository for updates as well as full license text. */
 .tab-secondary-label{ display: none }
 
 /* show the secondary label when video is in PiP */
-.tab-secondary-label[pictureinpicture]{ display: -moz-box }
+.tab-secondary-label[pictureinpicture]{ display: flex }
 
 /* These exist for compatibility with combined_favicon_and_tab_close_button.css */
 .tab-icon-overlay{ pointer-events: auto }

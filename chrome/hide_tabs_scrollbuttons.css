@@ -26,11 +26,13 @@ See the above repository for updates as well as full license text. */
   visibility: visible !important;
 }
 spacer[part="overflow-start-indicator"]{
-  -moz-box-ordinal-group: 0;
+  -moz-box-ordinal-group: 0; /* Fx < 112 compatibility */
+  order: -1;
   margin-inline-start: var(--uc-scrollbox-overflow-start-margin,-0.5px) !important;
 }
 spacer[part="overflow-end-indicator"]{
-  -moz-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2; /* Fx < 112 compatibility */
+  order: 2;
 }
 
 #scrollbutton-down[disabled="true"] > .toolbarbutton-icon,

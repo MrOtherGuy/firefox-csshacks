@@ -80,7 +80,12 @@ See the above repository for updates as well as full license text. */
   }
   :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
   :root[sizemode="fullscreen"] #window-controls{ right: unset; }
-  .titlebar-buttonbox-container{ -moz-box-ordinal-group: 0 !important; }
-  .titlebar-buttonbox{ -moz-box-direction: reverse }
+  .titlebar-buttonbox-container{
+    -moz-box-ordinal-group: 0 !important; /* Fx <112 compatibility */
+    order: -1 !important;
+  }
+  .titlebar-buttonbox{
+    -moz-box-direction: reverse; /* Fx <112 compatibility */
+    flex-direction: row-reverse;
+  }
 }
-

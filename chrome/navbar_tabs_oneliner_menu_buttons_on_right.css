@@ -24,10 +24,10 @@ Window controls will be all wrong without it
 
 /* reserved space for overflow + menu buttons */
 #navigator-toolbox{
-  --uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
+  --uc-buttons-width: calc(96px + 5 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
 }
-#nav-bar:not([overflowing]) > #nav-bar-customization-target{ 
-  --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px)
+#nav-bar:not([nonemptyoverflow="true"]) > #nav-bar-customization-target{ 
+  --uc-buttons-width: calc(64px + 4 * var(--toolbarbutton-outer-padding) + 6px)
 }
 /* Override for other densities */
 :root[uidensity="compact"] #navigator-toolbox{
@@ -55,6 +55,7 @@ Window controls will be all wrong without it
 #TabsToolbar{
   margin-left: var(--uc-navigationbar-width);
   --tabs-navbar-shadow-size: 0px;
+  color: var(--toolbar-color);
 }
 
 #tabbrowser-tabs{
@@ -87,7 +88,7 @@ Window controls will be all wrong without it
 }
 
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
-  display: -moz-box !important;
+  display: flex !important;
 }
 
 .titlebar-spacer[type="post-tabs"]{

@@ -10,7 +10,7 @@ See the above repository for updates as well as full license text. */
   display: none !important;
 }
 .tab-icon-stack::before{
-  display: -moz-box;
+  display: flex;
   grid-area: 1/1;
   content: "";
   width:var(--tab-loader-size);

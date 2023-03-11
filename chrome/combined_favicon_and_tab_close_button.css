@@ -14,7 +14,8 @@ See the above repository for updates as well as full license text. */
   visibility: hidden;
 }
 .tab-close-button{
-  -moz-box-ordinal-group: 0;
+  -moz-box-ordinal-group: 0; /* Firefox <112 compatibility */
+  order: -1;
   display: -moz-box !important;
   position: relative;
   margin-inline: -4px -20px !important;

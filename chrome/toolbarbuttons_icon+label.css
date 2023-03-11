@@ -4,8 +4,10 @@ See the above repository for updates as well as full license text. */
 /* Shows both icon and label for toolbarbuttons */
 
 toolbar .toolbarbutton-1[label]{
-  -moz-box-orient: vertical;
-  -moz-box-align: center !important;
+  -moz-box-orient: vertical; /* Fx <112 compatibility */
+  flex-direction: column;
+  -moz-box-align: center !important; /* Fx <112 compatibility */
+  align-items: center !important;
 }
 
 toolbar .toolbarbutton-1[label]:not([disabled]):hover{ background-color: var(--toolbarbutton-hover-background) !important; }
@@ -21,12 +23,12 @@ toolbar .toolbarbutton-1[label] > .toolbarbutton-badge-stack{
 }
 
 toolbar .toolbarbutton-1[label] > .toolbarbutton-text {
-  display: -moz-box !important;
+  display: flex !important;
   min-height: 16px !important;
   padding-top: 0px !important;
   background-color: transparent !important;
   overflow: hidden;
-  width: 12ch;
+  width: 11ch;
 }
 toolbar .toolbarbutton-1[label] > .toolbarbutton-text::before{
   margin-inline: auto;

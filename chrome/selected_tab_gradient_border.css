@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
 .tab-background[selected] > .tab-context-line{ margin: -5px 0 0 !important; }
 .tabbrowser-tab[selected] > .tab-stack::before{
   content: "";
-  display: -moz-box;
+  display: flex;
   min-height: inherit;
   border-radius: var(--tab-border-radius);
   grid-area: 1/1;

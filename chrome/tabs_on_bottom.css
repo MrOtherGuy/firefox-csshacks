@@ -34,7 +34,8 @@ have menubar permanently enabled and want it on top
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 
 #titlebar{
-  -moz-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
+  order: 2;
   -moz-appearance: none !important;
   --tabs-navbar-shadow-size: 0px;
   --uc-menubar-vertical-overlap: 19px; /* for hide_tabs_with_one_tab_w_window_controls.css compatibility */
@@ -42,13 +43,21 @@ have menubar permanently enabled and want it on top
 /* Re-order window and tab notification boxes */
 #navigator-toolbox > div{ display: contents }
 .global-notificationbox,
-#tab-notification-deck{ -moz-box-ordinal-group: 2 }
+#tab-notification-deck{
+  -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
+  order: 2;
+}
 
 #TabsToolbar .titlebar-spacer{ display: none; }
 /* Also hide the toolbox bottom border which isn't at bottom with this setup */
 #navigator-toolbox::after{ display: none !important; }
 
-@media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
+@media (-moz-gtk-csd-close-button){
+  .titlebar-button{
+    -moz-box-orient: vertical; /* Fx <112 compatibility */
+    flex-direction: column;
+  }
+}
 
 /* At Activated Menubar */
 :root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-buttonbox-container {
@@ -66,5 +75,8 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 
 /* Uncomment the following if you want bookmarks toolbar to be below tabs */
 /*
-#PersonalToolbar{ -moz-box-ordinal-group: 2 }
+#PersonalToolbar{
+  -moz-box-ordinal-group: 2;
+  order: 2;
+}
 */

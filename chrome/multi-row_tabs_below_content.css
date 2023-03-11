@@ -42,7 +42,8 @@ See the above repository for updates as well as full license text. */
   :root{ border-top-width: 0px !important }
 
   #navigator-toolbox-background{
-    -moz-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
+    order: 2;
     border-bottom: 0px !important;
   }
   #navigator-toolbox{
@@ -51,7 +52,10 @@ See the above repository for updates as well as full license text. */
   /* Re-order window and tab notification boxes */
   #navigator-toolbox > div{ display: contents }
   .global-notificationbox,
-  #tab-notification-deck{ -moz-box-ordinal-group: 0 }
+  #tab-notification-deck{
+    -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
+    order: -1;
+  }
 
   #titlebar{ -moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
 
@@ -125,7 +129,6 @@ See the above repository for updates as well as full license text. */
   #menubar-items + spacer{ flex-grow: 1 }
 
   #toolbar-menubar > #menubar-items{
-    -moz-box-pack: center;
     height: 100%;
     visibility: hidden;
   }

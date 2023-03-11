@@ -13,9 +13,19 @@ See the above repository for updates as well as full license text. */
   --uc-fx-button-sec-color: #ffdfbf85;
 }
 
-#PanelUI-button{ -moz-box-ordinal-group: 0; margin-inline: 2px var(--uc-window-drag-space-pre,24px) !important; }
-:root[tabsintitlebar] #nav-bar{ border-left-width: 0px; padding-left: 0px !important; }
-#PanelUI-menu-button{ -moz-box-align: start !important; }
+#PanelUI-button{
+  -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
+  order: -1;
+  margin-inline: 2px var(--uc-window-drag-space-pre,24px) !important;
+}
+:root[tabsintitlebar] #nav-bar{
+  border-left-width: 0px;
+  padding-left: 0px !important;
+}
+#PanelUI-menu-button{
+  -moz-box-align: start !important; /* Fx <112 compatibility */
+  align-items: start;
+}
 #PanelUI-menu-button > stack{
   background-color: var(--uc-fx-button-color);
   background-image: linear-gradient(var(--uc-fx-button-sec-color), transparent) !important;
@@ -24,7 +34,7 @@ See the above repository for updates as well as full license text. */
   border: 1px groove black;
   outline: 1px solid #cdd8e4;
   border-top: none;
-  display: -moz-box;
+  display: flex;
   padding: 4px 10px !important;
 }
 
@@ -35,7 +45,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #PanelUI-menu-button > stack::before{
-  display: -moz-box;
+  display: flex;
   content: "Firefox"; /* Change text here */
   color: white;
   text-shadow: 0 0 2px black;

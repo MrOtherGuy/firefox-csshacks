@@ -6,5 +6,6 @@ See the above repository for updates as well as full license text. */
   display:none;
 }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{
-  display:-moz-box !important;
+  display: flex !important;
+  align-items: center;
 }

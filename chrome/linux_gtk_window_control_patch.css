@@ -4,13 +4,17 @@ See the above repository for updates as well as full license text. */
 /* Overrides the appearance of the window controls with something that more closely matches "normal" buttons*/
 /* More importantly, this makes window controls to respect layout rules the other styles rely on */
 
-.titlebar-buttonbox{ -moz-box-align: stretch !important; }
+.titlebar-buttonbox{
+  -moz-box-align: stretch !important; /* Fx <112 compatibility */
+  align-items: stretch !important;
+}
 .titlebar-button {
   -moz-appearance: none !important;
   -moz-context-properties: fill, stroke, fill-opacity;
   fill: currentColor;
   padding: 4px 6px !important;
   -moz-box-flex: 1;
+  flex-grow: 1;
   overflow: -moz-hidden-unscrollable;
 }
 .titlebar-button:hover{ background-color: rgba(0,0,0,0.1) }

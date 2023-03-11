@@ -41,8 +41,8 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
 }
 .scrollbox-clip[orient="horizontal"] > scrollbox::after{
   content: "";
-  display: -moz-box;
-  -moz-box-flex: 1 !important;
+  display: flex;
+  flex-grow: 1 !important;
   position: relative;
   background-color: var(--lwt-accent-color);
   margin-bottom: 1px;

@@ -42,7 +42,8 @@ See the above repository for updates as well as full license text. */
 /* tabs newtab button needs some special styling... */
 #tabs-newtab-button{
   padding-inline: 0 !important;
-  -moz-box-align: stretch !important;
+  -moz-box-align: stretch !important; /* Fx < 112 compatibility */
+  align-items: stretch !important;
 }
 /* We draw the icon as background-image to get correct scaling regardless of toolbar height */
 #tabs-newtab-button > .toolbarbutton-icon{
@@ -98,7 +99,7 @@ See the above repository for updates as well as full license text. */
 /* Line to mark selected tab */
 .tab-background[selected]::before,
 .tabbrowser-tab:hover > stack > .tab-background::before{
-  display: -moz-box;
+  display: flex;
   height: 2px;
   content: "";
 }
@@ -118,4 +119,8 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab:is([pinned],[selected]) > .tab-stack > .tab-background::before{ animation: none }
 
 /* moves context-line to the bottom */
-.tab-context-line{ -moz-box-ordinal-group: 2; margin-inline: 10px !important; }
+.tab-context-line{
+  -moz-box-ordinal-group: 2; /* Fx < 112 compatibility */
+  order: 2;
+  margin-inline: 10px !important;
+}

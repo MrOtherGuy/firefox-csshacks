@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
 }
 .tabbrowser-tab:is([busy],[bursting]) > .tab-stack > .tab-background::after{
   content: "";
-  display: -moz-box;
+  display: flex;
   height: 2px;
   background-color:transparent;
   background-repeat: no-repeat;
@@ -30,4 +30,4 @@ See the above repository for updates as well as full license text. */
   opacity: 0;
 }
 .tab-throbber{ display: none !important; }
-.tab-icon-image[src]{ display: -moz-box !important; }
+.tab-icon-image[src]{ display: block !important; }

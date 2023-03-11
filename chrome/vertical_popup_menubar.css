@@ -16,22 +16,21 @@ menubar > menu{visibility: collapse; transition: visibility 0ms linear 0.1s}
 menubar:hover > menu,    
 #toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{visibility: visible}
 
-#menubar-items{
+:root:not([customizing]) #menubar-items{
   display: block;
   position: fixed;
   z-index: 10;
   background-color: var(--lwt-accent-color);
   inset-inline-start: 0;
 }
-menubar{ -moz-box-orient: vertical; }
+:root:not([customizing]) menubar{
+  -moz-box-orient: vertical; /* Fx <112 compatibility */
+  flex-direction: column;
+}
 menubar > menu { padding: 3px }
-
 menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0 0 var(--uc-menubaritem-width) }
-#toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: -moz-hidden-unscrollable }
-
-
+#toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: hidden }
 #toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: -32px }
-
 #toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
 
 #file-menu{

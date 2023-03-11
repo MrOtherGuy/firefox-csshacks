@@ -7,7 +7,7 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab[busy] > .tab-stack >  .tab-background::before,
 .tab-background[selected]::before{
   content: "";
-  display: -moz-box;
+  display: flex;
   height: 2px;
   background-color:transparent;
   background-repeat: no-repeat;
@@ -23,4 +23,4 @@ See the above repository for updates as well as full license text. */
 }
 
 .tab-throbber{ display: none }
-.tab-icon-image[src]{ display: -moz-box }
+.tab-icon-image[src]{ display: block }

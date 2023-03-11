@@ -8,7 +8,10 @@ See the above repository for updates as well as full license text. */
 /* 20px wide space on left and right to be able to drag the window */
 #TabsToolbar{ margin: 0 20px; }
 
-#titlebar{ -moz-box-direction: reverse; }
+#titlebar{
+  -moz-box-direction: reverse; /* Fx <112 compatibility */
+  flex-direction: column-reverse;
+}
 #toolbar-menubar{
   height: 40px;
   margin-bottom: -40px;
@@ -18,8 +21,10 @@ See the above repository for updates as well as full license text. */
 :root[tabsintitlebar] #nav-bar{ padding-right: 138px; margin-left: 30px; }
 #toolbar-menubar > #menubar-items{
   position: relative;
-  -moz-box-pack: center;
+  -moz-box-pack: center; /* Fx <112 compatibility */
+  justify-content: center !important;
   background-image: linear-gradient( to left,transparent,var(--toolbar-bgcolor) 35px);
+  color: var(--toolbar-color);
 }
 
 #main-menubar:last-child{ padding-inline-end: 40px }

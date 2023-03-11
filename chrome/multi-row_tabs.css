@@ -73,7 +73,8 @@ See the above repository for updates as well as full license text. */
 #tabs-newtab-button{ margin-bottom: 0 !important; }
 
 #tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"] > #tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery > #tabs-newtab-button {
-  display: -moz-box !important;
+  display: flex !important;
+  align-items: center; /* Fx <112 compatibility */
 }
 
 #alltabs-button,

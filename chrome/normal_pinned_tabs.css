@@ -6,16 +6,18 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabs{ padding-inline-start: 0px !important }
 
 .tabbrowser-tab{
-  -moz-box-flex: 100;
+  flex-grow: 100;
+  -moz-box-flex: 100; /* Fx <112 compatibility */
   max-width: 225px;
   min-width: var(--tab-min-width);
   width: 0;
   transition: min-width 100ms ease-out, max-width 100ms ease-out;
   margin-inline-start: 0px !important;
   position: initial !important;
-  display: -moz-box !important
+  display: flex !important
 }
 
+.tab-stack{ flex-grow: 1 } /* Fx <112 compatibility */
 .tabbrowser-tab[pinned] > .tab-stack{ border: none !important; }
 .tabbrowser-tab[pinned]::after{ position: static !important; margin-block: 0px 1px !important; }
 
@@ -31,4 +33,4 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabs[closebuttons="activetab"] > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-content > .tab-close-button:not([selected="true"]){ display: none !important; }
 
 /* Comment out or remove this if you want pinned tabs to never have close-button */
-.tab-close-button{ display: -moz-box !important; }
+.tab-close-button{ display: flex !important; }

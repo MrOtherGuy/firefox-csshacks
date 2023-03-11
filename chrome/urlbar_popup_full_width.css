@@ -20,7 +20,7 @@ See the above repository for updates as well as full license text. */
 #urlbar-container,
 #urlbar{
   position: static !important;
-  display: -moz-box !important;
+  display: flex !important;
 }
 #urlbar{
   height: auto !important;
@@ -29,6 +29,13 @@ See the above repository for updates as well as full license text. */
   background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
   border-radius: var(--toolbarbutton-border-radius);
   --uc-urlbar-min-width: none; /* navbar_tabs_oneliner.css compatibility */
+}
+
+#urlbar,
+#urlbar-background,
+#urlbar-input-container,
+.urlbarView{
+  flex-grow: 1; /* Fx <112 compatibility */
 }
 
 #urlbar[focused]{ box-shadow: inset 0 0 0 1px var(--toolbar-field-focus-border-color, highlight); }
@@ -50,4 +57,4 @@ See the above repository for updates as well as full license text. */
 
 /* This may seem pretty weird, but it gets around an issue where the height of urlbar may suddenly change when one starts typing into it */
 /* If you are otherwise modifying the urlbar height then you might need to modify the height of this too */
-#urlbar > #urlbar-input-container::before{ content: ""; display: -moz-box; height: 24px; }
+#urlbar > #urlbar-input-container::before{ content: ""; display: flex; height: 24px; }

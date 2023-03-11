@@ -26,7 +26,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 .urlbar-input-box::after{
   z-index: 2;
   content: "";
-  display: -moz-box;
+  display: flex;
   width: 100%;
   height: 100%;
   pointer-events:none;
@@ -111,6 +111,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 #statuspanel-label{
   text-align: center;
   -moz-box-pack: center;
+  justify-content: center;
 }
 .urlbar-input-box::after{ background-position-x: center !important; }
 */
