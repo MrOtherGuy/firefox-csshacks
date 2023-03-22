@@ -32,9 +32,10 @@ See the above repository for updates as well as full license text. */
   }
   
   #PlacesToolbar,
-  #PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox{
-    -moz-box-orient: vertical !important;
+  #PlacesToolbarDropIndicatorHolder{
+    -moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
   }
+  
   #PersonalToolbar #PlacesToolbarItems{
     display: flex;
     flex-direction: column;
@@ -65,4 +66,11 @@ See the above repository for updates as well as full license text. */
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
     margin-left: 0;
   }
+  /* Workaround for Firefox > 112 */
+  /*
+  #PersonalToolbar #PlacesToolbarItems{
+    display: -webkit-box;
+    -webkit-box-orient: vertical !important;
+  }
+  */
 }
