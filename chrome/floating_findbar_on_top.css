@@ -19,6 +19,7 @@ findbar{
   background: none !important;
   pointer-events: none;
   z-index: 1;
+  white-space: nowrap;
 }
 
 .findbar-container > .findbar-find-fast{
@@ -41,6 +42,7 @@ findbar > .findbar-container{
   border-right-width: 1px;
   height: initial !important;
   margin-inline: 0px !important;
+  overflow-inline: visible !important;
 }
 
 .findbar-find-status{
