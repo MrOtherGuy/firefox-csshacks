@@ -14,7 +14,9 @@ See the above repository for updates as well as full license text. */
   /* height when native titlebar is disabled, more roomy so can fit buttons etc. */
   --uc-menubar-height: 29px;
 }
-
+:root:is([sizemode="fullscreen"],[chromehidden~="menubar"]){
+  --uc-menubar-height: 0px;
+}
 /* Since menubar is statically at top, remove fake drag-space that might be set by window_control_placeholder_support.css */
 :root:not([sizemode="fullscreen"]) #nav-bar{ border-inline-width: 0 }
 
@@ -22,6 +24,7 @@ See the above repository for updates as well as full license text. */
   -moz-window-dragging: drag;
   padding-top: var(--uc-menubar-height) !important;
 }
+
 /* Remove window dragging from notification boxes */
 #tab-notification-deck,
 .global-notificationbox{
@@ -48,6 +51,9 @@ See the above repository for updates as well as full license text. */
 
 #toolbar-menubar .toolbarbutton-1 { --toolbarbutton-inner-padding: 3px }
 
-:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #TabsToolbar > .titlebar-buttonbox-container {
-  height: var(--uc-menubar-height);
+:root:not([sizemode="fullscreen"]) #toolbar-menubar.browser-toolbar > .titlebar-buttonbox-container{
+  visibility: visible;
+}
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #TabsToolbar#TabsToolbar#TabsToolbar > .titlebar-buttonbox-container {
+  display: none !important;
 }
