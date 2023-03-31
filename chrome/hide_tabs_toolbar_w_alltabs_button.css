@@ -6,7 +6,10 @@ See the above repository for updates as well as full license text. */
 /* Load window_control_placeholder_support.css before this stylesheet */
 
 #tabbrowser-tabs{ visibility: hidden }
-#TabsToolbar-customization-target{ -moz-box-pack: end; }
+#TabsToolbar-customization-target{
+  -moz-box-pack: end;
+  justify-content: flex-end;
+}
 #alltabs-button{
   position: relative;
   z-index: 1;

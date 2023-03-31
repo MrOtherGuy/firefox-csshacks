@@ -39,7 +39,7 @@ slot{
   height: 8px;
   background: var(--toolbar-field-focus-background-color);
   border-inline: 2px solid var(--toolbar-field-focus-border-color);
-  display: -moz-box;
+  display: flex;
   content: "";
   position: relative;
   z-index: 2;

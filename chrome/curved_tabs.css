@@ -136,7 +136,7 @@ See the above repository for updates as well as full license text. */
   }
   .tab-background[selected]::before{
     content: "";
-    display: -moz-box;
+    display: flex;
     height: 2px;
     background: var(--uc-tab-line-color) !important;
   }

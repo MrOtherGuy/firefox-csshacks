@@ -16,7 +16,7 @@ See the above repository for updates as well as full license text. */
 .tab-close-button{
   -moz-box-ordinal-group: 0; /* Firefox <112 compatibility */
   order: -1;
-  display: -moz-box !important;
+  display: flex !important;
   position: relative;
   margin-inline: -4px -20px !important;
   padding-inline-start: 7px !important;

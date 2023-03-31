@@ -17,7 +17,7 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar > spacer,
 #toolbar-menubar > .titlebar-buttonbox-container{ order: 1000 }
 
-#TabsToolbar > .titlebar-spacer{ display: -moz-box !important; }
+#TabsToolbar > .titlebar-spacer{ display: flex !important; }
 
 :where(#toolbar-menubar){ -moz-window-dragging: no-drag; }
 

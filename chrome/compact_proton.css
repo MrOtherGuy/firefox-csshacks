@@ -13,7 +13,7 @@ See the above repository for updates as well as full license text. */
   --inline-tab-padding: 8px !important; /* 8px is default value since it looks good - lower values compactify tabs horizontally */
 }
 .subviewbutton.bookmark-item{ padding-block: 4px !important; }
-.subview-subheader{ display: -moz-box }
+.subview-subheader{ display: block }
 menupopup > menuitem,
 menupopup > menu{ padding-block: 0.3em !important; }
 
@@ -35,7 +35,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
 
 /* OPTIONAL - show audio label in compact mode and make the audio icon behavior match non-compact mode */
 /*
-.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; margin-bottom: 1px }
+.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: flex !important; margin-bottom: 1px }
 #TabsToolbar:not(:hover) .tab-icon-image{ opacity: 1 !important; }
 #TabsToolbar:not(:hover) .tab-icon-overlay:not([pinned]){ opacity: 0 !important; }
 */

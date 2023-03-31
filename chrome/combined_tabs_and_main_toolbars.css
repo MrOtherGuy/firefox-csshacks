@@ -69,6 +69,6 @@ See the above repository for updates as well as full license text. */
 
 /* Set this pref if you want unpinned tabs to become hidden unless selected */
 @supports -moz-bool-pref("userchrome.hide-unpinned-tabs.enabled"){
-  #alltabs-button{ display: -moz-box !important }
+  #alltabs-button{ display: flex !important }
   .tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
 }
