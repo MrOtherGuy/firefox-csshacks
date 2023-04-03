@@ -20,6 +20,14 @@ linux_gtk_window_control_patch.css
   visibility: visible !important;
 }
 
+@media (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+
 :root[inFullscreen] #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
 
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
