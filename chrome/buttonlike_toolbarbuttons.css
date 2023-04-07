@@ -74,6 +74,9 @@ findbar toolbarbutton,
 #tabs-newtab-button > .toolbarbutton-icon{
   background-color: transparent;
 }
+.webextension-browser-action{
+  background: transparent !important;
+}
 #zoom-reset-button > .toolbarbutton-text{
   background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
   border: 1px solid var(--toolbar-field-border-color, hsla(240,5%,5%,.55));
