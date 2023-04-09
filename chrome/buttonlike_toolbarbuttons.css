@@ -70,12 +70,13 @@ findbar toolbarbutton,
 }
 
 /* Remove styles from buttons inside extensions and overflow menu */
-:is(#unified-extensions-panel,#widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-icon,
-:is(#unified-extensions-panel,#widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-badge-stack{
+:is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-icon,
+:is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-badge-stack{
   background-color: transparent;
   width: revert !important;
   height: revert !important;
   padding: 0 !important;
+  border: none;
 }
 
 /* Special cases */
