@@ -178,6 +178,7 @@ See the above repository for updates as well as full license text. */
     max-height: var(--uc-scrollbox-max-height,1px);
     scrollbar-color: currentColor transparent;
     scrollbar-width: thin;
+    scrollbar-gutter: stable;
     scroll-snap-type: y mandatory;
   }
 
