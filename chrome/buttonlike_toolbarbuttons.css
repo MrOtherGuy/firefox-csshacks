@@ -69,6 +69,15 @@ findbar toolbarbutton,
   padding: var(--uc-toolbarbutton-vertical-padding) var(--uc-toolbarbutton-horizontal-padding) !important;
 }
 
+/* Remove styles from buttons inside extensions and overflow menu */
+:is(#unified-extensions-panel,#widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-icon,
+:is(#unified-extensions-panel,#widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-badge-stack{
+  background-color: transparent;
+  width: revert !important;
+  height: revert !important;
+  padding: 0 !important;
+}
+
 /* Special cases */
 
 #tabs-newtab-button > .toolbarbutton-icon{
