@@ -71,12 +71,13 @@ findbar toolbarbutton,
 
 /* Remove styles from buttons inside extensions and overflow menu */
 :is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-icon,
-:is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-badge-stack{
-  background-color: transparent;
+:is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-badge-stack,
+.widget-overflow-list .toolbarbutton-text{
+  background-color: transparent !important;
   width: revert !important;
   height: revert !important;
   padding: 0 !important;
-  border: none;
+  border: none !important;
 }
 
 /* Special cases */
