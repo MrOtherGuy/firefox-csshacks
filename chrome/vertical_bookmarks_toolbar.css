@@ -21,6 +21,11 @@ See the above repository for updates as well as full license text. */
     height: 100vh;
     max-height: 100vh !important; 
     padding-bottom: 120px !important;
+    padding-inline: 2px !important;
+    
+  }
+  #PersonalToolbar .toolbarbutton-1{
+    --toolbarbutton-inner-padding: 10px !important;
   }
   #PersonalToolbar #PlacesChevron{
     display: none;
@@ -37,10 +42,13 @@ See the above repository for updates as well as full license text. */
   }
   
   #PersonalToolbar #PlacesToolbarItems{
-    display: flex;
-    flex-direction: column;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
     overflow-y: auto;
     scrollbar-width: none;
+  }
+  #PersonalToolbar > toolbaritem{
+    justify-content: center;
   }
   #PersonalToolbar #PlacesToolbarItems > toolbarseparator{
     height: 7px;
@@ -48,7 +56,7 @@ See the above repository for updates as well as full license text. */
     background-clip: padding-box;
     border-block: 3px solid transparent !important;
   }
-  #PersonalToolbar .toolbarbutton-1{ padding-block: 10px !important }
+
   #PersonalToolbar #PlacesToolbarItems > .bookmark-item{
     padding-block: 4px !important;
     margin-inline: 0 !important;
@@ -66,11 +74,4 @@ See the above repository for updates as well as full license text. */
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
     margin-left: 0;
   }
-  /* Workaround for Firefox > 112 */
-  /*
-  #PersonalToolbar #PlacesToolbarItems{
-    display: -webkit-box;
-    -webkit-box-orient: vertical !important;
-  }
-  */
 }
