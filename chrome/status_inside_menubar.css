@@ -1,0 +1,48 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/status_inside_menubar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/**************
+IMPORTANT WARNING
+Using this style can lead to long tab switch times (and probably other problems). Everything may be fine when Firefox starts but situation gets gradually worse, although pretty slowly.
+Relevant information: https://bugzilla.mozilla.org/show_bug.cgi?id=1496065
+As a workaround, the -moz-element background image is removed somewhat often which seems work at first glance. But there might still be some related issues on really long sessions. Just be aware.
+**************/
+
+#menubar-items + spacer::after{
+  z-index: 2;
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  pointer-events:none;
+  background-position: left -3px;
+  background-repeat: no-repeat;
+  background-image: -moz-element(#statuspanel);
+  grid-area: 1 / 1;
+}
+
+#titlebar:hover #menubar-items + spacer::after{
+  background-image: none !important
+}
+
+#statuspanel-label{
+  height:3em;
+  min-width: 1000px;
+  background: transparent !important;
+  border: none !important;
+  font-size: 1.15em;
+  color: inherit !important;
+  margin-right: 0px !important;
+}
+
+#statuspanel{
+  color: var(--lwt-text-color);
+  z-index: -1;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+}
+
+/* This creates opaque layer to be shown in front of "hidden" real statuspanel */
+.browserStack{
+  background-color: var(--tabpanel-background-color);
+}
