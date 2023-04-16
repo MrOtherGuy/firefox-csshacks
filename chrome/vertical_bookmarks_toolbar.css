@@ -42,8 +42,8 @@ See the above repository for updates as well as full license text. */
   }
   
   #PersonalToolbar #PlacesToolbarItems{
-    display: -webkit-box !important;
-    -webkit-box-orient: vertical;
+    display: flex !important;
+    flex-direction: column;
     overflow-y: auto;
     scrollbar-width: none;
   }
@@ -74,4 +74,11 @@ See the above repository for updates as well as full license text. */
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
     margin-left: 0;
   }
+  /* This must to be enabled for Fx 114 */
+  /*
+  #PersonalToolbar #PlacesToolbarItems{
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+  }
+  */
 }
