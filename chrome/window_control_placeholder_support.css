@@ -58,9 +58,10 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"][sizemode="fullscreen"] #window-controls{ height: 32px }
 
 #nav-bar{
-  border-inline: var(--uc-window-drag-space-pre,0px) solid var(--toolbar-bgcolor);
+  border-inline: var(--uc-window-drag-space-pre,0px) solid transparent;
   border-inline-style: solid !important;
   border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px));
+  background-clip: border-box !important;
 }
 
 /* Rules for window controls on left layout */
