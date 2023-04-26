@@ -15,6 +15,6 @@ See the above repository for updates as well as full license text. */
 .tab-close-button{
   margin-inline-end: auto !important;
 }
-:root:not([customizing]) .tab-content{
+:root:not([customizing]) .tab-content:not([pinned]){
   margin-inline-end: -3px;
 }
