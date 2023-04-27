@@ -4,7 +4,7 @@ See the above repository for updates as well as full license text. */
 /* Icon won't have a background when hovered and the cursor will be text selection cursor, unfortunately */
 
 #page-action-buttons::before{
-  display: -moz-inline-box;
+  display: flex;
   content: "";
   height: 28px;
   width: 28px;
