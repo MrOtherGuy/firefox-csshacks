@@ -1,14 +1,16 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/centered_top_statuspanel.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-#statuspanel{
+#statuspanel:not([hidden]){
+  display: flex !important;
+  width: 100%;
+  max-width: 100% !important;
   padding-top: 0 !important;
-  top: 0 !important;
+  inset-block: 0 auto !important;
   inset-inline: auto !important;
-  margin-left: 50%;
 }
 #statuspanel-label{
-    margin-left: -50% !important;
-    border-width: 0 1px 1px 1px;     
-    border-style: none solid solid solid !important;
+  border-width: 0 1px 1px 1px !important;
+  border-style: solid !important;
+  margin-inline: auto !important;
 }
