@@ -3,8 +3,7 @@ See the above repository for updates as well as full license text. */
 
 #statuspanel:not([hidden]){
   display: flex !important;
-  width: 100%;
-  max-width: 100% !important;
+  justify-self: center !important;
   padding-top: 0 !important;
   inset-block: 0 auto !important;
   inset-inline: auto !important;
