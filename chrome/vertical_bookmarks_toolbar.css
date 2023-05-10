@@ -39,6 +39,7 @@ See the above repository for updates as well as full license text. */
   #PlacesToolbar,
   #PlacesToolbarDropIndicatorHolder{
     -moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
+    flex-direction: column;
   }
   
   #PersonalToolbar #PlacesToolbarItems{
@@ -74,11 +75,10 @@ See the above repository for updates as well as full license text. */
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
     margin-left: 0;
   }
-  /* This must to be enabled for Fx 114 */
-  /*
+  /* You should probably disable this if you have Firefox < 113 */
   #PersonalToolbar #PlacesToolbarItems{
     display: -webkit-box !important;
     -webkit-box-orient: vertical !important;
   }
-  */
+  
 }
