@@ -16,7 +16,7 @@ button_effect_scale_onhover.css,buttons,effect
 buttonlike_toolbarbuttons.css,buttons
 centered_tab_content.css,tab,icon
 centered_tab_label.css,tab
-centered_top_statuspanel.css,status
+centered_top_statuspanel.css,legacy
 context_menus_more_proton.css,proton,menu
 classic_firefox_menu_button.css,classic,menu
 classic_grid_main_menu_popup.css,classic,menu,popup
@@ -161,3 +161,4 @@ overlay_sidebar_header.css,sidebar,hack
 compact_extensions_panel.css,popup,menu,minimal
 tab_animated_active_border.css,tab,effect,colors
 status_inside_menubar.css,menubar,status,hack
+centered_statuspanel.css,status
