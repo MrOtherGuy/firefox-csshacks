@@ -7,12 +7,14 @@ See the above repository for updates as well as full license text. */
 .tab-throbber{ opacity: 1 !important; }
 
 .tab-icon-overlay:not([crashed]){
-    top: -5.5px;
-    inset-inline-end: -6px;
-    z-index: 1;
-    padding: 2px;
-    opacity: 1 !important;
-    stroke: var(--tab-icon-overlay-stroke, black) !important;
+  top: -5.5px;
+  inset-inline-end: -6px;
+  z-index: 1;
+  padding: 2px;
+  opacity: 1 !important;
+  stroke: var(--tab-icon-overlay-stroke, black) !important;
+  fill: var(--tab-icon-overlay-fill, white) !important;
+  fill-opacity: 1 !important;
 }
 .tab-icon-overlay:not([crashed]):hover{
   background-color: var(--tab-icon-overlay-stroke, black) !important;
