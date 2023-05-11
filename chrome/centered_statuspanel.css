@@ -6,6 +6,7 @@ See the above repository for updates as well as full license text. */
   justify-self: center !important;
   padding-top: 0 !important;
   inset-inline: auto !important;
+  min-width: unset !important;
 }
 #statuspanel-label{
   border-width: 1px 1px 0px 1px !important;
