@@ -60,7 +60,7 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab[fadein]:not([pinned]){
   min-width: var(--multirow-tab-min-width) !important;
-  flex-grow: var(--multirow-tab-dynamic-width);
+  flex-grow: var(--multirow-tab-dynamic-width) !important;
   /*
   Uncomment to enable full-width tabs, also makes tab dragging a tiny bit more sensible
   Don't set to none or you'll see errors in console when closing tabs
