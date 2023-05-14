@@ -49,7 +49,10 @@ Window controls will be all wrong without it
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
 @media screen and (max-width: 1000px){
-  #urlbar-container{ min-width:unset !important }
+  #urlbar-container{
+    min-width: 300px !important;
+    flex-shrink: 1 !important;
+  }
 }
 
 #TabsToolbar{
