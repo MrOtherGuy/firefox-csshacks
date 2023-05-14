@@ -7,7 +7,7 @@ See the above repository for updates as well as full license text. */
   html,
   .main-content,
   scrollbar{
-    scrollbar-color: rgb(210,210,210) rgb(42,42,46);
+    scrollbar-color: rgb(210,210,210) rgb(42,42,46) !important;
     scrollbar-width: thin;
   }
 }
