@@ -37,7 +37,11 @@ See the above repository for updates as well as full license text. */
   transform: translateX(-50%) !important;
 }
 
-.tabbrowser-tab[selected][fadein]{ max-width: 100vw !important; min-width: 200px !important }
+.tabbrowser-tab[selected][fadein]{
+  max-width: 100vw !important;
+  min-width: 200px !important;
+  flex-grow: 300 !important;
+}
 
 #navigator-toolbox:focus-within .tabbrowser-tab[selected] .tab-content{
   opacity: 0;
