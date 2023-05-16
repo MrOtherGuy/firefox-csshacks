@@ -22,9 +22,7 @@ See the above repository for updates as well as full license text. */
 }
 
 @media  (-moz-platform: windows-win7),
-        (-moz-platform: windows-win8),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win8){
+        (-moz-platform: windows-win8){
   :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
     --uc-window-control-width: 105px;
   }

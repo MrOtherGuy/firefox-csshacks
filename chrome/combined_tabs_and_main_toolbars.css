@@ -22,7 +22,7 @@ See the above repository for updates as well as full license text. */
   }
   :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-hide-window-control-space,1) * 96px + 20px) 0px !important; }
   
-  @media (-moz-platform: windows-win10),(-moz-os-version: windows-win10){
+  @media (-moz-platform: windows-win10){
     :root[tabsintitlebar="true"] #nav-bar{ padding-left: calc(var(--uc-hide-window-control-space,1) * 134px + 20px) !important; }
   }
   #toolbar-menubar[autohide="true"] + #TabsToolbar .titlebar-buttonbox{ -moz-box-direction: reverse; flex-direction: row-reverse }

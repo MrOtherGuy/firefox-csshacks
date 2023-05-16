@@ -15,10 +15,7 @@ See the above repository for updates as well as full license text. */
   --uc-toolbox-rotation: 88.5deg;
 }
 
-@media  (-moz-platform: windows),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win10){
-
+@media  (-moz-platform: windows){
   #navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog !important; }
 }
 
