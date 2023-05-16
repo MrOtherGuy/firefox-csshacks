@@ -31,7 +31,7 @@ See the above repository for updates as well as full license text. */
   -moz-window-dragging: no-drag;
 }
 
-#toolbar-menubar{
+:root:not([chromehidden~="menubar"]) #toolbar-menubar{
   position: fixed;
   display: flex;
   top: 0px;
