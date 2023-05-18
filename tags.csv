@@ -162,3 +162,4 @@ compact_extensions_panel.css,popup,menu,minimal
 tab_animated_active_border.css,tab,effect,colors
 status_inside_menubar.css,menubar,status,hack
 centered_statuspanel.css,status
+tab_closing_animation.css,tab,effect
