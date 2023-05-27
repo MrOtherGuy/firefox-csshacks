@@ -1,9 +1,12 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/toolbarbuttons_in_tabs_periphery.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* This style allows you to place normal buttons to tabs toolbar such that they "stick to" the last tab similar to how newtab-button does.
+/*
+This style allows you to place normal buttons to tabs toolbar such that they "stick to" the last tab similar to how newtab-button does.
 
-By default ALL buttons after the tabs strip now stick to the last tab. To change this, use customize mode to move one flexible space to the tabs toolbar - any button to the right of the flexible space is pushed to the right edge.
+By default ALL buttons after the tabs strip now stick to the last tab.
+To change this, use customize mode to move one flexible space to the tabs toolbar.
+Any button to the right of the flexible space is pushed to the right edge.
  */
 
 #TabsToolbar > .toolbar-items{
