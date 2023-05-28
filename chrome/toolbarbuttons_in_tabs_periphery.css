@@ -20,9 +20,23 @@ Any button to the right of the flexible space is pushed to the right edge.
   --uc-scrollbox-containment: none;
   max-width: max-content;
   overflow: hidden;
+  margin-inline-end: -2px;
 }
 .tabbrowser-tab:not([pinned]){
   width: 225px;
+}
+/* This margin is added to create "buffer-space"
+   Without it, opening and closing tabs will briefly
+   make tabs overflow which looks jarring.
+   The -2px margin on #tabbrowser-tabs is related to this as well so tabs-newtab-button isn't separated too far. */
+#tabbrowser-arrowscrollbox-periphery{
+  margin-inline-start: 2px;
+}
+#tabs-newtab-button{
+  transform: translateX(-2px);
+}
+.closing-tabs-spacer{
+  display: none !important;
 }
 .scrollbox-clip[orient="horizontal"]{
   contain: var(--uc-scrollbox-containment,initial) !important;
