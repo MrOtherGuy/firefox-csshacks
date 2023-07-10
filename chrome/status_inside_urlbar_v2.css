@@ -40,7 +40,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 
 #statuspanel-label{
   height:3em;
-  min-width: 1000px;
+  min-width: calc(100vw);
   background-color: var(--toolbar-field-background-color) !important;
   border: none !important;
   font-size: 1.15em;
