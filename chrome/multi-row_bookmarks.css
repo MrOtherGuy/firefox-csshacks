@@ -8,6 +8,9 @@ See the above repository for updates as well as full license text. */
   --multirow-bmb-row-margin: 2px; /* Control how much spacing is between rows */
   max-height: none !important;
 }
+:root[BookmarksToolbarOverlapsBrowser] :where(#PersonalToolbar){
+  height: unset !important;
+}
 
 #PlacesToolbar > hbox:not(#PlacesToolbarDropIndicatorHolder){ 
   display: block;

@@ -227,7 +227,15 @@ See the above repository for updates as well as full license text. */
   :root:not([customizing]) #TabsToolbar #new-tab-button,
   #tabbrowser-arrowscrollbox > spacer,
   .tabbrowser-tab::after{ display: none !important } /* Also disables tab separators since they mysteriously break tab-row scrolling */
-  
+  :root[BookmarksToolbarOverlapsBrowser] #PersonalToolbar{
+    position: absolute;
+    top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding));
+    width: 100vw;
+  }
+  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox-background{
+    margin-bottom: 0 !important;
+    z-index: auto !important;
+  }
   @supports -moz-bool-pref("userchrome.multirowtabs.static-menubar.enabled"){
     :root{
       --multirow-menubar-height: 28px;
@@ -240,6 +248,9 @@ See the above repository for updates as well as full license text. */
     .titlebar-buttonbox-container{ background: none !important }
     :root:not([inFullscreen]) #nav-bar{
       top: calc(var(--multirow-menubar-height) + var(--multirow-top-padding));
+    }
+    :root[BookmarksToolbarOverlapsBrowser] #PersonalToolbar{
+      top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height));
     }
   }
 }

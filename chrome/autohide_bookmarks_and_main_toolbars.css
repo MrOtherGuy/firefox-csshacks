@@ -88,6 +88,10 @@ See the above repository for updates as well as full license text. */
 :where(#titlebar,#tab-notification-deck,.global-notificationbox){
   -moz-box-ordinal-group: 0;
 }
+:root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox-background{
+  margin-bottom: 0 !important;
+  z-index: auto !important;
+}
 /* Show when cursor is over popups/context-menus - cannot control which ones */
 /*
 #mainPopupSet:hover ~ box > toolbox > .browser-toolbar{
