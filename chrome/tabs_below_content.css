@@ -1,7 +1,6 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_below_content.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-
 /* IMPORTANT */
 /*
 Get window_control_placeholder_support.css
@@ -9,6 +8,7 @@ Window controls will be all wrong without it.
 Additionally on Linux, you may need to get:
 linux_gtk_window_control_patch.css
 */
+/* Note: You must restart Firefox if you change the setting to select if firefox should hide toolbars in fullscreen. */
 
 .titlebar-buttonbox-container{
   position: fixed;
@@ -28,7 +28,6 @@ linux_gtk_window_control_patch.css
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
-:root[inFullscreen] #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
 
 :root[uidensity="compact"] .titlebar-buttonbox-container{ height: 32px }
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
@@ -46,11 +45,9 @@ linux_gtk_window_control_patch.css
   content: "";
   display: flex;
 }
+#main-window[inFullscreen]:not([inDOMFullscreen]) > body::after,
 #main-window:not([inFullscreen]) > body::after{
   margin-bottom: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px));
-}
-#main-window[inFullscreen]:not([inDOMFullscreen]) > body::after{
-  margin-bottom: 1px;
 }
 
 #TabsToolbar{
@@ -70,8 +67,14 @@ linux_gtk_window_control_patch.css
 
 /* Hide stuff that doesn't make sense with tabs below content */
 #TabsToolbar > .titlebar-buttonbox-container,
-#window-controls, /* Fullscreen window controls */
 #TabsToolbar .titlebar-spacer{
   display: none !important;
 }
-#navigator-toolbox[inFullscreen]:hover #toolbar-menubar > .titlebar-buttonbox-container{ display: flex !important; }
+:root[inFullscreen] #toolbar-menubar > .titlebar-buttonbox-container{ display: flex !important; }
+
+@supports -moz-bool-pref("browser.fullscreen.autohide"){
+  #main-window[inFullscreen]:not([inDOMFullscreen]) > body::after{
+    margin-bottom: 1px;
+  }
+  :root[inFullscreen] #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
+}
