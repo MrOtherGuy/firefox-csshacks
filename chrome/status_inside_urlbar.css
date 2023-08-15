@@ -36,9 +36,6 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   grid-area: 1 / 1;
 }
 
-/* So here's the thing. This essentially disables the right click context-menu on urlbar textbox in Firefox 72. This is unfortunate but necessary due to grid layout - try disabling the rule and see what happens */
-.urlbar-input-box > menupopup{ display: none !important }
-
 /* Using -moz-element() causes some problems after Firefox has been running several hours such as long tab switch times. For this reason the background image is removed on hover and focused states which appears to clear the state. */
 
 /* Hide the status ovelay when urlbar is hovered */
