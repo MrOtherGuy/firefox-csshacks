@@ -26,7 +26,7 @@ Window controls will be all wrong without it
 #navigator-toolbox{
   --uc-buttons-width: calc(96px + 5 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
 }
-#nav-bar:not([nonemptyoverflow="true"]) > #nav-bar-customization-target{ 
+#nav-bar:not([nonemptyoverflow]) > #nav-bar-customization-target{ 
   --uc-buttons-width: calc(64px + 4 * var(--toolbarbutton-outer-padding) + 6px)
 }
 /* Override for other densities */

@@ -30,7 +30,7 @@ See the above repository for updates as well as full license text. */
 
 .tab-icon-overlay{ display: none !important; }
 
-#tabbrowser-tabs[closebuttons="activetab"] > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-content > .tab-close-button:not([selected="true"]){ display: none !important; }
+#tabbrowser-tabs[closebuttons="activetab"] > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-content > .tab-close-button:not([selected]){ display: none !important; }
 
 /* Comment out or remove this if you want pinned tabs to never have close-button */
 .tab-close-button{ display: flex !important; }

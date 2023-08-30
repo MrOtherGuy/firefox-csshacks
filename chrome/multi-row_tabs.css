@@ -73,7 +73,7 @@ See the above repository for updates as well as full license text. */
 /* remove bottom margin so it doesn't throw off row height computation */
 #tabs-newtab-button{ margin-bottom: 0 !important; }
 
-#tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"] > #tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery > #tabs-newtab-button {
+#tabbrowser-tabs[hasadjacentnewtabbutton][overflow] > #tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery > #tabs-newtab-button {
   display: flex !important;
   align-items: center; /* Fx <112 compatibility */
 }

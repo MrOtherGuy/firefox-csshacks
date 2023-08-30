@@ -18,7 +18,7 @@ See the above repository for updates as well as full license text. */
   padding-inline: 0px !important; /* By default, proton tabs have 2px + 2px = 4px space between them */
   overflow: visible !important;
 }
-.tabbrowser-tab[visuallyselected="true"]{
+.tabbrowser-tab[visuallyselected]{
   position: relative;
   z-index: 2;
 }

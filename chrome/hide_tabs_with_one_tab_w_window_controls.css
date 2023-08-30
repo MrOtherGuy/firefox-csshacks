@@ -24,7 +24,7 @@ Window controls will be all wrong without it
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
 /* Hide overflow button unless tabs overflow - is necessary for collpasing tabs with one tab */
-#tabbrowser-tabs:not([overflow="true"]) ~ #alltabs-button{ display: none }
+#tabbrowser-tabs:not([overflow]) ~ #alltabs-button{ display: none }
 
 #tabbrowser-tabs,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
