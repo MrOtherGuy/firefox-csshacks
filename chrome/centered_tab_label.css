@@ -15,5 +15,5 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab[selected]:not(:hover) .tab-label-container:not([labeldirection="rtl"]),
 #tabbrowser-tabs:not([closebuttons="activetab"]) .tabbrowser-tab:not(:hover,[pinned]) .tab-label-container:not([labeldirection="rtl"]){
-  margin-inline-end: 7px;
+  margin-inline-end: 6px;
 }
