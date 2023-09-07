@@ -41,12 +41,9 @@ See the above repository for updates as well as full license text. */
   :root[uidensity="compact"]{ --multirow-toolbar-height: 34px }
   :root{ border-top-width: 0px !important }
 
-  #navigator-toolbox-background{
+  #navigator-toolbox{
     -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
     order: 2;
-    border-bottom: 0px !important;
-  }
-  #navigator-toolbox{
     border-bottom: none !important;
   }
   /* Re-order window and tab notification boxes */
@@ -232,7 +229,7 @@ See the above repository for updates as well as full license text. */
     top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding));
     width: 100vw;
   }
-  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox-background{
+  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox{
     margin-bottom: 0 !important;
     z-index: auto !important;
   }

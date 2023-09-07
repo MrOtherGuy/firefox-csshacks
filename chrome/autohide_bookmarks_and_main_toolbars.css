@@ -88,13 +88,13 @@ See the above repository for updates as well as full license text. */
 :where(#titlebar,#tab-notification-deck,.global-notificationbox){
   -moz-box-ordinal-group: 0;
 }
-:root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox-background{
-  margin-bottom: 0 !important;
+:root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox{
+  margin-bottom: calc(-1px - var(--uc-bm-height) + var(--uc-navbar-height)) !important;
   z-index: auto !important;
 }
 /* Show when cursor is over popups/context-menus - cannot control which ones */
 /*
-#mainPopupSet:hover ~ box > toolbox > .browser-toolbar{
+#mainPopupSet:hover ~ toolbox > .browser-toolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }

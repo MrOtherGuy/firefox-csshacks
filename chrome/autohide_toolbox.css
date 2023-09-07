@@ -37,7 +37,7 @@ See the above repository for updates as well as full license text. */
 }
 
 
-/* #mainPopupSet:hover ~ box > toolbox, */
+/* #mainPopupSet:hover ~ toolbox, */
 /* Uncomment the above line to make toolbar visible if some popup is hovered */
 #navigator-toolbox:hover,
 #navigator-toolbox:focus-within{

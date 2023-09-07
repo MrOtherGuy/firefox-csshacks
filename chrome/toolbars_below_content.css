@@ -63,7 +63,7 @@ See the above repository for updates as well as full license text. */
   #main-window > body > box{ margin-top: 0 !important; }
   #toolbar-menubar{ z-index: 1; background-color: var(--lwt-accent-color,black); }
   
-  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox-background{
+  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox{
     margin-block: calc(-1 * var(--bookmarks-toolbar-height)) 0 !important;
   }
   :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel{
