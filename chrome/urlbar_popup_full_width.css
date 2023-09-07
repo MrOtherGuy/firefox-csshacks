@@ -31,13 +31,6 @@ See the above repository for updates as well as full license text. */
   --uc-urlbar-min-width: none; /* navbar_tabs_oneliner.css compatibility */
 }
 
-#urlbar,
-#urlbar-background,
-#urlbar-input-container,
-.urlbarView{
-  flex-grow: 1; /* Fx <112 compatibility */
-}
-
 #urlbar[focused]{ box-shadow: inset 0 0 0 1px var(--toolbar-field-focus-border-color, highlight); }
 
 .urlbarView{

@@ -34,7 +34,6 @@ have menubar permanently enabled and want it on top
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 
 #titlebar{
-  -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
   order: 2;
   -moz-appearance: none !important;
   --tabs-navbar-shadow-size: 0px;
@@ -44,7 +43,6 @@ have menubar permanently enabled and want it on top
 #navigator-toolbox > div{ display: contents }
 .global-notificationbox,
 #tab-notification-deck{
-  -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
   order: 2;
 }
 
@@ -54,7 +52,6 @@ have menubar permanently enabled and want it on top
 
 @media (-moz-gtk-csd-close-button){
   .titlebar-button{
-    -moz-box-orient: vertical; /* Fx <112 compatibility */
     flex-direction: column;
   }
 }
@@ -76,7 +73,6 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 /* Uncomment the following if you want bookmarks toolbar to be below tabs */
 /*
 #PersonalToolbar{
-  -moz-box-ordinal-group: 2;
   order: 2;
 }
 */

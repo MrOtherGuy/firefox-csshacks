@@ -45,7 +45,6 @@ See the above repository for updates as well as full license text. */
 
 #personal-toolbar-empty{ visibility: hidden; }
 #PersonalToolbar .toolbarbutton-1{
-  -moz-box-align: center !important; /* Fx <112 compatibility */
   align-items: center !important;
 }
 

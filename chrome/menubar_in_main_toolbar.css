@@ -7,7 +7,6 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"] #navigator-toolbox{ --uc-menubar-height: 30px }
 
 #titlebar{
-  -moz-box-direction: reverse; /* Fx <112 compatibility */
   flex-direction: column-reverse;
   -moz-appearance: none !important;
 }
@@ -21,7 +20,6 @@ See the above repository for updates as well as full license text. */
 }
 
 #menubar-items{
-  -moz-box-pack: center; /* Fx <112 compatibility */
   justify-content: center;
   pointer-events: initial;
   margin-top: 3px;

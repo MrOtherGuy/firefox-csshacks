@@ -24,7 +24,6 @@ menubar:hover > menu,
   inset-inline-start: 0;
 }
 :root:not([customizing]) menubar{
-  -moz-box-orient: vertical; /* Fx <112 compatibility */
   flex-direction: column;
 }
 menubar > menu { padding: 3px }

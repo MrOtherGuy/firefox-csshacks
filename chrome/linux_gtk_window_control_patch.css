@@ -5,7 +5,6 @@ See the above repository for updates as well as full license text. */
 /* More importantly, this makes window controls to respect layout rules the other styles rely on */
 
 .titlebar-buttonbox{
-  -moz-box-align: stretch !important; /* Fx <112 compatibility */
   align-items: stretch !important;
 }
 .titlebar-button {

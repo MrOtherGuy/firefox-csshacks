@@ -9,7 +9,6 @@ See the above repository for updates as well as full license text. */
 }
 .tab-icon-stack > *{ margin-inline: 0 !important; }
 .tabbrowser-tab{
-  -moz-box-flex: 0 !important; /* Fx <112 compatibility */
   flex-grow: 0 !important;
 }
 

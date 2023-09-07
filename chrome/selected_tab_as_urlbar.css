@@ -65,7 +65,6 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar > .toolbar-items{ margin-left: 80px }
   :root[sizemode="normal"] #nav-bar-customization-target{ margin-left: 40px }
   #back-button, #forward-button{
-    -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
     order: -1;
     visibility: visible !important;
     z-index: 2;

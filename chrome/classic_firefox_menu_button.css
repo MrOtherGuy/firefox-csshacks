@@ -14,7 +14,6 @@ See the above repository for updates as well as full license text. */
 }
 
 #PanelUI-button{
-  -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
   order: -1;
   margin-inline: 2px var(--uc-window-drag-space-pre,24px) !important;
 }
@@ -23,7 +22,6 @@ See the above repository for updates as well as full license text. */
   padding-left: 0px !important;
 }
 #PanelUI-menu-button{
-  -moz-box-align: start !important; /* Fx <112 compatibility */
   align-items: start;
 }
 #PanelUI-menu-button > stack{

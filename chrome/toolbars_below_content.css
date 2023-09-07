@@ -15,13 +15,11 @@ See the above repository for updates as well as full license text. */
   #browser,
   #customization-container,
   #tab-notification-deck{
-    -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
     order: -1;
   }
 
   /* Remove the next row if you want tabs to be the top-most row */
   #titlebar{
-    -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
     order: 2;
   } 
 

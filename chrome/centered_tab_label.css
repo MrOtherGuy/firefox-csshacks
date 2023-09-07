@@ -3,13 +3,10 @@ See the above repository for updates as well as full license text. */
 
 .tab-label-container{
   display: grid;
-  justify-content: safe center; /* Fx <112 compatibility */
-  align-items: safe center; /* Fx <112 compatibility */
   align-content: center;
 }
 
 .tab-secondary-label{
-  -moz-box-pack: center; /* Fx <112 compatibility */
   justify-content: center;
 }
 

@@ -24,7 +24,6 @@ See the above repository for updates as well as full license text. */
 }
 
 #menubar-items{
-  -moz-box-orient: horizontal !important; /* Fx <112 compatibility */
   flex-direction: row !important;
 }
 #menubar-items::after{

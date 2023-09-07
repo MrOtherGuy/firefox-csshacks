@@ -4,9 +4,7 @@ See the above repository for updates as well as full license text. */
 /* Shows both icon and label for toolbarbuttons */
 
 toolbar .toolbarbutton-1[label]{
-  -moz-box-orient: vertical; /* Fx <112 compatibility */
   flex-direction: column;
-  -moz-box-align: center !important; /* Fx <112 compatibility */
   align-items: center !important;
 }
 

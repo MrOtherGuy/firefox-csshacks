@@ -42,7 +42,6 @@ See the above repository for updates as well as full license text. */
   :root{ border-top-width: 0px !important }
 
   #navigator-toolbox{
-    -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
     order: 2;
     border-bottom: none !important;
   }
@@ -50,7 +49,6 @@ See the above repository for updates as well as full license text. */
   #navigator-toolbox > div{ display: contents }
   .global-notificationbox,
   #tab-notification-deck{
-    -moz-box-ordinal-group: 0; /* Fx <112 compatibility */
     order: -1;
   }
 
