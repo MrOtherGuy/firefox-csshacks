@@ -40,7 +40,7 @@ See the above repository for updates as well as full license text. */
   background-image: -moz-element(#statuspanel);
   max-width: 50vw !important; /* Modify this to let the status bar grow larger than 50% of window width */
   min-width: 60ch;
-  flex-grow: 10;
+  flex-grow: 10 !important;
 }
 
 #personal-toolbar-empty{ visibility: hidden; }
