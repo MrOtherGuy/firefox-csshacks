@@ -31,7 +31,6 @@ Window controls will be all wrong without it
 
 #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
   width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) !important;
-  -moz-box-ordinal-group: 2; /* Fx < 112 compatibility */
   order: 2;
 }
 #toolbar-menubar > spacer{ pointer-events: none }

@@ -40,6 +40,5 @@ See the above repository for updates as well as full license text. */
 }
 
 #appMenu-find-button2 ~ *{
-  -moz-box-ordinal-group: 2; /* Fx < 112 compatibility */
   order: 2;
 }

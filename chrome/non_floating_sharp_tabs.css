@@ -42,7 +42,6 @@ See the above repository for updates as well as full license text. */
 /* tabs newtab button needs some special styling... */
 #tabs-newtab-button{
   padding-inline: 0 !important;
-  -moz-box-align: stretch !important; /* Fx < 112 compatibility */
   align-items: stretch !important;
 }
 /* We draw the icon as background-image to get correct scaling regardless of toolbar height */
@@ -120,7 +119,6 @@ See the above repository for updates as well as full license text. */
 
 /* moves context-line to the bottom */
 .tab-context-line{
-  -moz-box-ordinal-group: 2; /* Fx < 112 compatibility */
   order: 2;
   margin-inline: 10px !important;
 }

@@ -7,5 +7,4 @@ See the above repository for updates as well as full license text. */
 }
 #tabbrowser-tabs:hover #tabs-newtab-button{
   display: flex !important;
-  align-items: center; /* Fx < 112 compatibility */
 }
