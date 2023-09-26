@@ -58,13 +58,6 @@ See the above repository for updates as well as full license text. */
   visibility: hidden !important;
 }
 
-/* The invisible toolbox will overlap sidebar so we'll work around that here */
-#navigator-toolbox{ pointer-events: none; border-bottom: none !important; }
-#PersonalToolbar{ border-bottom: 1px solid var(--chrome-content-separator-color) }
-#navigator-toolbox > *{ pointer-events: auto }
-
-#sidebar-box{ position: relative }
-
 /* Selected tab needs higher z-index now to "hide" the broder below it */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
 
