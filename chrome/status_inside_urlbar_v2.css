@@ -72,7 +72,6 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 /*
 #statuspanel-label{
   text-align: center;
-  -moz-box-pack: center;
   justify-content: center;
 }
 .urlbar-input-box::after{ background-position-x: center !important; }

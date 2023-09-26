@@ -12,7 +12,6 @@ See the above repository for updates as well as full license text. */
   -moz-context-properties: fill, stroke, fill-opacity;
   fill: currentColor;
   padding: 4px 6px !important;
-  -moz-box-flex: 1;
   flex-grow: 1;
   overflow: -moz-hidden-unscrollable;
 }

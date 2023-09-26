@@ -97,7 +97,6 @@ See the above repository for updates as well as full license text. */
 .tab-background[selected]{ border: 1px solid var(--lwt-tabs-border-color) !important; border-bottom: none !important }
 
 .tab-context-line{
-  -moz-box-ordinal-group: 2;
   margin-block: 0 !important;
 }
 
@@ -153,7 +152,7 @@ See the above repository for updates as well as full license text. */
 
 /* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
 @supports -moz-bool-pref("userchrome.curved_tabs.flipped-curve.enabled"){
-  .tab-background{ -moz-box-direction: reverse; flex-direction: column-reverse }
+  .tab-background{ flex-direction: column-reverse }
   .tabbrowser-tab:hover > .tab-stack > .tab-background,
   .tab-background[selected]{ border-radius: 0 0 var(--uc-tab-curve-size) var(--uc-tab-curve-size) !important }
   .tabbrowser-tab > .tab-stack::before{ transform: scaleY(-1) !important; }

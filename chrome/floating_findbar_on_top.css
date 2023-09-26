@@ -77,7 +77,6 @@ findbar::after{
     flex-direction: row-reverse;
   }
   findbar > .findbar-container{
-    -moz-box-direction: reverse;
     flex-direction: row-reverse;
     border-inline-width: 1px 0px;
     border-bottom-right-radius: 0px;

@@ -38,7 +38,6 @@ See the above repository for updates as well as full license text. */
   
   #PlacesToolbar,
   #PlacesToolbarDropIndicatorHolder{
-    -moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
     flex-direction: column;
   }
   

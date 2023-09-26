@@ -5,7 +5,6 @@ See the above repository for updates as well as full license text. */
 
 #tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[pinned] {
   flex-grow: 10;
-  -moz-box-flex: 10;
   max-width: 40px;
 }
 

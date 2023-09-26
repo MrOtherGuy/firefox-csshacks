@@ -3,12 +3,11 @@ See the above repository for updates as well as full license text. */
 
 /* Makes constext navigation buttons appears as normal textual menuitems */
 
-#context-navigation{ -moz-box-orient: vertical; flex-direction: column !important; }
+#context-navigation{ flex-direction: column !important; }
 #context-navigation > menuitem > .menu-iconic-left{ display: none }
 #context-navigation > menuitem{
   padding-block: 0.5em;
   padding-inline-start: 1em;
-  -moz-box-pack: start !important;
   justify-content: start !important;
   width: auto !important;
 }

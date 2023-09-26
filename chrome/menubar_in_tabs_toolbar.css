@@ -2,14 +2,12 @@
 See the above repository for updates as well as full license text. */
 
 :root:not([customizing]) #titlebar{
-  -moz-box-orient: horizontal; /* Fx <112 compatibility */
   flex-direction: row;
 }
 #toolbar-menubar > .titlebar-buttonbox-container,
 #toolbar-menubar > spacer{ display: none; }
 
 #main-menubar{
-  -moz-box-flex: 1; /* Fx <112 compatibility */
   flex-grow: 1 !important;
 }
 :root:not([customizing]) #toolbar-menubar[autohide][inactive]{ max-width: 0 }

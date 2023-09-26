@@ -41,7 +41,6 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar:not([customizing]){
     margin-top: 40px; /* This needs to be bigger if bookmarks toolbar is shown */
     width: var(--uc-vertical-menubar-width);
-    -moz-box-orient: vertical;
     flex-direction: column;
     flex-grow: 1;
     background-color: var(--lwt-accent-color);
@@ -56,7 +55,6 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar > #menubar-items:hover{ visibility: visible }
 
   #toolbar-menubar:not([customizing]) #main-menubar{
-    -moz-box-orient: vertical;
     flex-direction: column;
     margin-left: -40px;
     background-color: var(--lwt-accent-color);

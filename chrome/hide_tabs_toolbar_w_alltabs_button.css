@@ -7,7 +7,6 @@ See the above repository for updates as well as full license text. */
 
 #tabbrowser-tabs{ visibility: hidden }
 #TabsToolbar-customization-target{
-  -moz-box-pack: end;
   justify-content: flex-end;
 }
 #alltabs-button{

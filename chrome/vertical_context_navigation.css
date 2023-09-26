@@ -23,7 +23,6 @@ scrollbox[orient="vertical"]::before{
 #contentAreaContextMenu menu{ --uc-popup-display: } /* intentionally blank */
 
 #context-navigation{
-  -moz-box-orient: vertical;
   flex-direction: column !important;
   grid-area: 1 / 1 / auto / 1;
   min-width: unset !important;
