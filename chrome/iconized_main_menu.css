@@ -2,11 +2,19 @@
 See the above repository for updates as well as full license text. */
 
 /* Adds icons to main menu items which were removed in Proton */
+#appMenu-zoom-controls::before,
 #appMenu-fxa-status2[fxastatus] > toolbarbutton::before,
 #appMenu-protonMainView > .panel-subview-body > toolbarbutton > image{
   fill: currentColor;
   -moz-context-properties: fill;
   margin-inline: 0 8px !important;
+}
+#appMenu-zoom-controls::before,
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{
+  display: flex;
+  content: "";
+  width: 16px;
+  height: 16px;
 }
 #appMenu-new-tab-button2{ list-style-image: url("chrome://browser/skin/new-tab.svg") }
 #appMenu-new-window-button2{ list-style-image: url("chrome://browser/skin/window.svg") }
@@ -23,14 +31,10 @@ See the above repository for updates as well as full license text. */
 #appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
 #appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
 #appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
+#appMenu-translate-button{ list-style-image: url("chrome://browser/skin/translations.svg") }
+#appMenu-zoom-controls::before{ background-image: url("chrome://browser/skin/fullscreen.svg") }
 /* Use account-button icon for signed in sync item */
-#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{
-  display: flex;
-  content: "";
-  width: 16px;
-  height: 16px;
-  background-image: var(--avatar-image-url)
-}
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{ background-image: var(--avatar-image-url) }
 /* Add somewhat hacky separator to zoom controls so it looks consistent */
 #appMenu-protonMainView > .panel-subview-body::after{
   content: "";
@@ -38,7 +42,6 @@ See the above repository for updates as well as full license text. */
   border-bottom: 1px solid var(--panel-separator-color);
   margin: var(--panel-separator-margin);
 }
-
 #appMenu-find-button2 ~ *{
   order: 2;
 }
