@@ -11,8 +11,13 @@ See the above repository for updates as well as full license text. */
 /* Toolbar buttons/items will be aligned to the right edge of the loading bar. If you wish to align them to the right edge, then add another flex-space after the first one */
 
 :root:not([inFullscreen]) > body{
-  --uc-browser-base-padding: calc(2 * var(--toolbarbutton-inner-padding) + 16px);
+  --uc-statusbar-button-padding: 4px;
+  --uc-browser-base-padding: calc(2 * var(--uc-statusbar-button-padding) + 16px + 4px);
   --uc-statusbar-text-vertical-position: 5px;
+}
+
+#PersonalToolbar .toolbarbutton-1{
+  --toolbarbutton-inner-padding: var(--uc-statusbar-button-padding) !important;
 }
 
 :root[uidensity="compact"]:not([inFullscreen]) > body{
