@@ -32,15 +32,6 @@ menupopup{ -moz-appearance: none !important; overflow: -moz-hidden-unscrollable 
 .tabbrowser-tab[selected]::after,
 .tabbrowser-tab[beforeselected-visible]::after{ border-color: transparent !important; }
 
-#nav-bar{ box-shadow: none !important; margin-top: 3px }
-.tab-line{ display: none }
-
-.tab-background[selected]{
-  border-top-width: 2px !important;
-  border-top-color: var(--lwt-tab-line-color) !important;
-}
-.tabbrowser-tab[selected]{ z-index: auto !important; }
-
 .urlbar-icon,
 toolbar toolbarbutton:not(#back-button):not(.bookmark-item):not(.titlebar-button) > .toolbarbutton-icon{  border-radius: 0px !important; clip-path: circle() }
 
