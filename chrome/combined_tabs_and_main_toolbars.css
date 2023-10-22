@@ -13,14 +13,16 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{ display: none !important; }
 #toolbar-menubar{ left:0 }
 
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
   #TabsToolbar > .titlebar-buttonbox-container{
     position: fixed;
     display: block;
     left: 0px;
     z-index: 1;
   }
-  :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-hide-window-control-space,1) * 96px + 20px) 0px !important; }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-hide-window-control-space,1) * 96px + 30px) 0px !important; }
   
   @media (-moz-platform: windows-win10){
     :root[tabsintitlebar="true"] #nav-bar{ padding-left: calc(var(--uc-hide-window-control-space,1) * 134px + 20px) !important; }
@@ -36,12 +38,18 @@ See the above repository for updates as well as full license text. */
   flex-direction: row-reverse;
   flex-wrap: wrap;
 }
-
+#urlbar-container{
+  max-height: var(--urlbar-container-height);
+  align-self: center;
+}
 #titlebar{
   -moz-appearance: none !important;
   flex-grow: 1;
 }
- 
+.tab-close-button{
+  padding-inline-start: 6px !important;
+  width: 24px !important;
+}
 .scrollbox-clip[orient="horizontal"]{
   contain: none !important;
 }
@@ -50,13 +58,6 @@ See the above repository for updates as well as full license text. */
 #nav-bar,
 #PersonalToolbar{ flex-grow: 1000; }
 
-/* Fx <108 only, this margin on bookmarks toolbar makes absolutely no sense, but it won't work properly without it.  */
-/*
-.browser-toolbar.chromeclass-directories:not([collapsed="true"]){
-  min-width: 100vw !important;
-  margin-bottom: calc(2 * var(--tab-block-margin) + var(--tab-min-height));
-}
-*/
 /* reduce urlbar minimum width. If urlbar would become narrower then main-toolbar wraps to second line */
 #urlbar-container{ min-width: 250px !important; }
 
@@ -68,7 +69,7 @@ See the above repository for updates as well as full license text. */
 #urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
 
 /* Set this pref if you want unpinned tabs to become hidden unless selected */
-@supports -moz-bool-pref("userchrome.hide-unpinned-tabs.enabled"){
+@media (-moz-bool-pref: "userchrome.hide-unpinned-tabs.enabled"){
   #alltabs-button{ display: flex !important }
   .tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
 }
