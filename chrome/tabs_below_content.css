@@ -20,7 +20,8 @@ linux_gtk_window_control_patch.css
   visibility: visible !important;
 }
 
-@media (-moz-gtk-csd-reversed-placement),
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
        (-moz-platform: macos){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
@@ -71,6 +72,13 @@ linux_gtk_window_control_patch.css
   display: none !important;
 }
 :root[inFullscreen] #toolbar-menubar > .titlebar-buttonbox-container{ display: flex !important; }
+
+@media (-moz-bool-pref: "browser.fullscreen.autohide"){
+  #main-window[inFullscreen]:not([inDOMFullscreen]) > body::after{
+    margin-bottom: 1px;
+  }
+  :root[inFullscreen] #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
+}
 
 @supports -moz-bool-pref("browser.fullscreen.autohide"){
   #main-window[inFullscreen]:not([inDOMFullscreen]) > body::after{

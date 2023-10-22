@@ -12,29 +12,23 @@ See the above repository for updates as well as full license text. */
  * Changes to the prefs WON'T APPLY before Firefox is restarted.
 */
 
+@media (-moz-bool-pref: "userchrome.menupopups.force-light"){
+  menupopup{
+    color-scheme: light !important;
+  }
+}
+@media (-moz-bool-pref: "userchrome.menupopups.force-dark"){
+  menupopup{
+    color-scheme: dark !important;
+  }
+}
 @supports -moz-bool-pref("userchrome.menupopups.force-light"){
   menupopup{
     color-scheme: light !important;
-    /* variables for pre-fx105 */
-    --menuitem-hover-background-color: #e0e0e6 !important;
-    --menu-background-color: #f9f9fb !important;
-    --menu-color: #15141a !important;
-    --menuitem-disabled-hover-background-color: rgba(224, 224, 230, 0.4) !important;
-    --menu-disabled-color: rgba(21, 20, 26, 0.4) !important;
-    --menu-border-color: #cfcfd8!important;
-    --menu-icon-opacity: 0.7 !important;
   }
 }
 @supports -moz-bool-pref("userchrome.menupopups.force-dark"){
   menupopup{
     color-scheme: dark !important;
-    /* variables for pre-fx105 */
-    --menuitem-hover-background-color: #52525e !important;
-    --menu-background-color: #2b2a33 !important;
-    --menu-color: #fbfbfe !important;
-    --menuitem-disabled-hover-background-color: rgba(82, 82, 94, 0.4) !important;
-    --menu-disabled-color: rgba(251, 251, 254, 0.4) !important;
-    --menu-border-color: #5b5b66 !important;
-    --menu-icon-opacity: 1 !important;
   }
 }

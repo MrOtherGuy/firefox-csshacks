@@ -19,7 +19,8 @@ have menubar permanently enabled and want it on top
   right:0;
   height: 40px;
 }
-@media (-moz-gtk-csd-reversed-placement),
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
        (-moz-platform: macos){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }

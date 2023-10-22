@@ -24,10 +24,10 @@ Window controls will be all wrong without it
 
 /* reserved space for overflow + menu buttons */
 #navigator-toolbox{
-  --uc-buttons-width: calc(96px + 5 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
+  --uc-buttons-width: calc(64px + 5 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
 }
 #nav-bar:not([nonemptyoverflow]) > #nav-bar-customization-target{ 
-  --uc-buttons-width: calc(64px + 4 * var(--toolbarbutton-outer-padding) + 6px)
+  --uc-buttons-width: calc(32px + 4 * var(--toolbarbutton-outer-padding) + 6px)
 }
 /* Override for other densities */
 :root[uidensity="compact"] #navigator-toolbox{
@@ -79,8 +79,18 @@ Window controls will be all wrong without it
 
 #nav-bar-customization-target{ padding-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-window-control-width) - var(--uc-buttons-width) - var(--uc-window-drag-space-post)) }
 
+/* Rules specific to window controls on left layout */
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-platform: macos),
+       (-moz-gtk-csd-reversed-placement){
+  .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
+  #nav-bar-customization-target{
+    padding-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre))
+  }
+}
+
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  .titlebar-buttonbox-container{ position: fixed; display: blocK; left: 0px; z-index: 3; }
+  .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
   #nav-bar-customization-target{ padding-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre)) }
 }
 

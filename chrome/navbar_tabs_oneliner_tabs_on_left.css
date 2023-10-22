@@ -82,7 +82,8 @@ Window controls will be all wrong without it
 #nav-bar::before{ display:none !important }
 
 /* Rules specific to window controls on left layout */
-@media (-moz-platform: macos),
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-platform: macos),
        (-moz-gtk-csd-reversed-placement){
   :root:not([inFullscreen]) #TabsToolbar-customization-target > .titlebar-spacer[type="pre-tabs"]{
     width: var(--uc-window-drag-space-post) !important;

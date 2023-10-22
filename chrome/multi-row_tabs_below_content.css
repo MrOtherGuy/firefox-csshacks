@@ -231,6 +231,23 @@ See the above repository for updates as well as full license text. */
     margin-bottom: 0 !important;
     z-index: auto !important;
   }
+  @media (-moz-bool-pref: "userchrome.multirowtabs.static-menubar.enabled"){
+    :root{
+      --multirow-menubar-height: 28px;
+      --uc-window-drag-space-width: 0px;
+      --uc-window-control-width: 0px;
+    }
+    #main-menubar,
+    #toolbar-menubar{ height: var(--multirow-menubar-height); background-image: none; }
+    #toolbar-menubar > #menubar-items{ visibility: visible; background-image: none !important; }
+    .titlebar-buttonbox-container{ background: none !important }
+    :root:not([inFullscreen]) #nav-bar{
+      top: calc(var(--multirow-menubar-height) + var(--multirow-top-padding));
+    }
+    :root[BookmarksToolbarOverlapsBrowser] #PersonalToolbar{
+      top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height));
+    }
+  }
   @supports -moz-bool-pref("userchrome.multirowtabs.static-menubar.enabled"){
     :root{
       --multirow-menubar-height: 28px;
