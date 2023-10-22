@@ -26,14 +26,13 @@ See the above repository for updates as well as full license text. */
 :root:not([customizing]) #urlbar-input-container::before{
   position: fixed;
   display: block;
-  top: 0;
   left: 0;
   width: calc(100vw - 138px);
   height: calc(var(--tab-min-height) + 2*var(--tab-block-margin));
   content: "";
   pointer-events: auto;
 }
-:root[sizemode="normal"]:not([customizing]) #urlbar-input-container::before{ left: 40px; width: calc(100vw - 138px -80px) }
+:root[sizemode="normal"]:not([customizing]) #urlbar-input-container::before{ left: 40px; width: calc(100vw - 138px - 80px) }
 
 #urlbar-input-container:focus-within::before{ display: none !important; }
 
