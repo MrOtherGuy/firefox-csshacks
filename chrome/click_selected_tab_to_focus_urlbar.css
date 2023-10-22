@@ -12,6 +12,22 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab:not([pinned])[selected]{ pointer-events: none }
 
+:root{
+  --uc-window-control-width: 138px;
+  --uc-buttons-width: 116px;
+  --uc-window-drag-space-width: 40px;
+  --uc-menubar-height: 0px;
+}
+@media (-moz-platform: windows),
+       (-moz-platform: linux){
+  :root:is([sizemode="maximized"],[sizemode="fullscreen"]){
+    --uc-window-drag-space-width: 0px;
+  }
+  #titlebar:has(> [autohide="false"]) + #nav-bar{
+    --uc-window-drag-space-width: 0px;
+    --uc-menubar-height: 28px;
+  }
+}
 /* Add back pointer-events to several elements so UI remains usable */
 /* The selected tab can be clicked normally from the icon */
 #TabsToolbar toolbarbutton,
@@ -21,19 +37,21 @@ See the above repository for updates as well as full license text. */
 .tab-icon-stack{
   pointer-events: auto
 }
-
 /* Invisible capture box behind tabs*/
 :root:not([customizing]) #urlbar-input-container::before{
   position: fixed;
   display: block;
   left: 0;
-  width: calc(100vw - 138px);
+  top: var(--uc-menubar-height);
+  width: var(--uc-buttons-width);
   height: calc(var(--tab-min-height) + 2*var(--tab-block-margin));
   content: "";
   pointer-events: auto;
 }
-:root[sizemode="normal"]:not([customizing]) #urlbar-input-container::before{ left: 40px; width: calc(100vw - 138px - 80px) }
-
+:root[tabsintitlebar]:not([customizing]) #urlbar-input-container::before{
+  left: var(--uc-window-drag-space-width);
+  width: calc(100vw - var(--uc-window-control-width) - var(--uc-buttons-width) - 2 * var(--uc-window-drag-space-width));
+}
 #urlbar-input-container:focus-within::before{ display: none !important; }
 
 /* Make tabs appear over the invisible box */

@@ -14,8 +14,18 @@ See the above repository for updates as well as full license text. */
 #PanelUI-button,
 #nav-bar-overflow-button{ z-index: 2; position: relative }
 
-:root[sizemode="normal"] #urlbar-container{ margin-inline: 40px !important; }
-
+#urlbar-input-container{
+  width: calc(100vw - var(--uc-window-control-width) - var(--uc-buttons-width) - 2 * var(--uc-window-drag-space-width) - 76px) !important;
+  left: calc(76px + var(--uc-window-drag-space-width)) !important;
+  pointer-events: none;
+  overflow: visible !important;
+}
+:root:not([customizing]) #urlbar-input-container::before{
+  position: absolute;
+  left: 0;
+  top: 0 !important;
+  height: var(--urlbar-container-height);
+}
 #urlbar-input-container > :not(.urlbar-input-box){ opacity: 0 }
 
 #urlbar-background{
@@ -24,7 +34,20 @@ See the above repository for updates as well as full license text. */
   box-shadow: none !important;
   outline: none !important;
 }
-#urlbar-container{ position: static !important; }
+#urlbar{pointer-events: none !important;}
+#urlbar-container{
+  position: static !important;
+  margin-left: var(--uc-window-control-width) !important;
+}
+#remote-control-box,
+#urlbar-search-button{
+  display: none;
+}
+#tracking-protection-icon-container,
+#identity-box{
+  max-width: 0.1px;
+  padding-inline: 0 !important;
+}
 .urlbarView{
   background: var(--toolbar-field-focus-background-color);
   border: 1px solid var(--toolbar-field-focus-border-color) !important;
@@ -58,7 +81,7 @@ See the above repository for updates as well as full license text. */
 /* Oh and! also hide other buttons from the nav-bar because why not */
 :root:not([customizing]) #nav-bar-customization-target > :not(#urlbar-container){ visibility: collapse }
 #TabsToolbar > .toolbar-items{
-  margin-right: 40px !important;
+  margin-right: 112px !important; /* This is space on right side for 3 buttons, menu, overflow and addons */
   margin-left: 80px !important;
 }
 #unified-extensions-button{
@@ -73,8 +96,8 @@ See the above repository for updates as well as full license text. */
 /* By default this style moves your back and forward buttons to the left edge of the navbar and adds a placeholder space for them.
    Set the following pref to false to disable that behavior */
 @media (-moz-bool-pref: "userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"){
-  #TabsToolbar > .toolbar-items{ margin-left: 0px }
-  #nav-bar-customization-target{ margin-left: 0px }
+  #TabsToolbar > .toolbar-items{ margin-left: 0px !important; }
+  #nav-bar-customization-target{ margin-left: 0px !important; }
   #back-button, #forward-button{
     order: auto;
     z-index: auto;
@@ -95,5 +118,5 @@ See the above repository for updates as well as full license text. */
   background-color: transparent !important;
 }
 #titlebar:has(> [autohide="true"]) + #nav-bar{
-  padding-right: 138px;
+  padding-right: calc(138px + 40px);
 }
