@@ -4,8 +4,13 @@ See the above repository for updates as well as full license text. */
 /* This is less flexible than hide_tabs_toolbar.css, but this method aims to preserve the alltabs button and show it and window controls next to the main menu button */
 
 /* Load window_control_placeholder_support.css before this stylesheet */
-
-#tabbrowser-tabs{ visibility: hidden }
+.tabbrowser-tab{
+  -moz-window-dragging: unset !important;
+}
+:root:not([customizing]) #tabbrowser-arrowscrollbox-periphery{
+  display: none;
+}
+#tabbrowser-tabs{ visibility: hidden;}
 #TabsToolbar-customization-target{
   justify-content: flex-end;
 }
@@ -13,18 +18,26 @@ See the above repository for updates as well as full license text. */
   position: relative;
   z-index: 1;
   padding-bottom: 5px !important;
+  display: flex !important;
+  margin-right: 36px !important;
 }
+:root[sizemode="fullscreen"] #alltabs-button{ margin-right: calc(var(--uc-window-control-width) + 36px) !important }
+
 #TabsToolbar:not([inFullscreen]) > .titlebar-buttonbox-container{
   padding-bottom: 5px;
 }
-
-@supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root[id]{ --uc-window-control-width: 40px }
-  :root:is([tabsintitlebar],[sizemode="fullscreen"]){ --uc-window-control-width: 160px }
-  :root[sizemode="fullscreen"] #alltabs-button{ margin-right: var(--uc-window-control-width) !important; }
+#nav-bar{ padding-right: 40px !important; }
+/* Rules for window controls on left layout */
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  #alltabs-button{
+    margin-right: var(--uc-window-drag-space-pre) !important;
+  }
+  :root[sizemode="fullscreen"] #alltabs-button{ margin-right: 0px !important; }
 }
 
 #TabsToolbar > .titlebar-spacer{ display: none }
-#TabsToolbar{ margin-bottom: calc(0px - var(--tab-min-height) - 2 * var(--tab-block-margin))}
+#TabsToolbar:not([customizing]){ margin-bottom: calc(0px - var(--tab-min-height) - 2 * var(--tab-block-margin))}
 
 #titlebar{ -moz-appearance: none !important; }
