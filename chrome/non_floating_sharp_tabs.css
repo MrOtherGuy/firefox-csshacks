@@ -10,7 +10,8 @@ See the above repository for updates as well as full license text. */
   --tabs-shadow-size: 1px !important;
   
   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
-  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; 
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
+  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; /* this is same for fx < 119 */
 }
 
 /* Uncomment next line to force specific color for tab top line */
@@ -33,9 +34,9 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox:not([movingtab]):-moz-lwtheme > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }
-
+/* Uncomment this for Fx < 119
 .tab-background[selected]:not(:-moz-lwtheme){ background: var(--toolbar-bgcolor) !important; }
-
+*/
 #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-badge-stack,
 #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
 
