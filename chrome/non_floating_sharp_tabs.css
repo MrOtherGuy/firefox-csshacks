@@ -90,14 +90,14 @@ See the above repository for updates as well as full license text. */
   border-top: 0 !important;
   outline: none !important;
 }
-/* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below */
+/* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below. */
 #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]):-moz-lwtheme {
-  background-attachment: scroll, scroll, fixed;
+  background-attachment: scroll, fixed, fixed !important;
   background-color: transparent !important;
-  background-image: linear-gradient(var(--tab-selected-bgcolor, transparent), var(--tab-selected-bgcolor, transparent)), linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none);
-  background-position: 0 0, 0 0, right top;
-  background-repeat: repeat-x, repeat-x, no-repeat !important;
-  background-size: auto 100%, auto 100%, auto auto;
+  background-image: linear-gradient(var(--tab-selected-bgcolor, transparent), var(--tab-selected-bgcolor, transparent)), var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;;
+  background-position: 0 0, var(--lwt-background-alignment), right top !important;
+  background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
+  background-size: auto 100%, var(--lwt-background-size, auto auto), auto auto !important;
 }
 .tab-background:not([selected])[multiselected]{
   background: color-mix(in srgb, currentColor 11%, transparent) !important;
