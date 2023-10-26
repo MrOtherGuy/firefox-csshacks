@@ -23,10 +23,14 @@ See the above repository for updates as well as full license text. */
   /* The following properties should allow the themes with trasparent toolbars to work */
   background-color: transparent !important;
   background-repeat: no-repeat,no-repeat,var(--lwt-background-tiling);
-  --uc-bg-y: calc(-2 * (var(--tab-block-margin) + var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - var(--tab-min-height) - 16px - var(--bookmark-block-padding));
+    /* y position will be wrong if menubar is enabled... */
+  --uc-bg-y: calc(-2 * (var(--tab-block-margin) + var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - var(--tab-min-height) - 24px - var(--bookmark-block-padding));
   background-position: top left,top left,var(--lwt-background-alignment,top left);
   background-position-y:top,top,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
   background-image: var(--toolbar-bgimage,linear-gradient(transparent,transparent)), linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,var(--lwt-additional-images)) !important;
+}
+:root[uidensity="compact"] #PersonalToolbar{
+  --toolbarbutton-outer-padding: 1px !important;
 }
 /* This is a workaround for fx 119 specifically for users that use default theme, should remove when 120 is released. See bug 1853524 */
 #PersonalToolbar:not(:-moz-lwtheme){
@@ -48,7 +52,9 @@ See the above repository for updates as well as full license text. */
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-focus-rotation,0));
 }
-
+#navigator-toolbox:is(:hover,:focus-within){
+  border-bottom-color: transparent !important;
+}
 #navigator-toolbox:hover > #PersonalToolbar{
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
