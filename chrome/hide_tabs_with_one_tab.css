@@ -51,7 +51,7 @@ This will NOT work correctly if you have hidden tabs such as with tab groups ext
   #TabsToolbar .titlebar-button > .toolbarbutton-icon{ padding: 0 13px !important }
 }
 
-#tabbrowser-tabs:not([overflowing="true"]) ~ #alltabs-button{
+#tabbrowser-tabs:not([overflow]) ~ #alltabs-button{
   display: none;
 }
 
