@@ -24,7 +24,11 @@ See the above repository for updates as well as full license text. */
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 2;
 }
-
+#PlacesToolbarItems > .bookmark-item,
+#OtherBookmarks,
+#PersonalToolbar > #import-button{
+  padding-block: var(--uc-bm-padding) !important;
+}
 :root[sessionrestored] #PersonalToolbar{
   z-index: 1;
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px) + var( --uc-navbar-height));
