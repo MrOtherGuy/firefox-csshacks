@@ -101,7 +101,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Annoying fix to prevent hovering of last tab to trigger tab overflow, better solution wanted */
-.tabbrowser-tab[last-visible-tab]{ margin-inline-end: var(--uc-tab-curve-size) !important; }
+.tabbrowser-tab:last-of-type{ margin-inline-end: var(--uc-tab-curve-size) !important; }
 
 /* Move tabs a bit away from the window edge, otherwise the left-most pinned tab might be partially outside of window */
 #tabbrowser-tabs[positionpinnedtabs]{ margin-left: var(--uc-tab-curve-size) }
