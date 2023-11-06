@@ -11,7 +11,7 @@ See the above repository for updates as well as full license text. */
 }
 scrollbox[orient="vertical"]{
   display: var(--uc-popup-display,inherit);
-  grid-template-columns: 38px 1fr; 
+  grid-template-columns: auto 1fr; 
   grid-template-rows: 0;
 }
 
@@ -26,14 +26,11 @@ scrollbox[orient="vertical"]::before{
   flex-direction: column !important;
   grid-area: 1 / 1 / auto / 1;
   min-width: unset !important;
-  margin-top: -3px;
   align-items: flex-start;
 }
-#context-navigation > .menuitem-iconic{ min-height: 38px; width: unset !important; }
-#context-navigation > .menuitem-iconic[_moz-menuactive="true"] > .menu-iconic-left > .menu-iconic-icon{
-  border-radius: calc(var(--panel-border-radius) / 2) !important;
+#context-navigation > .menuitem-iconic{ width: unset !important; }
+#context-navigation .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon{
+  width: auto !important;
 }
-#context-navigation > .menuitem-iconic > .menu-iconic-left{ margin: 0 !important; padding: 0 !important; }
 #context-sep-navigation{ display: none }
 #context-navigation ~ * { grid-area: auto / 2 / auto / 2; }
-#context-navigation[hidden] ~ *{ margin-inline-start: -38px; }
