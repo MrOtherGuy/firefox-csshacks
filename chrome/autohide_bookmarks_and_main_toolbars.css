@@ -65,6 +65,12 @@ See the above repository for updates as well as full license text. */
 /* Selected tab needs higher z-index now to "hide" the broder below it */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
 
+/* Show when cursor is over main menu popup - this requires :has selector support */
+#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox > .browser-toolbar{
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
+}
+
 /* SELECT TOOLBAR BEHAVIOR */
 /* Comment out or delete one of these to disable that behavior */
 
@@ -89,13 +95,6 @@ See the above repository for updates as well as full license text. */
   margin-bottom: calc(-1px - var(--uc-bm-height) + var(--uc-navbar-height)) !important;
   z-index: auto !important;
 }
-/* Show when cursor is over popups/context-menus - cannot control which ones */
-/*
-#mainPopupSet:hover ~ toolbox > .browser-toolbar{
-  transition-delay: 100ms !important;
-  transform: rotateX(0);
-}
-*/
 
 /* Uncomment the next part to enable compatibility for multi-row_bookmarks.css
  * This would break buttons placed in the toolbar,

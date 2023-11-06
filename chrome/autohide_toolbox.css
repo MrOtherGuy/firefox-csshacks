@@ -36,11 +36,14 @@ See the above repository for updates as well as full license text. */
   pointer-events: none;
 }
 
-
-/* #mainPopupSet:hover ~ toolbox, */
-/* Uncomment the above line to make toolbar visible if some popup is hovered */
 #navigator-toolbox:hover,
 #navigator-toolbox:focus-within{
+  transition-delay: 33ms !important;
+  transform: rotateX(0);
+  opacity: 1;
+}
+/* This ruleset is separate, because not having :has support breaks other selectors as well */
+#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox{
   transition-delay: 33ms !important;
   transform: rotateX(0);
   opacity: 1;
