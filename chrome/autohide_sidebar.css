@@ -8,6 +8,8 @@ See the above repository for updates as well as full license text. */
   --uc-sidebar-width: 40px;
   --uc-sidebar-hover-width: 210px;
   --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
+  --uc-autohide-transition-duration: 115ms;
+  --uc-autohide-transition-type: linear;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
@@ -40,7 +42,7 @@ See the above repository for updates as well as full license text. */
 
 #sidebar-header,
 #sidebar{
-  transition: min-width 115ms linear var(--uc-autohide-sidebar-delay) !important;
+  transition: min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay) !important;
   min-width: var(--uc-sidebar-width) !important;
   will-change: min-width;
 }
