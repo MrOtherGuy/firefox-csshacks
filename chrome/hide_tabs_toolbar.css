@@ -53,3 +53,13 @@ Window controls will be all wrong without it
   pointer-events: none;
   margin-left: var(--uc-window-drag-space-pre,0px)
 }
+/* This is a workaround for fx 119 specifically for users that use default theme, should remove when 120 is released. See bug 1853524 */
+:root:not(:-moz-lwtheme){
+  --toolbar-non-lwt-bgcolor: #f9f9fb !important;
+}
+/* ...and for dark variant */
+@media (prefers-color-scheme: dark){
+  :root:not(:-moz-lwtheme){
+    --toolbar-non-lwt-bgcolor: rgb(43, 42, 51) !important;
+  }
+}
