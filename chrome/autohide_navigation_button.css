@@ -4,8 +4,6 @@ See the above repository for updates as well as full license text. */
 /* Hides navigation-buttons (back/forward/stop/reload) buttons and shows them when cursor is over the right edge of urlbar  */
 /* Disabled button are completely hidden, such as back-button when there is no page to go back to */
 
-/* COMPACT MODE ONLY - The weird size of back-button causes this to not work well in normal and touch mode */
-
 /* To set this up you need to customize the order of items to be such that layout from LEFT to RIGHT is 
 urlbar
 flexible space
@@ -13,26 +11,26 @@ navigation-buttons in any order
  */
 /* The order of items before urlbar and after navigation-buttons doesn't matter */
 
-#nav-bar-customization-target > toolbarbutton.chromeclass-toolbar-additional[overflows="false"],
-#nav-bar-customization-target > #stop-reload-button > #reload-button{
-  margin-inline-start: -30px !important;
+:is(#back-button,#forward-button),
+#reload-button{
+  margin-inline-start: -34px !important;
   visibility:hidden;
   transition: margin 66ms linear !important
 }
 
-#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:hover,
-#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:hover ~ .chromeclass-toolbar-additional[overflows="false"],
-#nav-bar-customization-target > .chromeclass-toolbar-additional[overflows="false"]:hover ~ #stop-reload-button > #reload-button,
-#nav-bar-customization-target > #urlbar-container + toolbarspring:hover ~ .chromeclass-toolbar-additional[overflows="false"],
-#nav-bar-customization-target > #stop-reload-button:hover > #reload-button,
-#nav-bar-customization-target > #urlbar-container + toolbarspring:hover ~ #stop-reload-button > #reload-button{
+:is(#back-button,#forward-button):hover,
+:is(#back-button,#forward-button):hover ~ :is(#back-button,#stop-reload-button,#forward-button),
+:is(#back-button,#forward-button):hover ~ #stop-reload-button > #reload-button,
+#urlbar-container + toolbarspring:hover ~ :is(#back-button,#forward-button),
+#stop-reload-button:hover > #reload-button,
+#urlbar-container + toolbarspring:hover ~ #stop-reload-button > #reload-button{
   margin-inline-start: 0px !important;
   visibility: visible
 }
 
 #nav-bar-customization-target > #downloads-button { margin-inline-start: 0px !important; visibility: visible !important; }
 
-#nav-bar-customization-target > toolbarbutton.chromeclass-toolbar-additional[overflows="false"][disabled],
-#nav-bar-customization-target > #stop-reload-button > [disabled]{ display: none }
+:is(#back-button,#forward-button)[disabled],
+#stop-reload-button > [disabled]{ display: none }
 
 #urlbar-container + toolbarspring{ max-width: 4px !important; min-width: 4px !important; }
