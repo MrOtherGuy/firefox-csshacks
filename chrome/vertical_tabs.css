@@ -1,0 +1,91 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_tabs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style makes tabs appear vertically at the left side 
+ * of the window - kinda like a sidebar.
+ * If you have disabled titlebar then you need to also get window_control_placeholder_support.css to make space for window control buttons */
+
+:root:not([customizing]){
+  --uc-vertical-tabs-width: 220px;
+  --uc-navbar-height: 40px;
+}
+:root[uidensity="compact"]:not([customizing]){
+  --uc-navbar-height: 34px;
+}
+#PersonalToolbar,
+#tab-notification-deck,
+.global-notificationbox,
+#main-window:not([inDOMFullscreen]) > body > #browser{
+  margin-left: var(--uc-vertical-tabs-width);
+}
+#tab-notification-deck,
+.global-notificationbox{
+  width: auto !important;
+}
+.tabbrowser-tab{
+  min-width: 0.1px !important; /* This is to prevent Firefox from thinking that tabs would overflow. Still, if such a situation ever occurs it will prevent the ability to scroll tabs with mouse */
+}
+:root:not([customizing]) #tabbrowser-tabs{
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  padding-top: var(--uc-navbar-height);
+  width: var(--uc-vertical-tabs-width);
+  background-color: var(--lwt-accent-color);
+  contain: size;
+}
+:root:not([customizing]) #toolbar-menubar[autohide="false"] + #TabsToolbar #tabbrowser-tabs{
+  height: calc(100vh - 28px); /* 28px is however tall your menubar is */
+}
+:root:not([customizing]) #TabsToolbar #new-tab-button,
+#alltabs-button{
+  display: none;
+}
+#tabbrowser-tabs[hasadjacentnewtabbutton] #tabs-newtab-button{
+  display: flex !important;
+  flex-grow: 1;
+}
+.tab-close-button{
+  display: flex !important;
+}
+#tabs-newtab-button > .toolbarbutton-icon{
+  background: none !important;
+}
+#tabs-newtab-button{
+  margin: 2px !important;
+  border-radius: var(--tab-border-radius);
+}
+#tabs-newtab-button:hover{
+  background-color: var(--toolbarbutton-hover-background) !important;
+}
+#tabs-newtab-button:hover:active{
+  background-color: var(--toolbarbutton-active-background) !important;
+}
+#TabsToolbar > .titlebar-buttonbox-container{
+  position: absolute;
+  right: 0;
+}
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  #TabsToolbar > .titlebar-buttonbox-container{
+    right: unset;
+    left: 0;
+  }
+} 
+:root:not([customizing]) #tabbrowser-arrowscrollbox{
+  --uc-scrollbox-box-model: -webkit-box;
+  --uc-scrollbox-height: 100vh;
+  --uc-scrollbutton-display: none;
+  --uc-scrollbox-overflow: auto;
+}
+scrollbox[orient="horizontal"]{
+  display: var(--uc-scrollbox-box-model,flex);
+  -webkit-box-orient: vertical;
+  height: 100%;
+  overflow: var(--uc-scrollbox-overflow,initial);
+} 
+#scrollbutton-up,
+#scrollbutton-down{
+  display: var(--uc-scrollbutton-display,initial);
+}
