@@ -13,6 +13,13 @@ See the above repository for updates as well as full license text. */
 }
 :root[uidensity="touch"] #navigator-toolbox{ --uc-bm-padding: 6px }
 
+:root[chromehidden~="directories"] #navigator-toolbox{
+  --uc-bm-height: 0px;
+}
+:root[chromehidden~="toolbar"] #navigator-toolbox{
+  --uc-navbar-height: 0px;
+}
+
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage))  !important;

@@ -5,11 +5,11 @@ See the above repository for updates as well as full license text. */
  * of the window - kinda like a sidebar.
  * If you have disabled titlebar then you need to also get window_control_placeholder_support.css to make space for window control buttons */
 
-:root:not([customizing]){
+:root:not([customizing],[chromehidden~="menubar"]){
   --uc-vertical-tabs-width: 220px;
   --uc-navbar-height: 40px;
 }
-:root[uidensity="compact"]:not([customizing]){
+:root[uidensity="compact"]:not([customizing],[chromehidden~="menubar"]){
   --uc-navbar-height: 34px;
 }
 #PersonalToolbar,

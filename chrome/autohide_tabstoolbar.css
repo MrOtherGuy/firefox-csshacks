@@ -13,8 +13,8 @@ See the above repository for updates as well as full license text. */
   pointer-events: none
 }
 
-:root:not([customizing]) #navigator-toolbox:hover,
-:root:not([customizing]) #titlebar{
+:root:not([customizing],[chromehidden~="menubar"]) #navigator-toolbox:hover,
+:root:not([customizing],[chromehidden~="menubar"]) #titlebar{
   margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
 }
 #TabsToolbar:not([customizing]){ visibility: hidden; transition: visibility 0ms linear 200ms }
