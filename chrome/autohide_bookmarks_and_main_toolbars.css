@@ -95,7 +95,11 @@ See the above repository for updates as well as full license text. */
   margin-bottom: calc(-1px - var(--uc-bm-height) + var(--uc-navbar-height)) !important;
   z-index: auto !important;
 }
-
+@media (-moz-bool-pref: "browser.fullscreen.autohide"){
+  :root[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top"]{
+    margin-top: calc(1px - var(--tab-min-height) - 2 * var(--tab-block-margin)) !important;
+  }
+}
 /* Uncomment the next part to enable compatibility for multi-row_bookmarks.css
  * This would break buttons placed in the toolbar,
  * but that is likely not happening if you are using multi-row setup
