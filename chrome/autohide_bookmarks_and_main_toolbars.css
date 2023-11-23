@@ -86,6 +86,13 @@ See the above repository for updates as well as full license text. */
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }
+
+/* This ruleset is separate, because not having :has support breaks other selectors as well */
+#mainPopupSet:has(> #appMenu-popup:hover) ~ #navigator-toolbox > .browser-toolbar{
+  transition-delay: 33ms !important;
+  transform: rotateX(0);
+} 
+
 /* This makes the tab notification box show immediately below tabs, otherwise it would break the layout */
 #navigator-toolbox > div{ display: contents }
 :where(#titlebar,#tab-notification-deck,.global-notificationbox){

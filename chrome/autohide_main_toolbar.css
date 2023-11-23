@@ -39,6 +39,12 @@ See the above repository for updates as well as full license text. */
   transition-duration: 500ms, 200ms !important;
   transition-delay: 0s !important;
 }
+/* This ruleset is separate, because not having :has support breaks other selectors as well */
+#mainPopupSet:has(> #appMenu-popup:hover) ~ #navigator-toolbox > .browser-toolbar{
+  transition-delay: 33ms !important;
+  transform: translateY(0);
+  opacity: 1;
+} 
 
 /* Bookmarks toolbar needs so extra rules */
 #PersonalToolbar{ transition: transform 400ms ease 1.8s !important; position: relative; z-index: 1 }
