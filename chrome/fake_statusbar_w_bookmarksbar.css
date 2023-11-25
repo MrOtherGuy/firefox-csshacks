@@ -28,6 +28,7 @@ See the above repository for updates as well as full license text. */
   content: "";
   display: flex;
   margin-bottom: calc(1px + var(--uc-browser-base-padding)) !important;
+  order: 2; /* To make this really the bottom-most toolbar even with custom toolbar order */
 }
 
 #PersonalToolbar{
