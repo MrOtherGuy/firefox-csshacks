@@ -34,6 +34,19 @@ See the above repository for updates as well as full license text. */
   background-color: var(--lwt-accent-color);
   contain: size;
 }
+@media (-moz-bool-pref: "userchrome.vertical-tabs.on-right.enabled"){
+  #PersonalToolbar,
+  #tab-notification-deck,
+  .global-notificationbox,
+  #main-window:not([inDOMFullscreen]) > body > #browser{
+    margin-left: 0;
+    margin-right: var(--uc-vertical-tabs-width);
+  }
+  :root:not([customizing]) #tabbrowser-tabs{
+    left: unset;
+    right: 0;
+  }
+}
 :root:not([customizing]) #toolbar-menubar[autohide="false"] + #TabsToolbar #tabbrowser-tabs{
   height: calc(100vh - 28px); /* 28px is however tall your menubar is */
 }
