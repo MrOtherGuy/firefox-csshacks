@@ -33,16 +33,6 @@ See the above repository for updates as well as full license text. */
   #main-window[tabsintitlebar]{
     background-color: var(--toolbar-bgcolor,accentcolor) !important;;
   }
-  /* This is a workaround for fx 119 specifically for users that use default theme, should remove when 120 is released. See bug 1853524 */
-  #main-window[tabsintitlebar]:not(:-moz-lwtheme){
-    --toolbar-bgcolor: #f9f9fb !important;
-  }
-  /* ...and for dark variant */
-  @media (prefers-color-scheme: dark){
-    #main-window[tabsintitlebar]:not(:-moz-lwtheme){
-      --toolbar-bgcolor: rgb(43, 42, 51) !important;
-    }
-  }
   :root[uidensity="compact"]{ --multirow-toolbar-height: 34px }
   :root{ border-top-width: 0px !important }
 

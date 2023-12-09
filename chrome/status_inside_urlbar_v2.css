@@ -51,16 +51,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
 
 /* If you use a theme where urlbar is partially transparent you should edit this color to something that closely matches the perceived color of urlbar. Or perhaps use background-image - linear-gradient() can work well here. But keep the color or image opaque or otherwise you'll face an issue where urlbar text bleeds through */
 #statuspanel{ background-color: var(--toolbar-bgcolor) }
-/* This is a workaround for fx 119 specifically for users that use default theme, should remove when 120 is released. See bug 1853524 */
-#statuspanel:not(:-moz-lwtheme){
-  background-color: #f9f9fb;
-}
-/* ...and for dark variant */
-@media (prefers-color-scheme: dark){
-  #statuspanel:not(:-moz-lwtheme){
-    background-color: rgb(43, 42, 51);
-  }
-}
+
 #statuspanel{
   color: var(--toolbar-field-color, black);
   z-index: -1;

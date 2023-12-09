@@ -32,16 +32,6 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"] #PersonalToolbar{
   --toolbarbutton-outer-padding: 1px !important;
 }
-/* This is a workaround for fx 119 specifically for users that use default theme, should remove when 120 is released. See bug 1853524 */
-#PersonalToolbar:not(:-moz-lwtheme){
-  --toolbar-bgcolor: #f9f9fb;
-}
-/* ...and for dark variant */
-@media (prefers-color-scheme: dark){
-  #PersonalToolbar:not(:-moz-lwtheme){
-    --toolbar-bgcolor: rgb(43, 42, 51);
-  }
-}
 #PlacesToolbarItems > .bookmark-item,
 #OtherBookmarks,
 #PersonalToolbar > #import-button{
