@@ -165,3 +165,4 @@ window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colo
 window_control_force_linux_system_style.css,window-control,buttons,icon
 window_control_placeholder_support.css,window-control,patch
 vertical_tabs.css,tabs,hack
+bookmarks_below_content.css,bookmarks,toolbars

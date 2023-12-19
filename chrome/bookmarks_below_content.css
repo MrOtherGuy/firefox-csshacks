@@ -1,0 +1,24 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/bookmarks_below_content.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes bookmarks toolbar show below web-content area. */
+
+@-moz-document url("chrome://browser/content/browser.xhtml"){
+  :root:not([inDOMFullscreen],[sizemode="fullscreen"],[chromehidden="direrctories"]){
+    --uc-bm-toolbar-height: 28px; /* Adjust if needed */
+  }
+  #browser,
+  #customization-container{
+    margin-bottom: var(--uc-bm-toolbar-height,0);
+    border-bottom: 1px solid var(--chrome-content-separator-color,light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%)))
+  }
+  #navigator-toolbox:has(> #PersonalToolbar[collapsed="true"]) + #browser{
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  #PersonalToolbar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
