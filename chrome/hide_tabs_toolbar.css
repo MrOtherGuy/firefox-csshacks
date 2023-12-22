@@ -16,7 +16,11 @@ Window controls will be all wrong without it
 
 :root[tabsintitlebar]{ --uc-toolbar-height: 40px; }
 :root[tabsintitlebar][uidensity="compact"]{ --uc-toolbar-height: 32px }
-
+#titlebar{
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
 #TabsToolbar{ visibility: collapse !important }
 
 :root[sizemode="fullscreen"] #TabsToolbar > :is(#window-controls,.titlebar-buttonbox-container){

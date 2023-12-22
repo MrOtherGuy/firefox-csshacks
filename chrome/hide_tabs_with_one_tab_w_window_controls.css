@@ -20,7 +20,12 @@ Window controls will be all wrong without it
 :root{
   --uc-menubar-vertical-overlap: 28px; /* adjust as necessary */
 }
-#titlebar{ -moz-appearance: none !important; }
+#titlebar{
+  -moz-appearance: none !important;
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
 /* Hide overflow button unless tabs overflow - is necessary for collpasing tabs with one tab */

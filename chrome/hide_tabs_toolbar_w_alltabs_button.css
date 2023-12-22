@@ -40,4 +40,9 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar > .titlebar-spacer{ display: none }
 #TabsToolbar:not([customizing]){ margin-bottom: calc(0px - var(--tab-min-height) - 2 * var(--tab-block-margin))}
 
-#titlebar{ -moz-appearance: none !important; }
+#titlebar{
+  -moz-appearance: none !important;
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}

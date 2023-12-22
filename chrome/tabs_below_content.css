@@ -19,7 +19,11 @@ linux_gtk_window_control_patch.css
   z-index: 3;
   visibility: visible !important;
 }
-
+#titlebar{
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
 @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
        (-moz-gtk-csd-reversed-placement),
        (-moz-platform: macos){

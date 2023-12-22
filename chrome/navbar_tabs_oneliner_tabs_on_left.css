@@ -19,7 +19,11 @@ Window controls will be all wrong without it
   --uc-toolbar-height: 40px;
   --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
 }
-
+#titlebar{
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
 #scrollbutton-up,
 #scrollbutton-down{ border-block-width: 2px !important; }
 
