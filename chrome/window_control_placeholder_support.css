@@ -28,11 +28,33 @@ See the above repository for updates as well as full license text. */
   }
 }
 
-@media (-moz-gtk-csd-available) {
+/*Dynamic window control width for GNOME/GTK to account for number of buttons.
+  Conditions copied from https://github.com/rafaelmardojai/firefox-gnome-theme/blob/master/theme/parts/csd.css
+*/
+
+/* Window buttons: at least 1 button */
+@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
   :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
-    --uc-window-control-width: 84px;
+    --uc-window-control-width: 0px;
   }
 }
+
+/* Window buttons: at least 2 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+       (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+       (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+    --uc-window-control-width: 40px;
+  }
+}
+
+/* Window buttons: 3 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+    --uc-window-control-width: 80px;
+  }
+}
+
 @media (-moz-platform: macos){
   :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
     --uc-window-control-width: 72px;
