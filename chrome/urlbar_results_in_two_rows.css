@@ -2,7 +2,6 @@
 See the above repository for updates as well as full license text. */
 
 /* Show urlbar rersults on two lines */
-/* Firefox 71+ with megabar only */
 
 .urlbarView-row-inner{ flex-wrap: wrap !important; }
 
@@ -13,8 +12,8 @@ See the above repository for updates as well as full license text. */
 .urlbarView-row[has-url]:not([type="switchtab"]) .urlbarView-title-separator{ display: none }
 
 .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(ltr) {
-  padding-left: calc(var(--urlbarView-item-inline-padding) + var(--identity-box-margin-inline) + 16px);
+  margin-left: var(--urlbarView-second-line-indent);
 }
 .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(rtl) {
-  padding-right: calc(var(--urlbarView-item-inline-padding) + var(--identity-box-margin-inline) + 16px);
+  margin-right: var(--urlbarView-second-line-indent);
 }
