@@ -34,8 +34,11 @@ See the above repository for updates as well as full license text. */
   }
 }
 @media (-moz-platform: macos){
-  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+  :root:is([tabsintitlebar]) {
     --uc-window-control-width: 72px;
+  }
+  :root:is([tabsintitlebar][sizemode="fullscreen"]) {
+    --uc-window-control-width: 0;
   }
 }
 
