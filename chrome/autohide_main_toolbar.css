@@ -21,7 +21,7 @@ See the above repository for updates as well as full license text. */
   position: relative;
   z-index: 2;
 }
-#TabsToolbar{ position: relative; z-index: 3 }
+#titlebar{ position: relative; z-index: 3 }
 
 /* Show when toolbox is focused, like when urlbar has received focus */
 #navigator-toolbox:focus-within > .browser-toolbar{
