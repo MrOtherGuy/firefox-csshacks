@@ -1,0 +1,8 @@
+/*This stylesheet removes the gap between the close window button and the corner of the browser window which appears when the title bar is disabled.
+This allows clicking this button when the browser is in fullscreen and the mouse pointer is in the very top right corner of the screen, as would be the expected behavior.*/
+
+.titlebar-buttonbox {
+  -moz-box-align: start !important;
+  margin-top: -1px !important;
+  appearance: unset !important;
+}
