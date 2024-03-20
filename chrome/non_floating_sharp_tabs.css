@@ -31,7 +31,7 @@ See the above repository for updates as well as full license text. */
   --toolbarbutton-inner-padding: 7px !important;
 }
 /* Few exceptions for default light theme */
-#navigator-toolbox:not([movingtab]):-moz-lwtheme > #titlebar > #TabsToolbar{
+:root[lwtheme] #navigator-toolbox:not([movingtab]) > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }
 /* Uncomment this for Fx < 119
@@ -91,7 +91,7 @@ See the above repository for updates as well as full license text. */
   outline: none !important;
 }
 /* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below. */
-#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+:root[lwtheme] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]){
   background-attachment: scroll, fixed, fixed !important;
   background-color: transparent !important;
   background-image: linear-gradient(var(--tab-selected-bgcolor, transparent), var(--tab-selected-bgcolor, transparent)), var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;;

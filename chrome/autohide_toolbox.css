@@ -16,7 +16,7 @@ See the above repository for updates as well as full license text. */
 }
 
 @media  (-moz-platform: windows){
-  #navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog !important; }
+  :root:not([lwtheme]) #navigator-toolbox{ background-color: -moz-dialog !important; }
 }
 
 :root[sizemode="fullscreen"],

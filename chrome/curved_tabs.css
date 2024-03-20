@@ -71,8 +71,8 @@ See the above repository for updates as well as full license text. */
   stroke: var(--lwt-tabs-border-color,transparent);
 }
 
-.tabbrowser-tab[selected] > .tab-stack:-moz-lwtheme::before,
-.tabbrowser-tab[selected] > .tab-stack:-moz-lwtheme::after{
+:root[lwtheme] .tabbrowser-tab[selected] > .tab-stack::before,
+:root[lwtheme] .tabbrowser-tab[selected] > .tab-stack::after{
   fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
 }
 .tabbrowser-tab[selected] > .tab-stack::after,
@@ -120,7 +120,7 @@ See the above repository for updates as well as full license text. */
     border-top: none !important;
     --toolbar-bgcolor: transparent;
   }
-  .tab-background:not(:-moz-lwtheme){
+  :root:not([lwtheme]) .tab-background{
     background-color: var(--lwt-selected-tab-background-color) !important;
   }
   .tabbrowser-tab[selected] > .tab-stack::before,

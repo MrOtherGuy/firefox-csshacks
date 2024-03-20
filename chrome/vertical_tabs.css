@@ -34,7 +34,7 @@ See the above repository for updates as well as full license text. */
   background-color: var(--toolbar-bgcolor);
   contain: size;
 }
-:root:not([customizing]) #tabbrowser-tabs:-moz-lwtheme{
+:root[lwtheme]:not([customizing]) #tabbrowser-tabs{
   background-color: var(--lwt-accent-color);
 }
 @media (-moz-bool-pref: "userchrome.vertical-tabs.on-right.enabled"){
@@ -106,7 +106,7 @@ scrollbox[orient="horizontal"]{
   display: var(--uc-scrollbutton-display,initial);
 }
 #titlebar{
-  will-change: none !important;
+  will-change: unset !important;
   transition: none !important;
   opacity: 1 !important;
 }

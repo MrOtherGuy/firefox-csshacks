@@ -69,7 +69,7 @@ have menubar permanently enabled and want it on top
 toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 #navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
 #TabsToolbar > .titlebar-buttonbox-container{ visibility: visible }
-#navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog }
+:root:not([lwtheme]) #navigator-toolbox{ background-color: -moz-dialog }
 
 /* Uncomment the following if you want bookmarks toolbar to be below tabs */
 /*

@@ -8,7 +8,7 @@ See the above repository for updates as well as full license text. */
   --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
   --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus,Field);
 }
-:root:-moz-lwtheme{
+:root[lwtheme]{
   --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
 }
 
