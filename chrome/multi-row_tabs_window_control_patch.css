@@ -2,12 +2,24 @@
 See the above repository for updates as well as full license text. */
 
 /* This is a supporting style for multi-row_tabs.css*/
+/* This depends on window_control_placeholder_support.css to work so get that as well */
 
 /* !! Use customize mode to make menubar permanently enabled !! */
+/* You should NOT use this style if you want menubar to just always be visible */
 
-/* 20px wide space on left and right to be able to drag the window */
-#TabsToolbar{ margin: 0 20px; }
-
+/* space on left and right to be able to drag the window */
+:root[sizemode="normal"] #TabsToolbar{
+  margin-inline: var(--uc-window-drag-space-pre) var(--uc-window-drag-space-post);
+}
+#nav-bar{
+  border-left-width: 0px;
+}
+:root[sizemode="fullscreen"] .titlebar-buttonbox-container{
+ display: flex !important; 
+}
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
+  display: none !important;
+}
 #titlebar{
   flex-direction: column-reverse;
   will-change: unset !important;
@@ -16,23 +28,40 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar{
   height: 40px;
   margin-bottom: -40px;
-  background-color: var(--toolbar-bgcolor);
+  display: flex;
 }
-:root[uidensity="compact"]  #toolbar-menubar{ height: 32px; margin-bottom: -32px }
-:root[tabsintitlebar] #nav-bar{ padding-right: 138px; margin-left: 30px; }
-#toolbar-menubar > #menubar-items{
+:root[sizemode="fullscreen"] #toolbar-menubar{
+  visibility: visible !important;
+}
+:root[uidensity="compact"] #toolbar-menubar{
+  height: 32px;
+  margin-bottom: -32px;
+}
+#main-menubar{
+  height: 100%;
   position: relative;
   justify-content: center !important;
-  background-image: linear-gradient( to left,transparent,var(--toolbar-bgcolor) 35px);
-  color: var(--toolbar-color);
 }
-#main-menubar:not(:has(>[_moz-menuactive])){
+#main-menubar > menu{
   opacity: 0;
 }
-
-#main-menubar:last-child{ padding-inline-end: 40px }
-
-#toolbar-menubar > #menubar-items:hover{z-index: 2;}
+#main-menubar:has(>[_moz-menuactive]),
+#menubar-items:hover > #main-menubar{
+  background-image: linear-gradient( to left,transparent,var(--arrowpanel-background) 35px);
+  color: var(--arrowpanel-color);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+#main-menubar:has(>[_moz-menuactive]) > menu{
+  opacity: 1;
+}
+#main-menubar:last-child{
+  padding-inline-end: 40px;
+}
+#menubar-items:hover{
+  z-index: 2;
+}
 #file-menu{
   padding-inline-start: 30px;
   background: url(chrome://browser/skin/settings.svg) no-repeat 10px;
