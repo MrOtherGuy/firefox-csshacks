@@ -16,23 +16,35 @@ menubar > menu{visibility: collapse; transition: visibility 0ms linear 0.1s}
 menubar:hover > menu,    
 #toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{visibility: visible}
 
-:root:not([customizing]) #menubar-items{
+:root:not([customizing],[sizemode="fullscreen"]) #menubar-items{
   display: block;
   position: fixed;
   z-index: 10;
-  background-color: var(--lwt-accent-color);
+  background-color: light-dark(rgb(235, 235, 239), rgb(31, 30, 37));
   inset-inline-start: 0;
+}
+:root[lwtheme]:not([customizing]) #menubar-items{
+  background-color: var(--lwt-accent-color);
 }
 :root:not([customizing]) menubar{
   flex-direction: column;
 }
 menubar > menu { padding: 3px }
-menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0 0 var(--uc-menubaritem-width) }
-#toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: hidden }
-#toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: -32px }
-#toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
+menubar > menu > menupopup{
+  margin: calc(0px - var(--uc-menubaritem-height)) 0 0 var(--uc-menubaritem-width);
+}
+#toolbar-menubar[autohide="true"][inactive] > #menubar-items{
+  max-height: 0px;
+  overflow: hidden;
+}
+#toolbar-menubar[autohide="true"]:not([inactive]){
+  margin-bottom: calc(0px - var(--tab-min-height) + var(--tabs-navbar-shadow-size));
+}
+#toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){
+  margin-inline-start: var(--uc-menubaritem-width);
+}
 
-#file-menu{
+:root:not([sizemode="fullscreen"]) #file-menu{
   fill: currentColor;
   visibility: visible;
   height: var(--uc-menubaritem-height);
@@ -42,8 +54,14 @@ menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0 0
   background-repeat: no-repeat;
   background-position: center;
 }
+
 menubar:not(:hover) > #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg"); }
 
 #file-menu > .menubar-text{ visibility: collapse }
 menubar:hover > #file-menu > .menubar-text{ visibility: visible }
 
+#titlebar{
+  opacity: 1 !important;
+  will-change: unset !important;
+  transition: none !important;
+}
