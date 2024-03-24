@@ -7,7 +7,9 @@ See the above repository for updates as well as full license text. */
   list-style-image: none !important;
   appearance: auto !important;
 }
-
+.titlebar-button > .toolbarbutton-icon{
+  background: none !important;
+}
 .titlebar-min {
   -moz-default-appearance: -moz-window-button-minimize !important;
 }
