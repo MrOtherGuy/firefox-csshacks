@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
   max-width: 32px 
 }
 
-#tabbrowser-arrowscrollbox:not([overflowing]) .tab-content[pinned] {
+#tabbrowser-arrowscrollbox .tab-content[pinned] {
   padding: 0px !important;
   justify-content: center;
 }
@@ -25,3 +25,4 @@ See the above repository for updates as well as full license text. */
 scrollbox[part][orient="horizontal"] {
     padding-inline: unset !important;
 }
+
