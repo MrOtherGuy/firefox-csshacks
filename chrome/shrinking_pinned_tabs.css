@@ -26,8 +26,3 @@ scrollbox[part][orient="horizontal"] {
     padding-inline: unset !important;
 }
 
-/* Centers pinned tab content relative to divider lines in default theme. */
-.tabbrowser-tab {
-  margin-right: -5px;
-}
-
