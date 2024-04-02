@@ -7,59 +7,80 @@ See the above repository for updates as well as full license text. */
 /* So, if you want the menu items to be toggleable, just move one button to be before menubar items in the toolbar. If all buttons come after menubar items, then none of those will trigger menubar items. */
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
-
   :root{
     --uc-vertical-menubar-width: 36px;
   }
-  
-  :root:not([customizing]) #titlebar{
+  #toolbar-menubar{
+    --uc-vertical-menubar-top: 76px;
+    :root[uidensity="compact"] & {
+      --uc-vertical-menubar-top: 72px;
+    }
+  }
+  #navigator-toolbox:has(> #PersonalToolbar[collapsed="false"]) > #titlebar > #toolbar-menubar{
+    --uc-vertical-menubar-top: 112px;
+    :root[uidensity="compact"] & {
+      --uc-vertical-menubar-top: 94px;
+    } 
+  }
+  #titlebar{
+    opacity: 1 !important;
+    will-change: unset !important;
+  }
+  :root:not([customizing]) #toolbar-menubar{
     position: fixed;
-    display: flex;
-    z-index: 1;
-    -moz-appearance: none !important;
-    right: 0px; 
-    height: 100vh;
+    flex-direction: column;
+    top: var(--uc-vertical-menubar-top);
     width: var(--uc-vertical-menubar-width);
+    padding-top: 2px !important;
+    z-index: 2;
+    overflow: visible;
+    height: calc(100vh - var(--uc-vertical-menubar-top))
   }
-  :root:not([customizing]) #navigator-toolbox{ padding-top: calc(2* var(--tab-block-margin) + var(--tab-min-height)) }
-
-  #TabsToolbar:not([customizing]){
-    position: fixed;
-    display: flex;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
+  :root[lwtheme] #toolbar-menubar{
+    background-color: var(--arrowpanel-background);
   }
-
-  :root[sizemode="normal"] :where(.titlebar-spacer){ display: flex !important; }
-  
-  #TabsToolbar > .toolbar-items{ max-width: calc(100vw - 138px); flex-grow: 1 }
+  #main-menubar{
+    flex-direction: column;
+    align-self: flex-start;
+  }
+  #main-menubar{
+    outline: 1px solid var(--arrowpanel-border-color);
+    background-color: light-dark(rgb(235, 235, 239), rgb(31, 30, 37))
+  }
+  :root[lwtheme] #main-menubar{
+    background-color: var(--arrowpanel-background,var(--lwt-accent-color));
+  }
+  #toolbar-menubar > .titlebar-buttonbox-container{
+    display: none;
+  }
   #TabsToolbar > .titlebar-buttonbox-container{
     display: flex !important;
   }
-
-  #toolbar-menubar:not([customizing]){
-    margin-top: 40px; /* This needs to be bigger if bookmarks toolbar is shown */
-    width: var(--uc-vertical-menubar-width);
-    flex-direction: column;
-    flex-grow: 1;
-    background-color: var(--lwt-accent-color);
+  :root:not([sizemode="fullscreen"]) :where(.titlebar-spacer[type="post-tabs"]),
+  :root[sizemode="normal"] :where(.titlebar-spacer){
+    display: flex !important;
   }
-
-  #toolbar-menubar > .titlebar-buttonbox-container,
-  #toolbar-menubar > spacer{ display: none !important; }
-
-  #toolbar-menubar > #menubar-items{ visibility: collapse }
   
+  #toolbar-menubar > #menubar-items{ visibility: collapse }
   #toolbar-menubar > .toolbarbutton-1:first-child:hover + #menubar-items,
   #toolbar-menubar > #menubar-items:hover{ visibility: visible }
-
-  #toolbar-menubar:not([customizing]) #main-menubar{
-    flex-direction: column;
-    margin-left: -40px;
-    background-color: var(--lwt-accent-color);
+  
+  :root:not([inDOMFullscreen]) #browser{
+    margin-left: var(--uc-vertical-menubar-width);
   }
 
-  :root:not([inDOMFullscreen]) #browser{ margin-right: var(--uc-vertical-menubar-width) }
-
+  @media (-moz-bool-pref: "userchrome.vertical-menubar.on-right.enabled"){
+    :root:not([inDOMFullscreen]) #browser{
+      margin-inline: 0 var(--uc-vertical-menubar-width);
+    }
+    #toolbar-menubar{
+      right: 0;
+    }
+    #toolbar-menubar:not([customizing]) #main-menubar{
+      align-self: flex-end;
+    }
+  }
+  :root[sizemode="fullscreen"] #browser{
+    margin-inline: 0;
+  }
 }
