@@ -20,17 +20,17 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar:not([customizing]){ visibility: hidden; transition: visibility 0ms linear 200ms }
 
 #navigator-toolbox,
-#titlebar{ transition: margin-bottom 48ms ease-out 200ms }
+#titlebar{ transition: margin-bottom 48ms ease-out 200ms !important }
 
-#navigator-toolbox:hover{ transition-delay: 0s }
+#navigator-toolbox:hover{ transition-delay: 0s !important }
 #navigator-toolbox:hover > #titlebar{
   margin-bottom: 0px;
-  transition-delay: 0s;
+  transition-delay: 0s !important;
 }
 
 #navigator-toolbox:hover #TabsToolbar{
   visibility: visible;
-  transition-delay: 18ms
+  transition-delay: 18ms !important;
 }
 /* These rules make sure that height of tabs toolbar doesn't exceed tab-min-height */
 #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container{
