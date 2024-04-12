@@ -10,8 +10,11 @@ See the above repository for updates as well as full license text. */
   padding: 0px !important;
   margin-inline-end: 0 !important;
 }
+.unified-extensions-item-action-button{
+  padding-block: 6px !important;
+}
 .unified-extensions-item-menu-button.subviewbutton > .toolbarbutton-icon{
-  padding: 2px !important;
+  padding: 4px !important;
 }
 .unified-extensions-item-message-deck{
   display: none
