@@ -60,3 +60,8 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   pointer-events: none
 }
+#titlebar{
+  opacity: 1 !important;
+  will-change: unset !important;
+  transition: none !important;
+}
