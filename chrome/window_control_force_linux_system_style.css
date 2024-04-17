@@ -6,19 +6,23 @@ See the above repository for updates as well as full license text. */
 .titlebar-button{
   list-style-image: none !important;
   appearance: auto !important;
+  padding: 0 !important;
 }
 .titlebar-button > .toolbarbutton-icon{
+  appearance: auto !important;
   background: none !important;
+  width: unset !important;
+  height: unset !important;
 }
-.titlebar-min {
+.titlebar-min > .toolbarbutton-icon{
   -moz-default-appearance: -moz-window-button-minimize !important;
 }
-.titlebar-max {
+.titlebar-max > .toolbarbutton-icon{
   -moz-default-appearance: -moz-window-button-maximize !important;
 }
-.titlebar-restore {
+.titlebar-restore > .toolbarbutton-icon{
   -moz-default-appearance: -moz-window-button-restore !important;
 }
-.titlebar-close {
+.titlebar-close > .toolbarbutton-icon{
   -moz-default-appearance: -moz-window-button-close !important;
 }
