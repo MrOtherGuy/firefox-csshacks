@@ -5,8 +5,7 @@ See the above repository for updates as well as full license text. */
 
 .titlebar-button{
   list-style-image: none !important;
-  appearance: auto !important;
-  padding: 0 !important;
+  appearance: none !important;
 }
 .titlebar-button > .toolbarbutton-icon{
   appearance: auto !important;
