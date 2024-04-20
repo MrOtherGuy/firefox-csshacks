@@ -12,9 +12,9 @@ See the above repository for updates as well as full license text. */
   --uc-menubaritem-width: 40px;
 }
 
-menubar > menu{visibility: collapse; transition: visibility 0ms linear 0.1s}
-menubar:hover > menu,    
-#toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{visibility: visible}
+#main-menubar > menu{visibility: collapse; transition: visibility 0ms linear 0.1s}
+#main-menubar:hover > menu,    
+#toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > #main-menubar > menu{visibility: visible}
 
 :root:not([customizing],[sizemode="fullscreen"]) #menubar-items{
   display: block;
@@ -26,11 +26,11 @@ menubar:hover > menu,
 :root[lwtheme]:not([customizing]) #menubar-items{
   background-color: var(--lwt-accent-color);
 }
-:root:not([customizing]) menubar{
+:root:not([customizing]) #main-menubar{
   flex-direction: column;
 }
-menubar > menu { padding: 3px }
-menubar > menu > menupopup{
+#main-menubar > menu { padding: 3px }
+#main-menubar > menu > menupopup{
   margin: calc(0px - var(--uc-menubaritem-height)) 0 0 var(--uc-menubaritem-width);
 }
 #toolbar-menubar[autohide="true"][inactive] > #menubar-items{
@@ -55,10 +55,10 @@ menubar > menu > menupopup{
   background-position: center;
 }
 
-menubar:not(:hover) > #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg"); }
+#main-menubar:not(:hover) > #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg"); }
 
 #file-menu > .menubar-text{ visibility: collapse }
-menubar:hover > #file-menu > .menubar-text{ visibility: visible }
+#main-menubar:hover > #file-menu > .menubar-text{ visibility: visible }
 
 #titlebar{
   opacity: 1 !important;
