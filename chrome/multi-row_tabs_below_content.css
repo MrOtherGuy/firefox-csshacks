@@ -77,7 +77,7 @@ See the above repository for updates as well as full license text. */
   /* Fullscreen mode support */
   #customization-container,
   :root:not([inFullscreen]) #content-deck,
-  :root:not([inFullscreen]) #browser{
+  :root:not([chromehidden~="toolbar"]):not([inFullscreen]) #browser {
     margin-top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height,0px));
   }
   :root[inFullscreen] #toolbar-menubar,
