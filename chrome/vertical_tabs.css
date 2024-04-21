@@ -24,6 +24,10 @@ See the above repository for updates as well as full license text. */
 }
 .tabbrowser-tab{
   min-width: 0.1px !important; /* This is to prevent Firefox from thinking that tabs would overflow. Still, if such a situation ever occurs it will prevent the ability to scroll tabs with mouse */
+  margin-inline: 0 !important;
+}
+.tab-label-container[pinned]{
+  margin-inline-start: 5.5px;
 }
 :root:not([customizing]) #tabbrowser-tabs{
   position: absolute !important;
