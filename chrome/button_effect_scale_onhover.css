@@ -4,13 +4,22 @@ See the above repository for updates as well as full license text. */
 /* Effect */
 .urlbar-icon,
 .toolbarbutton-icon,
-.menuitem-iconic .menu-iconic-icon{
+.tab-close-button,
+.downloadIconShow > .button-box > .button-icon,
+.menuitem-iconic .menu-iconic-icon,
+#downloads-indicator-icon,
+#urlbar-input-container [role="button"] image{
   transition: transform 83ms linear !important;
 }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   transition: padding 83ms linear !important;
 }
+#urlbar-input-container [role="button"] image,
+.tab-close-button,
+.downloadIconShow > .button-box > .button-icon,
+.unified-extensions-item-menu-button > .toolbarbutton-icon,
+#downloads-button #downloads-indicator-icon,
 toolbarbutton#scrollbutton-up > .toolbarbutton-icon,
 toolobar .toolbarbutton-1 > .toolbarbutton-icon,
 toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
@@ -23,7 +32,10 @@ toolbarbutton#scrollbutton-down > .toolbarbutton-icon{ transform: scale(-0.8) !i
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   padding: calc(var(--toolbarbutton-inner-padding) + 2px) !important;
 }
-
+#urlbar-input-container [role="button"]:not([disabled]):hover image,
+.tab-close-button:hover,
+.downloadIconShow:hover > .button-box > .button-icon,
+#downloads-button:not([disabled]):hover #downloads-indicator-icon,
 toolbarbutton#scrollbutton-up:not([disabled]):hover > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,

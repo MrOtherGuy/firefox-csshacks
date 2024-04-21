@@ -4,14 +4,21 @@ See the above repository for updates as well as full license text. */
 /* Effect */
 .urlbar-icon,
 .toolbarbutton-icon,
-.menuitem-iconic .menu-iconic-icon{
+.tab-close-button,
+.downloadIconShow > .button-box > .button-icon,
+.menuitem-iconic .menu-iconic-icon,
+#downloads-indicator-icon,
+#urlbar-input-container [role="button"] image{
   transition: transform 83ms linear !important;
 }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   transition: padding 83ms linear !important;
 }
-
+#urlbar-input-container [role="button"]:active image,
+.tab-close-button:active,
+.downloadIconShow:active > .button-box > .button-icon,
+#downloads-button:active #downloads-indicator-icon,
 toolbarbutton#scrollbutton-up:active > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):active > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-badge-stack > .toolbarbutton-icon,
