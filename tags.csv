@@ -41,7 +41,7 @@ drag_window_from_urlbar.css,urlbar,windows
 fake_statusbar_w_bookmarksbar.css,hack,status,toolbars,bookmarks
 fake_urlbar_dropmarker.css,urlbar,hack
 fake_statusbar_w_menubar.css,hack,status,toolbars,menubar
-fake_tab_tooltip.css,tab,hack,popup
+deprecated/fake_tab_tooltip.css,legacy
 floating_findbar_on_top.css,findbar
 deprecated/full_width_urlbar_popup.css,legacy
 deprecated/google_style_urlbar_popup.css,legacy
