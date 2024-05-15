@@ -17,7 +17,7 @@ See the above repository for updates as well as full license text. */
     var(--uc-attention-secondary-color) calc(var(--uc-attention-indicator-radius) + 2px),
     transparent calc(var(--uc-attention-indicator-radius) + 2px)
   ) !important;
-  background-position: center bottom calc(1px + var(--uc-attention-indicator-radius) + var(--tabs-navbar-shadow-size)) !important;
+  background-position: center bottom var(--uc-attention-indicator-radius) !important;
   background-size: calc(2 * (var(--uc-attention-indicator-radius) + 2px)) calc(2 * (var(--uc-attention-indicator-radius) + 2px)) !important;
   background-repeat: no-repeat;
 }
