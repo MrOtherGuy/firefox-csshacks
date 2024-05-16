@@ -89,9 +89,10 @@ Window controls will be all wrong without it
   }
 }
 
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
-  #nav-bar-customization-target{ padding-right: calc(100vw - (var(--uc-navigationbar-width)) - var(--uc-buttons-width) - var(--uc-window-drag-space-pre)) }
+#titlebar{
+  opacity: 1 !important;
+  will-change: unset !important;
+  transition: none !important;
 }
 
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container,
