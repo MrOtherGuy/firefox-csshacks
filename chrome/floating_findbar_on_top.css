@@ -91,23 +91,3 @@ findbar::after{
     border-right: 1px solid var(--chrome-content-separator-color);
   }
 }
-
-@supports -moz-bool-pref("userchrome.floating-findbar-on-right.enabled"){
-  findbar{
-    flex-direction: row-reverse;
-  }
-  findbar > .findbar-container{
-    flex-direction: row-reverse;
-    border-inline-width: 1px 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 4px;
-  }
-  /*
-  Move findbar so it isn't over the scrollbar
-  Delete if you want findbar to begin from right window edge
-  */
-  findbar{
-    margin-right: 16px;
-    border-right: 1px solid var(--chrome-content-separator-color);
-  }
-}

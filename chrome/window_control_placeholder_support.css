@@ -83,18 +83,3 @@ See the above repository for updates as well as full license text. */
     flex-direction: row-reverse;
   }
 }
-
-/* This pref can be used to force window controls on left even if that is not normal behavior on your OS */
-@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
-  :root[tabsintitlebar="true"] #nav-bar{
-    border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
-  }
-  :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
-  :root[sizemode="fullscreen"] #window-controls{ right: unset; }
-  .titlebar-buttonbox-container{
-    order: -1 !important;
-  }
-  .titlebar-buttonbox{
-    flex-direction: row-reverse;
-  }
-}

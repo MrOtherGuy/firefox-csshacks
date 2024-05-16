@@ -24,9 +24,6 @@ have menubar permanently enabled and want it on top
        (-moz-platform: macos){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
-@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
-  .titlebar-buttonbox-container{ left:0; right: unset !important; }
-}
 
 :root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
 

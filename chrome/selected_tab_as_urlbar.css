@@ -103,15 +103,7 @@ See the above repository for updates as well as full license text. */
     z-index: auto;
   }
 } 
-
-@supports -moz-bool-pref("userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"){
-  #TabsToolbar > .toolbar-items{ margin-left: 0px }
-  #nav-bar-customization-target{ margin-left: 0px }
-  #back-button, #forward-button{
-    order: auto;
-    z-index: auto;
-  }
-} 
+ 
 #nav-bar{ 
   height: calc(var(--tab-min-height) + 2*var(--tab-block-margin));
   box-shadow: none !important;

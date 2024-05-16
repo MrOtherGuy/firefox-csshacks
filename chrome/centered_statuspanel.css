@@ -22,11 +22,3 @@ See the above repository for updates as well as full license text. */
     border-width: 0 1px 1px 1px !important;
   }
 }
-@supports -moz-bool-pref("userchrome.centered-statuspanel.on-top.enabled"){
-  #statuspanel:not([hidden]){
-    inset-block: 0 auto !important;
-  }
-  #statuspanel-label{
-    border-width: 0 1px 1px 1px !important;
-  }
-}

@@ -22,13 +22,3 @@ See the above repository for updates as well as full license text. */
     color-scheme: dark !important;
   }
 }
-@supports -moz-bool-pref("userchrome.menupopups.force-light"){
-  menupopup{
-    color-scheme: light !important;
-  }
-}
-@supports -moz-bool-pref("userchrome.menupopups.force-dark"){
-  menupopup{
-    color-scheme: dark !important;
-  }
-}
