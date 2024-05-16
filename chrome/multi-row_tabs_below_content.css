@@ -69,7 +69,7 @@ See the above repository for updates as well as full license text. */
     display: none !important;
   }  
   /* Fix incorrect vertical alignment with megabar */
-  #urlbar[breakout]{ --urlbar-toolbar-height: var(--multirow-toolbar-height) !important; }
+  #urlbar[breakout]{ --urlbar-container-height: var(--multirow-toolbar-height) !important; }
 
   /* Fix customization view */
   #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }

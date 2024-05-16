@@ -43,7 +43,7 @@ Window controls will be all wrong without it
   padding-block: 0 !important;
 }
 :root[uidensity="compact"] #urlbar{
-  --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
+  --urlbar-container-height: var(--uc-toolbar-height) !important;
 }
 
 /* prevent urlbar overflow on narrow windows */

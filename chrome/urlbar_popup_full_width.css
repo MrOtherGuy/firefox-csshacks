@@ -39,7 +39,7 @@ See the above repository for updates as well as full license text. */
   left: 0 !important;
   width: 100vw !important;
   border-width: 1px 0;
-  top: var(--urlbar-toolbar-height);
+  top: var(--urlbar-container-height);
   background-color: var(--toolbar-field-focus-background-color, inherit);
   z-index: 4;
   box-shadow: 0 1px 4px rgba(0,0,0,.05);
