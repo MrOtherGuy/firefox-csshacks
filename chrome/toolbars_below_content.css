@@ -52,8 +52,8 @@ See the above repository for updates as well as full license text. */
   .panel-viewstack{ max-height: unset !important; }
 
   /* Fullscreen mode support */
-  #navigator-toolbox[inFullscreen]{ margin-top: 0 !important }
-  #navigator-toolbox[inFullscreen][style*="margin-top"]{ visibility: collapse }
+  :root[sizemode="fullscreen"] #navigator-toolbox{ margin-top: 0 !important }
+  :root[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top"]{ visibility: collapse }
   #fullscr-toggler{ bottom: 0; top: unset !important; }
   
   /* These three rules exist for compatibility with autohide_toolbox.css */

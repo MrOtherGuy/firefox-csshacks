@@ -4,16 +4,16 @@ See the above repository for updates as well as full license text. */
 /* Makes toolbars appear as overlay instead of pushing down the website in fullscreen mode */
 
 @media (-moz-bool-pref: "browser.fullscreen.autohide"){
-  #navigator-toolbox[inFullscreen]{
+  :root[sizemode="fullscreen"] #navigator-toolbox{
     position: fixed !important;
     width: 100vw;
     z-index: 1;
     transition: margin-top 100ms ease-in-out 600ms;
   }
-  #navigator-toolbox[inFullscreen][style=""],
-  #navigator-toolbox[inFullscreen]:hover,
-  #navigator-toolbox[inFullscreen]:focus-within,
-  #mainPopupSet:has(> #appMenu-popup[panelopen="true"]) ~ #navigator-toolbox[inFullscreen]{
+  :root[sizemode="fullscreen"] #navigator-toolbox[style=""],
+  :root[sizemode="fullscreen"] #navigator-toolbox:hover,
+  :root[sizemode="fullscreen"] #navigator-toolbox:focus-within,
+  #mainPopupSet:has(> #appMenu-popup[panelopen="true"]) ~ #navigator-toolbox{
     transition-delay: 0ms;
     margin-top: 0 !important;
   }
