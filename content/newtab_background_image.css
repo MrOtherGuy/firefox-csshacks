@@ -4,7 +4,7 @@ See the above repository for updates as well as full license text. */
 @-moz-document url("about:newtab"), url("about:home"){
   body{
     /* This will load image.jpg stored in the same folder as this file */
-    background-image: url("image.jpg"); 
+    background-image: url("image.jpg") !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
