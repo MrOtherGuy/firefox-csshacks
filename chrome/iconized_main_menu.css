@@ -38,12 +38,13 @@ See the above repository for updates as well as full license text. */
 /* Use account-button icon for signed in sync item */
 #appMenu-fxa-status2[fxastatus] > toolbarbutton::before{ background-image: var(--avatar-image-url) }
 /* Add somewhat hacky separator to zoom controls so it looks consistent */
-#appMenu-protonMainView > .panel-subview-body::after{
+#appMenu-protonMainView > .panel-subview-body::after,
+#appMenu-mainView > .panel-subview-body::after{
   content: "";
   display: flex;
   border-bottom: 1px solid var(--panel-separator-color);
   margin: var(--panel-separator-margin);
 }
-#appMenu-find-button2 ~ *{
+#appMenu-translate-button ~ *{
   order: 2;
 }
