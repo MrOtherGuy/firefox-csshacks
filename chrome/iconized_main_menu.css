@@ -4,7 +4,8 @@ See the above repository for updates as well as full license text. */
 /* Adds icons to main menu items which were removed in Proton */
 #appMenu-zoom-controls::before,
 #appMenu-fxa-status2[fxastatus] > toolbarbutton::before,
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton > image{
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton > image,
+#appMenu-mainView > .panel-subview-body > .subviewbutton > .toolbarbutton-icon{
   fill: currentColor;
   -moz-context-properties: fill;
   margin-inline: 0 8px !important;
@@ -29,6 +30,7 @@ See the above repository for updates as well as full license text. */
 #appMenu-find-button2{ list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
 #appMenu-settings-button{ list-style-image: url("chrome://global/skin/icons/settings.svg") }
 #appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
+#appMenu-report-broken-site-button{ list-style-image: url("chrome://global/skin/icons/warning.svg") }
 #appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
 #appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
 #appMenu-translate-button{ list-style-image: url("chrome://browser/skin/translations.svg") }
