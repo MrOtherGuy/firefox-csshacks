@@ -16,7 +16,7 @@ See the above repository for updates as well as full license text. */
   opacity: 0;
   transition: opacity 150ms linear
 }
-#urlbar-input-container:hover > #page-action-buttons::before{ opacity: 1 }
+.urlbar-input-container:hover > #page-action-buttons::before{ opacity: 1 }
 .urlbar-input-box:not(:focus-within){ margin-inline-end: -24px; }
-#urlbar-input:not(:focus-within){ padding-inline-end: 24px !important; }
+.urlbar-input:not(:focus-within){ padding-inline-end: 24px !important; }
 .urlbar-input-box:focus-within ~ #page-action-buttons::before{ -moz-user-focus: normal }

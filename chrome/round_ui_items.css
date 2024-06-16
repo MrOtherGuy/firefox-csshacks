@@ -4,8 +4,8 @@ See the above repository for updates as well as full license text. */
 /* Make bunch of things in the main UI round */
 
 :root{ --toolbarbutton-border-radius: 24px !important }
-#urlbar-input-container > box:hover,
-#urlbar-input-container > box[open],
+.urlbar-input-container > box:hover,
+.urlbar-input-container > box[open],
 #main-menubar >  menu,
 .titlebar-button:hover,
 #scrollbutton-up,

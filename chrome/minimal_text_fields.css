@@ -36,7 +36,7 @@ See the above repository for updates as well as full license text. */
 #tracking-protection-icon-container:hover, 
 #tracking-protection-icon-container ~ *:hover,
 #urlbar:focus-within > *,
-#urlbar-input-container:focus-within > *,
+.urlbar-input-container:focus-within > *,
 .searchbar-textbox:hover > *,
 .searchbar-textbox:focus-within > *{ opacity: 1 }
 

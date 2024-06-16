@@ -8,14 +8,14 @@ See the above repository for updates as well as full license text. */
 .downloadIconShow > .button-box > .button-icon,
 .menuitem-iconic .menu-iconic-icon,
 #downloads-indicator-icon,
-#urlbar-input-container [role="button"] image{
+.urlbar-input-container [role="button"] image{
   transition: transform 83ms linear !important;
 }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
   transition: padding 83ms linear !important;
 }
-#urlbar-input-container [role="button"]:active image,
+.urlbar-input-container [role="button"]:active image,
 .tab-close-button:active,
 .downloadIconShow:active > .button-box > .button-icon,
 #downloads-button:active #downloads-indicator-icon,

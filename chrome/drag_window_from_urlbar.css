@@ -3,14 +3,14 @@ See the above repository for updates as well as full license text. */
 
 /* Makes the window draggable from urlbar when urlbar is not focused. This means you can't click the urlbar text to activate it normally. But right-click works to activate urlbar. */
 
-.urlbar-input-box,#urlbar-input,#urlbar-scheme,#urlbar-container{
+.urlbar-input-box,.urlbar-input,#urlbar-scheme,#urlbar-container{
   -moz-window-dragging: drag;
   cursor: default;
 }
-#urlbar-input-container > box,
+.urlbar-input-container > box,
 #page-action-buttons,
 #urlbar-container:focus-within,
-#urlbar-container:focus-within :is(.urlbar-input-box,#urlbar-input,#urlbar-scheme,#urlbar-container){
+#urlbar-container:focus-within :is(.urlbar-input-box,.urlbar-input,#urlbar-scheme,#urlbar-container){
   -moz-window-dragging: no-drag;
   cursor: auto;
 }

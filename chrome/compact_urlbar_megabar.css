@@ -24,7 +24,7 @@ See the above repository for updates as well as full license text. */
 #urlbar-background{
   animation: none !important;
 }
-#urlbar-input-container{
+.urlbar-input-container{
   padding: 0px 1px !important;
   height: initial !important; 
 }

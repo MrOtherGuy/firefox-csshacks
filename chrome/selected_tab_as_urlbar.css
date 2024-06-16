@@ -14,19 +14,19 @@ See the above repository for updates as well as full license text. */
 #PanelUI-button,
 #nav-bar-overflow-button{ z-index: 2; position: relative }
 
-#urlbar-input-container{
+.urlbar-input-container{
   width: calc(100vw - var(--uc-window-control-width) - var(--uc-buttons-width) - 2 * var(--uc-window-drag-space-width) - 76px) !important;
   left: calc(76px + var(--uc-window-drag-space-width)) !important;
   pointer-events: none;
   overflow: visible !important;
 }
-:root:not([customizing]) #urlbar-input-container::before{
+:root:not([customizing]) .urlbar-input-container::before{
   position: absolute;
   left: 0;
   top: 0 !important;
   height: var(--urlbar-container-height);
 }
-#urlbar-input-container > :not(.urlbar-input-box){ opacity: 0 }
+.urlbar-input-container > :not(.urlbar-input-box){ opacity: 0 }
 
 #urlbar-background{
   background: transparent !important;

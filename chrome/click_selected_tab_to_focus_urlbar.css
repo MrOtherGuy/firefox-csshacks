@@ -38,7 +38,7 @@ See the above repository for updates as well as full license text. */
   pointer-events: auto
 }
 /* Invisible capture box behind tabs*/
-:root:not([customizing]) #urlbar-input-container::before{
+:root:not([customizing]) .urlbar-input-container::before{
   position: fixed;
   display: block;
   left: 0;
@@ -48,11 +48,11 @@ See the above repository for updates as well as full license text. */
   content: "";
   pointer-events: auto;
 }
-:root[tabsintitlebar]:not([customizing]) #urlbar-input-container::before{
+:root[tabsintitlebar]:not([customizing]) .urlbar-input-container::before{
   left: var(--uc-window-drag-space-width);
   width: calc(100vw - var(--uc-window-control-width) - var(--uc-buttons-width) - 2 * var(--uc-window-drag-space-width));
 }
-#urlbar-input-container:focus-within::before{ display: none !important; }
+.urlbar-input-container:focus-within::before{ display: none !important; }
 
 /* Make tabs appear over the invisible box */
 :root:not([customizing]) #TabsToolbar-customization-target{

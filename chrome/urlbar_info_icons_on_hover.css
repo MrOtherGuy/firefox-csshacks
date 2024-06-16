@@ -14,7 +14,7 @@ See the above repository for updates as well as full license text. */
 
 #identity-box.extensionPage{ max-width: 32px }
 
-#urlbar:hover #urlbar-input-container > box,
+#urlbar:hover .urlbar-input-container > box,
 #urlbar:hover #identity-box.extensionPage #identity-icon-label{
   max-width: 300px;
 }

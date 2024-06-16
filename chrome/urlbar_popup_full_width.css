@@ -36,9 +36,9 @@ See the above repository for updates as well as full license text. */
   box-shadow: 0 1px 4px rgba(0,0,0,.05);
 }
 
-#urlbar > #urlbar-input-container{ padding: 0px !important; width: auto !important; height: auto !important; }
+#urlbar > .urlbar-input-container{ padding: 0px !important; width: auto !important; height: auto !important; }
 #urlbar > #urlbar-background{ display: none !important; }
 
 /* This may seem pretty weird, but it gets around an issue where the height of urlbar may suddenly change when one starts typing into it */
 /* If you are otherwise modifying the urlbar height then you might need to modify the height of this too */
-#urlbar > #urlbar-input-container::before{ content: ""; display: flex; height: 24px; }
+#urlbar > .urlbar-input-container::before{ content: ""; display: flex; height: 24px; }
