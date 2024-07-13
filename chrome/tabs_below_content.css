@@ -87,7 +87,25 @@ linux_gtk_window_control_patch.css
 
 @media (-moz-bool-pref: "browser.fullscreen.autohide"){
   #main-window[inFullscreen]:not([inDOMFullscreen]) > body::after{
-    margin-bottom: 1px;
+    margin-bottom: 0px;
+  }
+  :root[sizemode="fullscreen"] #TabsToolbar{
+    visibility: hidden;
+    transition: visibility 0s linear 100ms;
+  }
+  #mainPopupSet:has(> #tabContextMenu:hover) ~ #navigator-toolbox #TabsToolbar,
+  :root[sizemode="fullscreen"]:not([inDOMFullscreen]) #TabsToolbar:hover{
+    transition-delay: 0ms;
+    visibility: visible;
+  }
+  :root[sizemode="fullscreen"]:not([inDOMFullscreen]) #TabsToolbar::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    z-index: 1;
+    visibility: visible;
   }
   :root[inFullscreen] #navigator-toolbox:not(:hover) .titlebar-buttonbox-container{ display: none !important; }
 }
