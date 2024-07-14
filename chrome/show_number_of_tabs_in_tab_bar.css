@@ -1,0 +1,35 @@
+/* Taken from: https://www.reddit.com/r/FirefoxCSS/comments/s4wsww/show_the_number_of_open_tabs_on_the_list_all_tabs/hsts9ku/ */
+
+/* Instead of showing "V", show the total number of opened tabs in the tab bar. */
+
+/* show tab manager button even when tabs aren't overflowing -  
+   can instead use browser.tabs.tabmanager.enabled;true as well  
+   or skip this part if you want to retain the default behaviour */  
+   #alltabs-button {  
+    display: -moz-box !important;  
+}  
+
+/* tab counter */  
+#TabsToolbar-customization-target {  
+    counter-reset: tabCount;  
+}  
+.tabbrowser-tab {  
+    counter-increment: tabCount;  
+}  
+#alltabs-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {  
+    visibility: collapse !important;  
+}  
+#alltabs-button > .toolbarbutton-badge-stack {  
+    position: relative !important;  
+}  
+#alltabs-button > .toolbarbutton-badge-stack::before {  
+    content: counter(tabCount);  
+    border-bottom: 1px solid var(--toolbarbutton-icon-fill);  
+    color: var(--toolbarbutton-icon-fill);  
+    opacity: var(--toolbarbutton-icon-fill-opacity);  
+    position: absolute;  
+    bottom: var(--toolbarbutton-inner-padding);  
+    left: 50%;  
+    transform: translateX(-50%);  
+    padding: 0 3px;  
+}
