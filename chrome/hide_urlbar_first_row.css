@@ -3,8 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Hides the first item in the urlbar dropdown if it is a "search with" or "visit" or "tab-to-search" item.  Does not hide "search in private window item", probably */
 
-#urlbar[usertyping] .urlbarView-row:not([type]):first-child,
-#urlbar[usertyping] .urlbarView-row[type="search"]:first-child,
+#urlbar[usertyping] .urlbarView-row:is([type="url"],[type="autofill_origin"],[type="search"]):first-child,
 .urlbarView-row[type="tabtosearch"] {
   display: none !important;
 }
