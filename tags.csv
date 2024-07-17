@@ -168,3 +168,4 @@ vertical_tabs.css,tabs,hack
 bookmarks_below_content.css,bookmarks,toolbars
 overlay_fullscreen_toolbars.css,toolbars,fullscreen
 dual_color_tab_attention_indicator.css,tab,colors
+tab_count_in_alltabs_button.css,tabs
