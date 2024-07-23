@@ -2,11 +2,11 @@
 See the above repository for updates as well as full license text. */
 
 /* This is a horrible hack and absolutely requires click_selected_tab_to_focus_urlbar.css to work. In general it's pertty bad, but meh */
-
+/* Also, get window_control_placeholder_support.css */
 /* Also hides the nav-bar and shows main menu button next to window controls. And makes the selected tab expand a whole bunch  */
 
 /* Whole bunch of z-indexing */
-#main-window > body > box{ position: relative; z-index: 1 }
+
 .urlbar-input-box{ z-index: -1 !important; }
 #urlbar{ z-index: auto !important; }
 #alltabs-button,
@@ -109,6 +109,7 @@ See the above repository for updates as well as full license text. */
   box-shadow: none !important;
   background-color: transparent !important;
 }
-#titlebar:has(> [autohide="true"]) + #nav-bar{
-  padding-right: calc(138px + 40px);
+
+:root[tabsintitlebar] #titlebar:has(> [autohide="false"]) + #nav-bar{
+  border-inline-width: 0 !important;
 }
