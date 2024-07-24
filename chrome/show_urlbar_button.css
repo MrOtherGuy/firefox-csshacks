@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
 #wrapper-urlbar-container,
 #urlbar-container{
   flex-grow: 0 !important;
-  width: min-content !important;
+  width: 34px !important;
   position: static !important;
 }
 :root[customizing] #urlbar-container{
@@ -25,25 +25,41 @@ See the above repository for updates as well as full license text. */
   background: transparent !important;
   border-color: transparent !important;
 }
-#urlbar:not(:focus-within):hover > #urlbar-background{
+:root:not([customizing]) #urlbar:not(:focus-within):hover > #urlbar-background{
   background: var(--toolbarbutton-hover-background) !important;
 }
-.urlbar-input-container:not(:focus-within) > :not(.urlbar-input-box){
-  display: none;
+#urlbar:not(:focus-within) #page-action-buttons,
+#urlbar:not(:focus-within) #identity-box,
+.urlbar-input-container:not(:focus-within){
+  display: grid;
 }
-.urlbar-input-box:not(:focus-within)::before{
-  position: absolute;
-  align-self: center;
-  justify-items: center;
-  line-height: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  content: url("chrome://devtools/skin/images/tool-webconsole.svg");
+:where(#urlbar):not(:focus-within) #page-action-buttons > *,
+:where(#urlbar):not(:focus-within) #identity-box > *,
+.urlbar-input-container:not(:focus-within) > *{
+  grid-area: 1/1;
+  opacity: 0;
+  pointer-events: none;
+}
+.urlbar-input-container:not(:focus-within){
+  background-image: url("chrome://devtools/skin/images/tool-webconsole.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   fill: currentColor;
   -moz-context-properties: fill;
 }
-.urlbar-input-box{
-  cursor: auto;
+.urlbar-input-box.urlbar-input-box{
+  opacity: 1;
+  width: 100%;
+  pointer-events: auto;
+}
+#urlbar:not(:focus-within) #identity-icon-label{
+  display: none;
+}
+#page-action-buttons > [open],
+#identity-box > [open],
+.urlbar-input-container:not(:focus-within) > :has([open]){
+  opacity: 1;
+  background-color: var(--toolbar-bgcolor);
 }
 #urlbar-input:not(:focus-within){
   opacity: 0;
