@@ -1,0 +1,51 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/show_urlbar_button.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style hides urlbar, but instead shows a button that shows the urlbar when clicked, technically the button is the urlbar - just styled to look like a button. Urlbar also gets shown when it is focused by e.g. Ctrl+L */
+
+#wrapper-urlbar-container,
+#urlbar-container{
+  flex-grow: 0 !important;
+  width: min-content !important;
+  position: static !important;
+}
+:root[customizing] #urlbar-container{
+  min-width: 60px;
+}
+#urlbar{
+  contain: inline-size;
+  width: 34px !important;
+}
+#urlbar:focus-within{
+  width: 70vw !important;
+  z-index: 1;
+  inset-inline: 15vw !important;
+}
+:root:not([customizing]) #urlbar:not(:focus-within) > #urlbar-background{
+  background: transparent !important;
+  border-color: transparent !important;
+}
+#urlbar:not(:focus-within):hover > #urlbar-background{
+  background: var(--toolbarbutton-hover-background) !important;
+}
+.urlbar-input-container:not(:focus-within) > :not(.urlbar-input-box){
+  display: none;
+}
+.urlbar-input-box:not(:focus-within)::before{
+  position: absolute;
+  align-self: center;
+  justify-items: center;
+  line-height: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: url("chrome://devtools/skin/images/tool-webconsole.svg");
+  fill: currentColor;
+  -moz-context-properties: fill;
+}
+.urlbar-input-box{
+  cursor: auto;
+}
+#urlbar-input:not(:focus-within){
+  opacity: 0;
+  cursor: default;
+}
