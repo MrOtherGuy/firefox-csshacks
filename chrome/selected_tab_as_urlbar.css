@@ -58,6 +58,7 @@ See the above repository for updates as well as full license text. */
   left:50vw;
   width: max(70vw,600px) !important;
   transform: translateX(-50%) !important;
+  pointer-events: auto;
 }
 
 .tabbrowser-tab[selected][fadein]{
@@ -81,8 +82,8 @@ See the above repository for updates as well as full license text. */
 /* Oh and! also hide other buttons from the nav-bar because why not */
 :root:not([customizing]) #nav-bar-customization-target > :not(#urlbar-container){ visibility: collapse }
 #TabsToolbar > .toolbar-items{
-  margin-right: 112px !important; /* This is space on right side for 3 buttons, menu, overflow and addons */
-  margin-left: 80px !important;
+  margin-right: 104px !important; /* This is space on right side for 3 buttons, menu, overflow and addons */
+  margin-left: 72px !important;
 }
 #unified-extensions-button{
   visibility: visible !important;
