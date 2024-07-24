@@ -65,3 +65,7 @@ See the above repository for updates as well as full license text. */
   opacity: 0;
   cursor: default;
 }
+/* Make flexible spaces have unlimited width so that they can claim empty space that urlbar would normally claim */
+#nav-bar-customization-target > toolbarspring{
+  max-width: none !important;
+}
