@@ -44,8 +44,12 @@ See the above repository for updates as well as full license text. */
   background-image: url("chrome://devtools/skin/images/tool-webconsole.svg");
   background-repeat: no-repeat;
   background-position: center;
-  fill: currentColor;
+  color: var(--toolbar-color);
+  fill: light-dark(rgb(91, 91, 102), rgb(251, 251, 254));
   -moz-context-properties: fill;
+}
+:root[lwtheme] .urlbar-input-container:not(:focus-within){
+  fill: var(--toolbarbutton-icon-fill);
 }
 .urlbar-input-box.urlbar-input-box{
   opacity: 1;
