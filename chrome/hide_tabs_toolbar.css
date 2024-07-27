@@ -22,6 +22,7 @@ Window controls will be all wrong without it
   opacity: 1 !important;
 }
 #TabsToolbar{ visibility: collapse !important }
+:root[sizemode="fullscreen"] #titlebar{ position: relative }
 
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
   visibility: visible !important;

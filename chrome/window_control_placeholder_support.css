@@ -44,7 +44,6 @@ See the above repository for updates as well as full license text. */
 
 .titlebar-buttonbox{ color: var(--toolbar-color) }
 :root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none }
-:root[sizemode="fullscreen"] #navigator-toolbox { position: relative; }
 
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child{
   position: absolute;

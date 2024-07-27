@@ -26,6 +26,7 @@ Window controls will be all wrong without it
   transition: none !important;
   opacity: 1 !important;
 }
+:root[sizemode="fullscreen"] #titlebar{ position: relative }
 /* We'll use window controls from menubar instead */
 #TabsToolbar > .titlebar-buttonbox-container { display: none }
 /* Hide overflow button unless tabs overflow - is necessary for collpasing tabs with one tab */
