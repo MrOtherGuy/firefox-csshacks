@@ -1,18 +1,17 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/window_control_placeholder_support.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Creates placeholders for window controls */
-/* This is a supporting file used by other stylesheets */
+/*
+Creates placeholders for window controls.
+This is a supporting file used by other stylesheets and is mostly
+unnecessary if window titlebar is enabled.
 
-/* This stylesheet is pretty much unnecessary if window titlebar is enabled */
+Should preferably be imported before other stylesheets, because some values in this style are deliberately overridden by other styles.
+*/
 
-/* This file should preferably be imported before other stylesheets */
-
-/* Defaults for window controls on RIGHT side of the window */
-/* Modify these values to match your preferences */
+/* Modify these values to match your preferences
+These reserve extra space on both sides of the nav-bar to be able to drag the window */
 :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
-  --uc-window-control-width: 138px; /* Space reserved for window controls (Win10) */
-  /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
   --uc-window-drag-space-pre: 30px; /* left side*/
   --uc-window-drag-space-post: 30px; /* right side*/
 }
@@ -21,18 +20,39 @@ See the above repository for updates as well as full license text. */
   --uc-window-drag-space-pre: 0px; /* Remove pre space */
 }
 
+/* Default width - used on Windows10+ */
+:root:is([tabsintitlebar], [sizemode="fullscreen"]) {
+  --uc-window-control-width: 138px;
+}
+
 @media  (-moz-platform: windows-win7),
         (-moz-platform: windows-win8){
   :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
     --uc-window-control-width: 105px;
   }
 }
-
-@media (-moz-gtk-csd-available) {
+/* On linux set width based on number of caption buttons.
+One button */
+@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+    --uc-window-control-width: 28px;
+  }
+}
+/* Two buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+       (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+       (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+  :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
+    --uc-window-control-width: 56px;
+  }
+}
+/* Three buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
   :root:is([tabsintitlebar],[sizemode="fullscreen"]) {
     --uc-window-control-width: 84px;
   }
 }
+
 @media (-moz-platform: macos){
   :root:is([tabsintitlebar]) {
     --uc-window-control-width: 72px;
