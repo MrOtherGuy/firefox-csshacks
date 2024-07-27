@@ -23,7 +23,7 @@ Window controls will be all wrong without it
 }
 #TabsToolbar{ visibility: collapse !important }
 
-:root[sizemode="fullscreen"] #TabsToolbar > :is(#window-controls,.titlebar-buttonbox-container){
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
   visibility: visible !important;
   z-index: 2;
 }

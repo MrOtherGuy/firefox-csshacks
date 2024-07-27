@@ -42,12 +42,11 @@ See the above repository for updates as well as full license text. */
   }
 }
 
-.titlebar-buttonbox, #window-controls{ color: var(--toolbar-color) }
+.titlebar-buttonbox{ color: var(--toolbar-color) }
 :root[sizemode="fullscreen"] .titlebar-buttonbox-container{ display: none }
 :root[sizemode="fullscreen"] #navigator-toolbox { position: relative; }
 
-:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
-:root[sizemode="fullscreen"] #window-controls{
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child{
   position: absolute;
   display: flex;
   top: 0;
@@ -55,8 +54,7 @@ See the above repository for updates as well as full license text. */
   height: 40px;
 }
 
-:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
-:root[uidensity="compact"][sizemode="fullscreen"] #window-controls{ height: 32px }
+:root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child{ height: 32px }
 
 #nav-bar{
   border-inline: var(--uc-window-drag-space-pre,0px) solid transparent;
@@ -72,8 +70,7 @@ See the above repository for updates as well as full license text. */
   :root[tabsintitlebar="true"] #nav-bar{
     border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
   }
-  :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
-  :root[sizemode="fullscreen"] #window-controls{ right: unset }
+  :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child{ right: unset }
 }
 @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
   .titlebar-buttonbox-container{
