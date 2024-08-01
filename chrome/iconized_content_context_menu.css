@@ -1,0 +1,194 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/iconized_content_context_menu.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Adds icons to menuitems in web content area context menu.
+ * Note that this won't work if you have native context menus,
+ * such as ones used on MacOS */
+
+:where(#contentAreaContextMenu > menu:not(.menu-iconic))::before,
+:where(#contentAreaContextMenu > menuitem:not(.menuitem-iconic))::before{
+  display: flex;
+  padding-inline-end: 8px;
+  padding-top: 2px;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  content: url("chrome://browser/skin/tab.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+:where(#contentAreaContextMenu > menu),
+:where(#contentAreaContextMenu > menuitem){
+  padding-inline-start: 1em !important;
+}
+#contentAreaContextMenu > :is(.menu-iconic,.menuitem-iconic)::before{
+  content: none;
+}
+:where(#context-sep-navigation) ~ menuitem::before{
+  content: url("chrome://devtools/skin/images/tool-dom.svg");
+}
+:where(#context-sep-viewsource-commands) ~ menuitem::before{
+  content: url("chrome://browser/skin/translations.svg");
+}
+:where(#spell-suggestions-separator) ~ menuitem::before{
+  content: url("chrome://browser/skin/new-tab.svg");
+}
+:where(#context-sep-open) ~ menuitem::before{
+  content: url("chrome://browser/skin/bookmark-star-on-tray.svg");
+}
+:where(#context-savelinktopocket) ~ menuitem::before{
+  content: url("chrome://global/skin/icons/edit-copy.svg");
+}
+:where(#context-sep-copylink) ~ menuitem::before{
+  content: url("chrome://devtools/skin/images/play.svg");
+}
+:where(#context-media-sep-commands) ~ menuitem::before{
+  content: url("chrome://browser/skin/canvas.svg");
+}
+:where(#context-sep-sharing) ~ menuitem::before{
+  content: url("chrome://browser/skin/login.svg");
+}
+:where(#passwordmgr-items-separator) ~ menuitem::before{
+  content: url("chrome://global/skin/icons/edit.svg");
+}
+:where(#context-sep-screenshots) ~ menuitem::before{
+  content: url("chrome://global/skin/icons/search-glass.svg");
+}
+/* Individual items below */
+#context-openlink::before{
+  content: url("chrome://browser/skin/window.svg");
+}
+#context-openlinkprivate::before{
+  content: url("chrome://browser/skin/privateBrowsing.svg");
+}
+#context-savelinktopocket::before{
+  content: url("chrome://global/skin/icons/pocket-outline.svg");
+}
+#context-copylink::before,
+#context-stripOnShareLink::before,
+#context-copyaudiourl::before,
+#context-copyvideourl::before{
+  content: url("chrome://global/skin/icons/link.svg");
+}
+#context-saveaudio::before,
+#context-saveimage::before,
+#context-savelink::before,
+#context-savevideo::before,
+#context-savepage::before{
+  content: url("chrome://browser/skin/save.svg");
+}
+#context-pocket::before{
+  content: url("chrome://global/skin/icons/pocket.svg");
+}
+#use-relay-mask::before{
+  content: url("chrome://browser/skin/preferences/relay-logo.svg");
+}
+#context-copy::before,
+#context-pdfjs-copy::before{
+  content: url("chrome://global/skin/icons/edit-copy.svg");
+}
+#context-cut::before,
+#context-pdfjs-cut::before{
+  content: url("chrome://browser/skin/edit-cut.svg");
+}
+#context-paste-no-formatting::before,
+#context-paste::before,
+#context-pdfjs-paste::before{
+  content: url("chrome://browser/skin/edit-paste.svg");
+}
+#context-delete::before,
+#context-pdfjs-delete::before{
+  content: url("chrome://global/skin/icons/delete.svg");
+}
+#context-video-saveimage::before,
+#context-take-screenshot::before{
+  content: url("chrome://devtools/skin/images/command-screenshot.svg");
+}
+#context-sendpagetodevice::before,
+#context-sendlinktodevice::before{
+  content: url("chrome://browser/skin/synced-tabs.svg");
+}
+#context-media-play::before{
+  content: url("chrome://devtools/skin/images/play.svg");
+}
+#context-media-pause::before{
+  content: url("chrome://devtools/skin/images/pause.svg");
+}
+#context-media-mute::before{
+  content: url("chrome://global/skin/media/audio-muted.svg");
+}
+#context-media-unmute::before{
+  content: url("chrome://global/skin/media/audio.svg");
+}
+#context-media-hidecontrols::before,
+#context-media-showcontrols::before{
+  content: url("chrome://devtools/skin/images/dock-bottom.svg");
+}
+#context-media-loop::before{
+  content: url("chrome://browser/skin/notification-icons/autoplay-media.svg");
+}
+#context-leave-dom-fullscreen::before{
+  content: url("chrome://browser/skin/fullscreen-exit.svg");
+}
+#context-video-fullscreen::before{
+  content: url("chrome://browser/skin/fullscreen.svg");
+}
+#context-video-pictureinpicture::before{
+  content: url("chrome://global/skin/media/picture-in-picture-open.svg");
+}
+#context-media-playbackrate::before{
+  content: url("chrome://global/skin/narrate/fast.svg");
+}
+#context-sendimage::before,
+#context-sendvideo::before,
+#context-sendaudio::before{
+  content: url("chrome://browser/skin/mail.svg");
+}
+#context-undo::before,
+#context-pdfjs-undo::before,
+#context-redo::before,
+#context-pdfjs-redo::before{
+  content: url("chrome://global/skin/icons/undo.svg");
+}
+#context-redo::before,
+#context-pdfjs-redo::before{
+  transform-box: content-box;
+  transform: scaleX(-1);
+}
+#context-selectall::before,
+#context-pdfjs-selectall::before,
+#context-pdfjs-highlight-selection::before{
+  content: url("chrome://global/skin/reader/character-spacing-20.svg");
+}
+#context-reveal-password::before{
+  -moz-context-properties: fill,stroke;
+  stroke: currentColor;
+  content: url("chrome://devtools/skin/images/eye-opened.svg");
+}
+#context-print-selection::before{
+  content: url("chrome://global/skin/icons/print.svg");
+}
+#context-translate-selection::before,
+#spell-check-enabled::before,
+#spell-add-dictionaries-main::before,
+#spell-dictionaries::before{
+  content: url("chrome://browser/skin/translations.svg");
+}
+#context-ask-chat::before{
+  content: url("chrome://global/skin/icons/highlights.svg");
+}
+#context-bidi-text-direction-toggle::before,
+#context-bidi-page-direction-toggle::before{
+  content: url("chrome://devtools/skin/images/command-bidi.svg");
+}
+#context-viewpartialsource-selection::before,
+#context-viewsource::before{
+  content: url("chrome://browser/skin/characterEncoding.svg");
+}
+#context-inspect-a11y::before{
+  content: url("chrome://devtools/skin/images/accessibility.svg");
+}
+#context-inspect::before{
+  content: url("chrome://devtools/skin/images/open-inspector.svg");
+}

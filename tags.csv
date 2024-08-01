@@ -10,6 +10,8 @@ autohide_toolbox.css,autohide,toolbars,fullscreen
 deprecated/blank_page_background.css,legacy
 deprecated/bookmarksbar_on_new_tabs_only.css,legacy
 deprecated/bookmarks_toolbar_on_newtabs_only.css,legacy
+bookmark_panel_enlarge.css,bookmarks,popup
+bookmarks_below_content.css,bookmarks,toolbars
 button_effect_icon_glow.css,buttons,effect
 button_effect_scale_onclick.css,buttons,effect
 button_effect_scale_onhover.css,buttons,effect
@@ -38,6 +40,7 @@ deprecated/dark_date_picker_panel.css,legacy
 deprecated/dark_theme_aware_statuspanel.css,legacy
 disable_newtab_on_middle_click.css,hack,tabs
 drag_window_from_urlbar.css,urlbar,windows
+dual_color_tab_attention_indicator.css,tab,colors
 fake_statusbar_w_bookmarksbar.css,hack,status,toolbars,bookmarks
 fake_urlbar_dropmarker.css,urlbar,hack
 fake_statusbar_w_menubar.css,hack,status,toolbars,menubar
@@ -56,6 +59,7 @@ hide_tabs_with_one_tab_w_window_controls.css,hiding,tabs,toolbars
 hide_toolbox_top_bottom_borders.css,toolbars,hiding
 hide_urlbar_first_row.css,urlbar,popup,hiding
 icon_only_tabs.css,tab,icon
+iconized_content_context_menu.css,menu,icon
 iconized_main_menu.css,icon,popup,menu,proton
 iconized_menubar_items.css,menubar,menu,icon
 inline_tab_audio_icons.css,tab,icon,proton
@@ -94,6 +98,7 @@ navigation_buttons_inside_urlbar.css,navigation,buttons,urlbar
 newtab_button_always_on_hover.css,tabs,hiding
 non_floating_sharp_tabs.css,tab,proton,buttons
 numbered_tabs.css,tabs
+overlay_fullscreen_toolbars.css,toolbars,fullscreen
 overlay_menubar.css,menubar
 deprecated/overlay_scrollbars.as.css,legacy
 overlay_sidebar_header.css,sidebar,hack
@@ -115,6 +120,7 @@ selected_tab_gradient_border.css,tab,colors,effect
 sharp_menupopup_corners.css,popup,menu,proton
 show_navbar_on_focus_only.css,urlbar,nav-bar,toolbars,hiding
 show_toolbars_in_popup_windows.css,toolbars,popup
+show_urlbar_button.css,urlbar,hack,hiding
 show_window_title_in_menubar.css,windows,menubar
 shrinking_pinned_tabs.css,tab,
 status_inside_menubar.css,menubar,status,hack
@@ -123,6 +129,7 @@ status_inside_urlbar_v2.css,status,urlbar,status,effect,hack
 tab_animated_active_border.css,tab,effect,colors
 tab_close_button_always_on_hover.css,tab,close
 tab_closing_animation.css,tab,effect
+tab_count_in_alltabs_button.css,tabs
 tab_effect_scale_onclick.css,tab,effect
 tab_line_loading_indicator.css,tab,icon,effect
 tab_loading_progress_bar.css,tab,effect
@@ -160,13 +167,8 @@ vertical_context_navigation.css,navigation,menu,popup
 vertical_context_navigation_v2.css,navigation,menu,popup
 vertical_menubar.css,menubar,hack
 vertical_popup_menubar.css,menubar,menu,toolbars,popup
+vertical_tabs.css,tabs,hack
 vertical_urlbar_one-off_items.css,urlbar
 window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colors,patch
 window_control_force_linux_system_style.css,window-control,buttons,icon
 window_control_placeholder_support.css,window-control,patch
-vertical_tabs.css,tabs,hack
-bookmarks_below_content.css,bookmarks,toolbars
-overlay_fullscreen_toolbars.css,toolbars,fullscreen
-dual_color_tab_attention_indicator.css,tab,colors
-tab_count_in_alltabs_button.css,tabs
-show_urlbar_button.css,urlbar,hack,hiding
