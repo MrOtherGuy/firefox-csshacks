@@ -75,7 +75,7 @@ Assumes that you have a git client installed, and that you do not already have a
     * (**NOTE**: if you already have "chrome" folder, then rename it before cloning. After clone is complete, just copy the *contents* of the old folder into the new chrome folder)
 0. (Optional) Make a copy of `userChrome_example.css` and rename the copy to `userChrome.css`
 0. `@import` individual style files into your userChrome.css
-    * Notice tha any `@import`s must be placed before anything else in whatever file you are using them
+    * Notice that any `@import`s must be placed before anything else in whatever file you are using them
     * Check userChrome_example.css for how it uses `@import`
 0. If Firefox is running, restart Firefox so that the changes take effect
 
