@@ -91,6 +91,9 @@ See the above repository for updates as well as full license text. */
 #context-pocket::before{
   content: url("chrome://global/skin/icons/pocket.svg");
 }
+#contentAreaContextMenu > #fill-login::before{
+  content: url("chrome://browser/skin/login.svg");
+}
 #use-relay-mask::before{
   content: url("chrome://browser/skin/preferences/relay-logo.svg");
   transform: scale(0.85);
