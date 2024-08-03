@@ -93,4 +93,5 @@ See the above repository for updates as well as full license text. */
 }
 #placesContext_new\:separator::before{
   content: url("chrome://global/skin/reader/content-width-20.svg");
+  transform: scale(0.85);
 }

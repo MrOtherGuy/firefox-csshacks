@@ -93,6 +93,7 @@ See the above repository for updates as well as full license text. */
 }
 #use-relay-mask::before{
   content: url("chrome://browser/skin/preferences/relay-logo.svg");
+  transform: scale(0.85);
 }
 #context-copy::before,
 #context-pdfjs-copy::before{
@@ -127,9 +128,11 @@ See the above repository for updates as well as full license text. */
 }
 #context-media-mute::before{
   content: url("chrome://global/skin/media/audio-muted.svg");
+  transform: scale(0.85);
 }
 #context-media-unmute::before{
   content: url("chrome://global/skin/media/audio.svg");
+  transform: scale(0.85);
 }
 #context-media-hidecontrols::before,
 #context-media-showcontrols::before{
@@ -170,6 +173,7 @@ See the above repository for updates as well as full license text. */
 #context-pdfjs-selectall::before,
 #context-pdfjs-highlight-selection::before{
   content: url("chrome://global/skin/reader/character-spacing-20.svg");
+  transform: scale(0.85);
 }
 #context-reveal-password::before{
   -moz-context-properties: fill,stroke;
