@@ -145,7 +145,7 @@ See the above repository for updates as well as full license text. */
   content: url("chrome://global/skin/media/picture-in-picture-open.svg");
 }
 #context-media-playbackrate::before{
-  content: url("chrome://global/skin/narrate/fast.svg");
+  content: url("chrome://global/skin/icons/performance.svg");
 }
 #context-sendimage::before,
 #context-sendvideo::before,
