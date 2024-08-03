@@ -22,6 +22,13 @@ See the above repository for updates as well as full license text. */
 :where(#contentAreaContextMenu > menuitem){
   padding-inline-start: 1em !important;
 }
+#contentAreaContextMenu > menuitem[type="checkbox"]::before{
+  content: url("chrome://devtools/skin/images/checkbox.svg");
+}
+#contentAreaContextMenu > menuitem[type="checkbox"][_moz-menuactive]::before,
+#contentAreaContextMenu > menuitem[type="checkbox"][checked="true"]::before{
+  background: no-repeat center left url("chrome://global/skin/icons/check.svg");
+}
 #contentAreaContextMenu > :is(.menu-iconic,.menuitem-iconic)::before{
   content: none;
 }
