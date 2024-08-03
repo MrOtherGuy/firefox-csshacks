@@ -173,3 +173,5 @@ window_control_fallback_for_custom_windows_theme.css,window-control,buttons,colo
 window_control_force_linux_system_style.css,window-control,buttons,icon
 window_control_placeholder_support.css,window-control,patch
 iconized_places_context_menu.css,menu,icon
+iconized_tabs_context_menu.css,menu,icon
+iconized_textbox_context_menu.css,menu,icon

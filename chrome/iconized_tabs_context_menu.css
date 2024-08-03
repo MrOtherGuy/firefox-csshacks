@@ -1,0 +1,87 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/iconized_tabs_context_menu.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Adds icons to menuitems in tabs context menu.
+ * Note that this won't work if you have native context menus,
+ * such as ones used on MacOS */
+
+:where(#tabContextMenu > menu:not(.menu-iconic))::before,
+:where(#tabContextMenu > menuitem:not(.menuitem-iconic))::before{
+  display: flex;
+  padding-inline-end: 8px;
+  padding-top: 2px;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  content: url("chrome://browser/skin/tab.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+:where(#tabContextMenu > menu),
+:where(#tabContextMenu > menuitem){
+  padding-inline-start: 1em !important;
+}
+#tabContextMenu > menuitem[type="checkbox"]::before{
+  content: url("chrome://devtools/skin/images/checkbox.svg");
+}
+#tabContextMenu > menuitem[type="checkbox"] > .menu-iconic-left{
+  display: none;
+}
+#tabContextMenu > menuitem[type="checkbox"][_moz-menuactive]::before,
+#tabContextMenu > menuitem[type="checkbox"][checked="true"]::before{
+  background: no-repeat center left url("chrome://global/skin/icons/check.svg");
+}
+#context_openANewTab::before{
+  content: url("chrome://browser/skin/new-tab.svg");
+}
+#context_reloadTab::before,
+#context_reloadSelectedTabs::before{
+  content: url("chrome://global/skin/icons/reload.svg");
+}
+#context_playTab::before,
+#context_playSelectedTabs::before{
+  content: url("chrome://devtools/skin/images/play.svg");
+}
+#context_toggleMuteTab::before,
+#context_toggleMuteSelectedTabs::before{
+  content: url("chrome://global/skin/media/audio-muted.svg");
+  transform: scale(0.85);
+}
+#context_toggleMuteTab[muted="true"]::before,
+#context_toggleMuteSelectedTabs[muted="true"]::before{
+  content: url("chrome://global/skin/media/audio.svg");
+  transform: scale(0.85);
+}
+#context_unpinTab::before,
+#context_unpinSelectedTabs::before,
+#context_pinTab::before,
+#context_pinSelectedTabs::before{
+  content: url("chrome://browser/skin/pin-12.svg");
+  transform: scale(1.15);
+}
+#context_duplicateTab::before,
+#context_duplicateTabs::before{
+  content: url("chrome://devtools/skin/images/command-always-on-top-window.svg");
+}
+#context_bookmarkTab::before,
+#context_bookmarkSelectedTabs::before{
+  content: url("chrome://browser/skin/bookmark-hollow.svg");
+}
+#context_sendTabToDevice::before{
+  content: url("chrome://browser/skin/synced-tabs.svg");
+}
+#context_selectAllTabs::before{
+  content: url("chrome://devtools/skin/images/tool-application.svg");
+}
+#context_closeTab::before,
+#context_closeDuplicateTabs::before,
+#context_closeTabOptions::before{
+  content: url("chrome://global/skin/icons/close.svg");
+}
+#context_undoCloseTab::before{
+  content: url("chrome://browser/skin/forget.svg");
+}
+#tabContextMenu > .share-tab-url-item::before{
+  content: url("chrome://devtools/skin/images/diff.svg");
+}

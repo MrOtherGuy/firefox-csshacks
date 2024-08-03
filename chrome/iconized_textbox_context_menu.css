@@ -1,0 +1,63 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/iconized_textbox_context_menu.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Adds icons to menuitems in textbox context menus, such as urlbar and searchbar.
+ * Note that this won't work if you have native context menus,
+ * such as ones used on MacOS */
+
+:where(.textbox-contextmenu > menu:not(.menu-iconic))::before,
+:where(.textbox-contextmenu > menuitem:not(.menuitem-iconic))::before{
+  display: flex;
+  padding-inline-end: 8px;
+  padding-top: 2px;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  content: url("chrome://browser/skin/tab.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+:where(.textbox-contextmenu > menu),
+:where(.textbox-contextmenu > menuitem){
+  padding-inline-start: 1em !important;
+}
+.textbox-contextmenu > menuitem[type="checkbox"]::before{
+  content: url("chrome://devtools/skin/images/checkbox.svg");
+}
+.textbox-contextmenu > menuitem[type="checkbox"] > .menu-iconic-left{
+  display: none;
+}
+.textbox-contextmenu > [data-l10n-id="text-action-undo"]::before,
+.textbox-contextmenu > [data-l10n-id="text-action-redo"]::before{
+  content: url("chrome://global/skin/icons/undo.svg");
+}
+.textbox-contextmenu > [data-l10n-id="text-action-redo"]::before{
+  transform-box: content-box;
+  transform: scaleX(-1);
+}
+.textbox-contextmenu > [data-l10n-id="text-action-copy"]::before{
+  content: url("chrome://global/skin/icons/edit-copy.svg");
+}
+.textbox-contextmenu > [data-l10n-id="text-action-strip-on-share"]::before{
+  content: url("chrome://devtools/skin/images/command-always-on-top-window.svg");
+}
+.textbox-contextmenu > [data-l10n-id="text-action-cut"]::before{
+  content: url("chrome://browser/skin/edit-cut.svg");
+}
+.textbox-contextmenu > [data-l10n-id="text-action-paste"]::before{
+  content: url("chrome://browser/skin/edit-paste.svg");
+}
+.textbox-contextmenu > #paste-and-go::before{
+  content: url("chrome://browser/skin/edit-paste.svg");
+}
+.textbox-contextmenu > .searchbar-paste-and-search::before{
+  content: url("chrome://global/skin/icons/search-glass.svg");
+}
+.textbox-contextmenu > [data-l10n-id="text-action-delete"]::before{
+  content: url("chrome://global/skin/icons/delete.svg");
+}
+.textbox-contextmenu > [data-l10n-id="text-action-select-all"]::before{
+  content: url("chrome://global/skin/reader/character-spacing-20.svg");
+  transform: scale(0.85);
+}
