@@ -85,7 +85,7 @@ See the above repository for updates as well as full license text. */
 #placesContext_createBookmark::before{
   content: url("chrome://browser/skin/bookmark-hollow.svg");
 }
-#toggle_PersonalToolbar::before{
+#placesContext > #toggle_PersonalToolbar::before{
   content: url("chrome://browser/skin/bookmarks-toolbar.svg");
 }
 #placesContext_showAllBookmarks::before{
