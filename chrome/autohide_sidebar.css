@@ -17,6 +17,12 @@ See the above repository for updates as well as full license text. */
   z-index:1;
 }
 
+#sidebar-box:not(*:hover){
+  overflow: clip;
+  border-inline: 1px solid rgb(80,80,80);
+  border-inline-width: 0px 1px;
+}
+
 #sidebar-box[positionend]{ direction: rtl }
 #sidebar-box[positionend] > *{ direction: ltr }
 
@@ -43,7 +49,7 @@ See the above repository for updates as well as full license text. */
 #sidebar-header,
 #sidebar{
   transition: min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay) !important;
-  min-width: var(--uc-sidebar-width) !important;
+  min-width: var(--uc-sidebar-hover-width) !important;
   will-change: min-width;
 }
 #sidebar-box:hover > #sidebar-header,
