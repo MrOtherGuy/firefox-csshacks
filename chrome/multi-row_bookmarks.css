@@ -31,8 +31,9 @@ See the above repository for updates as well as full license text. */
 /* Hide the all-bookmarks button */
 #PlacesChevron{ display: none }
 
-/* Add some spacing between rows */
+/* Add some spacing between rows, inline margin is collapsed to prevent dragging issues */
 #PlacesToolbarItems > .bookmark-item{
-  margin: var(--multirow-bmb-row-margin) 3px !important;
+  margin: var(--multirow-bmb-row-margin) 0 !important;
+  border-inline: 2px solid transparent;
   visibility: visible !important; /* Just in case they would be hidden for some reason */
 }
