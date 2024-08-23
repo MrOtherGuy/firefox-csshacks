@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
 @-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
   
   :root{ overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
-  
+  addon-card .addon-name-link{ font-size: 0.9em }
   @media (min-width:420px){
     #main{ max-width: unset !important; padding-right: 28px; }
     addon-list > section{
@@ -24,13 +24,13 @@ See the above repository for updates as well as full license text. */
     
     addon-list[type="extension"] .addon-name-container{
       display: grid !important;
-      grid-template-areas: "name opt" "name toggle" "name badge";
+      grid-template-areas: "name badge opt" "name toggle toggle";
       grid-row-gap: 6px;
-      grid-auto-columns: 1fr 24px;
+      grid-auto-columns: 1fr 24px auto;
     }
     .addon-icon{ align-self: center }
     .addon-name-container > .addon-name{ grid-area: name }
-    .addon-name-container > .toggle-button{ grid-area: toggle }
+    .addon-name-container > :is(.toggle-button,moz-toggle){ grid-area: toggle; justify-self: end }
     .addon-name-container > .more-options-button{ grid-area: opt }
     .addon-name-container > .addon-badge{ grid-area: badge }
     
