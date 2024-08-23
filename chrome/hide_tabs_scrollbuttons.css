@@ -19,7 +19,7 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"] #tabbrowser-tabs[overflow]{
   --uc-scrollbox-base-margin: -25px;
 }
-#tabbrowser-arrowscrollbox:not([scrolledtostart="true"]){
+#tabbrowser-arrowscrollbox:not([scrolledtostart]){
   --uc-scrollbox-overflow-start-margin: -1px;
 }
 #scrollbutton-up ~ spacer{
