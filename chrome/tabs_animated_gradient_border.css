@@ -39,6 +39,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
   margin-inline: 0 !important;
   --tab-shadow-max-size: 0px;
 }
+scrollbox[orient="horizontal"] > slot::after,
 .scrollbox-clip[orient="horizontal"] > scrollbox::after{
   content: "";
   display: flex;

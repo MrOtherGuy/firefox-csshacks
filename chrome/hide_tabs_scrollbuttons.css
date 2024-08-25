@@ -55,7 +55,9 @@ spacer[part="overflow-end-indicator"]{
   margin-inline-end: calc(0px - var(--tab-shadow-max-size,0px)) !important;
   background-image: var(--uc-scrollbutton-down-background);
 }
+scrollbox[orient="horizontal"],
 .scrollbox-clip{ margin-inline: var(--uc-scrollbox-margin,0px); }
+.scrollbox-clip > scrollbox[orient="horizontal"]{ margin-inline: initial }
 
 /* Need to reset some things for other scrollboxes */
 .menupopup-arrowscrollbox{

@@ -7,6 +7,7 @@ See the above repository for updates as well as full license text. */
 #contentAreaContextMenu{
   --uc-popup-display: grid;
   --uc-pseudo-elem: "";
+  --uc-scrollbox-slot: contents;
   min-height: 162px;
 }
 scrollbox[orient="vertical"]{
@@ -14,7 +15,9 @@ scrollbox[orient="vertical"]{
   grid-template-columns: auto 1fr; 
   grid-template-rows: 0;
 }
-
+scrollbox[orient="vertical"] > slot{
+  display: var(--uc-scrollbox-slot,initial) !important;
+}
 scrollbox[orient="vertical"]::before{
   content: var(--uc-pseudo-elem,none);
   grid-area: auto / 2 / auto / 2;

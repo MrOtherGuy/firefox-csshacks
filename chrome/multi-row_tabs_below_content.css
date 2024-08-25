@@ -161,6 +161,7 @@ See the above repository for updates as well as full license text. */
   #scrollbutton-up,
   #scrollbutton-down{ display: var(--scrollbutton-display-model,initial) }
 
+  scrollbox[part][orient="horizontal"] > slot,
   scrollbox[part][orient="horizontal"]{
     display: flex;
     flex-wrap: wrap;
@@ -171,7 +172,9 @@ See the above repository for updates as well as full license text. */
     scrollbar-gutter: stable;
     scroll-snap-type: y mandatory;
   }
-
+  scrollbox[part][orient="horizontal"] > slot{
+    overflow-x: hidden;
+  }
   .scrollbox-clip[orient="horizontal"],
   #tabbrowser-arrowscrollbox{
     overflow: -moz-hidden-unscrollable;

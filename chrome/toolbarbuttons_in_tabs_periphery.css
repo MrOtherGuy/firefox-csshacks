@@ -38,8 +38,11 @@ Any button to the right of the flexible space is pushed to the right edge.
 .closing-tabs-spacer{
   display: none !important;
 }
-.scrollbox-clip[orient="horizontal"]{
-  contain: var(--uc-scrollbox-containment,initial) !important;
+@-moz-document url("chrome://browser/content/browser.xhtml"){
+  scrollbox[orient="horizontal"],
+  .scrollbox-clip[orient="horizontal"]{
+    contain: var(--uc-scrollbox-containment,initial) !important;
+  }
 }
 #tabbrowser-tabs ~ toolbarspring{
   flex-grow: 0 !important;
