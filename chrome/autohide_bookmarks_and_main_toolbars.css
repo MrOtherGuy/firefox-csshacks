@@ -69,6 +69,11 @@ See the above repository for updates as well as full license text. */
   visibility: hidden !important;
 }
 
+/* If bookmarks toolbar is collapsed on startup, then no items are generated, and we need to set some height for it */
+#PlacesToolbarItems:empty{
+  height: var(--uc-bm-height);
+}
+
 /* Selected tab needs higher z-index now to "hide" the broder below it */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
 
