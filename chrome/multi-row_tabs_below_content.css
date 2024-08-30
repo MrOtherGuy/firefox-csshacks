@@ -4,7 +4,9 @@ See the above repository for updates as well as full license text. */
 /* Makes tabs to appear on multiple lines below the web content
  * Tab reordering will not work and can't be made to work
  * Make menubar enabled for getting window controls in correct place.
- * Menubar options will be shown as overlay when mouse is at top-left corner
+ * NOTE! menubar will be hidden even if enabled, if you want to be able to show menubar items occasionally,
+ * then add single flexible space on the left side of menubar items - doing this creates "button" which when hovered
+ * shows menubar items at the top left corner. See the custom pref below to make menubar static instead.
  * It's recommended to move tabs new-tab-button outside tabs toolbar */
 
 /* SETTINGS (you need to create and set these prefs to true in about:config)
@@ -21,6 +23,9 @@ See the above repository for updates as well as full license text. */
     --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
     --uc-window-drag-space-width: 30px;
     --uc-window-control-width: 138px;
+  }
+  :root[customizing]{
+    --multirow-top-padding: 32px;
   }
   :root[inFullscreen]{
     --uc-window-drag-space-width: 0px;
@@ -45,22 +50,27 @@ See the above repository for updates as well as full license text. */
     order: -1;
   }
 
-  #titlebar{ -moz-appearance: none !important; } /* Try setting to "-moz-window-titlebar" if you face issues */
+  #titlebar{
+    -moz-appearance: none !important; /* Try setting to "-moz-window-titlebar" if you face issues */
+    position: relative;
+    z-index: 1
+  } 
 
   #nav-bar{
     position: fixed !important;
-    margin-left: var(--uc-window-drag-space-width);
-    width: calc(100vw - var(--uc-window-drag-space-width));
+    border-left: var(--uc-window-drag-space-width) solid transparent !important;;
     top: var(--multirow-top-padding);
     border-top: 0 !important;
-  }
-  :where(#titlebar:hover + #nav-bar){
-    z-index: -1;
+    background: inherit;
+    background-origin: border-box;
+    width: 100vw;
   }
   :root[inFullscreen] #nav-bar,
   :root[tabsintitlebar] #nav-bar{
-    margin-right: var(--uc-window-control-width);
-    width: calc(100vw - var(--uc-window-control-width) - var(--uc-window-drag-space-width));
+    border-right: var(--uc-window-control-width) solid transparent !important;
+  }
+  :root[sizemode="fullscreen"] #nav-bar:not(:hover){
+    opacity: 0;
   }
 
   #TabsToolbar > .titlebar-buttonbox-container{
@@ -107,31 +117,39 @@ See the above repository for updates as well as full license text. */
     height: var(--multirow-toolbar-height);
     position: fixed;
     display: flex;
-    visibility: visible !important;
+    visibility: hidden;
     top: var(--multirow-top-padding);
     padding-top: 0 !important;
     width: 100vw;
     color: var(--lwt-text-color);
-    background: linear-gradient(to right, var(--toolbar-bgcolor), var(--toolbar-bgcolor) 30px, transparent 30px) no-repeat;
+  }
+  
+  :root[customizing] #toolbar-menubar{
+    visibility: visible;
+    top: 0;
+  }
+  #toolbar-menubar > toolbarspring{
+    visibility: visible;
   }
   #menubar-items + spacer{ flex-grow: 1 }
-
+  
   #toolbar-menubar > #menubar-items{
     height: 100%;
-    visibility: hidden;
   }
   #main-menubar{ height: var(--multirow-toolbar-height) }
 
-  #toolbar-menubar:hover > #menubar-items{
+  #toolbar-menubar > toolbarspring:hover + #menubar-items,
+  #menubar-items:hover{
     visibility: visible;
-    background-image: linear-gradient( to left,transparent,var(--lwt-accent-color) 35px);
+    background-image: linear-gradient( to left,transparent,-moz-dialog 35px);
   }
   #toolbar-menubar:not(:hover,[customizing]) *{-moz-window-dragging: drag !important;}
   #toolbar-menubar > .titlebar-buttonbox-container{
-    background: var(--toolbar-bgcolor);
     order:1000;
+    visibility: visible;
   }
   #menubar-items + spacer{ order: 1000 }
+  :root[sizemode="fullscreen"] #toolbar-menubar spacer{ visibility: visible }
   #toolbar-menubar > .titlebar-buttonbox-container > .titlebar-buttonbox{
     height: 100%;
     pointer-events: auto !important;
@@ -141,7 +159,7 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar > toolbarspring {
     background: url("chrome://global/skin/icons/settings.svg") no-repeat 10px;
     height: 100%;
-    display: block;
+    display: flex;
     fill: currentColor;
     -moz-context-properties: fill;
     min-width: 28px !important;
@@ -225,16 +243,33 @@ See the above repository for updates as well as full license text. */
     z-index: auto !important;
   }
   @media (-moz-bool-pref: "userchrome.multirowtabs.static-menubar.enabled"){
-    :root{
+    :root:not([sizemode="fullscreen"]){
       --multirow-menubar-height: 28px;
       --uc-window-drag-space-width: 0px;
       --uc-window-control-width: 0px;
     }
+    #toolbar-menubar{
+      visibility: visible;
+      background-image: var(--lwt-additional-images);
+      background-repeat: var(--lwt-background-tiling);
+      background-position: var(--lwt-background-alignment);
+    }
+    :root[sizemode="fullscreen"] #toolbar-menubar{
+      visibility: hidden;
+    }
+    :root[sizemode="fullscreen"] #menubar-items{
+      visibility: collapse !important;
+    }
+    :root[lwtheme-image] #toolbar-menubar {
+      background-image: var(--lwt-header-image), var(--lwt-additional-images);
+      background-repeat: no-repeat, var(--lwt-background-tiling);
+      background-position: right top, var(--lwt-background-alignment);
+    }
     #nav-bar{
-      z-index: auto;
+      background-position-y: calc(0px - var(--multirow-menubar-height));
     }
     #main-menubar,
-    #toolbar-menubar{ height: var(--multirow-menubar-height); background-image: none; }
+    #toolbar-menubar{ height: var(--multirow-menubar-height); }
     #toolbar-menubar > #menubar-items{ visibility: visible; background-image: none !important; }
     .titlebar-buttonbox-container{ background: none !important }
     :root:not([inFullscreen]) #nav-bar{
