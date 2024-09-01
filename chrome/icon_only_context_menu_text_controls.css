@@ -9,6 +9,7 @@ See the above repository for updates as well as full license text. */
 .textbox-contextmenu,
 #contentAreaContextMenu{
   --uc-scrollbox-display: grid;
+  --uc-scrollbox-slot: contents;
 }
 :where(#contentAreaContextMenu,.textbox-contextmenu) > :is(menu,menuitem,menuseparator,menugroup){
   grid-column: 1/7
@@ -19,6 +20,9 @@ scrollbox[orient="vertical"][smoothscroll="false"]{
   display: var(--uc-scrollbox-display,flex);
   grid-auto-columns: min-content;
   grid-template-columns: 1fr 1fr 1fr min-content 1fr 1fr;
+}
+scrollbox[orient="vertical"][smoothscroll="false"] > slot{
+  display: var(--uc-scrollbox-slot,initial) !important;
 }
 #context-cut:not([hidden]) + #context-copy,
 #context-pdfjs-cut:not([hidden]) + #context-pdfjs-copy,
@@ -69,6 +73,8 @@ scrollbox[orient="vertical"][smoothscroll="false"]{
   background-repeat: no-repeat;
   background-position: bottom 10% left 20%;
   background-size: 50%;
+  fill: currentColor;
+  -moz-context-properties: fill;
   &::before{
     content url("chrome://global/skin/reader/RM-Serif.svg");
     mask-image: radial-gradient(ellipse at bottom left,transparent 30%, black 32%,black);
