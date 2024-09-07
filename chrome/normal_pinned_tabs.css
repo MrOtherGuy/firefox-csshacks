@@ -15,7 +15,10 @@ See the above repository for updates as well as full license text. */
   position: initial !important;
   display: flex !important
 }
-
+.tab-content{ min-width: 0 }
+.tab-label-container[textoverflow]{
+  mask-image: linear-gradient(to left, transparent, black var(--tab-label-mask-size));
+}
 .tabbrowser-tab[pinned] > .tab-stack{ border: none !important; }
 .tabbrowser-tab[pinned]::after{ position: static !important; margin-block: 0px 1px !important; }
 
