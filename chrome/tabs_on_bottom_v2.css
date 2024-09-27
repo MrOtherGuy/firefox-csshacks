@@ -1,0 +1,45 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom_v2.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This reorders toolbar to place tabs below other toolbars. Requires Firefox 132+ */
+
+#navigator-toolbox{
+  display: grid;
+  grid-template-areas: "mb mb mb mb" "pre toolbar1 post caption" "toolbar toolbar toolbar toolbar";
+  grid-auto-columns: min-content 1fr min-content min-content;
+  grid-template-rows: auto;
+}
+#titlebar,
+#TabsToolbar{
+  display: contents;
+}
+#TabsToolbar > .titlebar-buttonbox-container{
+  grid-area: caption;
+}
+#TabsToolbar > .titlebar-spacer[type="pre-tabs"]{
+  grid-area: pre;
+}
+#TabsToolbar > .titlebar-spacer[type="post-tabs"]{
+  grid-area: post;
+}
+.titlebar-spacer{
+  -moz-window-dragging: drag;
+}
+#nav-bar{
+  grid-area: toolbar1
+}
+#toolbar-menubar{
+  grid-area: mb;
+}
+#toolbar-menubar,
+#TabsToolbar > .toolbar-items,
+#PersonalToolbar,
+.global-notificationbox,
+#tab-notification-deck{
+  grid-column: 1/5;
+}
+.global-notificationbox,
+#tab-notification-deck,
+#TabsToolbar > .toolbar-items{
+  order: 1;
+}
