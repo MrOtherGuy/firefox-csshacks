@@ -45,10 +45,12 @@ See the above repository for updates as well as full license text. */
   -moz-window-dragging: drag;
 }
 #nav-bar{
-  grid-area: toolbar1
+  grid-area: toolbar1;
+  border-top: none !important;
 }
 #toolbar-menubar{
   grid-area: mb;
+  border-bottom: 0.01px var(--tabs-navbar-separator-style) var(--tabs-navbar-separator-color);
 }
 #toolbar-menubar,
 #TabsToolbar > .toolbar-items,
@@ -62,6 +64,7 @@ See the above repository for updates as well as full license text. */
 #TabsToolbar > .toolbar-items{
   order: 1;
 }
-.titlebar-spacer,.titlebar-buttonbox-container{
+.titlebar-spacer,
+#TabsToolbar > .titlebar-buttonbox-container{
   background-color: var(--toolbar-bgcolor)
 }
