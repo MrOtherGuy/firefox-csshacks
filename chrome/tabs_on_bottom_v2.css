@@ -5,9 +5,24 @@ See the above repository for updates as well as full license text. */
 
 #navigator-toolbox{
   display: grid;
-  grid-template-areas: "mb mb mb mb" "pre toolbar1 post caption" "toolbar toolbar toolbar toolbar";
+  grid-template-areas: "mb mb mb mb"
+                       "pre toolbar1 post caption"
+                       "toolbar toolbar toolbar toolbar";
   grid-auto-columns: min-content 1fr min-content min-content;
   grid-template-rows: auto;
+}
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  #navigator-toolbox{
+    grid-template-areas: "mb mb mb mb"
+                         "caption pre toolbar1 post"
+                         "toolbar toolbar toolbar toolbar";
+    grid-auto-columns: min-content min-content 1fr min-content;
+  }
+  @media (-moz-platform: windows){
+    #TabsToolbar .titlebar-buttonbox{ flex-direction: row-reverse; }
+  }
 }
 #titlebar,
 #TabsToolbar{
@@ -21,6 +36,10 @@ See the above repository for updates as well as full license text. */
 }
 #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
   grid-area: post;
+}
+#private-browsing-indicator-with-label{
+  grid-area: post;
+  & > label{ display: none }
 }
 .titlebar-spacer{
   -moz-window-dragging: drag;
@@ -42,4 +61,7 @@ See the above repository for updates as well as full license text. */
 #tab-notification-deck,
 #TabsToolbar > .toolbar-items{
   order: 1;
+}
+.titlebar-spacer,.titlebar-buttonbox-container{
+  background-color: var(--toolbar-bgcolor)
 }
