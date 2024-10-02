@@ -23,6 +23,13 @@ See the above repository for updates as well as full license text. */
 }
 #titlebar{ position: relative; z-index: 3 }
 
+#navigator-toolbox,
+#sidebar-box,
+#sidebar-main,
+#sidebar-splitter,
+#tabbrowser-tabbox{
+  z-index: auto !important;
+}
 /* Show when toolbox is focused, like when urlbar has received focus */
 #navigator-toolbox:focus-within > .browser-toolbar{
   transform: translateY(0);

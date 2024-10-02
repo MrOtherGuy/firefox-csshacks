@@ -19,7 +19,13 @@ See the above repository for updates as well as full license text. */
 :root[chromehidden~="toolbar"] #navigator-toolbox{
   --uc-navbar-height: 0px;
 }
-
+#navigator-toolbox,
+#sidebar-box,
+#sidebar-main,
+#sidebar-splitter,
+#tabbrowser-tabbox{
+  z-index: auto !important;
+}
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage))  !important;
