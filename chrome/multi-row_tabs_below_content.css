@@ -180,6 +180,7 @@ See the above repository for updates as well as full license text. */
   scrollbox[part][orient="horizontal"] > slot,
   scrollbox[part][orient="horizontal"]{
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
     overflow-y: auto;
     max-height: var(--uc-scrollbox-max-height,1px);
