@@ -23,6 +23,7 @@ See the above repository for updates as well as full license text. */
   :root:is([sizemode="maximized"],[sizemode="fullscreen"]){
     --uc-window-drag-space-width: 0px;
   }
+  #toolbar-menubar[autohide="false"] ~ #nav-bar,
   #titlebar:has(> [autohide="false"]) + #nav-bar{
     --uc-window-drag-space-width: 0px;
     --uc-menubar-height: 28px;
@@ -60,6 +61,7 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   pointer-events: none
 }
+:root[tabsintitlebar] .browser-titlebar,
 #titlebar{
   opacity: 1 !important;
   will-change: unset !important;

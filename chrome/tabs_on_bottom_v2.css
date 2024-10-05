@@ -1,70 +1,33 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom_v2.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* This reorders toolbar to place tabs below other toolbars. Requires Firefox 132+ */
+/* This reorders toolbar to place tabs below other toolbars. Requires Firefox 133+ */
 
-#navigator-toolbox{
-  display: grid;
-  grid-template-areas: "mb mb mb mb"
-                       "pre toolbar1 post caption"
-                       "toolbar toolbar toolbar toolbar";
-  grid-auto-columns: min-content 1fr min-content min-content;
-  grid-template-rows: auto;
-}
-@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
-       (-moz-gtk-csd-reversed-placement),
-       (-moz-platform: macos){
-  #navigator-toolbox{
-    grid-template-areas: "mb mb mb mb"
-                         "caption pre toolbar1 post"
-                         "toolbar toolbar toolbar toolbar";
-    grid-auto-columns: min-content min-content 1fr min-content;
+@media not (-moz-bool-pref: "sidebar.verticalTabs"){
+  .global-notificationbox,
+  #tab-notification-deck,
+  #TabsToolbar{
+    order: 1;
   }
-  @media (-moz-platform: windows){
-    #TabsToolbar .titlebar-buttonbox{ flex-direction: row-reverse; }
+  #TabsToolbar > :is(.titlebar-spacer,.titlebar-buttonbox-container){
+    display: none;
   }
-}
-#titlebar,
-#TabsToolbar{
-  display: contents;
-}
-#TabsToolbar > .titlebar-buttonbox-container{
-  grid-area: caption;
-}
-#TabsToolbar > .titlebar-spacer[type="pre-tabs"]{
-  grid-area: pre;
-}
-#TabsToolbar > .titlebar-spacer[type="post-tabs"]{
-  grid-area: post;
-}
-#private-browsing-indicator-with-label{
-  grid-area: post;
-  & > label{ display: none }
-}
-.titlebar-spacer{
-  -moz-window-dragging: drag;
-}
-#nav-bar{
-  grid-area: toolbar1;
-  border-top: none !important;
-}
-#toolbar-menubar{
-  grid-area: mb;
-  border-bottom: 0.01px var(--tabs-navbar-separator-style) var(--tabs-navbar-separator-color);
-}
-#toolbar-menubar,
-#TabsToolbar > .toolbar-items,
-#PersonalToolbar,
-.global-notificationbox,
-#tab-notification-deck{
-  grid-column: 1/5;
-}
-.global-notificationbox,
-#tab-notification-deck,
-#TabsToolbar > .toolbar-items{
-  order: 1;
-}
-.titlebar-spacer,
-#TabsToolbar > .titlebar-buttonbox-container{
-  background-color: var(--toolbar-bgcolor)
+  :root[tabsintitlebar][sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+    display: flex !important;
+  }
+  :root[tabsintitlebar] #toolbar-menubar[autohide="true"] ~ #nav-bar{
+     & > .titlebar-buttonbox-container{
+      display: flex !important;
+    }
+    :root[sizemode="normal"] & {
+      & > .titlebar-spacer{
+        display: flex !important;
+      }
+    }
+    :root[sizemode="maximized"] & {
+      & > .titlebar-spacer[type="post-tabs"]{
+        display: flex !important;
+      }
+    }
+  }
 }

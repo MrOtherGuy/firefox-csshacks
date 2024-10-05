@@ -31,6 +31,7 @@ See the above repository for updates as well as full license text. */
   --toolbarbutton-inner-padding: 7px !important;
 }
 /* Few exceptions for default light theme */
+:root[lwtheme] #navigator-toolbox:not([movingtab]) > #TabsToolbar,
 :root[lwtheme] #navigator-toolbox:not([movingtab]) > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }

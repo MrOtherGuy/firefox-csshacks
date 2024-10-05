@@ -39,6 +39,7 @@ See the above repository for updates as well as full license text. */
 }
 /* Show when toolbox is hovered */
 #titlebar:hover ~ .browser-toolbar,
+.browser-titlebar:hover ~ :is(#nav-bar,#PersonalToolbar),
 #nav-bar:hover,
 #nav-bar:hover + #PersonalToolbar{
   transform: translateY(0);

@@ -21,7 +21,7 @@ As a workaround, the -moz-element background image is removed somewhat often whi
   grid-area: 1 / 1;
 }
 
-#titlebar:hover #menubar-items + spacer::after{
+#toolbar-menubar:hover #menubar-items + spacer::after{
   background-image: none !important
 }
 

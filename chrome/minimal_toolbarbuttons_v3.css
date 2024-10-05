@@ -40,6 +40,7 @@ toolbar:hover .toolbarbutton-1:not(#PanelUI-menu-button) > *,
 #nav-bar-overflow-button:hover + #PanelUI-button > .toolbarbutton-1 > stack,
 #PanelUI-menu-button:hover > stack,
 #titlebar:hover ~ toolbar .toolbarbutton-1 > *,
+#TabsToolbar:hover ~ toolbar .toolbarbutton-1 > *,
 .toolbarbutton-1[open] > *,
 .titlebar-buttonbox:hover > .titlebar-button > *,
 #tabbrowser-tabs:hover toolbarbutton > *{

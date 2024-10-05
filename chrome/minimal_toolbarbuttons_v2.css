@@ -30,6 +30,7 @@ toolbar:hover .toolbarbutton-1,
 #nav-bar > #nav-bar-customization-target:hover ~ toolbarbutton:not([open]) > *,
 #nav-bar > #nav-bar-customization-target:hover ~ toolbaritem:not([open]) > *,
 #titlebar:hover ~ toolbar .toolbarbutton-1 > *,
+#TabsToolbar:hover ~ toolbar .toolbarbutton-1 > *,
 toolbar .toolbarbutton-1 > *,
 #tabbrowser-tabs toolbarbutton > *,
 .titlebar-button > *{

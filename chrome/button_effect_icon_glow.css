@@ -37,7 +37,7 @@ toolbarbutton#scrollbutton-down{
 #page-action-buttons > .urlbar-icon:hover,
 .urlbar-icon-wrapper:hover > .urlbar-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon,
-#TabsToolbar toolbarbutton:not([disabled]):hover .toolbarbutton-icon,
+.browser-toolbar toolbarbutton:not([disabled]):hover .toolbarbutton-icon,
 toolbar #downloads-button:hover #downloads-indicator-anchor,
 .identity-box-button:hover,
 #tracking-protection-icon:hover,
@@ -50,7 +50,7 @@ toolbarbutton#scrollbutton-down:not([disabled]):hover{
 }
 
 /* Active states and close window button hover state */
-#titlebar .titlebar-buttonbox > .titlebar-close:hover > .toolbarbutton-icon,
+.browser-toolbar .titlebar-buttonbox > .titlebar-close:hover > .toolbarbutton-icon,
 .close-icon:active,
 .urlbar-history-dropmarker:active,
 #page-action-buttons > .urlbar-icon:active,
@@ -59,7 +59,7 @@ toolbarbutton#scrollbutton-down:not([disabled]):hover{
 .urlbar-icon-wrapper[open] > .urlbar-icon,
 toolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
 toolbar toolbarbutton:not([disabled])[open] .toolbarbutton-icon,
-#TabsToolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
+.browser-toolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
 toolbar #downloads-button:active #downloads-indicator-anchor,
 toolbar #downloads-button[open] #downloads-indicator-anchor,
 .identity-box-button:active,

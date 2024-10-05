@@ -76,8 +76,10 @@ See the above repository for updates as well as full license text. */
   background-color: var(--toolbar-field-focus-background-color) !important;
   background-size: auto !important;
 }
-
-:root:not([customizing]) #titlebar{ margin-bottom: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin)); }
+:root:not([customizing]) #navigator-toolbox > #TabsToolbar,
+:root:not([customizing]) #titlebar{
+  margin-bottom: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin));
+}
 
 /* Oh and! also hide other buttons from the nav-bar because why not */
 :root:not([customizing]) #nav-bar-customization-target > :not(#urlbar-container){ visibility: collapse }

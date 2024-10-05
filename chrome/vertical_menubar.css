@@ -16,6 +16,7 @@ See the above repository for updates as well as full license text. */
       --uc-vertical-menubar-top: 72px;
     }
   }
+  #navigator-toolbox:has(> #PersonalToolbar[collapsed="false"]) > #toolbar-menubar,
   #navigator-toolbox:has(> #PersonalToolbar[collapsed="false"]) > #titlebar > #toolbar-menubar{
     --uc-vertical-menubar-top: 112px;
     :root[uidensity="compact"] & {
@@ -42,8 +43,6 @@ See the above repository for updates as well as full license text. */
   #main-menubar{
     flex-direction: column;
     align-self: flex-start;
-  }
-  #main-menubar{
     outline: 1px solid var(--arrowpanel-border-color);
     background-color: light-dark(rgb(235, 235, 239), rgb(31, 30, 37))
   }
