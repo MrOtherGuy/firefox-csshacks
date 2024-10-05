@@ -60,8 +60,8 @@ See the above repository for updates as well as full license text. */
 #file-menu > .menubar-text{ visibility: collapse }
 #main-menubar:hover > #file-menu > .menubar-text{ visibility: visible }
 
+.browser-titlebar,
 #titlebar{
   opacity: 1 !important;
   will-change: unset !important;
-  transition: none !important;
 }
