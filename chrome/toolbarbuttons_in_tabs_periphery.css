@@ -43,6 +43,9 @@ Any button to the right of the flexible space is pushed to the right edge.
   .scrollbox-clip[orient="horizontal"]{
     contain: var(--uc-scrollbox-containment,initial) !important;
   }
+  scrollbox[orient="horizontal"] > slot{
+    display: contents !important;
+  }
 }
 #tabbrowser-tabs ~ toolbarspring{
   flex-grow: 0 !important;
