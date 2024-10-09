@@ -23,13 +23,12 @@ See the above repository for updates as well as full license text. */
 }
 
 #tracking-protection-icon-container,
-#identity-box ~ *,
+:where(#identity-box) ~ *,
 .searchbar-textbox > *{
   opacity: 0;
   transition: opacity 150ms linear
 }
-
-#urlbar .urlbar-input-box,
+.urlbar-input-container > :is(.urlbar-searchmode-and-input-box-container,.urlbar-input-box),
 .searchbar-textbox > moz-input-box{ opacity: 0.6 }
 
 #identity-box ~ *:hover,
