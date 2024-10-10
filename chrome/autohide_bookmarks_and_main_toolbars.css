@@ -32,7 +32,7 @@ See the above repository for updates as well as full license text. */
   background-position: top,var(--lwt-background-alignment);
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px));
   background-repeat: repeat,var(--lwt-background-tiling);
-  transform: rotateX(90deg);
+  transform: rotateX(89.9deg);
   transform-origin: top;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 2;

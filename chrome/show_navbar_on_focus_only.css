@@ -11,7 +11,7 @@ See the above repository for updates as well as full license text. */
 
 #urlbar-container{ margin-top: 1px }
 :root[sessionrestored] #nav-bar:not([customizing]){
-  transform: rotateX(90deg);
+  transform: rotateX(89.9deg);
   transition: transform 67ms linear, opacity 0ms linear 67ms !important;
   opacity: 0;
   z-index: 3;
