@@ -52,6 +52,7 @@ grid_overflow_menu.css,popup,menu
 hide_statuspanel_when_fullscreen.css,status,fullscreen,hiding
 hide_tabs_scrollbuttons.css,tabs,hiding,buttons,minimal
 hide_tabs_toolbar.css,hiding,tabs,toolbars
+hide_tabs_toolbar_v2.css,hiding,tabs,toolbars
 hide_tabs_toolbar_osx.css,tabs,toolbars,hiding,minimal
 hide_tabs_toolbar_w_alltabs_button.css,tabs,hiding,toolbars
 hide_tabs_with_one_tab.css,hiding,tabs,toolbars
