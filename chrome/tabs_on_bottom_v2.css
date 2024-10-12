@@ -3,6 +3,14 @@ See the above repository for updates as well as full license text. */
 
 /* This reorders toolbar to place tabs below other toolbars. Requires Firefox 133+ */
 
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
+  #nav-bar > .titlebar-buttonbox-container{
+    order: -1 !important;
+    > .titlebar-buttonbox{
+      flex-direction: row-reverse;
+    }
+  }
+}
 @media not (-moz-bool-pref: "sidebar.verticalTabs"){
   .global-notificationbox,
   #tab-notification-deck,
@@ -12,21 +20,31 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar > :is(.titlebar-spacer,.titlebar-buttonbox-container){
     display: none;
   }
-  :root[tabsintitlebar][sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+  :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
     display: flex !important;
   }
-  :root[tabsintitlebar] #toolbar-menubar[autohide="true"] ~ #nav-bar{
-     & > .titlebar-buttonbox-container{
+  :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
+    > .titlebar-buttonbox-container{
       display: flex !important;
     }
     :root[sizemode="normal"] & {
-      & > .titlebar-spacer{
+      > .titlebar-spacer{
         display: flex !important;
       }
     }
     :root[sizemode="maximized"] & {
-      & > .titlebar-spacer[type="post-tabs"]{
+      > .titlebar-spacer[type="post-tabs"]{
         display: flex !important;
+      }
+      @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+        (-moz-gtk-csd-reversed-placement),
+        (-moz-platform: macos){
+        > .titlebar-spacer[type="post-tabs"]{
+          display: none !important;
+        }
+        > .titlebar-spacer[type="pre-tabs"]{
+          display: flex !important;
+        }
       }
     }
   }
