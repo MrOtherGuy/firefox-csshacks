@@ -139,6 +139,7 @@
 "tab_separator_lines.css":["tab","proton"],
 "tabs_animated_gradient_border.css":["hack","effect","tabs"],
 "tabs_below_content.css":["toolbars","tabs"],
+"tabs_below_content_v2.css":["toolbars","tabs"],
 "tabs_fill_available_width.css":["tab","tabs"],
 "tabs_on_bottom.css":["tabs","toolbars","classic"],
 "tabs_on_bottom_menubar_on_top_patch.css":["tabs","menubar","toolbars","classic","patch"],
