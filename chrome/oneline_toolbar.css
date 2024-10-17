@@ -1,0 +1,132 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/oneline_toolbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/**
+ * Shows tabs and main toolbar side-by-side.
+ * By default, tabs are on left side, you can change that by setting pref
+ * "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled" to true
+ * Requires Fx 133+
+ */
+
+:root{
+  --uc-oneline-toolbar-split: 6fr 4fr /* Meaning, left side takes 60%, right side 40% */
+}
+
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
+  .titlebar-buttonbox-container{
+    order: -1 !important;
+    > .titlebar-buttonbox{
+      flex-direction: row-reverse;
+    }
+  }
+}
+@media not (-moz-bool-pref: "sidebar.verticalTabs"){
+  :root:not([chromehidden~="toolbar"]) #navigator-toolbox{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+  }
+  #toolbar-menubar,
+  #PersonalToolbar,
+  .global-notificationbox,
+  #tab-notification-deck{
+    grid-column: 1/3;
+  }
+  :root[sizemode="fullscreen"] #toolbar-menubar{
+    min-height: 0 !important;
+  }
+  #nav-bar{
+    border-top: none !important;
+  }
+  #TabsToolbar, #nav-bar{
+    grid-row: 2/3;
+  }
+  /* Rules to show them conditionally are further down */
+  #main-window#main-window[sizemode="fullscreen"] .titlebar-spacer,
+  #nav-bar > :is(.titlebar-buttonbox-container,.titlebar-spacer),
+  #TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer){
+    display: none !important;
+  }
+  @media (-moz-bool-pref: "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
+    #nav-bar, #toolbar-menubar{ order: -1; }
+  }
+  /* Tabs on right */
+  @media (-moz-bool-pref: "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
+    /* CASE 1 of 4 */
+    @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+      (-moz-gtk-csd-reversed-placement),
+      (-moz-platform: macos){
+        :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+          display: flex !important;
+        }
+        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+          + #TabsToolbar{
+            :root[sizemode="normal"] & {
+              > .titlebar-spacer[type="post-tabs"]{
+                display: flex !important;
+              }
+            }
+          }
+          ~ #nav-bar > :is(.titlebar-buttonbox-container,.titlebar-spacer[type="pre-tabs"]){
+            display: flex !important;
+          }
+        }
+    }
+    /* CASE 2 of 4 */
+    @media not ((-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled")
+      or (-moz-gtk-csd-reversed-placement)
+      or (-moz-platform: macos)){
+        :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
+          display: flex !important;
+        }
+        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+          + #TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer[type="post-tabs"]){
+            display: flex !important;
+          }
+          :root[sizemode="normal"] & {
+            ~ #nav-bar > .titlebar-spacer[type="pre-tabs"]{
+              display: flex !important;
+            }
+          }
+        }
+    }
+  }
+  /* Tabs on left */
+  @media not (-moz-bool-pref: "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
+    /* CASE 3 of 4 */
+    @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+      (-moz-gtk-csd-reversed-placement),
+      (-moz-platform: macos){
+        :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
+          display: flex !important;
+        }
+        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+          + #TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer[type="pre-tabs"]){
+            display: flex !important;
+          }
+          :root[sizemode="normal"] & {
+            ~ #nav-bar > .titlebar-spacer[type="post-tabs"]{
+              display: flex !important;
+            }
+          }
+        }
+    }
+    /* CASE 4 of 4 */
+    @media not ((-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled")
+      or (-moz-gtk-csd-reversed-placement)
+      or (-moz-platform: macos)){
+        :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+          display: flex !important;
+        }
+        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+          :root[sizemode="normal"] & {
+            + #TabsToolbar > .titlebar-spacer[type="pre-tabs"]{
+              display: flex !important;
+            }
+          }
+          ~ #nav-bar > :is(.titlebar-buttonbox-container,.titlebar-spacer[type="post-tabs"]){
+            display: flex !important;
+          }
+        }
+    }
+  }
+}

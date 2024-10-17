@@ -179,3 +179,4 @@ iconized_tabs_context_menu.css,menu,icon
 iconized_textbox_context_menu.css,menu,icon
 icon_only_context_menu_text_controls.css,menu,icons,hack
 tabs_on_bottom_v2.css,hack,tabs,toolbars
+oneline_toolbar.css,tabs,,toolbars
