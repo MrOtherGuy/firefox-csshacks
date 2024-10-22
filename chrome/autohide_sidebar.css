@@ -10,14 +10,12 @@ See the above repository for updates as well as full license text. */
   --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
   --uc-autohide-transition-duration: 115ms;
   --uc-autohide-transition-type: linear;
+  --browser-area-z-index-sidebar: 3;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
   max-width: var(--uc-sidebar-width) !important;
-  z-index:1;
-}
-#sidebar-box{
-  --browser-area-z-index-sidebar: 3;
+  z-index: var(--browser-area-z-index-sidebar,3);
 }
 #sidebar-box[positionend]{ direction: rtl }
 #sidebar-box[positionend] > *{ direction: ltr }
