@@ -1,0 +1,25 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/toolbars_below_content_v2.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This requires Firefox 133 */
+
+#navigator-toolbox{
+  display: contents;
+}
+#main-window > body{
+  > #browser,
+  .global-notificationbox,
+  #tab-notification-deck,
+  #toolbar-menubar{
+    order: -1;
+  }
+  #TabsToolbar{
+    max-height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px)) * var(--multirow-n-rows,1));
+  }
+  #urlbar[breakout][breakout-extend]{
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    transform: translateY(calc(var(--urlbar-container-height) - 100%));
+  }
+  .urlbarView-body-inner{ border-top-style: none !important; }
+}
