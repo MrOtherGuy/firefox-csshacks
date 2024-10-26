@@ -53,7 +53,9 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
   transform: rotateX(0);
 }
-
+#navigator-toolbox{
+  --browser-area-z-index-toolbox: 3;
+}
 /* Uncomment to enable compatibility for multi-row_bookmarks.css */
 /* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
 /*
