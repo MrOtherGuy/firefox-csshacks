@@ -181,3 +181,4 @@ icon_only_context_menu_text_controls.css,menu,icons,hack
 tabs_on_bottom_v2.css,hack,tabs,toolbars
 oneline_toolbar.css,tabs,toolbars
 toolbars_below_content_v2.css,toolbars
+autohide_tabstoolbar_v2.css,tabs,toolbars,autohide
