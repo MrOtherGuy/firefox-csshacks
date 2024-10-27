@@ -54,7 +54,7 @@ See the above repository for updates as well as full license text. */
   transform: rotateX(0);
 }
 #navigator-toolbox{
-  --browser-area-z-index-toolbox: 3;
+  --browser-area-z-index-toolbox: 4;
 }
 /* Uncomment to enable compatibility for multi-row_bookmarks.css */
 /* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
