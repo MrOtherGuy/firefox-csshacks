@@ -26,13 +26,14 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabbox{
   z-index: auto !important;
 }
+
 :root[sessionrestored] #nav-bar,
 :root[sessionrestored] #PersonalToolbar{
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage))  !important;
   background-position: top,var(--lwt-background-alignment);
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px));
   background-repeat: repeat,var(--lwt-background-tiling);
-  transform: rotateX(89.9deg);
+  transform: rotateX(90deg);
   transform-origin: top;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 2;
@@ -57,6 +58,19 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox > #PersonalToolbar{
   transform-origin: 0px var(--uc-navbar-height);
   position: relative;
+}
+:root[sessionrestored] #urlbar[popover]{
+  visibility: hidden;
+  transition: transform 135ms linear var(--uc-autohide-toolbar-delay), visibility 0ms calc(var(--uc-autohide-toolbar-delay) + 135ms);
+  transform-origin: 0px calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2);
+  transform: rotateX(89.5deg);
+}
+#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox #urlbar[popover],
+#navigator-toolbox:hover #urlbar[popover],
+#urlbar-container > #urlbar[popover]:is([focused],[open]){
+  visibility: visible;
+  transition-delay: 100ms;
+  transform: rotateX(0deg);
 }
 
 :root[sessionrestored]:not([customizing]) #navigator-toolbox{
@@ -113,7 +127,7 @@ See the above repository for updates as well as full license text. */
 
 /* This makes the tab notification box show immediately below tabs, otherwise it would break the layout */
 #navigator-toolbox > div{ display: contents }
-:where(#titlebar,#tab-notification-deck,.global-notificationbox){
+:where(#titlebar,#navigator-toolbox > #TabsToolbar,#navigator-toolbox > #toolbar-menubar,#tab-notification-deck,.global-notificationbox){
   order: -1;
 }
 :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox{
