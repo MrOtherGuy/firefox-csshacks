@@ -14,6 +14,6 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab[fadein]{ min-width: calc(16px + 2 * 10px + 4px) !important; }
 :root[uidensity="compact"] .tabbrowser-tab[fadein]{
-  min-width: calc(16px + 2 * var(--inline-tab-padding,0px) + 4px) !important;
+  min-width: calc(16px + 2 * var(--tab-inline-padding,0px) + 4px) !important;
 }
 :root:not([uidensity="compact"]) .tab-content{ padding-inline: 10px !important; }

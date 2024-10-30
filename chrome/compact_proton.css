@@ -11,6 +11,7 @@ See the above repository for updates as well as full license text. */
   --panel-font-size: inherit !important;
   --arrowpanel-padding: 0.8em !important;
   --inline-tab-padding: 8px !important; /* 8px is default value since it looks good - lower values compactify tabs horizontally */
+  --tab-inline-padding: 8px !important; /* Same as above, but for fx132 */
 }
 .subviewbutton.bookmark-item{ padding-block: 4px !important; }
 .subview-subheader{ display: block }
