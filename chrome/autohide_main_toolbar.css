@@ -3,7 +3,11 @@ See the above repository for updates as well as full license text. */
 
 /* This style hides the main toolbar and shows it when the cursor is over the tabs toolbar as well as whenever the focus is inside nav-bar, such as when urlbar is focused. */
 
-:root{ --uc-navbar-transform: -40px }
+:root{
+  --uc-navbar-transform: -40px;
+  --uc-autohide-toolbar-delay: 1.8s;
+  --uc-autohide-toolbar-duration: 400ms;
+}
 :root[uidensity="compact"]{ --uc-navbar-transform: -34px }
 
 #navigator-toolbox > div{ display: contents; }
@@ -17,7 +21,7 @@ See the above repository for updates as well as full license text. */
 
 #nav-bar:not([customizing]){
   opacity: 0;
-  transition:  transform 400ms ease 1.8s, opacity 400ms ease 1.8s !important;
+  transition:  transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important;
   position: relative;
   z-index: 2;
 }
@@ -34,7 +38,7 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox:focus-within > .browser-toolbar{
   transform: translateY(0);
   opacity: 1;
-  transition-duration: 500ms, 200ms !important;
+  transition-duration: var(--uc-autohide-toolbar-duration), var(--uc-autohide-toolbar-duration) !important;
   transition-delay: 0s !important;
 }
 /* Show when toolbox is hovered */
@@ -44,8 +48,31 @@ See the above repository for updates as well as full license text. */
 #nav-bar:hover + #PersonalToolbar{
   transform: translateY(0);
   opacity: 1;
-  transition-duration: 500ms, 200ms !important;
+  transition-duration: var(--uc-autohide-toolbar-duration), var(--uc-autohide-toolbar-duration) !important;
   transition-delay: 0s !important;
+}
+:root[sessionrestored] #urlbar[popover]{
+  --uc-urlbar-top: calc(var(--tab-min-height) + (var(--tab-block-margin) * 2) + ((var(--urlbar-container-height) - var(--urlbar-height)) / 2));
+  top: var(--uc-urlbar-top) !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay);
+  transform: translateY(var(--uc-navbar-transform));
+}
+#toolbar-menubar:not([inactive]) ~ #nav-bar #urlbar[popover]{
+  top: calc(28px + var(--uc-urlbar-top)) !important;
+}
+#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox #urlbar[popover],
+.browser-titlebar:is(:hover,:focus-within) ~ #nav-bar #urlbar[popover],
+#nav-bar:is(:hover,:focus-within) #urlbar[popover],
+#urlbar-container > #urlbar[popover]:is([focused],[open]){
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0ms;
+  transform: translateY(0);
+}
+#urlbar-container > #urlbar[popover]:is([focused],[open]){
+ transition-duration: 100ms; /* Faster when focused */
 }
 /* This ruleset is separate, because not having :has support breaks other selectors as well */
 #mainPopupSet:has(> #appMenu-popup:hover) ~ #navigator-toolbox > .browser-toolbar{
@@ -55,7 +82,7 @@ See the above repository for updates as well as full license text. */
 } 
 
 /* Bookmarks toolbar needs so extra rules */
-#PersonalToolbar{ transition: transform 400ms ease 1.8s !important; position: relative; z-index: 1 }
+#PersonalToolbar{ transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important; position: relative; z-index: 1 }
 
 /* Move up the content view */
 :root[sessionrestored]:not([inFullscreen],[chromehidden~="toolbar"]) > body > #browser{ margin-top: var(--uc-navbar-transform); }
