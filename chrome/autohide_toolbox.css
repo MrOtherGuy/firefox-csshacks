@@ -48,11 +48,11 @@ See the above repository for updates as well as full license text. */
   top: calc(28px + var(--uc-urlbar-top)) !important;
 }
 #mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox #urlbar[popover],
-#navigator-toolbox:hover #urlbar[popover],
+#navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   pointer-events: auto;
   opacity: 1;
-  transition-delay: 82ms;
+  transition-delay: 33ms;
   transform: rotateX(0deg);
 }
 #mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox,
