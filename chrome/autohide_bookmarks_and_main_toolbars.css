@@ -60,15 +60,22 @@ See the above repository for updates as well as full license text. */
   position: relative;
 }
 :root[sessionrestored] #urlbar[popover]{
-  visibility: hidden;
-  transition: transform 135ms linear var(--uc-autohide-toolbar-delay), visibility 0ms calc(var(--uc-autohide-toolbar-delay) + 135ms);
+  --uc-urlbar-top: calc(var(--tab-min-height) + (var(--tab-block-margin) * 2) + ((var(--urlbar-container-height) - var(--urlbar-height)) / 2));
+  top: var(--uc-urlbar-top) !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 135ms linear var(--uc-autohide-toolbar-delay), opacity 0ms calc(var(--uc-autohide-toolbar-delay) + 135ms);
   transform-origin: 0px calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2);
   transform: rotateX(89.5deg);
 }
+#toolbar-menubar:not([inactive]) ~ #nav-bar #urlbar[popover]{
+  top: calc(28px + var(--uc-urlbar-top)) !important;
+}
 #mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox #urlbar[popover],
-#navigator-toolbox:hover #urlbar[popover],
+#navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
-  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
   transition-delay: 100ms;
   transform: rotateX(0deg);
 }
