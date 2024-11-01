@@ -71,7 +71,7 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar:not([inactive]) ~ #nav-bar #urlbar[popover]{
   top: calc(28px + var(--uc-urlbar-top)) !important;
 }
-#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox #urlbar[popover],
+#mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
@@ -105,7 +105,7 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
 
 /* Show when cursor is over main menu popup - this requires :has selector support */
-#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox > .browser-toolbar{
+#mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox > .browser-toolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }

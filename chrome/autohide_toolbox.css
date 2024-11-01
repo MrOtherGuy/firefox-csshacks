@@ -47,7 +47,7 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar:not([inactive]) ~ #nav-bar #urlbar[popover]{
   top: calc(28px + var(--uc-urlbar-top)) !important;
 }
-#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox #urlbar[popover],
+#mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   pointer-events: auto;
@@ -55,7 +55,7 @@ See the above repository for updates as well as full license text. */
   transition-delay: 33ms;
   transform: rotateX(0deg);
 }
-#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox,
+#mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox,
 #navigator-toolbox:has(#urlbar:is([open],[focus-within])),
 #navigator-toolbox:hover,
 #navigator-toolbox:focus-within{
