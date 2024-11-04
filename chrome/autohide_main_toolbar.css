@@ -74,7 +74,15 @@ See the above repository for updates as well as full license text. */
   transition-delay: 33ms !important;
   transform: translateY(0);
   opacity: 1;
-} 
+}
+/* If tabs are in sidebar then nav-bar doesn't normally have its own background - so we nee to add it back */
+#nav-bar.browser-titlebar{
+  background: inherit;
+}
+#toolbar-menubar:not([autohide="true"]) ~ #nav-bar.browser-titlebar{
+  background-position-y: -28px; /* best guess, could vary */
+  border-top: none !important;
+}
 
 /* Bookmarks toolbar needs so extra rules */
 #PersonalToolbar{ transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important; position: relative; z-index: 1 }
