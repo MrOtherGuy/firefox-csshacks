@@ -52,15 +52,10 @@ See the above repository for updates as well as full license text. */
   transition-delay: 0s !important;
 }
 :root[sessionrestored] #urlbar[popover]{
-  --uc-urlbar-top: calc(var(--tab-min-height) + (var(--tab-block-margin) * 2) + ((var(--urlbar-container-height) - var(--urlbar-height)) / 2));
-  top: var(--uc-urlbar-top) !important;
   opacity: 0;
   pointer-events: none;
   transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay);
   transform: translateY(var(--uc-navbar-transform));
-}
-#toolbar-menubar:not([inactive]) ~ #nav-bar #urlbar[popover]{
-  top: calc(28px + var(--uc-urlbar-top)) !important;
 }
 #mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox #urlbar[popover],
 .browser-titlebar:is(:hover,:focus-within) ~ #nav-bar #urlbar[popover],

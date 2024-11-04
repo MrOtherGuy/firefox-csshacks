@@ -36,16 +36,11 @@ See the above repository for updates as well as full license text. */
   pointer-events: none;
 }
 :root[sessionrestored] #urlbar[popover]{
-  --uc-urlbar-top: calc(var(--tab-min-height) + (var(--tab-block-margin) * 2) + ((var(--urlbar-container-height) - var(--urlbar-height)) / 2));
-  top: var(--uc-urlbar-top) !important;
   pointer-events: none;
   opacity: 0;
   transition: transform 82ms linear var(--uc-autohide-toolbox-delay), opacity 0ms calc(var(--uc-autohide-toolbox-delay) + 82ms);
   transform-origin: 0px calc(0px - var(--tab-min-height) - var(--tab-block-margin) * 2);
   transform: rotateX(89.9deg);
-}
-#toolbar-menubar:not([inactive]) ~ #nav-bar #urlbar[popover]{
-  top: calc(28px + var(--uc-urlbar-top)) !important;
 }
 #mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
