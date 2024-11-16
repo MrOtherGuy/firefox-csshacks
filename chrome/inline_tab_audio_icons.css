@@ -12,8 +12,7 @@ See the above repository for updates as well as full license text. */
 .tab-throbber{ opacity: 1 !important; }
 
 .tab-icon-overlay:not([pinned]){
-  padding: 0px !important;
-  margin-inline: -3px 1px !important;
+  margin-inline: -2px 2px !important;
 }
 
 /* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
