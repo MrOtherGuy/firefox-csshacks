@@ -18,6 +18,7 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab:first-child,
 .tabbrowser-tab[selected],
 .tabbrowser-tab[multiselected],
+.tabbrowser-tab:is([selected],[multiselected]) + .tabbrowser-tab[hidden] + .tabbrowser-tab,
 #tabbrowser-arrowscrollbox[overflowing] > .tabbrowser-tab[first-visible-unpinned-tab],
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[multiselected] + .tabbrowser-tab,
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[selected] + .tabbrowser-tab { border-image: none !important; }
