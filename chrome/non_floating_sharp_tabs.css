@@ -132,6 +132,7 @@ See the above repository for updates as well as full license text. */
   order: 2;
   margin-inline: 10px !important;
 }
+:where(#navigator-toolbox) > #TabsToolbar,
 #titlebar{
   will-change: unset !important;
   transition: none !important;
