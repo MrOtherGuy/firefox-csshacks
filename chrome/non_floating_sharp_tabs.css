@@ -21,6 +21,7 @@ See the above repository for updates as well as full license text. */
 #nav-bar{
   /* This overrides value in compact_proton.css */
   box-shadow: 0 -1px 0 0 color-mix(in srgb, currentcolor 30%, transparent) !important;
+  border-top: none !important;
 }
 .tab-background[selected]{
   border-inline: 1px solid color-mix(in srgb, currentcolor 30%, transparent) !important;
