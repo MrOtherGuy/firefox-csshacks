@@ -7,8 +7,9 @@ See the above repository for updates as well as full license text. */
 .tab-throbber{ opacity: 1 !important; }
 
 .tab-icon-overlay:not([crashed]){
-  top: -5.5px;
+  top: -8px;
   inset-inline-end: -6px;
+  margin-inline-end: 0 !important;
   z-index: 1;
   padding: 2px;
   opacity: 1 !important;
