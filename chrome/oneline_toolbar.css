@@ -58,7 +58,7 @@ See the above repository for updates as well as full license text. */
         :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
           display: flex !important;
         }
-        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+        :root:is([tabsintitlebar],[customtitlebar]) :where(#toolbar-menubar:not([autohide="false"])){
           + #TabsToolbar{
             :root[sizemode="normal"] & {
               > .titlebar-spacer[type="post-tabs"]{
@@ -78,7 +78,7 @@ See the above repository for updates as well as full license text. */
         :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
           display: flex !important;
         }
-        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+        :root:is([tabsintitlebar],[customtitlebar]) :where(#toolbar-menubar:not([autohide="false"])){
           + #TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer[type="post-tabs"]){
             display: flex !important;
           }
@@ -99,7 +99,7 @@ See the above repository for updates as well as full license text. */
         :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
           display: flex !important;
         }
-        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+        :root:is([tabsintitlebar],[customtitlebar]) :where(#toolbar-menubar:not([autohide="false"])){
           + #TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer[type="pre-tabs"]){
             display: flex !important;
           }
@@ -117,7 +117,7 @@ See the above repository for updates as well as full license text. */
         :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
           display: flex !important;
         }
-        :root[tabsintitlebar] :where(#toolbar-menubar:not([autohide="false"])){
+        :root:is([tabsintitlebar],[customtitlebar]) :where(#toolbar-menubar:not([autohide="false"])){
           :root[sizemode="normal"] & {
             + #TabsToolbar > .titlebar-spacer[type="pre-tabs"]{
               display: flex !important;

@@ -17,7 +17,7 @@ See the above repository for updates as well as full license text. */
   order: -1;
   margin-inline: 2px var(--uc-window-drag-space-pre,24px) !important;
 }
-:root[tabsintitlebar] #nav-bar{
+:root:is([tabsintitlebar],[customtitlebar]) #nav-bar{
   border-left-width: 0px;
   padding-left: 0px !important;
 }

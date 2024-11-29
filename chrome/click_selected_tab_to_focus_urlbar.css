@@ -49,7 +49,7 @@ See the above repository for updates as well as full license text. */
   content: "";
   pointer-events: auto;
 }
-:root[tabsintitlebar]:not([customizing]) .urlbar-input-container::before{
+:root:is([tabsintitlebar],[customtitlebar]):not([customizing]) .urlbar-input-container::before{
   left: var(--uc-window-drag-space-width);
   width: calc(100vw - var(--uc-window-control-width) - var(--uc-buttons-width) - 2 * var(--uc-window-drag-space-width));
 }
@@ -61,7 +61,7 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   pointer-events: none
 }
-:root[tabsintitlebar] .browser-titlebar,
+:root:is([tabsintitlebar],[customtitlebar]) .browser-titlebar,
 #titlebar{
   opacity: 1 !important;
   will-change: unset !important;

@@ -29,5 +29,5 @@ See the above repository for updates as well as full license text. */
 #nav-bar{ padding-left: 300px; }
 
 #toolbar-menubar > .titlebar-buttonbox-container{ display: none }
-:root[tabsintitlebar][sizemode="normal"] .titlebar-spacer,
-:root[tabsintitlebar] #TabsToolbar > .titlebar-buttonbox-container{ display: flex !important; }
+:root:is([tabsintitlebar],[customtitlebar])[sizemode="normal"] .titlebar-spacer,
+:root:is([tabsintitlebar],[customtitlebar]) #TabsToolbar > .titlebar-buttonbox-container{ display: flex !important; }
