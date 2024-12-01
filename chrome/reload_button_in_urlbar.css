@@ -3,7 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Makes stop-reload-button appear as if it's inside urlbar. 
  * First, move reload button next to urlbar on right side using
- * customize-mode
+ * customize-mode.
+ * If your theme has opaque background for urlbar then that will cover the reload button.
+ * Switch to another theme such of one of the built-in dark/light/auto theme.
  */
 
 #urlbar-container + #stop-reload-button{
@@ -20,5 +22,10 @@ See the above repository for updates as well as full license text. */
 }
 
 #urlbar{
-  padding-right: calc(2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) + 12px);
+  padding-right: calc(2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) + 12px) !important;
+  pointer-events: none;
+}
+.urlbar-input-container,
+.urlbarView{
+  pointer-events: auto;
 }
