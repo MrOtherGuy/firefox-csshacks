@@ -17,7 +17,7 @@ See the above repository for updates as well as full license text. */
   }
 }
 @media not (-moz-bool-pref: "sidebar.verticalTabs"){
-  #TabsToolbar{
+  #TabsToolbar:not([customizing]){
     visibility: collapse;
   }
   :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
