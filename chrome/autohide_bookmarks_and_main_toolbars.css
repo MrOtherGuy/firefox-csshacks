@@ -66,7 +66,7 @@ See the above repository for updates as well as full license text. */
   transform-origin: 0px calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2);
   transform: rotateX(89.5deg);
 }
-#mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox #urlbar[popover],
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts)) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
@@ -100,7 +100,7 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
 
 /* Show when cursor is over main menu popup - this requires :has selector support */
-#mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox > .browser-toolbar{
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts)) ~ toolbox > .browser-toolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }
