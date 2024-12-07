@@ -4,17 +4,41 @@ See the above repository for updates as well as full license text. */
 /* Makes toolbars appear as overlay instead of pushing down the website in fullscreen mode */
 
 @media (-moz-bool-pref: "browser.fullscreen.autohide"){
-  :root[sizemode="fullscreen"] #navigator-toolbox{
-    position: fixed !important;
-    width: 100vw;
-    z-index: 1;
-    transition: margin-top 100ms ease-in-out 600ms;
+  :root{
+    --uc-fullscreen-overlay-duration: 82ms;
+    --uc-fullscreen-overlay-delay: 600ms;
   }
-  :root[sizemode="fullscreen"] #navigator-toolbox[style=""],
-  :root[sizemode="fullscreen"] #navigator-toolbox:hover,
-  :root[sizemode="fullscreen"] #navigator-toolbox:focus-within,
-  #mainPopupSet:has(> #appMenu-popup[panelopen="true"]) ~ #navigator-toolbox{
-    transition-delay: 0ms;
-    margin-top: 0 !important;
+  :root[sizemode="fullscreen"]{
+    &[sessionrestored]{
+      #urlbar[popover]{
+        pointer-events: none;
+        opacity: 0;
+        transition: transform var(--uc-fullscreen-overlay-duration) ease-in-out var(--uc-fullscreen-overlay-delay), opacity 0ms calc(var(--uc-fullscreen-overlay-delay) + 82ms);
+        transform: translateY(calc(0px - var(--tab-min-height) - (var(--tab-block-margin) * 2) - var(--urlbar-container-height)));
+      }
+    }
+    #navigator-toolbox{
+      position: fixed !important;
+      width: 100vw;
+      z-index: 10 !important;
+      transition: transform var(--uc-fullscreen-overlay-duration) ease-in-out var(--uc-fullscreen-overlay-delay) !important;
+      margin-top: 0 !important;
+      transform: translateY(-100%);
+    }
+    #navigator-toolbox[style=""],
+    #navigator-toolbox:hover,
+    #navigator-toolbox:focus-within,
+    #mainPopupSet:has(> #appMenu-popup[panelopen="true"]) ~ #navigator-toolbox{
+      transition-delay: 0ms !important;
+      transform: translateY(0);
+    }
+    #mainPopupSet:has(> [role="group"][panelopen]) ~ toolbox #urlbar[popover],
+    #navigator-toolbox[style=""] #urlbar[popover],
+    #urlbar-container > #urlbar[popover]:is([focused],[open]){
+      pointer-events: auto;
+      opacity: 1;
+      transition-delay: 0ms;
+      transform: translateY(0);
+    }
   }
 }
