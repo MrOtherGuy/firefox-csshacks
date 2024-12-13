@@ -71,7 +71,7 @@ See the above repository for updates as well as full license text. */
   display: flex !important;
 }
 
-#alltabs-button,
+#alltabs-button[removable="false"],
 :root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-arrowscrollbox > spacer,
 .tabbrowser-tab::after{ display: none !important }
