@@ -132,7 +132,10 @@ See the above repository for updates as well as full license text. */
   margin-inline: 10px !important;
   margin-block: 0px !important;
 }
-
+/* Move group line to the top */
+.tab-group-label-container::after{
+  inset-block: 0 auto !important;
+}
 .tab-group-line{
   order: -1;
 }
