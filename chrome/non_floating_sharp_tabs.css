@@ -91,11 +91,8 @@ See the above repository for updates as well as full license text. */
   box-shadow: none !important;
   border-top: 0 !important;
   outline: none !important;
-  padding-bottom: 1px;
 }
-.tab-group-label-container::after{
-  bottom: 1px !important;
-}
+
 /* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below. */
 :root[lwtheme] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]){
   background-attachment: scroll, fixed, fixed !important;
@@ -138,8 +135,9 @@ See the above repository for updates as well as full license text. */
   margin-inline: 10px !important;
   margin-block: 0px !important;
 }
+
 .tab-group-line{
-  order: 2;
+  order: -1;
 }
 :where(#navigator-toolbox) > #TabsToolbar,
 #titlebar{
@@ -147,3 +145,10 @@ See the above repository for updates as well as full license text. */
   transition: none !important;
   opacity: 1 !important;
 }
+/* OPTIONAL: Make tab group line a bit more thick - this could be useful if you have a theme where
+group-line color doesn't have enough contrast to be visible. */
+/*
+#tabbrowser-tabs{
+  --tab-group-line-thickness: 3px;
+}
+*/
