@@ -11,7 +11,6 @@ See the above repository for updates as well as full license text. */
   
   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
   --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
-  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; /* this is same for fx < 119 */
 }
 
 /* Uncomment next line to force specific color for tab top line */
@@ -36,9 +35,7 @@ See the above repository for updates as well as full license text. */
 :root[lwtheme] #navigator-toolbox:not([movingtab]) > #titlebar > #TabsToolbar{
   --toolbar-bgcolor: transparent;
 }
-/* Uncomment this for Fx < 119
-.tab-background[selected]:not(:-moz-lwtheme){ background: var(--toolbar-bgcolor) !important; }
-*/
+
 #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-badge-stack,
 #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }
 
@@ -94,7 +91,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below. */
-:root[lwtheme] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]){
+:root[lwtheme] #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]){
   background-attachment: scroll, fixed, fixed !important;
   background-color: transparent !important;
   background-image: linear-gradient(var(--tab-selected-bgcolor, transparent), var(--tab-selected-bgcolor, transparent)), var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;;
