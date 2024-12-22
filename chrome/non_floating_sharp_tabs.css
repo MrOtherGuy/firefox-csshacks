@@ -91,6 +91,10 @@ See the above repository for updates as well as full license text. */
   box-shadow: none !important;
   border-top: 0 !important;
   outline: none !important;
+  padding-bottom: 1px;
+}
+.tab-group-label-container::after{
+  bottom: 1px !important;
 }
 /* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below. */
 :root[lwtheme] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]){
@@ -132,6 +136,10 @@ See the above repository for updates as well as full license text. */
 .tab-context-line{
   order: 2;
   margin-inline: 10px !important;
+  margin-block: 0px !important;
+}
+.tab-group-line{
+  order: 2;
 }
 :where(#navigator-toolbox) > #TabsToolbar,
 #titlebar{
