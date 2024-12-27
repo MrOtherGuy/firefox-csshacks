@@ -37,5 +37,13 @@ See the above repository for updates as well as full license text. */
   }
 
   .urlbarView-body-inner{ border-top-style: none !important; }
-
+  
+  @media (-moz-platform: linux){
+    #notification-popup[side="top"]{
+      margin-top: calc(-2 * var(--panel-padding-block) - 40px - 32px - 8.5em) !important;
+    }
+    #permission-popup[side="top"]{
+      margin-top: calc(-2 * var(--panel-padding-block) - 2.5em);
+    }
+  }
 }
