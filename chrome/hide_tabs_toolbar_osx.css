@@ -12,6 +12,9 @@ Window controls will be all wrong without it
 :root{ --uc-toolbar-height: 32px; }
 :root:not([uidensity="compact"]){ --uc-toolbar-height: 34px }
 
+#TabsToolbar {
+  justify-content: start !important;
+}
 #TabsToolbar > *{ visibility: collapse !important }
 #TabsToolbar > .titlebar-buttonbox-container{
   visibility: visible !important;
