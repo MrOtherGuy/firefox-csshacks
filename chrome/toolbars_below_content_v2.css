@@ -8,6 +8,10 @@ See the above repository for updates as well as full license text. */
 
 #navigator-toolbox{
   display: contents;
+  --uc-navbar-height: 40px;
+}
+:root[uidensity="compact"] #navigator-toolbox{
+  --uc-navbar-height: 34px;
 }
 #main-window > body > #browser,
 .global-notificationbox,
@@ -15,8 +19,45 @@ See the above repository for updates as well as full license text. */
  #toolbar-menubar{
   order: -1;
 }
+
 #TabsToolbar{
   max-height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px)) * var(--multirow-n-rows,1));
+}
+#toolbar-menubar,
+#TabsToolbar{
+  background: inherit !important;
+}
+@media (-moz-platform: linux){
+  :root[sizemode="normal"][customtitlebar] #toolbar-menubar{
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+  #toolbar-menubar,
+  #TabsToolbar{
+    opacity: 1 !important;
+    will-change: unset !important;
+  }
+  #notification-popup[side="top"]{
+    margin-top: calc(-2 * var(--panel-padding-block) - 40px - 32px - 8.5em) !important;
+  }
+  #permission-popup[side="top"]{
+    margin-top: calc(-2 * var(--panel-padding-block) - 2.5em);
+  }
+}
+
+#nav-bar,
+#PersonalToolbar{
+  background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+  background-position: top,var(--lwt-background-alignment);
+  background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px));
+  background-repeat: repeat,var(--lwt-background-tiling);
+}
+:root[lwtheme-image] #nav-bar,
+:root[lwtheme-image] #PersonalToolbar{
+  background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+}
+#PersonalToolbar{
+  background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px) - var( --uc-navbar-height));
 }
 #urlbar[breakout][breakout-extend]{
   display: flex !important;
