@@ -9,13 +9,14 @@ See the above repository for updates as well as full license text. */
 }
 
 @media (-moz-bool-pref: "sidebar.verticalTabs"){
-  #sidebar-main:has(>[expanded]){
+  #sidebar-main{
     overflow: visible !important;
-    max-width: var(--tab-collapsed-width);
+    max-width: var(--tab-collapsed-width) !important;
     z-index: var(--browser-area-z-index-toolbox-while-animating);
     transition: z-index 0s linear var(--uc-tabs-hide-duration);
+    background: inherit;
   }
-  #sidebar-main >[expanded]{
+  sidebar-main{
     --tab-pinned-horizontal-count: 5; /* This needs to match whatever is used in sidebar-main.css - currently 5 */
     background: inherit;
     overflow: hidden;
@@ -28,7 +29,7 @@ See the above repository for updates as well as full license text. */
       border-inline-width: 0.01px 0;
     }
   }
-  #sidebar-main >[expanded]:hover{
+  sidebar-main:hover{
     min-width: calc(var(--tab-pinned-horizontal-count) * var(--tab-pinned-min-width-expanded) + 2 * var(--tab-pinned-container-margin-inline-expanded) + 1px);
     transition-delay: 0ms !important;
     &[positionend]{
