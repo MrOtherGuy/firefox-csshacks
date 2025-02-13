@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
   --uc-oneline-toolbar-split: 6fr 4fr /* Meaning, left side takes 60%, right side 40% */
 }
 
-@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
+@media -moz-pref("userchrome.force-window-controls-on-left.enabled"){
   .titlebar-buttonbox-container{
     order: -1 !important;
     > .titlebar-buttonbox{
@@ -20,7 +20,7 @@ See the above repository for updates as well as full license text. */
     }
   }
 }
-@media not (-moz-bool-pref: "sidebar.verticalTabs"){
+@media not -moz-pref("sidebar.verticalTabs"){
   :root:not([chromehidden~="toolbar"]) #navigator-toolbox{
     display: grid;
     grid-template-columns: 6fr 4fr;
@@ -46,13 +46,13 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer){
     display: none !important;
   }
-  @media (-moz-bool-pref: "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
+  @media -moz-pref("userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
     #nav-bar, #toolbar-menubar{ order: -1; }
   }
   /* Tabs on right */
-  @media (-moz-bool-pref: "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
+  @media -moz-pref("userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
     /* CASE 1 of 4 */
-    @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+    @media -moz-pref("userchrome.force-window-controls-on-left.enabled"),
       (-moz-gtk-csd-reversed-placement),
       (-moz-platform: macos){
         :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
@@ -72,7 +72,7 @@ See the above repository for updates as well as full license text. */
         }
     }
     /* CASE 2 of 4 */
-    @media not ((-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled")
+    @media not (-moz-pref("userchrome.force-window-controls-on-left.enabled")
       or (-moz-gtk-csd-reversed-placement)
       or (-moz-platform: macos)){
         :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
@@ -91,9 +91,9 @@ See the above repository for updates as well as full license text. */
     }
   }
   /* Tabs on left */
-  @media not (-moz-bool-pref: "userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
+  @media not -moz-pref("userchrome.navbar-tabs-oneliner.tabs-on-right.enabled"){
     /* CASE 3 of 4 */
-    @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+    @media -moz-pref("userchrome.force-window-controls-on-left.enabled"),
       (-moz-gtk-csd-reversed-placement),
       (-moz-platform: macos){
         :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
@@ -111,7 +111,7 @@ See the above repository for updates as well as full license text. */
         }
     }
     /* CASE 4 of 4 */
-    @media not ((-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled")
+    @media not (-moz-pref("userchrome.force-window-controls-on-left.enabled")
       or (-moz-gtk-csd-reversed-placement)
       or (-moz-platform: macos)){
         :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
