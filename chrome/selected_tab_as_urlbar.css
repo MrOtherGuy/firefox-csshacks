@@ -98,7 +98,8 @@ See the above repository for updates as well as full license text. */
 
 /* By default this style moves your back and forward buttons to the left edge of the navbar and adds a placeholder space for them.
    Set the following pref to false to disable that behavior */
-@media (-moz-bool-pref: "userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"){
+@media (-moz-bool-pref: "userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"),
+       -moz-pref("userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"){
   #TabsToolbar > .toolbar-items{ margin-left: 0px !important; }
   #nav-bar-customization-target{ margin-left: 0px !important; }
   #back-button, #forward-button{

@@ -112,7 +112,8 @@ See the above repository for updates as well as full license text. */
 /* OPTIONAL - COLORS - show tabs border, selected tab line and make selected tab match the main toolbar color. Also disables tab shadow */
 /* Using these color options requires you to set layout.css.color-mix.enabled to true in about:config */
 
-@media (-moz-bool-pref: "userchrome.curved_tabs.extra-border.enabled"){
+@media (-moz-bool-pref: "userchrome.curved_tabs.extra-border.enabled"),
+       -moz-pref("userchrome.curved_tabs.extra-border.enabled"){
   #navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, white 50%) !important; }
   :root[lwtheme-brighttext] #navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, black 50%) !important; }
   #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
@@ -143,7 +144,8 @@ See the above repository for updates as well as full license text. */
 }
 
 /* OPTIONAL - Make some of the buttons in tabs toolbar rounded, which might look nicer especially with large curve size */
-@media (-moz-bool-pref: "userchrome.curved_tabs.round-buttons.enabled"){
+@media (-moz-bool-pref: "userchrome.curved_tabs.round-buttons.enabled"),
+       -moz-pref("userchrome.curved_tabs.round-buttons.enabled"){
   #tabs-newtab-button > .toolbarbutton-icon,
   #TabsToolbar #new-tab-button > .toolbarbutton-icon,
   #alltabs-button > .toolbarbutton-badge-stack,
@@ -151,7 +153,8 @@ See the above repository for updates as well as full license text. */
 }
 
 /* OPTIONAL - uncomment the following to flip the curves vertically - maybe useful for tabs on bottom ? */
-@media (-moz-bool-pref: "userchrome.curved_tabs.flipped-curve.enabled"){
+@media (-moz-bool-pref: "userchrome.curved_tabs.flipped-curve.enabled"),
+       -moz-pref("userchrome.curved_tabs.flipped-curve.enabled"){
   .tab-background{ flex-direction: column-reverse }
   .tabbrowser-tab:hover > .tab-stack > .tab-background,
   .tab-background[selected]{ border-radius: 0 0 var(--uc-tab-curve-size) var(--uc-tab-curve-size) !important }

@@ -3,7 +3,8 @@ See the above repository for updates as well as full license text. */
 
 /* Makes toolbars appear as overlay instead of pushing down the website in fullscreen mode */
 
-@media (-moz-bool-pref: "browser.fullscreen.autohide"){
+@media (-moz-bool-pref: "browser.fullscreen.autohide"),
+       -moz-pref("browser.fullscreen.autohide"){
   :root{
     --uc-fullscreen-overlay-duration: 82ms;
     --uc-fullscreen-overlay-delay: 600ms;

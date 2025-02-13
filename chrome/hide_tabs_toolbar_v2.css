@@ -3,12 +3,14 @@ See the above repository for updates as well as full license text. */
 
 /* This requires Firefox 133+ to work */
 
-@media (-moz-bool-pref: "sidebar.verticalTabs"){
+@media (-moz-bool-pref: "sidebar.verticalTabs"),
+       -moz-pref("sidebar.verticalTabs"){
   #sidebar-main{
     visibility: collapse;
   }
 }
-@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       -moz-pref("userchrome.force-window-controls-on-left.enabled"){
   #nav-bar > .titlebar-buttonbox-container{
     order: -1 !important;
     > .titlebar-buttonbox{
@@ -16,7 +18,8 @@ See the above repository for updates as well as full license text. */
     }
   }
 }
-@media not (-moz-bool-pref: "sidebar.verticalTabs"){
+@media not (-moz-bool-pref: "sidebar.verticalTabs"),
+       not -moz-pref("sidebar.verticalTabs"){
   #TabsToolbar:not([customizing]){
     visibility: collapse;
   }
@@ -37,6 +40,7 @@ See the above repository for updates as well as full license text. */
         display: flex !important;
       }
       @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+        -moz-pref("userchrome.force-window-controls-on-left.enabled"),
         (-moz-gtk-csd-reversed-placement),
         (-moz-platform: macos){
         > .titlebar-spacer[type="post-tabs"]{

@@ -71,7 +71,8 @@ See the above repository for updates as well as full license text. */
 }
 .urlbarView-body-inner{ border-top-style: none !important; }
 
-@media (-moz-bool-pref: "userchrome.toolbars-below-content.tabs-at-bottom.enabled"){
+@media (-moz-bool-pref: "userchrome.toolbars-below-content.tabs-at-bottom.enabled"),
+       -moz-pref("userchrome.toolbars-below-content.tabs-at-bottom.enabled"){
   #TabsToolbar{
     order: 3
   }

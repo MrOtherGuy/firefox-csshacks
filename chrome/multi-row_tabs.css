@@ -76,9 +76,11 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-arrowscrollbox > spacer,
 .tabbrowser-tab::after{ display: none !important }
 
-@media (-moz-bool-pref: "userchrome.multirowtabs.full-width-tabs.enabled"){
+@media (-moz-bool-pref: "userchrome.multirowtabs.full-width-tabs.enabled"),
+       -moz-pref("userchrome.multirowtabs.full-width-tabs.enabled"){
   .tabbrowser-tab[fadein]:not([pinned]){ max-width: 100vw !important; }
 }
-@media (-moz-bool-pref: "userchrome.multirowtabs.scrollbar-handle.enabled"){
+@media (-moz-bool-pref: "userchrome.multirowtabs.scrollbar-handle.enabled"),
+       -moz-pref( "userchrome.multirowtabs.scrollbar-handle.enabled"){
   #tabbrowser-arrowscrollbox{ -moz-window-dragging: no-drag }
 }

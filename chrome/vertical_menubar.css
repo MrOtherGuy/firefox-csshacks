@@ -68,7 +68,8 @@ See the above repository for updates as well as full license text. */
     margin-left: var(--uc-vertical-menubar-width);
   }
 
-  @media (-moz-bool-pref: "userchrome.vertical-menubar.on-right.enabled"){
+  @media (-moz-bool-pref: "userchrome.vertical-menubar.on-right.enabled"),
+         -moz-pref("userchrome.vertical-menubar.on-right.enabled"){
     :root:not([inDOMFullscreen]) #browser{
       margin-inline: 0 var(--uc-vertical-menubar-width);
     }

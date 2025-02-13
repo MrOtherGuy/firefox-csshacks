@@ -14,6 +14,7 @@ See the above repository for updates as well as full license text. */
 #toolbar-menubar{ left:0 }
 
 @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       -moz-pref("userchrome.force-window-controls-on-left.enabled"),
        (-moz-gtk-csd-reversed-placement),
        (-moz-platform: macos){
   #TabsToolbar > .titlebar-buttonbox-container{
@@ -69,7 +70,8 @@ See the above repository for updates as well as full license text. */
 #urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
 
 /* Set this pref if you want unpinned tabs to become hidden unless selected */
-@media (-moz-bool-pref: "userchrome.hide-unpinned-tabs.enabled"){
+@media (-moz-bool-pref: "userchrome.hide-unpinned-tabs.enabled"),
+       -moz-pref("userchrome.hide-unpinned-tabs.enabled"){
   #alltabs-button{ display: flex !important }
   .tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
 }

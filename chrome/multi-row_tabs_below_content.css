@@ -243,7 +243,8 @@ See the above repository for updates as well as full license text. */
     margin-bottom: 0 !important;
     z-index: auto !important;
   }
-  @media (-moz-bool-pref: "userchrome.multirowtabs.static-menubar.enabled"){
+  @media (-moz-bool-pref: "userchrome.multirowtabs.static-menubar.enabled"),
+         -moz-pref( "userchrome.multirowtabs.static-menubar.enabled"){
     :root:not([sizemode="fullscreen"]){
       --multirow-menubar-height: 28px;
       --uc-window-drag-space-width: 0px;
@@ -280,7 +281,8 @@ See the above repository for updates as well as full license text. */
       top: calc(var(--multirow-toolbar-height) + var(--multirow-top-padding) + var(--multirow-menubar-height));
     }
   }
-  @media (-moz-bool-pref: "userchrome.multi-row-tabs.full-width-tabs.enabled"){
+  @media (-moz-bool-pref: "userchrome.multi-row-tabs.full-width-tabs.enabled"),
+         -moz-pref("userchrome.multi-row-tabs.full-width-tabs.enabled"){
     .tabbrowser-tab[fadein]:not([pinned]){ max-width: 100vw !important; }
   }
 }

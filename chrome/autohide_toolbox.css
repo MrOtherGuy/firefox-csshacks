@@ -60,7 +60,8 @@ See the above repository for updates as well as full license text. */
 /* This makes things like OS menubar/taskbar show the toolbox when hovered in maximized windows.
  * Unfortunately it also means that other OS native surfaces (such as context menu on macos)
  * and other always-on-top applications will trigger toolbox to show up. */
-@media (-moz-bool-pref: "userchrome.autohide-toolbox.unhide-by-native-ui.enabled"){
+@media (-moz-bool-pref: "userchrome.autohide-toolbox.unhide-by-native-ui.enabled"),
+       -moz-pref("userchrome.autohide-toolbox.unhide-by-native-ui.enabled"){
   :root[sizemode="maximized"]:not(:hover){
     #navigator-toolbox:not(:-moz-window-inactive),
     #urlbar[popover]:not(:-moz-window-inactive){

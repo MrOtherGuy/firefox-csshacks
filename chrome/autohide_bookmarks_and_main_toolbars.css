@@ -130,14 +130,16 @@ See the above repository for updates as well as full license text. */
   margin-bottom: calc(-1px - var(--uc-bm-height) + var(--uc-navbar-height)) !important;
   z-index: auto !important;
 }
-@media (-moz-bool-pref: "browser.fullscreen.autohide"){
+@media (-moz-bool-pref: "browser.fullscreen.autohide"),
+       -moz-pref("browser.fullscreen.autohide"){
   :root[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top"]{
     margin-top: calc(1px - var(--tab-min-height) - 2 * var(--tab-block-margin)) !important;
   }
 }
 
 /* Set the following pref to enable compatibility with multi-row_bookmarks.css */
-@media (-moz-bool-pref: "userchrome.autohide-bm-and-main-toolbars.multirow-bookmarks-compat.enabled"){
+@media (-moz-bool-pref: "userchrome.autohide-bm-and-main-toolbars.multirow-bookmarks-compat.enabled"),
+       -moz-pref("userchrome.autohide-bm-and-main-toolbars.multirow-bookmarks-compat.enabled"){
   #navigator-toolbox{ margin-bottom: var(--uc-navbar-height) !important; }
   #PersonalToolbar:not([customizing]){
     min-height: 0 !important;
