@@ -4,6 +4,11 @@ See the above repository for updates as well as full license text. */
 /* Show sidebar only when the cursor is over it  */
 /* The border controlling sidebar width will be removed so you'll need to modify these values to change width */
 
+/* Note: If you want only Sideberry's sidebar to be auto-hidden, replace all instances of
+   #sidebar-box with #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"].
+   To find the sidebarcommand value for any other sidebar, open that sidebar and use Browser Toolbox to inspect it.
+   See: https://firefox-source-docs.mozilla.org/devtools-user/browser_toolbox/index.html
+*/
 #sidebar-box{
   --uc-sidebar-width: 40px;
   --uc-sidebar-hover-width: 210px;
