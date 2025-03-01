@@ -6,8 +6,8 @@ See the above repository for updates as well as full license text. */
   --uc-bm-height: calc(20px + 2 * var(--uc-bm-padding)); /* Might need to adjust if the toolbar has other buttons */
   --uc-navbar-height: -40px; /* navbar is main toolbar. Use negative value */
   --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
+  --uc-toolbox-browser-area-overlap: -1px;
 }
-
 :root[uidensity="compact"] #navigator-toolbox{
   --uc-navbar-height: -34px;
 }
@@ -19,6 +19,20 @@ See the above repository for updates as well as full license text. */
 :root[chromehidden~="toolbar"] #navigator-toolbox{
   --uc-navbar-height: 0px;
 }
+/* At least on Windows 10 display scaling > 100% causes 1px gap to appear below tabs depending on Firefox
+ *  density settings and whether or not menubar is enabled. 
+ */
+@media (min-resolution: 120dpi){
+  :root[uidensity="compact"] #navigator-toolbox:has(> #toolbar-menubar[autohide="false"]){
+    --uc-toolbox-browser-area-overlap: -0.5px;
+  }
+}
+@media (min-resolution: 140dpi){
+  #navigator-toolbox{
+    --uc-toolbox-browser-area-overlap: -0.5px;
+  }
+}
+
 #navigator-toolbox,
 #sidebar-box,
 #sidebar-main,
@@ -76,7 +90,7 @@ See the above repository for updates as well as full license text. */
 }
 
 :root[sessionrestored]:not([customizing]) #navigator-toolbox{
-  margin-bottom:  calc(-1px - var(--uc-bm-height) + var(--uc-navbar-height));
+  margin-bottom:  calc(var(--uc-toolbox-browser-area-overlap,0px) - var(--uc-bm-height) + var(--uc-navbar-height));
 }
 
 /* Make sure the bookmarks toolbar is never collapsed even if it is disabled */
@@ -111,7 +125,7 @@ See the above repository for updates as well as full license text. */
 
 /* Show when cursor is over the toolbar area or when some menu panel is open */
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ #navigator-toolbox > :is(#nav-bar,#PersonalToolbar),
-#navigator-toolbox:hover > .browser-toolbar{
+#navigator-toolbox:hover > :is(#nav-bar,#PersonalToolbar){
   transition-delay: 100ms !important;
   transform: rotateX(0);
 }
