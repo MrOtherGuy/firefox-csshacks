@@ -99,12 +99,6 @@ See the above repository for updates as well as full license text. */
 /* Selected tab needs higher z-index now to "hide" the broder below it */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
 
-/* Show when cursor is over main menu popup - this requires :has selector support */
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox > .browser-toolbar{
-  transition-delay: 100ms !important;
-  transform: rotateX(0);
-}
-
 /* SELECT TOOLBAR BEHAVIOR */
 /* Comment out or delete one of these to disable that behavior */
 
@@ -115,7 +109,8 @@ See the above repository for updates as well as full license text. */
   transform: rotateX(0);
 }
 
-/* Show when cursor is over the toolbar area */
+/* Show when cursor is over the toolbar area or when some menu panel is open */
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ #navigator-toolbox > :is(#nav-bar,#PersonalToolbar),
 #navigator-toolbox:hover > .browser-toolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
