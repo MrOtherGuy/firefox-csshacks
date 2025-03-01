@@ -1,7 +1,7 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/urlbar_results_in_two_rows.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Show urlbar rersults on two lines */
+/* Show urlbar results on two lines */
 
 .urlbarView-row-inner{ flex-wrap: wrap !important; }
 
