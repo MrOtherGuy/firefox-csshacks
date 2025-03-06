@@ -21,3 +21,12 @@ See the above repository for updates as well as full license text. */
   background-color: var(--tab-icon-overlay-stroke, black) !important;
   border-radius: 10px !important;
 }
+.tab-audio-button{
+  --button-size-icon-small: 16px !important;
+  --button-min-height-small: var(--button-size-icon-small) !important;
+  --button-background-color-ghost: var(--toolbox-bgcolor-inactive);
+  --button-border-radius: var(--border-radius-circle) !important;
+  position: absolute;
+  top: 2px;
+  margin-inline: 6px 0 !important;
+}
