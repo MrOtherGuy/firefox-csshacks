@@ -29,6 +29,16 @@ See the above repository for updates as well as full license text. */
   background-position-y:top,top,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
   background-image: var(--toolbar-bgimage,linear-gradient(transparent,transparent)), linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,var(--lwt-additional-images)) !important;
 }
+@media (-moz-bool-pref: "sidebar.verticalTabs"), -moz-pref("sidebar.verticalTabs"){
+  #PersonalToolbar{
+    --toolbar-bgcolor: transparent;
+  }
+  #PersonalToolbar:not([customizing]){
+    background-color: inherit !important;
+    margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+    --uc-bg-y: calc(0px - (2 * var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - 27px - var(--bookmark-block-padding));
+  }
+}
 :root[uidensity="compact"] #PersonalToolbar{
   --toolbarbutton-outer-padding: 1px !important;
 }
