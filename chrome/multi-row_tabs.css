@@ -84,3 +84,8 @@ See the above repository for updates as well as full license text. */
        -moz-pref( "userchrome.multirowtabs.scrollbar-handle.enabled"){
   #tabbrowser-arrowscrollbox{ -moz-window-dragging: no-drag }
 }
+
+/* Make tab groups collapse */
+tab-group[collapsed] .tabbrowser-tab[fadein]:not([pinned]){
+  min-width: 0 !important;
+}
