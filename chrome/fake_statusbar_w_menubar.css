@@ -8,7 +8,7 @@ See the above repository for updates as well as full license text. */
 1. Put the preferences button to the LEFT of the menubar items
 2. Put a single toolbarspring next to the menubar items on RIGHT side
 3. Move your "statusbar" - buttons to menubar
-4. Make menubar permanently enabled
+4. Make menubar permanently DISABLED
  */
 
 /* Themes that use background images will not show properly with this style */
@@ -22,35 +22,18 @@ See the above repository for updates as well as full license text. */
     visibility: visible;
   }*/
   
-  #navigator-toolbox{
-    margin-top: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px))
-  }
-
-  #titlebar,
-  #toolbar-menubar,
-  #TabsToolbar{
+  #toolbar-menubar{
+    background-color: var(--lwt-accent-color) !important;
     position: fixed;
-    display: flex;
-    width: 100vw;
-    background-color: var(--lwt-accent-color);
-  }
-
-  #TabsToolbar{
-    padding-left: 30px !important;
-    top: var(--uc-fake-titlebar-padding,0px);
-  }
-
-  #toolbar-menubar,
-  #titlebar{
+    min-height: 1px !important;
+    height: unset !important;
     bottom: 0;
+    width: 100vw;
     padding-top: 1px;
   }
-
-  #TabsToolbar > .toolbar-items{ width: calc(100vw - 120px) }
-  :root:not([inFullscreen]) #TabsToolbar > .titlebar-buttonbox-container{ display: flex !important }
-
-  #toolbar-menubar > .titlebar-buttonbox-container,
-  #toolbar-menubar > spacer{ display: none !important; }
+  #toolbar-menubar > :is(spacer,.titlebar-buttonbox-container){
+    display: none !important;
+  }
 
   #toolbar-menubar > .toolbarbutton-1:first-child:not(:hover) + #menubar-items:not(:hover){ visibility: collapse }
 
@@ -62,8 +45,9 @@ See the above repository for updates as well as full license text. */
     flex-grow: 1;
   }
   /* Using -moz-element() causes some problems after Firefox has been running several hours such as long tab switch times. For this reason the background image is removed on hover and focused states which appears to clear the state. */
-  #titlebar:hover > #toolbar-menubar > .titlebar-buttonbox-container + toolbarspring{ background-image: none }
-  #toolbar-menubar > .titlebar-buttonbox-container + toolbarspring{ background-image: -moz-element(#statuspanel) !important; }
+  #toolbar-menubar > .titlebar-buttonbox-container + toolbarspring{ background-image: -moz-element(#statuspanel) }
+  #toolbar-menubar:hover > .titlebar-buttonbox-container + toolbarspring{ background-image: none }
+  
 
   #statuspanel-label{
     height:3em;
@@ -103,5 +87,15 @@ See the above repository for updates as well as full license text. */
   .browserSidebarContainer{
     background-color: inherit;
   }
-  
+  @media (-moz-bool-pref:"userchrome.fake_statusbar_w_menubar-tabs_below_content.compat.enabled"),
+    -moz-pref("userchrome.fake_statusbar_w_menubar-tabs_below_content.compat.enabled"){
+    #toolbar-menubar{
+      grid-row: 11/12;
+      background-attachment: scroll;
+      position: static
+    }
+    #customization-container,
+    #content-deck,
+    #browser{ margin-bottom: revert }
+  }
 }
