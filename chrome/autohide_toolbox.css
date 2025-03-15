@@ -33,6 +33,7 @@ See the above repository for updates as well as full license text. */
   line-height: 0;
   z-index: 1;
   pointer-events: none;
+  width: 100vw;
 }
 :root[sessionrestored] #urlbar[popover]{
   pointer-events: none;
@@ -73,16 +74,6 @@ See the above repository for updates as well as full license text. */
 }
 
 #navigator-toolbox > *{ line-height: normal; pointer-events: auto }
-
-#navigator-toolbox,
-#navigator-toolbox > *{
-  width: 100vw;
-  -moz-appearance: none !important;
-}
-
-/* These two exist for oneliner compatibility */
-#nav-bar{ width: var(--uc-navigationbar-width,100vw) }
-#TabsToolbar{ width: calc(100vw - var(--uc-navigationbar-width,0px)) }
 
 /* Don't apply transform before window has been fully created */
 :root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
