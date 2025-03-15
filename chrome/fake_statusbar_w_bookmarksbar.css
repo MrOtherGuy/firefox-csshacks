@@ -83,7 +83,7 @@ See the above repository for updates as well as full license text. */
 
 #statuspanel{
   color: lightpink; /* color used to indicate insecure http:// links */
-  z-index: -1;
+  z-index: -1 !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
