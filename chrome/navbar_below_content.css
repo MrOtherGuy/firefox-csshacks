@@ -40,7 +40,7 @@ See the above repository for updates as well as full license text. */
 
   #urlbar[breakout][breakout-extend]{
     display: flex !important;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
     bottom: 0px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
     top: auto !important;
   }
