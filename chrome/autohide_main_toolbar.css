@@ -88,4 +88,12 @@ See the above repository for updates as well as full license text. */
 #PersonalToolbar{ transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important; position: relative; z-index: 1 }
 
 /* Move up the content view */
-:root[sessionrestored]:not([inFullscreen],[chromehidden~="toolbar"]) > body > #browser{ margin-top: var(--uc-navbar-transform); }
+:root[sessionrestored]:not([chromehidden~="toolbar"]) > body > #browser{
+  margin-top: var(--uc-navbar-transform);
+}
+@media -moz-pref("browser.fullscreen.autohide"),
+  (-moz-bool-pref: "browser.fullscreen.autohide"){
+  :root[sessionrestored][sizemode="fullscreen"] > body > #browser{
+    margin-top: revert;
+  }
+}
