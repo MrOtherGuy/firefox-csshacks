@@ -48,7 +48,9 @@ See the above repository for updates as well as full license text. */
   min-width: 60ch;
   flex-grow: 10 !important;
 }
-
+#personal-toolbar-empty:not([hidden]) + toolbarspring{
+  order: -1;
+}
 #personal-toolbar-empty{ visibility: hidden; }
 #PersonalToolbar .toolbarbutton-1{
   align-items: center !important;
@@ -93,6 +95,7 @@ See the above repository for updates as well as full license text. */
 #statuspanel[inactive] > #statuspanel-inner::before{
   content: "Done";
   display: flex;
+  position: absolute;
   margin-top: 2px;
   color: var(--toolbar-field-color, black) !important;
 }
