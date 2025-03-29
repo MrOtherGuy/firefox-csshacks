@@ -99,7 +99,7 @@ See the above repository for updates as well as full license text. */
            opacity: 1 !important;
         }
       }
-      & #mainPopupSet:has(> [panelopen]) ~ #navigator-toolbox > #nav-bar{
+      & #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ #navigator-toolbox > #nav-bar{
         transition-delay: 0ms !important;
         transform: rotateX(0deg);
       }

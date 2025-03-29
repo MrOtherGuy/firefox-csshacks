@@ -80,7 +80,7 @@ See the above repository for updates as well as full license text. */
   transform-origin: 0px calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2);
   transform: rotateX(89.5deg);
 }
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox #urlbar[popover],
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
@@ -124,7 +124,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Show when cursor is over the toolbar area or when some menu panel is open */
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ #navigator-toolbox > :is(#nav-bar,#PersonalToolbar),
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ #navigator-toolbox > :is(#nav-bar,#PersonalToolbar),
 #navigator-toolbox:hover > :is(#nav-bar,#PersonalToolbar){
   transition-delay: 100ms !important;
   transform: rotateX(0);

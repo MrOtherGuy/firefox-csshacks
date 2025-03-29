@@ -27,11 +27,11 @@ See the above repository for updates as well as full license text. */
       transform: translateY(-100%);
     }
     #navigator-toolbox:is(:hover,:focus-within,[style=""]),
-    #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ #navigator-toolbox{
+    #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ #navigator-toolbox{
       transition-delay: 0ms !important;
       transform: translateY(0);
     }
-    #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox #urlbar[popover],
+    #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
     #navigator-toolbox:is(:hover,:focus-within,[style=""]) #urlbar[popover],
     #urlbar-container > #urlbar[popover]:is([focused],[open]){
       pointer-events: auto;

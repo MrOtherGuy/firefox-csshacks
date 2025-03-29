@@ -57,7 +57,7 @@ See the above repository for updates as well as full license text. */
   transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay);
   transform: translateY(var(--uc-navbar-transform));
 }
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox #urlbar[popover],
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
 .browser-titlebar:is(:hover,:focus-within) ~ #nav-bar #urlbar[popover],
 #nav-bar:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
@@ -70,7 +70,7 @@ See the above repository for updates as well as full license text. */
  transition-duration: 100ms; /* Faster when focused */
 }
 /* This ruleset is separate, because not having :has support breaks other selectors as well */
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ #navigator-toolbox > .browser-toolbar{
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ #navigator-toolbox > .browser-toolbar{
   transition-delay: 33ms !important;
   transform: translateY(0);
   opacity: 1;
