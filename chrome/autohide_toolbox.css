@@ -86,6 +86,11 @@ See the above repository for updates as well as full license text. */
 #navigator-toolbox[inFullscreen] > #PersonalToolbar,
 #PersonalToolbar[collapsed="true"]{ display: none }
 
+/* This is a bit hacky fix for an issue that will make urlbar zero pixels tall after you enter customize mode */
+#urlbar[breakout][breakout-extend] > .urlbar-input-container{
+  padding-block: calc(min(4px,(var(--urlbar-container-height) - var(--urlbar-height)) / 2) + var(--urlbar-container-padding)) !important;
+}
+
 /* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
  /*#titlebar{ margin-bottom: -9px }*/
 
