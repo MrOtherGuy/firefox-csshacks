@@ -25,7 +25,7 @@ See the above repository for updates as well as full license text. */
     transition: min-width var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay);
     border-inline: 0.01px solid var(--chrome-content-separator-color);
     border-inline-width: 0 0.01px;
-    &[positionend]{
+    &:is([sidebar-positionend],[positionend]){
       transition-property: min-width, transform;
       border-inline-width: 0.01px 0;
     }
@@ -33,7 +33,7 @@ See the above repository for updates as well as full license text. */
   sidebar-main:hover{
     min-width: calc(var(--tab-pinned-horizontal-count) * var(--tab-pinned-min-width-expanded) + 2 * var(--tab-pinned-container-margin-inline-expanded) + 1px);
     transition-delay: 0ms !important;
-    &[positionend]{
+    &:is([sidebar-positionend],[positionend]){
       transform: translateX(calc(var(--tab-collapsed-width) - 100%));
     }
   }
