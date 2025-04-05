@@ -37,6 +37,9 @@ See the above repository for updates as well as full license text. */
       transform: translateX(calc(var(--tab-collapsed-width) - 100%));
     }
   }
+  #sidebar-wrapper{
+    background: inherit;
+  }
 }
 @media not (-moz-bool-pref: "sidebar.verticalTabs"),
        not -moz-pref("sidebar.verticalTabs"){
