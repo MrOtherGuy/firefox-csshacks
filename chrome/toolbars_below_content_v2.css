@@ -37,6 +37,7 @@ See the above repository for updates as well as full license text. */
     opacity: 1 !important;
     will-change: unset !important;
   }
+  #customizationui-widget-panel[side="top"],
   #notification-popup[side="top"]{
     margin-top: calc(-2 * var(--panel-padding-block) - 40px - 32px - 8.5em) !important;
   }
