@@ -25,7 +25,7 @@ See the above repository for updates as well as full license text. */
 #contentAreaContextMenu > menuitem[type="checkbox"]::before{
   content: url("chrome://devtools/skin/images/checkbox.svg");
 }
-#contentAreaContextMenu > menuitem[type="checkbox"] > .menu-iconic-left{
+#contentAreaContextMenu > menuitem[type="checkbox"] > :is(.menu-iconic-left,.menu-icon){
   display: none;
 }
 #contentAreaContextMenu > menuitem[type="checkbox"][_moz-menuactive]::before,

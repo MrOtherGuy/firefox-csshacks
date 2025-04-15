@@ -4,10 +4,10 @@ See the above repository for updates as well as full license text. */
 /* Makes constext navigation buttons appears as normal textual menuitems */
 
 #context-navigation{ flex-direction: column !important; }
-#context-navigation > menuitem > .menu-iconic-left{ display: none }
+#context-navigation > menuitem > :is(.menu-iconic-left,.menu-icon){ display: none }
+
 #context-navigation > menuitem{
-  padding-block: 0.5em;
-  padding-inline-start: 1em;
+  padding: var(--menuitem-padding,0.5em 1em) !important;
   justify-content: start !important;
   width: auto !important;
 }

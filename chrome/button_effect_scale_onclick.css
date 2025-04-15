@@ -5,7 +5,7 @@ See the above repository for updates as well as full license text. */
 .urlbar-icon,
 .toolbarbutton-icon,
 .downloadIconShow > .button-box > .button-icon,
-.menuitem-iconic .menu-iconic-icon,
+.menuitem-iconic :is(.menu-iconic-icon,.menu-icon),
 #downloads-indicator-icon,
 .urlbar-input-container [role="button"] image{
   transition: transform 83ms linear !important;
@@ -19,7 +19,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
 toolbarbutton#scrollbutton-up:active > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):active > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-badge-stack > .toolbarbutton-icon,
-.menuitem-iconic:active .menu-iconic-icon,
+.menuitem-iconic:active :is(.menu-iconic-icon,.menu-icon),
 .urlbar-page-action:active > .urlbar-icon{
   transform: scale(0.6) !important;
 }

@@ -26,7 +26,7 @@ See the above repository for updates as well as full license text. */
 #placesContext > menuitem[type="checkbox"]::before{
   content: url("chrome://devtools/skin/images/checkbox.svg");
 }
-#placesContext > menuitem[type="checkbox"] > .menu-iconic-left{
+#placesContext > menuitem[type="checkbox"] > :is(.menu-iconic-left,.menu-icon){
   display: none;
 }
 #placesContext > menuitem[type="checkbox"][_moz-menuactive]::before,

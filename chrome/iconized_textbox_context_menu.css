@@ -25,7 +25,7 @@ See the above repository for updates as well as full license text. */
 .textbox-contextmenu > menuitem[type="checkbox"]::before{
   content: url("chrome://devtools/skin/images/checkbox.svg");
 }
-.textbox-contextmenu > menuitem[type="checkbox"] > .menu-iconic-left{
+.textbox-contextmenu > menuitem[type="checkbox"] > :is(.menu-iconic-left,.menu-icon){
   display: none;
 }
 .textbox-contextmenu > [data-l10n-id="text-action-undo"]::before,

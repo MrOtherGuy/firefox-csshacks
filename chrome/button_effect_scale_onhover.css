@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
 .toolbarbutton-icon,
 .tab-close-button,
 .downloadIconShow > .button-box > .button-icon,
-.menuitem-iconic .menu-iconic-icon,
+.menuitem-iconic is(.menu-iconic-icon,.menu-icon),
 #downloads-indicator-icon,
 .urlbar-input-container [role="button"] image{
   transition: transform 83ms linear !important;
@@ -23,7 +23,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
 toolbarbutton#scrollbutton-up > .toolbarbutton-icon,
 toolobar .toolbarbutton-1 > .toolbarbutton-icon,
 toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
-.menuitem-iconic .menu-iconic-icon,
+.menuitem-iconic is(.menu-iconic-icon,.menu-icon),
 .urlbar-icon{
   transform: scale(0.8) !important;
 }
@@ -39,7 +39,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
 toolbarbutton#scrollbutton-up:not([disabled]):hover > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,
-.menuitem-iconic:not([disabled]):hover .menu-iconic-icon,
+.menuitem-iconic:not([disabled]):hover :is(.menu-iconic-icon,.menu-icon),
 .urlbar-page-action:hover > .urlbar-icon{
   transform: none !important;
 }

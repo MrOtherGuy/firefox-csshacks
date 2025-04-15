@@ -57,10 +57,10 @@ menuseparator:not(.in-menulist){
   margin-block: var(--panel-separator-margin-vertical) !important;
 }
 
-#context-navigation > menuitem[_moz-menuactive] .menu-iconic-icon{
+#context-navigation > menuitem[_moz-menuactive] :is(.menu-iconic-icon){
   border-radius: var(--arrowpanel-menuitem-border-radius) !important;
 }
-#context-navigation > menuitem[_moz-menuactive]:not([disabled]) .menu-iconic-icon,
+#context-navigation > menuitem[_moz-menuactive]:not([disabled]) :is(.menu-iconic-icon,.menu-icon),
 menupopup > menuitem[_moz-menuactive],
 menupopup > menu[_moz-menuactive]{
   background-color: var(--panel-item-hover-bgcolor) !important;
