@@ -4,14 +4,20 @@ See the above repository for updates as well as full license text. */
 /* Show sidebar only when the cursor is over it  */
 /* The border controlling sidebar width will be removed so you'll need to modify these values to change width */
 
-/* Note: If you want only Sideberry's sidebar to be auto-hidden, replace all instances of
-   #sidebar-box with #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"].
+/* Note: If you want only *some* sidebar to be auto-hidden, then you can use [sidebarcommand] attribute selector.
+   For example, to only affect Sidebery's sidebar replace all instances of #sidebar-box with
+   #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"].
    To find the sidebarcommand value for any other sidebar, open that sidebar and use Browser Toolbox to inspect it.
    See: https://firefox-source-docs.mozilla.org/devtools-user/browser_toolbox/index.html
 */
-#sidebar-box{
+:where(#main-window) #browser{
   --uc-sidebar-width: 40px;
   --uc-sidebar-hover-width: 210px;
+}
+#main-window[sizemode="fullscreen"] #browser{
+  --uc-sidebar-width: 1px;
+}
+#sidebar-box{
   --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
   --uc-autohide-transition-duration: 115ms;
   --uc-autohide-transition-type: linear;
@@ -21,14 +27,15 @@ See the above repository for updates as well as full license text. */
   width: var(--uc-sidebar-width) !important;
   max-width: var(--uc-sidebar-width) !important;
   z-index: var(--browser-area-z-index-sidebar,3);
+  background-color: inherit;
 }
-#sidebar-box[positionend]{ direction: rtl }
-#sidebar-box[positionend] > *{ direction: ltr }
+#sidebar-box:is([positionend],[sidebar-positionend]){ direction: rtl }
+#sidebar-box:is([positionend],[sidebar-positionend]) > *{ direction: ltr }
 
-#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
-#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+#sidebar-box:is([positionend],[sidebar-positionend]):-moz-locale-dir(rtl){ direction: ltr }
+#sidebar-box:is([positionend],[sidebar-positionend]):-moz-locale-dir(rtl) > *{ direction: rtl }
 
-#main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }
+#main-window[sizemode="fullscreen"] #browser{ --uc-sidebar-width: 1px; }
 
 #sidebar-splitter{ display: none }
 
@@ -77,17 +84,20 @@ See the above repository for updates as well as full license text. */
   border-inline-width: 0px 1px;
 }
 
-#sidebar-box:not([positionend]) > :-moz-locale-dir(rtl),
-#sidebar-box[positionend] > *{
+#sidebar-box:not([positionend],[sidebar-positionend]) > :-moz-locale-dir(rtl),
+#sidebar-box:is([positionend],[sidebar-positionend]) > *{
   border-inline-width: 1px 0px;
 }
-
+@media -moz-pref("sidebar.revamp") {
+  #sidebar, #sidebar-header{ border-style: none }
+  #sidebar-box{ padding: 0 !important; }
+}
 /* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
 
-#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel{
+#sidebar-box:not([positionend],[sidebar-positionend]):hover ~ #appcontent #statuspanel{
   inset-inline: auto 0px !important;
 }
-#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label{
+#sidebar-box:not([positionend],[sidebar-positionend]):hover ~ #appcontent #statuspanel-label{
   margin-inline: 0px !important;
   border-left-style: solid !important; 
 }
