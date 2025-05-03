@@ -32,12 +32,15 @@ See the above repository for updates as well as full license text. */
   max-width: var(--uc-sidebar-width) !important;
   z-index: var(--browser-area-z-index-sidebar,3);
   background-color: inherit;
+  /* This directionality flipper is played so that sidebar "grows" into the right direction */
+  direction: ltr;
+  &:is([positionend],[sidebar-positionend]):not(:-moz-locale-dir(rtl)){
+    direction: rtl;
+  }
+  > :-moz-locale-dir(rtl){
+    direction: rtl;
+  }
 }
-#sidebar-box:is([positionend],[sidebar-positionend]){ direction: rtl }
-#sidebar-box:is([positionend],[sidebar-positionend]) > *{ direction: ltr }
-
-#sidebar-box:is([positionend],[sidebar-positionend]):-moz-locale-dir(rtl){ direction: ltr }
-#sidebar-box:is([positionend],[sidebar-positionend]):-moz-locale-dir(rtl) > *{ direction: rtl }
 
 #main-window[sizemode="fullscreen"] #browser{ --uc-sidebar-width: 1px; }
 
@@ -124,14 +127,15 @@ See the above repository for updates as well as full license text. */
       transition-delay: 0ms !important;
     }
   }
-  #sidebar{
+  #sidebar,#sidebar-header{
     min-width: var(--uc-sidebar-hover-width) !important;
     will-change: unset !important;
   }
-  #sidebar[sidebar-positionend]{
+  #sidebar-box[sidebar-positionend] > :is(#sidebar-header,#sidebar){
     transform: translateX(calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)));
     transition-property: transform !important;
-    &:hover{
+  }
+  #sidebar-box[sidebar-positionend]:hover > :is(#sidebar-header,#sidebar){
       transform: translateX(0);
       transition-delay: 0ms !important;
     }
