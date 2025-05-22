@@ -37,11 +37,10 @@ See the above repository for updates as well as full license text. */
   &:is([positionend],[sidebar-positionend]):not(:-moz-locale-dir(rtl)){
     direction: rtl;
   }
-  > :-moz-locale-dir(rtl){
-    direction: rtl;
-  }
 }
-
+.sidebar-browser-stack{
+  background: inherit;
+}
 #main-window[sizemode="fullscreen"] #browser{ --uc-sidebar-width: 1px; }
 
 #sidebar-splitter{ display: none }
@@ -64,9 +63,14 @@ See the above repository for updates as well as full license text. */
   transition: min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay) !important;
   min-width: var(--uc-sidebar-width) !important;
   will-change: min-width;
+  direction: ltr;
+  &:-moz-locale-dir(rtl){
+    direction: rtl;
+  }
 }
 #sidebar-box:hover > #sidebar-header,
-#sidebar-box:hover > #sidebar{
+#sidebar-box:hover > #sidebar,
+#sidebar-box:hover > .sidebar-browser-stack > #sidebar{
   min-width: var(--uc-sidebar-hover-width) !important;
   transition-delay: 0ms !important;
 }
@@ -114,30 +118,31 @@ See the above repository for updates as well as full license text. */
     contain: size;
     box-shadow: var(--content-area-shadow);
   }
-  :root:not([inDOMFullscreen]) #tabbrowser-tabbox:not([sidebar-positionend]){
-    margin-inline: var(--uc-sidebar-width) 0;
-  }
-  #sidebar-box:not([sidebar-positionend]){
-    position: absolute !important;
-    height: 100%;
-    overflow: hidden;
-    transition: min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay) !important;
-    &:hover{
-      min-width: var(--uc-sidebar-hover-width) !important;
-      transition-delay: 0ms !important;
-    }
-  }
-  #sidebar,#sidebar-header{
+  #sidebar{
     min-width: var(--uc-sidebar-hover-width) !important;
-    will-change: unset !important;
   }
-  #sidebar-box[sidebar-positionend] > :is(#sidebar-header,#sidebar){
-    transform: translateX(calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)));
-    transition-property: transform !important;
-  }
-  #sidebar-box[sidebar-positionend]:hover > :is(#sidebar-header,#sidebar){
-      transform: translateX(0);
-      transition-delay: 0ms !important;
+  .sidebar-browser-stack{
+    overflow: hidden;
+    width: 100%;
+    transition: width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay);
+    direction: ltr;
+    &:hover{
+      transition-delay: 0ms;
+      width: var(--uc-sidebar-hover-width);
     }
+    &:-moz-locale-dir(rtl){
+      transition-property: transform,width !important;
+    }
+  }
+  #sidebar-box[sidebar-positionend]:hover :is(#sidebar-header,#sidebar):-moz-locale-dir(ltr){
+    transform: translateX(0);
+    transition-delay: 0ms !important;
+  }
+  #sidebar-box:not([sidebar-positionend]):hover .sidebar-browser-stack:-moz-locale-dir(rtl){
+    transform: translateX(calc(-1 * var(--uc-sidebar-hover-width) + var(--uc-sidebar-width)));
+  }
+  #sidebar-box[sidebar-positionend]:hover > .sidebar-browser-stack:-moz-locale-dir(rtl){
+    transform: translateX(calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)));
+    transition-delay: 0ms !important;
   }
 }
