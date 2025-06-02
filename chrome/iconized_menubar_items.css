@@ -13,12 +13,13 @@ See the above repository for updates as well as full license text. */
   background-position: center;
   border-radius: var(--toolbarbutton-border-radius)
 }
-#main-menubar > menu > .menubar-text{ display: none }
+#main-menubar > menu > :is(.menubar-text,.menu-text){ display: none }
 
 #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg") }
 #edit-menu{ background-image: url("chrome://browser/skin/customize.svg") }
 #view-menu{ background-image: url("chrome://devtools/skin/images/command-frames.svg") }
 #history-menu{ background-image: url("chrome://browser/skin/history.svg") }
 #bookmarksMenu{ background-image: url("chrome://browser/skin/bookmark.svg") }
+#profiles-menu{ background-image: url("chrome://browser/skin/device-desktop.svg") }
 #tools-menu{ background-image: url("chrome://global/skin/icons/developer.svg") }
 #helpMenu{ background-image: url("chrome://global/skin/icons/help.svg") }
