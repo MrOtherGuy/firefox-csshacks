@@ -5,13 +5,15 @@ See the above repository for updates as well as full license text. */
   @media not print {
     :root{
       background-color: #232325 !important; /* set solid color background */
-      background-image: none !important; /* remove default background */
+      background-image: none !important; /* remove default background texture */
     }
     
-    /* Position of the image, auto = center (default), 0 = top-left */
+    /* Uncomment the following to position image to top-left */
+    /*
     img{
-      margin: auto !important;
+      margin: 0 !important;
     }
+    */
     
     /* Checkerboard pattern for transparent images, slight blue hue */
     img.transparent{
