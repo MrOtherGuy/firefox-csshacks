@@ -16,38 +16,32 @@ See the above repository for updates as well as full license text. */
   --multirow-tab-dynamic-width: 1; /* Change to 0 for fixed-width tabs using the above width. */
 }
 
-#tabbrowser-tabs{
+#tabbrowser-tabs[orient="horizontal"]{
   min-height: unset !important;
-  padding-inline-start: 0px !important
+  padding-inline-start: 0px !important;
+  --uc-scrollbutton-display-model: none;
+  --uc-scrollbox-display-model: contents;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px)) * var(--multirow-n-rows));
+  scrollbar-color: currentColor transparent;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scroll-snap-type: y mandatory;
 }
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
   #scrollbutton-up~spacer,
   #scrollbutton-up,
-  #scrollbutton-down{ display: var(--scrollbutton-display-model,initial) }
-
+  #scrollbutton-down{ display: var(--uc-scrollbutton-display-model,initial) }
+  
+  #pinned-tabs-container[orient="horizontal"],
+  #tabbrowser-arrowscrollbox[orient="horizontal"],
   scrollbox[part][orient="horizontal"] > slot,
-  scrollbox[part][orient="horizontal"]{
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    max-height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px)) * var(--multirow-n-rows));
-    scrollbar-color: currentColor transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
-    scroll-snap-type: y mandatory;
+  scrollbox[part="scrollbox"][orient="horizontal"]{
+    display: var(--uc-scrollbox-display-model,initial) !important;
   }
-  scrollbox[part][orient="horizontal"] > slot{
-    overflow-x: hidden;
-  }
-}
-
-.scrollbox-clip[orient="horizontal"],
-#tabbrowser-arrowscrollbox{
-  overflow: -moz-hidden-unscrollable;
-  display: inline;
-  --scrollbutton-display-model: none;
 }
 
 .tabbrowser-tab{ scroll-snap-align: start; }
