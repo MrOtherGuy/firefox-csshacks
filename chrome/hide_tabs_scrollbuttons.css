@@ -3,6 +3,12 @@ See the above repository for updates as well as full license text. */
 
 /* This should hide tabs scrollbuttons in a manner that preserves the ability to move tab strip when reordering tabs */
 
+:root{
+  --uc-tab-shadow-max-size: 6px;
+  /* Funny, but we let this to be overridden in ESR 128 which doesn't exist in Firefox 139 */
+  --tab-shadow-max-size: var(--uc-tab-shadow-max-size); 
+}
+
 #tabbrowser-arrowscrollbox{
   --uc-compat-scrollbutton-margin: 1px; /* compatibility for non_floating_sharp_tabs.css */
   --uc-scrollbutton-up-background: linear-gradient(-90deg,transparent,var(--lwt-accent-color) 35%);
