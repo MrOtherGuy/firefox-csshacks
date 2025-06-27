@@ -3,6 +3,10 @@ See the above repository for updates as well as full license text. */
 
 /* Makes the tab audio indicator show as overlay in all tabs, not just pinned ones */
 
+.tabbrowser-tab{
+  --tab-icon-end-margin: inherit !important;
+}
+
 .tab-icon-image,
 .tab-throbber{ opacity: 1 !important; }
 
@@ -26,6 +30,9 @@ See the above repository for updates as well as full license text. */
   --button-min-height-small: var(--button-size-icon-small) !important;
   --button-background-color-ghost: var(--toolbox-bgcolor-inactive);
   --button-border-radius: var(--border-radius-circle) !important;
+  --button-padding-icon: 2px;
+  --button-border: none;
+  --audio-overlay-extra-background: var(--button-background-color-ghost-hover);
   position: absolute;
   top: 2px;
   margin-inline: 6px 0 !important;
