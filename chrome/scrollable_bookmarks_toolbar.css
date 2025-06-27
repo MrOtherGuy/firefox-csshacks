@@ -3,11 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Makes the bookmarks toolbar scrollable via mouse scroll or scrollbar */
 
-/* Enable scroll */
-
 /* allow scrolling */
 #PlacesToolbarItems {
-    overflow: auto !important;
+    overflow-x: auto !important;
 }
 
 /* restore visibility of hidden bookmarks */
@@ -18,6 +16,11 @@ See the above repository for updates as well as full license text. */
 /* hide overflow menu */
 #PlacesToolbar #PlacesChevron {
     visibility: collapse !important;
+}
+
+/* force thin scrollbar */
+#PlacesToolbarItems {
+    scrollbar-width: thin !important;
 }
 
 /*
