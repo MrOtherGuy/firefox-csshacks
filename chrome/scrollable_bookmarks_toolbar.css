@@ -1,0 +1,36 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/scrollable_bookmarks_toolbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the bookmarks toolbar scrollable via mouse scroll or scrollbar */
+
+/* allow scrolling */
+#PlacesToolbarItems {
+    overflow-x: auto !important;
+}
+
+/* restore visibility of hidden bookmarks */
+.bookmark-item {
+    visibility: initial !important
+}
+
+/* hide overflow menu */
+#PlacesToolbar #PlacesChevron {
+    visibility: collapse !important;
+}
+
+/* force thin scrollbar */
+#PlacesToolbarItems {
+    scrollbar-width: thin !important;
+}
+
+/*
+When the Browser Window reaches a small enough width or the amount of Bookmarks overlap the browsers width, overlapping bookmark items are:
+1. set to hidden. 
+2. duplicated into the overflow menu.
+
+This style will simply:
+1. enable scrolling on the toolbar.
+2. restore visibility of hidden bookmarks.
+
+You can use the scrollable toolbar alongside the overflow menu by removing Lines 16-19
+*/
