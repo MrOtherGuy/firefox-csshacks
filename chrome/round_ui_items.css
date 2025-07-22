@@ -27,7 +27,7 @@ button,
 .panel-arrowcontent{ margin-inline-end: 0 !important; }
 .panel-arrow{ margin-inline: 17px !important; }
 
-menupopup{ -moz-appearance: none !important; overflow: -moz-hidden-unscrollable !important; }
+menupopup{ -moz-appearance: none !important; overflow: clip !important; }
 
 .tabbrowser-tab[selected]::after,
 .tabbrowser-tab[beforeselected-visible]::after{ border-color: transparent !important; }

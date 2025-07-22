@@ -195,7 +195,7 @@ See the above repository for updates as well as full license text. */
   }
   .scrollbox-clip[orient="horizontal"],
   #tabbrowser-arrowscrollbox{
-    overflow: -moz-hidden-unscrollable;
+    overflow: clip;
     display: inline;
     --scrollbutton-display-model: none;
     --uc-scrollbox-max-height: calc((var(--tab-min-height) + 2 * var(--tab-block-margin,0px)) * var(--multirow-n-rows));

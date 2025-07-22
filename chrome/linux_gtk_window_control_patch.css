@@ -13,7 +13,7 @@ See the above repository for updates as well as full license text. */
   fill: currentColor;
   padding: 4px 6px !important;
   flex-grow: 1;
-  overflow: -moz-hidden-unscrollable;
+  overflow: clip;
 }
 .titlebar-button:hover{ background-color: rgba(0,0,0,0.1) }
 .titlebar-min{ list-style-image: url(chrome://browser/skin/zoom-out.svg); }
