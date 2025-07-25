@@ -24,7 +24,7 @@ See the above repository for updates as well as full license text. */
   inset-inline-start: 0;
 }
 :root[lwtheme]:not([customizing]) #menubar-items{
-  background-color: var(--lwt-accent-color);
+  background-color: var(--lwt-accent-color,var(--toolbox-bgcolor));
 }
 :root:not([customizing]) #main-menubar{
   flex-direction: column;

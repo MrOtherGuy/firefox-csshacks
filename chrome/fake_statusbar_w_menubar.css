@@ -23,7 +23,7 @@ See the above repository for updates as well as full license text. */
   }*/
   
   #toolbar-menubar{
-    background-color: var(--lwt-accent-color) !important;
+    background-color: var(--lwt-accent-color,var(--toolbox-bgcolor)) !important;
     position: fixed;
     min-height: 1px !important;
     height: unset !important;

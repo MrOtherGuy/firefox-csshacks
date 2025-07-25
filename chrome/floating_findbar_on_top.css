@@ -32,7 +32,7 @@ findbar > .findbar-container,
 findbar > .close-icon{
   border: 1px solid var(--chrome-content-separator-color);
   border-width: 0 0 1px 0px;
-  background-color: var(--lwt-accent-color) !important;
+  background-color: var(--lwt-accent-color,var(--toolbox-bgcolor)) !important;
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,none);
   pointer-events: auto;
 }

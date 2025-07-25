@@ -47,7 +47,7 @@ See the above repository for updates as well as full license text. */
     background-color: light-dark(rgb(235, 235, 239), rgb(31, 30, 37))
   }
   :root[lwtheme] #main-menubar{
-    background-color: var(--arrowpanel-background,var(--lwt-accent-color));
+    background-color: var(--arrowpanel-background,var(--lwt-accent-color,var(--toolbox-bgcolor)));
   }
   #toolbar-menubar > .titlebar-buttonbox-container{
     display: none;

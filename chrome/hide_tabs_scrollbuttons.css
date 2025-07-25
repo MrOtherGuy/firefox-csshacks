@@ -11,8 +11,8 @@ See the above repository for updates as well as full license text. */
 
 #tabbrowser-arrowscrollbox{
   --uc-compat-scrollbutton-margin: 1px; /* compatibility for non_floating_sharp_tabs.css */
-  --uc-scrollbutton-up-background: linear-gradient(-90deg,transparent,var(--lwt-accent-color) 35%);
-  --uc-scrollbutton-down-background: linear-gradient(90deg,transparent,var(--lwt-accent-color) 35%);
+  --uc-scrollbutton-up-background: linear-gradient(-90deg,transparent,var(--lwt-accent-color,var(--toolbox-bgcolor)) 35%);
+  --uc-scrollbutton-down-background: linear-gradient(90deg,transparent,var(--lwt-accent-color,var(--toolbox-bgcolor)) 35%);
 }
 
 #tabbrowser-tabs:not([movingtab]){

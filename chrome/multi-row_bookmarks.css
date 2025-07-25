@@ -23,7 +23,7 @@ See the above repository for updates as well as full license text. */
   /* --uc-bm-padding is defined in autohide_bookmarks_toolbar.css */
   max-height: calc(var(--multirow-bmb-n-rows) * (4px + 1em + (2 * (var(--multirow-bmb-row-margin) + var(--uc-bm-padding,var(--bookmark-block-padding)))))) !important;
   overflow-y:auto;
-  scrollbar-color: var(--lwt-accent-color) var(--toolbar-bgcolor);
+  scrollbar-color: var(--lwt-accent-color,var(--toolbox-bgcolor)) var(--toolbar-bgcolor);
   scrollbar-gutter: stable;
   scrollbar-width: thin;
 }
