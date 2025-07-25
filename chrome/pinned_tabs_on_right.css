@@ -2,31 +2,8 @@
 See the above repository for updates as well as full license text. */
 
 /* Show pinned tabs on right side of normal tabs */
-/* This is stupid hack that barely works and might lead to some very unexpected behavior */
 
-.scrollbutton-up[orient="horizontal"]~spacer{ display: none }
-
-.scrollbutton-up[orient="horizontal"]~scrollbox{
-  justify-content: flex-end;
+#pinned-tabs-container[orient="horizontal"]{
+  order: 1;
+  margin-inline: 12px 0 !important;
 }
-
-.scrollbutton-up[orient="horizontal"]~scrollbox::after{
-  content: "";
-  display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
-  order: 2;
-}
-
-#tabs-newtab-button{
-  order: 2;
-}
-.tabbrowser-tab[pinned]{
-  order: 3;
-}
-
-#tabbrowser-tabs[positionpinnedtabs]{ direction: rtl }
-#tabbrowser-tabs[positionpinnedtabs] > arrowscrollbox { 
-  flex-direction: row-reverse;
-}
-.tab-content{ direction: ltr }

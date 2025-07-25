@@ -77,10 +77,6 @@ See the above repository for updates as well as full license text. */
 /* tab shaping */
 .tabbrowser-tab{ padding-inline: 0 !important; }
 
-:root[uidensity="compact"] #tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]{
-  min-height: calc(var(--tab-min-height) + 2px) !important;
-}
-
 .tab-content[pinned]{ padding-inline: 11px !important; }
 
 .tab-background{
