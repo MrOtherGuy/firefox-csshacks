@@ -18,7 +18,7 @@ See the above repository for updates as well as full license text. */
   padding-inline: 0px !important; /* By default, proton tabs have 2px + 2px = 4px space between them */
   overflow: visible !important;
 }
-.tabbrowser-tab[visuallyselected]{
+.tabbrowser-tab:is([selected],[multiselected]){
   position: relative;
   z-index: 2;
 }
@@ -27,6 +27,9 @@ See the above repository for updates as well as full license text. */
   outline: none !important;
   box-shadow: none !important;
 }
+.tab-context-line{
+  order: 1;
+}
 #TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
 
 .titlebar-spacer[type="pre-tabs"],
@@ -34,8 +37,8 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab:hover > .tab-stack::before,
 .tabbrowser-tab:hover > .tab-stack::after,
-.tabbrowser-tab[selected] > .tab-stack::before,
-.tabbrowser-tab[selected] > .tab-stack::after{
+.tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::before,
+.tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after{
   width: var(--uc-tab-curve-size);
   height: 100%;
   display: block;
@@ -56,26 +59,26 @@ See the above repository for updates as well as full license text. */
   background-origin: border-box;
 }
 
-:root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::before,
-:root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::after{
+:root[lwtheme-image] .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::before,
+:root[lwtheme-image] .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after{
   background-attachment: scroll,fixed;
   background-size: var(--uc-tab-curve-size),auto;
 }
-:root[lwtheme-image] .tabbrowser-tab[selected] > .tab-stack::after{
+:root[lwtheme-image] .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after{
   background-position-y: bottom,calc(var(--tab-min-height) - 1px);
 }
 
-.tabbrowser-tab[selected] > .tab-stack::before,
-.tabbrowser-tab[selected] > .tab-stack::after{
+.tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::before,
+.tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after{
   fill: var(--tab-selected-bgcolor,var(--toolbar-bgcolor)) !important;
   stroke: var(--lwt-tabs-border-color,transparent);
 }
 
-:root[lwtheme] .tabbrowser-tab[selected] > .tab-stack::before,
-:root[lwtheme] .tabbrowser-tab[selected] > .tab-stack::after{
-  fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
+:root[lwtheme] .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::before,
+:root[lwtheme] .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after{
+  fill: var(--tab-selected-bgcolor,var(--toolbar-bgcolor)) !important;
 }
-.tabbrowser-tab[selected] > .tab-stack::after,
+.tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after,
 .tabbrowser-tab:hover > .tab-stack::after{
   left: auto;
   right: calc(0px - var(--uc-tab-curve-size));
@@ -83,18 +86,20 @@ See the above repository for updates as well as full license text. */
 }
 
 .tabbrowser-tab:hover > stack > .tab-background,
-.tab-background[selected]{
+.tab-background:is([selected],[multiselected]){
   border-radius: var(--uc-tab-curve-size) var(--uc-tab-curve-size) 0 0 !important;
+  
 }
 
-#tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab:first-child,
-#tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]+.tabbrowser-tab:not([pinned]){ 
+.tabbrowser-tab:first-child{ 
   margin-inline-start: var(--uc-tab-curve-size) !important;
 }
-
+#pinned-tabs-container{
+  margin-inline-end: calc(0px - var(--uc-tab-curve-size)) !important;
+}
 #scrollbutton-up,
 #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
-.tab-background[selected]{ border: 1px solid var(--lwt-tabs-border-color) !important; border-bottom: none !important }
+.tab-background:is([selected],[multiselected]){ border: 1px solid var(--lwt-tabs-border-color) !important; border-bottom: none !important }
 
 .tab-context-line{
   margin-block: 0 !important;
@@ -103,8 +108,6 @@ See the above repository for updates as well as full license text. */
 /* Annoying fix to prevent hovering of last tab to trigger tab overflow, better solution wanted */
 .tabbrowser-tab:last-of-type{ margin-inline-end: var(--uc-tab-curve-size) !important; }
 
-/* Move tabs a bit away from the window edge, otherwise the left-most pinned tab might be partially outside of window */
-#tabbrowser-tabs[positionpinnedtabs]{ margin-left: var(--uc-tab-curve-size) }
 /* To counter the above, make tabs toolbar spacer a bit narrower so there won't be too much space reserved when window dragging spacers are shown */
 .titlebar-spacer[type="pre-tabs"]{ width: 24px !important; }
 
@@ -117,24 +120,24 @@ See the above repository for updates as well as full license text. */
   #navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, white 50%) !important; }
   :root[lwtheme-brighttext] #navigator-toolbox{ --lwt-tabs-border-color: color-mix(in srgb, currentcolor, black 50%) !important; }
   #tabbrowser-tabs{ --lwt-selected-tab-background-color: var(--toolbar-bgcolor) }
-  .tab-background[selected]{
+  .tab-background:is([selected],[multiselected]){
     border-top: none !important;
     --toolbar-bgcolor: transparent;
   }
   :root:not([lwtheme]) .tab-background{
     background-color: var(--lwt-selected-tab-background-color) !important;
   }
-  .tabbrowser-tab[selected] > .tab-stack::before,
-  .tabbrowser-tab[selected] > .tab-stack::after{
+  .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::before,
+  .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::after{
     fill: var(--lwt-selected-tab-background-color,var(--toolbar-bgcolor)) !important;
   }
-  .tabbrowser-tab[selected] > .tab-stack::before{
+  .tabbrowser-tab:is([selected],[multiselected]) > .tab-stack::before{
     left: calc(1px - var(--uc-tab-curve-size));
   }
-  .tabbrowser-tab[selected] > .tab-stack::after{
+  .tabbrowser-tab:is([selected],[multiselected]):is([selected],[multiselected]) > .tab-stack::after{
     right: calc(1px - var(--uc-tab-curve-size));
   }
-  .tab-background[selected]::before{
+  .tab-background:is([selected],[multiselected])::before{
     content: "";
     display: flex;
     height: 2px;
