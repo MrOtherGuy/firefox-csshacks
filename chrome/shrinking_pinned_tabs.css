@@ -3,16 +3,16 @@ See the above repository for updates as well as full license text. */
 
 /* Makes pinned tab width shrink dynamically, similar to unpinned tab width. */
 
-#tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[pinned] {
+:is(#pinned-tabs-container,#tabbrowser-arrowscrollbox:not([overflowing])) .tabbrowser-tab[pinned] {
   flex-grow: 10;
   max-width: 40px;
 }
 
-:root[uidensity="compact"] #tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[pinned] {
+:root[uidensity="compact"] :is(#pinned-tabs-container,#tabbrowser-arrowscrollbox:not([overflowing])) .tabbrowser-tab[pinned] {
   max-width: 32px 
 }
 
-#tabbrowser-arrowscrollbox .tab-content[pinned] {
+:is(#pinned-tabs-container,#tabbrowser-arrowscrollbox) .tab-content[pinned] {
   padding: 0px !important;
   justify-content: center;
 }

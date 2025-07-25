@@ -34,7 +34,7 @@ Thanks to /u/skenera on reddit for suggesting animating background position and 
   pointer-events: none;
   z-index: 0;
 }
-
+#pinned-tabs-container,
 #tabbrowser-arrowscrollbox{
   margin-inline: 0 !important;
   --tab-shadow-max-size: 0px;

@@ -14,6 +14,7 @@ This will NOT work correctly if you have hidden tabs such as with tab groups ext
 #TabsToolbar{ min-height: 0px !important }
 
 #tabbrowser-tabs,
+#pinned-tabs-container,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 .accessibility-indicator,

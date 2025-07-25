@@ -33,6 +33,7 @@ Window controls will be all wrong without it
 #tabbrowser-tabs:not([overflow]) ~ #alltabs-button{ display: none }
 
 #tabbrowser-tabs,
+#pinned-tabs-container,
 #tabbrowser-arrowscrollbox{ min-height: 0 !important; }
 
 #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
