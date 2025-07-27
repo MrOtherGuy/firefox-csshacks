@@ -11,10 +11,10 @@ See the above repository for updates as well as full license text. */
 :root[uidensity="compact"]{ --uc-navbar-transform: -34px }
 
 #navigator-toolbox > div{ display: contents; }
-:root[sessionrestored] :where(#nav-bar,#PersonalToolbar,#tab-notification-deck,.global-notificationbox){
+:root[sessionrestored] :where(#nav-bar,#PersonalToolbar,#tab-notification-deck,.global-notificationbox,#notifications-toolbar){
   transform: translateY(var(--uc-navbar-transform))
 }
-:root:is([customizing],[chromehidden*="toolbar"]) :where(#nav-bar,#PersonalToolbar,#tab-notification-deck,.global-notificationbox){
+:root:is([customizing],[chromehidden*="toolbar"]) :where(#nav-bar,#PersonalToolbar,#tab-notification-deck,.global-notificationbox,#notifications-toolbar){
   transform: none !important;
   opacity: 1 !important;
 }

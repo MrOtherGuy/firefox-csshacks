@@ -28,6 +28,7 @@ See the above repository for updates as well as full license text. */
   #toolbar-menubar,
   #PersonalToolbar,
   .global-notificationbox,
+  #notifications-toolbar,
   #tab-notification-deck{
     grid-column: 1/3;
   }

@@ -16,6 +16,7 @@ See the above repository for updates as well as full license text. */
        not -moz-pref("sidebar.verticalTabs"){
   .global-notificationbox,
   #tab-notification-deck,
+  #notifications-toolbar,
   #TabsToolbar{
     order: 1;
   }

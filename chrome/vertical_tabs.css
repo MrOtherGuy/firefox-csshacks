@@ -14,11 +14,13 @@ See the above repository for updates as well as full license text. */
 }
 #PersonalToolbar,
 #tab-notification-deck,
+#notifications-toolbar,
 .global-notificationbox,
 #main-window:not([inDOMFullscreen]) > body > #browser{
   margin-left: var(--uc-vertical-tabs-width);
 }
 #tab-notification-deck,
+#notifications-toolbar,
 .global-notificationbox{
   width: auto !important;
 }
@@ -44,6 +46,7 @@ See the above repository for updates as well as full license text. */
 @media (-moz-bool-pref: "userchrome.vertical-tabs.on-right.enabled"){
   #PersonalToolbar,
   #tab-notification-deck,
+  #notifications-toolbar,
   .global-notificationbox,
   #main-window:not([inDOMFullscreen]) > body > #browser{
     margin-left: 0;

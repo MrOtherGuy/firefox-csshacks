@@ -16,6 +16,7 @@ See the above repository for updates as well as full license text. */
 #main-window > body > #browser,
 .global-notificationbox,
  #tab-notification-deck,
+ #notifications-toolbar,
  #toolbar-menubar{
   order: -1;
 }

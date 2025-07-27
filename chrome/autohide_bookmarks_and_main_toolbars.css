@@ -132,7 +132,7 @@ See the above repository for updates as well as full license text. */
 
 /* This makes the tab notification box show immediately below tabs, otherwise it would break the layout */
 #navigator-toolbox > div{ display: contents }
-:where(#titlebar,#navigator-toolbox > #TabsToolbar,#navigator-toolbox > #toolbar-menubar,#tab-notification-deck,.global-notificationbox){
+:where(#titlebar,#navigator-toolbox > #TabsToolbar,#navigator-toolbox > #toolbar-menubar,#tab-notification-deck,.global-notificationbox,#notifications-toolbar){
   order: -1;
 }
 :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox{
