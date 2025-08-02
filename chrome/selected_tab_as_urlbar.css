@@ -28,6 +28,7 @@ See the above repository for updates as well as full license text. */
 }
 .urlbar-input-container > :not(.urlbar-input-box){ opacity: 0 }
 
+:where(#urlbar) > .urlbar-background,
 #urlbar-background{
   background: transparent !important;
   border: none !important;

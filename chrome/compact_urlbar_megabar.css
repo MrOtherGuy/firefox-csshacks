@@ -17,6 +17,7 @@ See the above repository for updates as well as full license text. */
 .urlbarView-row-inner{
   padding-inline-start: 4px !important;
 }
+:where(#urlbar) > .urlbar-background,
 #urlbar-background{
   animation: none !important;
 }

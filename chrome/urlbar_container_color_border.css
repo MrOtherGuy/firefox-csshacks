@@ -33,7 +33,7 @@ See the above repository for updates as well as full license text. */
   position: static !important;
   padding: calc(2px + var(--urlbar-margin-inline,5px)) !important;
 }
-#urlbar[open] > #urlbar-background{ z-index: -1 !important; }
+#urlbar[open] > :is(#urlbar-background,.urlbar-background){ z-index: -1 !important; }
 
 /* OPTIONAL FEATURES */
 
