@@ -3,33 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Modifies appearance of menupopup check icons to more clearly show if the item is a radio or checkbox item */
 
-menuitem:is([type="checkbox"],[type="radio"]){
-  padding-inline-start: 12px !important;
+menuitem[type="radio"][checked="true"] > .menu-icon{
+  content: radial-gradient(currentColor 30%, transparent 40%) !important;
 }
-menuitem:is([type="checkbox"],[type="radio"]) > .menu-iconic-left > .menu-iconic-icon{
-  display: none !important;
-}
-menuitem:is([type="checkbox"],[type="radio"]) > .menu-iconic-left{
-  -moz-appearance: none !important;
-  outline: 1px solid color-mix(in srgb,currentColor 20%, transparent);
-  border-radius: 3px;
-  width: 14px !important;
-  height: 14px;
-  margin-inline: 0px 8px !important;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  -moz-context-properties: fill;
-  fill: currentColor;
-  background-color: transparent;
-}
-menuitem[type="radio"] > .menu-iconic-left{
-  border-radius: 100%;
-}
-menuitem[type="radio"][checked="true"] > .menu-iconic-left{
-  background-image: radial-gradient( AccentColor 40%, transparent 50%);
-  list-style-image: none !important;
-}
-menuitem[type="checkbox"][checked="true"] > .menu-iconic-left{
-  background-image: url("chrome://global/skin/icons/check.svg");
+menuitem[type="checkbox"][checked="true"] > .menu-icon{
+  content: url("chrome://global/skin/icons/check.svg") !important;
 }
