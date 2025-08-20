@@ -32,7 +32,11 @@ See the above repository for updates as well as full license text. */
 #appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
 #appMenu-report-broken-site-button{ list-style-image: url("chrome://global/skin/icons/warning.svg") }
 #appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
-#appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
+#appMenu-quit-button2{
+  list-style-image: url("chrome://devtools/skin/images/search-clear.svg");
+  stroke: transparent;
+  -moz-context-properties: fill,stroke;
+}
 #appMenu-translate-button{ list-style-image: url("chrome://browser/skin/translations.svg") }
 #appMenu-zoom-controls::before{ background-image: url("chrome://browser/skin/fullscreen.svg") }
 /* Use account-button icon for signed in sync item */
