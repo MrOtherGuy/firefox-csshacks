@@ -4,9 +4,9 @@ See the above repository for updates as well as full license text. */
 /* Makes the main menu popup apper in grid-like format that somewhat resembles the menu from Australis styling */
 
 /* Basic styling */
-#appMenu-protonMainView{ max-width: initial !important; }
+#appMenu-mainView{ max-width: initial !important; }
 
-#appMenu-protonMainView > .panel-subview-body{
+#appMenu-mainView > .panel-subview-body{
   display: flex; 
   flex-direction: row; 
   max-width: 290px;
@@ -18,31 +18,31 @@ See the above repository for updates as well as full license text. */
   align-content: end;
 }
 
-#appMenu-protonMainView > .panel-subview-body > toolbarseparator{
+#appMenu-mainView > .panel-subview-body > toolbarseparator{
   min-width: 250px;
   flex-grow:1;
   margin-inline: 0 !important;
 }
-#appMenu-protonMainView > .panel-subview-body > toolbaritem{ flex-grow: 1 }
-:where(#appMenu-protonMainView) > .panel-subview-body > toolbarbutton{
+#appMenu-mainView > .panel-subview-body > toolbaritem{ flex-grow: 1 }
+:where(#appMenu-mainView) > .panel-subview-body > toolbarbutton{
   width: 70px;
   height: 76px;
   flex-grow:1;
 }
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton > .toolbarbutton-icon{
+#appMenu-mainView > .panel-subview-body > toolbarbutton > .toolbarbutton-icon{
   -moz-box-flex: 1;
 }
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton{
+#appMenu-mainView > .panel-subview-body > toolbarbutton{
   flex-direction: column;
 }
 
-:where(#appMenu-protonMainView) > .panel-subview-body > toolbarbutton.subviewbutton{
+:where(#appMenu-mainView) > .panel-subview-body > toolbarbutton.subviewbutton{
   padding-inline: 4px !important;
   margin-inline: 8px !important;
   fill: currentColor;
 }
 
-#appMenu-protonMainView > .panel-subview-body > .subviewbutton > .toolbarbutton-text{
+#appMenu-mainView > .panel-subview-body > .subviewbutton > .toolbarbutton-text{
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   max-width: 70px;
@@ -56,6 +56,11 @@ See the above repository for updates as well as full license text. */
   height: initial !important;
   margin: initial !important;
   flex-grow: 1;
+  width: 280px;
+}
+#appMenu-fullscreen-button2{
+  padding-inline: var(--arrowpanel-menuitem-padding) !important;
+  margin-inline: var(--arrowpanel-menuitem-padding) !important;
 }
 #appMenu-zoom-controls + toolbarseparator{ margin-block: 0 4px !important; }
 #appMenu-zoom-controls{ padding-block: 2px !important; }
@@ -72,32 +77,25 @@ See the above repository for updates as well as full license text. */
 #appMenu-fxa-separator{
   margin-block: 0 -1px !important;
 }
-#appMenu-proton-addon-banners,
 #appMenu-fxa-separator,
-#appMenu-fxa-status2{ order: 2; }
+#appMenu-fxa-status2{ order: 3; }
 
 #appMenu-extensions-themes-button + toolbarseparator{
   order: 3;
   margin-block: 0 -1px !important;
 }
 
-/* Set minimum width for "full-row" items */
-#appMenu-fxa-status2,
-#appMenu-fxa-separator{
-  min-width: 280px; 
-}
-
 /* Full-row items should have contents laid out horizontally */
-#appMenu-proton-update-banner,
+#appMenu-update-banner,
 #appMenu-fxa-status2,
 #appMenu-fxa-label2{ -moz-box-orient: horizontal !important; }
 
-#appMenu-proton-addon-banners > .addon-banner-item{
+#appMenu-addon-banners > .addon-banner-item{
   margin: 0px !important;
 }
 
 /* "Main" items styling */
-#appMenu-proton-update-banner,
+#appMenu-update-banner,
 #appMenu-fxa-status2,
 #appMenu-more-button2.subviewbutton,
 #appMenu-quit-button2.subviewbutton,
@@ -109,7 +107,13 @@ See the above repository for updates as well as full license text. */
   width: initial;
 }
 
-#appMenu-proton-update-banner,
+/* Set minimum width for "full-row" items */
+#appMenu-fxa-status2,
+#appMenu-fxa-separator{
+  width: 280px; 
+}
+
+#appMenu-update-banner,
 #appMenu-quit-button2.subviewbutton{ order: 4 }
 
 #appMenu-more-button2 > .toolbarbutton-icon{
@@ -117,11 +121,11 @@ See the above repository for updates as well as full license text. */
 }
 /* Color styling for items */
 
-#appMenu-protonMainView > .panel-subview-body toolbarbutton:not([disabled]):hover{
+#appMenu-mainView > .panel-subview-body toolbarbutton:not([disabled]):hover{
   box-shadow: inset 0 0 3px 0px var(--button-bgcolor);
 }
 
-#appMenu-proton-update-banner{ border-inline-end: 1px solid var(--panel-separator-color) !important; }
+#appMenu-update-banner{ border-inline-end: 1px solid var(--panel-separator-color) !important; }
 #appMenu-help-button2{ border-inline: 1px solid var(--panel-separator-color) }
 
 /* Hide some additional items */
@@ -133,7 +137,7 @@ See the above repository for updates as well as full license text. */
 #appMenu-zoom-controls > spacer,
 #appMenu-edit-controls2 > label,
 #appMenu-edit-controls2 > spacer,
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton::after{ display: none !important; }
+#appMenu-mainView > .panel-subview-body > toolbarbutton::after{ display: none !important; }
 
 /* Sync styling */
 
@@ -164,12 +168,12 @@ See the above repository for updates as well as full license text. */
 }
 
 #appMenu-more-button2 > .toolbarbutton-icon{ margin-inline: 8px !important; }
-#appMenu-proton-update-banner > .toolbarbutton-text,
+#appMenu-update-banner > .toolbarbutton-text,
 #appMenu-help-button2 > .toolbarbutton-text,
 #appMenu-quit-button2 > .toolbarbutton-text{
   display: none !important;
 }
-#appMenu-proton-update-banner,
+#appMenu-update-banner,
 #appMenu-fxa-label2,
 #appMenu-more-button2,
 #appMenu-help-button2,
@@ -187,30 +191,17 @@ See the above repository for updates as well as full license text. */
   justify-content: start !important;
 }
 
-#appMenu-proton-update-banner:hover,
+#appMenu-update-banner:hover,
 #appMenu-fxa-label2:hover,
 #appMenu-more-button2:hover,
 #appMenu-help-button2:hover{
   opacity: 1;
 }
-#appMenu-proton-update-banner{ background-color: rgb(120,180,120) !important; }
+#appMenu-update-banner{ background-color: rgb(120,180,120) !important; }
 #appMenu-quit-button2:hover{ background-color: rgb(220,100,100) !important; }
 
-/* Reserve fixed space for addon banners */
-#appMenu-proton-addon-banners{
-  min-width: 200px;
-  height: 36px !important;
-  overflow: auto;
-}
-#appMenu-proton-addon-banners > .addon-banner-item{
-  padding-block: 2px !important;
-  border-radius: 0 !important;
-}
-#appMenu-proton-addon-banners > .addon-banner-item::after{
-  margin-top: 6px !important;
-}
 /* Missing icons */
-#appMenu-proton-update-banner{ list-style-image: url("chrome://global/skin/icons/reload.svg"); }
+#appMenu-update-banner{ list-style-image: url("chrome://global/skin/icons/reload.svg"); }
 #appMenu-new-tab-button2{ list-style-image: url("chrome://browser/skin/new-tab.svg") }
 #appMenu-new-window-button2{ list-style-image: url("chrome://browser/skin/window.svg") }
 #appMenu-new-private-window-button2{ list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
@@ -219,10 +210,12 @@ See the above repository for updates as well as full license text. */
 #appMenu-downloads-button{ list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
 #appMenu-passwords-button{ list-style-image: url("chrome://browser/skin/login.svg") }
 #appMenu-extensions-themes-button{ list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
+#appMenu-translate-button{ list-style-image: url("chrome://browser/skin/translations.svg") }
 #appMenu-print-button2{ list-style-image: url("chrome://global/skin/icons/print.svg") }
 #appMenu-save-file-button2{ list-style-image: url("chrome://browser/skin/save.svg") }
 #appMenu-find-button2{ list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
 #appMenu-settings-button{ list-style-image: url("chrome://global/skin/icons/settings.svg") }
 #appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
+#appMenu-report-broken-site-button{ list-style-image: url("chrome://global/skin/icons/warning.svg") }
 #appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
-#appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
+#appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg"); stroke: transparent; -moz-context-properties: fill,stroke }
