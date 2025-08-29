@@ -5,13 +5,12 @@ See the above repository for updates as well as full license text. */
 
 .titlebar-button{
   background-color: transparent !important;
-  -moz-context-properties: stroke !important;
-  stroke: currentColor !important;
+  color: inherit !important;
 }
 .titlebar-button:hover{ background-color: hsla(0,0%,100%,.32) !important }
 .titlebar-close:hover{ background-color: hsl(355,86%,49%) !important }
 
-.titlebar-close{ list-style-image: url(chrome://browser/skin/window-controls/close.svg) !important }
-.titlebar-min{ list-style-image: url(chrome://browser/skin/window-controls/minimize.svg) !important }
-.titlebar-max{ list-style-image: url(chrome://browser/skin/window-controls/maximize.svg) !important }
-.titlebar-restore{ list-style-image: url(chrome://browser/skin/window-controls/restore.svg) !important }
+.titlebar-close{ content: "\e8bb" !important }
+.titlebar-min{ content: "\e921" !important }
+.titlebar-max{ content: "\e922" !important }
+.titlebar-restore{ content: "\e923" !important }
