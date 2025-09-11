@@ -108,6 +108,12 @@ See the above repository for updates as well as full license text. */
 /* Annoying fix to prevent hovering of last tab to trigger tab overflow, better solution wanted */
 .tabbrowser-tab:last-of-type{ margin-inline-end: var(--uc-tab-curve-size) !important; }
 
+/* Remove margin and overflow from tabs in collapsed tab groups */
+tab-group[collapsed] > .tabbrowser-tab{
+  overflow: hidden !important;
+  margin-inline-end: 0 !important;
+}
+
 /* To counter the above, make tabs toolbar spacer a bit narrower so there won't be too much space reserved when window dragging spacers are shown */
 .titlebar-spacer[type="pre-tabs"]{ width: 24px !important; }
 
