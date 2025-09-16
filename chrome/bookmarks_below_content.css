@@ -17,7 +17,7 @@ See the above repository for updates as well as full license text. */
     border-bottom: none;
   }
   #PersonalToolbar{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
   }
