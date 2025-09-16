@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
     margin-bottom: var(--uc-bm-toolbar-height,0);
     border-bottom: 1px solid var(--chrome-content-separator-color,light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%)))
   }
-  #navigator-toolbox:has(> #PersonalToolbar[collapsed="true"]) + #browser{
+  #navigator-toolbox:has(> #PersonalToolbar:is([collapsed=""],[collapsed="true"])) + #browser{
     margin-bottom: 0;
     border-bottom: none;
   }

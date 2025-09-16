@@ -84,7 +84,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #navigator-toolbox[inFullscreen] > #PersonalToolbar,
-#PersonalToolbar[collapsed="true"]{ display: none }
+#PersonalToolbar:is([collapsed=""],[collapsed="true"]){ display: none }
 
 /* This is a bit hacky fix for an issue that will make urlbar zero pixels tall after you enter customize mode */
 #urlbar[breakout][breakout-extend] > .urlbar-input-container{
