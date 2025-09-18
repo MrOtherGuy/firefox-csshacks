@@ -14,7 +14,7 @@ See the above repository for updates as well as full license text. */
 
 #main-menubar > menu{visibility: collapse; transition: visibility 0ms linear 0.1s}
 #main-menubar:hover > menu,    
-#toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > #main-menubar > menu{visibility: visible}
+#toolbar-menubar:not([autohide="true"],[autohide=""]):not([inactive]) > #menubar-items > #main-menubar > menu{visibility: visible}
 
 :root:not([customizing],[sizemode="fullscreen"]) #menubar-items{
   display: block;
@@ -33,11 +33,11 @@ See the above repository for updates as well as full license text. */
 #main-menubar > menu > menupopup{
   margin: calc(0px - var(--uc-menubaritem-height)) 0 0 var(--uc-menubaritem-width);
 }
-#toolbar-menubar[autohide="true"][inactive] > #menubar-items{
+#toolbar-menubar:not([autohide="true"],[autohide=""])[inactive] > #menubar-items{
   max-height: 0px;
   overflow: hidden;
 }
-#toolbar-menubar[autohide="true"]:not([inactive]){
+#toolbar-menubar:not([autohide="true"],[autohide=""]):not([inactive]){
   margin-bottom: calc(0px - var(--tab-min-height) + var(--tabs-navbar-shadow-size));
 }
 #toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){

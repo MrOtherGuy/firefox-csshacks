@@ -63,7 +63,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #toolbar-menubar,
-#toolbar-menubar[autohide="true"] + #TabsToolbar{
+#toolbar-menubar:is([autohide="true"],[autohide=""]) + #TabsToolbar{
   padding-left: 94px !important;
 }
 

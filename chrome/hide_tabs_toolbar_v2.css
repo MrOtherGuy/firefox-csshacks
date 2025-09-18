@@ -26,7 +26,7 @@ See the above repository for updates as well as full license text. */
   :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
     display: flex !important;
   }
-  :root:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
+  :root:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar:is([autohide=""],not([autohide="false"])) ~ #nav-bar{
     > .titlebar-buttonbox-container{
       display: flex !important;
     }

@@ -4,7 +4,7 @@ See the above repository for updates as well as full license text. */
 /* Show tabs toolbar with Alt-key. Menubar must be disabled for this to work.
  * To show window controls and/or menubar hit Alt again while cursor is over tabs toolbar */
 
-:where(#titlebar:not(:hover) > #toolbar-menubar[autohide="true"][inactive]) + #TabsToolbar {
+:where(#titlebar:not(:hover) > #toolbar-menubar:not([autohide="true"],[autohide=""])[inactive]) + #TabsToolbar {
   visibility: collapse;
 }
 #toolbar-menubar[autohide]:not([inactive]),
@@ -12,8 +12,8 @@ See the above repository for updates as well as full license text. */
   visibility: collapse !important;
 }
 #menubar-items:has([_moz-menuactive][open="true"]),
-#toolbar-menubar[autohide]:hover > #menubar-items,
-:root:not([sizemode="fullscreen"]) #titlebar:hover #toolbar-menubar[autohide][inactive] > #menubar-items{
+#toolbar-menubar:not([autohide="true"],[autohide=""]):hover > #menubar-items,
+:root:not([sizemode="fullscreen"]) #titlebar:hover #toolbar-menubar:not([autohide="true"],[autohide=""])[inactive] > #menubar-items{
   visibility: visible;
   position: absolute;
   z-index: 1;

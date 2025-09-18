@@ -79,7 +79,7 @@ See the above repository for updates as well as full license text. */
 #nav-bar.browser-titlebar{
   background: inherit;
 }
-#toolbar-menubar:not([autohide="true"]) ~ #nav-bar.browser-titlebar{
+#toolbar-menubar:not([autohide="true"],[autohide=""]) ~ #nav-bar.browser-titlebar{
   background-position-y: -28px; /* best guess, could vary */
   border-top: none !important;
 }

@@ -35,7 +35,7 @@ This will NOT work correctly if you have hidden tabs such as with tab groups ext
 }
 
 /* Fix window controls not being clickable */
-:root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{
+:root[tabsintitlebar] #toolbar-menubar:not([autohide="true"],[autohide=""])[inactive]{
   transition: height 0ms steps(1) 80ms;
 }
 :where(#nav-bar){

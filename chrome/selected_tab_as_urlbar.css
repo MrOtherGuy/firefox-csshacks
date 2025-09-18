@@ -115,6 +115,6 @@ See the above repository for updates as well as full license text. */
   background-color: transparent !important;
 }
 
-:root:is([tabsintitlebar],[customtitlebar]) #titlebar:has(> [autohide="false"]) + #nav-bar{
+:root:is([tabsintitlebar],[customtitlebar]) #titlebar:has(> #toolbar-menubar:is([autohide="false"],not([autohide]))) + #nav-bar{
   border-inline-width: 0 !important;
 }

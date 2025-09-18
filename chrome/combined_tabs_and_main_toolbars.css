@@ -10,7 +10,7 @@ See the above repository for updates as well as full license text. */
   --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
 }
 
-#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{ display: none !important; }
+#toolbar-menubar:not([autohide="true"],[autohide=""]) > .titlebar-buttonbox-container{ display: none !important; }
 #toolbar-menubar{ left:0 }
 
 @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
@@ -28,7 +28,7 @@ See the above repository for updates as well as full license text. */
   @media (-moz-platform: windows-win10){
     :root[tabsintitlebar="true"] #nav-bar{ padding-left: calc(var(--uc-hide-window-control-space,1) * 134px + 20px) !important; }
   }
-  #toolbar-menubar[autohide="true"] + #TabsToolbar .titlebar-buttonbox{ flex-direction: row-reverse }
+  #toolbar-menubar:not([autohide="true"],[autohide=""]) + #TabsToolbar .titlebar-buttonbox{ flex-direction: row-reverse }
 }
 
 #navigator-toolbox{ --tab-min-height: 40px }

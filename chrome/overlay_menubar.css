@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
   z-index: 10;
 }
 
-#toolbar-menubar[autohide="true"][inactive="true"]{ height: 0px !important; }
+#toolbar-menubar:not([autohide="true"],[autohide=""])[inactive="true"]{ height: 0px !important; }
 
 #toolbar-menubar > spacer{ flex-grow: 1 }
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
@@ -35,5 +35,5 @@ See the above repository for updates as well as full license text. */
 }
 
 @media (-moz-gtk-csd-reversed-placement){
-  #toolbar-menubar[autohide="true"]:not([inactive]) > .titlebar-buttonbox-container{ display: none }  
+  #toolbar-menubar:not([autohide="true"],[autohide=""]):not([inactive]) > .titlebar-buttonbox-container{ display: none }  
 }

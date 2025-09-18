@@ -39,7 +39,7 @@ Window controls will be all wrong without it
   position: relative;
 }
 
-#toolbar-menubar[autohide="false"]{
+#toolbar-menubar:is([autohide="false"],not([autohide])){
   margin-bottom: var(--uc-toolbar-height,0px)
 }
 

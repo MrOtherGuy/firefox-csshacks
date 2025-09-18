@@ -23,7 +23,7 @@ See the above repository for updates as well as full license text. */
  *  density settings and whether or not menubar is enabled. 
  */
 @media (min-resolution: 120dpi){
-  :root[uidensity="compact"] #navigator-toolbox:has(> #toolbar-menubar[autohide="false"]){
+  :root[uidensity="compact"] #navigator-toolbox:has(> #toolbar-menubar:is([autohide="false"],not([autohide]))){
     --uc-toolbox-browser-area-overlap: -0.5px;
   }
 }
