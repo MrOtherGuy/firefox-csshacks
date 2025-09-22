@@ -7,7 +7,7 @@ See the above repository for updates as well as full license text. */
     width: var(--urlbar-width) !important;
     margin-top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
 }
-.urlbarView{
+:where(#urlbar) > .urlbarView{
   margin-inline: 0 !important;
   width: auto !important;
 }
@@ -21,13 +21,13 @@ See the above repository for updates as well as full license text. */
 #urlbar-background{
   animation: none !important;
 }
-.urlbar-input-container{
-  padding: 0px 1px !important;
-  height: initial !important; 
+:where(#urlbar) > .urlbar-input-container{
+  padding: var(--urlbar-container-padding,0) 1px !important;
+  height: var(--urlbar-height) !important; 
 }
 #identity-icon{
   margin-block: var(--urlbar-icon-padding);
 }
-.urlbarView > .search-one-offs:not([hidden]){
+:where(#urlbar) > .urlbarView > .search-one-offs:not([hidden]){
   padding-block: 0px !important;
 }
