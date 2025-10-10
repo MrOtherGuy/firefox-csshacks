@@ -43,9 +43,20 @@ See the above repository for updates as well as full license text. */
 }
 @media not (-moz-bool-pref: "sidebar.verticalTabs"),
        not -moz-pref("sidebar.verticalTabs"){
-  :root:not([customizing],[chromehidden~="menubar"]) #navigator-toolbox:hover,
+  :root:not([customizing],[chromehidden~="menubar"]) #navigator-toolbox:has(> :is(#toolbar-menubar,#TabsToolbar):hover),
   :root:not([customizing],[chromehidden~="menubar"]) #TabsToolbar{
     margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
+  }
+  #toolbar-menubar:is([autohide=""],[autohide="true"]) + #TabsToolbar:not(:hover){
+    -moz-window-dragging: no-drag !important;
+  }
+  #toolbar-menubar:is([autohide=""],[autohide="true"]) + #TabsToolbar:not(:hover,[customizing])::before{
+    content: "";
+    display: flex;
+    position: absolute;
+    height: 6px;
+    width: 100vw;
+    visibility: visible;
   }
   #navigator-toolbox{
     transition: margin-bottom var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay) !important;
@@ -53,15 +64,18 @@ See the above repository for updates as well as full license text. */
   }
   #TabsToolbar:not([customizing]){
     visibility: hidden;
+    position: relative;
+    z-index: 1;
     transition: visibility 0ms linear var(--uc-tabs-hide-animation-delay),
                 margin-bottom var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay) !important;
   }
-  #navigator-toolbox:is(:hover,[movingtab]){
+  #navigator-toolbox:has(> :is(#toolbar-menubar,#TabsToolbar):hover),
+  #navigator-toolbox[movingtab]{
     transition-delay: 0s !important;
     > #TabsToolbar{
       visibility: visible;
       margin-bottom: 0px;
-      transition-delay: 18ms, 0ms !important;
+      transition-delay: 0ms, 0ms !important;
     }
   }
   @media (-moz-bool-pref: "userchrome.autohidetabs.show-while-inactive.enabled"),
@@ -81,4 +95,3 @@ See the above repository for updates as well as full license text. */
   .tab-label{ line-height: 20px !important; }
   :root[uidensity="compact"] .tab-label{ line-height: 18px !important; }
 }
-
