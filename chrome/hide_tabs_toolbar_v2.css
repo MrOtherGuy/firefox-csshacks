@@ -5,6 +5,7 @@ See the above repository for updates as well as full license text. */
 
 @media (-moz-bool-pref: "sidebar.verticalTabs"),
        -moz-pref("sidebar.verticalTabs"){
+  #sidebar-launcher-splitter,
   #sidebar-main{
     visibility: collapse;
   }
