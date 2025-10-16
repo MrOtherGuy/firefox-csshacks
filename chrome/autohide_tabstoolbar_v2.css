@@ -30,7 +30,8 @@ See the above repository for updates as well as full license text. */
       border-inline-width: 0.01px 0;
     }
   }
-  sidebar-main:hover{
+  :where(#navigator-toolbox[movingtab] + #browser > #sidebar-main) > sidebar-main[expanded],
+  sidebar-main[expanded]:hover{
     min-width: calc(var(--tab-pinned-horizontal-count) * var(--tab-pinned-min-width-expanded) + 2 * var(--tab-pinned-container-margin-inline-expanded) + 1px);
     transition-delay: 0ms !important;
     &:is([sidebar-positionend],[positionend]){
