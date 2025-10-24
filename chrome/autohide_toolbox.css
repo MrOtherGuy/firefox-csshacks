@@ -42,6 +42,8 @@ See the above repository for updates as well as full license text. */
   transform-origin: 0px calc(0px - var(--tab-min-height) - var(--tab-block-margin) * 2);
   transform: rotateX(89.9deg);
 }
+
+:root[window-modal-open] #urlbar[popover],
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within,[movingtab]) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
@@ -50,6 +52,8 @@ See the above repository for updates as well as full license text. */
   transition-delay: 33ms;
   transform: rotateX(0deg);
 }
+
+:root[window-modal-open] #navigator-toolbox,
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox,
 #navigator-toolbox:has(#urlbar:is([open],[focus-within])),
 #navigator-toolbox:is(:hover,:focus-within,[movingtab]){

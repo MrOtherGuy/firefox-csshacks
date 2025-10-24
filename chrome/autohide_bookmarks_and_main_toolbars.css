@@ -20,7 +20,7 @@ See the above repository for updates as well as full license text. */
   --uc-navbar-height: 0px;
 }
 /* At least on Windows 10 display scaling > 100% causes 1px gap to appear below tabs depending on Firefox
- *  density settings and whether or not menubar is enabled. 
+ *  density settings and whether or not menubar is enabled.
  */
 @media (min-resolution: 120dpi){
   :root[uidensity="compact"] #navigator-toolbox:has(> #toolbar-menubar:is([autohide="false"],not([autohide]))){
@@ -80,6 +80,7 @@ See the above repository for updates as well as full license text. */
   transform-origin: 0px calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2);
   transform: rotateX(89.5deg);
 }
+:root[window-modal-open] #urlbar[popover],
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
@@ -112,6 +113,12 @@ See the above repository for updates as well as full license text. */
 
 /* Selected tab needs higher z-index now to "hide" the broder below it */
 .tabbrowser-tab[selected]{ z-index: 3 !important; }
+
+/* Show toolbars when a window modal dialog is open, otherwise toolbar layout breaks after closing the dialog */
+:root[window-modal-open] :is(#nav-bar,#PersonalToolbar){
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
+}
 
 /* SELECT TOOLBAR BEHAVIOR */
 /* Comment out or delete one of these to disable that behavior */
