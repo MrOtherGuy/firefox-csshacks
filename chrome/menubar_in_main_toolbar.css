@@ -1,33 +1,48 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/menubar_in_main_toolbar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Make menubar permanently enabled or this isn't going to work */
-
-#navigator-toolbox{ --uc-menubar-height: 34px; }
-:root[uidensity="compact"] #navigator-toolbox{ --uc-menubar-height: 30px }
-
-#titlebar{
-  flex-direction: column-reverse;
-  -moz-appearance: none !important;
+#navigator-toolbox{
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
-
+.browser-toolbar{
+  grid-column: 1/3;
+}
 #toolbar-menubar{
-  margin-bottom: calc(0px - var(--uc-menubar-height));
-  height: var(--uc-menubar-height);
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-
-#menubar-items{
-  justify-content: center;
-  pointer-events: initial;
-  margin-top: 3px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-top: 0.01px var(--tabs-navbar-separator-style) var(--tabs-navbar-separator-color) !important;
+  background-color: var(--toolbar-bgcolor) !important;
   color: var(--toolbar-color);
+  opacity: 1 !important;
 }
-/* Adjust to fit menubar items - 300px works for English locale */
-#nav-bar{ padding-left: 300px; }
-
+#nav-bar{
+  grid-column: 2/3;
+}
+#main-menubar{
+  flex: 1;
+}
+#toolbar-menubar:is([autohide=""],[autohide="true"]):is([inactive=""],[inactive="true"]){
+  max-width: 0px !important;
+}
 #toolbar-menubar > .titlebar-buttonbox-container{ display: none }
-:root:is([tabsintitlebar],[customtitlebar])[sizemode="normal"] .titlebar-spacer,
-:root:is([tabsintitlebar],[customtitlebar]) #TabsToolbar > .titlebar-buttonbox-container{ display: flex !important; }
+:root:is([tabsintitlebar],[customtitlebar]) #TabsToolbar > .titlebar-buttonbox-container{
+  display: flex !important;
+}
+:root:is([tabsintitlebar],[customtitlebar])[sizemode="normal"] #TabsToolbar > .titlebar-spacer{
+  display: flex !important;
+}
+@media -moz-pref("userchrome.menubar-in-main-toolbar.tabs-on-bottom.enabled"){
+  #nav-bar,#toolbar-menubar{
+    grid-row: 1/2;
+  }
+  #TabsToolbar{
+    order: 2;
+  }
+  #TabsToolbar#TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer){
+    display: none !important;
+  }
+  :root:is([tabsintitlebar],[customtitlebar]) #nav-bar > :is(.titlebar-spacer[type="post-tabs"],.titlebar-buttonbox-container){
+    display: flex !important;
+  }
+}
