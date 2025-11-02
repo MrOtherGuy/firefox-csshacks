@@ -43,7 +43,7 @@ See the above repository for updates as well as full license text. */
 :root[lwtheme]:not([customizing]) #tabbrowser-tabs{
   background-color: var(--lwt-accent-color,var(--toolbox-bgcolor));
 }
-@media (-moz-bool-pref: "userchrome.vertical-tabs.on-right.enabled"){
+@media -moz-pref("userchrome.vertical-tabs.on-right.enabled"){
   #PersonalToolbar,
   #tab-notification-deck,
   #notifications-toolbar,
@@ -88,7 +88,7 @@ See the above repository for updates as well as full license text. */
   position: absolute;
   right: 0;
 }
-@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+@media -moz-pref("userchrome.force-window-controls-on-left.enabled"),
        (-moz-gtk-csd-reversed-placement),
        (-moz-platform: macos){
   #TabsToolbar > .titlebar-buttonbox-container{

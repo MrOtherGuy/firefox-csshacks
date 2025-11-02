@@ -8,8 +8,7 @@ See the above repository for updates as well as full license text. */
   --uc-tabs-hide-animation-delay: 200ms;
 }
 
-@media (-moz-bool-pref: "sidebar.verticalTabs"),
-       -moz-pref("sidebar.verticalTabs"){
+@media -moz-pref("sidebar.verticalTabs"){
   #sidebar-main{
     overflow: visible !important;
     max-width: var(--tab-collapsed-width) !important;
@@ -42,8 +41,7 @@ See the above repository for updates as well as full license text. */
     background: inherit;
   }
 }
-@media not (-moz-bool-pref: "sidebar.verticalTabs"),
-       not -moz-pref("sidebar.verticalTabs"){
+@media not -moz-pref("sidebar.verticalTabs"){
   :root:not([customizing],[chromehidden~="menubar"]) #navigator-toolbox:has(> :is(#toolbar-menubar,#TabsToolbar):hover),
   :root:not([customizing],[chromehidden~="menubar"]) #TabsToolbar{
     margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
@@ -79,8 +77,7 @@ See the above repository for updates as well as full license text. */
       transition-delay: 0ms, 0ms !important;
     }
   }
-  @media (-moz-bool-pref: "userchrome.autohidetabs.show-while-inactive.enabled"),
-         -moz-pref("userchrome.autohidetabs.show-while-inactive.enabled"){
+  @media -moz-pref("userchrome.autohidetabs.show-while-inactive.enabled"){
     #navigator-toolbox:-moz-window-inactive{
       margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
       > #TabsToolbar{

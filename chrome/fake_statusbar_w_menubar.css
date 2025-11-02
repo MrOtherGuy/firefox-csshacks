@@ -87,8 +87,7 @@ See the above repository for updates as well as full license text. */
   .browserSidebarContainer{
     background-color: inherit;
   }
-  @media (-moz-bool-pref:"userchrome.fake_statusbar_w_menubar-tabs_below_content.compat.enabled"),
-    -moz-pref("userchrome.fake_statusbar_w_menubar-tabs_below_content.compat.enabled"){
+  @media -moz-pref("userchrome.fake_statusbar_w_menubar-tabs_below_content.compat.enabled"){
     #toolbar-menubar{
       grid-row: 11/12;
       background-attachment: scroll;

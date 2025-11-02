@@ -29,7 +29,7 @@ See the above repository for updates as well as full license text. */
   background-position-y:top,top,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
   background-image: var(--toolbar-bgimage,linear-gradient(transparent,transparent)), linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,var(--lwt-additional-images)) !important;
 }
-@media (-moz-bool-pref: "sidebar.verticalTabs"), -moz-pref("sidebar.verticalTabs"){
+@media -moz-pref("sidebar.verticalTabs"){
   #PersonalToolbar{
     --toolbar-bgcolor: transparent;
   }
