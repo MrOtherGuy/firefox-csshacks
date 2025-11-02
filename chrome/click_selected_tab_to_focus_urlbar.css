@@ -23,7 +23,7 @@ See the above repository for updates as well as full license text. */
   :root:is([sizemode="maximized"],[sizemode="fullscreen"]){
     --uc-window-drag-space-width: 0px;
   }
-  #toolbar-menubar:is([autohide="false"],not([autohide])) ~ #nav-bar{
+  #toolbar-menubar:is([autohide="false"],:not([autohide])) ~ #nav-bar{
     --uc-window-drag-space-width: 0px;
     --uc-menubar-height: 28px;
   }

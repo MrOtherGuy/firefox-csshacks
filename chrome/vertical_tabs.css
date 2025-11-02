@@ -57,7 +57,7 @@ See the above repository for updates as well as full license text. */
     right: 0;
   }
 }
-:root:not([customizing]) #toolbar-menubar:is([autohide="false"],not([autohide])) + #TabsToolbar #tabbrowser-tabs{
+:root:not([customizing]) #toolbar-menubar:is([autohide="false"],:not([autohide])) + #TabsToolbar #tabbrowser-tabs{
   height: calc(100vh - 28px); /* 28px is however tall your menubar is */
 }
 :root:not([customizing]) #TabsToolbar #new-tab-button,
