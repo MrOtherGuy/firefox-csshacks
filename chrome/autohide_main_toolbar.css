@@ -25,7 +25,6 @@ See the above repository for updates as well as full license text. */
   position: relative;
   z-index: 2;
 }
-#titlebar{ position: relative; z-index: 3 }
 
 #navigator-toolbox,
 #sidebar-box,
@@ -42,7 +41,6 @@ See the above repository for updates as well as full license text. */
   transition-delay: 0s !important;
 }
 /* Show when toolbox is hovered */
-#titlebar:hover ~ .browser-toolbar,
 .browser-titlebar:hover ~ :is(#nav-bar,#PersonalToolbar),
 #nav-bar:hover,
 #nav-bar:hover + #PersonalToolbar{

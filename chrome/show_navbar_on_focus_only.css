@@ -6,8 +6,7 @@ See the above repository for updates as well as full license text. */
 /* This style totally breaks bookmarks toolbar but can be used with autohide_bookmarks_toolbar.css */
 
 :root:not([customizing]) #navigator-toolbox{ display: grid; grid-template-rows: auto }
-:root:not([customizing]) #navigator-toolbox > :is(#titlebar,.browser-toolbar){ grid-area: 1/1; }
-:root:not([customizing]) #titlebar{ -moz-appearance: none !important; }
+:root:not([customizing]) #navigator-toolbox > .browser-toolbar{ grid-area: 1/1; }
 
 #urlbar-container{ margin-top: 1px }
 :root[sessionrestored] #nav-bar:not([customizing]){

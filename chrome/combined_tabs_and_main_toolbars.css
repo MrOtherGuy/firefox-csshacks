@@ -43,10 +43,6 @@ See the above repository for updates as well as full license text. */
   max-height: var(--urlbar-container-height);
   align-self: center;
 }
-#titlebar{
-  -moz-appearance: none !important;
-  flex-grow: 1;
-}
 .tab-close-button{
   padding-inline-start: 6px !important;
   width: 24px !important;

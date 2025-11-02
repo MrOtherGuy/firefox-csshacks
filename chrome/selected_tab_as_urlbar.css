@@ -77,8 +77,7 @@ See the above repository for updates as well as full license text. */
   background-color: var(--toolbar-field-focus-background-color) !important;
   background-size: auto !important;
 }
-:root:not([customizing]) #navigator-toolbox > #TabsToolbar,
-:root:not([customizing]) #titlebar{
+:root:not([customizing]) #navigator-toolbox > #TabsToolbar{
   margin-bottom: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin));
 }
 
@@ -113,8 +112,4 @@ See the above repository for updates as well as full license text. */
   height: calc(var(--tab-min-height) + 2*var(--tab-block-margin));
   box-shadow: none !important;
   background-color: transparent !important;
-}
-
-:root[customtitlebar] #titlebar:has(> #toolbar-menubar:is([autohide="false"],not([autohide]))) + #nav-bar{
-  border-inline-width: 0 !important;
 }

@@ -112,8 +112,3 @@ scrollbox[orient="horizontal"]{
 #scrollbutton-down{
   display: var(--uc-scrollbutton-display,initial);
 }
-#titlebar{
-  will-change: unset !important;
-  transition: none !important;
-  opacity: 1 !important;
-}

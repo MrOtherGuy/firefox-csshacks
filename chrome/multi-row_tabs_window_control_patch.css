@@ -20,11 +20,6 @@ See the above repository for updates as well as full license text. */
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container{
   display: none !important;
 }
-#titlebar{
-  flex-direction: column-reverse;
-  will-change: unset !important;
-  opacity: 1 !important;
-}
 #toolbar-menubar{
   height: 40px;
   margin-bottom: -40px;

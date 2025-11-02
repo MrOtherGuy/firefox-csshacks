@@ -16,16 +16,11 @@ See the above repository for updates as well as full license text. */
       --uc-vertical-menubar-top: 72px;
     }
   }
-  #navigator-toolbox:has(> #PersonalToolbar[collapsed="false"]) > #toolbar-menubar,
-  #navigator-toolbox:has(> #PersonalToolbar[collapsed="false"]) > #titlebar > #toolbar-menubar{
+  #navigator-toolbox:has(> #PersonalToolbar[collapsed="false"]) > #toolbar-menubar{
     --uc-vertical-menubar-top: 112px;
     :root[uidensity="compact"] & {
       --uc-vertical-menubar-top: 94px;
     } 
-  }
-  #titlebar{
-    opacity: 1 !important;
-    will-change: unset !important;
   }
   :root:not([customizing]) #toolbar-menubar{
     position: fixed;

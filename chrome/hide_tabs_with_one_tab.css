@@ -10,7 +10,6 @@ This will NOT work correctly if you have hidden tabs such as with tab groups ext
 
 :root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
 
-#titlebar{ -moz-appearance: none !important; }
 #TabsToolbar{ min-height: 0px !important }
 
 #tabbrowser-tabs,

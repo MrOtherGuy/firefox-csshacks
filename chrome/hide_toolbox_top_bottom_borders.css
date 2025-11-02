@@ -4,15 +4,8 @@ See the above repository for updates as well as full license text. */
 :root[sizemode="normal"]{ border-top: none !important }
 #navigator-toolbox::after{ content: none !important }
 #navigator-toolbox{ border-bottom: none !important }
-/* Removes few remaining extra lines above tabs in non-maximized windows */
-/* Also prevents small vertical shift when moving tabs in compact density - who knows why */
-:root[sizemode="normal"] #titlebar{ -moz-appearance: none !important; }
-
 
 /* OPTIONAL - uncomment to remove still remaining space atop of tabs */
 /* This just increases the height of tabs by few pixels, not decrease the toolbar height */
 
-/* Fx pre-65 */
-/* #navigator-toolbox > #TabsToolbar{margin-top: -2px;} */
-/* Fx65+ */
 /* #TabsToolbar > .toolbar-items > spacer{ display: none; } */

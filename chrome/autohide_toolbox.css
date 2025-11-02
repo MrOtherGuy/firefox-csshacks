@@ -95,11 +95,7 @@ See the above repository for updates as well as full license text. */
   padding-block: calc(min(4px,(var(--urlbar-container-height) - var(--urlbar-height)) / 2) + var(--urlbar-container-padding)) !important;
 }
 
-/* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
- /*#titlebar{ margin-bottom: -9px }*/
-
 /* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
 /*
 #navigator-toolbox{ flex-direction: column; display: flex; }
-#titlebar{ order: 2 }
 */

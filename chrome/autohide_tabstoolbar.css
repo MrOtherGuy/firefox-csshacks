@@ -8,25 +8,14 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
 }
 
-#navigator-toolbox:not(:hover) > #titlebar{
-  -moz-window-dragging: no-drag !important;
-  pointer-events: none
-}
-
-:root:not([customizing],[chromehidden~="menubar"]) #navigator-toolbox:hover,
-:root:not([customizing],[chromehidden~="menubar"]) #titlebar{
+:root:not([customizing],[chromehidden~="menubar"]) #navigator-toolbox:hover{
   margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
 }
 #TabsToolbar:not([customizing]){ visibility: hidden; transition: visibility 0ms linear 200ms }
 
-#navigator-toolbox,
-#titlebar{ transition: margin-bottom 48ms ease-out 200ms !important }
+#navigator-toolbox{ transition: margin-bottom 48ms ease-out 200ms !important }
 
 #navigator-toolbox:hover{ transition-delay: 0s !important }
-#navigator-toolbox:hover > #titlebar{
-  margin-bottom: 0px;
-  transition-delay: 0s !important;
-}
 
 #navigator-toolbox:hover #TabsToolbar{
   visibility: visible;
