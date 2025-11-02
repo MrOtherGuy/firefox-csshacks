@@ -26,10 +26,10 @@ See the above repository for updates as well as full license text. */
   max-width: 0px !important;
 }
 #toolbar-menubar > .titlebar-buttonbox-container{ display: none }
-:root:is([tabsintitlebar],[customtitlebar]) #TabsToolbar > .titlebar-buttonbox-container{
+:root[customtitlebar] #TabsToolbar > .titlebar-buttonbox-container{
   display: flex !important;
 }
-:root:is([tabsintitlebar],[customtitlebar])[sizemode="normal"] #TabsToolbar > .titlebar-spacer{
+:root[customtitlebar][sizemode="normal"] #TabsToolbar > .titlebar-spacer{
   display: flex !important;
 }
 @media -moz-pref("userchrome.menubar-in-main-toolbar.tabs-on-bottom.enabled"){
@@ -42,7 +42,7 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar#TabsToolbar > :is(.titlebar-buttonbox-container,.titlebar-spacer){
     display: none !important;
   }
-  :root:is([tabsintitlebar],[customtitlebar]) #nav-bar > :is(.titlebar-spacer[type="post-tabs"],.titlebar-buttonbox-container){
+  :root[customtitlebar] #nav-bar > :is(.titlebar-spacer[type="post-tabs"],.titlebar-buttonbox-container){
     display: flex !important;
   }
 }
