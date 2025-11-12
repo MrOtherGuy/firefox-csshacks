@@ -68,9 +68,11 @@ See the above repository for updates as well as full license text. */
     transition: visibility 0ms linear var(--uc-tabs-hide-animation-delay),
                 margin-bottom var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay) !important;
   }
+  #mainPopupSet:has( > #tab-group-editor > [panelopen]) ~ #navigator-toolbox,
   #navigator-toolbox:has(> :is(#toolbar-menubar,#TabsToolbar):hover),
   #navigator-toolbox[movingtab]{
     transition-delay: 0s !important;
+    margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
     > #TabsToolbar{
       visibility: visible;
       margin-bottom: 0px;
