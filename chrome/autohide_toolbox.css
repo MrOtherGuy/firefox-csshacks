@@ -44,7 +44,7 @@ See the above repository for updates as well as full license text. */
 }
 
 :root[window-modal-open] #urlbar[popover],
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), #tab-group-editor > [panelopen]) ~ toolbox #urlbar[popover],
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), > #tab-group-editor > [panelopen]) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within,[movingtab]) #urlbar[popover],
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   pointer-events: auto;
@@ -54,7 +54,7 @@ See the above repository for updates as well as full license text. */
 }
 
 :root[window-modal-open] #navigator-toolbox,
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), #tab-group-editor > [panelopen]) ~ toolbox,
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), > #tab-group-editor > [panelopen]) ~ toolbox,
 #navigator-toolbox:has(#urlbar:is([open],[focus-within])),
 #navigator-toolbox:is(:hover,:focus-within,[movingtab]){
   transition-delay: 33ms !important;
