@@ -1,0 +1,12 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/drag_window_from_urlbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the window draggable from the new sidebar */
+
+#sidebar-main {
+  -moz-window-dragging: drag;
+}
+
+.wrapper .buttons-wrapper > * {
+  -moz-window-dragging: no-drag;
+}
