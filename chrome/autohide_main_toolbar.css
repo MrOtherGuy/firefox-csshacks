@@ -1,7 +1,12 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_main_toolbar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* This style hides the main toolbar and shows it when the cursor is over the tabs toolbar as well as whenever the focus is inside nav-bar, such as when urlbar is focused. */
+/* This style hides the main toolbar and shows it when the cursor is over the tabs toolbar as well as whenever the focus is
+ * inside nav-bar, such as when urlbar is focused.
+ *
+ * If you are usings tabs_on_bottom_v2 then create and set a pref userchrome.autohide-main-toolbar.tabs-on-bottom-patch.enabled
+ * to true
+ */
 
 :root{
   --uc-navbar-transform: -40px;
@@ -91,6 +96,27 @@ See the above repository for updates as well as full license text. */
 }
 @media -moz-pref("browser.fullscreen.autohide"){
   :root[sessionrestored][sizemode="fullscreen"] > body > #browser{
+    margin-top: revert;
+  }
+}
+/* Compatiblity rules for tabs_on_bottom_v2.css */
+@media -moz-pref("userchrome.autohide-main-toolbar.tabs-on-bottom-patch.enabled"){
+  #nav-bar{
+    margin-bottom: var(--uc-navbar-transform);
+  }
+  #TabsToolbar:not([customizing]){
+    transition:  transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important;
+    position: relative;
+    z-index: 1;
+    background: inherit !important;
+  }
+  #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ #navigator-toolbox > #TabsToolbar,
+  #navigator-toolbox:is(:hover,:focus-within) > #TabsToolbar{
+    transform: translateY(calc(var(--uc-navbar-transform) * -1)) !important;
+    transition-duration: var(--uc-autohide-toolbar-duration), var(--uc-autohide-toolbar-duration) !important;
+    transition-delay: 0s !important;
+  }
+  :root[sessionrestored][sizemode] > body > #browser{
     margin-top: revert;
   }
 }
