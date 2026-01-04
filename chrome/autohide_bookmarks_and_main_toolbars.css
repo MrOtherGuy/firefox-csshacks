@@ -83,7 +83,7 @@ See the above repository for updates as well as full license text. */
 :root[window-modal-open] #urlbar[popover],
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
-#urlbar-container > #urlbar[popover]:is([focused],[open]){
+:where(:root[sessionrestored]) #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
   pointer-events: auto;
   transition-delay: 100ms;

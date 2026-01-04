@@ -69,7 +69,7 @@ See the above repository for updates as well as full license text. */
   transition-delay: 0ms;
   transform: translateY(0);
 }
-#urlbar-container > #urlbar[popover]:is([focused],[open]){
+:where(:root[sessionrestored]) #urlbar-container > #urlbar[popover]:is([focused],[open]){
  transition-duration: 100ms; /* Faster when focused */
 }
 /* This ruleset is separate, because not having :has support breaks other selectors as well */
