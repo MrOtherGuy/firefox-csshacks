@@ -29,7 +29,7 @@ See the above repository for updates as well as full license text. */
   display: none;
 }
 #tabContextMenu > menuitem[type="checkbox"][_moz-menuactive]::before,
-#tabContextMenu > menuitem[type="checkbox"][checked="true"]::before{
+#tabContextMenu > menuitem[type="checkbox"]:is([checked=""],[checked="true"])::before{
   background: no-repeat center left url("chrome://global/skin/icons/check.svg");
 }
 #context_openANewTab::before{

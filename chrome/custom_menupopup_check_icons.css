@@ -3,9 +3,9 @@ See the above repository for updates as well as full license text. */
 
 /* Modifies appearance of menupopup check icons to more clearly show if the item is a radio or checkbox item */
 
-menuitem[type="radio"][checked="true"] > .menu-icon{
+menuitem[type="radio"]:is([checked=""],[checked="true"]) > .menu-icon{
   content: radial-gradient(currentColor 30%, transparent 40%) !important;
 }
-menuitem[type="checkbox"][checked="true"] > .menu-icon{
+menuitem[type="checkbox"]:is([checked=""],[checked="true"]) > .menu-icon{
   content: url("chrome://global/skin/icons/check.svg") !important;
 }

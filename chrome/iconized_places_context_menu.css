@@ -30,7 +30,7 @@ See the above repository for updates as well as full license text. */
   display: none;
 }
 #placesContext > menuitem[type="checkbox"][_moz-menuactive]::before,
-#placesContext > menuitem[type="checkbox"][checked="true"]::before{
+#placesContext > menuitem[type="checkbox"]:is([checked=""],[checked="true"])::before{
   background: no-repeat center left url("chrome://global/skin/icons/check.svg");
 }
 #placesContext_openBookmarkContainer\:tabs::before,

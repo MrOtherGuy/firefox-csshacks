@@ -39,8 +39,8 @@ spacer[part="overflow-end-indicator"]{
   order: 2;
 }
 
-#scrollbutton-down[disabled="true"] > .toolbarbutton-icon,
-#scrollbutton-up[disabled="true"] > .toolbarbutton-icon{
+#scrollbutton-down:is([disabled=""],[disabled="true"]) > .toolbarbutton-icon,
+#scrollbutton-up:is([disabled=""],[disabled="true"]) > .toolbarbutton-icon{
   opacity: 0.4;
 } 
 #scrollbutton-up,
