@@ -146,3 +146,8 @@ See the above repository for updates as well as full license text. */
     transition-delay: 0ms !important;
   }
 }
+@media -moz-pref("userchrome.autohide-sidebar.hide-main-sidebar"){
+  #sidebar-main[sidebar-panel-open]{
+    contain: strict;
+  }
+}
