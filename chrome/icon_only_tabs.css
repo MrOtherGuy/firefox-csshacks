@@ -13,9 +13,14 @@ See the above repository for updates as well as full license text. */
     flex-grow: 0 !important;
   }
 
-  .tabbrowser-tab[fadein]{ min-width: calc(16px + 2 * 10px + 4px) !important; }
-  :root[uidensity="compact"] .tabbrowser-tab[fadein]{
-    min-width: calc(16px + 2 * var(--tab-inline-padding,0px) + 4px) !important;
+  .tabbrowser-tab[fadein]{
+    min-width: calc(16px + 2 * 10px + 4px) !important;
+    :root[uidensity="compact"] & {
+      min-width: calc(16px + 2 * var(--tab-inline-padding,0px) + 4px) !important;
+    }
+    [collapsed] > &:not([selected]){
+      min-width: 0 !important;
+    }
   }
   :root:not([uidensity="compact"]) .tab-content{ padding-inline: 10px !important; }
 
