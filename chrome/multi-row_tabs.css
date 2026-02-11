@@ -51,7 +51,7 @@ See the above repository for updates as well as full license text. */
   margin-inline-start: 0px !important;
 }
 
-.tabbrowser-tab[fadein]:not([pinned]){
+#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab[fadein]:not([pinned]){
   min-width: var(--multirow-tab-min-width) !important;
   flex-grow: var(--multirow-tab-dynamic-width) !important;
 }
