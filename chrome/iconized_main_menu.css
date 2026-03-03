@@ -16,6 +16,7 @@ See the above repository for updates as well as full license text. */
   width: 16px;
   height: 16px;
 }
+#appMenu-empty-profiles-button{ list-style-image: url("chrome://browser/skin/topsites.svg") }
 #appMenu-new-tab-button2{ list-style-image: url("chrome://browser/skin/new-tab.svg") }
 #appMenu-new-window-button2{ list-style-image: url("chrome://browser/skin/window.svg") }
 #appMenu-new-private-window-button2{ list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
