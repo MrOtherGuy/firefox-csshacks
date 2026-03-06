@@ -28,6 +28,8 @@ See the above repository for updates as well as full license text. */
   #TabsToolbar{
     grid-row: 10/11;
     background-attachment: scroll;
+    background: inherit !important;
+    opacity: 1 !important;
   }
   .browser-toolbar{
     background: inherit;
