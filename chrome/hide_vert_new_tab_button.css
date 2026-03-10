@@ -1,0 +1,9 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_vert_new_tab_button.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style hides "New tab" button *when vertical tabs are enabled*
+ * (https://support.mozilla.org/en-US/kb/use-sidebar-access-tools-and-vertical-tabs#w_turn-on-vertical-tabs)
+*/
+#tabbrowser-tabs[orient="vertical"] :is(#tabs-newtab-button, #vertical-tabs-newtab-button){
+  display: none;
+}
