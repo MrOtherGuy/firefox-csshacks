@@ -54,21 +54,25 @@ See the above repository for updates as well as full license text. */
   transition-duration: var(--uc-autohide-toolbar-duration), var(--uc-autohide-toolbar-duration) !important;
   transition-delay: 0s !important;
 }
-:root[sessionrestored] #urlbar[popover]{
+
+:root[sessionrestored] :is(.urlbar,#urlbar[popover]){
   opacity: 0;
   pointer-events: none;
   transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay);
   transform: translateY(var(--uc-navbar-transform));
 }
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
-.browser-titlebar:is(:hover,:focus-within) ~ #nav-bar #urlbar[popover],
-#nav-bar:is(:hover,:focus-within) #urlbar[popover],
+:root[customizing] #nav-bar :is(#urlbar,#searchbar-new),
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox :is(.urlbar,#urlbar[popover]),
+.browser-titlebar:is(:hover,:focus-within) ~ #nav-bar :is(.urlbar,#urlbar[popover]),
+#nav-bar:is(:hover,:focus-within) :is(.urlbar,#urlbar[popover]),
+#nav-bar #searchbar-new[popover]:is([focused],[open]),
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
   pointer-events: auto;
   transition-delay: 0ms;
   transform: translateY(0);
 }
+:where(:root[sessionrestored]) #nav-bar #searchbar-new[popover]:is([focused],[open]),
 :where(:root[sessionrestored]) #urlbar-container > #urlbar[popover]:is([focused],[open]){
  transition-duration: 100ms; /* Faster when focused */
 }

@@ -35,6 +35,7 @@ See the above repository for updates as well as full license text. */
   pointer-events: none;
   width: 100vw;
 }
+:root[sessionrestored] toolbar #searchbar-new[popover],
 :root[sessionrestored] #urlbar[popover]{
   pointer-events: none;
   opacity: 0;
@@ -43,9 +44,11 @@ See the above repository for updates as well as full license text. */
   transform: rotateX(89.9deg);
 }
 
-:root[window-modal-open] #urlbar[popover],
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), > #tab-group-editor > [panelopen]) ~ toolbox #urlbar[popover],
-#navigator-toolbox:is(:hover,:focus-within,[movingtab]) #urlbar[popover],
+:root:is([window-modal-open],[customizing]) toolbar #searchbar-new[popover],
+:root:is([window-modal-open],[customizing]) #urlbar[popover],
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), > #tab-group-editor > [panelopen]) ~ toolbox :is(.urlbar,#urlbar[popover]),
+#navigator-toolbox:is(:hover,:focus-within,[movingtab]) :is(.urlbar,#urlbar[popover]),
+:where(:root[sessionrestored]) #navigator-toolbox .urlbar[popover]:is([focused],[open]),
 :where(:root[sessionrestored]) #urlbar-container > #urlbar[popover]:is([focused],[open]){
   pointer-events: auto;
   opacity: 1;
@@ -56,6 +59,7 @@ See the above repository for updates as well as full license text. */
 :root[window-modal-open] #navigator-toolbox,
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel), > #tab-group-editor > [panelopen]) ~ toolbox,
 #navigator-toolbox:has(#urlbar:is([open],[focus-within])),
+#navigator-toolbox:has(.urlbar:is([open],[focus-within])),
 #navigator-toolbox:is(:hover,:focus-within,[movingtab]){
   transition-delay: 33ms !important;
   transform: rotateX(0);
@@ -67,6 +71,7 @@ See the above repository for updates as well as full license text. */
 @media -moz-pref("userchrome.autohide-toolbox.unhide-by-native-ui.enabled"){
   :root[sizemode="maximized"]:not(:hover){
     #navigator-toolbox:not(:-moz-window-inactive),
+    #searchbar-new[popover]:not(:-moz-window-inactive),
     #urlbar[popover]:not(:-moz-window-inactive){
       transition-delay: 33ms !important;
       transform: rotateX(0);
@@ -90,7 +95,7 @@ See the above repository for updates as well as full license text. */
 #PersonalToolbar:is([collapsed=""],[collapsed="true"]){ display: none }
 
 /* This is a bit hacky fix for an issue that will make urlbar zero pixels tall after you enter customize mode */
-#urlbar[breakout][breakout-extend] > .urlbar-input-container{
+:is(#urlbar,.urlbar)[breakout][breakout-extend] > .urlbar-input-container{
   padding-block: calc(min(4px,(var(--urlbar-container-height) - var(--urlbar-height)) / 2) + var(--urlbar-container-padding)) !important;
 }
 

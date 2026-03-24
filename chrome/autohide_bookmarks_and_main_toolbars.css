@@ -73,16 +73,17 @@ See the above repository for updates as well as full license text. */
   transform-origin: 0px var(--uc-navbar-height);
   position: relative;
 }
-:root[sessionrestored] #urlbar[popover]{
+:root[sessionrestored] :is(.urlbar,#urlbar[popover]){
   opacity: 0;
   pointer-events: none;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay), opacity 0ms calc(var(--uc-autohide-toolbar-delay) + 135ms);
   transform-origin: 0px calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2);
   transform: rotateX(89.5deg);
 }
-:root[window-modal-open] #urlbar[popover],
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox #urlbar[popover],
-#navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
+:root:is([window-modal-open],[customizing]) toolbar :is(.urlbar,#urlbar[popover]),
+#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#selection-shortcut-action-panel,#chat-shortcuts-options-panel,#tab-preview-panel)) ~ toolbox :is(.urlbar,#urlbar[popover]),
+#navigator-toolbox:is(:hover,:focus-within) :is(.urlbar,#urlbar[popover]),
+:where(:root[sessionrestored]) #nav-bar #searchbar-new[popover]:is([focused],[open]),
 :where(:root[sessionrestored]) #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
   pointer-events: auto;
