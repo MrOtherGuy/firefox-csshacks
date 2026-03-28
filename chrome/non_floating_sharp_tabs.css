@@ -8,7 +8,6 @@ See the above repository for updates as well as full license text. */
 :root[id]{
   --tab-block-margin: 0px !important;
   --tabs-shadow-size: 1px !important;
-  
   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
   --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
 }
@@ -45,8 +44,8 @@ See the above repository for updates as well as full license text. */
 }
 /* We draw the icon as background-image to get correct scaling regardless of toolbar height */
 #tabs-newtab-button > .toolbarbutton-icon{
-  border-radius: 0 !important; 
-  width: var(--tab-min-height) !important; 
+  border-radius: 0 !important;
+  width: var(--tab-min-height) !important;
   height: initial !important;
   list-style-image: none;
   background-image: url(chrome://global/skin/icons/plus.svg);
@@ -68,6 +67,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Selected tab needs to be relative so it gets drawn over nav-bar top "border" */
+tab-split-view-wrapper[hasactivetab],
 .tabbrowser-tab[selected]{
   position: relative;
   z-index: 1;
@@ -78,11 +78,27 @@ See the above repository for updates as well as full license text. */
 
 .tab-content[pinned]{ padding-inline: 11px !important; }
 
+tab-split-view-wrapper,
 .tab-background{
   border-radius: 0 !important;
   box-shadow: none !important;
   border-top: 0 !important;
   outline: none !important;
+}
+tab-split-view-wrapper{
+  padding-block: 0 !important;
+  align-items: stretch !important;
+  background-size: calc(100% - 40px) 2px;
+  background-position-x: center;
+}
+tab-split-view-wrapper .tab-background{
+  margin-inline: 0 !important;
+}
+tab-split-view-wrapper:is(:hover,[hasactivetab]){
+  background-image: linear-gradient(90deg, var(--tab-hover-background-color));
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 160ms ease !important;
 }
 
 /* This next rule set is needed for Fx 120, otherwise themes with translucent tabs would seem to have extra border separating them from toolbar below. */
@@ -96,9 +112,8 @@ See the above repository for updates as well as full license text. */
 }
 .tab-background:not([selected])[multiselected]{
   background: color-mix(in srgb, currentColor 11%, transparent) !important;
-  margin-inline-start: -1px; 
+  margin-inline-start: -1px;
 }
-
 /* Line to mark selected tab */
 .tab-background[selected]::before,
 .tabbrowser-tab:hover > stack > .tab-background::before{
@@ -119,6 +134,7 @@ See the above repository for updates as well as full license text. */
 .tab-stack:hover > .tab-background::before{ animation: tab-onhover-line-anim 160ms }
 
 /* Disable animation for selected and pinned tabs */
+tab-split-view-wrapper > .tabbrowser-tab > .tab-stack > .tab-background::before,
 .tabbrowser-tab:is([pinned],[selected]) > .tab-stack > .tab-background::before{ animation: none }
 
 /* moves context-line to the bottom */
