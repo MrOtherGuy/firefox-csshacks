@@ -53,7 +53,7 @@ See the above repository for updates as well as full license text. */
 tab-split-view-wrapper {
   min-width: calc(var(--multirow-tab-min-width) * 2 + 6px) !important;
 }
-#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab[fadein]:not([pinned]){
+:where(#tabbrowser-tabs[orient="horizontal"]) .tabbrowser-tab[fadein]:not([pinned]){
   min-width: var(--multirow-tab-min-width) !important;
   flex-grow: var(--multirow-tab-dynamic-width) !important;
 }
@@ -80,6 +80,6 @@ tab-split-view-wrapper {
 }
 
 /* Make tab groups collapse */
-tab-group[collapsed] .tabbrowser-tab[fadein]:not([pinned]){
+tab-group[collapsed] > .tabbrowser-tab[fadein]:not([pinned]){
   min-width: 0 !important;
 }
