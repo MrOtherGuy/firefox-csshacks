@@ -4,7 +4,7 @@ See the above repository for updates as well as full license text. */
 /* Replaces menubar items text ("File Edit etc.") with icons */
 
 #main-menubar > menu{
-  fill: currentColor;
+  fill: currentColor !important;
   height: var(--uc-menubaritem-height,28px);
   width: var(--uc-menubaritem-width,30px);
   -moz-context-properties: fill;
