@@ -3,5 +3,6 @@ See the above repository for updates as well as full license text. */
 
 /* Show a number before tab text*/
 
-.tabbrowser-tab:first-child{ counter-reset: nth-tab 0 } /* Change to -1 for 0-indexing */
-.tab-text::before{ content: counter(nth-tab) " "; counter-increment: nth-tab }
+#tabbrowser-tabs{ counter-reset: nth-tab 0 } /* Change to -1 for 0-indexing */
+:not(tab-group[collapsed])>.tabbrowser-tab{ counter-increment: nth-tab }
+.tab-text::before{ content: counter(nth-tab) " " }
