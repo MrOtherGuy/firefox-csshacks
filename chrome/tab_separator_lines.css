@@ -17,7 +17,11 @@ See the above repository for updates as well as full license text. */
 }
 
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:hover + .tabbrowser-tab:not([first-visible-unpinned-tab]),
-.tabbrowser-tab:is(:hover,:first-child,[selected],[multiselected]),
+.tabbrowser-tab:is(:hover,[selected],[multiselected]),
+#pinned-tabs-container > .tabbrowser-tab:first-child,
+#pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox > .tabbrowser-tab:first-child,
+tab-split-view-wrapper:is([hasactivetab],:hover) > .tabbrowser-tab,
+tab-split-view-wrapper:is([hasactivetab],:hover) + .tabbrowser-tab,
 .tabbrowser-tab:is([selected],[multiselected]) + .tabbrowser-tab[hidden] + .tabbrowser-tab,
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:is([multiselected],[selected]) + .tabbrowser-tab,
 tab-group[collapsed] + .tabbrowser-tab,
