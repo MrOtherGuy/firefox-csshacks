@@ -23,6 +23,10 @@ See the above repository for updates as well as full license text. */
 :where(#placesContext > menuitem){
   padding-inline-start: 1em !important;
 }
+:where(#placesContext) > menu:not(.menu-iconic) > .menu-icon,
+:where(#placesContext > menuitem:not(.menuitem-iconic) > .menu-icon{
+  display: none;
+}
 #placesContext > menuitem[type="checkbox"]::before{
   content: url("chrome://devtools/skin/images/checkbox.svg");
 }
