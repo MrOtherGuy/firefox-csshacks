@@ -5,7 +5,7 @@ See the above repository for updates as well as full license text. */
   --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
   --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
   --uc-autohide-toolbar-delay: 600ms; /* The toolbar is hidden after 0.6s */
-  
+
   /* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
   --uc-autohide-toolbar-focus-rotation: 0deg; /* urlbar is focused */
   --uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
@@ -59,8 +59,10 @@ See the above repository for updates as well as full license text. */
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
 }
-
-#navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
+#nav-bar.browser-titlebar + #PersonalToolbar{
+  background-color: var(--toolbox-bgcolor) !important;
+}
+#navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {
   transform: rotateX(0);
 }
 #navigator-toolbox{

@@ -83,12 +83,24 @@ See the above repository for updates as well as full license text. */
   opacity: 1;
 }
 /* If tabs are in sidebar then nav-bar doesn't normally have its own background - so we nee to add it back */
+#nav-bar.browser-titlebar + #PersonalToolbar,
 #nav-bar.browser-titlebar{
   background: inherit;
+  background-color: var(--toolbox-bgcolor) !important;
+  background-image: var(--lwt-additional-images);
+  background-repeat: var(--lwt-background-tiling);
+  background-position: var(--lwt-background-alignment);
+}
+#navigator-toolbox:hover > #nav-bar.browser-titlebar + #PersonalToolbar{
+  background-position-y: -40px;
+  transition: background-position-y
 }
 #toolbar-menubar:not([autohide="true"],[autohide=""]) ~ #nav-bar.browser-titlebar{
   background-position-y: -28px; /* best guess, could vary */
   border-top: none !important;
+  + #PersonalToolbar{
+    background-position-y: -28px;
+  }
 }
 
 /* Bookmarks toolbar needs so extra rules */
