@@ -20,6 +20,8 @@ See the above repository for updates as well as full license text. */
 .tabbrowser-tab:is(:hover,[selected],[multiselected]),
 #pinned-tabs-container > .tabbrowser-tab:first-child,
 #pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox > .tabbrowser-tab:first-child,
+tab-split-view-wrapper > .tabbrowser-tab:last-child,
+tab-split-view-wrapper:first-child > .tabbrowser-tab,
 tab-split-view-wrapper:is([hasactivetab],:hover) > .tabbrowser-tab,
 tab-split-view-wrapper:is([hasactivetab],:hover) + .tabbrowser-tab,
 .tabbrowser-tab:is(:hover,[selected],[multiselected]) + tab-split-view-wrapper > .tabbrowser-tab,
@@ -27,6 +29,7 @@ tab-split-view-wrapper:is([hasactivetab],:hover) + .tabbrowser-tab,
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:is([multiselected],[selected]) + .tabbrowser-tab,
 tab-group[collapsed] + .tabbrowser-tab,
 tab-group > .tabbrowser-tab:first-of-type,
-tab-group:has(> .tabbrowser-tab:last-child:is(:hover,[selected],[multiselected])) + .tabbrowser-tab{
+tab-group:has(> .tabbrowser-tab:last-of-type:is(:hover,[selected],[multiselected])) + .tabbrowser-tab,
+tab-group:has(> .tabbrowser-tab:last-of-type:is(:hover,[selected],[multiselected])) + tab-split-view-wrapper > .tabbrowser-tab:first-of-type{
   background-image: none;
 }
