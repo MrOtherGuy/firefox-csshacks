@@ -1,6 +1,12 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_bookmarks_toolbar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
+:root{
+  --uc-toolbox-background-image: var(--toolbox-background-image,var(--toolbar-bgimage));
+  --uc-toolbox-background-color: var(--toolbox-background-color,var(--toolbox-bgcolor));
+  --uc-toolbar-background-color: var(--toolbar-background-color,var(--toolbar-bgcolor));
+}
+
 #PersonalToolbar{
   --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
   --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
@@ -9,6 +15,8 @@ See the above repository for updates as well as full license text. */
   /* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
   --uc-autohide-toolbar-focus-rotation: 0deg; /* urlbar is focused */
   --uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
+  --uc-toolbarbutton-inner-padding: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding));
+  --uc-toolbarbutton-outer-padding: var(--toolbarbutton-padding-outer,var(--toolbarbutton-outer-padding));
 }
 
 :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
@@ -22,25 +30,34 @@ See the above repository for updates as well as full license text. */
   z-index: 1;
   /* The following properties should allow the themes with trasparent toolbars to work */
   background-color: transparent !important;
-  background-repeat: no-repeat,no-repeat,var(--lwt-background-tiling);
+  background-repeat: no-repeat,var(--lwt-background-tiling);
     /* y position will be wrong if menubar is enabled... */
-  --uc-bg-y: calc(-2 * (var(--tab-block-margin) + var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - var(--tab-min-height) - 24px - var(--bookmark-block-padding));
+  --uc-bg-y: calc(-2 * (var(--tab-block-margin) + var(--uc-toolbarbutton-inner-padding) + var(--uc-toolbarbutton-outer-padding)) - var(--tab-min-height) - 24px - var(--bookmark-block-padding));
+  background-position: top left,var(--lwt-background-alignment,top left);
+  background-position-y:0,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
+  background-size: cover, auto, auto, auto,auto,auto;
+  background-image: linear-gradient(var(--uc-toolbar-background-color)),
+    var(--uc-toolbox-background-image,var(--uc-toolbar-background-image,linear-gradient(transparent))),
+    var(--lwt-header-image,var(--lwt-additional-images)) !important;
+}
+/* This is simply for Firefox < 150 */
+.browser-toolbox-background > #PersonalToolbar:not([customizing]){
+  background-repeat: no-repeat,no-repeat,var(--lwt-background-tiling);
   background-position: top left,top left,var(--lwt-background-alignment,top left);
-  background-position-y:top,top,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
-  background-image: var(--toolbar-bgimage,linear-gradient(transparent,transparent)), linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image,var(--lwt-additional-images)) !important;
+  background-position-y:0,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
 }
 @media -moz-pref("sidebar.verticalTabs"){
   #PersonalToolbar{
-    --toolbar-bgcolor: transparent;
+    --uc-toolbar-background-color: transparent;
   }
   #PersonalToolbar:not([customizing]){
     background-color: inherit !important;
     margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
-    --uc-bg-y: calc(0px - (2 * var(--toolbarbutton-inner-padding) + var(--toolbarbutton-outer-padding)) - 27px - var(--bookmark-block-padding));
+    --uc-bg-y: calc(0px - (2 * var(--uc-toolbarbutton-inner-padding) + var(--uc-toolbarbutton-outer-padding)) - 27px - var(--bookmark-block-padding));
   }
 }
 :root[uidensity="compact"] #PersonalToolbar{
-  --toolbarbutton-outer-padding: 1px !important;
+  --uc-toolbarbutton-outer-padding: 1px !important;
 }
 #PlacesToolbarItems > .bookmark-item,
 #OtherBookmarks,
@@ -59,8 +76,11 @@ See the above repository for updates as well as full license text. */
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
 }
+#PersonalToolbar#PersonalToolbar{
+  background-color: var(--uc-toolbar-background-color) !important;
+}
 #nav-bar.browser-titlebar + #PersonalToolbar{
-  background-color: var(--toolbox-bgcolor) !important;
+  background-color: var(--uc-toolbox-background-color) !important;
 }
 #navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {
   transform: rotateX(0);
