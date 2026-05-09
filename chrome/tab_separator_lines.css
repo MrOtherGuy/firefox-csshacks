@@ -1,37 +1,63 @@
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tab_separator_lines.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
-/* Bring back tab separator lines that were removed in Proton */
-.tabbrowser-tab{
+:where(.tabbrowser-tab){
   background-image: linear-gradient(
     transparent 20%,
     color-mix(in srgb, currentColor 20%, transparent) 20%,
     color-mix(in srgb, currentColor 20%, transparent) 80%,
     transparent 80%
   );
-  background-size: 1px 100%;
   background-repeat: no-repeat;
+  background-size: 1px 100%;
 }
-.tab-group-label-container{
-  padding-inline-start: 2px;
+tab-split-view-wrapper{
+  background-size: 1px 100%;
 }
-
-#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:hover + .tabbrowser-tab:not([first-visible-unpinned-tab]),
-.tabbrowser-tab:is(:hover,[selected],[multiselected]),
-#pinned-tabs-container > .tabbrowser-tab:first-child,
-#pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox > .tabbrowser-tab:first-child,
-tab-split-view-wrapper > .tabbrowser-tab:last-child,
-tab-split-view-wrapper:first-child > .tabbrowser-tab,
-tab-split-view-wrapper:is([hasactivetab],:hover) > .tabbrowser-tab,
-tab-split-view-wrapper:is([hasactivetab],:hover) + .tabbrowser-tab,
-tab-split-view-wrapper:is([hasactivetab],:hover) + tab-split-view-wrapper > .tabbrowser-tab:first-child,
-.tabbrowser-tab:is(:hover,[selected],[multiselected]) + tab-split-view-wrapper > .tabbrowser-tab,
-.tabbrowser-tab:is([selected],[multiselected]) + .tabbrowser-tab[hidden] + .tabbrowser-tab,
-#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:is([multiselected],[selected]) + .tabbrowser-tab,
-tab-group[collapsed] + .tabbrowser-tab,
-tab-group > slot + .tabbrowser-tab,
-tab-group > slot + tab-split-view-wrapper > :first-child,
-tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + .tabbrowser-tab,
-tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + tab-split-view-wrapper > .tabbrowser-tab:first-child{
+@media -moz-pref("sidebar.verticalTabs"){
+  #tabbrowser-tabs{
+    --uc-vertical-tabs-expanded-separator: linear-gradient(to right,
+      transparent 10cqw,
+      color-mix(in srgb, currentColor 20%, transparent) 10cqw,
+      color-mix(in srgb, currentColor 20%, transparent) 90cqw,
+      transparent 90cqw
+    );
+  }
+  :where(.tabbrowser-tab){
+    background-image: linear-gradient(color-mix(in srgb, currentColor 20%, transparent));
+    background-size: 60% 1px;
+    background-position-x: center;
+  }
+  :where(#tabbrowser-tabs[expanded] .tabbrowser-tab){
+    background-image: var(--uc-vertical-tabs-expanded-separator);
+    background-size: 90cqw 1px;
+  }
+  #tabbrowser-tabs[expanded] > #pinned-tabs-container > .tabbrowser-tab{
+    background-image: none;
+  }
+  tab-split-view-wrapper{
+    background-size: 90cqw 1px;
+  }
+  #tabbrowser-tabs[expanded] tab-split-view-wrapper >.tabbrowser-tab:last-child{
+    background-size: 90cqw 1px;
+    background-image: var(--uc-vertical-tabs-expanded-separator);
+    @container vertical-tabs-container (min-width: 210px){
+      background-size: inherit;
+    }
+  }
+}
+tab-split-view-wrapper > .tabbrowser-tab{
+  background-size: inherit;
+}
+tab-split-view-wrapper > .tabbrowser-tab:last-child{
   background-image: none;
+}
+tab-group > slot + :is(tab-split-view-wrapper,.tabbrowser-tab),
+tab-group[collapsed] + :is(tab-split-view-wrapper,.tabbrowser-tab),
+:is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],[multiselected],[hasactivetab],:hover),
+:is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],[multiselected],[hasactivetab],:hover) + :is(tab-split-view-wrapper,.tabbrowser-tab),
+tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + :is(tab-split-view-wrapper,.tabbrowser-tab),
+#pinned-tabs-container > :first-child,
+#pinned-tabs-container:empty + arrowscrollbox > :first-child,
+#tabbrowser-arrowscrollbox[overflowing] > :first-child,
+#pinned-tabs-container:has( > :last-child:is(:hover,[selected],[multiselected])) ~ arrowscrollbox > :first-child,
+#vertical-pinned-tabs-splitter:not([hidden]) ~ arrowscrollbox > :first-child{
+  background-size: 0 0;
 }
