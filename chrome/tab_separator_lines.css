@@ -24,12 +24,14 @@ tab-split-view-wrapper > .tabbrowser-tab:last-child,
 tab-split-view-wrapper:first-child > .tabbrowser-tab,
 tab-split-view-wrapper:is([hasactivetab],:hover) > .tabbrowser-tab,
 tab-split-view-wrapper:is([hasactivetab],:hover) + .tabbrowser-tab,
+tab-split-view-wrapper:is([hasactivetab],:hover) + tab-split-view-wrapper > .tabbrowser-tab:first-child,
 .tabbrowser-tab:is(:hover,[selected],[multiselected]) + tab-split-view-wrapper > .tabbrowser-tab,
 .tabbrowser-tab:is([selected],[multiselected]) + .tabbrowser-tab[hidden] + .tabbrowser-tab,
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:is([multiselected],[selected]) + .tabbrowser-tab,
 tab-group[collapsed] + .tabbrowser-tab,
-tab-group > .tabbrowser-tab:first-of-type,
-tab-group:has(> .tabbrowser-tab:last-of-type:is(:hover,[selected],[multiselected])) + .tabbrowser-tab,
-tab-group:has(> .tabbrowser-tab:last-of-type:is(:hover,[selected],[multiselected])) + tab-split-view-wrapper > .tabbrowser-tab:first-of-type{
+tab-group > slot + .tabbrowser-tab,
+tab-group > slot + tab-split-view-wrapper > :first-child,
+tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + .tabbrowser-tab,
+tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + tab-split-view-wrapper > .tabbrowser-tab:first-child{
   background-image: none;
 }
