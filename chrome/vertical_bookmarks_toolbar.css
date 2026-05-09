@@ -26,6 +26,7 @@ See the above repository for updates as well as full license text. */
   }
   #PersonalToolbar .toolbarbutton-1{
     --toolbarbutton-inner-padding: 10px !important;
+    --toolbarbutton-padding-inner: 10px !important;
   }
   #PersonalToolbar #PlacesChevron{
     display: none;

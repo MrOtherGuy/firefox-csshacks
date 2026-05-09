@@ -18,6 +18,7 @@ See the above repository for updates as well as full license text. */
 
 #PersonalToolbar .toolbarbutton-1{
   --toolbarbutton-inner-padding: var(--uc-statusbar-button-padding) !important;
+  --toolbarbutton-padding-inner: var(--uc-statusbar-button-padding) !important;
 }
 
 :root[uidensity="compact"]:not([inFullscreen]) > body{

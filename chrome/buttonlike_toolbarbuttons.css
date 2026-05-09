@@ -4,13 +4,14 @@ See the above repository for updates as well as full license text. */
 /* This style makes buttons look like real buttons with border and background. Color of border and background use the same colors as unselected urlbar to make them fit together. */
 
 :root{
-  --uc-toolbarbutton-vertical-padding: var(--toolbarbutton-inner-padding);
-  --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 10px);
+  --uc--toolbarbutton-inner-padding: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding));
+  --uc-toolbarbutton-vertical-padding: var(--uc-toolbarbutton-inner-padding);
+  --uc-toolbarbutton-horizontal-padding: calc(var(--uc-toolbarbutton-inner-padding) + 10px);
   --toolbarbutton-border-radius: 3px !important;
 }
 :root[uidensity="compact"]{
-  --uc-toolbarbutton-vertical-padding: calc(var(--toolbarbutton-inner-padding) - 1px);
-  --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 6px);
+  --uc-toolbarbutton-vertical-padding: calc(var(--uc-toolbarbutton-inner-padding) - 1px);
+  --uc-toolbarbutton-horizontal-padding: calc(var(--uc-toolbarbutton-inner-padding) + 6px);
 }
 
 .browser-toolbar{
@@ -106,7 +107,7 @@ findbar toolbarbutton{
   width: revert !important;
   height: revert !important;
   border: revert !important;
-  padding: var(--toolbarbutton-inner-padding) !important;
+  padding: var(--uc-toolbarbutton-inner-padding) !important;
 }
 findbar toolbarbutton{
   padding-inline: var(--uc-toolbarbutton-horizontal-padding) !important;

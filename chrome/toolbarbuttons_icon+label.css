@@ -12,9 +12,9 @@ toolbar .toolbarbutton-1[label]:not([disabled]):hover{ background-color: var(--t
 
 toolbar .toolbarbutton-1[label] > .toolbarbutton-icon,
 toolbar .toolbarbutton-1[label] > .toolbarbutton-badge-stack{
-  padding: var(--toolbarbutton-inner-padding) !important;
+  padding: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding)) !important;
   padding-bottom: 0px !important;
-  height: calc(var(--toolbarbutton-inner-padding) + 16px) !important;
+  height: calc(var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding)) + 16px) !important;
   border: none !important;
   background-color: transparent !important;
   box-shadow: none !important;

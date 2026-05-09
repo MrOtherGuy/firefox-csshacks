@@ -30,7 +30,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 toolbarbutton#scrollbutton-down > .toolbarbutton-icon{ transform: scale(-0.8) !important; }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
-  padding: calc(var(--toolbarbutton-inner-padding) + 2px) !important;
+  padding: calc(var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding)) + 2px) !important;
 }
 .urlbar-input-container [role="button"]:not([disabled]):hover image,
 .tab-close-button:hover,
@@ -46,5 +46,5 @@ toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .t
 toolbarbutton#scrollbutton-down:not([disabled]):hover > .toolbarbutton-icon{transform: scale(-1) !important;}
 
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
-  padding: var(--toolbarbutton-inner-padding) !important;
+  padding: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding)) !important;
 }

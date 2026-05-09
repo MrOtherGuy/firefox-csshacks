@@ -30,7 +30,10 @@ See the above repository for updates as well as full license text. */
 .tab-context-line{
   order: 1;
 }
-#TabsToolbar{ --toolbarbutton-inner-padding: 6px !important; }
+#TabsToolbar{
+  --toolbarbutton-inner-padding: 6px !important;
+  --toolbarbutton-padding-inner: 6px !important;
+}
 
 .titlebar-spacer[type="pre-tabs"],
 .tabbrowser-tab::after{ border: none !important; }

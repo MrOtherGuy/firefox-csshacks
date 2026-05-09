@@ -26,4 +26,4 @@ See the above repository for updates as well as full license text. */
 }
 
 /* OPTIONAL - move caption buttons in tabs toolbar a bit upwards */
-/* #TabsToolbar > .titlebar-buttonbox-container{ margin-bottom: var(--toolbarbutton-inner-padding) !important; } */
+/* #TabsToolbar > .titlebar-buttonbox-container{ margin-bottom: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding)) !important; } */

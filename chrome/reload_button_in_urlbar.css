@@ -7,9 +7,12 @@ See the above repository for updates as well as full license text. */
  * If your theme has opaque background for urlbar then that will cover the reload button.
  * Switch to another theme such of one of the built-in dark/light/auto theme.
  */
-
+#nav-bar-customization-target{
+  --uc-toolbarbutton-inner-padding: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding));
+  --uc-toolbarbutton-outer-padding: var(--toolbarbutton-padding-outer,var(--toolbarbutton-outer-padding));
+}
 #urlbar-container + #stop-reload-button{
-  margin-left: calc( 1px - var(--urlbar-margin-inline) - 2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) - 16px );
+  margin-left: calc( 1px - var(--urlbar-margin-inline) - 2 * (var(--uc-toolbarbutton-outer-padding) + var(--uc-toolbarbutton-inner-padding)) - 16px );
   position: relative;
   z-index: 3;
   color:  var(--urlbar-box-hover-text-color) !important;
@@ -22,7 +25,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #urlbar{
-  padding-right: calc(2 * (var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) + 12px) !important;
+  padding-right: calc(2 * (var(--uc-toolbarbutton-outer-padding) + var(--uc-toolbarbutton-inner-padding)) + 12px) !important;
   pointer-events: none;
 }
 .urlbar-input-container,

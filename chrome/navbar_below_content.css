@@ -6,11 +6,11 @@ See the above repository for updates as well as full license text. */
 @-moz-document url(chrome://browser/content/browser.xhtml){
 
   :root:not([inFullscreen]){
-    --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding) )
+    --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-padding-outer,var(--toolbarbutton-outer-padding)) )
   }
 
   :root[uidensity="compact"]:not([inFullscreen]){
-    --uc-bottom-toolbar-height: calc(32px + var(--toolbarbutton-outer-padding) )
+    --uc-bottom-toolbar-height: calc(32px + var(--toolbarbutton-padding-outer,var(--toolbarbutton-outer-padding)) )
   }
 
   #browser,

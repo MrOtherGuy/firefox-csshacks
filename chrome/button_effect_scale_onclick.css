@@ -32,5 +32,5 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-badge-stack > .
 toolbarbutton#scrollbutton-down:active > .toolbarbutton-icon{ transform: scale(-0.6) !important; }
 
 toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
-  padding: calc(var(--toolbarbutton-inner-padding) + 3px) !important;
+  padding: calc(var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding)) + 3px) !important;
 }
