@@ -52,10 +52,11 @@ tab-split-view-wrapper > .tabbrowser-tab:last-child{
 tab-group > slot + :is(tab-split-view-wrapper,.tabbrowser-tab),
 tab-group[collapsed] + :is(tab-split-view-wrapper,.tabbrowser-tab),
 :is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],[multiselected],[hasactivetab],:hover),
-:is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],[multiselected],[hasactivetab],:hover) + :is(tab-split-view-wrapper,.tabbrowser-tab),
+:is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],tab[multiselected],[hasactivetab],:hover) + :is(tab-split-view-wrapper,.tabbrowser-tab),
+tab-split-view-wrapper:has( > [multiselected]:last-child) + :is(tab-split-view-wrapper,.tabbrowser-tab),
 tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + :is(tab-split-view-wrapper,.tabbrowser-tab),
 #pinned-tabs-container > :first-child,
-#pinned-tabs-container:empty + arrowscrollbox > :first-child,
+#pinned-tabs-container:empty ~ arrowscrollbox > :first-child,
 #tabbrowser-arrowscrollbox[overflowing] > :first-child,
 #pinned-tabs-container:has( > :last-child:is(:hover,[selected],[multiselected])) ~ arrowscrollbox > :first-child,
 #vertical-pinned-tabs-splitter:not([hidden]) ~ arrowscrollbox[orient="vertical"] > :first-child{
