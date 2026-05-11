@@ -58,6 +58,6 @@ tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab
 #pinned-tabs-container:empty + arrowscrollbox > :first-child,
 #tabbrowser-arrowscrollbox[overflowing] > :first-child,
 #pinned-tabs-container:has( > :last-child:is(:hover,[selected],[multiselected])) ~ arrowscrollbox > :first-child,
-#vertical-pinned-tabs-splitter:not([hidden]) ~ arrowscrollbox > :first-child{
+#vertical-pinned-tabs-splitter:not([hidden]) ~ arrowscrollbox[orient="vertical"] > :first-child{
   background-size: 0 0;
 }
