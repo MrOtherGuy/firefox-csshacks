@@ -4,9 +4,9 @@ See the above repository for updates as well as full license text. */
 /* This should hide tabs scrollbuttons in a manner that preserves the ability to move tab strip when reordering tabs */
 
 :root{
-  --uc-tab-shadow-max-size: 6px;
+  --uc-tab-shadow-max-size: 3px;
   /* Funny, but we let this to be overridden in ESR 128 which doesn't exist in Firefox 139 */
-  --tab-shadow-max-size: var(--uc-tab-shadow-max-size); 
+  --tab-shadow-max-size: var(--uc-tab-shadow-max-size);
 }
 
 #tabbrowser-arrowscrollbox{
@@ -18,12 +18,12 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabs:not([movingtab]){
   --uc-scroll-visibility: hidden;
 }
-#tabbrowser-tabs[overflow]{
+#tabbrowser-arrowscrollbox[overflowing]{
   --uc-scrollbox-base-margin: -31px;
   --uc-scrollbox-margin: calc(var(--uc-scrollbox-base-margin) + var(--tab-shadow-max-size));
 }
-:root[uidensity="compact"] #tabbrowser-tabs[overflow]{
-  --uc-scrollbox-base-margin: -25px;
+#pinned-tabs-container{
+  padding-inline-end: var(--uc-tab-shadow-max-size,0);
 }
 #tabbrowser-arrowscrollbox:not([scrolledtostart]){
   --uc-scrollbox-overflow-start-margin: -1px;
@@ -42,7 +42,7 @@ spacer[part="overflow-end-indicator"]{
 #scrollbutton-down:is([disabled=""],[disabled="true"]) > .toolbarbutton-icon,
 #scrollbutton-up:is([disabled=""],[disabled="true"]) > .toolbarbutton-icon{
   opacity: 0.4;
-} 
+}
 #scrollbutton-up,
 #scrollbutton-down{
   position: relative;
@@ -54,11 +54,9 @@ spacer[part="overflow-end-indicator"]{
   opacity: 1 !important;
 }
 #scrollbutton-up{
-  margin-inline-start: calc(0px - var(--tab-shadow-max-size,0px)) !important;
   background-image: var(--uc-scrollbutton-up-background);
 }
 #scrollbutton-down{
-  margin-inline-end: calc(0px - var(--tab-shadow-max-size,0px)) !important;
   background-image: var(--uc-scrollbutton-down-background);
 }
 scrollbox[orient="horizontal"],
