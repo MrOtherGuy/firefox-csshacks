@@ -12,13 +12,14 @@ See the above repository for updates as well as full license text. */
   #sidebar-main{
     overflow: visible !important;
     max-width: var(--tab-collapsed-width) !important;
-    z-index: var(--browser-area-z-index-toolbox-while-animating);
+    z-index: var(--browser-area-z-index-sidebar-expand-on-hover,var(--browser-area-z-index-toolbox-while-animating));
     transition: z-index 0s linear var(--uc-tabs-hide-duration);
     background: inherit;
   }
   sidebar-main{
     --tab-pinned-horizontal-count: 5; /* This needs to match whatever is used in sidebar-main.css - currently 5 */
-    background: inherit;
+    --uc-sidebar-tabs-width: calc(var(--tab-pinned-horizontal-count) * var(--tab-pinned-min-width-expanded) + 2 * var(--tab-pinned-container-margin-inline-expanded) + 1px);
+    background-color: var(--toolbox-background-color,inherit);
     overflow: hidden;
     min-width: var(--tab-collapsed-width);
     transition: min-width var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay);
@@ -28,6 +29,9 @@ See the above repository for updates as well as full license text. */
       transition-property: min-width, transform;
       border-inline-width: 0.01px 0;
     }
+  }
+  div.wrapper{
+    min-width: var(--uc-sidebar-tabs-width,initial);
   }
   :where(#navigator-toolbox[movingtab] + #browser > #sidebar-main) > sidebar-main[expanded],
   sidebar-main[expanded]:hover{
