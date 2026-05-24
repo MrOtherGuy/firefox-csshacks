@@ -79,10 +79,10 @@ See the above repository for updates as well as full license text. */
   border-radius: var(--tab-border-radius);
 }
 #tabs-newtab-button:hover{
-  background-color: var(--toolbarbutton-hover-background) !important;
+  background-color: var(--toolbarbutton-background-color-hover,var(--toolbarbutton-hover-background)) !important;
 }
 #tabs-newtab-button:hover:active{
-  background-color: var(--toolbarbutton-active-background) !important;
+  background-color: var(--toolbarbutton-background-color-active,var(--toolbarbutton-active-background)) !important;
 }
 #TabsToolbar > .titlebar-buttonbox-container{
   position: absolute;

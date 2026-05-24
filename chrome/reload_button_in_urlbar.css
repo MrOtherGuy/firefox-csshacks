@@ -17,6 +17,7 @@ See the above repository for updates as well as full license text. */
   z-index: 3;
   color:  var(--urlbar-box-hover-text-color) !important;
   --toolbarbutton-hover-background: var(--urlbar-box-hover-bgcolor);
+  --toolbarbutton-background-color-hover: var(--urlbar-box-hover-bgcolor);
 }
 
 #urlbar-container + #stop-reload-button > .toolbarbutton-1 > .toolbarbutton-icon{

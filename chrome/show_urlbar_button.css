@@ -26,7 +26,7 @@ See the above repository for updates as well as full license text. */
   border-color: transparent !important;
 }
 :root:not([customizing]) #urlbar:not(:focus-within):hover > :is(#urlbar-background,.urlbar-background){
-  background: var(--toolbarbutton-hover-background) !important;
+  background: var(--toolbarbutton-background-color-hover,var(--toolbarbutton-hover-background)) !important;
 }
 #urlbar:not(:focus-within) #page-action-buttons,
 #urlbar:not(:focus-within) #identity-box,

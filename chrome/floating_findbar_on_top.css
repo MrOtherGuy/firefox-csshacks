@@ -61,7 +61,7 @@ findbar > .findbar-container{
 }
 .findbar-closebutton > image{ padding: 3px }
 .findbar-closebutton:hover > image{
-  background: var(--toolbarbutton-hover-background) !important;
+  background: var(--toolbarbutton-background-color-hover,var(--toolbarbutton-hover-background)) !important;
   border-radius: 4px
 }
 findbar > .findbar-container > hbox{ margin: 0 5px }

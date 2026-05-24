@@ -8,7 +8,7 @@ toolbar .toolbarbutton-1[label]{
   align-items: center !important;
 }
 
-toolbar .toolbarbutton-1[label]:not([disabled]):hover{ background-color: var(--toolbarbutton-hover-background) !important; }
+toolbar .toolbarbutton-1[label]:not([disabled]):hover{ background-color: var(--toolbarbutton-background-color-hover,var(--toolbarbutton-hover-background)) !important; }
 
 toolbar .toolbarbutton-1[label] > .toolbarbutton-icon,
 toolbar .toolbarbutton-1[label] > .toolbarbutton-badge-stack{
