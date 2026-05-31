@@ -2,12 +2,13 @@
 See the above repository for updates as well as full license text. */
 
 /* Make urlbar appear more compact */
+#searchbar-new[breakout][breakout-extend],
 #urlbar[breakout][breakout-extend] {
-    margin-left: 0 !important;
-    width: var(--urlbar-width) !important;
-    margin-top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
+  margin-left: 0 !important;
+  width: var(--urlbar-width) !important;
+  margin-top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
 }
-:where(#urlbar) > .urlbarView{
+.urlbarView{
   margin-inline: 0 !important;
   width: auto !important;
 }
@@ -16,18 +17,19 @@ See the above repository for updates as well as full license text. */
 }
 .urlbarView-row-inner{
   padding-inline-start: 4px !important;
+  padding-block: 3px !important;
 }
-:where(#urlbar) > .urlbar-background,
+.urlbar-background,
 #urlbar-background{
   animation: none !important;
 }
-:where(#urlbar) > .urlbar-input-container{
+.urlbar-input-container{
   padding: var(--urlbar-container-padding,0) 1px !important;
-  height: var(--urlbar-height) !important; 
+  height: var(--urlbar-height) !important;
 }
 #identity-icon{
   margin-block: var(--urlbar-icon-padding);
 }
-:where(#urlbar) > .urlbarView > .search-one-offs:not([hidden]){
+.urlbarView > .search-one-offs:not([hidden]){
   padding-block: 0px !important;
 }
