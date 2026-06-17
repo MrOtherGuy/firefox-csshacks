@@ -65,6 +65,10 @@ See the above repository for updates as well as full license text. */
     transition: margin-bottom var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay) !important;
     --browser-area-z-index-toolbox: 3;
   }
+  /* This effectively sets nav-bar to be as tall as tabs toolbar, need to do this so that background from body is drawn in an empty area between tabs tabs and nav-bar */
+  #nav-bar{
+    height: calc(2 * var(--tab-block-margin) + var(--tab-min-height));
+  }
   #TabsToolbar:not([customizing]){
     visibility: hidden;
     position: relative;
