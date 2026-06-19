@@ -9,6 +9,7 @@ See the above repository for updates as well as full license text. */
 }
 
 @media -moz-pref("sidebar.verticalTabs"){
+  #sidebar-container,
   #sidebar-main{
     overflow: visible !important;
     max-width: var(--tab-collapsed-width) !important;
@@ -19,7 +20,7 @@ See the above repository for updates as well as full license text. */
   sidebar-main{
     --tab-pinned-horizontal-count: 5; /* This needs to match whatever is used in sidebar-main.css - currently 5 */
     --uc-sidebar-tabs-width: calc(var(--tab-pinned-horizontal-count) * var(--tab-pinned-min-width-expanded) + 2 * var(--tab-pinned-container-margin-inline-expanded) + 1px);
-    background-color: var(--toolbox-background-color,inherit);
+    background-color: var(--toolbox-background-color,var(--toolbox-bgcolor));
     overflow: hidden;
     min-width: var(--tab-collapsed-width);
     transition: min-width var(--uc-tabs-hide-animation-duration) ease-out var(--uc-tabs-hide-animation-delay);
