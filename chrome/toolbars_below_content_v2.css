@@ -49,14 +49,14 @@ See the above repository for updates as well as full license text. */
 
 #nav-bar,
 #PersonalToolbar{
-  background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+  background-image: linear-gradient(var(--toolbar-background-color,var(--toolbar-bgcolor))), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
   background-position: top,var(--lwt-background-alignment);
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px));
   background-repeat: repeat,var(--lwt-background-tiling);
 }
 :root[lwtheme-image] #nav-bar,
 :root[lwtheme-image] #PersonalToolbar{
-  background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+  background-image: linear-gradient(var(--toolbar-background-color,var(--toolbar-bgcolor))),var(--lwt-header-image), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
 }
 #PersonalToolbar{
   background-position-y: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin,0px) - var( --uc-navbar-height));

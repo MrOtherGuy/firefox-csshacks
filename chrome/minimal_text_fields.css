@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
   --toolbar-field-border-color: transparent !important;
 }
 
-#urlbar[open]{ background-color: var(--toolbar-bgcolor) !important; }
+#urlbar[open]{ background-color: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important; }
 
 #urlbar,
 #searchbar,

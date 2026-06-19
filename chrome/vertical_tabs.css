@@ -37,11 +37,11 @@ See the above repository for updates as well as full license text. */
   left: 0;
   padding-top: var(--uc-navbar-height);
   width: var(--uc-vertical-tabs-width);
-  background-color: var(--toolbar-bgcolor);
+  background-color: var(--toolbar-background-color,var(--toolbar-bgcolor));
   contain: size;
 }
 :root[lwtheme]:not([customizing]) #tabbrowser-tabs{
-  background-color: var(--lwt-accent-color,var(--toolbox-bgcolor));
+  background-color: var(--lwt-accent-color,var(--toolbox-background-color,var(--toolbox-bgcolor)));
 }
 @media -moz-pref("userchrome.vertical-tabs.on-right.enabled"){
   #PersonalToolbar,

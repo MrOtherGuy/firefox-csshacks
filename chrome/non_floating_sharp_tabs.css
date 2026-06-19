@@ -9,7 +9,7 @@ See the above repository for updates as well as full license text. */
   --tab-block-margin: 0px !important;
   --tabs-shadow-size: 1px !important;
   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
-  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
+  --tab-selected-bgcolor: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
 }
 
 /* Uncomment next line to force specific color for tab top line */

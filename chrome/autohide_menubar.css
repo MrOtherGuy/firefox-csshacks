@@ -34,7 +34,7 @@ See the above repository for updates as well as full license text. */
 }
 
 #toolbar-menubar:hover{
-  background-color: var(--toolbar-bgcolor) !important;
+  background-color: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
   margin-top: var(--uc-menubar-extra-margin,0px) !important;
   z-index: 6
 }

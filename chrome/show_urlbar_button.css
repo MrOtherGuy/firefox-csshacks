@@ -63,7 +63,7 @@ See the above repository for updates as well as full license text. */
 #identity-box > [open],
 .urlbar-input-container:not(:focus-within) > :has([open]){
   opacity: 1;
-  background-color: var(--toolbar-bgcolor);
+  background-color: var(--toolbar-background-color,var(--toolbar-bgcolor));
 }
 #urlbar-input:not(:focus-within){
   opacity: 0;

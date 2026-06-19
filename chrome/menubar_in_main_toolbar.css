@@ -12,7 +12,7 @@ See the above repository for updates as well as full license text. */
   grid-column: 1/2;
   grid-row: 2/3;
   border-top: 0.01px var(--tabs-navbar-separator-style) var(--tabs-navbar-separator-color) !important;
-  background-color: var(--toolbar-bgcolor) !important;
+  background-color: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
   color: var(--toolbar-color);
   opacity: 1 !important;
 }

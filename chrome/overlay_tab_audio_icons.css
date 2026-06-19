@@ -28,7 +28,7 @@ See the above repository for updates as well as full license text. */
 .tab-audio-button{
   --button-size-icon-small: 16px !important;
   --button-min-height-small: var(--button-size-icon-small) !important;
-  --button-background-color-ghost: var(--toolbox-bgcolor-inactive);
+  --button-background-color-ghost: var(--toolbox-background-color-inactive,var(--toolbox-bgcolor-inactive));
   --button-border-radius: var(--border-radius-circle) !important;
   --button-padding-icon: 2px;
   --button-border: none;

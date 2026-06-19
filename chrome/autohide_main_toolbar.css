@@ -86,7 +86,7 @@ See the above repository for updates as well as full license text. */
 #nav-bar.browser-titlebar + #PersonalToolbar,
 #nav-bar.browser-titlebar{
   background: inherit;
-  background-color: var(--toolbox-bgcolor) !important;
+  background-color: var(--toolbox-background-color,var(--toolbox-bgcolor)) !important;
   background-image: var(--lwt-additional-images);
   background-repeat: var(--lwt-background-tiling);
   background-position: var(--lwt-background-alignment);
