@@ -78,6 +78,7 @@ vbox.tab-background[selected]{
   margin-bottom: 0px !important;
   background-clip: padding-box;
   outline: none !important;
+  background-color: var(--lwt-accent-color,var(--toolbar-background-color,var(--toolbar-bgcolor))) !important;
 }
 
 /* remove selected tab line which isn't very useful with this style */
