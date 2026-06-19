@@ -3,8 +3,6 @@ See the above repository for updates as well as full license text. */
 
 /* Show tab close button when cursor is over the tab icon */
 
-/* inline_tab_audio_icons.css is recommended because otherwise you cannot mute the tab using the mute button */
-
 .tab-content{
   pointer-events: none
 }
@@ -12,6 +10,9 @@ See the above repository for updates as well as full license text. */
 :where(.tab-content:hover) .tab-icon-image,
 :where(.tab-content:hover) > .tab-icon-stack{
   visibility: hidden;
+}
+.tab-content:has(> .tab-audio-button:hover) .tab-icon-image{
+  visibility: visible;
 }
 .tab-close-button{
   order: -1;
@@ -23,5 +24,6 @@ See the above repository for updates as well as full license text. */
   width: unset !important;
   pointer-events: auto;
 }
+.tab-audio-button{ pointer-events: auto }
 .tab-close-button:hover{ opacity: 1 }
 .tabbrowser-tab[pinned] .tab-close-button{ display: none !important; }
