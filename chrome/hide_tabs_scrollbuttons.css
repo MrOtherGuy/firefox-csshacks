@@ -18,6 +18,7 @@ See the above repository for updates as well as full license text. */
 #tabbrowser-tabs:not([movingtab]){
   --uc-scroll-visibility: hidden;
 }
+#pinned-tabs-container[overflowing],
 #tabbrowser-arrowscrollbox[overflowing]{
   --uc-scrollbox-base-margin: -31px;
   --uc-scrollbox-margin: calc(var(--uc-scrollbox-base-margin) + var(--tab-shadow-max-size));
@@ -25,6 +26,7 @@ See the above repository for updates as well as full license text. */
 #pinned-tabs-container{
   padding-inline-end: var(--uc-tab-shadow-max-size,0);
 }
+#pinned-tabs-container:not([scrolledtostart]),
 #tabbrowser-arrowscrollbox:not([scrolledtostart]){
   --uc-scrollbox-overflow-start-margin: -1px;
 }
