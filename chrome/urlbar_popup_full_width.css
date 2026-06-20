@@ -15,5 +15,5 @@ See the above repository for updates as well as full license text. */
   margin: var(--urlbar-container-height) 0 0 0 !important;
   width: 100vw !important;
   border-width: 1px 0;
-  background-color: var(--toolbar-field-focus-background-color, inherit);
+  background-color: var(--toolbar-field-background-color-focus, inherit);
 }
