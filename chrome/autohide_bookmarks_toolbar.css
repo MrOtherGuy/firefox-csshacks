@@ -76,7 +76,9 @@ See the above repository for updates as well as full license text. */
   transition-delay: 100ms !important;
   transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
 }
-:root:not([lwtheme]) #PersonalToolbar,
+:root:not([lwtheme]) #PersonalToolbar{
+  background-color: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
+}
 #nav-bar.browser-titlebar + #PersonalToolbar{
   background-color: var(--uc-toolbox-background-color) !important;
 }
