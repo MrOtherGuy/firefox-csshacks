@@ -25,7 +25,7 @@ See the above repository for updates as well as full license text. */
 }
 .urlbar-input-container{
   padding: var(--urlbar-container-padding,0) 1px !important;
-  height: var(--urlbar-height) !important;
+  height: var(--urlbar-min-height) !important;
 }
 #identity-icon{
   margin-block: var(--urlbar-icon-padding);
