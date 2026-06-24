@@ -1,39 +1,43 @@
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/overlay_menubar.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Makes menubar appear as overlay in the top left corner */
+/* Makes menubar appear as overlay in the top left corner when menubar is activated with Alt */
 
-#toolbar-menubar{
+:where(#toolbar-menubar):is([autohide="true"],[autohide=""]){
   position: fixed;
   display: flex;
   top: 0;
   width: 100vw;
   height: initial !important;
   z-index: 10;
+  pointer-events: none;
+  padding-top: 0 !important;
+  max-height: 0;
+  &:not([inactive]){
+    max-height: initial;
+  }
+  > * {
+    pointer-events: auto;
+  }
+  > spacer{
+    pointer-events: none;
+  }
+  #main-menubar{
+    height: calc(var(--tab-min-height) +  2 * var(--tab-block-margin,0px));
+    background-color: var(--panel-background-color) !important;
+    color: var(--panel-text-color) !important;
+  }
+  > #menubar-items{
+    flex-direction: row !important;
+    &::after{
+      content: "";
+      display: flex;
+      width: 30px;
+      height: calc(var(--tab-min-height) +  2 * var(--tab-block-margin,0px));
+      background-image: linear-gradient(to right, var(--panel-background-color) 30%, transparent);
+    }
+  }
 }
-
-#toolbar-menubar:not([autohide="true"],[autohide=""])[inactive="true"]{ height: 0px !important; }
-
-#toolbar-menubar > spacer{ flex-grow: 1 }
-#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ display: none }
-
-#main-menubar{
-  height: calc(var(--tab-min-height) +  2 * var(--tab-block-margin,0px));
-  background-color: var(--arrowpanel-background);
-  color: var(--arrowpanel-color);
-}
-
-#menubar-items{
-  flex-direction: row !important;
-}
-#menubar-items::after{
-  content: "";
-  display: flex;
-  width: 30px;
-  height: calc(var(--tab-min-height) +  2 * var(--tab-block-margin,0px));
-  background-image: linear-gradient(to right, var(--arrowpanel-background) 30%, transparent);
-}
-
 @media (-moz-gtk-csd-reversed-placement){
-  #toolbar-menubar:not([autohide="true"],[autohide=""]):not([inactive]) > .titlebar-buttonbox-container{ display: none }  
+  #toolbar-menubar:is([autohide="true"],[autohide=""]) > .titlebar-buttonbox-container{ display: none }
 }
