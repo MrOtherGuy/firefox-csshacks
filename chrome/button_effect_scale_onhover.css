@@ -6,8 +6,9 @@ See the above repository for updates as well as full license text. */
 .toolbarbutton-icon,
 .tab-close-button,
 .downloadIconShow > .button-box > .button-icon,
-.menuitem-iconic is(.menu-iconic-icon,.menu-icon),
+.menuitem-iconic :is(.menu-iconic-icon,.menu-icon),
 #downloads-indicator-icon,
+#fxa-avatar-image,
 .urlbar-input-container [role="button"] image{
   transition: transform 83ms linear !important;
 }
@@ -22,8 +23,9 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
 #downloads-button #downloads-indicator-icon,
 toolbarbutton#scrollbutton-up > .toolbarbutton-icon,
 toolobar .toolbarbutton-1 > .toolbarbutton-icon,
-toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
-.menuitem-iconic is(.menu-iconic-icon,.menu-icon),
+toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack .toolbarbutton-icon,
+#fxa-avatar-image,
+.menuitem-iconic :is(.menu-iconic-icon,.menu-icon),
 .urlbar-icon{
   transform: scale(0.8) !important;
 }
@@ -38,7 +40,8 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon{
 #downloads-button:not([disabled]):hover #downloads-indicator-icon,
 toolbarbutton#scrollbutton-up:not([disabled]):hover > .toolbarbutton-icon,
 toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
-toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack .toolbarbutton-icon,
+:where(#fxa-toolbar-menu-button):not([disabled]):hover #fxa-avatar-image,
 .menuitem-iconic:not([disabled]):hover :is(.menu-iconic-icon,.menu-icon),
 .urlbar-page-action:hover > .urlbar-icon{
   transform: none !important;
