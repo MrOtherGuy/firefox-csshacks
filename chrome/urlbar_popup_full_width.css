@@ -3,16 +3,15 @@ See the above repository for updates as well as full license text. */
 
 /* Make urlbar popup appear full size like it did before urlbar re-design */
 
-.urlbarView-row-inner{
+:where(#urlbar) .urlbarView-row-inner{
    /* This sets how far the dropdown-items are from window edge */
   padding-inline-start: 6px !important;
 }
 
-.urlbarView{
+:where(#urlbar) > .urlbarView{
   position: fixed !important;
   top: inherit;
   left: 0 !important;
-  margin: var(--urlbar-container-height) 0 0 0 !important;
   width: 100vw !important;
   border-width: 1px 0;
   background-color: var(--toolbar-field-background-color-focus, inherit);
