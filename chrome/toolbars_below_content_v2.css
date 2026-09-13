@@ -71,6 +71,33 @@ See the above repository for updates as well as full license text. */
   content: "";
   height: calc(var(--urlbar-min-height) - 2px - 2 * var(--urlbar-container-padding));
 }
+.urlbar:not([breakout])[open]{
+  --urlbarView-margin-block: 0px;
+  > .urlbarView:popover-open{
+    position-area: block-start center !important;
+    > .urlbarView-background{
+      border-start-end-radius: var(--urlbar-background-border-top-radius-open) !important;
+      border-start-start-radius: var(--urlbar-background-border-top-radius-open) !important;
+      border-end-end-radius: 0 !important;
+      border-end-start-radius: 0 !important;
+      inset-block: calc(-1 * var(--urlbar-joint-background-overlap)) calc(1 * var(--urlbarView-joint-background-outset-block)) !important;
+      clip-path: none !important;
+    }
+    :where(.urlbar:not([noresults])) > & {
+      padding-block: 0 var(--urlbarView-padding) !important;
+    }
+  }
+}
+.urlbar-background {
+  .urlbar:not([breakout])[open] > & {
+    clip-path: none !important;
+    inset-block-end: calc(-1 * (var(--urlbar-background-overhang-open) + var(--urlbar-input-growth-open-block))) !important;
+    border-start-end-radius: 0 !important;
+    border-start-start-radius: 0 !important;
+    border-end-end-radius: var(--urlbar-background-border-top-radius-open) !important;
+    border-end-start-radius: var(--urlbar-background-border-top-radius-open) !important;
+  }
+}
 .urlbarView-body-inner{ border-top-style: none !important; }
 .searchmode-switcher[offscreen]{
   top: 999px !important;
