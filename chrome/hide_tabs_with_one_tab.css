@@ -8,18 +8,21 @@ See the above repository for updates as well as full license text. */
   height: 0.1px;
   contain: size;
   visibility: hidden;
-  + #nav-bar > .titlebar-buttonbox-container{
-    display: flex !important;
+  + #nav-bar{
+    --uc-navbar-window-controls-display: flex;
   }
 }
 #TabsToolbar:has(#tabbrowser-tabs > #pinned-tabs-container > .tabbrowser-tab + .tabbrowser-tab){
   height: initial;
   contain: initial;
   visibility: visible;
-  + #nav-bar > .titlebar-buttonbox-container{
-    display: none !important;
+  + #nav-bar{
+    --uc-navbar-window-controls-display: none;
   }
 }
-#toolbar-menubar#toolbar-menubar#toolbar-menubar:not([autohide],[collapsed]) ~ #nav-bar > .titlebar-buttonbox-container{
-  display: none !important;
+#toolbar-menubar#toolbar-menubar#toolbar-menubar:not([autohide],[collapsed]) ~ #nav-bar{
+  --uc-navbar-window-controls-display: none;
+}
+#nav-bar > .titlebar-buttonbox-container{
+  display: var(--uc-navbar-window-controls-display) !important;
 }

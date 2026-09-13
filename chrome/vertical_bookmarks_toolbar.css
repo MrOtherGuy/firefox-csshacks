@@ -80,5 +80,9 @@ See the above repository for updates as well as full license text. */
     display: -webkit-box !important;
     -webkit-box-orient: vertical !important;
   }
-  
+  @media -moz-pref("browser.nova.enabled"){
+    #navigator-toolbox{
+      overflow: visible !important;
+    }
+  }
 }

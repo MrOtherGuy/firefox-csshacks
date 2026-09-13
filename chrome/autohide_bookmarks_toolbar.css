@@ -17,13 +17,14 @@ See the above repository for updates as well as full license text. */
   --uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
   --uc-toolbarbutton-inner-padding: var(--toolbarbutton-padding-inner,var(--toolbarbutton-inner-padding));
   --uc-toolbarbutton-outer-padding: var(--toolbarbutton-padding-outer,var(--toolbarbutton-outer-padding));
+  --uc-bmb-bottom-margin: -1px;
 }
 
 :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
 
 #PersonalToolbar:not([customizing]){
   position: relative;
-  margin-bottom: calc(-1px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+  margin-bottom: calc(var(--uc-bmb-bottom-margin) - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
   transform: rotateX(90deg);
   transform-origin: top;
   transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
@@ -35,7 +36,7 @@ See the above repository for updates as well as full license text. */
   --uc-bg-y: calc(-2 * (var(--tab-margin-block,var(--tab-block-margin,0px)) + var(--uc-toolbarbutton-inner-padding) + var(--uc-toolbarbutton-outer-padding)) - var(--tab-min-height) - 24px - var(--bookmark-block-padding));
   background-position: top left,var(--lwt-background-alignment,top left);
   background-position-y:0,var(--uc-bg-y),var(--uc-bg-y),var(--uc-bg-y);
-  background-size: cover, auto, auto, auto,auto,auto;
+  background-size: cover, var(--toolbox-background-size), auto, auto,auto,auto;
   background-image: linear-gradient(var(--uc-toolbar-background-color)),
     var(--uc-toolbox-background-image,var(--uc-toolbar-background-image,linear-gradient(transparent))),
     var(--lwt-header-image,var(--lwt-additional-images)),
@@ -87,6 +88,17 @@ See the above repository for updates as well as full license text. */
 }
 #navigator-toolbox{
   --browser-area-z-index-toolbox: 4;
+}
+@media -moz-pref("browser.nova.enabled"){
+  #navigator-toolbox{
+    overflow: visible !important;
+  }
+  #PersonalToolbar{
+    --uc-bmb-bottom-margin: -2px;
+  }
+  :root[builtintheme] #PersonalToolbar{
+    background-repeat: no-repeat repeat;
+  }
 }
 /* Uncomment to enable compatibility for multi-row_bookmarks.css */
 /* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */

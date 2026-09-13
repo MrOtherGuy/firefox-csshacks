@@ -9,8 +9,9 @@ See the above repository for updates as well as full license text. */
   --tab-block-margin: 0px !important;
   --tab-margin-block: 0px !important;
   --tabs-shadow-size: 1px !important;
-  /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
+  /* Remove next lines if you want selected tab to have color other than toolbar background - then it follows your theme color  */
   --tab-selected-bgcolor: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
+  --tab-background-color-selected: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
 }
 
 /* Uncomment next line to force specific color for tab top line */
@@ -107,10 +108,11 @@ tab-split-view-wrapper:is(:hover,[hasactivetab]){
 :root:is([lwtheme],[builtintheme]) #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]){
   background-attachment: scroll, fixed, fixed !important;
   background-color: transparent !important;
-  background-image: linear-gradient(var(--tab-selected-bgcolor, transparent)), var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;;
-  background-position: 0 0, var(--lwt-background-alignment), right top !important;
-  background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
-  background-size: auto 100%, var(--lwt-background-size, auto auto), auto auto !important;
+  background-image: linear-gradient(var(--tab-selected-bgcolor, transparent)), var(--toolbox-background-image,none), linear-gradient(var(--toolbox-background-color, none)) !important;
+  background-position: 0 0, var(--toolbox-background-position), 0 0 !important;
+  background-repeat: repeat-x, var(--toolbox-background-repeat), repeat !important;
+  background-size: auto 100%, var(--toolbox-background-size), auto auto !important;
+  border-bottom-width: 0px !important;
 }
 .tab-background:not([selected])[multiselected]{
   background: color-mix(in srgb, currentColor 11%, transparent) !important;
