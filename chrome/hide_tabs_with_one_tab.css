@@ -20,9 +20,10 @@ See the above repository for updates as well as full license text. */
     --uc-navbar-window-controls-display: none;
   }
 }
+#nav-bar,
 #toolbar-menubar#toolbar-menubar#toolbar-menubar:not([autohide],[collapsed]) ~ #nav-bar{
   --uc-navbar-window-controls-display: none;
 }
-#nav-bar > .titlebar-buttonbox-container{
+:root[customtitlebar] #nav-bar > .titlebar-buttonbox-container{
   display: var(--uc-navbar-window-controls-display) !important;
 }
