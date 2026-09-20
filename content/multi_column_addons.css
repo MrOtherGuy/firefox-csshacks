@@ -6,24 +6,26 @@ See the above repository for updates as well as full license text. */
 /* Compatible with addon_manage_buttons_without_popup.css */
 
 @-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
-  
+
   :root{  overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
-  
+  #page-header{
+    --page-main-content-width: 100vw;
+  }
   @media (min-width:720px){
     #main{ max-width: unset !important; padding-right: 28px; }
     addon-list > section,
     recommended-addon-list{
       padding: 1em;
-      display: grid;
+      display: grid !important;
       grid-template-areas: "hd hd" "cd cd";
       grid-auto-columns: 1fr;
       column-gap: 1em;
-     
+
     }
-  
+
     addon-card .card-contents{ width: unset !important; white-space: initial !important; }
-  
-    .card-heading-image{ max-width: calc(100% + 32px) }
+
+    .card-heading-image{ max-width: calc(100% + 32px) !important; }
     section > h2{ grid-area: hd }
     addon-card{
       padding-bottom: 0px !important;
@@ -32,14 +34,14 @@ See the above repository for updates as well as full license text. */
     }
     addon-card .addon-description{ max-height: 3em; scrollbar-width: thin; }
   }
-  
+
   @media (min-width:1220px){
     addon-list > section,
     recommended-addon-list{
       grid-template-areas: "hd hd hd" "cd cd cd";
     }
   }
-  
+
   @media (min-width:1720px){
     addon-list > section,
     recommended-addon-list{
