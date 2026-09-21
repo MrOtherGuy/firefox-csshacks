@@ -9,7 +9,6 @@ See the above repository for updates as well as full license text. */
     width: 0.1px !important;
   }
   #sidebar-container:has(> sidebar-main > #vertical-tabs > #tabbrowser-tabs > #pinned-tabs-container > .tabbrowser-tab + .tabbrowser-tab){
-    /* This is deliberately set to invalid so that Firefox falls back to its normal rules */
     width: revert !important;
   }
 }
