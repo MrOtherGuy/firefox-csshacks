@@ -3,27 +3,39 @@ See the above repository for updates as well as full license text. */
 
 /* Hide tabs toolbar when there's only one visible tab. */
 
-:where(#TabsToolbar):has(#pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox > .tabbrowser-tab:first-child + hbox),
-:where(#TabsToolbar):has(#tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery:first-child){
-  height: 0.1px;
-  contain: size;
-  visibility: hidden;
-  + #nav-bar{
-    --uc-navbar-window-controls-display: flex;
+@media -moz-pref("sidebar.verticalTabs"){
+  :where(#sidebar-container):has(#pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox > .tabbrowser-tab:first-child + hbox),
+  :where(#sidebar-container):has(#tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery:first-child){
+    width: 0.1px !important;
+  }
+  #sidebar-container:has(> sidebar-main > #vertical-tabs > #tabbrowser-tabs > #pinned-tabs-container > .tabbrowser-tab + .tabbrowser-tab){
+    /* This is deliberately set to invalid so that Firefox falls back to its normal rules */
+    width: revert !important;
   }
 }
-#TabsToolbar:has(#tabbrowser-tabs > #pinned-tabs-container > .tabbrowser-tab + .tabbrowser-tab){
-  height: initial;
-  contain: initial;
-  visibility: visible;
-  + #nav-bar{
+@media not -moz-pref("sidebar.verticalTabs"){
+  :where(#TabsToolbar):has(#pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox > .tabbrowser-tab:first-child + hbox),
+  :where(#TabsToolbar):has(#tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery:first-child){
+    height: 0.1px;
+    contain: size;
+    visibility: hidden;
+    + #nav-bar{
+      --uc-navbar-window-controls-display: flex;
+    }
+  }
+  #TabsToolbar:has(#tabbrowser-tabs > #pinned-tabs-container > .tabbrowser-tab + .tabbrowser-tab){
+    height: initial;
+    contain: initial;
+    visibility: visible;
+    + #nav-bar{
+      --uc-navbar-window-controls-display: none;
+    }
+  }
+  #nav-bar,
+  #toolbar-menubar#toolbar-menubar#toolbar-menubar:not([autohide],[collapsed]) ~ #nav-bar{
     --uc-navbar-window-controls-display: none;
   }
-}
-#nav-bar,
-#toolbar-menubar#toolbar-menubar#toolbar-menubar:not([autohide],[collapsed]) ~ #nav-bar{
-  --uc-navbar-window-controls-display: none;
-}
-:root[customtitlebar] #nav-bar > .titlebar-buttonbox-container{
-  display: var(--uc-navbar-window-controls-display) !important;
+  :root[customtitlebar] #nav-bar > .titlebar-buttonbox-container{
+    display: var(--uc-navbar-window-controls-display) !important;
+  }
 }
