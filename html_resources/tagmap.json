@@ -183,5 +183,6 @@
 "tabs_on_bottom_v2.css":["hack","tabs","toolbars"],
 "oneline_toolbar.css":["tabs","toolbars"],
 "toolbars_below_content_v2.css":["toolbars"],
-"autohide_tabstoolbar_v2.css":["tabs","toolbars","autohide"]
+"autohide_tabstoolbar_v2.css":["tabs","toolbars","autohide"],
+"separate_sidebar_and_content_blocks.css":["sidebar"]
 }
