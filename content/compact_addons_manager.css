@@ -7,21 +7,21 @@ See the above repository for updates as well as full license text. */
 
 
 @-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
-  
+
   :root{ overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
   addon-card .addon-name-link{ font-size: 0.9em }
   @media (min-width:420px){
     #main{ max-width: unset !important; padding-right: 28px; }
     addon-list > section{
       padding: 1em;
-      display: grid;
+      display: grid !important;
       grid-template-areas: "hd hd" "cd cd";
       grid-auto-columns: 1fr;
       column-gap: 1em;
     }
-    
+
     addon-card .card-contents{ width: unset !important; white-space: initial !important; }
-    
+
     addon-list[type="extension"] .addon-name-container{
       display: grid !important;
       grid-template-areas: "name badge opt" "name toggle toggle";
@@ -33,33 +33,33 @@ See the above repository for updates as well as full license text. */
     .addon-name-container > :is(.toggle-button,moz-toggle){ grid-area: toggle; justify-self: end }
     .addon-name-container > .more-options-button{ grid-area: opt }
     .addon-name-container > .addon-badge{ grid-area: badge }
-    
+
     addon-list[type="extension"] .more-options-button{
       margin-inline: 0 !important;
     }
-    
+
     .card-heading-image{
       max-width: calc(100% + 32px);
       object-position: left;
     }
-    
+
     section > h2{ grid-area: hd }
     addon-card{
       padding-bottom: 0px !important;
       padding-top: 0px !important;
       grid-area: auto;
     }
-    
+
     addon-card .addon-description{
       max-height: 3em;
       scrollbar-width: thin;
     }
-    
+
     addon-list[type="theme"] addon-card{
       margin-right: auto;
     }
   }
-    
+
   @media (min-width:640px){
     addon-list[type="extension"] > section{ grid-template-areas: "hd hd hd" "cd cd cd"; }
   }
@@ -72,23 +72,37 @@ See the above repository for updates as well as full license text. */
   @media (min-width:1420px){
     addon-list[type="extension"] > section{ grid-template-areas: "hd hd hd hd hd hd" "cd cd cd cd cd cd"; }
   }
-  
+
   /* Note: addon-card verified and recommended badges are hidden here. They should remain visible in the "manage" addon page though.  */
   addon-card:not([expanded]) .addon-badge-verified,
   addon-card:not([expanded]) .addon-badge-recommended,
   addon-card:not([expanded]) .addon-description,
   addon-card:not([expanded]) .addon-card-message button[action]{ display: none !important; }
-  
+
   addon-list[type="extension"]{ --card-padding: 8px }
- 
+
 }
 
 @-moz-document url-prefix("about:addons"){
   :root{ --sidebar-width: 60px !important; }
-  #categories{ width: var(--sidebar-width) !important; }
+  moz-page-nav,
+  #categories{
+    width: var(--sidebar-width) !important;
+    margin-inline-start: 0 !important;
+  }
+  #page-nav-heading,
+  moz-page-nav-button > span{
+    display: none;
+  }
+  moz-page-nav-button,
   #categories > .category{
     margin-left: 10px !important;
     -moz-box-pack: center;
+  }
+  .moz-page-nav-link,
+  .page-nav-heading-wrapper,
+  button[role="tab"]{
+    justify-content: center;
   }
   .sidebar-footer-list{ margin-left: 18px !important; }
   .sidebar-footer-label,
