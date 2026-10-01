@@ -8,6 +8,18 @@ See the above repository for updates as well as full license text. */
   width: var(--urlbar-width) !important;
   margin-top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
 }
+.urlbar:not([breakout]){
+  --urlbar-background-border-radius: calc(var(--urlbar-height,32px) / 2) !important;
+  --urlbar-joint-background-overlap: 0px !important;
+  --urlbar-background-border-top-radius-open: var(--urlbar-background-border-radius) !important;
+}
+.urlbar:not([breakout])[popover-open] > .urlbar-background{
+  inset-inline: 0px !important;
+  inset-block-start: 0px !important;
+}
+.urlbarView-background{
+  inset-inline: 0px !important;
+}
 .urlbarView{
   margin-inline: 0 !important;
   width: auto !important;
@@ -23,7 +35,7 @@ See the above repository for updates as well as full license text. */
 #urlbar-background{
   animation: none !important;
 }
-.urlbar-input-container{
+.urlbar[breakout] > .urlbar-input-container{
   padding: var(--urlbar-container-padding,0) 1px !important;
   height: var(--urlbar-min-height) !important;
 }
