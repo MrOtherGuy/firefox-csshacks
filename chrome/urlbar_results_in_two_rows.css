@@ -3,11 +3,14 @@ See the above repository for updates as well as full license text. */
 
 /* Show urlbar results on two lines */
 
-.urlbarView-row-inner{ flex-wrap: wrap !important; }
-
+#urlbar .urlbarView-row-body-top,
+.urlbarView-row-inner{
+  flex-wrap: wrap !important;
+}
+.urlbarView-row-body-top-no-wrap,
 .urlbarView-no-wrap {
   max-width: 100% !important;
-  flex-basis: 100%;
+  flex-basis: 100% !important;
 }
 .urlbarView-row[has-url]:not([type="switchtab"]) .urlbarView-title-separator{ display: none }
 
