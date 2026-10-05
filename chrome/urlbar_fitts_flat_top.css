@@ -1,0 +1,15 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/urlbar_fitts_flat_top.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style makes the URL and (if present) search bars extend to the top of
+ * their container. If used with hide_tabs_toolbar_v2.css, a maximized window,
+ * and no window decorations, you can ram the mouse to the top of the screen and
+ * click to focus the URL bar, following Fitts's law. */
+
+.urlbar-container {
+  padding-top: 0 !important;
+}
+
+.urlbar-background {
+    border-radius: 0 0 var(--urlbar-background-border-radius) var(--urlbar-background-border-radius) / var(--urlbar-background-border-radius) !important;
+}
