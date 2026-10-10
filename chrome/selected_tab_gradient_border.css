@@ -2,21 +2,31 @@
 See the above repository for updates as well as full license text. */
 
 /* Adds a gradient outline to selected tab. This is going to need modifications if you use tabs that don't follow Proton styling. */
-
+#tabbrowser-tabs{
+  --uc-tab-gradient-selected: linear-gradient(90deg,#f0f,#ff0,#0ff);
+}
 .tab-background[selected]{
   outline: none !important;
   border: 2px solid transparent !important;
   box-shadow: none !important;
-  background-clip: padding-box;
+  background-clip: padding-box !important;
 }
-.tab-background[selected] > .tab-context-line{ margin: -5px 0 0 !important; }
-.tabbrowser-tab[selected] > .tab-stack::before{
-  content: "";
-  display: flex;
-  min-height: inherit;
-  border-radius: var(--tab-border-radius);
-  grid-area: 1/1;
-  margin-block: var(--tab-margin-block,var(--tab-block-margin,0px));
-  /* Edit gradient colors here */
-  background: repeat linear-gradient(90deg,#f0f,#ff0,#0ff)!important;
+@supports not (background-clip: border-area){
+  .tab-background[selected] > .tab-context-line{ margin: -5px 0 0 !important; }
+  .tabbrowser-tab[selected] > .tab-stack::before{
+    content: "";
+    display: flex;
+    min-height: inherit;
+    border-radius: var(--tab-border-radius);
+    grid-area: 1/1;
+    margin-block: var(--tab-margin-block,var(--tab-block-margin,0px));
+    background-image: var(--uc-tab-gradient-selected), image(var(--tab-background-color-selected));
+  }
+}
+@supports (background-clip: border-area){
+  .tab-background[selected]{
+    background-image: var(--uc-tab-gradient-selected), image(var(--tab-background-color-selected)) !important;
+    background-clip: border-area, padding-box !important;
+    background-origin: border-box !important;
+  }
 }

@@ -4,7 +4,24 @@ See the above repository for updates as well as full license text. */
 /* Creates a colorful animated border around active tab */
 
 @keyframes filter{from{ filter: hue-rotate(0deg) } to { filter: hue-rotate(360deg) }}
- 
+
+#tabbrowser-tabs{
+  --uc-tab-animated-border-width: 2px;
+  --uc-tab-animated-gradient: conic-gradient(
+    hsl(0 100% 70%),
+    hsl(60 100% 45%) 70deg,
+    hsl(120 100% 55%) 105deg,
+    hsl(160 100% 60%) 120deg,
+    hsl(200 100% 60%) 240deg,
+    hsl(240 100% 65%) 255deg,
+    hsl(300 100% 60%) 290deg,
+    hsl(360 100% 70%) 360deg
+  );
+}
+.tab-background[selected]{
+  outline: none !important;
+  border: var(--uc-tab-animated-border-width) solid transparent !important;
+}
 .tabbrowser-tab[selected] > .tab-stack::before{
   grid-area: 1/1;
   content: "";
@@ -12,23 +29,28 @@ See the above repository for updates as well as full license text. */
   margin-block: var(--tab-margin-block,var(--tab-block-margin,0px));
   border-radius: var(--tab-border-radius);
   z-index: 0;
-  background-image: conic-gradient(
-    hsl(0 100% 70%),
-    hsl(60 100% 45%) 70deg,
-    hsl(120 100% 55%) 105deg,
-    hsl(160 100% 60%) 160deg,
-    hsl(200 100% 60%) 200deg,
-    hsl(240 100% 65%) 255deg,
-    hsl(300 100% 60%) 290deg,
-    hsl(360 100% 70%) 360deg);
-  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cmVjdCB4PSIwIiB5PSIwIiByeD0iNCIgc3Ryb2tlPSJyZWQiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIi8+DQo8L3N2Zz4");
+  background-image: var(--uc-tab-animated-gradient);
   background-size: cover;
   background-position: center;
   animation: filter steps(30) 2s infinite;
-  
+
 }
-.tab-background[selected]{
-  border: 1px solid transparent !important;
-  outline: none !important;
-  background-clip: padding-box !important;
+#tabbrowser-arrowscrollbox[orient="vertical"] > .tabbrowser-tab[selected] > .tab-stack::before {
+  margin-inline: var(--tab-inner-inline-margin);
+}
+@supports not (background-clip: border-area){
+  .tabbrowser-tab[selected] > .tab-stack::before{
+    mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cmVjdCB4PSIwIiB5PSIwIiByeD0iNCIgc3Ryb2tlPSJyZWQiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIi8+DQo8L3N2Zz4");
+  }
+}
+@supports (background-clip: border-area){
+  .tab-background[selected]{
+    background-image: none !important;
+    background-clip: padding-box !important;
+  }
+  .tabbrowser-tab[selected] > .tab-stack::before{
+    border: var(--uc-tab-animated-border-width) solid transparent;
+    background-clip: border-area, padding-box !important;
+    background-origin: border-box !important;
+  }
 }
