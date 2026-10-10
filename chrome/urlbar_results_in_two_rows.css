@@ -7,10 +7,18 @@ See the above repository for updates as well as full license text. */
 .urlbarView-row-inner{
   flex-wrap: wrap !important;
 }
-.urlbarView-row-body-top-no-wrap,
+.urlbarView-row-body{
+  contain: inline-size;
+}
+.urlbarView-url,
 .urlbarView-no-wrap {
-  max-width: 100% !important;
-  flex-basis: 100% !important;
+  max-width: 100cqw !important;
+  flex-basis: 100cqw !important;
+}
+.urlbarView-url,
+.urlbarView-title{
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 .urlbarView-row[has-url]:not([type="switchtab"]) .urlbarView-title-separator{ display: none }
 
