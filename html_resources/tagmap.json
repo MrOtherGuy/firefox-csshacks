@@ -162,6 +162,7 @@
 "urlbar_connection_type_background_colors.css":["urlbar","colors","status"],
 "urlbar_connection_type_text_colors.css":["urlbar","colors","status"],
 "urlbar_container_color_border.css":["colors","urlbar"],
+"urlbar_fitts_flat_top.css":["urlbar"],
 "urlbar_info_icons_on_hover.css":["autohide","icon","urlbar","minimal"],
 "urlbar_popup_full_width.css":["urlbar","popup"],
 "urlbar_results_in_two_rows.css":["urlbar","popup"],
