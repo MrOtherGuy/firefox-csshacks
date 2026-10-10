@@ -3,7 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Draws a border around urlbar using the color of the current container. */
 
-.urlbar-input-container{
+.urlbar-input-container[breakout]{
   border-width: 0 !important;
   padding: 2px !important;
 }
@@ -29,11 +29,11 @@ See the above repository for updates as well as full license text. */
 }
 
 /* These might potentially cause some issues, but are needed to make the border extend the border to the full popup when urlbar popup is open */
-#urlbar[open] > .urlbar-input-container{
+#urlbar[open][breakout] > .urlbar-input-container{
   position: static !important;
   padding: calc(2px + var(--urlbar-margin-inline,5px)) !important;
 }
-#urlbar[open] > :is(#urlbar-background,.urlbar-background){ z-index: -1 !important; }
+#urlbar[open][breakout] > :is(#urlbar-background,.urlbar-background){ z-index: -1 !important; }
 
 /* OPTIONAL FEATURES */
 
