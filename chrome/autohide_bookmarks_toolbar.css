@@ -78,7 +78,9 @@ See the above repository for updates as well as full license text. */
   transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
 }
 :root:not([lwtheme]) #PersonalToolbar{
-  background-color: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
+  background-color: var(--toolbox-background-color) !important;
+  background-image: image(var(--toolbar-background-color,var(--toolbar-bgcolor))), var(--toolbox-background-image) !important;
+  background-repeat: repeat !important;
 }
 #nav-bar.browser-titlebar + #PersonalToolbar{
   background-color: var(--uc-toolbox-background-color) !important;
@@ -100,22 +102,22 @@ See the above repository for updates as well as full license text. */
     background-repeat: no-repeat repeat;
   }
 }
-/* Uncomment to enable compatibility for multi-row_bookmarks.css */
-/* This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
-/*
-#PersonalToolbar:not([customizing]){
-  min-height: 0 !important;
-  margin-bottom: 0;
-  height: 0;
-  overflow-y: visible !important;
-  z-index: 2;
-  padding-inline: 0 !important;
+/* Create and set the following pref to enable compatibility with multi-row_bookmarks.css
+ This would break buttons placed in the toolbar but that is likely not happening if you are using multi-row setup  */
+@media -moz-pref("userchrome.autohidebookmarks.multi-row-bookmarks.compatibility.enabled"){
+  #PersonalToolbar:not([customizing]){
+    min-height: 0 !important;
+    margin-bottom: 0;
+    height: 0;
+    overflow-y: visible !important;
+    z-index: 2;
+    padding-inline: 0 !important;
+  }
+  #personal-bookmarks{
+    background: inherit;
+    height: min-content;
+  }
+  #PlacesToolbarDropIndicatorHolder{
+    pointer-events: none !important;
+  }
 }
-#personal-bookmarks{
-  background: inherit;
-  height: min-content;
-}
-#PlacesToolbarDropIndicatorHolder{
-  pointer-events: none !important;
-}
-*/
