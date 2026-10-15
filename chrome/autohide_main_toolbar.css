@@ -26,11 +26,25 @@ See the above repository for updates as well as full license text. */
 
 #nav-bar:not([customizing]){
   opacity: 0;
-  transition:  transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important;
+  transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay), opacity var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important;
   position: relative;
   z-index: 2;
 }
-
+#navigator-toolbox[tabs-hidden] > #TabsToolbar{
+  position: relative;
+  z-index: 2;
+}
+#navigator-toolbox[tabs-hidden] > #TabsToolbar::before{
+  display: flex;
+  position: absolute;
+  height: 4px;
+  width: 100vw;
+  content: "";
+  visibility: visible;
+}
+#toolbar-menubar:not([autohide]) + #TabsToolbar::before{
+  display: none;
+}
 #navigator-toolbox,
 #sidebar-box,
 #sidebar-main,
@@ -83,29 +97,50 @@ See the above repository for updates as well as full license text. */
   transform: translateY(0);
   opacity: 1;
 }
-/* If tabs are in sidebar then nav-bar doesn't normally have its own background - so we nee to add it back */
-#nav-bar.browser-titlebar + #PersonalToolbar,
-#nav-bar.browser-titlebar{
-  background: inherit;
+#navigator-toolbox{
+  --uc-bg-base-y: var(--uc-navbar-transform);
+  --uc-bg-y: var(--uc-bg-base-y);
+  &[tabs-hidden]{
+    --uc-bg-base-y: 0px;
+  }
+  > #toolbar-menubar:not([autohide="true"],[autohide=""]) ~ :is(#nav-bar,#PersonalToolbar){
+    --uc-bg-y: calc(var(--uc-bg-base-y) - 28px);
+  }
+}
+#nav-bar,
+#PersonalToolbar{
   background-color: var(--toolbox-background-color,var(--toolbox-bgcolor)) !important;
-  background-image: var(--lwt-additional-images);
-  background-repeat: var(--lwt-background-tiling);
-  background-position: var(--lwt-background-alignment);
+  background-image: image(var(--toolbar-background-color)), var(--toolbox-background-image) !important;
+  background-repeat: no-repeat, repeat-y;
+  background-position: 0 0, var(--toolbox-background-position);
+  background-position-y: 0, var(--uc-bg-y), var(--uc-bg-y), var(--uc-bg-y);
+  background-size: cover,var(--toolbox-background-size),var(--toolbox-background-size),var(--toolbox-background-size);
 }
-#navigator-toolbox:hover > #nav-bar.browser-titlebar + #PersonalToolbar{
-  background-position-y: -40px;
-  transition: background-position-y
-}
-#toolbar-menubar:not([autohide="true"],[autohide=""]) ~ #nav-bar.browser-titlebar{
-  background-position-y: -28px; /* best guess, could vary */
-  border-top: none !important;
+#nav-bar.browser-titlebar{
+  --toolbar-background-color: transparent;
   + #PersonalToolbar{
-    background-position-y: -28px;
+    --toolbar-background-color: transparent;
   }
 }
 
 /* Bookmarks toolbar needs so extra rules */
-#PersonalToolbar{ transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important; position: relative; z-index: 1 }
+
+#PersonalToolbar{
+  transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important;
+  transition-property: transform, background-position-y !important;
+  position: relative;
+  z-index: 1
+}
+
+#navigator-toolbox:focus-within > #PersonalToolbar,
+#nav-bar:hover + #PersonalToolbar,
+.browser-titlebar:hover ~ #PersonalToolbar{
+  background-position-y: 0, calc(var(--uc-bg-y) + var(--uc-navbar-transform)), calc(var(--uc-bg-y) + var(--uc-navbar-transform)), calc(var(--uc-bg-y) + var(--uc-navbar-transform));
+  transition-delay: 0ms;
+}
+#toolbar-menubar:not([autohide="true"],[autohide=""]) ~ #nav-bar.browser-titlebar{
+  border-top: none !important;
+}
 
 /* Move up the content view */
 :root[sessionrestored]:not([chromehidden~="toolbar"]) > body > #browser{
