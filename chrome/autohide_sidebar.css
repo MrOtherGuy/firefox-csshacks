@@ -3,7 +3,7 @@ See the above repository for updates as well as full license text. */
 
 /* Show sidebar only when the cursor is over it.
    The border controlling sidebar width will be removed so you'll need to modify
-   these values to change width. 
+   these values to change width.
    By default the internal layout of sidebar changes when hovered, but this can
    be changed by setting pref "userchrome.autohide-sidebar.static-layout.enabled" to true
  */
@@ -17,15 +17,15 @@ See the above repository for updates as well as full license text. */
 :where(#main-window) #browser{
   --uc-sidebar-width: 40px;
   --uc-sidebar-hover-width: 210px;
+  --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
+  --uc-autohide-transition-duration: 115ms;
+  --uc-autohide-transition-type: linear;
+  --browser-area-z-index-sidebar: 3;
 }
 #main-window[sizemode="fullscreen"] #browser{
   --uc-sidebar-width: 1px;
 }
 #sidebar-box{
-  --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
-  --uc-autohide-transition-duration: 115ms;
-  --uc-autohide-transition-type: linear;
-  --browser-area-z-index-sidebar: 3;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
@@ -70,7 +70,8 @@ See the above repository for updates as well as full license text. */
 }
 #sidebar-box:hover > #sidebar-header,
 #sidebar-box:hover > #sidebar,
-#sidebar-box:hover > .sidebar-browser-stack > #sidebar{
+#sidebar-box:hover > .sidebar-browser-stack > #sidebar,
+#sidebar-container:hover ~ #sidebar-box > .sidebar-browser-stack > #sidebar{
   min-width: var(--uc-sidebar-hover-width) !important;
   transition-delay: 0ms !important;
 }
@@ -82,7 +83,7 @@ See the above repository for updates as well as full license text. */
 
 .sidebar-panel #search-box{
   -moz-appearance: none !important;
-  background-color: rgba(249,249,250,0.1) !important; 
+  background-color: rgba(249,249,250,0.1) !important;
   color: inherit !important;
 }
 
@@ -91,7 +92,7 @@ See the above repository for updates as well as full license text. */
 #sidebar,
 #sidebar-header{
   background-color: inherit !important;
-  border-inline: 1px solid rgb(80,80,80);
+  border-inline: 1px solid var(--chrome-content-separator-color);
   border-inline-width: 0px 1px;
 }
 
@@ -110,7 +111,7 @@ See the above repository for updates as well as full license text. */
 }
 #sidebar-box:not([positionend],[sidebar-positionend]):hover ~ #appcontent #statuspanel-label{
   margin-inline: 0px !important;
-  border-left-style: solid !important; 
+  border-left-style: solid !important;
 }
 @media -moz-pref("userchrome.autohide-sidebar.static-layout.enabled"){
   #sidebar-box{
@@ -126,6 +127,8 @@ See the above repository for updates as well as full license text. */
     width: 100%;
     transition: width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay);
     direction: ltr;
+
+    #sidebar-container:hover ~ #sidebar-box > &,
     &:hover{
       transition-delay: 0ms;
       width: var(--uc-sidebar-hover-width);
