@@ -9,6 +9,7 @@ See the above repository for updates as well as full license text. */
   --tab-block-margin: 0px !important;
   --tab-margin-block: 0px !important;
   --tabs-shadow-size: 1px !important;
+  --split-view-padding-block: 0px !important;
   /* Remove next lines if you want selected tab to have color other than toolbar background - then it follows your theme color  */
   --tab-selected-bgcolor: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
   --tab-background-color-selected: var(--toolbar-background-color,var(--toolbar-bgcolor)) !important;
