@@ -115,6 +115,19 @@ tab-split-view-wrapper:is(:hover,[hasactivetab]){
   background-size: auto 100%, var(--toolbox-background-size), auto auto !important;
   border-bottom-width: 0px !important;
 }
+/* This is mostly same as above for the default theme - unless it is system theme */
+@media not ((prefers-contrast) or (-moz-native-theme)) {
+  :root:not([lwtheme]) .tab-background:is([selected], [multiselected]){
+    background-attachment: scroll, fixed, fixed !important;
+    background-color: transparent !important;
+    background-image: linear-gradient(var(--tab-background-color-selected)), var(--toolbox-background-image,none), linear-gradient(var(--toolbox-background-color, none)) !important;
+    background-position: 0 0, var(--toolbox-background-position), 0 0 !important;
+    background-repeat: repeat-x, var(--toolbox-background-repeat), repeat !important;
+    background-size: auto 100%, var(--toolbox-background-size), auto auto !important;
+    background-clip: border-box !important;
+    border-bottom-width: 0px !important;
+  }
+}
 .tab-background:not([selected])[multiselected]{
   background: color-mix(in srgb, currentColor 11%, transparent) !important;
   margin-inline-start: -1px;
