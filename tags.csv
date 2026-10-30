@@ -124,7 +124,8 @@ show_navbar_on_focus_only.css,urlbar,nav-bar,toolbars,hiding
 show_toolbars_in_popup_windows.css,toolbars,popup
 show_urlbar_button.css,urlbar,hack,hiding
 show_window_title_in_menubar.css,windows,menubar
-shrinking_pinned_tabs.css,tab,
+shrinking_pinned_tabs.css,tab
+sidebar_buttons_above_sidebar.css,sidebar,autohide
 status_inside_menubar.css,menubar,status,hack
 status_inside_urlbar.css,status,urlbar,hack
 status_inside_urlbar_v2.css,status,urlbar,status,effect,hack
