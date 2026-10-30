@@ -56,7 +56,7 @@ tab-split-view-wrapper > .tabbrowser-tab:last-child{
 }
 tab-group > slot + :is(tab-split-view-wrapper,.tabbrowser-tab),
 tab-group[collapsed] + :is(tab-split-view-wrapper,.tabbrowser-tab),
-:is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],[multiselected],[hasactivetab],:hover),
+:is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],tab[multiselected],[hasactivetab],:hover),
 :is(tab-split-view-wrapper,.tabbrowser-tab):is([selected],tab[multiselected],[hasactivetab],:hover) + :is(tab-split-view-wrapper,.tabbrowser-tab),
 tab-split-view-wrapper:has( > [multiselected]:last-child) + :is(tab-split-view-wrapper,.tabbrowser-tab),
 tab-group:has(> :last-of-type:is(:hover,[selected],[multiselected],[hasactivetab]) + vbox) + :is(tab-split-view-wrapper,.tabbrowser-tab),
