@@ -7,8 +7,10 @@ See the above repository for updates as well as full license text. */
  * You might want to move tabs-new-tab-button outside tabs toolbar for smoother behavior */
 
 /* SETTINGS (you need to create and set these prefs to true in about:config)
- * userchrome.multirowtabs.full-width-tabs.enabled  - make tabs grow horizontally to fill all available space
- * userchrome.multirowtabs.scrollbar-handle.enabled - make scrollbar in tabs box respond to mouse, makes it imposiible to drag window from empty space in tabs box */
+ * userchrome.multirowtabs.full-width-tabs.enabled     - make tabs grow horizontally to fill all available space
+ * userchrome.multirowtabs.scrollbar-handle.enabled    - make scrollbar in tabs box respond to mouse, makes it impossible to drag window from empty space in tabs box
+ * userchrome.multirowtabs.separate-pinned-row.enabled - make pinned tabs always appear on their separate row
+*/
 
 :root{
   --multirow-n-rows: 3; /* change maximum number of rows before the rows will start to scroll */
@@ -35,7 +37,7 @@ See the above repository for updates as well as full license text. */
   #scrollbutton-up~spacer,
   #scrollbutton-up,
   #scrollbutton-down{ display: var(--uc-scrollbutton-display-model,initial) }
-  
+
   #pinned-tabs-container[orient="horizontal"],
   #tabbrowser-arrowscrollbox[orient="horizontal"],
   scrollbox[part][orient="horizontal"] > slot,
@@ -82,4 +84,13 @@ tab-split-view-wrapper {
 /* Make tab groups collapse */
 tab-group[collapsed] > .tabbrowser-tab[fadein]:not([pinned]){
   min-width: 0 !important;
+}
+@media -moz-pref("userchrome.multirowtabs.separate-pinned-row.enabled"){
+  scrollbox[part="scrollbox"][orient="horizontal"] > slot[part="items-wrapper"]::after{
+    display: flow-root list-item;
+    content: "";
+    flex-basis: -moz-available;
+    height: 0;
+    overflow: hidden;
+  }
 }

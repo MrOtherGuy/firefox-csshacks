@@ -90,7 +90,7 @@
 "deprecated/multi-row_tabs_below_content.css":["legacy"],
 "deprecated/multi-row_tabs_below_content_legacy.css":["legacy"],
 "deprecated/multi-row_tabs_legacy.css":["legacy"],
-"multi-row_tabs_separate_pinned_row_patch.css":["tabs","multi-row","patch"],
+"deprecated/multi-row_tabs_separate_pinned_row_patch.css":["tabs","multi-row","patch"],
 "multi-row_tabs_window_control_patch.css":["patch","multi-row","window-control"],
 "navbar_below_content.css":["nav-bar","toolbars"],
 "deprecated/navbar_tabs_oneliner.css":["legacy"],
