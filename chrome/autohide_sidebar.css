@@ -60,6 +60,11 @@ See the above repository for updates as well as full license text. */
 }
 #sidebar-panel-header{
   box-sizing: border-box;
+  padding-inline: 0 !important;
+  overflow: hidden;
+}
+.sidebar-panel-heading{
+  padding-inline: var(--space-large);
 }
 #sidebar-panel-header,
 #sidebar-header,
